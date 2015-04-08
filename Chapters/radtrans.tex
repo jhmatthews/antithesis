@@ -1,0 +1,87 @@
+\chapter{Monte Carlo Radiative Transfer and Ionization}
+
+In the previous chapters I have given, in fairly broad brush strokes,
+an introduction to the field and som relevant background relating to accretion 
+disks and their associated outflows. Now it proves useful
+to discuss some of the specific {\sl methods} one might be able to utilise 
+in order to try and answer some of the questions raised in the previous sections.
+In particular, I will discuss radiative transfer techniques and 
+their potential applications.
+
+\section{Fundamentals of Radiative Transfer}
+
+\py\ is a Monte Carlo  ionization and radiative transfer code which
+uses the Sobolev approximation to treat line transfer 
+\citep[e.g.][]{sobolev1957,sobolev1960,rybickihummer1978}. 
+The code has already been described extensively by LK02, SDL05 and 
+Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
+focusing particularly on new aspects of our implementation of macro-atoms into the code.
+
+\section{\sc{python}: A Monte Carlo Ionization and Radiative Transfer Code}
+
+\py\ operates in two distinct stages. First, the ionization state,
+level populations and temperature structure are calculated. This is
+done iteratively, by propagating several populations of Monte Carlo energy quanta (`photons')
+through a model wind. The geometric and kinemetic properties of the
+outflow are specified on a pre-defined spatial grid. In each of these
+iterations (`ionization cycles'), the code records estimators that 
+characterize the radiation field in each grid cell. At the end 
+of each ionization cycle, a new electron temperature is calculated
+that more closely balances heating and cooling in the 
+plasma. The radiative estimators and updated electron
+temperature are then used to revise the ionization state of the wind,
+and a new ionization cycle is started. The process is repeated until
+heating and cooling are balanced throughout the wind. 
+
+This converged model is then used as the basis for the second set of
+iterations (`spectral cycles'). In these, the emergent spectrum over
+the desired spectral range is synthesized by tracking populations of
+energy packets through the wind and computing the emergent spectra at
+a number of user-specified viewing angles.  
+
+\py\ is designed to operate in a number of different
+regimes, both in terms of the scale of the system and in terms of the
+characteristics of the underlying radiation field.
+It was originally developed by LK02 in order to model the UV spectra
+of CVs with a simple biconical disk wind model. SDL05
+\nocite{simmacro2005} used the code to model Brackett
+and Pfund line profiles of H in young-stellar objects (YSOs). As part
+of this effort, they implemented a `macro-atom' mode (see below) in
+order to correctly treat H recombination lines with
+\py. Finally, H13 used \py\ to model broad absorption line (BAL) QSOs. For
+this application, an improved treatment of ionization was implemented,
+so that the code is now capable of dealing with arbitrary
+photo-ionizing SEDs, including non-thermal and multi-component ones. 
+
+\section{Macro-atoms}
+
+Lucy (2002, 2003\nocite{lucy2002, lucy2003}; hereafter L02, L03) 
+has shown that it is possible to calculate the emissivity of a gas in
+statistical equilibrium accurately by quantising matter into
+`macro-atoms', and radiant and kinetic energy into indivisible energy
+packets (r- and k- packets, respectively). His macro-atom scheme
+allows for all possible transition paths from a given level and
+provides a full non-local thermodynamic equilibrium (NLTE) solution
+for the level populations based on Monte Carlo estimators. The macro-atom
+technique has already been used to model Wolf-Rayet star
+winds \citep{sim2004}, AGN disk winds \citep{simlong2008, tatum2012},
+supernovae \citep{kromersim2009, kerzendorfsim} and YSOs (SDL05). A full 
+description of the approach can be found in L02 and L03. 
+
+The fundamental approach here requires somewhat of a philosophical shift.
+Normally MCRT is described in the most intuitive way- that is, we imagine
+real photons striking atoms and scattering, or photoionizing 
+and depositing energy in a plasma. With Lucy's scheme one should instead 
+reimagine the MC quanta as a packets of quantised energy flow, and the scheme as a 
+{\em statistical} one. The amount of time a given energy quanta spends in a specific atomic
+level or thermal pool is then somewhat analogous to the absolute energy 
+contained therein.
+
+Following L02, let us consider an atomic species interacting with a radiation field.
+If the quantity $\epsilon_j$ represents the ionization plus excitation energy of 
+a level i then the rates at which the level $j$ absorbs and emits radiant energy 
+are given by
+
+\begin{eqnarray}
+\dot{A}_R^j =  \epsilon_j R_{jl} && \dot{E}_R^j =  \epsilon_j R_{jl}
+\end{eqnarray}
