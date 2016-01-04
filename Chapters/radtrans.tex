@@ -1,8 +1,10 @@
 \chapter{Monte Carlo Radiative Transfer and Ionization}
 
+\epigraph{``I'm splashing greys where once was glowing white''}{{\sl Mike Vennart, Silent/Transparent}}
+
 In the previous chapters I have given, in fairly broad brush strokes,
 an introduction to the field and some relevant background relating to accretion 
-disks and their associated outflows. Now it proves useful
+discs and their associated outflows. Now it proves useful
 to discuss some of the specific {\sl methods} one might be able to utilise 
 in order to try and answer some of the questions raised in the previous sections.
 In particular, I will discuss radiative transfer techniques and 
@@ -14,15 +16,10 @@ The most fundamental quantity of radiative transfer is the
 {\em specific intensity}, $I_\nu$, defined as
 
 \begin{equation}
-I_\nu = 
+I_\nu = \frac{dE}{d\Omega~dt~dA~d\nu},
 \end{equation}
 
-which appears in the equation of radiative transfer
-
-\begin{equation}
-I_\nu = 
-\end{equation}
-
+which has units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$.
 It is useful here to also define the `moments' of the radiation field
 
 \begin{equation}
@@ -30,16 +27,78 @@ I_\nu =
 \end{equation}
 
 \begin{equation}
-I_\nu = 
+I_\nu = .
 \end{equation}
 
-The mean intensity, $J_\nu$ is a particularly useful quantity when calculation the ionization
-state 
+The equation describing the specific intensity change along a path element $ds$
+is the radiative transfer equation, 
 
+\begin{equation}
+\frac{d I_\nu}{ds} = -\kappa_\nu I_\nu + j_\nu, 
+\end{equation}
+
+where $\kappa_\nu$ and $j_\nu$ are the absorption and emission coefficients respectively.
+If we define the optical depth $d \tau_\nu = \kappa_\nu ds$ we can recast this as
+
+\begin{equation}
+\frac{d I_\nu}{d \tau_\nu} = -I_\nu + S_\nu
+\label{eq:formal_rte}
+\end{equation}
+
+where $S_\nu=j_\nu/\kappa_\nu$ is the source function. This equation
+is called the {\em formal radiative transfer equation}, and can be solved to give 
+
+\begin{equation}
+I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu})
+\label{eq:rte_solution}
+\end{equation}
+
+% The mean intensity, $J_\nu$ is a particularly useful quantity when calculation the ionization
+% state 
+
+\subsection{Spectral Line Formation}
+
+From the above equations, it is trivial to show how emission and absorption lines form.
+Say we have a plasma illuminated by a blackbody of temperature $T_0$, such that
+$I_{\nu,0} = B_\nu (T_0)$. The plasma layer then has a different temperature, $T$,
+such that $S_\nu = B_\nu (T)$ in that medium. By inspecting equation~\ref{eq:rte_solution}
+we can see that if we are optically thick within the line, but optically
+thin in the continuum, then inside the line the source term is dominant and outside 
+the line the first $I_{\nu,0}~e^{-\tau_\nu}$ term dominates. Therefore, if $T > T_0$ we will 
+see an emission line, and if $T < T_0$ we will see an absorption line. 
+This approach describes line emission in the blackbody limit; for more complicated SED shapes
+it is necessary to construct simple model atoms.
 
 \subsection{The Two Level Atom}
 
+The two level atom formalism is well described by Mihalas (1978). 
+
+
 \subsubsection{Einstein Coefficients}
+
+Within the two level atom, the rate equation between the two levels in LTE can
+can be written by invoking detailed balance, such that 
+\begin{equation}
+B_{12} \bar{J}_{21} n_1 = B_{21} \bar{J}_{21} n_2 + A_{21} n_2,
+\label{eq:rate_einstein}
+\end{equation}
+where $B_{12}$, $B_{21}$ and $A_{21}$ are the {\em Einstein coefficients}
+for absorption, stimulated emission and spontaneous emission respectively.
+In LTE, the level populations obey Boltzmann statistics, and thus we can also
+write
+\begin{equation}
+\frac{n_1}{n_2} = \frac{g_1}{g_2} \exp (h \nu_0 / k_B T)
+\end{equation}
+We can then rearrange equation~\ref{eq:rate_einstein} in terms of the mean intensity,
+and use the fact that, in LTE, $\bar{J}_{21} = B_\nu (T)$ to write
+\begin{equation}
+\bar{J}_{21} = (2 h \nu_0^3) / c^2.
+\end{equation}
+Since this must be true at all values of $T$ we can also show that 
+\begin{equation}
+A_{21} / B_{21} = (2 h \nu_0^3)~B_{12} / B_{21} = g_2 / g_1
+\end{equation}
+
 
 
 \subsubsection{Line Emission and Collisions}
@@ -72,9 +131,8 @@ are intuitively parallelisable problems.
 
 \section{{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}
 
-\py\ is a Monte Carlo  ionization and radiative transfer code which
-uses the Sobolev approximation to treat line transfer 
-\citep[e.g.][]{sobolev1957,sobolev1960,rybickihummer1978}. 
+\py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
+programming language} is a Monte Carlo  ionization and radiative transfer code. 
 The code has already been described extensively by LK02, SDL05 and 
 Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
 focusing particularly on new aspects of our implementation of macro-atoms into the code.
@@ -105,7 +163,7 @@ a number of user-specified viewing angles.
 regimes, both in terms of the scale of the system and in terms of the
 characteristics of the underlying radiation field.
 It was originally developed by LK02 in order to model the UV spectra
-of CVs with a simple biconical disk wind model. SDL05
+of CVs with a simple biconical disc wind model. SDL05
 \nocite{simmacro2005} used the code to model Brackett
 and Pfund line profiles of H in young-stellar objects (YSOs). As part
 of this effort, they implemented a `macro-atom' mode (see below) in
@@ -125,14 +183,17 @@ for the study of recombination lines in YSO (Sim et al. 2005).}
 
 Lucy (2002, 2003\nocite{lucy2002, lucy2003}; hereafter L02, L03) 
 has shown that it is possible to calculate the emissivity of a gas in
-statistical equilibrium accurately by quantising matter into
-`macro-atoms', and radiant and kinetic energy into indivisible energy
-packets (r- and k- packets, respectively). His macro-atom scheme
-allows for all possible transition paths from a given level and
+statistical equilibrium without approximation for problems with large departures
+from LTE.
+% accurately by quantising matter into
+% `macro-atoms', and radiant and kinetic energy into indivisible energy
+% packets (r- and k- packets, respectively). 
+His macro-atom scheme allows for all possible transition paths from a given level,
+dispending with the two-level approximation, and
 provides a full non-local thermodynamic equilibrium (NLTE) solution
 for the level populations based on Monte Carlo estimators. The macro-atom
 technique has already been used to model Wolf-Rayet star
-winds \citep{sim2004}, AGN disk winds \citep{simlong2008, tatum2012},
+winds \citep{sim2004}, AGN disc winds \citep{simlong2008, tatum2012},
 supernovae \citep{kromersim2009, kerzendorfsim} and YSOs (SDL05). A full 
 description of the approach can be found in L02 and L03. 
 
@@ -179,101 +240,113 @@ we can then obtain
  +{\cal R}_{\ell j} \epsilon_{\ell}            \;\;\; .       
 \end{eqnarray}
 
-This is the starting point for the macro-atom scheme. By quantising this energy flow
-into radiant (r-) and kinetic (k-) packets, we can simulate the energy transport through
+This equation is the starting point for the macro-atom scheme. It shows 
+that, when assuming only radiative equilibrium, the energy flows through
+a system depend only on the transition probabilities and atomic physics
+associated with the levels the energy flow interacts with.
+By quantising this energy flow into radiant (r-) and kinetic (k-) packets, 
+we can simulate the energy transport through
 a plasma discretised into volume elements (``macro-atoms''),
 whose associated transition probabilities govern the interaction 
 of radiant and kinetic energy with the ionization and excitation energy associated 
 with the ions of the plasma.
 
-\subsection{Superlevels}
+% \subsection{Superlevels}
+% One undesirable aspect of the macro-atom scheme is that the number of 
+% jumps made inside a macro-atom can become large in certain limits.
+% For example, when the plasma starts to approach LTE conditions
+% the energy packets will spend a huge amount of time
+% jumping between high up levels in a macro-atom. Fortunately, there
+% are a number of fairly elegant solutions here. The first would be simply 
+% to keep track of net rates-- if two large rates go in opposite directions
+% but have a net difference, then all one needs to do is take account of that net
+% difference and set the other rate to zero. This could be implemented in \py\, but
+% is not currently. Instead, we adopt a method I shall refer to using the 
+% term `superlevels'. 
 
-One undesirable aspect of the macro-atom scheme is that the number of 
-jumps made inside a macro-atom can become large in certain limits.
-For example, when the plasma starts to approach LTE conditions
-the energy packets will spend a huge amount of time
-jumping between high up levels in a macro-atom. Fortunately, there
-are a number of fairly elegant solutions here. The first would be simply 
-to keep track of net rates-- if two large rates go in opposite directions
-but have a net difference, then all one needs to do is take account of that net
-difference and set the other rate to zero. This could be implemented in \py\, but
-is not currently. Instead, we adopt a method I shall refer to using the 
-term `superlevels'. 
+% Once a cycle has been computed, it is possible to calculate departure coefficients, $D_j$
+% for a level $j$, which are defined as
 
-Once a cycle has been computed, it is possible to calculate departure coefficients, $D_j$
-for a level $j$, which are defined as
+% \begin{equation}
+% D_j = \frac{n_j}{n_j^{*,T_e}},
+% \end{equation}
 
-\begin{equation}
-D_j = \frac{n_j}{n_j^{*,T_e}},
-\end{equation}
+% which is simply the ratio of a level's population to it's LTE population at the electron temperature.
+% If these coefficients approach unity at all levels above some threshold then these
+% levels are said to be part of a superlevel. Any time we jump to a level $j$ inside a superlevel
+% we instantly select a new level $k$ with a probability
 
-which is simply the ratio of a level's population to it's LTE population at the electron temperature.
-If these coefficients approach unity at all levels above some threshold then these
-levels are said to be part of a superlevel. Any time we jump to a level $j$ inside a superlevel
-we instantly select a new level $k$ with a probability
-
-\begin{equation}
-P(j,k) = \frac{1}{N} \frac{n_j^{*,T_e}}{g_k} \sum_l P(k,l),
-\end{equation}
+% \begin{equation}
+% P(j,k) = \frac{1}{N} \frac{n_j^{*,T_e}}{g_k} \sum_l P(k,l),
+% \end{equation}
  
-where $1/N$ is just a normalisation over the sum of these quantities and $\sum_l P(k,l)$ represents 
-the sum of jumping probabilities to lower levels below the superlevel threshold.
-This formula produces the required jumping and deactivation distributions in the limit of LTE
-without having to actually go through the lengthy process of MC sampling the probability space.
-The speed-up can be huge in certain limits-- some models can undergo $\sim10^8$ jumps before deactivation,
-compared to an average of $\sim2$ in Lucy's original simulations.
+% where $1/N$ is just a normalisation over the sum of these quantities and $\sum_l P(k,l)$ represents 
+% the sum of jumping probabilities to lower levels below the superlevel threshold.
+% This formula produces the required jumping and deactivation distributions in the limit of LTE
+% without having to actually go through the lengthy process of MC sampling the probability space.
+% The speed-up can be huge in certain limits-- some models can undergo $\sim10^8$ jumps before deactivation,
+% compared to an average of $\sim2$ in Lucy's original simulations.
+
+\subsection{Macro-Atom Estimators}
+
+\subsubsection{Radiation Field Estimators}
+
+\subsubsection{Heating And Cooling Estimators}
+
+\subsection{Ionization Fractions and Level Populations}
+
+
+
 
 \section{Simple-atoms}
 
-Prior to SDL05, the relative ionization fractions for all atomic
-species were estimated via the modified Saha equation (Mazzali \&
-Lucy 1993)  
-\begin{equation}
-\frac{n_{j+1} n_e}{n_j} = W [\xi + W(1-\xi)]
-\left(\frac{T_e}{T_R}\right)^{1/2}
-\left(\frac{n_{j+1}n_e}{n_j}\right)^*_{T_R}. \label{ionization}
-\end{equation}
-Here, the `starred' term on the right represents abundances computed with
-the Saha equation at temperature $T_R$, but using partition functions
-from the dilute blackbody approximation. 
-$W$ is an effective dilution factor, $\xi$ is the
-fraction of recombinations going directly to the ground state, and
-$T_R$ and $T_e$ are the radiation and electron temperatures,
-respectively. This simple ionization scheme produces reasonable
-results when the photoionizing SED can be approximated by a dilute
-blackbody. This is the case for high-state CVs. (As noted above, an
-improved, but more complex treatment of ionization that is appropriate
-for more complex SEDs is described in H13.) 
+% Prior to SDL05, the relative ionization fractions for all atomic
+% species were estimated via the modified Saha equation (Mazzali \&
+% Lucy 1993)  
+% \begin{equation}
+% \frac{n_{j+1} n_e}{n_j} = W [\xi + W(1-\xi)]
+% \left(\frac{T_e}{T_R}\right)^{1/2}
+% \left(\frac{n_{j+1}n_e}{n_j}\right)^*_{T_R}. \label{ionization}
+% \end{equation}
+% Here, the `starred' term on the right represents abundances computed with
+% the Saha equation at temperature $T_R$, but using partition functions
+% from the dilute blackbody approximation. 
+% $W$ is an effective dilution factor, $\xi$ is the
+% fraction of recombinations going directly to the ground state, and
+% $T_R$ and $T_e$ are the radiation and electron temperatures,
+% respectively. This simple ionization scheme produces reasonable
+% results when the photoionizing SED can be approximated by a dilute
+% blackbody. This is the case for high-state CVs. (As noted above, an
+% improved, but more complex treatment of ionization that is appropriate
+% for more complex SEDs is described in H13.) 
 
-Similarly, the relative excitation fractions within each ionization
-stage of a given species were estimated via a modified (dilute) Boltzmann
-equation,
-\begin{equation}
-\frac{n_{jk}}{n_j} = \frac{W g_k}{z_j(T_R)} \exp(-E_k/kT_R),
-\end{equation}
-where $n_{jk}$ is the population of level $k$ in ionic stage $j$,
-$E_k$ is the energy difference between level $k$ and the ground state,
-$g_k$ is the statistical weight of level $k$
-and $z_j(T_R)$ is the partition function of ionic stage $j$. 
-This equation is approximate, and in general this approximation 
-is not good. We therefore endeavour to treat any species in
-which the excitation state of the ions is thought to be important
-in determining either the ionizing radiation field, or emergent spectrum,
-as macro-atoms.
+% Similarly, the relative excitation fractions within each ionization
+% stage of a given species were estimated via a modified (dilute) Boltzmann
+% equation,
+% \begin{equation}
+% \frac{n_{jk}}{n_j} = \frac{W g_k}{z_j(T_R)} \exp(-E_k/kT_R),
+% \end{equation}
+% where $n_{jk}$ is the population of level $k$ in ionic stage $j$,
+% $E_k$ is the energy difference between level $k$ and the ground state,
+% $g_k$ is the statistical weight of level $k$
+% and $z_j(T_R)$ is the partition function of ionic stage $j$. 
+% This equation is approximate, and in general this approximation 
+% is not good. We therefore endeavour to treat any species in
+% which the excitation state of the ions is thought to be important
+% in determining either the ionizing radiation field, or emergent spectrum,
+% as macro-atoms.
 
-Finally, \py\ originally modelled all bound-bound processes as transitions
-within a simple two-level atom \cite[e.g.][]{mihalas}. 
-This framework was used for the treatment of line transfer and also
-for the line heating and cooling calculations (see LK02). 
-The approximation works reasonably well for resonance  
-lines, such as \civfull, in which the lower level is the ground state.  
-However, it is a poor approximation for many other
-transitions, particularly those where the upper level
-is primarily populated from above. Thus an improved method for
-estimating excited level populations and simulating line transfer is
-needed in order to model recombination lines and continua.
-
-
+% Finally, \py\ originally modelled all bound-bound processes as transitions
+% within a simple two-level atom \cite[e.g.][]{mihalas}. 
+% This framework was used for the treatment of line transfer and also
+% for the line heating and cooling calculations (see LK02). 
+% The approximation works reasonably well for resonance  
+% lines, such as \civfull, in which the lower level is the ground state.  
+% However, it is a poor approximation for many other
+% transitions, particularly those where the upper level
+% is primarily populated from above. Thus an improved method for
+% estimating excited level populations and simulating line transfer is
+% needed in order to model recombination lines and continua.
 
 \section{Heating And Cooling}
 
@@ -281,9 +354,6 @@ needed in order to model recombination lines and continua.
 
 \subsection{Heating And Cooling Estimators}
 
-
-
-\maketitle
 
 Here I've tried to use Lucy's notation for macro-atom estimators. Take a three level system, in
 which $l$ and $u$ represent lower and upper levels, 
@@ -401,9 +471,9 @@ C_{bf,simple} = ??
 \section{Spectral Synthesis}
 
 The primary output from \py\ is a synthetic spectrum 
-across a range of viewing 
-
-The code utilises a variance reduction technique in order 
+across a range of viewing angles. 
+The code utilises a variance reduction technique in order to minimise the amount of 
+time spent in the portion of the code.
 
 
 

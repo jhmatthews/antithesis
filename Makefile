@@ -7,8 +7,8 @@
 
 DATE := $(shell date +'%y%m%d')
 
-CMD = latex
-PCMD = pdflatex
+LCMD = latex
+CMD = pdflatex
 
 
 all:
@@ -16,6 +16,11 @@ all:
 	bibtex Thesis
 	${CMD} Thesis
 	${CMD} Thesis
+dv:
+	${LCMD} Thesis
+	bibtex Thesis
+	${LCMD} Thesis
+	${LCMD} Thesis
 	dvips Thesis -o Thesis.ps
 	ps2pdf Thesis.ps	
 clean:	
