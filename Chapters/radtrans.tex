@@ -139,6 +139,17 @@ focusing particularly on new aspects of our implementation of macro-atoms into t
 
 \subsection{Basics}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/flowchart.jpg}
+\caption
+{
+A flowchart showing the basic operation of \py.
+} 
+\label{fig:flowchart}
+\end{figure}
+
+
 \py\ operates in two distinct stages. First, the ionization state,
 level populations and temperature structure are calculated. This is
 done iteratively, by propagating several populations of Monte Carlo energy quanta (`photons')
@@ -212,23 +223,24 @@ a level i then the rates at which the level $j$ absorbs and emits radiant energy
 are given by
 
 \begin{equation}
- \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ell} \;\;\;\;\; and \;\;\;
-\;\;  \dot{E}_{i}^{R} = R_{j \ell} \epsilon_{j \ell} \;\;\; ,
+ \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ellp} \;\;\;\;\; and \;\;\;
+\;\;  \dot{E}_{i}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
 
-Where we adopt Lucy's convention in which 
+Where we adopt Lucy's convention in which the subscript $\ellp$ denotes a summation over
+all lower states.
 Similarly, the rates corresponding to {\em kinetic} energy transport can then be written as
 
 \begin{equation}
- \dot{A}_{j}^{C} = C_{\ell j} \epsilon_{j \ell} \;\;\;\;\; and
+ \dot{A}_{j}^{C} = C_{\ellp j} \epsilon_{j \ellp} \;\;\;\;\; and
 \;\;\;
-\;\;  \dot{E}_{j}^{C} = C_{j \ell} \epsilon_{j \ell} \;\;\; ,
+\;\;  \dot{E}_{j}^{C} = C_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
 
 If we now impose statistical equilibrium
 %
 \begin{equation}
- ({\cal R}_{\ell j}-{\cal R}_{j \ell})+({\cal R}_{uj}-{\cal R}_{ju})=0 \;\;\;.
+ ({\cal R}_{\ellp j}-{\cal R}_{j \ell})+({\cal R}_{uj}-{\cal R}_{ju})=0 \;\;\;.
 \end{equation}
  
 we can then obtain 
@@ -237,7 +249,8 @@ we can then obtain
  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{ju}\epsilon_{i}+
  {\cal R}_{j \ell}\epsilon_{\ell}  \nonumber \\  
  = \dot{A}_{j}^{R}+\dot{A}_{j}^{C}+{\cal R}_{uj} \epsilon_{i}
- +{\cal R}_{\ell j} \epsilon_{\ell}            \;\;\; .       
+ +{\cal R}_{\ell j} \epsilon_{\ell}           .  
+ \label{eq:matom_SE}     
 \end{eqnarray}
 
 This equation is the starting point for the macro-atom scheme. It shows 
@@ -250,6 +263,12 @@ a plasma discretised into volume elements (``macro-atoms''),
 whose associated transition probabilities govern the interaction 
 of radiant and kinetic energy with the ionization and excitation energy associated 
 with the ions of the plasma.
+
+Although equation~\ref{eq:matom_SE} assumes strict radiative equilbrium,
+it is trivial to adjust it to include non-radiative source and sink terms. 
+For example, in an expanding parcel of plasma, adiabatic cooling may be 
+included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
+%% XXX CHECK THIS.
 
 % \subsection{Superlevels}
 % One undesirable aspect of the macro-atom scheme is that the number of 

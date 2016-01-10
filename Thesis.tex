@@ -4,10 +4,12 @@
 
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
-\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
+\graphicspath{figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 % Include any extra LaTeX packages required
-\usepackage[round, comma]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage[round]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\bibpunct{(}{)}{;}{a}{}{,}
+
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \usepackage{epigraph}
@@ -45,12 +47,13 @@
 \def\ha{H$\alpha$}
 \def\hb{H$\beta$}
 \def\civfull{C~\textsc{iv}~$\lambda1550$}
+\def\ellp{\ell^\prime}
 
 
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Accretion Disk Winds Across The Mass Scale}
+\title  {Accretion Disc Winds Across The Mass Scale}
 \authors  {\texorpdfstring
             {\href{jm8g08@soton.ac.uk}{James Matthews}}
             {James Matthews}
@@ -244,7 +247,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \label{Bibliography}
 \lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
 \bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{mybib}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\bibliography{mybib}  % The references (bibliography) information are stored in the file named "Bibliography.bib"l
 
 \end{document}  % The End
 %% ----------------------------------------------------------------
