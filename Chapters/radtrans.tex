@@ -2,11 +2,11 @@
 
 \epigraph{``I'm splashing greys where once was glowing white''}{{\sl Mike Vennart, Silent/Transparent}}
 
-In the previous chapters I have given, in fairly broad brush strokes,
-an introduction to the field and some relevant background relating to accretion 
+In the previous chapters I have given an introduction to the field and 
+some relevant background relating to accretion 
 discs and their associated outflows. Now it proves useful
-to discuss some of the specific {\sl methods} one might be able to utilise 
-in order to try and answer some of the questions raised in the previous sections.
+to discuss some of the specific {\sl methods} one might be able to use
+in order to answer some of the questions raised in the previous sections.
 In particular, I will discuss radiative transfer techniques and 
 their potential applications.
 
@@ -100,7 +100,6 @@ A_{21} / B_{21} = (2 h \nu_0^3)~B_{12} / B_{21} = g_2 / g_1
 \end{equation}
 
 
-
 \subsubsection{Line Emission and Collisions}
 
 
@@ -128,11 +127,10 @@ but with more complicated geometries it is necessary to utilise Monte Carlo
 techniques, which are easily solved with modern computing approaches and 
 are intuitively parallelisable problems.
 
-
 \section{{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}
 
 \py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
-programming language} is a Monte Carlo  ionization and radiative transfer code. 
+programming language} is a Monte Carlo ionization and radiative transfer code. 
 The code has already been described extensively by LK02, SDL05 and 
 Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
 focusing particularly on new aspects of our implementation of macro-atoms into the code.
@@ -141,7 +139,7 @@ focusing particularly on new aspects of our implementation of macro-atoms into t
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/flowchart.jpg}
+\includegraphics[width=1.0\textwidth]{figures/04-radtrans/flowchart.jpg}
 \caption
 {
 A flowchart showing the basic operation of \py.
@@ -150,12 +148,19 @@ A flowchart showing the basic operation of \py.
 \end{figure}
 
 
-\py\ operates in two distinct stages. First, the ionization state,
-level populations and temperature structure are calculated. This is
-done iteratively, by propagating several populations of Monte Carlo energy quanta (`photons')
-through a model wind. The geometric and kinemetic properties of the
-outflow are specified on a pre-defined spatial grid. In each of these
-iterations (`ionization cycles'), the code records estimators that 
+\py\ operates in three distinct stages, shown in figure~\ref{fig:flowchart}. 
+First, the user specifies the photon sources,
+geometry and kinematics of the system, normally with a similar parameterisation
+to the SV93 model described in section~\ref{sec:sv93_model}. The outflow
+is then discretised into a logarithmic grid with a user-specified resolution,
+and the density and velocity in each cell is calculated. 
+
+Once the basic setup process has been carried out, the ionization state,
+level populations and temperature structure are calculated.
+This is done via an iterative process, by transporting several populations of 
+Monte Carlo energy quanta (`photons' or `$r$-packets) through the outflow.
+This process is repeated until the code converges. 
+In each of these iterations (`ionization cycles'), the code records estimators that 
 characterize the radiation field in each grid cell. At the end 
 of each ionization cycle, a new electron temperature is calculated
 that more closely balances heating and cooling in the 
@@ -164,10 +169,11 @@ temperature are then used to revise the ionization state of the wind,
 and a new ionization cycle is started. The process is repeated until
 heating and cooling are balanced throughout the wind. 
 
-This converged model is then used as the basis for the second set of
-iterations (`spectral cycles'). In these, the emergent spectrum over
-the desired spectral range is synthesized by tracking populations of
-energy packets through the wind and computing the emergent spectra at
+This converged model as the basis for the second set of
+iterations (`spectral cycles'), in order to compute the synthetic spectrum based on the 
+MC estimators record during the ionization cycles. 
+The emergent spectrum over the desired spectral range is synthesized by 
+tracking populations of energy packets through the wind and computing the emergent spectra at
 a number of user-specified viewing angles.  
 
 \py\ is designed to operate in a number of different
@@ -183,7 +189,6 @@ order to correctly treat H recombination lines with
 this application, an improved treatment of ionization was implemented,
 so that the code is now capable of dealing with arbitrary
 photo-ionizing SEDs, including non-thermal and multi-component ones. 
-
 
 
 \section{Macro-atoms}
