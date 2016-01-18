@@ -1,16 +1,28 @@
-\chapter{Monte Carlo Radiative Transfer and Ionization}
+\chapter{Radiative Transfer and Ionization}
 
 \epigraph{``I'm splashing greys where once was glowing white''}{{\sl Mike Vennart, Silent/Transparent}}
 
-In the previous chapters I have given, in fairly broad brush strokes,
-an introduction to the field and some relevant background relating to accretion 
+In the previous chapters I have given an introduction to the field and 
+some relevant background relating to accretion 
 discs and their associated outflows. Now it proves useful
-to discuss some of the specific {\sl methods} one might be able to utilise 
-in order to try and answer some of the questions raised in the previous sections.
+to discuss some of the specific {\em methods} one might be able to use
+in order to answer some of the questions raised in the previous sections.
 In particular, I will discuss radiative transfer techniques and 
 their potential applications.
 
 \section{Fundamentals of Radiative Transfer}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figures/04-radtrans/rays_schematic.png}
+\caption
+{
+A schematic showing a ray obliquely incident on a surface of area $dA$.
+The labeled quantities are used in the definition of specific intensity.
+} 
+\label{fig:flowchart}
+\end{figure}
+
 
 The most fundamental quantity of radiative transfer is the 
 {\em specific intensity}, $I_\nu$, defined as
@@ -20,15 +32,27 @@ I_\nu = \frac{dE}{d\Omega~dt~dA~d\nu},
 \end{equation}
 
 which has units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$.
-It is useful here to also define the `moments' of the radiation field
+By successively multiplying by $\cos \theta$ and integrating over solid angle we 
+can obtain the first and second `moments' of the radiation field. These
+are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by
 
 \begin{equation}
-I_\nu = 
+F_\nu = \int I_\nu \cos \theta~d \Omega,
 \end{equation}
 
 \begin{equation}
-I_\nu = .
+p_\nu = \frac{1}{c} \int I_\nu \cos^2 \theta~d \Omega
 \end{equation}
+
+We can also define the {\em mean intensity}, $J_\nu$, as
+
+\begin{equation}
+J_\nu = \frac{1}{4 \pi} \int I_\nu~d \Omega
+\end{equation}
+
+The mean intensity is particularly
+useful when one wants to ignore the solid angle dependence of the radiation,
+for example when considering the impact of an ionizing radiation field.
 
 The equation describing the specific intensity change along a path element $ds$
 is the radiative transfer equation, 
@@ -49,7 +73,15 @@ where $S_\nu=j_\nu/\kappa_\nu$ is the source function. This equation
 is called the {\em formal radiative transfer equation}, and can be solved to give 
 
 \begin{equation}
-I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu})
+I_\nu = I_{\nu,0}~e^{-\tau_\nu} + \int^{\tau_\nu}_0 S_\nu (\tau^\prime_\nu)~e^{\tau^\prime_\nu-\tau_\nu} d \tau^\prime_\nu.
+\label{eq:rte_solution}
+\end{equation}
+
+A useful limit is when the source function is constant in the absorbing medium, in which case
+the integral can be easily evaluated to give
+
+\begin{equation}
+I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
 \label{eq:rte_solution}
 \end{equation}
 
@@ -58,7 +90,8 @@ I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu})
 
 \subsection{Spectral Line Formation}
 
-From the above equations, it is trivial to show how emission and absorption lines form.
+From the above equations, it is trivial to show how emission and absorption lines form when
+the source function is approximately constant.
 Say we have a plasma illuminated by a blackbody of temperature $T_0$, such that
 $I_{\nu,0} = B_\nu (T_0)$. The plasma layer then has a different temperature, $T$,
 such that $S_\nu = B_\nu (T)$ in that medium. By inspecting equation~\ref{eq:rte_solution}
@@ -79,24 +112,29 @@ The two level atom formalism is well described by Mihalas (1978).
 Within the two level atom, the rate equation between the two levels in LTE can
 can be written by invoking detailed balance, such that 
 \begin{equation}
-B_{12} \bar{J}_{21} n_1 = B_{21} \bar{J}_{21} n_2 + A_{21} n_2,
+B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
 \label{eq:rate_einstein}
 \end{equation}
-where $B_{12}$, $B_{21}$ and $A_{21}$ are the {\em Einstein coefficients}
+where $B_{ul}$, $B_{2ul}$ and $A_{ul}$ are the {\em Einstein coefficients}
 for absorption, stimulated emission and spontaneous emission respectively.
+The `mean intensity in the line', $\bar{J}_{ul}$, is given by
+\begin{equation}
+\bar{J}_{ul} = \int \phi(\nu) J_\nu d\nu.
+\label{eq:jbar}
+\end{equation}
 In LTE, the level populations obey Boltzmann statistics, and thus we can also
 write
 \begin{equation}
-\frac{n_1}{n_2} = \frac{g_1}{g_2} \exp (h \nu_0 / k_B T)
+\frac{n_l}{n_u} = \frac{g_l}{g_u} \exp (h \nu_{ul} / k_B T)
 \end{equation}
 We can then rearrange equation~\ref{eq:rate_einstein} in terms of the mean intensity,
-and use the fact that, in LTE, $\bar{J}_{21} = B_\nu (T)$ to write
+and use the fact that, in LTE, $\bar{J}_{ul} = B_\nu (T)$ to write
 \begin{equation}
-\bar{J}_{21} = (2 h \nu_0^3) / c^2.
+\bar{J}_{ul} = (2 h \nu_{ul}^3) / c^2.
 \end{equation}
 Since this must be true at all values of $T$ we can also show that 
 \begin{equation}
-A_{21} / B_{21} = (2 h \nu_0^3)~B_{12} / B_{21} = g_2 / g_1
+A_{ul} / B_{ul} = (2 h \nu_{ul}^3)~B_{lu} / B_{ul} = g_u / g_l
 \end{equation}
 
 
@@ -114,7 +152,29 @@ the theory was mostly applied to Stellar winds, although since then
 a wide variety of astrophysical objects have been modelled using Sobolev treatments,
 such as accreting systems (this work) and Supernovae.
 
-The Sobolev limit 
+The Sobolev limit is when the local bulk velocity gradients in a flow 
+dominate other any thermal broadening. In the presence of these steep
+velocity gradients, one can assume that the interaction of a ray with a bound-bound
+transition takes place over a small resonant zone, known as a 
+`Sobolev surface'. The length of this zone is defined by
+\begin{equation}
+l_s = \frac{v_{th}}{dv / ds}.
+\end{equation}
+It is important that the physical conditions of the flow do not change on this scale.
+If this is the case, then we can assume that all line interactions for a given 
+frequency will occur at a single `resonant' point. The location at which
+a given photon will interact with a line of frequency $\nu_{lu}$
+is then given, in velocity space, by
+\begin{equation}
+v = c~\left(\frac{\nu}{\nu_{lu}} + 1\right).
+\end{equation}
+The Sobolev optical depth is then
+\begin{equation}
+d \tau = \frac{\pi e^2}{m c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{c | dv / ds |}.
+\end{equation}
+We can see that the physical quantities determining line opacity are therefore 
+the level populations in the plasma, the velocity gradient and the atomic physics
+associated with the bound-bound transition.
 
 
 
@@ -133,7 +193,6 @@ are intuitively parallelisable problems. I will describe one specific
 Monte Carlo radiative transfer (MCRT) code, which has been used
 for the majority of the work in this thesis.
 
-
 \section{{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}
 
 \py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
@@ -146,7 +205,7 @@ focusing particularly on new aspects of our implementation of macro-atoms into t
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/flowchart.jpg}
+\includegraphics[width=1.0\textwidth]{figures/04-radtrans/flowchart.jpg}
 \caption
 {
 A flowchart showing the basic operation of \py.
@@ -155,12 +214,19 @@ A flowchart showing the basic operation of \py.
 \end{figure}
 
 
-\py\ operates in two distinct stages. First, the ionization state,
-level populations and temperature structure are calculated. This is
-done iteratively, by propagating several populations of Monte Carlo energy quanta (`photons')
-through a model wind. The geometric and kinemetic properties of the
-outflow are specified on a pre-defined spatial grid. In each of these
-iterations (`ionization cycles'), the code records estimators that 
+\py\ operates in three distinct stages, shown in figure~\ref{fig:flowchart}. 
+First, the user specifies the photon sources,
+geometry and kinematics of the system, normally with a similar parameterisation
+to the SV93 model described in section~\ref{sec:sv93_model}. The outflow
+is then discretised into a logarithmic grid with a user-specified resolution,
+and the density and velocity in each cell is calculated. 
+
+Once the basic setup process has been carried out, the ionization state,
+level populations and temperature structure are calculated.
+This is done via an iterative process, by transporting several populations of 
+Monte Carlo energy quanta (`photons' or `$r$-packets) through the outflow.
+This process is repeated until the code converges. 
+In each of these iterations (`ionization cycles'), the code records estimators that 
 characterize the radiation field in each grid cell. At the end 
 of each ionization cycle, a new electron temperature is calculated
 that more closely balances heating and cooling in the 
@@ -169,10 +235,11 @@ temperature are then used to revise the ionization state of the wind,
 and a new ionization cycle is started. The process is repeated until
 heating and cooling are balanced throughout the wind. 
 
-This converged model is then used as the basis for the second set of
-iterations (`spectral cycles'). In these, the emergent spectrum over
-the desired spectral range is synthesized by tracking populations of
-energy packets through the wind and computing the emergent spectra at
+This converged model as the basis for the second set of
+iterations (`spectral cycles'), in order to compute the synthetic spectrum based on the 
+MC estimators record during the ionization cycles. 
+The emergent spectrum over the desired spectral range is synthesized by 
+tracking populations of energy packets through the wind and computing the emergent spectra at
 a number of user-specified viewing angles.  
 
 \py\ is designed to operate in a number of different
@@ -188,7 +255,6 @@ order to correctly treat H recombination lines with
 this application, an improved treatment of ionization was implemented,
 so that the code is now capable of dealing with arbitrary
 photo-ionizing SEDs, including non-thermal and multi-component ones. 
-
 
 
 \section{Macro-atoms}
@@ -313,7 +379,12 @@ included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
 
 \subsection{Macro-Atom Estimators}
 
+
 \subsubsection{Radiation Field Estimators}
+
+One of the most important estimators is the `mean intensity in the line', $\bar{J}_{lu}$,
+which is defined by equation~\ref{eq:jbar}. 
+
 
 \subsubsection{Heating And Cooling Estimators}
 
@@ -497,12 +568,29 @@ C_{bf,simple} = ??
 The primary output from \py\ is a synthetic spectrum 
 across a range of viewing angles. 
 The code utilises a variance reduction technique in order to minimise the amount of 
-time spent in the portion of the code.
+time spent in the portion of the code. This technique is based 
+on a similar method implemented by \citep{woods1991}.
 
 
 
 
 
+
+A comparison between the two methods is shown in figure~\ref{fig:extract_demo}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/04-radtrans/extract_demo.png}
+\caption
+{
+A Synthetic spectrum after $30$ spectral cycles with $100,000$ photons
+from simple CV wind model at a $60^\circ$ viewing angle.
+Spectra produced with both the extract and live or die modes
+are shown. The effectiveness of the extract variance reduction technique can
+be clearly seen, and we can see that the spectral shape is unaltered.
+} 
+\label{fig:extract_demo}
+\end{figure}
 
 
 

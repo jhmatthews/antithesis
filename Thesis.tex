@@ -13,6 +13,8 @@
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \usepackage{epigraph}
+\usepackage{pdfpages}
+\usepackage{textcmds}
 \setlength\epigraphrule{0pt}
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
@@ -32,9 +34,11 @@
 \def\actaa{ACTAA} 
 \def\ssr{SSR}
 \def\apj{ApJ}
+\def\apjs{ApJs}
 \def\apss{AP\&SS}
 \def\pasp{PASP}
 \def\aap{A\&A}
+\def\aaps{A\&As}
 \def\mnras{MNRAS}
 \def\aj{AJ}
 \def\rmxaa{RMXAA}
@@ -113,10 +117,16 @@ Date:\\
 
 \null\vfill
 % Now comes the "Funny Quote", written in italics
-\textit{``Write a funny quote here.''}
+\textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world. And it's breathtaking.''}
 
 \begin{flushright}
-If the quote is taken from someone, their name goes here
+Seven Brief Lessons on Physics, Carlo Rovelli
+\end{flushright}
+
+\textit{``Good enough for government work.''}
+
+\begin{flushright}
+Christian Knigge
 \end{flushright}
 
 \vfill\vfill\vfill\vfill\vfill\vfill\null
@@ -217,11 +227,15 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 
 \input{Chapters/accretion} % Background Theory 
 
+\input{Chapters/outflows} % Experimental Setup
+
 \input{Chapters/radtrans} % Experimental Setup
 
 % \input{Chapters/cvpaper} % Experiment 1
 
-%\input{Chapters/Chapter5} % Experiment 2
+% \input{Chapters/agnpaper} % Experiment 2
+
+% \includepdf[pages=-]{Chapters/agnpaper.pdf}
 
 %\input{Chapters/Chapter6} % Results and Discussion
 
@@ -246,8 +260,9 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 %% ----------------------------------------------------------------
 \label{Bibliography}
 \lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
-\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{mybib}  % The references (bibliography) information are stored in the file named "Bibliography.bib"l
+\bibliographystyle{humannat}
+%\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{bibs/mybib.bib,bibs/stellar.bib,bibs/h14.bib,bibs/h13.bib,bibs/hamann.bib,bibs/krolik.bib,bibs/lk02.bib}  % The references (bibliography) information are stored in the file named "Bibliography.bib"l
 
 \end{document}  % The End
 %% ----------------------------------------------------------------
