@@ -139,7 +139,11 @@ A_{ul} / B_{ul} = (2 h \nu_{ul}^3)~B_{lu} / B_{ul} = g_u / g_l
 
 
 
-\subsubsection{Line Emission and Collisions}
+\subsubsection{Collision Strengths}
+
+As well as radiative excitation and de-excitation, bound electrons 
+can also interact with the thermal pool of free electrons, meaning that
+collisional rates also affect 
 
 
 
@@ -595,7 +599,22 @@ be clearly seen, and we can see that the spectral shape is unaltered.
 
 
 
+\section{Atomic Data}
 
+One of the big challenges in building reliable photoionization and radiative
+transfer lies in the acquisition of accurate and complete atomic datasets.
+All of the rates described so far contain a term, such as the oscillator strength 
+or dimensionless collision strength, that is dependent purely on the atomic physics
+associated with the transition. These quantities can be measured in laboratory experiments,
+or predicted from atomic structure codes which derive the atomic physics from 
+quantum theory.
+
+Photoionization cross-sections are obtained from two sources. Where possible,
+we use \top\ photoionization cross-sections. For macro-atoms,
+these cross-sections are partial and represent the cross-section for a photoionization
+from a given {\em level}. We neglect photoionizations to excited configurations
+of the upper ion. For simple-atoms they are from the ground state.
+The \top\ cross-sections have two major drawbacks in that 
 
 
 
@@ -605,8 +624,41 @@ be clearly seen, and we can see that the spectral shape is unaltered.
 
 \subsection{Motivation}
 
-Clumping is often invoked in a number of different types of outflow
-to explain everything from X-ray variability to 
+As described in section~??, observational evidence for inhomogeneities in 
+outflows is widespread. Clumping a plasma can have a significant effect on its
+ionization, emission and absorption characteristics. Clearly, the interplay between
+these effects will be somewhat complex 
+
+A number of different implementations of clumping have been explored in previous studies,
+mostly in the stellar winds community. Perhaps the simplest method is 
+when one assumes that the individual clumps are both optically and geometrically thin;
+this is known as {\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}. 
+This technique has been particularly successful in reconciling discrepant mass-loss estimates.
+It was found that one would obtain different mass-loss rates depending on whether
+they were calculated from (i) UV resonance scattering of continuum photons 
+(which scales linearly with density; a `$\rho$-diagnostic') or (ii) recombination 
+and free-free emission process (which scale with the square of density; 
+`$\rho^2$-diagnostics'). A clumped outflow would have enhanced densities in 
+certain regions, and would thus mean that $\rho^2$-diagnostics tend to 
+overestimate the total mass-loss rates. Microclumping has helped verify this
+hypothesis with radiative transfer modelling (REFs). These clumpy models also
+provide better fits to the electron scattering wings of emission lines in stellar
+winds \citep{hillier1991}.
+
+The second-generation of stellar wind codes went on step further by addressing the issue
+of {\em porosity}; that clumps will have a finite size, and thus gaps between the clumps
+may affect the emergent radiation field. This approach is known as {\em macroclumping}.
+{\bf Describe macroclumping with references.}
+
+Implementing a treatment of clumping in accretion disc wind models is challenging, for
+two main reasons. First, the physical scale lengths and density contrasts 
+in disc winds are not well-constrained from observations, especially in AGN.  
+Second, there are significant computational difficulties associated with adequately
+resolving and realistically modelling a series of small scale, high density
+regions with a MCRT code. Given the lack of knowledge about the actual 
+type of clumping, we encorporated the simpler microclumping approach into our code.
+This is partly because our primary concern was the ionization and 
+emission characteristics of the flow, and porosity was a secondary concern.
 
 
 \subsection{Microclumping}
