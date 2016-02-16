@@ -10,7 +10,76 @@
 
 \section{Accretion Disc Winds: Driving Mechanisms}
 
+Let us consider a parcel of ideal gas. By imposing nothing more than
+conservation of mass, energy and momentum on that parcel we can write down
+three equations of hydrodynamics
+\footnote{I stress that these equations are not used in hydrodynamic
+simulations in this thesis (see section ?, for example); 
+they are discussed here because they provide a natural reference point
+for exploring potential driving mechanisms for winds in accreting systems.
+}
+
+\begin{equation}
+\label{eq:continuity}
+\frac{D \rho}{Dt} + \rho \nabla \cdot \vec{v} = 0
+\end{equation}
+
+\begin{equation}
+\label{eq:motion}
+\rho \frac{Dv}{Dt} = -\nabla P + \frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B} + \rho \vec{F}_{rad} + \rho \vec{g}
+\end{equation}
+
+\begin{equation}
+\label{eq:energy}
+\rho \frac{D}{Dt} \left(\frac{e}{\rho}\right) = P \nabla \cdot \vec{v} + \rho \cal{L}
+\end{equation}
+
+Here $D$ denotes a derivative within the comoving frame of the gas parcel, $\vec{v}$ is the velocity,
+$\rho$ is the gas density, $\vec{B}$ is the local magnetic field, $\vec{F}_{rad}$ is the radiation
+force per unit mass and $\vec{g}$ denotes the gravitational acceleration vector.
+Equation~\ref{eq:continuity} is the {\em continuity equation} and describes conservation of mass. 
+Equation~\ref{eq:motion} is the {\em equation of motion} and describes conservation of momentum.
+Equation~\ref{eq:energy} is the {\em equation of energy conservation}. 
+We can use equation~\ref{eq:motion} to neatly demonstrate how an outflow can be driven. I have 
+deliberately written the equation so that all the force terms lie on the RHS. We can then see that
+for an outflow to be driven from an accreting object one simply needs one of the terms on
+the RHS to dominate over gravity, $\rho \vec{g}$. These terms thus signify three potential
+driving mechanisms.
+
+\begin{itemize}
+	\item Magnetic Forces, $\frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B}$.
+	\item Radiative Forces, $\rho \vec{F}_{rad}$.
+	\item Thermal Pressure, $-\nabla P$.
+\end{itemize}
+
+We can now examine under what physical conditions (and in which corresponding astrophysical objects)
+we might expect these forces to overcome gravity and cause a parcel of mass to escape to infinity.
+In other words: {\em what might drive a wind?}
+
 \subsection{Thermal Winds}
+
+In hydrostatic equilibrium (HSE), thermal pressure balances gravity and no other forces 
+are present, meaning that the equation of motion can be written as 
+\begin{equation}
+\label{eq:hse}
+\rho \frac{Dv}{Dt} = -\nabla P +  \rho \vec{g} = 0
+\end{equation}
+Clearly, if the thermal pressure is then significantly 
+increased then this equilibrium condition no longer holds. 
+This can occur in accretion discs at temperatures in excess of $\sim10^7$~K --
+where other forces are negligible compared to thermal pressure -- 
+and where the escape velocities are relatively low (i.e. far out in the disc).
+Due to the temperature and gravity scalings, this means
+that XRBs are natural candidates for showing evidence of thermally driven
+winds. The outer disc can be heated to the Compton temperature by the central X-ray source,
+potentially driving relatively high mass-loss rate outflows \citep{begelman1983,woods1996}. 
+This driving mechanism has been proposed as a natural explanation
+for the ever-present equatorial outflows in soft state XRBs \citep{ponti2012}.
+However, they are much less likely candidates in CVs and AGN {\bf Discuss scaling
+arguments with equations?}.
+
+
+\subsection{Radiatively Driven Winds}
 
 \subsection{Line-driven Winds}
 
