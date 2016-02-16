@@ -185,17 +185,22 @@ associated with the bound-bound transition.
 \subsubsection{Escape Probabilities}
 
 
+
+
+
 \subsection{Monte Carlo approaches}
 
 Simple radiation transfer problems can be solved analytically,
-but with more complicated geometries it is necessary to utilise Monte Carlo
+but with more complicated geometries it is necessary to use Monte Carlo
 techniques, which are easily solved with modern computing approaches and 
-are intuitively parallelisable problems.
+are intuitively parallelisable problems. I will describe one specific 
+Monte Carlo radiative transfer (MCRT) code, which has been used
+for the majority of the work in this thesis.
 
 \section{{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}
 
 \py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
-programming language} is a Monte Carlo ionization and radiative transfer code. 
+programming language.} is a Monte Carlo  ionization and radiative transfer code. 
 The code has already been described extensively by LK02, SDL05 and 
 Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
 focusing particularly on new aspects of our implementation of macro-atoms into the code.
@@ -675,13 +680,17 @@ of enhancing `$\rho^2$' processes such as recombination or collisional excitatio
 and 
 
 
-
-
 \section{Code Validation}
 
+The main challenge for high performance scientific computing can be 
+elegantly summarised by Ferland's (2002) epitaph, `Reliability in the face 
+of complexity'. We have already delved into some of the complexity in this case,
+so it is important to assess whether our code effectively 
+
+\subsection{Testing against Cloudy}
 
 
-
+\subsection{Testing against Tardis}
 
 
 
