@@ -23,6 +23,12 @@
 \newblock {\em {The Jet Paradigm}}, volume 794 of {\em Lecture Notes in
   Physics, Berlin Springer Verlag}.
 
+\bibitem[\protect\astroncite{{Benz} et~al.}{1983}]{benz1983}
+{Benz}, A.~O., E.~{Fuerst}, and A.~L.
+  {Kiplinger}\leavevmode\nopagebreak\newline 1983.
+\newblock {First detection of radio emission from a dwarf nova}.
+\newblock {\em \nat}, 302:45.
+
 \bibitem[\protect\astroncite{{Cohen} et~al.}{1986}]{cohen1986}
 {Cohen}, R.~D., R.~C. {Puetter}, R.~J. {Rudy}, T.~B. {Ake}, and C.~B.
   {Foltz}\leavevmode\nopagebreak\newline 1986.
@@ -86,6 +92,12 @@
 \newblock {The spectra of some spiral nebulae and globular star clusters}.
 \newblock {\em Lick Observatory Bulletin}, 5:71--77.
 
+\bibitem[\protect\astroncite{{Fender}}{2001}]{fender2001}
+{Fender}, R.~P.\leavevmode\nopagebreak\newline 2001.
+\newblock {Powerful jets from black hole X-ray binaries in low/hard X-ray
+  states}.
+\newblock {\em \mnras}, 322:31--42.
+
 \bibitem[\protect\astroncite{{Frank} et~al.}{1992}]{fkrbook}
 {Frank}, J., A.~{King}, and D.~{Raine}\leavevmode\nopagebreak\newline 1992.
 \newblock {\em {Accretion power in astrophysics.}}
@@ -147,6 +159,12 @@
 \newblock {The ubiquity of the rms-flux relation in black hole X-ray binaries}.
 \newblock {\em \mnras}, 422:2620--2631.
 
+\bibitem[\protect\astroncite{{Higginbottom} et~al.}{2013}]{higginbottom2013}
+{Higginbottom}, N., C.~{Knigge}, K.~S. {Long}, S.~A. {Sim}, and J.~H.
+  {Matthews}\leavevmode\nopagebreak\newline 2013.
+\newblock {A simple disc wind model for broad absorption line quasars}.
+\newblock {\em \mnras}, 436:1390--1407.
+
 \bibitem[\protect\astroncite{{Hillier} and {Miller}}{1999}]{hilliermiller1999}
 {Hillier}, D.~J. and D.~L. {Miller}\leavevmode\nopagebreak\newline 1999.
 \newblock {Constraints on the Evolution of Massive Stars through Spectral
@@ -202,6 +220,12 @@
   {Cottis}\leavevmode\nopagebreak\newline 2008.
 \newblock {The intrinsic fraction of broad-absorption line quasars}.
 \newblock {\em \mnras}, 386:1426--1435.
+
+\bibitem[\protect\astroncite{{K{\"o}rding} et~al.}{2008}]{kordingDNjet2008}
+{K{\"o}rding}, E., M.~{Rupen}, C.~{Knigge}, R.~{Fender}, V.~{Dhawan},
+  M.~{Templeton}, and T.~{Muxlow}\leavevmode\nopagebreak\newline 2008.
+\newblock {A Transient Radio Jet in an Erupting Dwarf Nova}.
+\newblock {\em Science}, 320:1318--.
 
 \bibitem[\protect\astroncite{{Krolik} and {Begelman}}{1986}]{krolik1986}
 {Krolik}, J.~H. and M.~C. {Begelman}\leavevmode\nopagebreak\newline 1986.
