@@ -90,12 +90,25 @@ In binary systems, there are only two ways by which matter can transfer
 from the secondary to the compact object. One is by Roche Lobe-overflow (RLOF),
 whereby stellar evolution causes the donor star to fill it's Roche Lobe, the surface
 of equipotential around the star. The alternative is that a radiatively driven wind
-may expel stellar material from the donor, allowing some of it to flow onto the compact object.
+may expel stellar material from the donor, allowing some of it to flow 
+onto the compact object.
 Although stellar wind accretion is common in some classes (REFs), here I will focus on 
 RLOF as it is more common in the systems that commonly exhibit high-state accretion discs
 and associated outflows.
 
-The Roche potential, $\Phi_R$, can be expressed as ?
+Let us consider a binary system, with masses $M_1$ and $M_2$, at positions
+$\vec{r}_1$ and $\vec{r}_2$. The Roche potential, $\Phi_R$, in this system 
+is then
+\begin{equation}
+\Phi_R = - \frac{GM_1}{| \vec{r} - \vec{r}_1 |} - 
+\frac{GM_2}{| \vec{r} - \vec{r}_2 |} - 1/2 (\omega \wedge \vec{r})^2,
+\label{eq:roche}
+\end{equation} 
+where $\omega$ is the angular velocity of the binary and is a vector normal to
+the orbital plane. This potential is plotted in figure~? for a mass ratio, 
+$q = M_2 / M_1$ of 0.25.
+
+
 
 
 
@@ -176,6 +189,7 @@ shape, can be clearly seen.
 \includegraphics[width=1.0\textwidth]{figures/01-intro/sscyg_spec.png}
 \caption
 {
+[Spectra of SS Cyg during an outburst cycle]
 {\sl Credit: Hessman et al. 1984 / Dhillon et al. 1996.} 
 Spectra of SS Cyg during an outburst cycle, showing the evolution from 
 minimum to maximum light. The rise is characterised by the appearance of an
@@ -260,7 +274,11 @@ Nowadays, the term quasar normally has very little to do with
 radio emission and is often used interchangeably with QSO. 
 Indeed, throughout this thesis I shall refer to a quasar as simply a bright, 
 massive AGN; one with sufficiently high luminosity that it dominates the emission 
-from it's host galaxy. 
+from it's host galaxy.
+
+\subsection{AGN Taxonomy}
+\label{sec:agn_taxonomy}
+
 
 \subsection{AGN Unification and the dusty Torus}
 
@@ -269,7 +287,7 @@ for this dichotomy was not forthcoming until a study by \cite[][AM85]{antonucci1
 They showed unambiguously that the nearby Seyfert 2 NGC~1068 is simply an obscured
 type 1 AGN, by finding that broad emission lines appeared in the spectrum of
 {\em polarised} flux. This provided the basis for the first successful attempt
-to unify AGN behaviour \citep[UP95][]{UP95}, as it elegantly 
+to unify AGN behaviour, as it elegantly 
 explained the apparent disconnect between the two types of 
 AGN as simply a viewing angle effect. 
 The obscuring structure became known as the `torus' \citep{krolik1986}, 
@@ -277,8 +295,12 @@ due to its geometry, and it was soon realised that this structure
 may be made of dust, in which case it could also be responsible for the infra-red (IR)
 bump in AGN \citep{neugebauer1979}.
 
-The UP95 scheme went further that the original unification model
-proposed by AM85 as it also attempted to explain other AGN behaviour; 
+The \citep[][UP95]{UP95} scheme went further than the original unification model
+proposed by AM85 as it also attempted to explain radio AGN phenomena.
+The picture they proposed is shown in figure~\ref{fig:unification}.
+This model attempts to explain all of the types of AGN described in
+section~\ref{sec:agn_taxonomy} merely as a function of viewing angle
+and presence, or lack thereof, of a radio jet. 
 
 Since the seminal works by AM85 and UP95, 
 the picture has become somewhat more complicated. 
@@ -295,7 +317,7 @@ Furthermore, dusty {\em polar} outflows
 have been found to be important IR emitters \citep{hoenig2013}, implying
 that, even when it comes to dust, the torus is not the whole picture.
 Despite these complications, the AGN torus unification picture still helps 
-explain a lot of AGN spectral components, and represents a good framework 
+explain a lot of AGN behaviour, and represents a good framework 
 to test with observations. 
 
 \subsection{The Broad Line Region and Connection to Outflows}
@@ -397,6 +419,7 @@ should be used as `accretion laboratories'.
 \centering
 \includegraphics[width=0.7\textwidth]{figures/02-accretion/kording_hid.png}
 \caption
+[Hardness-intensity diagrams for three types of accreting objects.]
 {
 {\sl Credit: Kording et al. XXXX.} 
 Caption.
