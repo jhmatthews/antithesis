@@ -12,6 +12,12 @@
 \newblock {Spectropolarimetry and the nature of NGC 1068}.
 \newblock {\em \apj}, 297:621--632.
 
+\bibitem[\protect\astroncite{{Ar{\'e}valo} and {Uttley}}{2006}]{arevalo2006}
+{Ar{\'e}valo}, P. and P.~{Uttley}\leavevmode\nopagebreak\newline 2006.
+\newblock {Investigating a fluctuating-accretion model for the spectral-timing
+  properties of accreting black hole systems}.
+\newblock {\em \mnras}, 367:801--814.
+
 \bibitem[\protect\astroncite{{Begelman} et~al.}{1983}]{begelman1983}
 {Begelman}, M.~C., C.~F. {McKee}, and G.~A.
   {Shields}\leavevmode\nopagebreak\newline 1983.
@@ -47,6 +53,13 @@
 \newblock {The Typecasting of Active Galactic Nuclei: Mrk 590 no Longer Fits
   the Role}.
 \newblock {\em \apj}, 796:134.
+
+\bibitem[\protect\astroncite{{Dhillon}}{1996}]{dhillon1996}
+{Dhillon}, V.~S.\leavevmode\nopagebreak\newline 1996.
+\newblock {The Nova-like variables}.
+\newblock In {\em IAU Colloq. 158: Cataclysmic Variables and Related Objects},
+  A.~{Evans} and J.~H. {Wood}, eds., volume 208 of {\em Astrophysics and Space
+  Science Library}, P.~~3.
 
 \bibitem[\protect\astroncite{{Edge} et~al.}{1959}]{edge1959}
 {Edge}, D.~O., J.~R. {Shakeshaft}, W.~B. {McAdam}, J.~E. {Baldwin}, and
@@ -107,6 +120,15 @@
 \newblock {RW Sextantis, a disk with a hot, high-velocity wind}.
 \newblock {\em \apj}, 258:209--216.
 
+\bibitem[\protect\astroncite{{G{\"u}ltekin} et~al.}{2009}]{gultekin2009}
+{G{\"u}ltekin}, K., D.~O. {Richstone}, K.~{Gebhardt}, T.~R. {Lauer},
+  S.~{Tremaine}, M.~C. {Aller}, R.~{Bender}, A.~{Dressler}, S.~M. {Faber},
+  A.~V. {Filippenko}, R.~{Green}, L.~C. {Ho}, J.~{Kormendy}, J.~{Magorrian},
+  J.~{Pinkney}, and C.~{Siopis}\leavevmode\nopagebreak\newline 2009.
+\newblock {The M-{$\sigma$} and M-L Relations in Galactic Bulges, and
+  Determinations of Their Intrinsic Scatter}.
+\newblock {\em \apj}, 698:198--221.
+
 \bibitem[\protect\astroncite{{Hamann} and {Koesterke}}{1998}]{hamann1998}
 {Hamann}, W.-R. and L.~{Koesterke}\leavevmode\nopagebreak\newline 1998.
 \newblock {Spectrum formation in clumped stellar winds: consequences for the
@@ -159,6 +181,13 @@
 \newblock {The ubiquity of the rms-flux relation in black hole X-ray binaries}.
 \newblock {\em \mnras}, 422:2620--2631.
 
+\bibitem[\protect\astroncite{{Hessman} et~al.}{1984}]{hessman1984}
+{Hessman}, F.~V., E.~L. {Robinson}, R.~E. {Nather}, and E.-H.
+  {Zhang}\leavevmode\nopagebreak\newline 1984.
+\newblock {Time-resolved spectroscopy of SS Cygni at minimum and maximum
+  light}.
+\newblock {\em \apj}, 286:747--759.
+
 \bibitem[\protect\astroncite{{Higginbottom} et~al.}{2013}]{higginbottom2013}
 {Higginbottom}, N., C.~{Knigge}, K.~S. {Long}, S.~A. {Sim}, and J.~H.
   {Matthews}\leavevmode\nopagebreak\newline 2013.
@@ -170,6 +199,12 @@
 \newblock {Constraints on the Evolution of Massive Stars through Spectral
   Analysis. I. The WC5 Star HD 165763}.
 \newblock {\em \apj}, 519:354--371.
+
+\bibitem[\protect\astroncite{{Hogg} and {Reynolds}}{2015}]{hogg2015}
+{Hogg}, J.~D. and C.~{Reynolds}\leavevmode\nopagebreak\newline 2015.
+\newblock {Testing the Propagating Fluctuations Model with a Long, Global
+  Accretion Disk Simulation}.
+\newblock {\em ArXiv e-prints}.
 
 \bibitem[\protect\astroncite{{H{\"o}nig} et~al.}{2013}]{hoenig2013}
 {H{\"o}nig}, S.~F., M.~{Kishimoto}, K.~R.~W. {Tristram}, M.~A. {Prieto},
@@ -227,6 +262,12 @@
 \newblock {A Transient Radio Jet in an Erupting Dwarf Nova}.
 \newblock {\em Science}, 320:1318--.
 
+\bibitem[\protect\astroncite{{Kotov} et~al.}{2001}]{kotov2001}
+{Kotov}, O., E.~{Churazov}, and M.~{Gilfanov}\leavevmode\nopagebreak\newline
+  2001.
+\newblock {On the X-ray time-lags in the black hole candidates}.
+\newblock {\em \mnras}, 327:799--807.
+
 \bibitem[\protect\astroncite{{Krolik} and {Begelman}}{1986}]{krolik1986}
 {Krolik}, J.~H. and M.~C. {Begelman}\leavevmode\nopagebreak\newline 1986.
 \newblock {The Dynamical State of the Obscuring Torus in Seyfert Galaxies}.
@@ -270,6 +311,11 @@
 \newblock {Monte Carlo transition probabilities. II.}
 \newblock {\em \aap}, 403:261--275.
 
+\bibitem[\protect\astroncite{{Lyubarskii}}{1997}]{lyubarskii1997}
+{Lyubarskii}, Y.~E.\leavevmode\nopagebreak\newline 1997.
+\newblock {Flicker noise in accretion discs}.
+\newblock {\em \mnras}, 292:679.
+
 \bibitem[\protect\astroncite{{Marinucci} et~al.}{2016}]{marinucci2016}
 {Marinucci}, A., S.~{Bianchi}, G.~{Matt}, D.~M. {Alexander},
   M.~{Balokovi{\'c}}, F.~E. {Bauer}, W.~N. {Brandt}, P.~{Gandhi},
@@ -292,6 +338,12 @@
 \newblock {Changing look: from Compton-thick to Compton-thin, or the rebirth of
   fossil active galactic nuclei}.
 \newblock {\em \mnras}, 342:422--426.
+
+\bibitem[\protect\astroncite{{McConnell} and {Ma}}{2013}]{mcconnell2013}
+{McConnell}, N.~J. and C.-P. {Ma}\leavevmode\nopagebreak\newline 2013.
+\newblock {Revisiting the Scaling Relations of Black Hole Masses and Host
+  Galaxy Properties}.
+\newblock {\em \apj}, 764:184.
 
 \bibitem[\protect\astroncite{{McHardy} et~al.}{2006}]{mchardy2006}
 {McHardy}, I.~M., E.~{Koerding}, C.~{Knigge}, P.~{Uttley}, and R.~P.

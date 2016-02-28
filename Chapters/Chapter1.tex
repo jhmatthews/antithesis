@@ -136,8 +136,9 @@ opacity would create a somewhat different spectrum. It is also possible that {\e
 treatments are realistic. We shall therefore devote a little time to discussing
 the observational arguments for accretion discs and the current problems 
 
+Figure~? shows 
 
-\section{Observational Appearance}
+\subsection{Observational Appearance}
 
 
 
@@ -147,46 +148,75 @@ the observational arguments for accretion discs and the current problems
 
 Cataclysmic variables (CVs) are systems in which a white dwarf
 accretes matter from a donor star via Roche-lobe overflow. 
-Broadly speaking, they can be classified according to the 
+CVs are not always accreting objects; classical novae and super soft sources 
+(SSS) have luminosities dominated by nuclear burning.
+{\em Accreting} CVs -- the focus here -- can be classified according to the 
 magnetic field strength ($B$) and photometric activity. 
 Magnetic systems are classified as either `Polars' ($B \gtrsim 10^7$~G)
 or `Intermediate Polars' ($10^6 \lesssim B \gtrsim 10^7$~G);
 in these systems the accretion flow is dominated by the WDs 
-magnetic field inside the Alfven radius (REF). 
-
+magnetic field inside the Alfven radius (REF). In polars this radius
+is large enough that no disc forms at all (REFs).
 When $B \lesssim 10^6$~G then the accreting material can fall
 onto the WD via a disc, and the CV is classified as non-magnetic.
-There are a number of 
+There are a two main types of non-magnetic CVs; Dwarf Novae and Nova-like
+variables.
+
+\subsubsection{Dwarf Novae}
+
+Dwarf novae (DNe) are accreting systems that are characterised 
+by periods of quiescence and outburst on varying timescales. One of the 
+most famous DNe is SS Cyg, whose century of activity is shown in 
+figure~\ref{fig:sscyg}. The repeated outbursts, with characteristic 
+shape, can be clearly seen.
+
+\nocite{dhillon1996,hessman1984}
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/sscyg_spec.png}
+\caption
+{
+{\sl Credit: Hessman et al. 1984 / Dhillon et al. 1996.} 
+Spectra of SS Cyg during an outburst cycle, showing the evolution from 
+minimum to maximum light. The rise is characterised by the appearance of an
+optically thick accretion disc spectrum. The flux scale is approximate.
+} 
+\label{fig:kording_hid}
+\end{figure}
+
+\subsubsection{Nova-like Variables}
+
+Nova-like variables (NLs) are similar to DNe in overall structure,
+except that the disc is always in a relatively 
+high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
+NLs are therefore one of the best `laboratories' for studying steady-state
+accretion discs and testing theoretical models for accretion.
+NLs generally exhibit a series of strong emission lines 
 
 
-% In non-magnetic systems th accretion is mediated by a Keplerian disc
-% around the white dwarf (WD). Nova-like variables (NLs) are a subclass
-% of CVs in which the  disc is always in a relatively
-% high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).  
-% This makes NLs an excellent laboratory for studying the properties of 
-% steady-state accretion discs. 
 
-\subsection{X-ray Binaries}
+\subsection{Low Mass X-ray Binaries}
 
 X-ray binaries are similar to CVs in structure, except that the compact object
 is either a neutron star (NS) or black hole (BH). The accretion disc 
 emits in the soft X-rays, and an additional hard X-ray power law is also 
 seen in the spectrum (REFs). This hard component is normally attributed
 to Compton up-scattering of seed disc photons by some kind of `corona'
-of hot electrons close to the BH (REFs). 
+of hot electrons close to the BH (REFs). A characteristic spectrum is shown 
+in figure~\ref{fig:xrb_spec}.
 
 Although I do not discuss XRBs directly in this thesis, it is instructive
 to discuss some of their observational appearance as it is instructive 
 for understanding the theory of disc winds, as well as their wider significance. 
 The discovery that XRBs follow similar tracks on a hardness-intensity diagram (REFs)
-is particularly interesting in this regard, especially since Ponti et al. (2012)
+is particularly interesting in this regard, especially since \cite{ponti2012}
 showed that broad Fe absorption lines are only seen in the soft-state 
-high-inclination systems, implying that equatorial outflows are intrinsic to 
-the accretion process (see figure~\ref{fig:ponti_cartoon}). Although the driving mechanism
+high-inclination systems (see section~\ref{sec:xrb_winds}). 
+This implies that equatorial outflows are intrinsic to 
+the accretion process. Although the driving mechanism
 is almost certainly different to CVs (REFs), the similarity in general structure 
 to models for CVs and quasars is striking.
 
-\subsubsection{X-ray Binaries}
 
 % \begin{figure}
 % \centering
@@ -235,17 +265,22 @@ from it's host galaxy.
 \subsection{AGN Unification and the dusty Torus}
 
 Although Seyfert had identified type 1 and 2 AGN, a physical explanation
-for this dichotomy was not forthcoming until work by \cite{antonucci1985}.
+for this dichotomy was not forthcoming until a study by \cite[][AM85]{antonucci1985}.
 They showed unambiguously that the nearby Seyfert 2 NGC~1068 is simply an obscured
 type 1 AGN, by finding that broad emission lines appeared in the spectrum of
 {\em polarised} flux. This provided the basis for the first successful attempt
-to unify AGN behaviour \citep{UP95}, as it elegantly explained the apparent disconnect between
-the two types of AGN as simply a viewing angle effect. The obscuring structure became known as 
-the `torus' \citep{krolik1986}, due to its geometry, and it was soon realised that this structure
+to unify AGN behaviour \citep[UP95][]{UP95}, as it elegantly 
+explained the apparent disconnect between the two types of 
+AGN as simply a viewing angle effect. 
+The obscuring structure became known as the `torus' \citep{krolik1986}, 
+due to its geometry, and it was soon realised that this structure
 may be made of dust, in which case it could also be responsible for the infra-red (IR)
 bump in AGN \citep{neugebauer1979}.
 
-Since Antonucci \& Miller's seminal study, 
+The UP95 scheme went further that the original unification model
+proposed by AM85 as it also attempted to explain other AGN behaviour; 
+
+Since the seminal works by AM85 and UP95, 
 the picture has become somewhat more complicated. 
 Variable X-ray absorption has been detected in so-called `Changing look'
 AGN \citep{matt2003,puccetti2007}, even in NGC 1068 itself \citep{marinucci2016}.
@@ -265,8 +300,8 @@ to test with observations.
 
 \subsection{The Broad Line Region and Connection to Outflows}
 
-Within the 
-
+In the UP95 unification model, the broad emission lines
+come from a series of virialised clouds close to the disc plane.
 As noted by \cite[][hereafter MCGV95]{MCGV95}, there are a number of problems with
 the BLR `cloud' model, perhaps most notably that there is no obvious 
 physical origin for a series of virialised clouds. While there are exceptions
@@ -281,7 +316,7 @@ degrees of freedom in a model, we should first test if known quasar phenomenolog
 (winds) can explain other aspects of their observational appearance.
 I have illustrated this general principle with the `Occam's quasar' 
 cartoon shown in figure~\ref{fig:occam}. This is the picture that I will
-to test in the latter, quasar-focused sections of this thesis, and the general
+quantitatively test in the latter, quasar-focused sections of this thesis, and the general
 principle can even be applied to cataclysmic variables and other accreting objects.
 
 
@@ -320,7 +355,7 @@ However, an alternative explanation, suggested by Knigge et al.
 is that recombination continuum emission from the base of the 
 disc wind might fill in the disc's Balmer absorption edge and flatten the UV spectrum.
 
-\subsection{The Big Blue Blump in AGN}
+\subsection{The Big Blue Bump in AGN}
 
 \subsubsection{The Accretion Disc Size Problem}
 
@@ -339,18 +374,19 @@ known for sometime that there exists a linear relationship
 between the flux and absolute root-mean-square (rms) amplitude
 of this variability. This was discovered first in XRBs and AGN 
 \citep{uttley2001, uttley2005, heil2012}, but it has been shown
-more recently that the relationship extends to AWDs and even YSOs 
+more recently that the relationship extends to CVs and even YSOs 
 \citep{scaringi2012,scaringi2015a}. The relationship is not limited
-to one type of AWD, as it is present in both NLs and DNe \citep{vandesande2015}.
+to one type of CV, as it is present in both NLs and DNe \citep{vandesande2015}.
  
 The model that best reproduces this behaviour is the so-called
-`fluctuating accretion disc' model (REFs). It has been shown that 
+`fluctuating accretion disc' model \citep{lyubarskii1997,kotov2001,
+arevalo2006,hogg2015}. It has been shown that 
 additive processes cannot reproduce the behaviour, and a multiplicative
-mechanism is required (REFs). 
+mechanism is required \citep{uttley2005}. 
 Regardless of the mechanism, the rms-flux relation is one of the most
 clear-cut examples of a universal accretion phenomenon. 
-It tells us that at least some of the behaviour in AWD discs
-is present in AGN and XRB, strengthening the argument that AWDs
+It tells us that at least some of the behaviour in CV discs
+is present in AGN and XRBs, strengthening the argument that CVs
 should be used as `accretion laboratories'. 
 
 
