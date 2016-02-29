@@ -695,5 +695,38 @@ results.
 \subsection{Testing against Tardis}
 
 
+\section{Code Maintenance and Version Control}
+
+As part of the expansion of the team working on \py\, I was responsible
+for bringing the code under the auspices of a robust version control system.
+Thanks to these efforts, the code is now hosted on GitHub at 
+\url{https://github.com/agnwinds/python/}. Our team uses a Pull \& Fork model
+for collaborative code development, in which major changes are made in a 
+forked repository before the developer submits a `Pull request' to the main 
+repository. To test the code, we use a combination of Travis CI build tests 
+-- run per commit to the upstream repo -- and our own test suite which is 
+run every night on a multi-core server. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/github1.png}
+\caption
+{
+Commit history from Feb 3, 2013 to Feb 29, 2016, showing the regular code development
+that makes version control such a necessity to a collaborative code project. Produced
+using the Github API and plotting capability.
+} 
+\label{fig:github}
+\end{figure}
+
+\subsection{Parallelisation} 
+
+
+
+
+
+
+
+
 
 
