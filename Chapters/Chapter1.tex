@@ -23,7 +23,8 @@ system, or a $\sim10^{10}~M_\odot$ black hole.
 Outflows are ubiquitous in accreting systems. We see collimated radio jets in AGN 
 \citep{hazard1963,potash1980,perley1984,marscher2006} and XRBs \citep{bellonijet2010}, 
 and there is even evidence of extended radio emission in CVs \citep{benz1983,kording2007}. These radio jets
-tend to appear in specific accretion states \citep{fender2001,kordingDNjet2008}, implying an intrinsic connection to the 
+tend to appear in specific accretion states \citep{fender2001,kordingDNjet2008}, 
+implying an intrinsic connection to the 
 accretion process. Even more intriguing, in XRBs less collimated, mass-loaded outflows
 or {\em winds} are observed in the opposite accretion state, possibly emanating from the accretion disc.
 Evidence for disc winds is widespread across the mass range, but perhaps the most spectacular indication
@@ -83,44 +84,59 @@ and discuss potential avenues for future work.
 The basic phenomenon of accretion- matter falling into a gravitational potential well- 
 is a ubiquitous one in astrophysics. 
 
+\subsection{Accretion power}
 
-\subsection{Roche Lobe-Overflow}
-
-In binary systems, there are only two ways by which matter can transfer 
-from the secondary to the compact object. One is by Roche Lobe-overflow (RLOF),
-whereby stellar evolution causes the donor star to fill it's Roche Lobe, the surface
-of equipotential around the star. The alternative is that a radiatively driven wind
-may expel stellar material from the donor, allowing some of it to flow 
-onto the compact object.
-Although stellar wind accretion is common in some classes (REFs), here I will focus on 
-RLOF as it is more common in the systems that commonly exhibit high-state accretion discs
-and associated outflows.
-
-Let us consider a binary system, with masses $M_1$ and $M_2$, at positions
-$\vec{r}_1$ and $\vec{r}_2$. The Roche potential, $\Phi_R$, in this system 
-is then
+The energy, $dE$ released by a parcel of mass $dm$ falling 
+onto an object of mass $M$ and radius $R$
+is given by
 \begin{equation}
-\Phi_R = - \frac{GM_1}{| \vec{r} - \vec{r}_1 |} - 
-\frac{GM_2}{| \vec{r} - \vec{r}_2 |} - 1/2 (\omega \wedge \vec{r})^2,
-\label{eq:roche}
+dE = \frac{GM dm}{R}
+\label{eq:acc_energy}
 \end{equation} 
-where $\omega$ is the angular velocity of the binary and is a vector normal to
-the orbital plane. This potential is plotted in figure~? for a mass ratio, 
-$q = M_2 / M_1$ of 0.25.
+Meaning that the accretion power can then be given by
+\begin{equation}
+L_{acc} = \frac{GM \dot{m}}{R}
+\label{eq:acc_energy}
+\end{equation} 
+We can also parameterise any energetic process with the form
+\begin{equation}
+\Delta E = \eta \dot{m} c^2
+\label{eq:restmass}
+\end{equation} 
+where $\eta$ is some efficiency. Nuclear fusion is one of the more efficient
+energetic processes in the universe, with an efficient of
+$\eta=0.007$. If we rearrange the above equations in terms of $\eta$ we find
+\begin{equation}
+\eta = \frac{G}{c^2} \frac{M}{R}.
+\label{eq:eta}
+\end{equation} 
+In other words, the efficiency of accretion is directly related to the {\em compactness}
+of the central object. Values of compactness for four different compact objects
+are shown in table~\ref{compactness}. 
+
+% \begin{table}
+% \centering
+% \begin{tabular}{p{2cm}p{2cm}p{2cm}p{2cm}}
+% \hline Object & $M (M_\odot)$ & $R$ (cm) & $\eta$ \\ 
+% \hline \hline 
+% White Dwarf & $0.8$ & $7\times10^{8}$
+% Neutron Star & $1.4$ & 
+% Black Hole & $10$ & 
+% SMBH & $10^9$ & $8.85\times10^{14}$
+% \end{tabular}
+% \centering
+% \caption{
+% Values of compactness for four different compact objects.
+% }
+% \label{wind_param}
+% \label{modelb_table}
+% \end{table}
 
 
 
+\subsection{Steady-state Accretion Discs: The $\alpha$-prescription}
 
-
-\subsection{Accretion discs}
-
-The basic phenomenon of accretion- matter falling into a gravitational potential well- 
-is a ubiquitous one in astrophysics. The details of how and where the energy is released
-and how angular momentum is transported is subject to a number of different 
-interpretations, mainly depending on the {\em geometry} of the accretion flow.
-
-
-
+\label{sec:alpha_disc}
 
 The so-called $\alpha$-disc model developed by \cite[][hereafter SS73]{shakurasunyaev1973} is
 currently the leading candidate for explaining how energy and angular momentum
@@ -128,34 +144,152 @@ is transported an accretion disc. The starting point for this model is the param
 of viscosity using a simple form of
 \begin{equation}
 \nu = \alpha c_s H.
+\label{eq:viscosity}
 \end{equation}
-Viscous torques then allow the conversion of orbital kinetic energy into heat, which 
-
-
-By considering the energy released through viscous dissipation 
-in the disc it is possible to derive a temperature distribution as a function of 
-radius \citep{shakurasunyaev1973, fkrbook}. 
-
+Viscous torques then allow the conversion of orbital kinetic energy into heat, 
+which can be radiated away. If we then make one further assumption, that the accretion rate is
+constant throughout the disc, then we can write down a mass continuity equation
+valid at all radii, given by
 \begin{equation}
-T(R) =  
+\dot{m} \equiv 2 \pi R V_R \Sigma = 0
 \end{equation}
+where $\Sigma$ is the surface density at that point. The angular momentum equation becomes, in this case
+\begin{equation}
+\nu^\prime \Sigma = \frac{\dot{m}}{3 \pi} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]
+\label{eq:viscous_angmom}
+\end{equation}
+The viscous torques throughout the disc cause a local loss of mechanical energy, allowing 
+one to derive \citep[see, e.g.][]{fkrbook} a rate of viscous dissipation, per unit area, given by
+\begin{equation}
+D(R) = \frac{1}{2} \nu^\prime \Sigma (R \Omega^\prime)^2.
+\label{eq:dissipation1}
+\end{equation}
+Here, $D(R)$ is proportional to the derivative of the angular velocity, $\Omega^\prime=d\Omega/dR$.
+By combining equations~\ref{eq:dissipation1} and \ref{eq:viscous_angmom} we can show that the 
+viscous dissipation rate is 
+\begin{equation}
+D(R) = \frac{G M \dot{m}}{8 \pi R^3} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]
+\label{eq:dissipation2}
+\end{equation}
+where we have also set the angular velocity to the Keplerian velocity. 
+This expression is, importantly, independent of viscosity -- which is fortunate, because
+we do not know what value of $\alpha$ to use in equation~\ref{eq:viscosity}.
+This result comes about because of the implicit assumption that the viscosity regulates
+the mass accretion rate so as to achieve a steady state.
 
-It is important to recognise that the work of \cite{shakurasunyaev1973} 
+We can now integrate across the whole disc to obtain the disc luminosity,
+\begin{equation}
+L_{disc} = 2 \int^\infty_{R_*} D(R) 2\pi R dR = \frac{G M \dot{m}}{2 R_*} = \frac{1}{2} L_{acc}.
+\label{eq:ldisc}
+\end{equation}
+This result can also be shown by considering the binding energy of gas at $R_*$ and infinity.
+From equation~\ref{eq:dissipation2} one can also derive an effective temperature distribution,
+by setting
+\begin{equation}
+\sigma T_{eff}^4 (R) = D(R),
+\end{equation}
+which then gives
+\begin{equation}
+T_{eff} (R) = T_* (R / R_*)^{-3/4},
+\end{equation}
+where
+\begin{equation}
+T_* = \left ( \frac{3 G M \dot{m}}{8 \pi R_*^3 \sigma} \right)^{1/4}.
+\end{equation}
+Now we have not only derived the total luminosity of an accretion disc, but
+also the effective temperature profile which will govern the shape of the emergent SED.
+This temperature profile is shown in figure~\ref{disk_t}
+for the same four objects shown in
+table~\ref{compactness}, assuming an Eddington fraction of 0.2.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/disk_t.png}
+\caption
+[The temperature profile of an accretion disc for three different classes
+of compact object.]
+{
+The temperature profile of an accretion disc for three different classes
+of compact object.
+} 
+\label{fig:disk_t}
+\end{figure}
+
+It is important to recognise that the steady-state disc treatment
 {\sl does not specify the nature of the disc SED}. What it does do is 
 say where energy is originally released. Typically,
 accretion discs are modelled as a series of annuli each emitting 
-as blackbodies, but it is possible that a disc atmosphere with frequency-dependent
-opacity would create a somewhat different spectrum. It is also possible that {\em neither} of these 
-treatments are realistic. We shall therefore devote a little time to discussing
-the observational arguments for accretion discs and the current problems 
-
-Figure~? shows 
-
-\subsection{Observational Appearance}
-
+as blackbodies, but a disc atmosphere with frequency-dependent
+opacity would create a somewhat different spectrum. 
+Figure~? shows the blackbody SEDs expected for the same objects as figure~\ref{fig:disk_t}.
+Figure~? shows a comparison between a disc atmosphere model and
+blackbody model for a cataclysmic variable accretion disc, showing
+the differences in spectral shape caused by frequency-dependent opacities
+in the disc. It is of course possible that {\em neither} blackbody or disc atmosphere
+treatments are realistic. I shall therefore devote a little time to discussing
+the observational arguments for accretion discs and the different classes of accreting 
+objects.
 
 
 \section{Accreting Compact Binaries}
+
+Accreting comapct binaries form many different classes, 
+but are all characterised by matter streaming from a donor star or secondary
+onto a compact object or primary.
+There are only two ways by which matter can transfer 
+from the secondary to the compact object. One is by Roche Lobe-overflow (RLOF),
+whereby stellar evolution causes the donor star to fill it's Roche Lobe, the surface
+of equipotential around the star. The alternative is that the donor may expel
+material via a disc around the secondary or radiatively driven stellar wind, 
+allowing some of it to flow onto the compact object. 
+Although accretion from a wind or circumstellar disc is common in 
+such as high-mass X-ray binaries \citep[HMXBs; e.g.][]{bartlett2013}, here I will focus on 
+RLOF as it is more common in the systems that commonly exhibit high-state accretion discs
+and associated outflows.
+
+\subsection{Roche Lobe-Overflow}
+
+Let us consider a binary system, with masses $M_1$ and $M_2$, at positions
+$\vec{r}_1$ and $\vec{r}_2$. The Roche potential, $\Phi_R$, in this system 
+is then
+\begin{equation}
+\Phi_R = - \frac{GM_1}{| \vec{r} - \vec{r}_1 |} - 
+\frac{GM_2}{| \vec{r} - \vec{r}_2 |} - 1/2 (\vec{\omega} \times
+ \vec{r})^2,
+\label{eq:roche}
+\end{equation} 
+where $\omega$ is the angular velocity of the binary and is a vector normal to
+the orbital plane. This potential is plotted in figure~\ref{fig:roche} for a mass ratio, 
+$q = M_2 / M_1$ of 0.25.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/01-intro/roche_potential.png}
+\caption
+[The roche potential in a binary system]
+{
+{\sl Credit: Frank et al. 2002.} 
+The roche potential in a binary system for $q = M_2 / M_1$ of 0.25.
+The Lagrangian points are marked, as are the locations of the individual
+and system centres of mass.
+} 
+\label{fig:roche}
+\end{figure}
+
+In the context of semi-detached binary systems, the most important region of the 
+potential is the dumbbell shaped region enclosing the masses. Each of these
+enclosed regions is known as the `Roche lobe' of the object and can be expressed 
+approximately in terms of the mass ratio and separation of the system.
+If one of the binary stars expands enough to fill its Roche lobe, then matter
+will fall onto the other object. This process is known as Roche Lobe overflow (RLOF),
+and is vitally important in astrophysics. Although caused by stellar evolution,
+it affects the mass ratio of the binary system and thus itself affects the evolution
+of binary systems. This has serious ramifications for the orbital period
+distribution of binaries (REFs) as well as affecting the delay time distribution
+of Type Ia Supernovae, for which CVs are one of the progenitor candidates.
+It is also worth noting that the existence of gravitational waves has been 
+required in models for CV evolution since 
+
 
 \subsection{Cataclysmic Variables}
 
@@ -175,7 +309,17 @@ onto the WD via a disc, and the CV is classified as non-magnetic.
 There are a two main types of non-magnetic CVs; Dwarf Novae and Nova-like
 variables.
 
-\subsubsection{Dwarf Novae}
+\subsubsection{Nova-like Variables}
+
+Nova-like variables (NLs) are similar to DNe in overall structure,
+except that the disc is always in a relatively 
+high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
+NLs are therefore one of the best `laboratories' for testing the steady-state
+accretion disc theory described in section~\ref{sec:alpha_disc}.
+NLs generally exhibit a series of strong emission lines superposed on a 
+blue continuum. 
+
+\subsubsection{Dwarf Novae and the Disc-instability Model}
 
 Dwarf novae (DNe) are accreting systems that are characterised 
 by periods of quiescence and outburst on varying timescales. One of the 
@@ -188,8 +332,8 @@ shape, can be clearly seen.
 \centering
 \includegraphics[width=1.0\textwidth]{figures/01-intro/sscyg_spec.png}
 \caption
-{
 [Spectra of SS Cyg during an outburst cycle]
+{
 {\sl Credit: Hessman et al. 1984 / Dhillon et al. 1996.} 
 Spectra of SS Cyg during an outburst cycle, showing the evolution from 
 minimum to maximum light. The rise is characterised by the appearance of an
@@ -197,16 +341,6 @@ optically thick accretion disc spectrum. The flux scale is approximate.
 } 
 \label{fig:kording_hid}
 \end{figure}
-
-\subsubsection{Nova-like Variables}
-
-Nova-like variables (NLs) are similar to DNe in overall structure,
-except that the disc is always in a relatively 
-high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
-NLs are therefore one of the best `laboratories' for studying steady-state
-accretion discs and testing theoretical models for accretion.
-NLs generally exhibit a series of strong emission lines 
-
 
 
 \subsection{Low Mass X-ray Binaries}
@@ -279,6 +413,20 @@ from it's host galaxy.
 \subsection{AGN Taxonomy}
 \label{sec:agn_taxonomy}
 
+In addition to Seyfert galaxies and quasars, there are a number of 
+different classes of AGN. These are broadly characterised by their spectra in the 
+optical, UV and X-ray as well as their radio behaviour. It is worth noting
+that these are observational classifications; that is, even after a century
+of study, the {\em physical} origins of the diverse behaviour of AGN
+is still an active area of research.
+
+\subsubsection{Radio Galaxies}
+
+
+\subsubsection{Blazars and BL Lacs}
+
+
+
 
 \subsection{AGN Unification and the dusty Torus}
 
@@ -300,7 +448,18 @@ proposed by AM85 as it also attempted to explain radio AGN phenomena.
 The picture they proposed is shown in figure~\ref{fig:unification}.
 This model attempts to explain all of the types of AGN described in
 section~\ref{sec:agn_taxonomy} merely as a function of viewing angle
-and presence, or lack thereof, of a radio jet. 
+and presence, or lack thereof, of a radio jet.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/up95.png}
+\caption
+[A unified scheme for AGN.]
+{
+A unified scheme for AGN.
+} 
+\label{fig:unification}
+\end{figure} 
 
 Since the seminal works by AM85 and UP95, 
 the picture has become somewhat more complicated. 
@@ -362,7 +521,8 @@ its applicability to accreting systems.
 
 \subsection{The Spectral shape of CV discs}
 
-Attempts to fit the observed SEDs of high-state CVs with simple disc models have met with mixed success. In
+Attempts to fit the observed SEDs of high-state CVs with simple disc models 
+have met with mixed success. In
 particular, the SEDs predicted by most stellar/disc atmosphere models 
 are too blue in the UV \citep{wade1988,long1991,long1994,knigge1998} and exhibit
 stronger-than-observed Balmer jumps in absorption 
@@ -381,11 +541,12 @@ disc wind might fill in the disc's Balmer absorption edge and flatten the UV spe
 
 \subsubsection{The Accretion Disc Size Problem}
 
+\subsubsection{The Soft-Xray Excess}
 
 
 \section{The Universality of Accretion}
 
-Accretion appears to be an important physical processes across $\sim9$ orders
+Accretion appears to be an important physical processes across $\sim10$ orders
 of magnitude in mass. But is this process the same at all scales? Does any 
 behaviour manifest in all accretion systems? 
 
@@ -417,7 +578,7 @@ should be used as `accretion laboratories'.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{figures/02-accretion/kording_hid.png}
+\includegraphics[width=0.7\textwidth]{figures/01-intro/kording_hid.png}
 \caption
 [Hardness-intensity diagrams for three types of accreting objects.]
 {

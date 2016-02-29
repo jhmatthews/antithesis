@@ -32,8 +32,8 @@ def roche(x, y, a, m1, m2):
 	return -term1-term2-term3
 
 
-x = np.arange(-1000,1000,0.1) * 1e4
-y = np.arange(-1000,1000,0.1) * 1e4
+x = np.arange(-100,100,1) * 1e5
+y = np.arange(-100,100,1) * 1e5
 q = 0.25
 m1 = 1. * MSOL 
 m2 = m1 / q 
