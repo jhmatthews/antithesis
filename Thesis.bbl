@@ -41,11 +41,33 @@
 \newblock {First detection of radio emission from a dwarf nova}.
 \newblock {\em \nat}, 302:45.
 
+\bibitem[\protect\astroncite{{Bondi}}{1952}]{bondi1952}
+{Bondi}, H.\leavevmode\nopagebreak\newline 1952.
+\newblock {On spherically symmetrical accretion}.
+\newblock {\em \mnras}, 112:195.
+
+\bibitem[\protect\astroncite{{Bondi} and {Hoyle}}{1944}]{bondi1944}
+{Bondi}, H. and F.~{Hoyle}\leavevmode\nopagebreak\newline 1944.
+\newblock {On the mechanism of accretion by stars}.
+\newblock {\em \mnras}, 104:273.
+
+\bibitem[\protect\astroncite{{Cassinelli}}{1979}]{cassinelli1979}
+{Cassinelli}, J.~P.\leavevmode\nopagebreak\newline 1979.
+\newblock {Stellar winds}.
+\newblock {\em \araa}, 17:275--308.
+
 \bibitem[\protect\astroncite{{Cohen} et~al.}{1986}]{cohen1986}
 {Cohen}, R.~D., R.~C. {Puetter}, R.~J. {Rudy}, T.~B. {Ake}, and C.~B.
   {Foltz}\leavevmode\nopagebreak\newline 1986.
 \newblock {Variability of Markarian 1018 - Seyfert 1.9 to Seyfert 1}.
 \newblock {\em \apj}, 311:135--141.
+
+\bibitem[\protect\astroncite{{Coppejans} et~al.}{2015}]{coppejans2015}
+{Coppejans}, D.~L., E.~G. {K{\"o}rding}, J.~C.~A. {Miller-Jones}, M.~P.
+  {Rupen}, C.~{Knigge}, G.~R. {Sivakoff}, and P.~J.
+  {Groot}\leavevmode\nopagebreak\newline 2015.
+\newblock {Novalike cataclysmic variables are significant radio emitters}.
+\newblock {\em \mnras}, 451:3801--3813.
 
 \bibitem[\protect\astroncite{{Cordova} and {Mason}}{1982}]{cordova1982}
 {Cordova}, F.~A. and K.~O. {Mason}\leavevmode\nopagebreak\newline 1982.
@@ -236,6 +258,11 @@
   Emission of Active Galactic Nuclei}.
 \newblock {\em \apj}, 771:87.
 
+\bibitem[\protect\astroncite{{Hoyle} and {Lyttleton}}{1939}]{hoyle1939}
+{Hoyle}, F. and R.~A. {Lyttleton}\leavevmode\nopagebreak\newline 1939.
+\newblock {The effect of interstellar matter on climatic variation}.
+\newblock {\em Proceedings of the Cambridge Philosophical Society}, 35:405.
+
 \bibitem[\protect\astroncite{{Idan} et~al.}{2010}]{idanshaviv2010}
 {Idan}, I., J.-P. {Lasota}, J.-M. {Hameury}, and
   G.~{Shaviv}\leavevmode\nopagebreak\newline 2010.
@@ -301,6 +328,12 @@
 \newblock {Time-dependent three-dimensional spectrum synthesis for Type Ia
   supernovae}.
 \newblock {\em \mnras}, 398:1809--1826.
+
+\bibitem[\protect\astroncite{{Kuulkers} et~al.}{2015}]{kuulkers_atel2015}
+{Kuulkers}, E., S.~{Motta}, J.~{Kajava}, J.~{Homan}, R.~{Fender}, and
+  P.~{Jonker}\leavevmode\nopagebreak\newline 2015.
+\newblock {Renewed activity of V404 Cyg (GS 2023+338)}.
+\newblock {\em The Astronomer's Telegram}, 7647.
 
 \bibitem[\protect\astroncite{{La Dous}}{1989}]{ladous1989b}
 {La Dous}, C.\leavevmode\nopagebreak\newline 1989.
@@ -373,6 +406,13 @@
 \newblock {Active galactic nuclei as scaled-up Galactic black holes}.
 \newblock {\em \nat}, 444:730--732.
 
+\bibitem[\protect\astroncite{{Motta} et~al.}{2015}]{motta_atel2015}
+{Motta}, S., A.~{Beardmore}, S.~{Oates}, N.~P.~M.~K.~A. {Sanna}, E.~{Kuulkers},
+  J.~{Kajava}, and C.~{Sanchez-Fernanedz}\leavevmode\nopagebreak\newline 2015.
+\newblock {X-ray and optical/UV variability from V404 Cyg (GS 2023+338)
+  observed by Swift (part 1 of 2)}.
+\newblock {\em The Astronomer's Telegram}, 7665.
+
 \bibitem[\protect\astroncite{{Murray} et~al.}{1995}]{MCGV95}
 {Murray}, N., J.~{Chiang}, S.~A. {Grossman}, and G.~M.
   {Voit}\leavevmode\nopagebreak\newline 1995.
@@ -434,6 +474,11 @@
 \newblock {High-speed optical spectroscopy of a cataclysmic variable wind - BZ
   Camelopardalis}.
 \newblock {\em \aj}, 115:286.
+
+\bibitem[\protect\astroncite{{Rottenberg}}{1952}]{rottenburg1952}
+{Rottenberg}, J.~A.\leavevmode\nopagebreak\newline 1952.
+\newblock {Theoretical line profiles for stars of P Cygni type}.
+\newblock {\em \mnras}, 112:125.
 
 \bibitem[\protect\astroncite{{Scaringi} et~al.}{2012}]{scaringi2012}
 {Scaringi}, S., E.~{K{\"o}rding}, P.~{Uttley}, C.~{Knigge}, P.~J. {Groot}, and

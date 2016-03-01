@@ -22,8 +22,8 @@ system, or a $\sim10^{10}~M_\odot$ black hole.
 
 Outflows are ubiquitous in accreting systems. We see collimated radio jets in AGN 
 \citep{hazard1963,potash1980,perley1984,marscher2006} and XRBs \citep{bellonijet2010}, 
-and there is even evidence of extended radio emission in CVs \citep{benz1983,kording2007}. These radio jets
-tend to appear in specific accretion states \citep{fender2001,kordingDNjet2008}, 
+and there is even evidence of extended radio emission in CVs \citep{benz1983,coppejans2015}. 
+These radio jets tend to appear in specific accretion states \citep{fender2001,kordingDNjet2008}, 
 implying an intrinsic connection to the 
 accretion process. Even more intriguing, in XRBs less collimated, mass-loaded outflows
 or {\em winds} are observed in the opposite accretion state, possibly emanating from the accretion disc.
@@ -32,9 +32,10 @@ is the blue-shifted, broad absorption lines (BALs) in the rest-frame ultraviolet
 seen in high-state CVs \citep{heap1978,greensteinoke1982,cordova1982}
 and the so-called broad absorption line quasars (BALQSOs) that make up $20-40\%$
 of quasars \citep{weymann1991,knigge2008,allen2011}. 
-These BALs are also seen in O-stars (REFs) and sometimes even
+BALs and `P-Cygni' profiles \citep{struve1936,rottenburg1952}
+are also seen in stellar winds \citep[e.g.][]{cassinelli1979} and sometimes even
 in the optical spectra of CVs \citep{patterson1996, RN98, kafka2004}. 
-Broad, blue-shifted absorption is also observed in the Fe K$\alpha$ line in 
+Broad, blue-shifted absorption is even observed in the Fe K$\alpha$ line in 
 AGN \citep{reeves2003,poundsreeves2009,tombesi2010a} -- these are known
 as ultra-fast outflows or UFOs\footnote{It should be noted that, while X-ray spectral
 fitting can be somewhat of a dark art, the explanations for these
@@ -44,8 +45,7 @@ The astrophysical significance of disc winds extends, quite literally,
 far beyond the accretion environment. They offer a potential mechanism by which the central
 accretion engine can interact with the host galaxy and interstellar medium 
 via a `feedback' mechanism \citep{king2003,fabian2012}. 
-Feedback is required in models of 
-galaxy evolution \citep{springel2005}
+Feedback is required in models of galaxy evolution \citep{springel2005}
 and may explain the famous `$M-\sigma$' relation \citep{silkrees1998,haring2004} 
 Winds also offer a natural way to {\em unify} much
 of the diverse phenomenology of AGN, CVs and XRBs. The principle of unification
@@ -82,25 +82,21 @@ and discuss potential avenues for future work.
 \section{The Physics of Accretion}
 
 The basic phenomenon of accretion- matter falling into a gravitational potential well- 
-is a ubiquitous one in astrophysics. 
-
-\subsection{Accretion power}
-
-The energy, $dE$ released by a parcel of mass $dm$ falling 
-onto an object of mass $M$ and radius $R$
+is a ubiquitous one in astrophysics. The energy, $\Delta E$, released by a parcel of 
+mass $\Delta m$ falling onto an object of mass $M$ and radius $R_*$
 is given by
 \begin{equation}
-dE = \frac{GM dm}{R}
+\Delta E = \frac{GM \Delta m}{R_*},
 \label{eq:acc_energy}
 \end{equation} 
-Meaning that the accretion power can then be given by
+meaning that the accretion power can then be given by
 \begin{equation}
-L_{acc} = \frac{GM \dot{m}}{R}
+L_{acc} = \frac{GM \dot{m}}{R}.
 \label{eq:acc_energy}
 \end{equation} 
 We can also parameterise any energetic process with the form
 \begin{equation}
-\Delta E = \eta \dot{m} c^2
+\Delta E = \eta \dot{m} c^2,
 \label{eq:restmass}
 \end{equation} 
 where $\eta$ is some efficiency. Nuclear fusion is one of the more efficient
@@ -113,6 +109,72 @@ $\eta=0.007$. If we rearrange the above equations in terms of $\eta$ we find
 In other words, the efficiency of accretion is directly related to the {\em compactness}
 of the central object. Values of compactness for four different compact objects
 are shown in table~\ref{compactness}. 
+
+\subsection{Spherical Accretion and The Eddington Limit}
+
+The simplest geometry one might propose for accretion
+would be one in which a central mass accretes matter from
+an all-encompassing cloud or the inter-stellar medium.
+The process of spherical accretion has come to be known as 
+Bondi-Hoyle-Lyttleton accretion \citep{hoyle1939,bondi1944}.
+In particular, \cite{bondi1952} studied spherically symmetric 
+accretion onto a point mass and derived the Bondi radius,
+\begin{equation}
+r_B = \frac{G M}{c_S^2},
+\label{eq:bondi}
+\end{equation} 
+where $c_S = c_S(r_B)$ is the sound speed as a function of radius.
+The Bondi radius represents a critical point inside which the material
+is supersonic and will accrete on the free-fall timescale.
+
+If this timescale is long enough, then the accreting matter
+can radiate its potential energy with luminosity $L$. 
+This radiation can induce a force on free electrons, given by
+\begin{equation}
+F_{rad} = \frac{L \sigma_T}{4 \pi r^2 c},
+\label{eq:frad}
+\end{equation} 
+where $\sigma_T = 6.65\times10^{-25}$cm$^2$ is the Thomson cross-section.
+If this radiation force term dominates the inwards gravitational
+force then the material will no longer fall inwards. Consider
+radiation pressure acting on electron-proton pairs, for which the gravitational
+force is approximately given by $G M m_p / r^2$. Combining this expression
+with equation~\ref{eq:frad} gives a natural
+maximum accretion luminosity, known as the {\em Eddington limit}, of
+\begin{equation}
+L_{Edd} = \frac{4 \pi G M m_p c}{\sigma_T},
+\label{eq:bondi}
+\end{equation} 
+with an associated Eddington accretion rate of 
+\begin{equation}
+\dot{m}_{Edd} = \frac{L_{Edd}}{\eta c^2}.
+\label{eq:bondi}
+\end{equation} 
+The Eddington limit makes a number of assumptions, namely
+that the accretion flow is steady, spherically symmetric, ionized,
+and has its opacities dominated by electron scattering.
+Clearly, there are many astrophysical situations where this does not hold.
+For example, the recent outburst of V404 Cyg showed wildly variable
+luminosities on short timescales 
+\citep[see, e.g.,][among many, many ATels]{kuulkers_atel2015,motta_atel2015}, 
+and in any binary system
+or disc dominated system then the assumption of spherical symmetry will
+break down. Nevertheless, the Eddington limit gives a good order of magnitude 
+estimate of the maximum luminosity of an accreting object,
+and also provides a useful way of parameterising accretion rate,
+as it scales linearly with mass.
+
+\subsection{Accretion Discs}
+
+
+
+As well as losing gravitational potential energy as it falls towards 
+the central mass, a parcel of matter must always lose angular momentum. 
+If the disc itself maintains the same total angular momentum, then it 
+follows that angular momentum must therefore be transported outwards.
+
+
+
 
 % \begin{table}
 % \centering
@@ -134,11 +196,12 @@ are shown in table~\ref{compactness}.
 
 
 
-\subsection{Steady-state Accretion Discs: The $\alpha$-prescription}
+\subsubsection{Steady-state Accretion Discs: The $\alpha$-prescription}
 
 \label{sec:alpha_disc}
 
-The so-called $\alpha$-disc model developed by \cite[][hereafter SS73]{shakurasunyaev1973} is
+The so-called $\alpha$-disc model developed by 
+\cite[][hereafter SS73]{shakurasunyaev1973} is
 currently the leading candidate for explaining how energy and angular momentum
 is transported an accretion disc. The starting point for this model is the parameterisation
 of viscosity using a simple form of
@@ -233,7 +296,7 @@ objects.
 
 \section{Accreting Compact Binaries}
 
-Accreting comapct binaries form many different classes, 
+Accreting compact binaries form many different classes, 
 but are all characterised by matter streaming from a donor star or secondary
 onto a compact object or primary.
 There are only two ways by which matter can transfer 
@@ -419,6 +482,18 @@ optical, UV and X-ray as well as their radio behaviour. It is worth noting
 that these are observational classifications; that is, even after a century
 of study, the {\em physical} origins of the diverse behaviour of AGN
 is still an active area of research.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/agn_templates.png}
+\caption
+[Template spectra, from the AGN atlas, for four common types of AGN.]
+{
+Template spectra, from the AGN atlas, for four common types of AGN.
+Obtained from \url{http://www.stsci.edu/hst/observatory/crds/cdbs_agn.html}.
+} 
+\label{fig:agn_templates}
+\end{figure} 
 
 \subsubsection{Radio Galaxies}
 
