@@ -21,7 +21,7 @@ fnames = ["liner_template.ascii",
            "qso_template.ascii","seyfert1_template.ascii",
            "seyfert2_template.ascii"]
 
-figure(figsize=(10,12))
+figure(figsize=(10,14))
 big_tick_labels(18)
 
 for i, f in enumerate(fnames):
@@ -32,7 +32,7 @@ for i, f in enumerate(fnames):
 
 	fnorm = util.get_flux_at_wavelength(w,flux,2000)
 
-	plot(w,flux/fnorm, label=labels[i], linewidth=3, c=c[i])
+	plot(w,flux/fnorm, label=labels[i], linewidth=3, c='k')
 	xlim(1000,7000)
 	ylim(0.05,100.0)
 	semilogy()
@@ -48,4 +48,4 @@ for i, f in enumerate(fnames):
 
 subplots_adjust(hspace=0, wspace=0, top=0.97, left=0.12, right=0.97, bottom=0.07)
 xlabel("Wavelength (\AA)", fontsize=24)
-savefig("agn_templates.png", dpi=300)
+savefig("../../figures/agn_templates.png", dpi=300)

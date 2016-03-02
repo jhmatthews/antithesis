@@ -12,21 +12,21 @@ CMD = pdflatex
 
 
 all:
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/accretion.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 	${CMD} Thesis
 	bibtex Thesis
 	${CMD} Thesis
 	${CMD} Thesis
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/accretion.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 dv:
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/accretion.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 	${LCMD} Thesis
 	bibtex Thesis
 	${LCMD} Thesis
 	${LCMD} Thesis
 	dvips Thesis -o Thesis.ps
 	ps2pdf Thesis.ps
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/accretion.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 
 clean:	
 	/bin/rm -f *.aux *.log *.dvi 

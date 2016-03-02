@@ -83,7 +83,7 @@ and discuss potential avenues for future work.
 
 The basic phenomenon of accretion- matter falling into a gravitational potential well- 
 is a ubiquitous one in astrophysics. The energy, $\Delta E$, released by a parcel of 
-mass $\Delta m$ falling onto an object of mass $M$ and radius $R_*$
+mass $\Delta m$ falling from infinity onto an object of mass $M$ and radius $R_*$
 is given by
 \begin{equation}
 \Delta E = \frac{GM \Delta m}{R_*},
@@ -162,19 +162,32 @@ or disc dominated system then the assumption of spherical symmetry will
 break down. Nevertheless, the Eddington limit gives a good order of magnitude 
 estimate of the maximum luminosity of an accreting object,
 and also provides a useful way of parameterising accretion rate,
-as it scales linearly with mass.
+as it scales linearly with mass. It can also be used
+to characterise the {\em state} of an accretion disc.  
+In general, sources around $0.1~L_{Edd}$ find themselves in a 
+soft or thin-disc state (REFs), whereas for much lower Eddington 
+fractions sources will be dominated by advection and form radiatively-ineffient
+accretion flows (RIAFs; REFs).
+It is also clear that around the Eddington limit radiation pressure
+must play a major role in determining the disc morphology 
+(see section~\ref{sec:rad_winds}).
 
 \subsection{Accretion Discs}
 
-
+In many astrophysical situations -- for example, 
+binary orbits and gas clouds orbiting gas clouds --
+any accreting matter will possess some net angular momentum.
+If the medium is dense enough, then collisions between particles will be
+frequent, and the total angular momentum vector of two colliding particles
+will always be conserved. This allows a mechanism for a gas cloud to relax to 
+its minimum energy state -- an accretion disc. 
 
 As well as losing gravitational potential energy as it falls towards 
-the central mass, a parcel of matter must always lose angular momentum. 
-If the disc itself maintains the same total angular momentum, then it 
-follows that angular momentum must therefore be transported outwards.
-
-
-
+the central mass, a parcel of matter must always lose this angular momentum. 
+Crucially, accretion discs provide a way for a given parcel of mass
+to lose angular momentum. If the disc itself maintains the same total 
+angular momentum, then it follows that angular momentum must 
+therefore be transported outwards.
 
 % \begin{table}
 % \centering
@@ -253,17 +266,21 @@ by setting
 \end{equation}
 which then gives
 \begin{equation}
-T_{eff} (R) = T_* (R / R_*)^{-3/4},
+T_{eff} (R) = T_* \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]^{1/4},
 \end{equation}
 where
 \begin{equation}
 T_* = \left ( \frac{3 G M \dot{M}}{8 \pi R_*^3 \sigma} \right)^{1/4}.
 \end{equation}
+When $R>>R_*$ then we can simplify this to
+\begin{equation}
+T_{eff} (R) = T_* (R / R_*)^{-3/4}.
+\end{equation}
 Now we have not only derived the total luminosity of an accretion disc, but
 also the effective temperature profile which will govern the shape of the emergent SED.
-This temperature profile is shown in figure~\ref{disk_t}
-for the same four objects shown in
-table~\ref{compactness}, assuming an Eddington fraction of 0.2.
+This temperature profile is shown in figure~\ref{fig:disk_t}
+for the same four objects shown in table~\ref{compactness}, 
+assuming an Eddington fraction of 0.2.
 
 \begin{figure}
 \centering
@@ -321,7 +338,7 @@ is then
  \vec{r})^2,
 \label{eq:roche}
 \end{equation} 
-where $\omega$ is the angular velocity of the binary and is a vector normal to
+where $\vec{\omega}$ is the angular velocity of the binary and is a vector normal to
 the orbital plane. This potential is plotted in figure~\ref{fig:roche} for a mass ratio, 
 $q = M_2 / M_1$ of 0.25.
 
@@ -342,8 +359,14 @@ and system centres of mass.
 In the context of semi-detached binary systems, the most important region of the 
 potential is the dumbbell shaped region enclosing the masses. Each of these
 enclosed regions is known as the `Roche lobe' of the object and can be expressed 
-approximately in terms of the mass ratio and separation of the system.
-If one of the binary stars expands enough to fill its Roche lobe, then matter
+approximately in terms of the mass ratio and separation of the system. An approximation for the size of the Roche lobe takes the form \citep{eggleton1983}
+\begin{equation}
+\frac{R_2}{a} = \frac{0.49 q^{2/3}}{0.6q^{2/3} + \ln(1+q^{1/3})}.
+\label{eq:roche2}
+\end{equation} 
+Here $R_2$ is the radius of a sphere with the same volume as the Roche lobe for the
+secondary star, which we can see depends only on $q$ and the orbital separation, 
+$a$. If this secondary expands enough to fill its Roche lobe, then matter
 will fall onto the other object. This process is known as Roche Lobe overflow (RLOF),
 and is vitally important in astrophysics. Although caused by stellar evolution,
 it affects the mass ratio of the binary system and thus itself affects the evolution
@@ -364,31 +387,37 @@ CVs are not always accreting objects; classical novae and super soft sources
 magnetic field strength ($B$) and photometric activity. 
 Magnetic systems are classified as either `Polars' ($B \gtrsim 10^7$~G)
 or `Intermediate Polars' ($10^6 \lesssim B \gtrsim 10^7$~G);
-in these systems the accretion flow is dominated by the WDs 
-magnetic field inside the Alfven radius (REF). In polars this radius
-is large enough that no disc forms at all (REFs).
+in these systems the accretion flow inside the some critical radius 
+(related to the Alfven radius)
+is dominated by the WDs magnetic field \citep[e.g.][]{patterson1994}. 
+In polars this radius is large enough, due to the strong magnetic field,
+that no disc forms at all \citep{liebert1985}.
 When $B \lesssim 10^6$~G then the accreting material can fall
 onto the WD via a disc, and the CV is classified as non-magnetic.
 There are a two main types of non-magnetic CVs; Dwarf Novae and Nova-like
 variables.
 
-\subsubsection{Nova-like Variables}
-
-Nova-like variables (NLs) are similar to DNe in overall structure,
-except that the disc is always in a relatively 
-high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
-NLs are therefore one of the best `laboratories' for testing the steady-state
-accretion disc theory described in section~\ref{sec:alpha_disc}.
-NLs generally exhibit a series of strong emission lines superposed on a 
-blue continuum. 
-
 \subsubsection{Dwarf Novae and the Disc-instability Model}
 
 Dwarf novae (DNe) are accreting systems that are characterised 
 by periods of quiescence and outburst on varying timescales. One of the 
-most famous DNe is SS Cyg, whose century of activity is shown in 
+most famous DNe is SS Cyg, whose light curve is shown in 
 figure~\ref{fig:sscyg}. The repeated outbursts, with characteristic 
 shape, can be clearly seen.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/lc_sscyg.png}
+\caption
+[A year in the life of SS Cyg.]
+{
+{\sl Data: AAVSO.} 
+A year in the life of SS Cyg, showing the characteristic repeated
+outbursts and periods of quiescence typical of a DN. SS Cyg has been
+undergoing this activity since it was first observed in 1896.
+} 
+\label{fig:sscyg}
+\end{figure}
 
 \nocite{dhillon1996,hessman1984}
 \begin{figure}
@@ -402,8 +431,34 @@ Spectra of SS Cyg during an outburst cycle, showing the evolution from
 minimum to maximum light. The rise is characterised by the appearance of an
 optically thick accretion disc spectrum. The flux scale is approximate.
 } 
+\label{fig:sscyg_spec}
+\end{figure}
+
+
+
+\subsubsection{Nova-like Variables}
+
+Nova-like variables (NLs) are similar to DNe in overall structure,
+except that the disc is always in a relatively 
+high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
+NLs are therefore one of the best `laboratories' for testing the steady-state
+accretion disc theory described in section~\ref{sec:alpha_disc}.
+NLs generally exhibit a series of strong emission lines superposed on a 
+blue continuum. 
+
+\nocite{dhillon1996,hessman1984}
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/novalikes.png}
+\caption
+[Optical spectra of three nova-like variables.]
+{
+Optical spectra of three nova-like variables.
+} 
 \label{fig:kording_hid}
 \end{figure}
+
+
 
 
 \subsection{Low Mass X-ray Binaries}
@@ -425,7 +480,8 @@ showed that broad Fe absorption lines are only seen in the soft-state
 high-inclination systems (see section~\ref{sec:xrb_winds}). 
 This implies that equatorial outflows are intrinsic to 
 the accretion process. Although the driving mechanism
-is almost certainly different to CVs (REFs), the similarity in general structure 
+is almost certainly different to CVs \citep{diaztrigo2015}, 
+the similarity in general structure 
 to models for CVs and quasars is striking.
 
 
@@ -481,7 +537,7 @@ different classes of AGN. These are broadly characterised by their spectra in th
 optical, UV and X-ray as well as their radio behaviour. It is worth noting
 that these are observational classifications; that is, even after a century
 of study, the {\em physical} origins of the diverse behaviour of AGN
-is still an active area of research.
+are still an active area of research.
 
 \begin{figure}
 \centering
@@ -497,13 +553,45 @@ Obtained from \url{http://www.stsci.edu/hst/observatory/crds/cdbs_agn.html}.
 
 \subsubsection{Radio Galaxies}
 
+Radio galaxies are a broad class of AGN, of which radio-loud quasars and blazars are
+technically members, which show strong emission in the radio band. 
+The main classification scheme was proposed by \cite{FR1974}, who split
+sources according to the luminosity. FR I sources are lower in radio luminosity with a steadily decreasing surface brightness towards the edge of the radio lobes.
+FR II sources are more luminous and exhibit bright structures at the edge of their 
+radio maps. Radio galaxies are not particularly relevant here, but it is worth 
+noting that `Radio core dominance', $\log R$, is often used as an orientation indicator 
+\citep{orr1982,wills1995}. This is because more pole-on sources should, in theory, 
+be more dominated by their
+cores whereas edge-on sources should be more dominated by extended radio
+lobes. I discuss the use of orientation indicators further in chapter 6.
 
-\subsubsection{Blazars and BL Lacs}
+\subsubsection{BL Lacs and Blazars}
 
+BL Lac objects -- named for the first object of the class, BL Lacertae --
+are AGN with featureless non-thermal continua 
+\citep[see figure~\ref{fig:agn_templates}, and][for a review]{falomo2014},
+in contrast to Seyfert galaxies. 
+Their optical flux is highly polarised \citep{angelstockman1980}
+and they tend to exhibit large-scale optical variability, 
+to the extent that they were originally classified as irregularly variable
+stars \citep{hoff1929}. BL Lacs are a subset of 
+a larger AGN class known as Blazars, the most luminous of which
+are known as optically violent variable (OVV) quasars \citep{wright1998}. 
+Blazars require relativistic beaming in order to explain their high 
+radio luminosities \citep{ghis1985,ghis1993}, 
+implying that the jet is orientated towards
+the observer. These objects thus have an important place in unification
+schemes (see section~\ref{agn_unification}), and
+allow us to measure bulk Lorentz factors in radio jets, which
+can be as high as $\sim50$ \citep{begelman2008}.
 
+\subsubsection{Obscured and Compton-thick AGN}
+
+\subsubsection{Low-luminosity AGN}
 
 
 \subsection{AGN Unification and the dusty Torus}
+\label{agn_unification}
 
 Although Seyfert had identified type 1 and 2 AGN, a physical explanation
 for this dichotomy was not forthcoming until a study by \cite[][AM85]{antonucci1985}.
@@ -512,18 +600,27 @@ type 1 AGN, by finding that broad emission lines appeared in the spectrum of
 {\em polarised} flux. This provided the basis for the first successful attempt
 to unify AGN behaviour, as it elegantly 
 explained the apparent disconnect between the two types of 
-AGN as simply a viewing angle effect. 
+AGN as simply a viewing angle effect; at one angle, you could look directly
+into the broad line region (BLR) near the nucleus, but at Type 2 angles
+this region was hidden from view.
 The obscuring structure became known as the `torus' \citep{krolik1986}, 
 due to its geometry, and it was soon realised that this structure
 may be made of dust, in which case it could also be responsible for the infra-red (IR)
 bump in AGN \citep{neugebauer1979}.
 
-The \citep[][UP95]{UP95} scheme went further than the original unification model
-proposed by AM85 as it also attempted to explain radio AGN phenomena.
+\cite[][UP95]{UP95} went further than the original unification model
+proposed by AM85 as they also tried to explain radio AGN phenomena.
 The picture they proposed is shown in figure~\ref{fig:unification}.
 This model attempts to explain all of the types of AGN described in
 section~\ref{sec:agn_taxonomy} merely as a function of viewing angle
-and presence, or lack thereof, of a radio jet.
+and presence, or lack thereof, of a radio jet. Models such as this also 
+describe the series of `bumps' observed in AGN -- the portions
+of the spectrum that dominate the luminosity, shown in figure~\ref{fig:quasar_sed}. 
+In most models, the `Big Blue Bump (BBB)' is ascribed to thermal 
+emission from an accretion disc, and the `Small Blue Bump' to optically 
+thin Balmer continuum and Fe~\textsc{ii} emission from the BLR. 
+Our understanding of the BBB is still unsatisfactory 
+(see section~\ref{sec:disc_continuum}).
 
 \begin{figure}
 \centering
@@ -535,6 +632,21 @@ A unified scheme for AGN.
 } 
 \label{fig:unification}
 \end{figure} 
+
+\nocite{elvis1994}
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/01-intro/quasar_sed.png}
+\caption
+[A unified scheme for AGN.]
+{
+Radio-loud (top) and radio-quiet (bottom) quasar SEDs from
+Elvis (1994). The UV bump is the BBB, and the IR bump can clearly
+be seen. The XUV or Soft-X-ray excess is also visible in the 
+radio-quiet panel (see section~\ref{sec:sxxs}).
+} 
+\label{fig:quasar_sed}
+\end{figure}
 
 Since the seminal works by AM85 and UP95, 
 the picture has become somewhat more complicated. 
@@ -591,6 +703,8 @@ the behaviour of quasars and other accreting compact objects?
 
 \section{The Current Understanding of the Disc Continuum}
 
+\label{sec:disc_continuum}
+
 A number of issues have been raised with the thin-disc model and
 its applicability to accreting systems. 
 
@@ -614,15 +728,26 @@ disc wind might fill in the disc's Balmer absorption edge and flatten the UV spe
 
 \subsection{The Big Blue Bump in AGN}
 
+\subsubsection{Fitting AGN Spectra}
+
+\subsubsection{The 1000\AA\ Break}
+
 \subsubsection{The Accretion Disc Size Problem}
 
 One of the most interesting results of recent years relating to AGN and accretion discs is
 the discovery that the continuum emission region size is a factor $\sim3$ larger than
 predicted by standard Shakura \& Sunyaev disc theory. This result
 has been found independently in both microlensing \citep{morgan2010} 
-and reverberation \citep{edelson2015}. 
+and reverberation \citep{edelson2015}, and poses a challenge to the 
+current best-bet model for the big blue bump in AGN. 
+One proposed solution is that the discs in AGN are inhomogenous,
+consisting of individual clumps with independently
+varying temperatures \citep{dexteragol2011}.
+
 
 \subsubsection{The Soft-Xray Excess}
+\label{sec:sxxs}
+
 
 
 \section{The Universality of Accretion}
