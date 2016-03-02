@@ -32,7 +32,7 @@ is the blue-shifted, broad absorption lines (BALs) in the rest-frame ultraviolet
 seen in high-state CVs \citep{heap1978,greensteinoke1982,cordova1982}
 and the so-called broad absorption line quasars (BALQSOs) that make up $20-40\%$
 of quasars \citep{weymann1991,knigge2008,allen2011}. 
-BALs and `P-Cygni' profiles \citep{struve1936,rottenburg1952}
+BALs and `P-Cygni' profiles \citep{struve1935,rottenburg1952}
 are also seen in stellar winds \citep[e.g.][]{cassinelli1979} and sometimes even
 in the optical spectra of CVs \citep{patterson1996, RN98, kafka2004}. 
 Broad, blue-shifted absorption is even observed in the Fe K$\alpha$ line in 
@@ -46,7 +46,7 @@ far beyond the accretion environment. They offer a potential mechanism by which 
 accretion engine can interact with the host galaxy and interstellar medium 
 via a `feedback' mechanism \citep{king2003,fabian2012}. 
 Feedback is required in models of galaxy evolution \citep{springel2005}
-and may explain the famous `$M-\sigma$' relation \citep{silkrees1998,haring2004} 
+and may explain the famous `$M-\sigma$' relation \citep{silkrees1998,haring2004}.
 Winds also offer a natural way to {\em unify} much
 of the diverse phenomenology of AGN, CVs and XRBs. The principle of unification
 can be applied along more than one `axis' of parameter space. For example, 
@@ -91,12 +91,12 @@ is given by
 \end{equation} 
 meaning that the accretion power can then be given by
 \begin{equation}
-L_{acc} = \frac{GM \dot{m}}{R}.
+L_{acc} = \frac{GM \dot{M}}{R}.
 \label{eq:acc_energy}
 \end{equation} 
 We can also parameterise any energetic process with the form
 \begin{equation}
-\Delta E = \eta \dot{m} c^2,
+\Delta E = \eta \dot{M} c^2,
 \label{eq:restmass}
 \end{equation} 
 where $\eta$ is some efficiency. Nuclear fusion is one of the more efficient
@@ -147,7 +147,7 @@ L_{Edd} = \frac{4 \pi G M m_p c}{\sigma_T},
 \end{equation} 
 with an associated Eddington accretion rate of 
 \begin{equation}
-\dot{m}_{Edd} = \frac{L_{Edd}}{\eta c^2}.
+\dot{M}_{Edd} = \frac{L_{Edd}}{\eta c^2}.
 \label{eq:bondi}
 \end{equation} 
 The Eddington limit makes a number of assumptions, namely
@@ -214,11 +214,11 @@ which can be radiated away. If we then make one further assumption, that the acc
 constant throughout the disc, then we can write down a mass continuity equation
 valid at all radii, given by
 \begin{equation}
-\dot{m} \equiv 2 \pi R V_R \Sigma = 0
+\dot{M} \equiv 2 \pi R V_R \Sigma = 0
 \end{equation}
 where $\Sigma$ is the surface density at that point. The angular momentum equation becomes, in this case
 \begin{equation}
-\nu^\prime \Sigma = \frac{\dot{m}}{3 \pi} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]
+\nu^\prime \Sigma = \frac{\dot{M}}{3 \pi} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]
 \label{eq:viscous_angmom}
 \end{equation}
 The viscous torques throughout the disc cause a local loss of mechanical energy, allowing 
@@ -231,7 +231,7 @@ Here, $D(R)$ is proportional to the derivative of the angular velocity, $\Omega^
 By combining equations~\ref{eq:dissipation1} and \ref{eq:viscous_angmom} we can show that the 
 viscous dissipation rate is 
 \begin{equation}
-D(R) = \frac{G M \dot{m}}{8 \pi R^3} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]
+D(R) = \frac{G M \dot{M}}{8 \pi R^3} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]
 \label{eq:dissipation2}
 \end{equation}
 where we have also set the angular velocity to the Keplerian velocity. 
@@ -242,7 +242,7 @@ the mass accretion rate so as to achieve a steady state.
 
 We can now integrate across the whole disc to obtain the disc luminosity,
 \begin{equation}
-L_{disc} = 2 \int^\infty_{R_*} D(R) 2\pi R dR = \frac{G M \dot{m}}{2 R_*} = \frac{1}{2} L_{acc}.
+L_{disc} = 2 \int^\infty_{R_*} D(R) 2\pi R dR = \frac{G M \dot{M}}{2 R_*} = \frac{1}{2} L_{acc}.
 \label{eq:ldisc}
 \end{equation}
 This result can also be shown by considering the binding energy of gas at $R_*$ and infinity.
@@ -257,7 +257,7 @@ T_{eff} (R) = T_* (R / R_*)^{-3/4},
 \end{equation}
 where
 \begin{equation}
-T_* = \left ( \frac{3 G M \dot{m}}{8 \pi R_*^3 \sigma} \right)^{1/4}.
+T_* = \left ( \frac{3 G M \dot{M}}{8 \pi R_*^3 \sigma} \right)^{1/4}.
 \end{equation}
 Now we have not only derived the total luminosity of an accretion disc, but
 also the effective temperature profile which will govern the shape of the emergent SED.
@@ -560,8 +560,8 @@ In the UP95 unification model, the broad emission lines
 come from a series of virialised clouds close to the disc plane.
 As noted by \cite[][hereafter MCGV95]{MCGV95}, there are a number of problems with
 the BLR `cloud' model, perhaps most notably that there is no obvious 
-physical origin for a series of virialised clouds. While there are exceptions
-to this statement (REFs), it is important to test other models.
+physical origin for a series of virialised clouds. 
+Testing alternative models for the BLR is therefore important.
 Indeed, MCGV95 proposed a disc wind model in order to explain both BALs and BELs
 in quasars. A disc wind model was also  discussed by \cite{elvis2000}, 
 who proposed a structure for quasars that attempted to explain much 
