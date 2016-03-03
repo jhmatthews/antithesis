@@ -373,6 +373,13 @@
   Relation}.
 \newblock {\em \apjl}, 596:L27--L29.
 
+\bibitem[\protect\astroncite{{Knigge} et~al.}{2011}]{knigge2011_evo}
+{Knigge}, C., I.~{Baraffe}, and J.~{Patterson}\leavevmode\nopagebreak\newline
+  2011.
+\newblock {The Evolution of Cataclysmic Variables as Revealed by Their Donor
+  Stars}.
+\newblock {\em \apjs}, 194:28.
+
 \bibitem[\protect\astroncite{{Knigge} et~al.}{1998a}]{knigge1998}
 {Knigge}, C., K.~S. {Long}, R.~A. {Wade}, R.~{Baptista}, K.~{Horne},
   I.~{Hubeny}, and R.~G.~M. {Rutten}\leavevmode\nopagebreak\newline 1998a.
@@ -404,6 +411,13 @@
   2001.
 \newblock {On the X-ray time-lags in the black hole candidates}.
 \newblock {\em \mnras}, 327:799--807.
+
+\bibitem[\protect\astroncite{{Kraft} et~al.}{1962}]{kraft1962}
+{Kraft}, R.~P., J.~{Mathews}, and J.~L.
+  {Greenstein}\leavevmode\nopagebreak\newline 1962.
+\newblock {Binary Stars among Cataclysmic Variables. II. Nova WZ Sagittae: a
+  Possible Radiator of Gravitational Waves.}
+\newblock {\em \apj}, 136:312--315.
 
 \bibitem[\protect\astroncite{{Krolik} and {Begelman}}{1986}]{krolik1986}
 {Krolik}, J.~H. and M.~C. {Begelman}\leavevmode\nopagebreak\newline 1986.
@@ -600,6 +614,11 @@
   Camelopardalis}.
 \newblock {\em \aj}, 115:286.
 
+\bibitem[\protect\astroncite{{Ross} and {Fabian}}{2005}]{rossfabian2005}
+{Ross}, R.~R. and A.~C. {Fabian}\leavevmode\nopagebreak\newline 2005.
+\newblock {A comprehensive range of X-ray ionized-reflection models}.
+\newblock {\em \mnras}, 358:211--216.
+
 \bibitem[\protect\astroncite{{Rottenberg}}{1952}]{rottenburg1952}
 {Rottenberg}, J.~A.\leavevmode\nopagebreak\newline 1952.
 \newblock {Theoretical line profiles for stars of P Cygni type}.
@@ -707,6 +726,11 @@
 \newblock {A test of synthetic accretion disk spectra using ultraviolet flux
   distributions of novalike variables}.
 \newblock {\em \apj}, 335:394--405.
+
+\bibitem[\protect\astroncite{{Wang} and {Han}}{2012}]{wang2012}
+{Wang}, B. and Z.~{Han}\leavevmode\nopagebreak\newline 2012.
+\newblock {Progenitors of type Ia supernovae}.
+\newblock {\em \nar}, 56:122--141.
 
 \bibitem[\protect\astroncite{{Warner}}{2003}]{warnerbook}
 {Warner}, B.\leavevmode\nopagebreak\newline 2003.
