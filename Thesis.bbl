@@ -12,6 +12,11 @@
 \newblock {Optical and infrared polarization of active extragalactic objects}.
 \newblock {\em \araa}, 18:321--361.
 
+\bibitem[\protect\astroncite{{Antonucci}}{2013}]{antonucci2013}
+{Antonucci}, R.\leavevmode\nopagebreak\newline 2013.
+\newblock {Astrophysics: Quasars still defy explanation}.
+\newblock {\em \nat}, 495:165--167.
+
 \bibitem[\protect\astroncite{{Antonucci} and {Miller}}{1985}]{antonucci1985}
 {Antonucci}, R.~R.~J. and J.~S. {Miller}\leavevmode\nopagebreak\newline 1985.
 \newblock {Spectropolarimetry and the nature of NGC 1068}.
@@ -62,6 +67,13 @@
 \newblock {On the mechanism of accretion by stars}.
 \newblock {\em \mnras}, 104:273.
 
+\bibitem[\protect\astroncite{{Capellupo} et~al.}{2015}]{capellupo2015}
+{Capellupo}, D.~M., H.~{Netzer}, P.~{Lira}, B.~{Trakhtenbrot}, and
+  J.~{Mej{\'{\i}}a-Restrepo}\leavevmode\nopagebreak\newline 2015.
+\newblock {Active galactic nuclei at z = 1.5 - I. Spectral energy distribution
+  and accretion discs}.
+\newblock {\em \mnras}, 446:3427--3446.
+
 \bibitem[\protect\astroncite{{Cassinelli}}{1979}]{cassinelli1979}
 {Cassinelli}, J.~P.\leavevmode\nopagebreak\newline 1979.
 \newblock {Stellar winds}.
@@ -110,6 +122,13 @@
 {D{\'{\i}}az Trigo}, M. and L.~{Boirin}\leavevmode\nopagebreak\newline 2015.
 \newblock {Accretion disc atmospheres and winds in low-mass X-ray binaries}.
 \newblock {\em ArXiv e-prints}.
+
+\bibitem[\protect\astroncite{{Done} et~al.}{2012}]{done2012}
+{Done}, C., S.~W. {Davis}, C.~{Jin}, O.~{Blaes}, and
+  M.~{Ward}\leavevmode\nopagebreak\newline 2012.
+\newblock {Intrinsic disc emission and the soft X-ray excess in active galactic
+  nuclei}.
+\newblock {\em \mnras}, 420:1848--1860.
 
 \bibitem[\protect\astroncite{{Edelson} et~al.}{2015}]{edelson2015}
 {Edelson}, R., J.~M. {Gelbord}, K.~{Horne}, I.~M. {McHardy}, B.~M. {Peterson},
@@ -217,6 +236,19 @@
 \newblock {Relativistic bulk motion in active galactic nuclei}.
 \newblock {\em \apj}, 407:65--82.
 
+\bibitem[\protect\astroncite{{Gierli{\'n}ski} and
+  {Done}}{2004}]{gierlinskidone2004b}
+{Gierli{\'n}ski}, M. and C.~{Done}\leavevmode\nopagebreak\newline 2004.
+\newblock {Is the soft excess in active galactic nuclei real?}
+\newblock {\em \mnras}, 349:L7--L11.
+
+\bibitem[\protect\astroncite{{Gierli{\'n}ski} and
+  {Done}}{2006}]{gierlinskidone2006}
+{Gierli{\'n}ski}, M. and C.~{Done}\leavevmode\nopagebreak\newline 2006.
+\newblock {Energy-dependent variability and the origin of the soft X-ray excess
+  in active galactic nuclei}.
+\newblock {\em \mnras}, 371:L16--L20.
+
 \bibitem[\protect\astroncite{{Greenstein} and {Oke}}{1982}]{greensteinoke1982}
 {Greenstein}, J.~L. and J.~B. {Oke}\leavevmode\nopagebreak\newline 1982.
 \newblock {RW Sextantis, a disk with a hot, high-velocity wind}.
@@ -231,18 +263,10 @@
   Determinations of Their Intrinsic Scatter}.
 \newblock {\em \apj}, 698:198--221.
 
-\bibitem[\protect\astroncite{{Hamann} and {Koesterke}}{1998}]{hamann1998}
-{Hamann}, W.-R. and L.~{Koesterke}\leavevmode\nopagebreak\newline 1998.
-\newblock {Spectrum formation in clumped stellar winds: consequences for the
-  analyses of Wolf-Rayet spectra}.
-\newblock {\em \aap}, 335:1003--1008.
-
-\bibitem[\protect\astroncite{{Hamann} et~al.}{2008}]{hamann2008}
-{Hamann}, W.-R., L.~M. {Oskinova}, and
-  A.~{Feldmeier}\leavevmode\nopagebreak\newline 2008.
-\newblock {Spectrum formation in clumpy stellar winds}.
-\newblock In {\em Clumping in Hot-Star Winds}, W.-R. {Hamann}, A.~{Feldmeier},
-  and L.~M. {Oskinova}, eds., P.~~75.
+\bibitem[\protect\astroncite{{Haardt} and {Maraschi}}{1991}]{haardt1991}
+{Haardt}, F. and L.~{Maraschi}\leavevmode\nopagebreak\newline 1991.
+\newblock {A two-phase model for the X-ray emission from Seyfert galaxies}.
+\newblock {\em \apjl}, 380:L51--L54.
 
 \bibitem[\protect\astroncite{{H{\"a}ring} and {Rix}}{2004}]{haring2004}
 {H{\"a}ring}, N. and H.-W. {Rix}\leavevmode\nopagebreak\newline 2004.
@@ -296,12 +320,6 @@
 \newblock {A simple disc wind model for broad absorption line quasars}.
 \newblock {\em \mnras}, 436:1390--1407.
 
-\bibitem[\protect\astroncite{{Hillier} and {Miller}}{1999}]{hilliermiller1999}
-{Hillier}, D.~J. and D.~L. {Miller}\leavevmode\nopagebreak\newline 1999.
-\newblock {Constraints on the Evolution of Massive Stars through Spectral
-  Analysis. I. The WC5 Star HD 165763}.
-\newblock {\em \apj}, 519:354--371.
-
 \bibitem[\protect\astroncite{{Hoffmeister}}{1929}]{hoff1929}
 {Hoffmeister}, C.\leavevmode\nopagebreak\newline 1929.
 \newblock {354 neue Ver{\"a}nderliche}.
@@ -337,15 +355,17 @@
 \newblock {Accretion-disc model spectra for dwarf-nova stars}.
 \newblock {\em \aap}, 519:A117.
 
+\bibitem[\protect\astroncite{{Janiuk} et~al.}{2001}]{januik2001}
+{Janiuk}, A., B.~{Czerny}, and G.~M. {Madejski}\leavevmode\nopagebreak\newline
+  2001.
+\newblock {The Nature of the Emission Components in the Quasar/NLS1 PG
+  1211+143}.
+\newblock {\em \apj}, 557:408--420.
+
 \bibitem[\protect\astroncite{{Kafka} and {Honeycutt}}{2004}]{kafka2004}
 {Kafka}, S. and R.~K. {Honeycutt}\leavevmode\nopagebreak\newline 2004.
 \newblock {Detecting Outflows from Cataclysmic Variables in the Optical}.
 \newblock {\em \aj}, 128:2420--2429.
-
-\bibitem[\protect\astroncite{{Kerzendorf} and {Sim}}{2014}]{kerzendorfsim}
-{Kerzendorf}, W.~E. and S.~A. {Sim}\leavevmode\nopagebreak\newline 2014.
-\newblock {A spectral synthesis code for rapid modelling of supernovae}.
-\newblock {\em \mnras}, 440:387--404.
 
 \bibitem[\protect\astroncite{{King}}{2003}]{king2003}
 {King}, A.\leavevmode\nopagebreak\newline 2003.
@@ -391,12 +411,6 @@
 \newblock In {\em Bulletin of the American Astronomical Society}, volume~18 of
   {\em \baas}, P.~ 903.
 
-\bibitem[\protect\astroncite{{Kromer} and {Sim}}{2009}]{kromersim2009}
-{Kromer}, M. and S.~A. {Sim}\leavevmode\nopagebreak\newline 2009.
-\newblock {Time-dependent three-dimensional spectrum synthesis for Type Ia
-  supernovae}.
-\newblock {\em \mnras}, 398:1809--1826.
-
 \bibitem[\protect\astroncite{{Kuulkers} et~al.}{2015}]{kuulkers_atel2015}
 {Kuulkers}, E., S.~{Motta}, J.~{Kajava}, J.~{Homan}, R.~{Fender}, and
   P.~{Jonker}\leavevmode\nopagebreak\newline 2015.
@@ -437,16 +451,6 @@
   Hopkins Ultraviolet Telescope}.
 \newblock {\em \apj}, 426:704--715.
 
-\bibitem[\protect\astroncite{{Lucy}}{2002}]{lucy2002}
-{Lucy}, L.~B.\leavevmode\nopagebreak\newline 2002.
-\newblock {Monte Carlo transition probabilities}.
-\newblock {\em \aap}, 384:725--735.
-
-\bibitem[\protect\astroncite{{Lucy}}{2003}]{lucy2003}
-{Lucy}, L.~B.\leavevmode\nopagebreak\newline 2003.
-\newblock {Monte Carlo transition probabilities. II.}
-\newblock {\em \aap}, 403:261--275.
-
 \bibitem[\protect\astroncite{{Lynden-Bell}}{1969}]{lyndenbell1969}
 {Lynden-Bell}, D.\leavevmode\nopagebreak\newline 1969.
 \newblock {Galactic Nuclei as Collapsed Old Quasars}.
@@ -456,6 +460,25 @@
 {Lyubarskii}, Y.~E.\leavevmode\nopagebreak\newline 1997.
 \newblock {Flicker noise in accretion discs}.
 \newblock {\em \mnras}, 292:679.
+
+\bibitem[\protect\astroncite{{Madau} et~al.}{1994}]{madau1994}
+{Madau}, P., G.~{Ghisellini}, and A.~C. {Fabian}\leavevmode\nopagebreak\newline
+  1994.
+\newblock {The Unified Seyfert Scheme and the Origin of the Cosmic X-Ray
+  Background}.
+\newblock {\em \mnras}, 270:L17.
+
+\bibitem[\protect\astroncite{{Magdziarz} et~al.}{1998}]{magdiarz1998}
+{Magdziarz}, P., O.~M. {Blaes}, A.~A. {Zdziarski}, W.~N. {Johnson}, and D.~A.
+  {Smith}\leavevmode\nopagebreak\newline 1998.
+\newblock {A spectral decomposition of the variable optical, ultraviolet and
+  X-ray continuum of NGC 5548}.
+\newblock {\em \mnras}, 301:179--192.
+
+\bibitem[\protect\astroncite{{Mangham} et~al.}{prep}]{mangham}
+{Mangham}, S.~W., C.~{Knigge}, J.~H. {Matthews}, K.~S. {Long}, S.~A. {Sim}, and
+  N.~{Higginbottom}\leavevmode\nopagebreak\newline in prep.
+\newblock {The reverberation signatures of rotating disk winds in AGN}.
 
 \bibitem[\protect\astroncite{{Marinucci} et~al.}{2016}]{marinucci2016}
 {Marinucci}, A., S.~{Bianchi}, G.~{Matt}, D.~M. {Alexander},
@@ -625,26 +648,6 @@
 \newblock {Quasars and galaxy formation}.
 \newblock {\em \aap}, 331:L1--L4.
 
-\bibitem[\protect\astroncite{{Sim}}{2004}]{sim2004}
-{Sim}, S.~A.\leavevmode\nopagebreak\newline 2004.
-\newblock {Mass-loss rates for hot luminous stars: the influence of line
-  branching}.
-\newblock {\em \mnras}, 349:899--908.
-
-\bibitem[\protect\astroncite{{Sim} et~al.}{2005}]{simmacro2005}
-{Sim}, S.~A., J.~E. {Drew}, and K.~S. {Long}\leavevmode\nopagebreak\newline
-  2005.
-\newblock {Two-dimensional Monte Carlo simulations of HI line formation in
-  massive young stellar object disc winds}.
-\newblock {\em \mnras}, 363:615--627.
-
-\bibitem[\protect\astroncite{{Sim} et~al.}{2008}]{simlong2008}
-{Sim}, S.~A., K.~S. {Long}, L.~{Miller}, and T.~J.
-  {Turner}\leavevmode\nopagebreak\newline 2008.
-\newblock {Multidimensional modelling of X-ray spectra for AGN accretion disc
-  outflows}.
-\newblock {\em \mnras}, 388:611--624.
-
 \bibitem[\protect\astroncite{{Springel} et~al.}{2005}]{springel2005}
 {Springel}, V., T.~{Di Matteo}, and
   L.~{Hernquist}\leavevmode\nopagebreak\newline 2005.
@@ -656,13 +659,6 @@
 {Struve}, O.\leavevmode\nopagebreak\newline 1935.
 \newblock {The Spectrum of P Cygni}.
 \newblock {\em \apj}, 81:66.
-
-\bibitem[\protect\astroncite{{Tatum} et~al.}{2012}]{tatum2012}
-{Tatum}, M.~M., T.~J. {Turner}, S.~A. {Sim}, L.~{Miller}, J.~N. {Reeves}, A.~R.
-  {Patrick}, and K.~S. {Long}\leavevmode\nopagebreak\newline 2012.
-\newblock {Modeling the Fe K Line Profiles in Type I Active Galactic Nuclei
-  with a Compton-thick Disk Wind}.
-\newblock {\em \apj}, 752:94.
 
 \bibitem[\protect\astroncite{{Tohline} and {Osterbrock}}{1976}]{tohline1976}
 {Tohline}, J.~E. and D.~E. {Osterbrock}\leavevmode\nopagebreak\newline 1976.
@@ -739,10 +735,6 @@
 \newblock {X-Ray--heated Coronae and Winds from Accretion Disks: Time-dependent
   Two-dimensional Hydrodynamics with Adaptive Mesh Refinement}.
 \newblock {\em \apj}, 461:767.
-
-\bibitem[\protect\astroncite{{Woods}}{1991}]{woods1991}
-{Woods}, J.~A.\leavevmode\nopagebreak\newline 1991.
-\newblock PhD thesis, D.~Phil thesis, Univ.~Oxford , (1991).
 
 \bibitem[\protect\astroncite{{Wright} et~al.}{1998}]{wright1998}
 {Wright}, S.~C., I.~M. {McHardy}, and R.~G.

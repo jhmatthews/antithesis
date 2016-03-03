@@ -119,24 +119,24 @@
 
 %% ----------------------------------------------------------------
 % The "Funny Quote Page"
-\pagestyle{empty}  % No headers or footers for the following pages
+% \pagestyle{empty}  % No headers or footers for the following pages
 
-\null\vfill
-% Now comes the "Funny Quote", written in italics
-\textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world.\\\\And it's breathtaking.''}
+% \null\vfill
+% % Now comes the "Funny Quote", written in italics
+% \textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world.\\\\And it's breathtaking.''}
 
-\begin{flushright}
-Seven Brief Lessons on Physics, Carlo Rovelli
-\end{flushright}
+% \begin{flushright}
+% Seven Brief Lessons on Physics, Carlo Rovelli
+% \end{flushright}
 
-\textit{``Good enough for government work.''}
+% \textit{``Good enough for government work.''}
 
-\begin{flushright}
-Christian Knigge
-\end{flushright}
+% \begin{flushright}
+% Christian Knigge
+% \end{flushright}
 
-\vfill\vfill\vfill\vfill\vfill\vfill\null
-\clearpage  % Funny Quote page ended, start a new page
+% \vfill\vfill\vfill\vfill\vfill\vfill\null
+% \clearpage  % Funny Quote page ended, start a new page
 %% ----------------------------------------------------------------
 
 % The Abstract Page
@@ -151,11 +151,11 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 \clearpage  % Abstract ended, start a new page
 %% ----------------------------------------------------------------
 
-\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+\setstretch{1.5}  % Reset the line-spacing to 1.3 for body text (if it has changed)
 
 % The Acknowledgements page, for thanking everyone
-\acknowledgements{
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+% \acknowledgements{
+% \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 % First and foremost, I would like to thank Christian Knigge, for being
 % such an enthusiastic, helpful and stimulating supervisor throughout my PhD. 
 % Christian, I {\em always} left our meetings more positive than before -- that speaks
@@ -201,12 +201,12 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % And how could I forget the beys. Thankyou Josh, James and Alex, and of course the 
 % Goblin King, for allowing me to play music that I love in Waking Aida. 
 % Eschaton and Full Heal were both released during my PhD, and in many ways 
-% they are each a thesis within themselves. 
+% they are each a thesis within themselves. }
 
 
 
 
-}
+
 \clearpage  % End of the Acknowledgements
 %% ----------------------------------------------------------------
 
@@ -275,18 +275,36 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 % Include the chapters of the thesis, as separate files
 % Just uncomment the lines as you write the chapters
+\newpage
+\lhead{\emph{1. Introduction}}  % Set the left side page header to "Contents"
 
 \input{Chapters/Chapter1} % Introduction
 
+
 %\input{Chapters/accretion} % Background Theory 
+\newpage
+\lhead{\emph{2. Accretion Disc Winds}}  % Set the left side page header to "Contents"
 
 \input{Chapters/outflows} % Experimental Setup
 
-\input{Chapters/radtrans} % Experimental Setup
+
+% \newpage
+% \lhead{\emph{3. Radiative Transfer and Ionization}}  % Set the left side page header to "Contents"
+
+% \input{Chapters/radtrans} % Experimental Setup
+
+% \clearpage
+
+% \input{Chapters/paper_cover} % Experimental Setup
+
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
 
 % \input{Chapters/cvpaper} % Experiment 1
 
 % \input{Chapters/agnpaper} % Experiment 2
+
+% \input{Chapters/ewpaper} % Experiment 2
 
 % \centering
 % \includepdf[pages=-]{Chapters/agnpaper.pdf}

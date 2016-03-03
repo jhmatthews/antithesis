@@ -488,15 +488,14 @@ Optical spectra of three nova-like variables.
 
 \subsection{Low Mass X-ray Binaries}
 
-X-ray binaries are similar to CVs in structure, except that the compact object
+Low Mass X-ray Binaries (LMXBs) 
+are similar to CVs in structure (see figure~??), except that the compact object
 is either a neutron star (NS) or black hole (BH). The accretion disc 
 emits in the soft X-rays, and an additional hard X-ray power law is also 
 seen in the spectrum (REFs). This hard component is normally attributed
 to Compton up-scattering of seed disc photons by some kind of `corona'
-of hot electrons close to the BH (REFs). A characteristic spectrum is shown 
-in figure~\ref{fig:xrb_spec}.
-
-Although I do not discuss XRBs directly in this thesis, it is instructive
+of hot electrons close to the BH (REFs).
+Although I do not study LMXBs directly in this thesis, it is instructive
 to discuss some of their observational appearance as it is instructive 
 for understanding the theory of disc winds, as well as their wider significance. 
 The discovery that XRBs follow similar tracks on a hardness-intensity diagram (REFs)
@@ -644,7 +643,8 @@ of the spectrum that dominate the luminosity, shown in figure~\ref{fig:quasar_se
 In most models, the `Big Blue Bump (BBB)' is ascribed to thermal 
 emission from an accretion disc, and the `Small Blue Bump' to optically 
 thin Balmer continuum and Fe~\textsc{ii} emission from the BLR.
-This can just be seen between $\sim2000$\AA and $\sim4000$\AA in the Seyfert 1 and 
+The latter can just be seen between $\sim2000$\AA\ and 
+$\sim4000$\AA\ in the Seyfert 1 and 
 quasar templates in figure~\ref{fig:agn_templates}
 Our understanding of the BBB is still unsatisfactory 
 (see section~\ref{sec:disc_continuum}).
@@ -695,6 +695,43 @@ to test with observations.
 
 
 \subsection{X-ray Properties of AGN}
+
+Approximately $10\%$ of the bolometric luminosity of AGN
+comes out in the X-ray band between $\sim0.1$ and $\sim100$~keV.
+Thus, AGN dominate the cosmic X-ray background \citep{madau1994}.
+The hard X-ray emission follows a typical power law shape with spectral
+index ?? (REFs), widely considered, as in LMXBs, to come from a hot `corona' of 
+electrons, close to the BH, that upscatters disc seed photons
+\citep[e.g.][]{haardt1991}. The compactness of this X-ray corona
+has been recently confirmed with microlensing (REFs) 
+and variability studies (REFs). 
+X-rays in AGN can be highly variable, both in terms of their intrinsic 
+X-ray emission (REFs) and due to changes in the absorption characteristics (REFs).
+I discuss absorption in more detail, particular with respect to winds, in section~?.
+
+
+\subsubsection{The Soft X-ray Excess}
+\label{sec:sxxs}
+
+If one extrapolates the $\nu^{-1/3}$ law from the BBB, and the power law
+in the hard X-rays, a curious excess of flux is often found in the soft X-rays
+in type 1 AGN \citep[see figure~\ref{fig:quasar_sed}, from][]{elvis1994}. 
+This is known as the soft X-ray excess (SXXS), which is too 
+hot to be explained by thermal disc emission, as a thin disc around an AGN should
+never approach the temperatures required. Many models have been proposed to
+explain this excess, including relativistically smeared 
+photoabsorption \citep{gierlinskidone2004b,gierlinskidone2006}, 
+relativistically smeared line and free-free emission \citep{rossfabian2005} 
+and a variety of cool Comptonised component geometries such as an 
+inner accretion flow \citep{magdiarz1998,done2012} 
+and thin layer on top of the disc \citep{januik2001}. 
+While the SXXS poses challenges to
+the simplest pictures of AGN, it may also solve some of the issues, as
+some of the geometries proposed may help explain the 
+accretion disc size problem (Done, private communication; 
+see section~\ref{sec:disc_continuum})
+or inability to match observed spectra.
+
 
 
 
@@ -775,9 +812,11 @@ are intertwined, although hopefully not inextricably.
 \subsection{The Big Blue Bump in AGN}
 
 Does the SS73 model apply well to AGN spectra? There are constrasting views on the matter.
-On the one hand:
-
-"Most of the AGN community is mesmerized by unphysical models that have no predictive power. "
+On the one hand, \cite{antonucci2013} claims that ``Most of the AGN community is mesmerized by unphysical models that have no predictive power''. 
+Yet a recent spectral fitting study by \cite{capellupo2015} concludes that 
+``Altogether, these results indicate that thin ADs are indeed the 
+main power houses of AGN''. So, what are the current problems when 
+confronting thin disc models with observation? 
 
 \subsubsection{Fitting AGN Spectra}
 
@@ -787,19 +826,16 @@ On the one hand:
 
 One of the most interesting results of recent years relating to AGN and accretion discs is
 the discovery that the continuum emission region size is a factor $\sim3$ larger than
-predicted by standard Shakura \& Sunyaev disc theory. This result
+predicted by standard thin disc theory. This result
 has been found independently in both microlensing \citep{morgan2010} 
 and reverberation \citep{edelson2015}, and poses a challenge to the 
 current best-bet model for the big blue bump in AGN. 
 One proposed solution is that the discs in AGN are inhomogenous,
 consisting of individual clumps with independently
-varying temperatures \citep{dexteragol2011}.
-
-
-\subsubsection{The Soft-Xray Excess}
-\label{sec:sxxs}
-
-
+varying temperatures \citep{dexteragol2011}, but this is very much
+still an active area of research. It is worth noting that the impact
+of winds on these results has not yet been properly quantified, something
+our team is currently trying to address \citep{mangham}
 
 \section{The Universality of Accretion}
 
@@ -835,7 +871,7 @@ should be used as `accretion laboratories'.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{figures/01-intro/kording_hid.png}
+\includegraphics[width=1.0\textwidth]{figures/01-intro/kording_hid.png}
 \caption
 [Hardness-intensity diagrams for three types of accreting objects.]
 {
@@ -852,9 +888,13 @@ Caption.
 
 \subsection{A Global Picture}
 
-Clearly, accretion physics is relevant to a plethora of astrophysical phenomena. 
+Clearly, accretion physics is relevant to a plethora of astrophysical phenomena, 
+and at least some of the physics of accretion is applicable to {\em all} 
+classes of accreting object. 
 It would also appear that the outflowing material observed in accreting systems 
-has a profound effect on the accretion process itself, as well as acting 
-as a spectral `filter' -- modifying, and sometimes dominating the observational 
-appearance of accretion discs.
+has a profound effect on the accretion process itself, and 
+possibly significantly affecting the observational 
+appearance of accretion discs (c.f. Elvis unification model). 
+Hence, in the next chapter, I will detail the evidence for
+winds and discuss some of their theoretical considerations.
 
