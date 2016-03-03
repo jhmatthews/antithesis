@@ -321,6 +321,11 @@
   Emission of Active Galactic Nuclei}.
 \newblock {\em \apj}, 771:87.
 
+\bibitem[\protect\astroncite{{Horne}}{1993}]{horne1993}
+{Horne}, K.\leavevmode\nopagebreak\newline 1993.
+\newblock {\em {Eclipse Mapping of Accretion Disks: The First Decade}}, P.~
+  117.
+
 \bibitem[\protect\astroncite{{Hoyle} and {Lyttleton}}{1939}]{hoyle1939}
 {Hoyle}, F. and R.~A. {Lyttleton}\leavevmode\nopagebreak\newline 1939.
 \newblock {The effect of interstellar matter on climatic variation}.
@@ -441,6 +446,11 @@
 {Lucy}, L.~B.\leavevmode\nopagebreak\newline 2003.
 \newblock {Monte Carlo transition probabilities. II.}
 \newblock {\em \aap}, 403:261--275.
+
+\bibitem[\protect\astroncite{{Lynden-Bell}}{1969}]{lyndenbell1969}
+{Lynden-Bell}, D.\leavevmode\nopagebreak\newline 1969.
+\newblock {Galactic Nuclei as Collapsed Old Quasars}.
+\newblock {\em \nat}, 223:690--694.
 
 \bibitem[\protect\astroncite{{Lyubarskii}}{1997}]{lyubarskii1997}
 {Lyubarskii}, Y.~E.\leavevmode\nopagebreak\newline 1997.
@@ -572,6 +582,13 @@
 \newblock {Theoretical line profiles for stars of P Cygni type}.
 \newblock {\em \mnras}, 112:125.
 
+\bibitem[\protect\astroncite{{Rutten} et~al.}{1992}]{rutten1992}
+{Rutten}, R.~G.~M., J.~{van Paradijs}, and
+  J.~{Tinbergen}\leavevmode\nopagebreak\newline 1992.
+\newblock {Reconstruction of the accretion disk in six cataclysmic variable
+  stars}.
+\newblock {\em \aap}, 260:213--226.
+
 \bibitem[\protect\astroncite{{Scaringi} et~al.}{2012}]{scaringi2012}
 {Scaringi}, S., E.~{K{\"o}rding}, P.~{Uttley}, C.~{Knigge}, P.~J. {Groot}, and
   M.~{Still}\leavevmode\nopagebreak\newline 2012.
@@ -694,6 +711,10 @@
 \newblock {A test of synthetic accretion disk spectra using ultraviolet flux
   distributions of novalike variables}.
 \newblock {\em \apj}, 335:394--405.
+
+\bibitem[\protect\astroncite{{Warner}}{2003}]{warnerbook}
+{Warner}, B.\leavevmode\nopagebreak\newline 2003.
+\newblock {\em {Cataclysmic Variable Stars}}.
 
 \bibitem[\protect\astroncite{{Weymann} et~al.}{1991}]{weymann1991}
 {Weymann}, R.~J., S.~L. {Morris}, C.~B. {Foltz}, and P.~C.
