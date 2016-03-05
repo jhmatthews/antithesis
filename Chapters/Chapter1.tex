@@ -28,7 +28,7 @@ Outflows are ubiquitous in accreting systems. We see collimated radio jets in AG
 and there is even evidence of extended radio emission in 
 CVs \citep{benz1983,coppejans2015}. 
 These radio jets tend to appear in specific 
-accretion states \citep{fender2001,kordingDNjet2008}, 
+accretion states \citep{fender2001,fender2004,kordingDNjet2008}, 
 implying an intrinsic connection to the 
 accretion process. Even more intriguing, in XRBs less collimated, mass-loaded outflows
 or {\em winds} are observed in the opposite accretion state, possibly emanating from the accretion disc.
@@ -180,7 +180,7 @@ must play a major role in determining the disc morphology
 \subsection{Accretion Discs}
 
 In many astrophysical situations -- for example, 
-binary orbits and gas clouds orbiting gas clouds --
+binary orbits and gas clouds orbiting BHs --
 any accreting matter will possess some net angular momentum.
 If the medium is dense enough, then collisions between particles will be
 frequent, and the total angular momentum vector of two colliding particles
@@ -481,17 +481,21 @@ optically thick accretion disc spectrum. The flux scale is approximate.
 \label{fig:sscyg_spec}
 \end{figure}
 
-
-
 \subsubsection{Nova-like Variables}
 
-Nova-like variables (NLs) are similar to DNe in overall structure,
+Nova-like variables (NLs) are similar to DNe,
 except that the disc is always in a relatively 
 high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
 NLs are therefore one of the best `laboratories' for testing the steady-state
 accretion disc theory described in section~\ref{sec:alpha_disc}.
-NLs generally exhibit a series of strong emission lines superposed on a 
-blue continuum. 
+In the optical, NLs generally exhibit a series of H and He emission 
+lines superposed on a blue continuum. In many
+cases, and particularly in the SW~Sex subclass of NLs
+\citep{HSK86,DR95}, these lines are single-peaked. This is contrary to
+theoretical expectations for lines formed in accretion discs, which
+are predicted to be double-peaked \citep{smak1981, hornemarsh1986}. 
+{\em Low-state} CVs (dwarf novae in quiescence) do, in fact,
+exhibit such double-peaked lines \citep{marshhorne1990}. 
 
 \nocite{dhillon1996,hessman1984}
 \begin{figure}
@@ -502,7 +506,7 @@ blue continuum.
 {
 Optical spectra of three nova-like variables.
 } 
-\label{fig:kording_hid}
+\label{fig:NL_spec}
 \end{figure}
 
 
@@ -511,24 +515,24 @@ Optical spectra of three nova-like variables.
 \subsection{Low Mass X-ray Binaries}
 
 Low Mass X-ray Binaries (LMXBs) 
-are similar to CVs in structure (see figure~??), except that the compact object
+are similar to CVs in structure (see figure~\ref{fig:cv_and_xrb}), 
+but the compact object
 is either a neutron star (NS) or black hole (BH). The accretion disc 
 emits in the soft X-rays, and an additional hard X-ray power law is also 
 seen in the spectrum (REFs). This hard component is normally attributed
 to Compton up-scattering of seed disc photons by some kind of `corona'
 of hot electrons close to the BH (REFs).
 Although I do not study LMXBs directly in this thesis, it is instructive
-to discuss some of their observational appearance as it is instructive 
-for understanding the theory of disc winds, as well as their wider significance. 
+to discuss some of their observational appearance as it is relevant to the links
+between accretion and outflow. 
 The discovery that XRBs follow similar tracks on a hardness-intensity diagram (REFs)
 is particularly interesting in this regard, especially since \cite{ponti2012}
 showed that broad Fe absorption lines are only seen in the soft-state 
 high-inclination systems (see section~\ref{sec:xrb_winds}). 
 This implies that equatorial outflows are intrinsic to 
 the accretion process. Although the driving mechanism
-is almost certainly different to CVs \citep{diaztrigo2015}, 
-the similarity in general structure 
-to models for CVs and quasars is striking.
+is almost certainly different to CVs \citep[e.g.][]{diaztrigo2015}, 
+the similarity in general structure to models for CVs and quasars is striking.
 
 
 % \begin{figure}
@@ -548,15 +552,14 @@ to models for CVs and quasars is striking.
 
 Spectra of AGN have now been studied for over 100 years, and we have known 
 that they exhibit strong, broad emission lines since the first spectrum was taken by
-\cite{fath1909}.
-However, it wasn't until the work of \cite{seyfert1943} that the systematic 
+\cite{fath1909}. However, it wasn't until the work of \cite{seyfert1943} that the systematic 
 classification of AGN really began, leading to the phrase `Seyfert galaxy'.
 This label was applied to galaxies possessing a bright nucleus, spectroscopically
 characterised by a blue continuum and a series of strong emission lines.
 The first real physical insight into the extraordinary nature of AGN
 was provided by \cite{woltjer1959}, who noted that (i) the nuclei must have sizes $<100$~pc,
 based on the fact that they were unresolved and (ii) the mass of the nucleus
-must be very high, based on virialised motion. 
+must be very high, based on virial arguments. 
 While both of these observations were based on simple arguments, the fact that these
 ultra-luminous celestial objects are both {\em compact} and {\em supermassive}
 is perhaps the defining insight into the nature of AGN.
@@ -575,15 +578,32 @@ Indeed, throughout this thesis I shall refer to a quasar as simply a bright,
 massive AGN; one with sufficiently high luminosity that it dominates the emission 
 from it's host galaxy.
 
-\subsection{AGN Taxonomy}
-\label{sec:agn_taxonomy}
+One of the main classifications schemes for AGN is a spectroscopic one, based on 
+whether an object possesses broad emission lines in its spectrum, such as \civ\, broad \hb\ and
+\la, in addition to the narrow lines that are always present. 
+If these broad lines are seen, then the AGN is classed as type I, and if not, it is a type II; 
+example spectra are shown in figure~\ref{fig:agn_templates}.
+These designations were originally applied to Seyfert galaxies \citep{seyfert1943}, 
+but can also be used to classify the more luminous quasar class, despite the apparent
+difficulty in finding the expected number of type II sources \citep{zakamska2003}. 
+These classifications are complicated somewhat by narrow line Seyfert Is, which
+may be explained by super-Eddington accretion \citep{done2015} 
+or perhaps simply an orientation effect \citep{baldi2016},
+and the so-called `true type II' AGN, in which the broad line region is absent 
+\citep{tran2001,shi2010} rather than obscured (see next section).
+Despite the muddying of the waters, what was originally a clear dichotomy in spectral type provided a 
+profound motivation for attempting to {\em unify} AGN via geometric arguments.
 
-In addition to Seyfert galaxies and quasars, there are a number of 
-different classes of AGN. These are broadly characterised by their spectra in the 
-optical, UV and X-ray as well as their radio behaviour. It is worth noting
-that these are observational classifications; that is, even after a century
-of study, the {\em physical} origins of the diverse behaviour of AGN
-are still an active area of research.
+
+% \subsection{AGN Taxonomy}
+% \label{sec:agn_taxonomy}
+
+% In addition to Seyfert galaxies and quasars, there are a number of 
+% different classes of AGN. These are broadly characterised by their spectra in the 
+% optical, UV and X-ray as well as their radio behaviour. It is worth noting
+% that these are observational classifications; that is, even after a century
+% of study, the {\em physical} origins of the diverse behaviour of AGN
+% are still an active area of research.
 
 \begin{figure}
 \centering
@@ -597,43 +617,43 @@ Obtained from \url{http://www.stsci.edu/hst/observatory/crds/cdbs_agn.html}.
 \label{fig:agn_templates}
 \end{figure} 
 
-\subsubsection{Radio Galaxies}
+% \subsubsection{Radio Galaxies}
 
-Radio galaxies are a broad class of AGN, of which radio-loud quasars and blazars are
-technically members, which show strong emission in the radio band. 
-The main classification scheme was proposed by \cite{FR1974}, who split
-sources according to the luminosity. FR I sources are lower in radio luminosity with a steadily decreasing surface brightness towards the edge of the radio lobes.
-FR II sources are more luminous and exhibit bright structures at the edge of their 
-radio maps. Radio galaxies are not particularly relevant here, but it is worth 
-noting that `Radio core dominance', $\log R$, is often used as an orientation indicator 
-\citep{orr1982,wills1995}. This is because more pole-on sources should, in theory, 
-be more dominated by their
-cores whereas edge-on sources should be more dominated by extended radio
-lobes. I discuss the use of orientation indicators further in chapter 6.
+% Radio galaxies are a broad class of AGN, of which radio-loud quasars and blazars are
+% technically members, which show strong emission in the radio band. 
+% The main classification scheme was proposed by \cite{FR1974}, who split
+% sources according to the luminosity. FR I sources are lower in radio luminosity with a steadily decreasing surface brightness towards the edge of the radio lobes.
+% FR II sources are more luminous and exhibit bright structures at the edge of their 
+% radio maps. Radio galaxies are not particularly relevant here, but it is worth 
+% noting that `Radio core dominance', $\log R$, is often used as an orientation indicator 
+% \citep{orr1982,wills1995}. This is because more pole-on sources should, in theory, 
+% be more dominated by their
+% cores whereas edge-on sources should be more dominated by extended radio
+% lobes. I discuss the use of orientation indicators further in chapter 6.
 
-\subsubsection{BL Lacs and Blazars}
+% \subsubsection{BL Lacs and Blazars}
 
-BL Lac objects -- named for the first object of the class, BL Lacertae --
-are AGN with featureless non-thermal continua 
-\citep[see figure~\ref{fig:agn_templates}, and][for a review]{falomo2014},
-in contrast to Seyfert galaxies. 
-Their optical flux is highly polarised \citep{angelstockman1980}
-and they tend to exhibit large-scale optical variability, 
-to the extent that they were originally classified as irregularly variable
-stars \citep{hoff1929}. BL Lacs are a subset of 
-a larger AGN class known as Blazars, the most luminous of which
-are known as optically violent variable (OVV) quasars \citep{wright1998}. 
-Blazars require relativistic beaming in order to explain their high 
-radio luminosities \citep{ghis1985,ghis1993}, 
-implying that the jet is orientated towards
-the observer. These objects thus have an important place in unification
-schemes (see section~\ref{agn_unification}), and
-allow us to measure bulk Lorentz factors in radio jets, which
-can be as high as $\sim50$ \citep{begelman2008}.
+% BL Lac objects -- named for the first object of the class, BL Lacertae --
+% are AGN with featureless non-thermal continua 
+% \citep[see figure~\ref{fig:agn_templates}, and][for a review]{falomo2014},
+% in contrast to Seyfert galaxies. 
+% Their optical flux is highly polarised \citep{angelstockman1980}
+% and they tend to exhibit large-scale optical variability, 
+% to the extent that they were originally classified as irregularly variable
+% stars \citep{hoff1929}. BL Lacs are a subset of 
+% a larger AGN class known as Blazars, the most luminous of which
+% are known as optically violent variable (OVV) quasars \citep{wright1998}. 
+% Blazars require relativistic beaming in order to explain their high 
+% radio luminosities \citep{ghis1985,ghis1993}, 
+% implying that the jet is orientated towards
+% the observer. These objects thus have an important place in unification
+% schemes (see section~\ref{agn_unification}), and
+% allow us to measure bulk Lorentz factors in radio jets, which
+% can be as high as $\sim50$ \citep{begelman2008}.
 
-\subsubsection{Obscured and Compton-thick AGN}
+% \subsubsection{Obscured and Compton-thick AGN}
 
-\subsubsection{Low-luminosity AGN}
+% \subsubsection{Low-luminosity AGN}
 
 
 \subsection{AGN Unification and the dusty Torus}

@@ -7,11 +7,6 @@
   fraction}.
 \newblock {\em \mnras}, 410:860--884.
 
-\bibitem[\protect\astroncite{{Angel} and {Stockman}}{1980}]{angelstockman1980}
-{Angel}, J.~R.~P. and H.~S. {Stockman}\leavevmode\nopagebreak\newline 1980.
-\newblock {Optical and infrared polarization of active extragalactic objects}.
-\newblock {\em \araa}, 18:321--361.
-
 \bibitem[\protect\astroncite{{Antonucci}}{2013}]{antonucci2013}
 {Antonucci}, R.\leavevmode\nopagebreak\newline 2013.
 \newblock {Astrophysics: Quasars still defy explanation}.
@@ -28,17 +23,25 @@
   properties of accreting black hole systems}.
 \newblock {\em \mnras}, 367:801--814.
 
+\bibitem[\protect\astroncite{{Baldi} et~al.}{2016}]{baldi2016}
+{Baldi}, R.~D., A.~{Capetti}, A.~{Robinson}, A.~{Laor}, and
+  E.~{Behar}\leavevmode\nopagebreak\newline 2016.
+\newblock {Radio-loud Narrow Line Seyfert 1 under a different perspective: a
+  revised black hole mass estimate from optical spectropolarimetry}.
+\newblock {\em \mnras}.
+
+\bibitem[\protect\astroncite{{Baptista} et~al.}{2000}]{baptista2000}
+{Baptista}, R., C.~{Silveira}, J.~E. {Steiner}, and
+  K.~{Horne}\leavevmode\nopagebreak\newline 2000.
+\newblock {Spatially resolved spectra of the accretion disc of the nova-like
+  variable UU Aquarii}.
+\newblock {\em \mnras}, 314:713--726.
+
 \bibitem[\protect\astroncite{{Bartlett}}{2013}]{bartlett2013}
 {Bartlett}, E.\leavevmode\nopagebreak\newline 2013.
 \newblock {\em {High mass X-ray binaries in the MilkyWay and beyond: a
   multiwavelength temporal and spectroscopic study}}.
 \newblock PhD thesis, University of Southampton.
-
-\bibitem[\protect\astroncite{{Begelman} et~al.}{2008}]{begelman2008}
-{Begelman}, M.~C., A.~C. {Fabian}, and M.~J.
-  {Rees}\leavevmode\nopagebreak\newline 2008.
-\newblock {Implications of very rapid TeV variability in blazars}.
-\newblock {\em \mnras}, 384:L19--L23.
 
 \bibitem[\protect\astroncite{{Begelman} et~al.}{1983}]{begelman1983}
 {Begelman}, M.~C., C.~F. {McKee}, and G.~A.
@@ -117,6 +120,11 @@
   A.~{Evans} and J.~H. {Wood}, eds., volume 208 of {\em Astrophysics and Space
   Science Library}, P.~~3.
 
+\bibitem[\protect\astroncite{{Dhillon} and {Rutten}}{1995}]{DR95}
+{Dhillon}, V.~S. and R.~G.~M. {Rutten}\leavevmode\nopagebreak\newline 1995.
+\newblock {Spectropolarimetry of the nova-like variable V 1315 Aquilae}.
+\newblock {\em \mnras}, 277:777--780.
+
 \bibitem[\protect\astroncite{{D{\'{\i}}az Trigo} and
   {Boirin}}{2015}]{diaztrigo2015}
 {D{\'{\i}}az Trigo}, M. and L.~{Boirin}\leavevmode\nopagebreak\newline 2015.
@@ -129,6 +137,18 @@
 \newblock {Intrinsic disc emission and the soft X-ray excess in active galactic
   nuclei}.
 \newblock {\em \mnras}, 420:1848--1860.
+
+\bibitem[\protect\astroncite{{Done} and {Jin}}{2015}]{done2015}
+{Done}, C. and C.~{Jin}\leavevmode\nopagebreak\newline 2015.
+\newblock {The Mass and Spin of The Extreme Narrow Line Seyfert 1 Galaxy
+  1H0707-495 and Its Implications for The Trigger for Relativistic Jets}.
+\newblock {\em ArXiv e-prints}.
+
+\bibitem[\protect\astroncite{{Drew} and {Verbunt}}{1985}]{drewverbunt1985}
+{Drew}, J. and F.~{Verbunt}\leavevmode\nopagebreak\newline 1985.
+\newblock {Investigation of a wind model for cataclysmic variable ultraviolet
+  resonance line emission}.
+\newblock {\em \mnras}, 213:191--213.
 
 \bibitem[\protect\astroncite{{Edelson} et~al.}{2015}]{edelson2015}
 {Edelson}, R., J.~M. {Gelbord}, K.~{Horne}, I.~M. {McHardy}, B.~M. {Peterson},
@@ -197,17 +217,6 @@
 \newblock {Observational Evidence of Active Galactic Nuclei Feedback}.
 \newblock {\em \araa}, 50:455--489.
 
-\bibitem[\protect\astroncite{{Falomo} et~al.}{2014}]{falomo2014}
-{Falomo}, R., E.~{Pian}, and A.~{Treves}\leavevmode\nopagebreak\newline 2014.
-\newblock {An optical view of BL Lacertae objects}.
-\newblock {\em \aapr}, 22:73.
-
-\bibitem[\protect\astroncite{{Fanaroff} and {Riley}}{1974}]{FR1974}
-{Fanaroff}, B.~L. and J.~M. {Riley}\leavevmode\nopagebreak\newline 1974.
-\newblock {The morphology of extragalactic radio sources of high and low
-  luminosity}.
-\newblock {\em \mnras}, 167:31P--36P.
-
 \bibitem[\protect\astroncite{{Fath}}{1909}]{fath1909}
 {Fath}, E.~A.\leavevmode\nopagebreak\newline 1909.
 \newblock {The spectra of some spiral nebulae and globular star clusters}.
@@ -219,22 +228,15 @@
   states}.
 \newblock {\em \mnras}, 322:31--42.
 
+\bibitem[\protect\astroncite{{Fender} et~al.}{2004}]{fender2004}
+{Fender}, R.~P., T.~M. {Belloni}, and E.~{Gallo}\leavevmode\nopagebreak\newline
+  2004.
+\newblock {Towards a unified model for black hole X-ray binary jets}.
+\newblock {\em \mnras}, 355:1105--1118.
+
 \bibitem[\protect\astroncite{{Frank} et~al.}{1992}]{fkrbook}
 {Frank}, J., A.~{King}, and D.~{Raine}\leavevmode\nopagebreak\newline 1992.
 \newblock {\em {Accretion power in astrophysics.}}
-
-\bibitem[\protect\astroncite{{Ghisellini} et~al.}{1985}]{ghis1985}
-{Ghisellini}, G., L.~{Maraschi}, and A.~{Treves}\leavevmode\nopagebreak\newline
-  1985.
-\newblock {Inhomogeneous synchrotron-self-Compton models and the problem of
-  relativistic beaming of BL Lac objects}.
-\newblock {\em \aap}, 146:204--212.
-
-\bibitem[\protect\astroncite{{Ghisellini} et~al.}{1993}]{ghis1993}
-{Ghisellini}, G., P.~{Padovani}, A.~{Celotti}, and
-  L.~{Maraschi}\leavevmode\nopagebreak\newline 1993.
-\newblock {Relativistic bulk motion in active galactic nuclei}.
-\newblock {\em \apj}, 407:65--82.
 
 \bibitem[\protect\astroncite{{Gierli{\'n}ski} and
   {Done}}{2004}]{gierlinskidone2004b}
@@ -253,6 +255,12 @@
 {Greenstein}, J.~L. and J.~B. {Oke}\leavevmode\nopagebreak\newline 1982.
 \newblock {RW Sextantis, a disk with a hot, high-velocity wind}.
 \newblock {\em \apj}, 258:209--216.
+
+\bibitem[\protect\astroncite{{Groot} et~al.}{2004}]{groot2004}
+{Groot}, P.~J., R.~G.~M. {Rutten}, and J.~{van
+  Paradijs}\leavevmode\nopagebreak\newline 2004.
+\newblock {A spectrophotometric study of RW Trianguli}.
+\newblock {\em \aap}, 417:283--291.
 
 \bibitem[\protect\astroncite{{G{\"u}ltekin} et~al.}{2009}]{gultekin2009}
 {G{\"u}ltekin}, K., D.~O. {Richstone}, K.~{Gebhardt}, T.~R. {Lauer},
@@ -320,16 +328,18 @@
 \newblock {A simple disc wind model for broad absorption line quasars}.
 \newblock {\em \mnras}, 436:1390--1407.
 
-\bibitem[\protect\astroncite{{Hoffmeister}}{1929}]{hoff1929}
-{Hoffmeister}, C.\leavevmode\nopagebreak\newline 1929.
-\newblock {354 neue Ver{\"a}nderliche}.
-\newblock {\em Astronomische Nachrichten}, 236:233.
-
 \bibitem[\protect\astroncite{{Hogg} and {Reynolds}}{2015}]{hogg2015}
 {Hogg}, J.~D. and C.~{Reynolds}\leavevmode\nopagebreak\newline 2015.
 \newblock {Testing the Propagating Fluctuations Model with a Long, Global
   Accretion Disk Simulation}.
 \newblock {\em ArXiv e-prints}.
+
+\bibitem[\protect\astroncite{{Honeycutt} et~al.}{1986}]{HSK86}
+{Honeycutt}, R.~K., E.~M. {Schlegel}, and R.~H.
+  {Kaitchuck}\leavevmode\nopagebreak\newline 1986.
+\newblock {Evidence for a bipolar wind in the cataclysmic variable PG
+  1012-029}.
+\newblock {\em \apj}, 302:388--402.
 
 \bibitem[\protect\astroncite{{H{\"o}nig} et~al.}{2013}]{hoenig2013}
 {H{\"o}nig}, S.~F., M.~{Kishimoto}, K.~R.~W. {Tristram}, M.~A. {Prieto},
@@ -344,6 +354,11 @@
 \newblock {\em {Eclipse Mapping of Accretion Disks: The First Decade}}, P.~
   117.
 
+\bibitem[\protect\astroncite{{Horne} and {Marsh}}{1986}]{hornemarsh1986}
+{Horne}, K. and T.~R. {Marsh}\leavevmode\nopagebreak\newline 1986.
+\newblock {Emission line formation in accretion discs}.
+\newblock {\em \mnras}, 218:761--773.
+
 \bibitem[\protect\astroncite{{Hoyle} and {Lyttleton}}{1939}]{hoyle1939}
 {Hoyle}, F. and R.~A. {Lyttleton}\leavevmode\nopagebreak\newline 1939.
 \newblock {The effect of interstellar matter on climatic variation}.
@@ -354,6 +369,12 @@
   G.~{Shaviv}\leavevmode\nopagebreak\newline 2010.
 \newblock {Accretion-disc model spectra for dwarf-nova stars}.
 \newblock {\em \aap}, 519:A117.
+
+\bibitem[\protect\astroncite{{Ioannou} et~al.}{2003}]{ioannau2003}
+{Ioannou}, Z., L.~{van Zyl}, T.~{Naylor}, P.~A. {Charles}, B.~{Margon},
+  L.~{Koch-Miramond}, and S.~{Ilovaisky}\leavevmode\nopagebreak\newline 2003.
+\newblock {Understanding the LMXB X2127+119 in M 15. II. The UV data}.
+\newblock {\em \aap}, 399:211--218.
 
 \bibitem[\protect\astroncite{{Janiuk} et~al.}{2001}]{januik2001}
 {Janiuk}, A., B.~{Czerny}, and G.~M. {Madejski}\leavevmode\nopagebreak\newline
@@ -379,6 +400,19 @@
 \newblock {The Evolution of Cataclysmic Variables as Revealed by Their Donor
   Stars}.
 \newblock {\em \apjs}, 194:28.
+
+\bibitem[\protect\astroncite{{Knigge} and {Drew}}{1997}]{kd1997}
+{Knigge}, C. and J.~E. {Drew}\leavevmode\nopagebreak\newline 1997.
+\newblock {Eclipse Mapping of the Accretion Disk Wind in the Cataclysmic
+  Variable UX Ursae Majoris}.
+\newblock {\em \apj}, 486:445--456.
+
+\bibitem[\protect\astroncite{{Knigge} et~al.}{1997}]{knigge1997}
+{Knigge}, C., K.~S. {Long}, W.~P. {Blair}, and R.~A.
+  {Wade}\leavevmode\nopagebreak\newline 1997.
+\newblock {Disks, Winds, and Veiling Curtains: Dissecting the Ultraviolet
+  Spectrum of the Dwarf Nova Z Camelopardalis in Outburst}.
+\newblock {\em \apj}, 476:291--310.
 
 \bibitem[\protect\astroncite{{Knigge} et~al.}{1998a}]{knigge1998}
 {Knigge}, C., K.~S. {Long}, R.~A. {Wade}, R.~{Baptista}, K.~{Horne},
@@ -458,6 +492,12 @@
   Ultraviolet Telescope}.
 \newblock {\em \apjl}, 381:L25--L29.
 
+\bibitem[\protect\astroncite{{Long} and {Knigge}}{2002}]{LK02}
+{Long}, K.~S. and C.~{Knigge}\leavevmode\nopagebreak\newline 2002.
+\newblock {Modeling the Spectral Signatures of Accretion Disk Winds: A New
+  Monte Carlo Approach}.
+\newblock {\em \apj}, 579:725--740.
+
 \bibitem[\protect\astroncite{{Long} et~al.}{1994}]{long1994}
 {Long}, K.~S., R.~A. {Wade}, W.~P. {Blair}, A.~F. {Davidsen}, and
   I.~{Hubeny}\leavevmode\nopagebreak\newline 1994.
@@ -510,12 +550,24 @@
   and Gamma-Ray Bursts}, P.~A. {Hughes} and J.~N. {Bregman}, eds., volume 856
   of {\em American Institute of Physics Conference Series}, Pp.~ 1--22.
 
+\bibitem[\protect\astroncite{{Marsh} and {Horne}}{1990}]{marshhorne1990}
+{Marsh}, T.~R. and K.~{Horne}\leavevmode\nopagebreak\newline 1990.
+\newblock {Emission-line mapping of the dwarf nova IP Pegasi in outburst and
+  quiescence}.
+\newblock {\em \apj}, 349:593--607.
+
 \bibitem[\protect\astroncite{{Matt} et~al.}{2003}]{matt2003}
 {Matt}, G., M.~{Guainazzi}, and R.~{Maiolino}\leavevmode\nopagebreak\newline
   2003.
 \newblock {Changing look: from Compton-thick to Compton-thin, or the rebirth of
   fossil active galactic nuclei}.
 \newblock {\em \mnras}, 342:422--426.
+
+\bibitem[\protect\astroncite{{Mauche} and {Raymond}}{1987}]{maucheraymond1987}
+{Mauche}, C.~W. and J.~C. {Raymond}\leavevmode\nopagebreak\newline 1987.
+\newblock {IUE observations of the dwarf nova HL Canis Majoris and the winds of
+  cataclysmic variables}.
+\newblock {\em \apj}, 323:690--713.
 
 \bibitem[\protect\astroncite{{McConnell} and {Ma}}{2013}]{mcconnell2013}
 {McConnell}, N.~J. and C.-P. {Ma}\leavevmode\nopagebreak\newline 2013.
@@ -542,6 +594,17 @@
   observed by Swift (part 1 of 2)}.
 \newblock {\em The Astronomer's Telegram}, 7665.
 
+\bibitem[\protect\astroncite{{Murray} and {Chiang}}{1996}]{MC96}
+{Murray}, N. and J.~{Chiang}\leavevmode\nopagebreak\newline 1996.
+\newblock {Wind-dominated optical line emission from accretion disks around
+  luminous cataclysmic variable stars}.
+\newblock {\em \nat}, 382:789--791.
+
+\bibitem[\protect\astroncite{{Murray} and {Chiang}}{1997}]{MC97}
+{Murray}, N. and J.~{Chiang}\leavevmode\nopagebreak\newline 1997.
+\newblock {Disk Winds and Disk Emission Lines}.
+\newblock {\em \apj}, 474:91--103.
+
 \bibitem[\protect\astroncite{{Murray} et~al.}{1995}]{MCGV95}
 {Murray}, N., J.~{Chiang}, S.~A. {Grossman}, and G.~M.
   {Voit}\leavevmode\nopagebreak\newline 1995.
@@ -555,10 +618,12 @@
   0.3 to 10 microns}.
 \newblock {\em \apj}, 230:79--94.
 
-\bibitem[\protect\astroncite{{Orr} and {Browne}}{1982}]{orr1982}
-{Orr}, M.~J.~L. and I.~W.~A. {Browne}\leavevmode\nopagebreak\newline 1982.
-\newblock {Relativistic beaming and quasar statistics}.
-\newblock {\em \mnras}, 200:1067--1080.
+\bibitem[\protect\astroncite{{Noebauer} et~al.}{2010}]{noebauer}
+{Noebauer}, U.~M., K.~S. {Long}, S.~A. {Sim}, and
+  C.~{Knigge}\leavevmode\nopagebreak\newline 2010.
+\newblock {The Geometry and Ionization Structure of the Wind in the Eclipsing
+  Nova-like Variables RW Tri and UX UMa}.
+\newblock {\em \apj}, 719:1932--1945.
 
 \bibitem[\protect\astroncite{{Patterson}}{1994}]{patterson1994}
 {Patterson}, J.\leavevmode\nopagebreak\newline 1994.
@@ -601,6 +666,13 @@
   F.~{Nicastro}\leavevmode\nopagebreak\newline 2007.
 \newblock {Rapid N$_{H}$ changes in NGC 4151}.
 \newblock {\em \mnras}, 377:607--616.
+
+\bibitem[\protect\astroncite{{Puebla} et~al.}{2011}]{puebla2011}
+{Puebla}, R.~E., M.~P. {Diaz}, D.~J. {Hillier}, and
+  I.~{Hubeny}\leavevmode\nopagebreak\newline 2011.
+\newblock {A Method for the Study of Accretion Disk Emission in Cataclysmic
+  Variables. I. The Model}.
+\newblock {\em \apj}, 736:17.
 
 \bibitem[\protect\astroncite{{Reeves} et~al.}{2003}]{reeves2003}
 {Reeves}, J.~N., P.~T. {O'Brien}, and M.~J.
@@ -662,10 +734,27 @@
 \newblock {Continuous energy distributions of accretion discs}.
 \newblock {\em \aap}, 251:117--132.
 
+\bibitem[\protect\astroncite{{Shi} et~al.}{2010}]{shi2010}
+{Shi}, Y., G.~H. {Rieke}, P.~{Smith}, J.~{Rigby}, D.~{Hines}, J.~{Donley},
+  G.~{Schmidt}, and A.~M. {Diamond-Stanic}\leavevmode\nopagebreak\newline 2010.
+\newblock {Unobscured Type 2 Active Galactic Nuclei}.
+\newblock {\em \apj}, 714:115--129.
+
+\bibitem[\protect\astroncite{{Shlosman} and {Vitello}}{1993}]{SV93}
+{Shlosman}, I. and P.~{Vitello}\leavevmode\nopagebreak\newline 1993.
+\newblock {Winds from accretion disks - Ultraviolet line formation in
+  cataclysmic variables}.
+\newblock {\em \apj}, 409:372--386.
+
 \bibitem[\protect\astroncite{{Silk} and {Rees}}{1998}]{silkrees1998}
 {Silk}, J. and M.~J. {Rees}\leavevmode\nopagebreak\newline 1998.
 \newblock {Quasars and galaxy formation}.
 \newblock {\em \aap}, 331:L1--L4.
+
+\bibitem[\protect\astroncite{{Smak}}{1981}]{smak1981}
+{Smak}, J.\leavevmode\nopagebreak\newline 1981.
+\newblock {On the Emission Lines from Rotating Gaseous Disks}.
+\newblock {\em \actaa}, 31:395.
 
 \bibitem[\protect\astroncite{{Springel} et~al.}{2005}]{springel2005}
 {Springel}, V., T.~{Di Matteo}, and
@@ -690,6 +779,12 @@
 \newblock {Evidence for ultra-fast outflows in radio-quiet AGNs. I. Detection
   and statistical incidence of Fe K-shell absorption lines}.
 \newblock {\em \aap}, 521:A57.
+
+\bibitem[\protect\astroncite{{Tran}}{2001}]{tran2001}
+{Tran}, H.~D.\leavevmode\nopagebreak\newline 2001.
+\newblock {Hidden Broad-Line Seyfert 2 Galaxies in the CFA and 12 {$\mu$}M
+  Samples}.
+\newblock {\em \apjl}, 554:L19--L23.
 
 \bibitem[\protect\astroncite{{Urry} and {Padovani}}{1995}]{UP95}
 {Urry}, C.~M. and P.~{Padovani}\leavevmode\nopagebreak\newline 1995.
@@ -743,11 +838,6 @@
   absorption line and normal quasi-stellar objects}.
 \newblock {\em \apj}, 373:23--53.
 
-\bibitem[\protect\astroncite{{Wills} and {Brotherton}}{1995}]{wills1995}
-{Wills}, B.~J. and M.~S. {Brotherton}\leavevmode\nopagebreak\newline 1995.
-\newblock {An Improved Measure of Quasar Orientation}.
-\newblock {\em \apjl}, 448:L81.
-
 \bibitem[\protect\astroncite{{Woltjer}}{1959}]{woltjer1959}
 {Woltjer}, L.\leavevmode\nopagebreak\newline 1959.
 \newblock {Emission Nuclei in Galaxies.}
@@ -760,11 +850,13 @@
   Two-dimensional Hydrodynamics with Adaptive Mesh Refinement}.
 \newblock {\em \apj}, 461:767.
 
-\bibitem[\protect\astroncite{{Wright} et~al.}{1998}]{wright1998}
-{Wright}, S.~C., I.~M. {McHardy}, and R.~G.
-  {Abraham}\leavevmode\nopagebreak\newline 1998.
-\newblock {Host galaxies of the optically violently variable quasars PKS
-  0736+017, OJ 287 and LB 2136}.
-\newblock {\em \mnras}, 295:799--812.
+\bibitem[\protect\astroncite{{Zakamska} et~al.}{2003}]{zakamska2003}
+{Zakamska}, N.~L., M.~A. {Strauss}, J.~H. {Krolik}, M.~J. {Collinge}, P.~B.
+  {Hall}, L.~{Hao}, T.~M. {Heckman}, {\v Z}.~{Ivezi{\'c}}, G.~T. {Richards},
+  D.~J. {Schlegel}, D.~P. {Schneider}, I.~{Strateva}, D.~E. {Vanden Berk},
+  S.~F. {Anderson}, and J.~{Brinkmann}\leavevmode\nopagebreak\newline 2003.
+\newblock {Candidate Type II Quasars from the Sloan Digital Sky Survey. I.
+  Selection and Optical Properties of a Sample at 0.3<Z<0.83}.
+\newblock {\em \aj}, 126:2125--2144.
 
 \end{thebibliography}
