@@ -7,10 +7,21 @@
   fraction}.
 \newblock {\em \mnras}, 410:860--884.
 
+\bibitem[\protect\astroncite{{Antonucci}}{1988}]{antonucci1988}
+{Antonucci}, R.\leavevmode\nopagebreak\newline 1988.
+\newblock {Polarization of active galactic nuclei and quasars}.
+\newblock In {\em Supermassive Black Holes}, M.~{Kafatos}, ed., Pp.~ 26--38.
+
 \bibitem[\protect\astroncite{{Antonucci}}{2013}]{antonucci2013}
 {Antonucci}, R.\leavevmode\nopagebreak\newline 2013.
 \newblock {Astrophysics: Quasars still defy explanation}.
 \newblock {\em \nat}, 495:165--167.
+
+\bibitem[\protect\astroncite{{Antonucci} et~al.}{1996}]{antonucci1996}
+{Antonucci}, R., R.~{Geller}, R.~W. {Goodrich}, and J.~S.
+  {Miller}\leavevmode\nopagebreak\newline 1996.
+\newblock {The Spectropolarimetric Test of the Quasar Emission Mechanism}.
+\newblock {\em \apj}, 472:502.
 
 \bibitem[\protect\astroncite{{Antonucci} and {Miller}}{1985}]{antonucci1985}
 {Antonucci}, R.~R.~J. and J.~S. {Miller}\leavevmode\nopagebreak\newline 1985.
@@ -82,6 +93,12 @@
 \newblock {Stellar winds}.
 \newblock {\em \araa}, 17:275--308.
 
+\bibitem[\protect\astroncite{{Chartas} et~al.}{2009}]{chartas2009}
+{Chartas}, G., C.~S. {Kochanek}, X.~{Dai}, S.~{Poindexter}, and
+  G.~{Garmire}\leavevmode\nopagebreak\newline 2009.
+\newblock {X-Ray Microlensing in RXJ1131-1231 and HE1104-1805}.
+\newblock {\em \apj}, 693:174--185.
+
 \bibitem[\protect\astroncite{{Cohen} et~al.}{1986}]{cohen1986}
 {Cohen}, R.~D., R.~C. {Puetter}, R.~J. {Rudy}, T.~B. {Ake}, and C.~B.
   {Foltz}\leavevmode\nopagebreak\newline 1986.
@@ -99,6 +116,30 @@
 {Cordova}, F.~A. and K.~O. {Mason}\leavevmode\nopagebreak\newline 1982.
 \newblock {High-velocity winds from a dwarf nova during outburst}.
 \newblock {\em \apj}, 260:716--721.
+
+\bibitem[\protect\astroncite{{Crenshaw} et~al.}{1996}]{crenshaw1996}
+{Crenshaw}, D.~M., P.~M. {Rodriguez-Pascual}, S.~V. {Penton}, R.~A. {Edelson},
+  D.~{Alloin}, T.~R. {Ayres}, J.~{Clavel}, K.~{Horne}, W.~N. {Johnson},
+  S.~{Kaspi}, K.~T. {Korista}, G.~A. {Kriss}, J.~H. {Krolik}, M.~A. {Malkan},
+  D.~{Maoz}, H.~{Netzer}, P.~T. {O'Brien}, B.~M. {Peterson}, G.~A. {Reichert},
+  J.~M. {Shull}, M.-H. {Ulrich}, W.~{Wamsteker}, R.~S. {Warwick}, T.~{Yaqoob},
+  T.~J. {Balonek}, P.~{Barr}, G.~E. {Bromage}, M.~{Carini}, T.~E. {Carone},
+  F.-Z. {Cheng}, K.~K. {Chuvaev}, M.~{Dietrich}, V.~T. {Doroshenko},
+  D.~{Dultzin-Hacyan}, A.~V. {Filippenko}, C.~M. {Gaskell}, I.~S. {Glass},
+  M.~R. {Goad}, J.~{Hutchings}, D.~{Kazanas}, W.~{Kollatschny}, A.~P.
+  {Koratkar}, A.~{Laor}, K.~{Leighly}, V.~M. {Lyutyi}, G.~M. {MacAlpine}, Y.~F.
+  {Malkov}, P.~G. {Martin}, B.~{McCollum}, N.~I. {Merkulova}, L.~{Metik}, V.~G.
+  {Metlov}, H.~R. {Miller}, S.~L. {Morris}, V.~L. {Oknyanskij}, J.~{Penfold},
+  E.~{Perez}, G.~C. {Perola}, G.~{Pike}, R.~W. {Pogge}, I.~{Pronik}, V.~I.
+  {Pronik}, R.~L. {Ptak}, M.~C. {Recondo-Gonzalez}, J.~M. {Rodriguez-Espinoza},
+  E.~L. {Rokaki}, J.~{Roland}, A.~C. {Sadun}, I.~{Salamanca}, M.~{Santos-Lleo},
+  S.~G. {Sergeev}, S.~M. {Smith}, M.~A.~J. {Snijders}, L.~S. {Sparke}, G.~M.
+  {Stirpe}, R.~E. {Stoner}, W.-H. {Sun}, E.~{van Groningen}, R.~M. {Wagner},
+  S.~{Wagner}, I.~{Wanders}, W.~F. {Welsh}, R.~J. {Weymann}, B.~J. {Wilkes},
+  and W.~{Zheng}\leavevmode\nopagebreak\newline 1996.
+\newblock {Multiwavelength Observations of Short-Timescale Variability in NGC
+  4151. I. Ultraviolet Observations}.
+\newblock {\em \apj}, 470:322.
 
 \bibitem[\protect\astroncite{{Denney} et~al.}{2014}]{denney2014}
 {Denney}, K.~D., G.~{De Rosa}, K.~{Croxall}, A.~{Gupta}, M.~C. {Bentz}, M.~M.
@@ -250,6 +291,12 @@
 \newblock {Energy-dependent variability and the origin of the soft X-ray excess
   in active galactic nuclei}.
 \newblock {\em \mnras}, 371:L16--L20.
+
+\bibitem[\protect\astroncite{{Green} et~al.}{1993}]{green1993}
+{Green}, A.~R., I.~M. {McHardy}, and H.~J.
+  {Lehto}\leavevmode\nopagebreak\newline 1993.
+\newblock {On the nature of rapid X-ray variability in active galactic nuclei}.
+\newblock {\em \mnras}, 265:664.
 
 \bibitem[\protect\astroncite{{Greenstein} and {Oke}}{1982}]{greensteinoke1982}
 {Greenstein}, J.~L. and J.~B. {Oke}\leavevmode\nopagebreak\newline 1982.
@@ -434,6 +481,12 @@
 \newblock {The intrinsic fraction of broad-absorption line quasars}.
 \newblock {\em \mnras}, 386:1426--1435.
 
+\bibitem[\protect\astroncite{{Koratkar} and {Blaes}}{1999}]{koratkar1999}
+{Koratkar}, A. and O.~{Blaes}\leavevmode\nopagebreak\newline 1999.
+\newblock {The Ultraviolet and Optical Continuum Emission in Active Galactic
+  Nuclei: The Status of Accretion Disks}.
+\newblock {\em \pasp}, 111:1--30.
+
 \bibitem[\protect\astroncite{{K{\"o}rding} et~al.}{2008}]{kordingDNjet2008}
 {K{\"o}rding}, E., M.~{Rupen}, C.~{Knigge}, R.~{Fender}, V.~{Dhawan},
   M.~{Templeton}, and T.~{Muxlow}\leavevmode\nopagebreak\newline 2008.
@@ -470,6 +523,11 @@
 \newblock {On the Balmer jump in dwarf novae during the outburst}.
 \newblock {\em \mnras}, 238:935--943.
 
+\bibitem[\protect\astroncite{{Laor} and {Davis}}{2014}]{laordavis2014}
+{Laor}, A. and S.~W. {Davis}\leavevmode\nopagebreak\newline 2014.
+\newblock {Line-driven winds and the UV turnover in AGN accretion discs}.
+\newblock {\em \mnras}, 438:3024--3038.
+
 \bibitem[\protect\astroncite{{Lasota}}{2001}]{lasota2001}
 {Lasota}, J.-P.\leavevmode\nopagebreak\newline 2001.
 \newblock {The disc instability model of dwarf novae and low-mass X-ray binary
@@ -505,6 +563,12 @@
   Hopkins Ultraviolet Telescope}.
 \newblock {\em \apj}, 426:704--715.
 
+\bibitem[\protect\astroncite{{Lusso} et~al.}{2015}]{lusso2015}
+{Lusso}, E., G.~{Worseck}, J.~F. {Hennawi}, J.~X. {Prochaska}, C.~{Vignali},
+  J.~{Stern}, and J.~M. {O'Meara}\leavevmode\nopagebreak\newline 2015.
+\newblock {The first ultraviolet quasar-stacked spectrum at z ~ 2.4 from WFC3}.
+\newblock {\em \mnras}, 449:4204--4220.
+
 \bibitem[\protect\astroncite{{Lynden-Bell}}{1969}]{lyndenbell1969}
 {Lynden-Bell}, D.\leavevmode\nopagebreak\newline 1969.
 \newblock {Galactic Nuclei as Collapsed Old Quasars}.
@@ -531,7 +595,7 @@
 
 \bibitem[\protect\astroncite{{Mangham} et~al.}{prep}]{mangham}
 {Mangham}, S.~W., C.~{Knigge}, J.~H. {Matthews}, K.~S. {Long}, S.~A. {Sim}, and
-  N.~{Higginbottom}\leavevmode\nopagebreak\newline in prep.
+  N.~{Higginbottom}\leavevmode\nopagebreak\newline in~prep.
 \newblock {The reverberation signatures of rotating disk winds in AGN}.
 
 \bibitem[\protect\astroncite{{Marinucci} et~al.}{2016}]{marinucci2016}
@@ -611,6 +675,11 @@
 \newblock {Accretion Disk Winds from Active Galactic Nuclei}.
 \newblock {\em \apj}, 451:498.
 
+\bibitem[\protect\astroncite{{Nandra} and {Pounds}}{1994}]{nandra1994}
+{Nandra}, K. and K.~A. {Pounds}\leavevmode\nopagebreak\newline 1994.
+\newblock {GINGA Observations of the X-Ray Spectra of Seyfert Galaxies}.
+\newblock {\em \mnras}, 268:405.
+
 \bibitem[\protect\astroncite{{Neugebauer} et~al.}{1979}]{neugebauer1979}
 {Neugebauer}, G., J.~B. {Oke}, E.~E. {Becklin}, and
   K.~{Matthews}\leavevmode\nopagebreak\newline 1979.
@@ -655,6 +724,12 @@
 \newblock {4C 32.69 - A quasar with a radio jet}.
 \newblock {\em \apj}, 239:42--49.
 
+\bibitem[\protect\astroncite{{Pounds} et~al.}{1989}]{pounds1989}
+{Pounds}, K.~A., K.~{Nandra}, G.~C. {Stewart}, and
+  K.~{Leighly}\leavevmode\nopagebreak\newline 1989.
+\newblock {Iron features in the X-ray spectra of three Seyfert galaxies}.
+\newblock {\em \mnras}, 240:769--783.
+
 \bibitem[\protect\astroncite{{Pounds} and {Reeves}}{2009}]{poundsreeves2009}
 {Pounds}, K.~A. and J.~N. {Reeves}\leavevmode\nopagebreak\newline 2009.
 \newblock {Quantifying the fast outflow in the luminous Seyfert galaxy
@@ -685,6 +760,13 @@
 \newblock {High-speed optical spectroscopy of a cataclysmic variable wind - BZ
   Camelopardalis}.
 \newblock {\em \aj}, 115:286.
+
+\bibitem[\protect\astroncite{{Risaliti} et~al.}{2007}]{risaliti2007}
+{Risaliti}, G., M.~{Elvis}, G.~{Fabbiano}, A.~{Baldi}, A.~{Zezas}, and
+  M.~{Salvati}\leavevmode\nopagebreak\newline 2007.
+\newblock {Occultation Measurement of the Size of the X-Ray-emitting Region in
+  the Active Galactic Nucleus of NGC 1365}.
+\newblock {\em \apjl}, 659:L111--L114.
 
 \bibitem[\protect\astroncite{{Ross} and {Fabian}}{2005}]{rossfabian2005}
 {Ross}, R.~R. and A.~C. {Fabian}\leavevmode\nopagebreak\newline 2005.
@@ -762,6 +844,13 @@
 \newblock {Black Holes in Galaxy Mergers: The Formation of Red Elliptical
   Galaxies}.
 \newblock {\em \apjl}, 620:L79--L82.
+
+\bibitem[\protect\astroncite{{Stockman} et~al.}{1979}]{stockman1979}
+{Stockman}, H.~S., J.~R.~P. {Angel}, and G.~K.
+  {Miley}\leavevmode\nopagebreak\newline 1979.
+\newblock {Alignment of the optical polarization with the radio structure of
+  QSOs}.
+\newblock {\em \apjl}, 227:L55--L58.
 
 \bibitem[\protect\astroncite{{Struve}}{1935}]{struve1935}
 {Struve}, O.\leavevmode\nopagebreak\newline 1935.

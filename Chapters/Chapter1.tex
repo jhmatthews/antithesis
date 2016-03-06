@@ -705,14 +705,15 @@ A unified scheme for AGN.
 \nocite{elvis1994}
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/01-intro/quasar_sed.png}
+\includegraphics[width=1.0\textwidth]{figures/01-intro/agn_sed.png}
 \caption
-[A unified scheme for AGN.]
+[Broadband SEDs for different AGN SEDs]
 {
-Radio-loud (top) and radio-quiet (bottom) quasar SEDs from
-Elvis (1994). The UV bump is the BBB, and the IR bump can clearly
-be seen. The XUV or Soft-X-ray excess is also visible in the 
-radio-quiet panel (see section~\ref{sec:sxxs}).
+{\sl Credit: Koratkar \& Blaes 1999}
+Approximate average broadband SEDs for a few types of AGN. The series of 
+characteristic bumps can be clearly seen. 
+The Soft-X-ray excess is also visible
+(see section~\ref{sec:sxxs}).
 } 
 \label{fig:quasar_sed}
 \end{figure}
@@ -742,14 +743,28 @@ Approximately $10\%$ of the bolometric luminosity of AGN
 comes out in the X-ray band between $\sim0.1$ and $\sim100$~keV.
 Thus, AGN dominate the cosmic X-ray background \citep{madau1994}.
 The hard X-ray emission follows a typical power law shape with spectral
-index ?? (REFs), widely considered, as in LMXBs, to come from a hot `corona' of 
+index -0.9 \citep[e.g.][]{koratkar1999}, 
+widely considered, as in LMXBs, to come from a hot `corona' of 
 electrons, close to the BH, that upscatters disc seed photons
 \citep[e.g.][]{haardt1991}. The compactness of this X-ray corona
-has been recently confirmed with microlensing (REFs) 
-and variability studies (REFs). 
-X-rays in AGN can be highly variable, both in terms of their intrinsic 
-X-ray emission (REFs) and due to changes in the absorption characteristics (REFs).
-I discuss absorption in more detail, particular with respect to winds, in section~?.
+has been confirmed by microlensing \citep{chartas2009} 
+and variability studies \citep{green1993,crenshaw1996,risaliti2007}. 
+Indeed, X-rays in AGN can be highly variable, both in terms of their intrinsic 
+X-ray emission, but also due to changes in the absorption characteristics (REFs).
+I discuss X-ray absorption in more detail, particular with respect to winds, in section~?.
+
+The hard X-ray spectra AGN also tend to exhibit a number of reflection features. 
+Typically, these consist of a strong Fe K$\alpha$ emission line and `Compton' hump
+at high energies, which is produced by Compton down-scattering 
+of high energy photons \citep{pounds1989,nandra1994}.
+It is still unclear where these features originate, but it is often proposed that
+they are caused by reflection off the inner parts of an accretion disc (REFs).
+This model may help explain some of the variability of AGN (REFs), and modelling
+of the relativistic iron line allows one to make BH spin measurements (REFs).
+In Compton-thick AGN, the intrinsic continuum is heaviliy absorbed with columns of
+$N_H\sim10^{24}$cm$^{-2}$ -- this absorption is normally attributed to the dusty torus (REF), 
+but Compton-thick winds could also contribute. 
+In these sources, reflection features can actually dominate the X-ray spectrum (REFs).
 
 
 \subsubsection{The Soft X-ray Excess}
@@ -757,7 +772,7 @@ I discuss absorption in more detail, particular with respect to winds, in sectio
 
 If one extrapolates the $\nu^{-1/3}$ law from the BBB, and the power law
 in the hard X-rays, a curious excess of flux is often found in the soft X-rays
-in type 1 AGN \citep[see figure~\ref{fig:quasar_sed}, from][]{elvis1994}. 
+in type 1 AGN \citep[see figure~\ref{fig:quasar_sed}, and][]{koratkar1999}. 
 This is known as the soft X-ray excess (SXXS), which is too 
 hot to be explained by thermal disc emission, as a thin disc around an AGN should
 never approach the temperatures required. Many models have been proposed to
@@ -773,9 +788,6 @@ some of the geometries proposed may help explain the
 accretion disc size problem (Done, private communication; 
 see section~\ref{sec:disc_continuum})
 or inability to match observed spectra.
-
-
-
 
 \subsection{The Broad Line Region and Connection to Outflows}
 
@@ -860,10 +872,6 @@ Yet a recent spectral fitting study by \cite{capellupo2015} concludes that
 main power houses of AGN''. So, what are the current problems when 
 confronting thin disc models with observation? 
 
-\subsubsection{Fitting AGN Spectra}
-
-\subsubsection{The 1000\AA\ Break}
-
 \subsubsection{The Accretion Disc Size Problem}
 
 One of the most interesting results of recent years relating to AGN and accretion discs is
@@ -878,6 +886,31 @@ varying temperatures \citep{dexteragol2011}, but this is very much
 still an active area of research. It is worth noting that the impact
 of winds on these results has not yet been properly quantified, something
 our team is currently trying to address \citep{mangham}
+
+\subsubsection{Fitting AGN Spectra and the 1000\AA\ Break}
+
+One of the {\em successes} of the thin disc model, when applied to AGN,
+is that we do observe a slope in the UV of $\alpha_{UV} = -0.32$, confirming
+the theoretical prediction of $\nu^{-1/3}$. 
+However, AGN spectra do not generally exhibit the spectral shapee expected
+from theoretical predictions. It can be seen clearly in figure~\ref{fig:agn_templates}
+that both the quasar and Seyfert spectra tend to peak in the UV, rather than
+the EUV. Furthermore, there is a characteristic break in AGN spectra at
+around $1000$\AA\ \citep{lusso2015}, which does not scale with BH mass or luminosity,
+as one might expect for a break associated with an accretion disc. 
+There is also no evidence in AGN of the expected polarisation signatures from an 
+optically thick disc atmosphere \citep{stockman1979,antonucci1988,antonucci1996}. 
+
+Despite these problems, recent work suggests that the thin disc model 
+still has some potential. \cite{capellupo2015} were able to fit a number of
+AGN spectra in the UV and optical with thin disc models, although successful fits
+were only found once they included effects such as Comptonisation and mass-loss,
+as well as correcting for extinction. BH spin also had a reasonable effect on the 
+spectral fits, although it is somewhat difficult to constrain from spectral fitting alone.
+The $1000$\AA\ break has also been explained with a mass-losing disc \citep{laordavis2014},
+and \cite{lusso2015} suggested that incorrect IGM corrections may be exacerbating the effect.
+So, it would seem that, while many problems exist, it is not quite time to 
+abandon the Shakura-Sunyaev ship just yet.
 
 \section{The Universality of Accretion}
 
@@ -908,8 +941,37 @@ is present in AGN and XRBs, strengthening the argument that CVs
 should be used as `accretion laboratories'. 
 
 
-\subsection{Accretion States}
+\subsection{Accretion states and disc-jet coupling}
 
+Variable and transient sources are common in astrophysics, particularly
+when the sources are accreting. I have already mentioned the DIM an
+and it's applicability to LMXBs and CVs; it turns out that when you plot
+the colour and luminosity evolution over the course of an ourburst cycle 
+then they follow very similar tracks \citep{kordingDNjet2008}.
+The detection of radio jets is also intrinsically linked to the accretion state
+of the system (`disc-jet coupling'), as jets only appear in the hard accretion 
+state, to the right of the so-called jet line \citep{fender2001,fender2004}.
+\cite{kordingDNjet2008} showed that this behaviour also occurs in CVs, 
+as radio emission in the DN SS Cyg is also detected in the same region 
+of colour-luminosity space. There is also a well-known correlation between 
+radio and X-ray luminosities in low-hard states \citep{gallo2003}.
+
+This clear correlation with accretion state on HIDs has natural parallels 
+with AGN. 
+
+
+The jet production mechanism in BHs in general is not well known. 
+Theoretical work suggests that radio jets should be correlated with BH spin 
+(REFs), but whether such a correlation exists in LMXBs is controversial (REFs).
+This has significant implications in AGN; the number of radio-loud AGN
+would imply a large fraction of them would then be rapidly spinning, with
+high radiative efficiencies. 
+Further evidence that radio jets are not simply produced by RIAFs onto spinning
+BHs is found when one considers that NLs show evidence of extended synchrotron
+radio emission (REFs). This important result suggests that our understanding
+of jets is incomplete, and that the links between accretion state and 
+jet production are fundamental, but unsolved. Disc winds may in fact complicate 
+matters further (see chapter 2).
 
 \begin{figure}
 \centering
@@ -917,16 +979,11 @@ should be used as `accretion laboratories'.
 \caption
 [Hardness-intensity diagrams for three types of accreting objects.]
 {
-{\sl Credit: Kording et al. XXXX.} 
+{\sl Credit: Kording et al. 2008.} 
 Caption.
 } 
 \label{fig:kording_hid}
 \end{figure}
-
-
-
-\subsection{Jets and Outflows}
-
 
 \subsection{A Global Picture}
 
