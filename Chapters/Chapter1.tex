@@ -42,9 +42,10 @@ are also seen in stellar winds \citep[e.g.][]{cassinelli1979} and sometimes even
 in the optical spectra of CVs \citep{patterson1996, RN98, kafka2004}. 
 Broad, blue-shifted absorption is even observed in the Fe K$\alpha$ line in 
 AGN \citep{reeves2003,poundsreeves2009,tombesi2010a} -- these are known
-as ultra-fast outflows or UFOs\footnote{It should be noted that, while X-ray spectral
-fitting can be somewhat of a dark art, the explanations for these
-UFOs are somewhat more believable than their sci-fi namesakes.}.
+as ultra-fast outflows or UFOs.
+% \footnote{It should be noted that, while X-ray spectral
+% fitting can be somewhat of a dark art, the explanations for these
+% UFOs are somewhat more believable than their sci-fi namesakes.}
 
 The astrophysical significance of disc winds extends, quite literally, 
 far beyond the accretion environment. They offer a potential mechanism by which the central
@@ -108,7 +109,7 @@ where $\eta$ is some efficiency. Nuclear fusion is one of the more efficient
 energetic processes in the universe, with an efficiency of
 $\eta=0.007$. If we rearrange the above equations in terms of $\eta$ we find
 \begin{equation}
-\eta = \frac{G}{c^2} \frac{M}{R}.
+\eta = \frac{G}{c^2} \frac{M}{R_*}.
 \label{eq:eta}
 \end{equation} 
 In other words, the efficiency of accretion is directly related to the {\em compactness}
@@ -272,6 +273,7 @@ by setting
 which then gives
 \begin{equation}
 T_{eff} (R) = T_* \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]^{1/4},
+\label{disk_t_profile}
 \end{equation}
 where
 \begin{equation}
@@ -300,20 +302,133 @@ of compact object.
 \label{fig:disk_t}
 \end{figure}
 
+\subsection{Boundary layers, black hole spin and the ISCO}
+
+In equation~\ref{eq:ldisc} I showed that $L_{disc} = 1/2~L_{acc}$. 
+One might then ask: where does the rest of the luminosity go?
+The answer is dependent on the compact object in question. 
+In an accreting WD, the rotating matter must eventually deposit itself 
+on the surface of the WD. This is illustrated in figure~\ref{fig:omega},
+which shows the angular velocity as a function of radius in a disc around
+a compact object rotating with angular velocity $\Omega_*$. The boundary layer (BL)
+is the region to the left of the dotted line, inside the maximum of $\Omega_K$, the Keplerian
+angular velocity. The luminosity of the boundary layer is \citep{fkrbook}
+\begin{equation}
+L_{BL} = \frac{1}{2}\frac{GM \dot{M}}{R} \left[1 - \left(\frac{\Omega_K(R_*)}{\Omega_*}\right)\right]^2,
+\end{equation}
+where $\Omega_K(R_*)$ is the Keplerian angular velocity at $R_*$, assuming the thickness
+of the BL is small. BLs can be approximated with blackbodies and their temperatures estimated
+indirectly via the \cite{zanstra1929} method \cite[e.g.][]{hoare1991,hoaredrew1993}, 
+but they likely exhibit a variety of atomic features \citep{suleimanov2014}.
+Extreme-UV datasets have confirmed the existence of boundary layer emission
+in non-magnetic CVs \citep{mauche1996}, although these observations
+are limited in number.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/01-intro/omega.png}
+\caption
+[Angular velocity as a function of radius in an accretion disc around a rotating
+compact object.]
+{
+{\sl Credit: Frank et al. 2002}.
+Angular velocity as a function of radius in an accretion disc around a rotating
+compact object with angular velocity $\Omega_*$. $\Omega_K$ is the Keplerian 
+angular velocity. This graph
+also helps explain why there is a turnover in the temperature-radius relation,
+as $D(R)$ is proportional to the square of the {\em derivative} of this quantity.
+} 
+\label{fig:omega}
+\end{figure}
+
+Clearly, in BH systems a boundary layer cannot exist in the same way,
+due to the lack of a physical surface, and the energy must either go into
+growing the BH, contributing to its angular momentum or being
+channeled into a jet or other radiative source (see section~\ref{sec:disc-jet})
+The question of what happens at the inner disc edge
+is complicated further by the fact that the disc cannot extend to the 
+event horizon of the BH. Instead, there is an `innermost stable circular orbit' (ISCO)
+beyond which the accreting matter will simply fall into the BH. The radius
+of this orbit, $R_{ISCO}$, and the horizon radius, $R_H$,
+is shown for different values of the BH spin parameter, $a_*$, 
+in figure~\ref{fig:isco}, showing how matter can orbit closer to a prograde spinning BH. 
+One should really set $R_* = R_{ISCO}$ in equation~\ref{eq:eta}, giving us the interesting
+result that rapidly spinning BHs are more radiatively efficient 
+than Schwarzschild BHs.
+
+\nocite{narayan2014, thorne1974}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/01-intro/isco.png}
+\caption
+[The radius of the ISCO, $R_{ISCO}$, and the horizon, $R_H$,
+is as a function of the BH spin parameter, $a_*$.]
+{
+{\sl Credit: Narayan 2014.}
+The radius of the ISCO, $R_{ISCO}$, and the horizon, $R_H$,
+is as a function of the BH spin parameter, $a_*$. 
+$a_*=0$ corresponds to a Schwarzschild BH, and $a_*=1$ and $a_*=-1$
+to prograde and retrograde Kerr BHs respectively. Note that
+this figure ignores the counteracting torque of photons swallowed by the BH,
+which actually limits $a_*$ to a value of around $0.998$ (Thorne 1974).  
+} 
+\label{fig:isco}
+\end{figure}
+
+
+\subsection{The emergent spectrum}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/01-intro/disc_seds.png}
+\caption
+[Accretion disc SEDs for three different compact objects.]
+{
+Accretion disc SEDs for three different compact objects, corresponding roughly
+to a quasar, an XRB and a CV. The SEDs are computed via an area-weighted sum
+of blackbodies with effective temperatures governed by equation~\ref{disk_t_profile},
+and the $\nu^{1/3}$ shape in the middle of the spectra can be seen.
+} 
+\label{fig:disc_seds}
+\end{figure}
+
 It is important to recognise that the steady-state disc treatment
-{\sl does not specify the nature of the disc SED}. What it does do is 
-say where energy is originally released. Typically,
-accretion discs are modelled as a series of annuli each emitting 
-as blackbodies, but a disc atmosphere with frequency-dependent
-opacity would create a somewhat different spectrum. 
-Figure~? shows the blackbody SEDs expected for the same objects as figure~\ref{fig:disk_t}.
-Figure~? shows a comparison between a disc atmosphere model and
-blackbody model for a cataclysmic variable accretion disc, showing
-the differences in spectral shape caused by frequency-dependent opacities
-in the disc. It is of course possible that {\em neither} blackbody or disc atmosphere
+{\sl does not specify the exact shape of the disc SED}. What it does do is 
+say where energy is originally released. If one makes the simplest assumption,
+that each annulus emits as a blackbody with temperature $T_{eff} (R)$ then it is 
+possible to show that at intermediate radii, where $kT(R_{max}) \ll h \nu \ll kT_*$,
+then the spectrum has the form 
+\begin{equation}
+F_{\nu} \propto \nu^{1/3}
+\end{equation}
+Figure~\ref{fig:disc_seds} shows the blackbody SEDs expected for the same 
+objects as figure~\ref{fig:disk_t}, in
+which the $\nu^{1/3}$ law can be clearly seen.
+A disc atmosphere model with frequency-dependent opacity creates a somewhat 
+different (and more realistic) spectrum. 
+Figure~\ref{fig:bb_v_sa} shows a comparison between a stellar atmosphere model and
+blackbody model for $T_{eff}=50,000$K, showing how an annulus at that temperature
+can have a significantly different spectral shape when one includes frequency-dependent opacities
+in the atmosphere. It is of course possible that {\em neither} blackbody or disc atmosphere
 treatments are realistic. I shall therefore devote a little time to discussing
 the observational arguments for accretion discs and the different classes of accreting 
 objects.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/01-intro/bb_v_sa.png}
+\caption
+[A comparison between a Planck curve and Kurucz (1991) stellar atmosphere model.]
+{
+A comparison between a Planck curve and Kurucz (1991) stellar atmosphere model
+at $T_{eff}=50,000$K and surface gravity of $\log(g)=5$. The major photoabsorption
+edges are marked. Flux is reprocessed into different wavelengths by bound-free opacities,
+and line blanketing also has a big effect on the spectrum. The Hydrogen and Helium lines
+also experience significant pressure broadening.
+} 
+\label{fig:bb_v_sa}
+\end{figure}
 
 
 \section{Accreting Compact Binaries}
@@ -450,8 +565,6 @@ can increase significantly, and the disc becomes geometrically thin and
 optically thick. Most importantly, it can efficiently undergo radiative
 cooling, and a significant increase in brightness is observed.
 
-
-
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/01-intro/lc_sscyg.png}
@@ -524,8 +637,8 @@ to Compton up-scattering of seed disc photons by some kind of `corona'
 of hot electrons close to the BH (REFs).
 Although I do not study LMXBs directly in this thesis, it is instructive
 to discuss some of their observational appearance as it is relevant to the links
-between accretion and outflow. 
-The discovery that XRBs follow similar tracks on a hardness-intensity diagram (REFs)
+between accretion and outflow. The discovery that XRBs and CVs follow similar 
+tracks on a hardness-intensity diagram \citep{kordingDNjet2008}
 is particularly interesting in this regard, especially since \cite{ponti2012}
 showed that broad Fe absorption lines are only seen in the soft-state 
 high-inclination systems (see section~\ref{sec:xrb_winds}). 
@@ -677,8 +790,9 @@ bump in AGN \citep{neugebauer1979}.
 \cite[][UP95]{UP95} went further than the original unification model
 proposed by AM85 as they also tried to explain radio AGN phenomena.
 The picture they proposed is shown in figure~\ref{fig:unification}.
-This model attempts to explain all of the types of AGN described in
-section~\ref{sec:agn_taxonomy} merely as a function of viewing angle
+This model attempts to explain all of the types of AGN 
+% described in section~\ref{sec:agn_taxonomy} 
+merely as a function of viewing angle
 and presence, or lack thereof, of a radio jet. Models such as this also 
 describe the series of `bumps' observed in AGN -- the portions
 of the spectrum that dominate the luminosity, shown in figure~\ref{fig:quasar_sed}. 
@@ -750,27 +864,39 @@ electrons, close to the BH, that upscatters disc seed photons
 has been confirmed by microlensing \citep{chartas2009} 
 and variability studies \citep{green1993,crenshaw1996,risaliti2007}. 
 Indeed, X-rays in AGN can be highly variable, both in terms of their intrinsic 
-X-ray emission, but also due to changes in the absorption characteristics (REFs).
-I discuss X-ray absorption in more detail, particular with respect to winds, in section~?.
+X-ray emission, but also due to changes in the absorption characteristics 
+\citep{risaliti2002,miller2008,connolly2014}.
+I discuss X-ray absorption in more detail, particular with respect to winds, 
+in chapter 2.
 
 The hard X-ray spectra AGN also tend to exhibit a number of reflection features. 
 Typically, these consist of a strong Fe K$\alpha$ emission line and `Compton' hump
 at high energies, which is produced by Compton down-scattering 
 of high energy photons \citep{pounds1989,nandra1994}.
-It is still unclear where these features originate, but it is often proposed that
-they are caused by reflection off the inner parts of an accretion disc (REFs).
-This model may help explain some of the variability of AGN (REFs), and modelling
-of the relativistic iron line allows one to make BH spin measurements (REFs).
-In Compton-thick AGN, the intrinsic continuum is heaviliy absorbed with columns of
-$N_H\sim10^{24}$cm$^{-2}$ -- this absorption is normally attributed to the dusty torus (REF), 
-but Compton-thick winds could also contribute. 
-In these sources, reflection features can actually dominate the X-ray spectrum (REFs).
+It is still unclear exactly where these features originate, 
+but a common interpretation is that they are caused by reflection off the inner parts of an accretion disc 
+\citep{fabian1995,iwasawa1996b,reynolds1999}.
+If this is the case, and the broadening of the iron line is relativistic, then
+this would allow for measurements of the BH spin \citep{laor1991,iwasawa1996a,dabrowski1997}.
+This hypothesis is somewhat controversial. Multiple authors have found that 
+many of the relativistic features supposedly imprinted by BH spin can in fact be explained
+by Comptonisation or absorption \citep[e.g.][]{misra1998,miller2013}, 
+and radiative transfer modelling has shown that
+an outflow can naturally produce the characteristic broad red Fe K$\alpha$ wing \citep{sim2010}.
+
+In Compton-thick AGN, the intrinsic continuum is heavily absorbed with columns of
+$N_H\sim10^{24}$~cm$^{-2}$ -- this absorption is normally attributed to the dusty torus, 
+but Compton-thick winds could also contribute. Compton-thick AGN are required 
+in large numbers so as to adequately explain the cosmic X-ray background \citep{setti1989}.
+In these sources, reflection features can actually dominate the X-ray spectrum 
+\citep{alexander2011,gandhi2013}, but the Fe line is lowly ionized and 
+on $\sim0.1$~pc scales \citep{gandhi2015}.
 
 
 \subsubsection{The Soft X-ray Excess}
 \label{sec:sxxs}
 
-If one extrapolates the $\nu^{-1/3}$ law from the BBB, and the power law
+If one extrapolates the $\nu^{1/3}$ law from the BBB, and the power law
 in the hard X-rays, a curious excess of flux is often found in the soft X-rays
 in type 1 AGN \citep[see figure~\ref{fig:quasar_sed}, and][]{koratkar1999}. 
 This is known as the soft X-ray excess (SXXS), which is too 
@@ -789,7 +915,7 @@ accretion disc size problem (Done, private communication;
 see section~\ref{sec:disc_continuum})
 or inability to match observed spectra.
 
-\subsection{The Broad Line Region and Connection to Outflows}
+\subsection{The Broad Line Region: Connection to winds and unification}
 
 In the UP95 unification model, the broad emission lines
 come from a series of virialised clouds close to the disc plane.
@@ -890,9 +1016,9 @@ our team is currently trying to address \citep{mangham}
 \subsubsection{Fitting AGN Spectra and the 1000\AA\ Break}
 
 One of the {\em successes} of the thin disc model, when applied to AGN,
-is that we do observe a slope in the UV of $\alpha_{UV} = -0.32$, confirming
-the theoretical prediction of $\nu^{-1/3}$. 
-However, AGN spectra do not generally exhibit the spectral shapee expected
+is that we do observe a slope in the UV of $\alpha_{UV} = 0.32$, confirming
+the theoretical prediction of $\nu^{1/3}$. 
+However, AGN spectra do not exhibit the {\em overall} spectral shape expected
 from theoretical predictions. It can be seen clearly in figure~\ref{fig:agn_templates}
 that both the quasar and Seyfert spectra tend to peak in the UV, rather than
 the EUV. Furthermore, there is a characteristic break in AGN spectra at
@@ -942,12 +1068,13 @@ should be used as `accretion laboratories'.
 
 
 \subsection{Accretion states and disc-jet coupling}
+\label{sec:disc-jet}
 
 Variable and transient sources are common in astrophysics, particularly
 when the sources are accreting. I have already mentioned the DIM an
 and it's applicability to LMXBs and CVs; it turns out that when you plot
 the colour and luminosity evolution over the course of an ourburst cycle 
-then they follow very similar tracks \citep{kordingDNjet2008}.
+then they follow very similar tracks \citep[see figure~\ref{fig:kording_hid}, ][]{kordingDNjet2008}.
 The detection of radio jets is also intrinsically linked to the accretion state
 of the system (`disc-jet coupling'), as jets only appear in the hard accretion 
 state, to the right of the so-called jet line \citep{fender2001,fender2004}.
@@ -961,17 +1088,17 @@ with AGN.
 
 
 The jet production mechanism in BHs in general is not well known. 
-Theoretical work suggests that radio jets should be correlated with BH spin 
-(REFs), but whether such a correlation exists in LMXBs is controversial (REFs).
+Theoretical work suggests that radio jets should be correlated with BH spin \cite{penrose1971,blandford1977}, 
+but whether such a correlation exists in LMXBs is controversial \citep{fender2010,narayan2012}.
 This has significant implications in AGN; the number of radio-loud AGN
 would imply a large fraction of them would then be rapidly spinning, with
 high radiative efficiencies. 
 Further evidence that radio jets are not simply produced by RIAFs onto spinning
 BHs is found when one considers that NLs show evidence of extended synchrotron
-radio emission (REFs). This important result suggests that our understanding
+radio emission \citep{coppejans2015}. This important result suggests that our understanding
 of jets is incomplete, and that the links between accretion state and 
-jet production are fundamental, but unsolved. Disc winds may in fact complicate 
-matters further (see chapter 2).
+jet production are fundamental, but unsolved. Disc winds may complicate, or simplify,
+matters, depending on your outlook (see chapter 2).
 
 \begin{figure}
 \centering
