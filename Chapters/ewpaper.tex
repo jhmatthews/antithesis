@@ -1,4 +1,4 @@
-\chapter{Paper 3 \\ Testing Quasar Unification II. Orientation Effects and Emission Line Properties}
+\chapter{Quasar Emission Line Equivalent Widths as Probes of Orientation and Unification}
 
 %% Codes
 \def\py{\textsc{python}}
@@ -40,38 +40,36 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 
-\clearpage
+% {\bf{\sl{\huge Abstract}}}
 
-{\bf{\sl{\huge Abstract}}}
+% The incidence of broad absorption lines (BALs) in quasar samples is 
+% often explained by a geometric unification model consisting
+% of an accretion disc and an associated outflow.
+% This outflows is assumed to have a covering factor roughly equivalent to
+% the BAL fraction, $f_{BAL}$. We test this model
+% by examining ultraviolet (UV) emission line equivalent-widths. 
+% We find that a model in which the 
+% continuum emission arises from a geometrically thin, 
+% optically thick accretion disc is inconsistent with this property
+% unless (i) the line emission has the same angular distribution of 
+% emission as the continuum or (ii) BAL quasars are viewed from a low or intermediate inclination. 
+% We examine whether an accretion disc can emit isotropically, and
+% demonstrate that general relativistic effects cannot sufficiently isotropise the 
+% radiation field in the UV. 
+% We suggest that reprocessing by outflows, or limb brightening due to X-ray irradiation, may play a role.
+% We then explore in what limits line emission can emit with the same angular
+% distribution as a foreshortened, limb-darkened disc, and discuss our results
+% in the context of other observational studies of broad emission line 
+% equivalent-widths in quasars.
+% Finally we explore geometries in which BAL quasars are viewed
+% from a low or intermediate inclination with reference to polarisation
+% and modelling results. We also discuss the effect of the outflow 
+% geometry on the inferred BAL fraction. We favour a scenario in which the 
+% BAL outflow is {\em not} equatorial, and BAL quasars
+% are instead viewed from $\sim45^\circ$ as suggested from radio measurements,
+% but a number of open questions remain.
 
-The incidence of broad absorption lines (BALs) in quasar samples is 
-often explained by a geometric unification model consisting
-of an accretion disc and an associated outflow.
-This outflows is assumed to have a covering factor roughly equivalent to
-the BAL fraction, $f_{BAL}$. We test this model
-by examining ultraviolet (UV) emission line equivalent-widths. 
-We find that a model in which the 
-continuum emission arises from a geometrically thin, 
-optically thick accretion disc is inconsistent with this property
-unless (i) the line emission has the same angular distribution of 
-emission as the continuum or (ii) BAL quasars are viewed from a low or intermediate inclination. 
-We examine whether an accretion disc can emit isotropically, and
-demonstrate that general relativistic effects cannot sufficiently isotropise the 
-radiation field in the UV. 
-We suggest that reprocessing by outflows, or limb brightening due to X-ray irradiation, may play a role.
-We then explore in what limits line emission can emit with the same angular
-distribution as a foreshortened, limb-darkened disc, and discuss our results
-in the context of other observational studies of broad emission line 
-equivalent-widths in quasars.
-Finally we explore geometries in which BAL quasars are viewed
-from a low or intermediate inclination with reference to polarisation
-and modelling results. We also discuss the effect of the outflow 
-geometry on the inferred BAL fraction. We favour a scenario in which the 
-BAL outflow is {\em not} equatorial, and BAL quasars
-are instead viewed from $\sim45^\circ$ as suggested from radio measurements,
-but a number of open questions remain.
-
-\clearpage
+% \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -79,6 +77,8 @@ but a number of open questions remain.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+{\em This chapter is based on a paper in preparation of the same title, 
+due to be submitted to MNRAS.}
 
 \section{Introduction}
 % {\color{blue}
@@ -87,18 +87,58 @@ but a number of open questions remain.
 % }
 % \bigskip
 
-\noindent
-A number of quasar unification schemes have attempted to explain 
-the incidence of BAL quasars in terms of an outflow which rises 
-from an accretion disc \citep[e.g.][]{MCGV95, elvis2000}. 
-The covering factor of this outflow is then
-expected to determine the BAL fraction, $f_{BAL}$, thought to be
-between $20\%$ and $40\%$ 
-\citep{weymann1991, reichard2003, knigge2008, allen2011}.
-These outflows are of wide-reaching astrophysical significance as 
-they may be an efficient way for the central accretion engine to interact
-with its galactic environment (REFs), potentially explaining 
-for the $M-\sigma$ relation (REFs).
+%\noindent
+% A number of quasar unification schemes have attempted to explain 
+% the incidence of BAL quasars in terms of an outflow which rises 
+% from an accretion disc \citep[e.g.][]{MCGV95, elvis2000}. 
+% The covering factor of this outflow is then
+% expected to determine the BAL fraction, $f_{BAL}$, thought to be
+% between $20\%$ and $40\%$ 
+% \citep{weymann1991, reichard2003, knigge2008, allen2011}.
+% These outflows are of wide-reaching astrophysical significance as 
+% they may be an efficient way for the central accretion engine to interact
+% with its galactic environment (REFs), potentially explaining 
+% for the $M-\sigma$ relation (REFs).
+
+% Unlike in galactic accretion disc systems, measuring inclinations
+% for quasars and AGN is notoriously difficult, and obtaining 
+% reliable orientation indicators is thus an important observational
+% goal for the community. Directly opposing 
+% geometries have been proposed for BAL outflows, mostly from observations
+% of radio-loud sources. A number of polarisation
+% studies of BALQSOs have measured large angle differences 
+% from the radio jet, implying an equatorial viewing angle 
+% \citep{goodrich1995, cohen1995,brotherton2006}.
+% Conversely, Punsly (1991) suggests a polar geometry.
+% This is supported by very high brightness temperatures 
+% in some RL BALQSOs \citep{zhou2006} 
+% and the fact that RL BALQSOs possess similar radio spectral 
+% indices to normal RL quasars \citep{bruni2012}.  
+% In addition, \cite{marin2013} find a bending angle of $\sim45^\circ$ is required to 
+% explain the polarisation dichotomy of type 1 and 2 AGN using an Elvis-type wind 
+% model (Elvis 2000) --  a conclusion which is potentially extendable to BAL quasars.
+
+% BALQSOs and quasars generally possess remarkably similar emission line properties 
+% \citep[e.g.][]{weymann1991,reichard2003}. This, along with Occam's razor (see figure 1),
+% is one of the reasons why they are thought to be drawn from the same population 
+% as non-BAL quasars. In this paper, we start by verifying the uniformity 
+% of emission line properties
+% between BAL and non-BAL quasars. We then derive relationships for
+% the expected angular distribution of emission for accretion discs 
+% (section~\ref{disc}) and emission lines (section~\ref{lines}). Finally, we discuss
+% these results in the context of unification models and offer 
+% a number of possible scenarios.
+
+In the previous chapters we have explored quasar unification schemes
+in which the incidence of BAL quasars is explained in terms of an outflow which rises 
+from an accretion disc \citep[e.g.][]{MCGV95, elvis2000}. In chapter 5,
+we found that a biconical wind model can reproduce much of the qualitative 
+behaviour expected from a unified model, with some shortcomings. 
+In particular, we found an angular dependence of emission-line equivalent 
+width (EW), such that the EWs were much stronger at high inclination.
+Here, we attack the problem from a different angle (but informed by the 
+previous study), by examining UV and optical emission lines from the Sloan Digital Sky 
+Survey and the potential effects of orientation on their EW distributions.
 
 Unlike in galactic accretion disc systems, measuring inclinations
 for quasars and AGN is notoriously difficult, and obtaining 
@@ -115,33 +155,10 @@ in some RL BALQSOs \citep{zhou2006}
 and the fact that RL BALQSOs possess similar radio spectral 
 indices to normal RL quasars \citep{bruni2012}.  
 In addition, \cite{marin2013} find a bending angle of $\sim45^\circ$ is required to 
-explain the polarisation dichotomy of type 1 and 2 AGN using an Elvis-type wind 
-model (Elvis 2000) --  a conclusion which is potentially extendable to BAL quasars.
-
-BALQSOs and quasars generally possess remarkably similar emission line properties 
-\citep[e.g.][]{weymann1991,reichard2003}. This, along with Occam's razor (see figure 1),
-is one of the reasons why they are thought to be drawn from the same population 
-as non-BAL quasars. In this paper, we start by verifying the uniformity 
-of emission line properties
-between BAL and non-BAL quasars. We then derive relationships for
-the expected angular distribution of emission for accretion discs 
-(section~\ref{disc}) and emission lines (section~\ref{lines}). Finally, we discuss
-these results in the context of unification models and offer 
-a number of possible scenarios.
+explain the polarisation dichotomy of type 1 and 2 AGN using an \cite{elvis2000} wind 
+model --  a conclusion which is potentially extendable to BAL quasars.
 
 
-\begin{figure*} %fullpage
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/ew_hist_qsos.png}
-\caption
-{
-Histograms of equivalent widths for three emission lines from the two different samples.
-}
-\label{fig:ew_hists}
-\end{figure*} %fullpage
-
-
-\newpage
 
 \section{Data Sample}
 % {\color{blue}
@@ -162,15 +179,15 @@ Histograms of equivalent widths for three emission lines from the two different 
 %     	  and inclination cutoffs?
 % \end{itemize}
 % }
-% \begin{figure*} %fullpage
-% \centering
-% \includegraphics[width=1.0\textwidth]{figures/ewpaper/composites.png}
-% \caption
-% {
-% SDSS Composite spectra
-% }
-% \label{fig:lobal}
-% \end{figure*} %fullpage
+\begin{figure*} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/composites.png}
+\caption
+{
+SDSS Composite spectra
+}
+\label{fig:composite}
+\end{figure*} %fullpage
 % The Sloan Digital Sky Survey DR7 contains ~10,000 objects in its quasar
 % catalog. Many of these have been fitted with quasar templates, allowing 
 % easy comparison of the equivalent width properties between the BAL and 
@@ -193,7 +210,30 @@ Histograms of equivalent widths for three emission lines from the two different 
 % \label{tab:samples}
 % \end{table}
 
-To construct our sample, we start with the the Shen et al. (2010) catalog of
+\begin{figure*} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/bals_scatter.png}
+\caption
+{
+BH mass and Eddington fraction for the BAL samples plotted 
+over the overall quasar sample from S10.
+}
+\label{fig:bal_scatter}
+\end{figure*} %fullpage
+
+
+
+\begin{figure*} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/ew_hist_qsos.png}
+\caption
+{
+Histograms of equivalent widths for three emission lines from the two different samples.
+}
+\label{fig:ew_hists}
+\end{figure*} %fullpage
+
+To construct our sample, we start with the the Shen et al. (2010; hereafter S10) catalog of
 105,783 quasars from the The Sloan Digital Sky Survey (SDSS) DR7. 
 As we will use emission line diagnostics in this study, we must further divide
 this sample  according to which emission lines are present in 
@@ -203,6 +243,29 @@ such that the Mg II 2800A and OIII 5007A line EWs are both measured, and Mg II B
 is possible.  Sample B contains all quasars within the redshift range $1.45<z<2.28$, such that 
 the EWs and presence of BALs in Mg II 2800A and CIV 1550A are both measurable.
 The details of these samples are shown in table 1.
+
+In attempting to draw broad conclusions about unification models as a whole,
+we would like to be able to construct a large homogenous dataset of 
+{\em HiBAL} and non-BAL quasars with both OIII 5007A EWs. Unfortunately,
+the wavelength limits of SDSS do not allow this. One of the problems with
+using just LoBAL quasars as tests of unification is that there is evidence 
+that they are drawn from a different population than normal quasars, perhaps
+suggesting an {\em evolutionary} origin. Examples include anomalously 
+high LoBAL fractions in dust-reddened quasar samples \citep{urrutia2009} 
+and infra-red selected samples \citep{dai2012}; although see also \cite{lazarova2012}.
+To partially address this issue, we also build a small sample of HiBAL quasars in SDSS
+by cross-matching the S10 catalog with BALs identified in the HST COS archive.
+BALs were selected from the COS spectra using the balnicity index (Weymann et al. 1991), 
+$BI$, defined as
+\begin{equation}
+BI = \int^{25000~{\rm km~s}^{-1}}_{3000~{\rm km~s}^{-1}} C \left( 1 - \frac{f(v)}{0.9} \right) dv.
+\end{equation}
+The constant $C=0$ everywhere, unless the normalized flux
+has satisfied $f(v)<0.9$ continuously for at least $2000$~km~s$^{−1}$, 
+whereby $C$ is set to $1$. HST objects were designated as HiBALS 
+by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
+The mass and Eddington fraction measurements from S10, with errorbars, are shown against
+the background distribution of all quasars.
 
 Figure 2 shows histograms of a number of different 
 emission line properties for samples A and B. 
@@ -222,10 +285,11 @@ Thus, if BAL quasars are viewed from a larger viewing angle on average then one
 would expect them to possess higher EWs, with a broader distribution.
 It is already apparent from figure 1 that the BAL distribution mean 
 is not systematically higher than the non-BAL
-mean -- in fact, it is lower. This is the expected from a model
-in which the continuum is foreshortened and BAL outflows are equatorial.
-This is examined further in section 3. First, we will examine the motivations
-for different forms of \ept\ in AGN and quasars.
+mean -- in fact, it is lower. This is not expected from a model
+in which the continuum is foreshortened and BAL outflows are at all equatorial.
+This problem is examined further in section~\ref{sec:mc_angular}. 
+First, we will examine the motivations for different forms of \ept\ 
+in AGN and quasars.
 
 \section{The Angular Distribution of Emission from an Accretion Disc and Broad-Line Region}
 \label{disc}
@@ -244,7 +308,10 @@ GR, mass-loss and comptonisation were included.
 In this section, we start by discussing the angular distribution of
 emission from an SS73 disc, before discussing opacity and GR 
 effects. In order to explore these effects, we use \agn\
-\citep{hubeny2000,davishubeny2006,davis2007}.
+\citep{hubeny2000,davishubeny2006,davis2007}. We stress that the 
+discussion here is not limited to SS73 discs; the only real condition
+for the expected angular distributions derived here is that the 
+disc is geometrically thin and optically thick.
 
 \subsection{Standard Thin Disc Models}
 
@@ -307,6 +374,7 @@ Alternative Models exist...
 
 
 \section{Predicted EW distributions compared to observations: A Monte Carlo approach}
+\label{sec:mc_angular}
 
 \begin{figure}
 \centering

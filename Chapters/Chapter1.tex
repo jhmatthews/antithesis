@@ -19,7 +19,7 @@ appearing as a quasi-stellar object (QSOS) or {\em quasar}.
 As well as powering, AGN, 
 accretion discs are present in X-ray binaries (XRBs), young-stellar objects (YSOs) and
 cataclysmic variables (CVs). Accretion is a universal process; 
-broadly speaking, the physics is similar of 
+broadly speaking, the physics is similar regardless of 
 whether matter is falling on to a $\sim1~M_\odot$ Neutron Star or White Dwarf 
 system, or a $\sim10^{10}~M_\odot$ black hole. 
 
@@ -105,7 +105,7 @@ We can also parameterise any energetic process with the form
 \Delta E = \eta \dot{M} c^2,
 \label{eq:restmass}
 \end{equation} 
-where $\eta$ is some efficiency. Nuclear fusion is one of the more efficient
+where $\eta$ is the radiative efficiency. Nuclear fusion is one of the more efficient
 energetic processes in the universe, with an efficiency of
 $\eta=0.007$. If we rearrange the above equations in terms of $\eta$ we find
 \begin{equation}
@@ -113,8 +113,9 @@ $\eta=0.007$. If we rearrange the above equations in terms of $\eta$ we find
 \label{eq:eta}
 \end{equation} 
 In other words, the efficiency of accretion is directly related to the {\em compactness}
-of the central object. Values of compactness for four different compact objects
-are shown in table~\ref{compactness}. 
+of the central object. 
+% Values of compactness for four different compact objects
+% are shown in table~\ref{compactness}. 
 
 \subsection{Spherical Accretion and The Eddington Limit}
 
@@ -171,9 +172,9 @@ and also provides a useful way of parameterising accretion rate,
 as it scales linearly with mass. It can also be used
 to characterise the {\em state} of an accretion disc.  
 In general, sources around $0.1~L_{Edd}$ find themselves in a 
-soft or thin-disc state (REFs), whereas for much lower Eddington 
-fractions sources will be dominated by advection and form radiatively-ineffient
-accretion flows (RIAFs; REFs).
+soft or thin-disc state , whereas for much lower Eddington 
+fractions sources will form advection dominated accretion flows
+\citep[ADAFs; ][]{narayan1994,narayan1995}.
 It is also clear that around the Eddington limit radiation pressure
 must play a major role in determining the disc morphology 
 (see section~\ref{sec:rad_winds}).
@@ -193,7 +194,16 @@ the central mass, a parcel of matter must always lose this angular momentum.
 Crucially, accretion discs provide a way for a given parcel of mass
 to lose angular momentum. If the disc itself maintains the same total 
 angular momentum, then it follows that angular momentum must 
-therefore be transported outwards.
+therefore be transported outwards. The mechanism for transporting 
+angular momentum outwards is unknown, and is one of the biggest 
+weaknesses of current accretion disc theory. The most commonly invoked
+candidate is the magnetorotational instability \citep[MRI; ][]{balbus1991},
+in which accretion discs are subject to a strong shearing instability even
+when the magnetic field is weak. An alternative is that the angular momentum is lost
+via a a magnetohydrodynamic outflow \citep{blandfordpayne}. An efficient mechanism
+for angular momentum transportat is necessary as the viscosity introduced in the next section is
+generally inefficient in this regard \citep{pringle1991}.
+
 
 % \begin{table}
 % \centering
@@ -286,8 +296,7 @@ T_{eff} (R) = T_* (R / R_*)^{-3/4}.
 Now we have not only derived the total luminosity of an accretion disc, but
 also the effective temperature profile which will govern the shape of the emergent SED.
 This temperature profile is shown in figure~\ref{fig:disk_t}
-for the same four objects shown in table~\ref{compactness}, 
-assuming an Eddington fraction of 0.2.
+for three different compact objects, assuming an Eddington fraction of 0.2.
 
 \begin{figure}
 \centering
@@ -314,10 +323,13 @@ a compact object rotating with angular velocity $\Omega_*$. The boundary layer (
 is the region to the left of the dotted line, inside the maximum of $\Omega_K$, the Keplerian
 angular velocity. The luminosity of the boundary layer is \citep{fkrbook}
 \begin{equation}
-L_{BL} = \frac{1}{2}\frac{GM \dot{M}}{R} \left[1 - \left(\frac{\Omega_K(R_*)}{\Omega_*}\right)\right]^2,
+L_{BL} = \frac{1}{2}\frac{GM \dot{M}}{R} \left[1 - \left(\frac{\Omega_*}{\Omega_K(R_*)}\right)\right]^2,
 \end{equation}
 where $\Omega_K(R_*)$ is the Keplerian angular velocity at $R_*$, assuming the thickness
-of the BL is small. BLs can be approximated with blackbodies and their temperatures estimated
+of the BL is small. When $\Omega_K(R_*) \gg {\Omega_*}$ this reduces to 
+$L_{BL} = 1/2~L_{acc} = L_{disc}$
+
+BLs can be approximated with blackbodies and their temperatures estimated
 indirectly via the \cite{zanstra1929} method \cite[e.g.][]{hoare1991,hoaredrew1993}, 
 but they likely exhibit a variety of atomic features \citep{suleimanov2014}.
 Extreme-UV datasets have confirmed the existence of boundary layer emission
@@ -556,9 +568,9 @@ section.
 The leading candidate for explaining DN outbursts, and in fact the outbursts
 in low mass X-ray binaries or `soft X-ray transients,
 is the disc-instability model 
-\citep[DIM; see ][and references therein]{lasota2001}. 
-In this model, a gradual
-increase in supply rate from the donor star (and hence surface density in the disc) 
+\citep[DIM; ][]{osaki1974,lasota2001}. 
+In this model, a gradual increase in supply rate from the donor star 
+(and hence surface density in the disc) 
 causes the disc to heat up. Eventually, the disc hits a critical temperature,
 around $7000$~K, and becomes ionized. Now the surface density in the disc
 can increase significantly, and the disc becomes geometrically thin and
@@ -596,6 +608,32 @@ optically thick accretion disc spectrum. The flux scale is approximate.
 
 \subsubsection{Nova-like Variables}
 
+\nocite{dhillon1996,hessman1984}
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth, clip=true, trim= 0 0.6in 0 0.8in]{figures/01-intro/novalikes.png}
+\caption
+[Optical spectra of three nova-like variables.]
+{
+Optical spectra of three nova-like variables: 
+RW Sex (top; Beuermann et al. 1992),
+IX Vel (top middle; A. F. Pala \& B. T. Gaensicke, private communication) 
+and RW Tri in and out of eclipse (bottom two panels; Groot et al. 2004).
+The data for RW Sex and RW Tri were digitized from the respective publications,
+and the IX Vel spectrum was obtained using the XSHOOTER spectrograph 
+on the Very Large Telescope on 2014 October 10.
+These systems have approximate inclinations of 
+$30^\circ$, $60^\circ$ and $80^\circ$ respectively. 
+The trend of increasing Balmer line emission with inclination can be seen.
+In RW Tri strong single-peaked emission in the Balmer lines is seen even
+in eclipse, indicating that the lines may be formed in a spatially
+extensive disc wind, and there is even a suggestion 
+of a (potentially wind-formed) recombination continuum in the eclipsed
+spectrum. I have attempted to show each spectrum over a similar dynamic range.
+} 
+\label{fig:NL_spec}
+\end{figure}
+
 Nova-like variables (NLs) are similar to DNe,
 except that the disc is always in a relatively 
 high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
@@ -613,17 +651,29 @@ exhibit such double-peaked lines \citep{marshhorne1990}.
 \nocite{dhillon1996,hessman1984}
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/01-intro/novalikes.png}
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/rwtri_noe.png}
 \caption
-[Optical spectra of three nova-like variables.]
+[UV spectrum of RW Tri in and out of eclipse.]
 {
-Optical spectra of three nova-like variables.
+{\sl Credit: Noebauer et al. 2010}.
+UV spectrum of RW Tri in and out of eclipse, showing strong lines in 
+\civfull\ and \la, among others.
 } 
 \label{fig:NL_spec}
 \end{figure}
 
 
-
+The UV spectra of NLs also show strong emission lines, and at 
+low to intermediate inclinations dramatic blue shifted absorption lines
+can be seen in some objects. The emission line equivalent widths
+in both the optical and the UV show clear correlations with 
+inclination \citep{hessman1984,echevarria1988,noebauer}. 
+This can be seen clearly in figure~\ref{fig:NL_spec}, and links to
+the correlation between line strength and absolute magnitude found by \cite{patterson1984};
+that is, the decrease in equivalent width at low inclination is caused by an {\em increase}
+in continuum flux. This is discussed further in chapters 4 and 6, but also has 
+relevance to AGN and quasar unification schemes mentioned later in this introduction.
+The optical and UV spectra are discussed in the context of winds in chapter 2.
 
 \subsection{Low Mass X-ray Binaries}
 
@@ -632,11 +682,11 @@ are similar to CVs in structure (see figure~\ref{fig:cv_and_xrb}),
 but the compact object
 is either a neutron star (NS) or black hole (BH). The accretion disc 
 emits in the soft X-rays, and an additional hard X-ray power law is also 
-seen in the spectrum (REFs). This hard component is normally attributed
+seen in the spectrum. This hard component is normally attributed
 to Compton up-scattering of seed disc photons by some kind of `corona'
-of hot electrons close to the BH (REFs).
+of hot electrons close to the BH \citep[e.g.][]{white1988,mitsuda1989,uttley2014}.
 Although I do not study LMXBs directly in this thesis, it is instructive
-to discuss some of their observational appearance as it is relevant to the links
+to discuss some of their observational appearance as it is relevant to the linksRE
 between accretion and outflow. The discovery that XRBs and CVs follow similar 
 tracks on a hardness-intensity diagram \citep{kordingDNjet2008}
 is particularly interesting in this regard, especially since \cite{ponti2012}
@@ -684,7 +734,8 @@ Parkes \citep{ekers1969} and Ohio \citep{ehman1970} surveys discovered a great m
 bright radio point sources distributed isotropically across the sky.
 These sources eventually became known as `quasi-stellar radio sources'
 or {\em quasars}, and were soon identified to be coincident with bright optical
-sources or `quasi-stellar objects' (QSOs; REFs). 
+sources or `quasi-stellar objects' (QSOs) at high 
+redshifts \citep{schmidt1963,schmidt1965a,schmidt1965b}.
 Nowadays, the term quasar normally has very little to do with 
 radio emission and is often used interchangeably with QSO. 
 Indeed, throughout this thesis I shall refer to a quasar as simply a bright, 
