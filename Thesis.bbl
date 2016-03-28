@@ -79,20 +79,21 @@
 {Bondi} H., {Hoyle} F., 1944,
   \mnras~  104, 273
 
-\bibitem[\protect\astroncite{{Brotherton} et~al.}{2006}]{brotherton2006}
-{Brotherton} M.~S., {De Breuck} C., {Schaefer} J.~J., 2006,
-  \mnras~  372, L58
-
-\bibitem[\protect\astroncite{{Bruni} et~al.}{2012}]{bruni2012}
-{Bruni} G., {Mack} K.-H., {Salerno} E., {Montenegro-Montes} F.~M., {Carballo}
-  R., {Benn} C.~R., {Gonz{\'a}lez-Serrano} J.~I., {Holt} J.,
-  {Jim{\'e}nez-Luj{\'a}n} F., 2012,
-  \aap~  542, A13
+\bibitem[\protect\astroncite{{Braito} et~al.}{2007}]{braito2007}
+{Braito} V., {Reeves} J.~N., {Dewangan} G.~C., {George} I., {Griffiths} R.~E.,
+  {Markowitz} A., {Nandra} K., {Porquet} D., {Ptak} A., {Turner} T.~J.,
+  {Yaqoob} T., {Weaver} K., 2007,
+  \apj~  670, 978
 
 \bibitem[\protect\astroncite{{Capellupo} et~al.}{2015}]{capellupo2015}
 {Capellupo} D.~M., {Netzer} H., {Lira} P., {Trakhtenbrot} B.,
   {Mej{\'{\i}}a-Restrepo} J., 2015,
   \mnras~  446, 3427
+
+\bibitem[\protect\astroncite{{Cappi} et~al.}{1996}]{cappi1996}
+{Cappi} M., {Mihara} T., {Matsuoka} M., {Hayashida} K., {Weaver} K.~A., {Otani}
+  C., 1996,
+  \apj~  458, 149
 
 \bibitem[\protect\astroncite{{Cassinelli}}{1979}]{cassinelli1979}
 {Cassinelli} J.~P., 1979,
@@ -256,6 +257,12 @@
 {Fabian} A.~C., 2012,
   \araa~  50, 455
 
+\bibitem[\protect\astroncite{{Fabian} et~al.}{1994}]{fabian1994}
+{Fabian} A.~C., {Kunieda} H., {Inoue} S., {Matsuoka} M., {Mihara} T.,
+  {Miyamoto} S., {Otani} C., {Ricker} G., {Tanaka} Y., {Yamauchi} M., {Yaqoob}
+  T., 1994,
+  \pasj~  46, L59
+
 \bibitem[\protect\astroncite{{Fabian} et~al.}{1995}]{fabian1995}
 {Fabian} A.~C., {Nandra} K., {Reynolds} C.~S., {Brandt} W.~N., {Otani} C.,
   {Tanaka} Y., {Inoue} H., {Iwasawa} K., 1995,
@@ -309,6 +316,21 @@
 {Gierli{\'n}ski} M., {Done} C., 2006,
   \mnras~  371, L16
 
+\bibitem[\protect\astroncite{{Gofford} et~al.}{2014}]{gofford2014}
+{Gofford} J., {Reeves} J.~N., {Braito} V., {Nardini} E., {Costa} M.~T.,
+  {Matzeu} G.~A., {O'Brien} P., {Ward} M., {Turner} T.~J., {Miller} L., 2014,
+  \apj~  784, 77
+
+\bibitem[\protect\astroncite{{Gofford} et~al.}{2015}]{gofford2015}
+{Gofford} J., {Reeves} J.~N., {McLaughlin} D.~E., {Braito} V., {Turner} T.~J.,
+  {Tombesi} F., {Cappi} M., 2015,
+  \mnras~  451, 4169
+
+\bibitem[\protect\astroncite{{Gofford} et~al.}{2013}]{gofford2013}
+{Gofford} J., {Reeves} J.~N., {Tombesi} F., {Braito} V., {Turner} T.~J.,
+  {Miller} L., {Cappi} M., 2013,
+  \mnras~  430, 60
+
 \bibitem[\protect\astroncite{{Goodrich} \& {Miller}}{1995}]{goodrich1995}
 {Goodrich} R.~W., {Miller} J.~S., 1995,
   \apjl~  448, L73
@@ -335,6 +357,10 @@
 \bibitem[\protect\astroncite{{Haardt} \& {Maraschi}}{1991}]{haardt1991}
 {Haardt} F., {Maraschi} L., 1991,
   \apjl~  380, L51
+
+\bibitem[\protect\astroncite{{Halpern}}{1984}]{halpern1984}
+{Halpern} J.~P., 1984,
+  \apj~  281, 90
 
 \bibitem[\protect\astroncite{{H{\"a}ring} \& {Rix}}{2004}]{haring2004}
 {H{\"a}ring} N., {Rix} H.-W., 2004,
@@ -435,6 +461,16 @@
 {Janiuk} A., {Czerny} B., {Madejski} G.~M., 2001,
   \apj~  557, 408
 
+\bibitem[\protect\astroncite{{Kaastra} et~al.}{2000}]{kaastra2000}
+{Kaastra} J.~S., {Mewe} R., {Liedahl} D.~A., {Komossa} S., {Brinkman} A.~C.,
+  2000,
+  \aap~  354, L83
+
+\bibitem[\protect\astroncite{{Kaastra} et~al.}{2008}]{kaastra}
+{Kaastra} J.~S., {Paerels} F.~B.~S., {Durret} F., {Schindler} S., {Richter} P.,
+  2008,
+  \ssr~  134, 155
+
 \bibitem[\protect\astroncite{{Kafka} \& {Honeycutt}}{2004}]{kafka2004}
 {Kafka} S., {Honeycutt} R.~K., 2004,
   \aj~  128, 2420
@@ -485,6 +521,12 @@
 \bibitem[\protect\astroncite{{Kraft} et~al.}{1962}]{kraft1962}
 {Kraft} R.~P., {Mathews} J., {Greenstein} J.~L., 1962,
   \apj~  136, 312
+
+\bibitem[\protect\astroncite{{Kriss} et~al.}{1996}]{kriss1996}
+{Kriss} G.~A., {Krolik} J.~H., {Otani} C., {Espey} B.~R., {Turner} T.~J., {Kii}
+  T., {Tsvetanov} Z., {Takahashi} T., {Davidsen} A.~F., {Tashiro} M., {Zheng}
+  W., {Murakami} S., {Petre} R., {Mihara} T., 1996,
+  \apj~  467, 629
 
 \bibitem[\protect\astroncite{{Krolik} \& {Begelman}}{1986}]{krolik1986}
 {Krolik} J.~H., {Begelman} M.~C., 1986,
@@ -564,10 +606,6 @@
   {Higginbottom} N., 2016,
   in prep.~
 
-\bibitem[\protect\astroncite{{Marin} \& {Goosmann}}{2013}]{marin2013}
-{Marin} F., {Goosmann} R.~W., 2013,
-  \mnras~  436, 2522
-
 \bibitem[\protect\astroncite{{Marinucci} et~al.}{2016}]{marinucci2016}
 {Marinucci} A., {Bianchi} S., {Matt} G., {Alexander} D.~M., {Balokovi{\'c}} M.,
   {Bauer} F.~E., {Brandt} W.~N., {Gandhi} P., {Guainazzi} M., {Harrison} F.~A.,
@@ -588,6 +626,11 @@
 \bibitem[\protect\astroncite{{Matt} et~al.}{2003}]{matt2003}
 {Matt} G., {Guainazzi} M., {Maiolino} R., 2003,
   \mnras~  342, 422
+
+\bibitem[\protect\astroncite{{Matzeu} et~al.}{2016}]{matzeu2016}
+{Matzeu} G.~A., {Reeves} J.~N., {Nardini} E., {Braito} V., {Costa} M.~T.,
+  {Tombesi} F., {Gofford} J., 2016,
+  \mnras~  458, 1311
 
 \bibitem[\protect\astroncite{{Mauche}}{1996}]{mauche1996}
 {Mauche} C.~W., 1996,
@@ -680,6 +723,11 @@
 {Noebauer} U.~M., {Long} K.~S., {Sim} S.~A., {Knigge} C., 2010,
   \apj~  719, 1932
 
+\bibitem[\protect\astroncite{{Orr} et~al.}{1997}]{orr1997}
+{Orr} A., {Molendi} S., {Fiore} F., {Grandi} P., {Parmar} A.~N., {Owens} A.,
+  1997,
+  \aap~  324, L77
+
 \bibitem[\protect\astroncite{{Orr} \& {Browne}}{1982}]{orr1982}
 {Orr} M.~J.~L., {Browne} I.~W.~A., 1982,
   \mnras~  200, 1067
@@ -687,6 +735,12 @@
 \bibitem[\protect\astroncite{{Osaki}}{1974}]{osaki1974}
 {Osaki} Y., 1974,
   \pasj~  26, 429
+
+\bibitem[\protect\astroncite{{Otani} et~al.}{1996}]{otani1996}
+{Otani} C., {Kii} T., {Reynolds} C.~S., {Fabian} A.~C., {Iwasawa} K.,
+  {Hayashida} K., {Inoue} H., {Kunieda} H., {Makino} F., {Matsuoka} M.,
+  {Tanaka} Y., 1996,
+  \pasj~  48, 211
 
 \bibitem[\protect\astroncite{{Patterson}}{1984}]{patterson1984}
 {Patterson} J., 1984,
@@ -745,6 +799,10 @@
   Accreting Black Holes,
   Vol. 161 of {\em Astronomical Society of the Pacific Conference Series\/},
   178
+
+\bibitem[\protect\astroncite{{Reynolds} \& {Fabian}}{1995}]{reynolds1995}
+{Reynolds} C.~S., {Fabian} A.~C., 1995,
+  \mnras~  273, 1167
 
 \bibitem[\protect\astroncite{{Ringwald} \& {Naylor}}{1998}]{RN98}
 {Ringwald} F.~A., {Naylor} T., 1998,
@@ -822,9 +880,21 @@
 {Silk} J., {Rees} M.~J., 1998,
   \aap~  331, L1
 
-\bibitem[\protect\astroncite{{Sim} et~al.}{2010}]{sim2010}
-{Sim} S.~A., {Miller} L., {Long} K.~S., {Turner} T.~J., {Reeves} J.~N., 2010,
+\bibitem[\protect\astroncite{{Silva} et~al.}{2015}]{silva2015}
+{Silva} C., {Uttley} P., {Costantini} E., 2015,
+\newblock in The Extremes of Black Hole Accretion, ~63
+
+\bibitem[\protect\astroncite{{Sim} et~al.}{2008}]{simlong2008}
+{Sim} S.~A., {Long} K.~S., {Miller} L., {Turner} T.~J., 2008,
+  \mnras~  388, 611
+
+\bibitem[\protect\astroncite{{Sim} et~al.}{2010a}]{sim2010}
+{Sim} S.~A., {Miller} L., {Long} K.~S., {Turner} T.~J., {Reeves} J.~N., 2010a,
   \mnras~  404, 1369
+
+\bibitem[\protect\astroncite{{Sim} et~al.}{2010b}]{sim2010_hydro}
+{Sim} S.~A., {Proga} D., {Miller} L., {Long} K.~S., {Turner} T.~J., 2010b,
+  \mnras~  408, 1396
 
 \bibitem[\protect\astroncite{{Smak}}{1981}]{smak1981}
 {Smak} J., 1981,
@@ -858,6 +928,11 @@
 {Tombesi} F., {Cappi} M., {Reeves} J.~N., {Palumbo} G.~G.~C., {Yaqoob} T.,
   {Braito} V., {Dadina} M., 2010,
   \aap~  521, A57
+
+\bibitem[\protect\astroncite{{Tombesi} et~al.}{2015}]{tombesi2015}
+{Tombesi} F., {Mel{\'e}ndez} M., {Veilleux} S., {Reeves} J.~N.,
+  {Gonz{\'a}lez-Alfonso} E., {Reynolds} C.~S., 2015,
+  \nat~  519, 436
 
 \bibitem[\protect\astroncite{{Tran}}{2001}]{tran2001}
 {Tran} H.~D., 2001,

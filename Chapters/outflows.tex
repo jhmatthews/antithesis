@@ -185,7 +185,75 @@ sources \citep{zhou2006,ghoshpunsly2007}.
 
 \subsubsection{Warm Absorbers}
 
+Warm absorbers (WAs) are regions of photoionized plasma responsible for some
+of the characteristic absorption features seen in the X-ray spectra of AGN 
+\citep{reynolds1995}.
+In particular, they produce photoelectric continuum absorption 
+\citep[e.g.][]{halpern1984,cappi1996,kriss1996}
+and a series of narrow absorption lines in H-like and He-like ions of 
+C, N, O, Si, Ne, and Fe \citep{kaastra2000}, that appear in the soft X-rays.
+A wind origin is a common hypothesis for warm absorbers. Clear evidence for this 
+comes from the measured blueshifts of the lines, typically on the order of 
+$\sim100$km~s$^{-1}$ (REFs). X-ray absorption and warm absorbers are often
+variable \citep{fabian1994,otani1996}, which may be interpreted in terms of 
+changing kinematics of an accretion disc wind \citep{connolly2015}. 
+There is also evidence of contemporary UV and X-ray absorption 
+in NGC 5548 \citep{kaastra}, and as mentioned above BALQSOs 
+are often absorbed in the X-rays. This suggests that the outflow phenomenon 
+across a large range of ionization states and line energies is linked. 
+
+Warm absorbers can, in some cases, be modelled well with single component 
+models \citep{kaastra2000}, but often
+require multiple ionization state absorbers \citep[e.g.][]{kriss1996,orr1997,connolly2015}.
+If this is the case, then self-consistent ionization and radiative transfer models
+should really be used to model the spectrum (see e.g. chapter 3), 
+as optically thin ionization parameter estimates will not capture 
+the ionization and radiation physics.
+The collated observations point towards some kind of outflow with a stratified ionization
+structure, with $\log \xi \sim 0-2$, and densities on the order of $10^8$~cm. 
+These physical conditions or scales are not well constrained, and the connection to 
+other outflows is unknown. Timing observations will help to shed light on 
+the properties of the mysterious, but ubiquitous, 
+AGN warm absorbers \citep{silva2015}.
+
 \subsubsection{Ultra-fast Outflows}
+
+As well as acting as warm absorbers, winds also imprint clear absorption features
+in highly ionized Fe~K$\alpha$ lines in AGN such as PDS~456 
+\citep{reeves2003, gofford2014,matzeu2016},
+MCG-5-23-16 \citep{braito2007} and PG 1211+143 \citep{poundsreeves2009,fukumura2014}.
+These features are fairly common in Seyfert galaxies \citep{tombesi2010a, gofford2013}. 
+An example of such a feature is shown in 
+figure~\ref{fig:nardini} with a simply spherical outflow model fit, 
+from \citep{nardini2015}. The high velocities ($\sim0.1c$) inferred 
+from the line blueshifts have lead to these winds becoming known as 
+ultra-fast outflows, or UFOs. 
+
+UFOs are characterised by ionization parameters of $\log \xi \sim 3-4$,
+and column densities of $N_H > 10^22$~cm$^{-2}$. Their high mass-loss rates
+and large energy budgets mean that they are natural candidates for
+AGN feedback (see section~\ref{sec:agn_feedback}). Measurements of
+their kinetic luminosities suggest that UFOs do have sufficient 
+energy to affect their host galaxy \citep{gofford2015}, and a recent observation
+showed a molecular outflow in a UFO host galaxy, possibly driven 
+by the UFO itself \citep{tombesi2015}. As witg WAs, many of the models
+used to constrain physical parameters are simplistic, and assume 
+single ionization parameters, large covering factor
+and thin expanding shells of outflow.
+Under these assumptions, the kinetic luminosity can be estimated using
+\begin{equation}
+\label{eq:hse}
+L_K = \Omega 4 \pi r^2 n_e.
+\end{equation}
+In reality, the absorber is probably much more complex, and full 
+RT and photoionization simulations are required. In a series of papers, 
+\cite{simlong2008,sim2010,sim2010_hydro} carried out such calculations,
+and found reasonable verisimilitude with Fe line profiles could be achieved.
+However, as with many models for AGN, a holistic, broad wavelength range
+picture is still required.
+
+
+
 
 \begin{figure}
 \centering
@@ -193,9 +261,9 @@ sources \citep{zhou2006,ghoshpunsly2007}.
 \caption
 {
 {\sl Credit: Nardini et al. 2015}. 
-X-ray spectrum fitted with a P-Cygni profile from a spherical outflow model.
-{\sl XMM-Newton} data is shown in black with two combinaed {\sl NuStar}
-observations in blue.
+X-ray spectrum of PDS 456 fitted with a P-Cygni profile from a 
+spherical outflow model. {\sl XMM-Newton} data is shown in black 
+with two combined {\sl NuStar} observations in blue.
 } 
 \label{fig:nardini}
 \end{figure}
@@ -320,6 +388,7 @@ Describe our wind model in detail. SV93, H13, M15, M16
 \bigskip
 
 \section{The really, really big picture: AGN Feedback}
+\label{sec:agn_feedback}
 
 The event horizon of a $10^9~M_\odot$ BH is approximately 
 $10^{15}$~cm, a billionth of the size of a typical galactic bulge. This is 
