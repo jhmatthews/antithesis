@@ -269,7 +269,7 @@ $\sim100$km~s$^{-1}$. X-ray absorption and WAs are often
 variable \citep{fabian1994,otani1996}, which may be interpreted in terms of 
 changing kinematics of an accretion disc wind \citep{connolly2014}. 
 There is also evidence of contemporary UV and X-ray absorption 
-in NGC 5548 \citep{kaastra}, and as mentioned above BALQSOs 
+in NGC 5548 \citep{kaastra2014}, and as mentioned above BALQSOs 
 are often absorbed in the X-rays. This suggests that the outflow phenomenon 
 across a large range of ionization states and line energies is linked. 
 
@@ -437,9 +437,21 @@ the escape velocity tends to greatly exceed the thermal velocity.
 \subsection{Radiatively Driven Winds}
 \label{sec:rad_winds}
 
+Under spherical symmetry, one simply obtains the Eddington limit discussed
+in section~\ref{??} when $\rho \vec{F}_{rad} = \rho \vec{g}$. While 
 
 
 \subsection{Line-driven Winds}
+
+Under the right ionization conditions, line opacity can be significant in
+a partially ionized plasma. The most common way to parameterise the cumulative
+effect of lines on the radiation force is via the {\em force multiplier}, $M(t)$,
+which modifies the equation for the radiation force to become
+\begin{equation}
+\label{eq:force_multiplier}
+\vec{F}_{rad} = \frac{\sigma_e }{c} M(t)
+\end{equation}
+
 
 \subsection{Magnetic Winds}
 \label{sec:magq_winds}
@@ -467,33 +479,89 @@ of this thesis.
 
 \subsection{MCGV95: A Line-driven Wind Model for AGN}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/MCGV95.png}
+\caption
+{
+{\sl Credit: Murray et al. 1995}. 
+} 
+\label{fig:MCGV95}
+\end{figure}
 
-\subsection{De Kool & Begelman: A Radiatively Driven, Magnetically Confined Wind}
+
+
+
+\subsection{De Kool \& Begelman: A Radiatively Driven, Magnetically Confined Wind}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/dekool.png}
+\caption
+{
+{\sl Credit: De Kool \& Begelman 1995}. 
+} 
+\label{fig:dekool}
+\end{figure}
+
+
 
 
 \subsection{Elvis 2000: A Structure for Quasars}
 
+\cite{elvis2000} expanded on the work of MCGV95 by proposing a simple
+biconical model, empirically derived to explain as much of quasar phenomenology
+as possible within one unifying framework. The geometry of the Elvis model
+is shown in figure~\ref{fig:elvis}. As in the two previous models, observers 
+looking into the wind cone will see a BALQSO, whereas observers looking down onto
+the wind will see a type 1 quasar. Initially, the wind rises vertically, so
+that observers looking underneath the flow will see narrow absorption lines (NALs)
+due to the small range of velocities intercepted by their line of sight. 
 
-\subsection{Proga & Kallman: Line-driven Hydrodynamic Models}
+The flow conserves angular momentum, such that the initial Keplerian velocities
+determine the BEL widths, before accelerating to BAL-like velocities of $\sim0.1c$.
+The wind is assumed to be two-phase, with BEL and BAL clouds embedded in 
+a warm, highly ionized medium (WHIM). This WHIM is responsible for WA-like absorption
+and the X-ray scattering phenomena seen in AGN. It is also responsible for confining
+the BAL and BEL clouds, allowing high densities and cooler temperatures to exist
+within the flow. The ionization structure for the wind is stratified, such that the material
+further out along the disc plane is somewhat shielded from the inner disc and X-rays.
+This allows the lower ionization BEL profiles to form in the right locations,
+and also means that LoBAL profiles would be seen at a subset of inclinations.
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/02-outflows/nardini_pds456.png}
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/elvis.png}
+\caption
+{
+{\sl Credit: Martin Elvis}. 
+A schematic showing the main features of the Elvis model. A biconical
+wind rises from an accretion disc, and the observed spectrum is determined 
+purely by the viewing angle of the observer.
+} 
+\label{fig:elvis}
+\end{figure}
+
+\subsection{Proga \& Kallman: Line-driven Hydrodynamic Models}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/proga.jpg}
 \caption
 {
 {\sl Credit: Proga \& Kallman 2004}. 
-X-ray spectrum of PDS 456 fitted with a P-Cygni profile from a 
-spherical outflow model. {\sl XMM-Newton} data is shown in black 
-with two combined {\sl NuStar} observations in blue.
+Density structure of the Proga model.
 } 
-\label{fig:nardini}
+\label{fig:PK04}
 \end{figure}
+
+Some text
 
 \subsection{Biconical Models for CVs and Quasars}
 
 
 
-
+Some text
 
 
 

@@ -544,15 +544,20 @@
 {Janiuk} A., {Czerny} B., {Madejski} G.~M., 2001,
   \apj~  557, 408
 
+\bibitem[\protect\astroncite{{Kaastra} et~al.}{2014}]{kaastra2014}
+{Kaastra} J.~S., {Kriss} G.~A., {Cappi} M., {Mehdipour} M., {Petrucci} P.-O.,
+  {Steenbrugge} K.~C., {Arav} N., {Behar} E., {Bianchi} S., {Boissay} R.,
+  {Branduardi-Raymont} G., {Chamberlain} C., {Costantini} E., {Ely} J.~C.,
+  {Ebrero} J., {Di Gesu} L., {Harrison} F.~A., {Kaspi} S., {Malzac} J., {De
+  Marco} B., {Matt} G., {Nandra} K., {Paltani} S., {Person} R., {Peterson}
+  B.~M., {Pinto} C., {Ponti} G., {Nu{\~n}ez} F.~P., {De Rosa} A., {Seta} H.,
+  {Ursini} F., {de Vries} C.~P., {Walton} D.~J., {Whewell} M., 2014,
+  Science~  345, 64
+
 \bibitem[\protect\astroncite{{Kaastra} et~al.}{2000}]{kaastra2000}
 {Kaastra} J.~S., {Mewe} R., {Liedahl} D.~A., {Komossa} S., {Brinkman} A.~C.,
   2000,
   \aap~  354, L83
-
-\bibitem[\protect\astroncite{{Kaastra} et~al.}{2008}]{kaastra}
-{Kaastra} J.~S., {Paerels} F.~B.~S., {Durret} F., {Schindler} S., {Richter} P.,
-  2008,
-  \ssr~  134, 155
 
 \bibitem[\protect\astroncite{{Kafka} \& {Honeycutt}}{2004}]{kafka2004}
 {Kafka} S., {Honeycutt} R.~K., 2004,
@@ -1052,6 +1057,10 @@
 \bibitem[\protect\astroncite{{Springel} et~al.}{2005}]{springel2005}
 {Springel} V., {Di Matteo} T., {Hernquist} L., 2005,
   \apjl~  620, L79
+
+\bibitem[\protect\astroncite{{Stalin} et~al.}{2011}]{stalin2011}
+{Stalin} C.~S., {Srianand} R., {Petitjean} P., 2011,
+  \mnras~  413, 1013
 
 \bibitem[\protect\astroncite{{Stockman} et~al.}{1979}]{stockman1979}
 {Stockman} H.~S., {Angel} J.~R.~P., {Miley} G.~K., 1979,
