@@ -161,309 +161,309 @@ findings.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\sc{python}: A Monte Carlo Ionization and Radiative Transfer Code}
+% \section{\sc{python}: A Monte Carlo Ionization and Radiative Transfer Code}
 
-\py\ is a Monte Carlo  ionization and radiative transfer code which
-uses the Sobolev approximation to treat line transfer 
-\citep[e.g.][]{sobolev1957,sobolev1960,rybickihummer1978}. 
-The code has already been described extensively by LK02, SDL05 and Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
-focusing particularly on new
-aspects of our implementation of macro-atoms into the code. 
+% \py\ is a Monte Carlo  ionization and radiative transfer code which
+% uses the Sobolev approximation to treat line transfer 
+% \citep[e.g.][]{sobolev1957,sobolev1960,rybickihummer1978}. 
+% The code has already been described extensively by LK02, SDL05 and Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
+% focusing particularly on new
+% aspects of our implementation of macro-atoms into the code. 
 
-\subsection{Basics} 
+% \subsection{Basics} 
 
-\py\ operates in two distinct stages. First, the ionization state,
-level populations and temperature structure are calculated. This is
-done iteratively, by 
-propagating several populations of Monte Carlo energy quanta (`photons')
-through a model wind. The geometric and kinemetic properties of the
-outflow are specified on a pre-defined spatial grid. In each of these
-iterations (`ionization cycles'), the code records estimators that 
-characterize the radiation field in each grid cell. At the end 
-of each ionization cycle, a new electron temperature is calculated
-that more closely balances heating and cooling in the 
-plasma. The radiative estimators and updated electron
-temperature are then used to revise the ionization state of the wind,
-and a new ionization cycle is started. The process is repeated until
-heating and cooling are balanced throughout the wind. 
+% \py\ operates in two distinct stages. First, the ionization state,
+% level populations and temperature structure are calculated. This is
+% done iteratively, by 
+% propagating several populations of Monte Carlo energy quanta (`photons')
+% through a model wind. The geometric and kinemetic properties of the
+% outflow are specified on a pre-defined spatial grid. In each of these
+% iterations (`ionization cycles'), the code records estimators that 
+% characterize the radiation field in each grid cell. At the end 
+% of each ionization cycle, a new electron temperature is calculated
+% that more closely balances heating and cooling in the 
+% plasma. The radiative estimators and updated electron
+% temperature are then used to revise the ionization state of the wind,
+% and a new ionization cycle is started. The process is repeated until
+% heating and cooling are balanced throughout the wind. 
 
-This converged model is then used as the basis for the second set of
-iterations (`spectral cycles'). In these, the emergent spectrum over
-the desired spectral range is synthesized by tracking populations of
-energy packets through the wind and computing the emergent spectra at
-a number of user-specified viewing angles.  
+% This converged model is then used as the basis for the second set of
+% iterations (`spectral cycles'). In these, the emergent spectrum over
+% the desired spectral range is synthesized by tracking populations of
+% energy packets through the wind and computing the emergent spectra at
+% a number of user-specified viewing angles.  
 
-\py\ is designed to operate in a number of different
-regimes, both in terms of the scale of the system and in terms of the
-characteristics of the underlying radiation field.
-It was originally developed by LK02 in order to model the UV spectra
-of CVs with a simple biconical disc wind model. SDL05
-\nocite{simmacro2005} used the code to model Brackett
-and Pfund line profiles of H in young-stellar objects (YSOs). As part
-of this effort, they implemented a `macro-atom' mode (see below) in
-order to correctly treat H recombination lines with
-\py. Finally, H13 used \py\ to model broad absorption line (BAL) QSOs. For
-this application, an improved treatment of ionization was implemented,
-so that the code is now capable of dealing with arbitrary
-photo-ionizing SEDs, including non-thermal and multi-component ones. 
+% \py\ is designed to operate in a number of different
+% regimes, both in terms of the scale of the system and in terms of the
+% characteristics of the underlying radiation field.
+% It was originally developed by LK02 in order to model the UV spectra
+% of CVs with a simple biconical disc wind model. SDL05
+% \nocite{simmacro2005} used the code to model Brackett
+% and Pfund line profiles of H in young-stellar objects (YSOs). As part
+% of this effort, they implemented a `macro-atom' mode (see below) in
+% order to correctly treat H recombination lines with
+% \py. Finally, H13 used \py\ to model broad absorption line (BAL) QSOs. For
+% this application, an improved treatment of ionization was implemented,
+% so that the code is now capable of dealing with arbitrary
+% photo-ionizing SEDs, including non-thermal and multi-component ones. 
 
-\subsection{Ionization and Excitation: `Simple Atoms'}
-\label{simpleatoms}
+% \subsection{Ionization and Excitation: `Simple Atoms'}
+% \label{simpleatoms}
 
-Prior to SDL05, the relative ionization fractions for all atomic
-species were estimated via the modified Saha equation (Mazzali \&
-Lucy 1993)  
-\begin{equation}
-\frac{n_{j+1} n_e}{n_j} = W [\xi + W(1-\xi)]
-\left(\frac{T_e}{T_R}\right)^{1/2}
-\left(\frac{n_{j+1}n_e}{n_j}\right)^*_{T_R}. \label{ionization}
-\end{equation}
-Here, the `starred' term on the right represents abundances computed with
-the Saha equation at temperature $T_R$, but using partition functions
-from the dilute blackbody approximation. 
-$W$ is an effective dilution factor, $\xi$ is the
-fraction of recombinations going directly to the ground state, and
-$T_R$ and $T_e$ are the radiation and electron temperatures,
-respectively. This simple ionization scheme produces reasonable
-results when the photoionizing SED can be approximated by a dilute
-blackbody. This is the case for high-state CVs. (As noted above, an
-improved, but more complex treatment of ionization that is appropriate
-for more complex SEDs is described in H13.) 
+% Prior to SDL05, the relative ionization fractions for all atomic
+% species were estimated via the modified Saha equation (Mazzali \&
+% Lucy 1993)  
+% \begin{equation}
+% \frac{n_{j+1} n_e}{n_j} = W [\xi + W(1-\xi)]
+% \left(\frac{T_e}{T_R}\right)^{1/2}
+% \left(\frac{n_{j+1}n_e}{n_j}\right)^*_{T_R}. \label{ionization}
+% \end{equation}
+% Here, the `starred' term on the right represents abundances computed with
+% the Saha equation at temperature $T_R$, but using partition functions
+% from the dilute blackbody approximation. 
+% $W$ is an effective dilution factor, $\xi$ is the
+% fraction of recombinations going directly to the ground state, and
+% $T_R$ and $T_e$ are the radiation and electron temperatures,
+% respectively. This simple ionization scheme produces reasonable
+% results when the photoionizing SED can be approximated by a dilute
+% blackbody. This is the case for high-state CVs. (As noted above, an
+% improved, but more complex treatment of ionization that is appropriate
+% for more complex SEDs is described in H13.) 
 
-Similarly, the relative excitation fractions within each ionization
-stage of a given species were estimated via a modified (dilute) Boltzmann
-equation,
-\begin{equation}
-\frac{n_{jk}}{n_j} = \frac{W g_k}{z_j(T_R)} \exp(-E_k/kT_R),
-\end{equation}
-where $n_{jk}$ is the population of level $k$ in ionic stage $j$,
-$E_k$ is the energy difference between level $k$ and the ground state,
-$g_k$ is the statistical weight of level $k$
-and $z_j(T_R)$ is the partition function of ionic stage $j$. 
+% Similarly, the relative excitation fractions within each ionization
+% stage of a given species were estimated via a modified (dilute) Boltzmann
+% equation,
+% \begin{equation}
+% \frac{n_{jk}}{n_j} = \frac{W g_k}{z_j(T_R)} \exp(-E_k/kT_R),
+% \end{equation}
+% where $n_{jk}$ is the population of level $k$ in ionic stage $j$,
+% $E_k$ is the energy difference between level $k$ and the ground state,
+% $g_k$ is the statistical weight of level $k$
+% and $z_j(T_R)$ is the partition function of ionic stage $j$. 
 
-Finally, \py\ originally modelled all bound-bound processes as transitions
-within a simple two-level atom \cite[e.g.][]{mihalas}. 
-This framework was used for the treatment of line transfer and also
-for the line heating and cooling calculations (see LK02). 
-The approximation works reasonably well for resonance  
-lines, such as \civfull, in which the lower level is the ground state.  
-However, it is a poor approximation for many other
-transitions, particularly those where the upper level
-is primarily populated from above. Thus an improved method for
-estimating excited level populations and simulating line transfer is
-needed in order to model recombination lines and continua.
+% Finally, \py\ originally modelled all bound-bound processes as transitions
+% within a simple two-level atom \cite[e.g.][]{mihalas}. 
+% This framework was used for the treatment of line transfer and also
+% for the line heating and cooling calculations (see LK02). 
+% The approximation works reasonably well for resonance  
+% lines, such as \civfull, in which the lower level is the ground state.  
+% However, it is a poor approximation for many other
+% transitions, particularly those where the upper level
+% is primarily populated from above. Thus an improved method for
+% estimating excited level populations and simulating line transfer is
+% needed in order to model recombination lines and continua.
 
-\subsection{Ionization and Excitation: Macro-Atoms}
+% \subsection{Ionization and Excitation: Macro-Atoms}
 
-Lucy (2002, 2003\nocite{lucy2002, lucy2003}; hereafter L02, L03) 
-has shown that it is possible to calculate the emissivity of a gas in
-statistical equilibrium accurately by quantising matter into
-`macro-atoms', and radiant and kinetic energy into indivisible energy
-packets (r- and k- packets, respectively). His macro-atom scheme
-allows for all possible transition paths from a given level and
-provides a full non-local thermodynamic equilibrium (NLTE) solution
-for the level populations based on Monte Carlo estimators. The macro-atom
-technique has already been used to model Wolf-Rayet star
-winds \citep{sim2004}, AGN disc winds \citep{simlong2008, tatum2012},
-supernovae \citep{kromersim2009, kerzendorfsim} and YSOs (SDL05). A full 
-description of the approach can be found in L02 and L03. 
+% Lucy (2002, 2003\nocite{lucy2002, lucy2003}; hereafter L02, L03) 
+% has shown that it is possible to calculate the emissivity of a gas in
+% statistical equilibrium accurately by quantising matter into
+% `macro-atoms', and radiant and kinetic energy into indivisible energy
+% packets (r- and k- packets, respectively). His macro-atom scheme
+% allows for all possible transition paths from a given level and
+% provides a full non-local thermodynamic equilibrium (NLTE) solution
+% for the level populations based on Monte Carlo estimators. The macro-atom
+% technique has already been used to model Wolf-Rayet star
+% winds \citep{sim2004}, AGN disc winds \citep{simlong2008, tatum2012},
+% supernovae \citep{kromersim2009, kerzendorfsim} and YSOs (SDL05). A full 
+% description of the approach can be found in L02 and L03. 
 
-Briefly, macro-atom NLTE level populations and ionization fractions
-are calculated by solving the statistical equilbrium equations between
-each pair of levels. In the framework of the Sobolev escape probability formalism (Rybicki \& Hummer 1978; L02; Sim 2004), 
-the bound-bound excitation rate, ${\cal R}_{lu}$, in an ion is given by 
-\begin{equation}
-{\cal R}_{lu} = B_{lu} n_l J_{est} + C_{lu} n_l n_e,
-\end{equation}
-where $u$ and $l$ denote the upper and lower levels, $C$ represents the
-collisional rate coefficients, and $B$ is the usual Einstein
-coefficient. $J_{est}$ is the Monte Carlo estimator for the mean intensity 
-impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
-given by \citep{sim2004}
-\begin{equation}
-J_{est} = \frac{c}{4 \pi \nu_0 V} \sum_{i} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
-\end{equation}
-Here $w$ is the photon weight (in luminosity units), $\nu_0$
-is the line frequency, $dv/ds$ is the velocity gradient and
-$\tau_s$ is the Sobolev optical depth.
-The sum is over all photons that come into resonance with the line,
-and thus represents an integral over solid angle.
-The corresponding de-excitation rate is then 
-\begin{equation}
-{\cal R}_{ul} = \beta_{lu} A_{ul} n_u + B_{ul} n_u J_{est} +
-C_{ul} n_u n_e,
-\label{eq:nlte_rul}
-\end{equation}
-where $A$ is the usual Einstein coefficient. 
-The quantity $\beta_{lu}$ is the {\em angle-averaged} probability 
-that a given line photon will escape the Sobolev region.
+% Briefly, macro-atom NLTE level populations and ionization fractions
+% are calculated by solving the statistical equilbrium equations between
+% each pair of levels. In the framework of the Sobolev escape probability formalism (Rybicki \& Hummer 1978; L02; Sim 2004), 
+% the bound-bound excitation rate, ${\cal R}_{lu}$, in an ion is given by 
+% \begin{equation}
+% {\cal R}_{lu} = B_{lu} n_l J_{est} + C_{lu} n_l n_e,
+% \end{equation}
+% where $u$ and $l$ denote the upper and lower levels, $C$ represents the
+% collisional rate coefficients, and $B$ is the usual Einstein
+% coefficient. $J_{est}$ is the Monte Carlo estimator for the mean intensity 
+% impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
+% given by \citep{sim2004}
+% \begin{equation}
+% J_{est} = \frac{c}{4 \pi \nu_0 V} \sum_{i} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
+% \end{equation}
+% Here $w$ is the photon weight (in luminosity units), $\nu_0$
+% is the line frequency, $dv/ds$ is the velocity gradient and
+% $\tau_s$ is the Sobolev optical depth.
+% The sum is over all photons that come into resonance with the line,
+% and thus represents an integral over solid angle.
+% The corresponding de-excitation rate is then 
+% \begin{equation}
+% {\cal R}_{ul} = \beta_{lu} A_{ul} n_u + B_{ul} n_u J_{est} +
+% C_{ul} n_u n_e,
+% \label{eq:nlte_rul}
+% \end{equation}
+% where $A$ is the usual Einstein coefficient. 
+% The quantity $\beta_{lu}$ is the {\em angle-averaged} probability 
+% that a given line photon will escape the Sobolev region.
 
-In our implementation of the macro-atom approach, we also explicitly
-take into account the photoionization and collisional ionization rates
-between a lower level, $l$, and the continuum (or, in the case of ions
-with more than one bound electron, the ground state of the upper ion),
-$\kappa$,
-\begin{equation}
-{\cal R}_{l \kappa}= n_l \int_{\nu_0}^{\infty} \frac{ 4 \pi J_{\nu}
-  \sigma_{\nu}}{h \nu} d\nu + C_{l \kappa} n_l n_e.
-\end{equation}
-Here, $\sigma_{\nu}$ is the photoionization cross section, and $J_{\nu}$
-is the mean intensity. The corresponding recombination rate is given
-by 
-\begin{equation}
-{\cal R}_{\kappa l} = \alpha_{\kappa l} n_{\kappa} n_e + C_{\kappa l}
-n_\kappa n_e, \\
-\end{equation}
-where $\alpha_{\kappa l}$ is the radiative recombination coefficient
-to level $l$. This treatment means that radiative and collisional
-rates to and from all levels are considered when calculating both the
-ionization state and the level populations, although we neglect 
-ionization directly to excited levels of the upper ion. The
-\cite{vanregemorter} approximation is used for collisional
-transitions. This means that collisions between radiatively
-forbidden transitions are not taken into account when one 
-splits levels into $l$- and $s$-subshells, as well
-as principal quantum number, $n$ (as we have done with He~\textsc{i}; 
-see section~\ref{sec:data}). Although this approximation is, in general, 
-a poor one, the effect is second order in the physical 
-regime where recombination lines are formed in our models. 
-This is because bound-free processes are dominant in determining 
-level populations and emissivities. We have verified that this 
-is indeed the case in the He~\textsc{i} emission regions in our models.
+% In our implementation of the macro-atom approach, we also explicitly
+% take into account the photoionization and collisional ionization rates
+% between a lower level, $l$, and the continuum (or, in the case of ions
+% with more than one bound electron, the ground state of the upper ion),
+% $\kappa$,
+% \begin{equation}
+% {\cal R}_{l \kappa}= n_l \int_{\nu_0}^{\infty} \frac{ 4 \pi J_{\nu}
+%   \sigma_{\nu}}{h \nu} d\nu + C_{l \kappa} n_l n_e.
+% \end{equation}
+% Here, $\sigma_{\nu}$ is the photoionization cross section, and $J_{\nu}$
+% is the mean intensity. The corresponding recombination rate is given
+% by 
+% \begin{equation}
+% {\cal R}_{\kappa l} = \alpha_{\kappa l} n_{\kappa} n_e + C_{\kappa l}
+% n_\kappa n_e, \\
+% \end{equation}
+% where $\alpha_{\kappa l}$ is the radiative recombination coefficient
+% to level $l$. This treatment means that radiative and collisional
+% rates to and from all levels are considered when calculating both the
+% ionization state and the level populations, although we neglect 
+% ionization directly to excited levels of the upper ion. The
+% \cite{vanregemorter} approximation is used for collisional
+% transitions. This means that collisions between radiatively
+% forbidden transitions are not taken into account when one 
+% splits levels into $l$- and $s$-subshells, as well
+% as principal quantum number, $n$ (as we have done with He~\textsc{i}; 
+% see section~\ref{sec:data}). Although this approximation is, in general, 
+% a poor one, the effect is second order in the physical 
+% regime where recombination lines are formed in our models. 
+% This is because bound-free processes are dominant in determining 
+% level populations and emissivities. We have verified that this 
+% is indeed the case in the He~\textsc{i} emission regions in our models.
 
-\subsection{Ionization and Excitation: A Hybrid Approach}
+% \subsection{Ionization and Excitation: A Hybrid Approach}
 
-SDL05 implemented a macro-atom treatment of H in \py\ and used
-this to predict the observable properties of a pure H wind
-model for YSOs. Our goal here is to simultaneously model the optical
-and ultraviolet spectra of high-state CVs. Since the optical spectra
-are dominated by H and He recombination lines, both of these species
-need to be treated as macro-atoms. The UV spectra, on the other hand,
-are dominated by resonance lines associated with metals. This means we
-need to include these species in our models, but they can be treated 
-with our (much faster) simple-atom approach. We have therefore
-implemented a hybrid ionization and excitation scheme into \py. Any
-atomic species can now be treated either in our simple-atom
-approximation or with the full macro-atom machinery. In our CV
-models, we treat H and He as macro-atoms and all metals as
-simple-atoms. Species treated with either method
-are fully taken into account as sources of both bound-free opacity and line opacity, 
-and contribute to the heating and cooling balance of the plasma.
+% SDL05 implemented a macro-atom treatment of H in \py\ and used
+% this to predict the observable properties of a pure H wind
+% model for YSOs. Our goal here is to simultaneously model the optical
+% and ultraviolet spectra of high-state CVs. Since the optical spectra
+% are dominated by H and He recombination lines, both of these species
+% need to be treated as macro-atoms. The UV spectra, on the other hand,
+% are dominated by resonance lines associated with metals. This means we
+% need to include these species in our models, but they can be treated 
+% with our (much faster) simple-atom approach. We have therefore
+% implemented a hybrid ionization and excitation scheme into \py. Any
+% atomic species can now be treated either in our simple-atom
+% approximation or with the full macro-atom machinery. In our CV
+% models, we treat H and He as macro-atoms and all metals as
+% simple-atoms. Species treated with either method
+% are fully taken into account as sources of both bound-free opacity and line opacity, 
+% and contribute to the heating and cooling balance of the plasma.
 
-\subsection{Atomic Data}
-\label{sec:data}
+% \subsection{Atomic Data}
+% \label{sec:data}
 
-We generally use the same atomic data as H13, which is an updated
-version of that described by LK02. In addition, we follow SDL05 in
-treating H as a 20-level atom, where each level is defined by
-the principal quantum number, $n$. For the macro-atom treatment of
-He, we have added the additional level and line information required 
-from \textsc{Topbase} \citep{topbase2005}.  He~\textsc{ii} is treated
-in much the same way as H, but with 10 levels. He~\textsc{i} has
-larger energy differentials between different l-subshells and triplet
-and singlet states. Thus, we still include levels up to $n=10$, but
-explicitly treat the $l$ and $s$ sub-orbitals as distinct levels
-instead of assuming they are perfectly `l-mixed'. This allows us
-to model the singlet and  triplet He~\textsc{i} lines that are ubiquitous
-in the optical spectra of CVs \citep[e.g.][]{dhillon1996}.
-
-
-\subsection{Code Validation and Testing}
-
-\py\ has been tested against a number of radiative transfer and
-photoionization codes. LK02 and H13 conducted comparisons of 
-ionization balance  with \cld \citep{cloudy2013}, demonstrating
-excellent agreement. We have also carried out comparisons
-of ionization and spectral synthesis with the supernova code
-\textsc{Tardis.} \tar is described by 
-\cite{kerzendorfsim}, and the spectral comparisons can be found
-therein. For the effort reported here, we have additionally carried
-out tests of the macro-atom scheme in \py. Fig.~\ref{tests} shows
-two of these tests. In the top panel, we compare the Balmer series 
-emissivities as predicted by \py\ in the l-mixed Case~B limit against the
-analytical calculations by \cite{seaton1959}. In the bottom panel, we
-compare \py\ and \tar predictions of  He \textsc{i} level populations
-for a particular test case. Agreement is excellent for both H and He.
-
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/05-cvpaper/fig_caseb_tardis.eps}
-\caption{
-{\sl Top Panel:} `Case B' Balmer decrements computed 
-with \textsc{Python} compared to analytic calculations
-by Seaton (1959). Both calculations are calculated at $T_e=10,000$K.
-(see Osterbrock 1989 for a discussion of this commonly used approximation).
-{\sl Bottom Panel:}  a comparison of He I level populations (the most complex ion we currently 
-treat as a macro-atom) between \py\ and \tar models. 
-The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
-$T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
-Considering the two codes use different atomic data and \textsc{Tardis,} unlike \textsc{Python,} currently has a complete treatment of collisions between 
-radiatively forbidden transitions, the factor of 
-$<2$ agreement is encouraging. 
-}
-\label{tests}
-\end{figure}
+% We generally use the same atomic data as H13, which is an updated
+% version of that described by LK02. In addition, we follow SDL05 in
+% treating H as a 20-level atom, where each level is defined by
+% the principal quantum number, $n$. For the macro-atom treatment of
+% He, we have added the additional level and line information required 
+% from \textsc{Topbase} \citep{topbase2005}.  He~\textsc{ii} is treated
+% in much the same way as H, but with 10 levels. He~\textsc{i} has
+% larger energy differentials between different l-subshells and triplet
+% and singlet states. Thus, we still include levels up to $n=10$, but
+% explicitly treat the $l$ and $s$ sub-orbitals as distinct levels
+% instead of assuming they are perfectly `l-mixed'. This allows us
+% to model the singlet and  triplet He~\textsc{i} lines that are ubiquitous
+% in the optical spectra of CVs \citep[e.g.][]{dhillon1996}.
 
 
-\nocite{osterbrock}
-\nocite{seaton1959}
+% \subsection{Code Validation and Testing}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%          THE MODEL
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \py\ has been tested against a number of radiative transfer and
+% photoionization codes. LK02 and H13 conducted comparisons of 
+% ionization balance  with \cld \citep{cloudy2013}, demonstrating
+% excellent agreement. We have also carried out comparisons
+% of ionization and spectral synthesis with the supernova code
+% \textsc{Tardis.} \tar is described by 
+% \cite{kerzendorfsim}, and the spectral comparisons can be found
+% therein. For the effort reported here, we have additionally carried
+% out tests of the macro-atom scheme in \py. Fig.~\ref{tests} shows
+% two of these tests. In the top panel, we compare the Balmer series 
+% emissivities as predicted by \py\ in the l-mixed Case~B limit against the
+% analytical calculations by \cite{seaton1959}. In the bottom panel, we
+% compare \py\ and \tar predictions of  He \textsc{i} level populations
+% for a particular test case. Agreement is excellent for both H and He.
 
-\section{Describing the System and its Outflow}
+% \begin{figure}
+% \centering
+% \includegraphics[width=1.0\textwidth]{figures/05-cvpaper/fig_caseb_tardis.eps}
+% \caption{
+% {\sl Top Panel:} `Case B' Balmer decrements computed 
+% with \textsc{Python} compared to analytic calculations
+% by Seaton (1959). Both calculations are calculated at $T_e=10,000$K.
+% (see Osterbrock 1989 for a discussion of this commonly used approximation).
+% {\sl Bottom Panel:}  a comparison of He I level populations (the most complex ion we currently 
+% treat as a macro-atom) between \py\ and \tar models. 
+% The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
+% $T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
+% Considering the two codes use different atomic data and \textsc{Tardis,} unlike \textsc{Python,} currently has a complete treatment of collisions between 
+% radiatively forbidden transitions, the factor of 
+% $<2$ agreement is encouraging. 
+% }
+% \label{tests}
+% \end{figure}
 
-\py\ includes several different kinematic models of accretion disc
-winds, as well as different options for describing the physical and
-radiative properties of the wind-driving system under
-consideration. Most of these features have already been discussed by
-LK02 and H13, so below we only briefly recount the key aspects of the
-particular system and wind model used in the present study.
 
-\subsection{Wind Geometry and Kinematics}
-\label{kinematics}
+% \nocite{osterbrock}
+% \nocite{seaton1959}
 
-We adopt the kinematic disc wind model developed by SV93. 
-A schematic of this model is shown in
-Fig.~\ref{cartoon}. In this parametrization, a smooth, biconical
-disc wind emanates from the accretion disc between radii $r_{min}$ and 
-$r_{max}$. The covering fraction of the outflow is also controlled by the
-inner and outer opening angles of the wind, $\theta_{min}$ and
-$\theta_{max}$, and the launch angle of the other streamlines is given
-by 
-\begin{equation}
-\theta(r_0) = \theta_{min} + (\theta_{max} - \theta_{min}) \left(\frac{r_0 - r_{min}}{r_{max} - r_{min}} \right)^{\gamma},
-\label{theta}
-\end{equation}
-where $r_0$ is the launch radius of the streamline.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %
+% %          THE MODEL
+% %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The poloidal (non-rotational) velocity field of the wind, $v_l$, is given by
-\begin{equation}
-v_l=v_0+\left[v_{\infty}(r_0)-v_0\right]\frac{\left(l/R_v\right)^{\alpha}}{\left(l/R_v\right)^{\alpha}+1},
-\label{v_law}
-\end{equation}
-where $l$ is the poloidal distance along a particular wind
-streamline. The terminal velocity along a streamline, $v_{\infty}$, is
-set to a fixed multiple of $v_{esc}$, the escape velocity at the launch
-point. The launch velocity from the disc surface, $v_0$, is assumed to
-be constant (set to $6$~km~s$^{-1}$). Once the wind is launched, it
-accelerates, reaching half of its terminal velocity at $l = R_v$. The
-velocity law exponent $\alpha$ controls how quickly the wind
-accelerates. Larger values of $\alpha$ cause the main region of 
-acceleration to occur close to $R_v$, whereas smaller values
-correspond to fast acceleration close to the disc (see
-Fig.~\ref{acc_law}). The rotational velocity $v_\phi$ is 
-Keplerian at the base of the streamline 
-and we assume conservation of specific angular momentum,
-such that
-\begin{equation}
-v_\phi r = v_{k} r_0,
-\label{v_law}
-\end{equation}
-where $v_{k}=(GM_{WD}/r_0)^{1/2}$.
+% \section{Describing the System and its Outflow}
+
+% \py\ includes several different kinematic models of accretion disc
+% winds, as well as different options for describing the physical and
+% radiative properties of the wind-driving system under
+% consideration. Most of these features have already been discussed by
+% LK02 and H13, so below we only briefly recount the key aspects of the
+% particular system and wind model used in the present study.
+
+% \subsection{Wind Geometry and Kinematics}
+% \label{kinematics}
+
+% We adopt the kinematic disc wind model developed by SV93. 
+% A schematic of this model is shown in
+% Fig.~\ref{cartoon}. In this parametrization, a smooth, biconical
+% disc wind emanates from the accretion disc between radii $r_{min}$ and 
+% $r_{max}$. The covering fraction of the outflow is also controlled by the
+% inner and outer opening angles of the wind, $\theta_{min}$ and
+% $\theta_{max}$, and the launch angle of the other streamlines is given
+% by 
+% \begin{equation}
+% \theta(r_0) = \theta_{min} + (\theta_{max} - \theta_{min}) \left(\frac{r_0 - r_{min}}{r_{max} - r_{min}} \right)^{\gamma},
+% \label{theta}
+% \end{equation}
+% where $r_0$ is the launch radius of the streamline.
+
+% The poloidal (non-rotational) velocity field of the wind, $v_l$, is given by
+% \begin{equation}
+% v_l=v_0+\left[v_{\infty}(r_0)-v_0\right]\frac{\left(l/R_v\right)^{\alpha}}{\left(l/R_v\right)^{\alpha}+1},
+% \label{v_law}
+% \end{equation}
+% where $l$ is the poloidal distance along a particular wind
+% streamline. The terminal velocity along a streamline, $v_{\infty}$, is
+% set to a fixed multiple of $v_{esc}$, the escape velocity at the launch
+% point. The launch velocity from the disc surface, $v_0$, is assumed to
+% be constant (set to $6$~km~s$^{-1}$). Once the wind is launched, it
+% accelerates, reaching half of its terminal velocity at $l = R_v$. The
+% velocity law exponent $\alpha$ controls how quickly the wind
+% accelerates. Larger values of $\alpha$ cause the main region of 
+% acceleration to occur close to $R_v$, whereas smaller values
+% correspond to fast acceleration close to the disc (see
+% Fig.~\ref{acc_law}). The rotational velocity $v_\phi$ is 
+% Keplerian at the base of the streamline 
+% and we assume conservation of specific angular momentum,
+% such that
+% \begin{equation}
+% v_\phi r = v_{k} r_0,
+% \label{v_law}
+% \end{equation}
+% where $v_{k}=(GM_{WD}/r_0)^{1/2}$.
 
 
 \begin{figure} 
