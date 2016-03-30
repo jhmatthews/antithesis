@@ -113,6 +113,14 @@
 {Cassinelli} J.~P., 1979,
   \araa~  17, 275
 
+\bibitem[\protect\astroncite{{Castor} et~al.}{1975}]{CAK75}
+{Castor} J.~I., {Abbott} D.~C., {Klein} R.~I., 1975,
+  \apj~  195, 157
+
+\bibitem[\protect\astroncite{{Castor}}{1974}]{castor1974}
+{Castor} J.~L., 1974,
+  \mnras~  169, 279
+
 \bibitem[\protect\astroncite{{Chamberlain} et~al.}{2015}]{chamberlain2015}
 {Chamberlain} C., {Arav} N., {Benn} C., 2015,
   \mnras~  450, 1085
@@ -870,6 +878,10 @@
   {Hayashida} K., {Inoue} H., {Kunieda} H., {Makino} F., {Matsuoka} M.,
   {Tanaka} Y., 1996,
   \pasj~  48, 211
+
+\bibitem[\protect\astroncite{{Owocki} et~al.}{1988}]{owocki1988}
+{Owocki} S.~P., {Castor} J.~I., {Rybicki} G.~B., 1988,
+  \apj~  335, 914
 
 \bibitem[\protect\astroncite{{Patterson}}{1984}]{patterson1984}
 {Patterson} J., 1984,

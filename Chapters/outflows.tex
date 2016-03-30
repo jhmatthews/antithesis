@@ -444,17 +444,49 @@ in section~\ref{??} when $\rho \vec{F}_{rad} = \rho \vec{g}$. While
 \subsection{Line-driven Winds}
 
 Under the right ionization conditions, line opacity can be significant in
-a partially ionized plasma. The most common way to parameterise the cumulative
-effect of lines on the radiation force is via the {\em force multiplier}, $M(t)$,
-which modifies the equation for the radiation force to become
+a partially ionized plasma \citep[][hereafter CAK]{CAK75}. 
+The most common way to parameterise the cumulative
+effect of lines on the radiation force is via the {\em CAK force multiplier}, $M(t)$,
+which modifies the equation for the radiation force to give \citep[][CAK, ]{castor1974}
 \begin{equation}
 \label{eq:force_multiplier}
-\vec{F}_{rad} = \frac{\sigma_e }{c} M(t)
+\vec{F}_{rad} = \frac{\sigma_e F}{c} M(t),
 \end{equation}
+where $t = \beta \tau_L$ for a given line and $M(t)$ is given by 
+\begin{equation}
+\label{eq:force_multiplier2}
+M(t) = \sum_lines F_C \Delta \nu_D min (1/t, 1/\beta) 
+\end{equation}
+and $\beta$ is the ratio of the mass scattering coefficient of the free
+electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
+width. It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
+is around $2000-4000$. This is already an interesting result, as it tells us
+that outflows can be important when accretion rates / luminosities
+are much lower than the Eddington limit. Indeed, using 
+equation~\ref{eq:force_multiplier} we can see that a radiatively driven wind 
+can be accelerated when $L_{UV} > L_{Edd} / M_{UV}(t)$, where the UV subscript 
+pertains to the UV region of the spectrum and $M_{UV}(t)$ will thus depend on
+the lines in this region and their relative ionization and excitation fractions.
 
+Line-driven winds are present in O-stars and Wolf-Rayet stars and the theory
+produces good matches with observations (REFs). It is also thought to be responsible
+for the strong winds seen in high-state CVs when the accretion disc is UV bright.
+LDI??
+
+Line driving is also a promising candidate to explain BALQSO outflows. 
+Line-locking features have been in several BALQSO profiles (REFs), and 
+the `ghost of \la' provides further evidence that line acceleration is 
+at least partially contributing to the acceleration of BAL winds. 
+However, the presence of an X-ray source complicates matters.
+We have already briefly touched on the `over-ionization' problem
+in AGN outflows, but it now has another consequence. Not only will 
+strong X-rays prevent the right features forming in the spectrum, but, if
+the outflow is line-driven, they will prevent the wind existing in the first 
+place. Despite these problems, potential solutions exist and hydrodynamic
+simulations have been successful in producing high mass-loss rates (see section~??).
 
 \subsection{Magnetic Winds}
-\label{sec:magq_winds}
+\label{sec:mag_winds}
 
 Magnetic fields are one of the main proposed mechanisms for transporting
 angular momentum outwards in the disc via the MRI. This would imply
@@ -494,6 +526,17 @@ of this thesis.
 
 \subsection{De Kool \& Begelman: A Radiatively Driven, Magnetically Confined Wind}
 
+It is of course possible that radiation and magnetic fields are both important
+in determining the outflow characteristics. In the \cite{dekool1995} model, radiation
+pressure drives an outflow from an accretion disc, and also compresses the magnetic
+field lines that are dragged along with the flow. This causes the magnetic field
+strength in certain regions to be comparable to the gas pressure, meaning that clouds
+can be magnetically confined in the flow. A diagram is shown in figure~\ref{fig:dekool}.
+The authors find that such a model would naturally emerge at a fairly equatorial
+angle with a covering factor of around $10\%$, and that lower ionization material 
+would be intercepted when the system was viewed from higher inclinations, potentially
+explaining some of the properties of LoBALQSOs.
+
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/02-outflows/dekool.png}
@@ -503,8 +546,6 @@ of this thesis.
 } 
 \label{fig:dekool}
 \end{figure}
-
-
 
 
 \subsection{Elvis 2000: A Structure for Quasars}
@@ -542,7 +583,7 @@ purely by the viewing angle of the observer.
 \label{fig:elvis}
 \end{figure}
 
-\subsection{Proga \& Kallman: Line-driven Hydrodynamic Models}
+\subsection{Proga et al.: Line-driven Hydrodynamic Models for AGN and CVs}
 
 \begin{figure}
 \centering
@@ -557,43 +598,106 @@ Density structure of the Proga model.
 
 Some text
 
-\subsection{Biconical Models for CVs and Quasars}
 
-
-
-Some text
-
-
+Ideally, full radiative transfer and hydrodynamical simulations would be used
+to estimate the viability of line-driven winds. Our team is currently working 
+on this problem, along with a number of other authors (REFs); however, much 
+can also be learned from simpler, kinematic prescriptions for outflows, which
+can then be treated with full radiative transfer and ionization treatments.  
 
 \section{A Kinematic Prescription}
 
-{
-\color{blue}
-Describe our wind model in detail. SV93, H13, M15, M16
-}
-\bigskip
+\citep[][hereafter SV93]{SV93} expanded on the work of the stellar wind community
+\citep[e.g.][]{AL85} 
+in proposing a kinematic prescription for an accretion disc wind. Unlike 
+hydrodynamical models, this model has no real predictive power in terms of velocities
+and mass-loss rates. Instead, one sets these quantities in advance and examines the 
+resultant properties of the flow and emergent properties. The SV93 prescription
+is the most common wind model used in the radiative transfer code \py\ (see Chapter 3),
+and has been used to simulate spectra for CVs \citep[][Chapter 5]{LK02, M15}, 
+AM CVn systems \citep{kusterer2014} and AGN/quasars 
+\citep[][Chapter 6]{higginbottom2013, M16}. 
+A similar philosophy applied to the model of \cite{KWD95}, and which has been used
+with similar applications \citep{LK02, sim2008, sim2010}, as 
+well as young-stellar objects \citep[YSOs;][]{simmacro2005}.
+Kinematic prescriptions have thus been a useful tool in providing quantitative
+tests of conceptual models, and assessing their ability to reproduce
+the observed spectra of a variety of disc wind systems.
+
+In the SV93 parametrization, shown in figure~\ref{fig:sv_cartoon} 
+a smooth, biconical disc wind emanates from the accretion disc between 
+radii $r_{min}$ and $r_{max}$. The covering fraction of the outflow is 
+also controlled by the inner and outer opening angles of the wind, $\theta_{min}$ and
+$\theta_{max}$, and the launch angle of the other streamlines is givenby 
+\begin{equation}
+\theta(r_0) = \theta_{min} + (\theta_{max} - \theta_{min}) \left(\frac{r_0 - r_{min}}{r_{max} - r_{min}} \right)^{\gamma},
+\label{theta}
+\end{equation}
+where $r_0$ is the launch radius of the streamline.
+
+The poloidal (non-rotational) velocity field of the wind, $v_l$, is given by
+\begin{equation}
+v_l=v_0+\left[v_{\infty}(r_0)-v_0\right]\frac{\left(l/R_v\right)^{\alpha}}{\left(l/R_v\right)^{\alpha}+1},
+\label{v_law}
+\end{equation}
+where $l$ is the poloidal distance along a particular wind
+streamline. The terminal velocity along a streamline, $v_{\infty}$, is
+set to a fixed multiple of $v_{esc}$, the escape velocity at the launch
+point. The launch velocity from the disc surface, $v_0$, is assumed to
+be constant (set to $6$~km~s$^{-1}$). Once the wind is launched, it
+accelerates, reaching half of its terminal velocity at $l = R_v$. The
+velocity law exponent $\alpha$ controls how quickly the wind
+accelerates. Larger values of $\alpha$ cause the main region of 
+acceleration to occur close to $R_v$, whereas smaller values
+correspond to fast acceleration close to the disc (see
+Fig.~\ref{acc_law}). The rotational velocity $v_\phi$ is 
+Keplerian at the base of the streamline 
+and the wind conserves specific angular momentum, such that
+\begin{equation}
+v_\phi r = v_{k} r_0,
+\label{v_law}
+\end{equation}
+where $v_{k}=(GM_{WD}/r_0)^{1/2}$.
+
+
+
 
 \section{The big picture: AGN Feedback}
 \label{sec:agn_feedback}
 
 The event horizon of a $10^9~M_\odot$ BH is approximately 
-$10^{15}$~cm, a billionth of the size of a typical galactic bulge. This is 
+$10^{15}$~cm across, a billionth of the size of a typical galactic bulge. This is 
 roughly the difference in size between a small coin and the 
 Earth. Even the sphere of gravitational influence of the BH is roughly 
-1000 times smaller than the size of the galactic bulge.
-Despite this vast different in scale, there are multiple
-pieces of evidence that the physics on the scale of the gravitational
+$1000$ times smaller than the size of the galactic bulge.
+Despite this vast different in scale, there is evidence
+that the physics on the scale of the gravitational
 radius of the BH really does affect the evolution and dynamics of its host galaxy.
-When considering the energetics of accretion this becomes less surprising.
+When considering the {\em energetics} of accretion this becomes less surprising.
 The binding energy of a galactic bulge is 
 \begin{equation}
-E_{bulge} = M_{bulge} \sigma_*^2
+E_{bulge} \approx M_{bulge} \sigma_*^2,
 \end{equation}
-
-
-
-I shall briefly discuss the evidence for this statement, and 
-assess the potential role of winds together with alternative mechanisms.
+while the energy released in growing a black hole to a 
+mass $M_{BH}^\prime$ is (assuming $\eta=0.1$)
+\begin{equation}
+E_{BH} \approx 0.1 M_{BH} c^2.  
+\end{equation}
+By combining the above two equations, and putting in typical numbers of
+$\sigma_* = 0.001c$ and $M_{BH} / M_{bulge} = 10^{-3}$ we can show that 
+\begin{equation}
+\frac{E_{BH}}{E_{bulge}} \approx 10^{-4} \left( \frac{c}{\sigma_*} \right)^2 \sim 10.
+\end{equation}
+In other words, the energy released when growing a BH can exceed
+the binding energy of the galactic bulge. This energetic 
+argument is not alone sufficient to claim that the accreting BH must affect its
+host. For example, if the radiated energy never experienced an 
+optical depth of $\sim 1$ then it would clearly not be coupled in 
+any way to the galactic bulge. However,
+we have already seen that many outflows in AGN possess kinetic luminosities that
+are significant compared to the bolometric luminosity. Thus, outflows 
+(and jets) may provide a mechanism by which the vast accretion energies can
+be transferred to the BH environment.
 
 \subsection{Observational evidence for feedback}
 
