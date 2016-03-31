@@ -88,6 +88,10 @@
 {Borguet} B., {Hutsem{\'e}kers} D., 2010,
   \aap~  515, A22
 
+\bibitem[\protect\astroncite{{Borguet} et~al.}{2013}]{borguet2013}
+{Borguet} B.~C.~J., {Arav} N., {Edmonds} D., {Chamberlain} C., {Benn} C., 2013,
+  \apj~  762, 49
+
 \bibitem[\protect\astroncite{{Boroson} \& {Meyers}}{1992}]{boroson1992}
 {Boroson} T.~A., {Meyers} K.~A., 1992,
   \apj~  397, 442
@@ -342,6 +346,10 @@
 \bibitem[\protect\astroncite{{Fender} et~al.}{2010}]{fender2010}
 {Fender} R.~P., {Gallo} E., {Russell} D., 2010,
   \mnras~  406, 1425
+
+\bibitem[\protect\astroncite{{Foltz} et~al.}{1987}]{foltz1987}
+{Foltz} C.~B., {Weymann} R.~J., {Morris} S.~L., {Turnshek} D.~A., 1987,
+  \apj~  317, 450
 
 \bibitem[\protect\astroncite{{Frank} et~al.}{1992}]{fkrbook}
 {Frank} J., {King} A., {Raine} D., 1992,
@@ -1177,6 +1185,12 @@
 \bibitem[\protect\astroncite{{Tran}}{2001}]{tran2001}
 {Tran} H.~D., 2001,
   \apjl~  554, L19
+
+\bibitem[\protect\astroncite{{Trump} et~al.}{2006}]{trump2006}
+{Trump} J.~R., {Hall} P.~B., {Reichard} T.~A., {Richards} G.~T., {Schneider}
+  D.~P., {Vanden Berk} D.~E., {Knapp} G.~R., {Anderson} S.~F., {Fan} X.,
+  {Brinkman} J., {Kleinman} S.~J., {Nitta} A., 2006,
+  \apjs~  165, 1
 
 \bibitem[\protect\astroncite{{Urrutia} et~al.}{2009}]{urrutia2009}
 {Urrutia} T., {Becker} R.~H., {White} R.~L., {Glikman} E., {Lacy} M., {Hodge}

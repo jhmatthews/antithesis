@@ -16,8 +16,22 @@ of this evidence, it is pertinent to briefly discuss the `smoking gun'
 used to unambiguously detect winds -- the presence of blue shifted BALs
 or `P-Cygni' profiles in an objects spectrum. 
 
-Figure~?? shows how a spherical outflow of significant opacity will 
-cause these characteristic line profile shapes to form, as scattering out of the line of sight 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/pcyg.png}
+\caption
+{
+Diagram showing how an expanding envelope or wind with significant line
+opacity around a continuum source leads to the formation of P-Cygni profiles.
+The black arrows denote the outflow direction and the blue arrows typical
+scattering interactions.
+} 
+\label{fig:pcyg}
+\end{figure}
+
+Figure~\ref{fig:pcyg} shows how a spherical outflow of significant opacity will 
+cause these characteristic line profile shapes to form, 
+as scattering out of the line of sight 
 causes a dip in the blue wing of the line, while scattering into the 
 line of sight from other portions of the outflow causes an increase in flux
 in the red wing of the line. The situation is much more complex in most
@@ -27,16 +41,19 @@ for complicated radiative transfer effects and variety in line formation mechani
 is one of the reasons why 3D Monte Carlo radiative transfer simulations are necessary
 to effectively model disc winds (see section 3).
 
+
+
 \subsection{Cataclysmic Variables}
 
 It has been known for a long time that winds emanating from the
 accretion disc are important in shaping the ultraviolet (UV) spectra
-of high-state CVs \citep{heap1978, greensteinoke1982}. The most spectacular evidence for such
+of high-state CVs \citep{heap1978, greensteinoke1982}. 
+The most spectacular evidence for such
 outflows are the P-Cygni-like profiles seen in UV resonance lines such as
-\civfull\ \citep[][; see figure~\ref{fig:cordova}]{cordova1982}). 
+\civfull\ \citep[][see figure~\ref{fig:cordova}]{cordova1982}). 
 Considerable effort has been spent over the
 years on understanding and modelling these UV features 
-\citep[e.g.][]{drewverbunt1985,maucheraymond1987,SV93,KWD96,
+\citep[e.g.][]{drewverbunt1985,maucheraymond1987,SV93,KWD95,
 kd1997,knigge1997,LK02,noebauer,puebla2011}. 
 The basic picture emerging from these efforts is
 of a slowly accelerating, moderately collimated bipolar
@@ -123,32 +140,35 @@ highly ionized Fe absorption with similar blueshifts and FWHM of around
 $1500$km~s$^-1$ (REFs). These absorption features tended to be detected
 in high-inclination, `dipping' LMXBs, and this was confirmed in more sources
 by \cite{ponti2012}, who proposed an equatorial geometry based on this (see 
-figure~??). The same study demonstrated (figure~??) that
+figure~\ref{fig:ponti_cartoon}). 
+The same study demonstrated (figure~\ref{fig:ponti_hid}) that
 the winds only appeared in the soft, 
 disc dominated accretion state, on the opposite side of the HID to the
 region where jets are common. This exciting result demonstrated how
 important winds are to our understanding of accretion, and required that
-we expand the discussion of accretion states to include `disc-jet-wind' 
-coupling.
+we expand the discussion of accretion states from `disc-jet' coupling
+to also include winds.
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/01-intro/ponti_hid.png}
-\caption
-{
-{\sl Credit: Ponti et al. 2012}. 
-HID demonstrating that winds appear in the soft states of LMXBs.
-} 
-\label{fig:ponti_hid}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/01-intro/ponti_wind_cartoon.png}
+\includegraphics[width=0.8\textwidth]{figures/01-intro/ponti_wind_cartoon.png}
 \caption
 {
 {\sl Credit: Ponti et al. 2012}. 
 A cartoon illustrating the expected geometry of soft-state LMXB winds.
+} 
+\label{fig:ponti_cartoon}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/01-intro/ponti_hid.png}
+\caption
+{
+{\sl Credit: Ponti et al. 2012}. 
+Hardness-intensity diagram for four dipping LMXBs,
+demonstrating that winds appear only in the soft state.
 } 
 \label{fig:ponti_hid}
 \end{figure}
@@ -176,9 +196,9 @@ ultraviolet seen in approximately $20-40\%$ of quasars
 spectra of BAL quasars from the HST and SDSS archives are shown in 
 figure~\ref{fig:bals}. In addition to the most common High-ionization
 BAL quasars (HiBALs), approximately $10\%$ of BALQSOs show absorption
-in lower ionization species such as \mgii\ and \aliii\ (`LoBALQSOs'),
+in lower ionization species such as \mgii\ and \aliii\ (LoBALQSOs),
 and an even smaller subset also show absorption in Fe~\textsc{ii} and 
-\textsc{iii} (`FeLoBALQSOs'). 
+\textsc{iii} (FeLoBALQSOs). 
 
 The simplest explanation for the incidence of 
 BAL quasars (BALQSOs) is in terms of an accretion disc wind viewed
@@ -188,9 +208,9 @@ According to this paradigm, a biconical wind rises from
 the accretion disc and the BALQSO fraction is associated with
 the covering factor of the outflow. This fraction
 has been estimated by various authors using different selection criteria, with
-values ranging between $10$ and $40\%$ depending on corrections for
-reddening and the classification scheme used 
-\citep{weymann1991, trump20006, knigge2008, dai2008, allen2011}
+values ranging between $10$ and $40\%$ depending on corrections 
+and the classification scheme used 
+\citep{weymann1991, trump2006, knigge2008, dai2008, allen2011}
 
 
 BAL quasars can also interpreted in an {\em evolutionary}
@@ -225,14 +245,19 @@ the BLR then the radius of the absorbing material
 can be estimated as $\sim 100-1000 r_G$ from reverberation mapping
 and microlensing \citep[e.g., for BLRs in BALQSOs,][]{sluse2015,odowd2015}.
 However, distances of  $\sim0.1$~pc ($\sim 10^4 r_G$) have been measured in at least 
-some objects from fairly robust atomic physics arguments 
+some objects from atomic physics arguments and ionization models
 \citep{borguet2013,chamberlain2015}.
 
 BAL quasars display a variety of different trough shapes from object 
 to object, as shown in figure~\ref{fig:bals}. Furthermore, the 
 line profiles themselves often show complex structure 
 \citep{foltz1987,ganguly2006, simonhamann2010} and can be time variable 
-\citep{capellupo2011,capellupo2012,capellupo2014}. 
+\citep{hall2011, capellupo2011,capellupo2012,capellupo2014, filizak2012}. Furthermore,
+there are a set of quasar absorption systems that show
+BAL-like absorption troughs with much smaller velocity widths. Depending 
+on their width, these are known as narrow absorption lines (NALs)
+or `mini-BALs'
+
 Many BAL quasars exhibit detached troughs (REFs)...
 Mini BALS??...Filiz Ak...Hamann...
 While some of this behaviour can be explained once again as a viewing angle
@@ -284,7 +309,8 @@ $\sim100$km~s$^{-1}$. X-ray absorption and WAs are often
 variable \citep{fabian1994,otani1996}, which may be interpreted in terms of 
 changing kinematics of an accretion disc wind \citep{connolly2014}. 
 There is also evidence of contemporary UV and X-ray absorption 
-in NGC 5548 \citep{kaastra2014}, and as mentioned above BALQSOs 
+in NGC 5548 \citep{kaastra2014} and mini-BALS \citep{giustini2011},
+and as mentioned above BALQSOs 
 are often absorbed in the X-rays. This suggests that the outflow phenomenon 
 across a large range of ionization states and line energies is linked. 
 
@@ -636,11 +662,11 @@ purely by the viewing angle of the observer.
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/02-outflows/proga.jpg}
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/proga2.png}
 \caption
 {
-{\sl Credit: Proga \& Kallman 2004}. 
-Density structure of the Proga model.
+{\sl Credit: Proga, stone \& Kallman 2000}. 
+Density structure of the PSK00 model.
 } 
 \label{fig:PK04}
 \end{figure}
@@ -705,6 +731,17 @@ v_\phi r = v_{k} r_0,
 \end{equation}
 where $v_{k}=(GM_{WD}/r_0)^{1/2}$.
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/05-cvpaper/acc_law.eps}
+\caption{
+The SV93 velocity law for various values of the
+acceleration exponent, $\alpha$.
+%%{\bf JM: KSL has suggested we ditch this}
+} 
+\label{acc_law}
+\end{figure}
+
 
 
 
@@ -738,8 +775,7 @@ In other words, the energy released when growing a BH can exceed
 the binding energy of the galactic bulge. This energetic 
 argument is not alone sufficient to claim that the accreting BH must affect its
 host. For example, if the radiated energy never experienced an 
-optical depth of $\sim 1$ then it would clearly not be coupled in 
-any way to the galactic bulge. However,
+optical depth of $\sim 1$ then it would clearly not couple to the galactic bulge. However,
 we have already seen that many outflows in AGN possess kinetic luminosities that
 are significant compared to the bolometric luminosity. Thus, outflows 
 (and jets) may provide a mechanism by which the vast accretion energies can
