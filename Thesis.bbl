@@ -33,6 +33,14 @@
 {Antonucci} R.~R.~J., {Miller} J.~S., 1985,
   \apj~  297, 621
 
+\bibitem[\protect\astroncite{{Arav}}{1996}]{arav1996}
+{Arav} N., 1996,
+  \apj~  465, 617
+
+\bibitem[\protect\astroncite{{Arav} et~al.}{1995}]{arav1995}
+{Arav} N., {Korista} K.~T., {Barlow} T.~A., {Begelman}, 1995,
+  \nat~  376, 576
+
 \bibitem[\protect\astroncite{{Ar{\'e}valo} \& {Uttley}}{2006}]{arevalo2006}
 {Ar{\'e}valo} P., {Uttley} P., 2006,
   \mnras~  367, 801
@@ -100,6 +108,10 @@
 \bibitem[\protect\astroncite{{Boroson} \& {Meyers}}{1992}]{boroson1992}
 {Boroson} T.~A., {Meyers} K.~A., 1992,
   \apj~  397, 442
+
+\bibitem[\protect\astroncite{{Bowler} et~al.}{2014}]{bowler2014}
+{Bowler} R.~A.~A., {Hewett} P.~C., {Allen} J.~T., {Ferland} G.~J., 2014,
+  \mnras~  445, 359
 
 \bibitem[\protect\astroncite{{Braito} et~al.}{2007}]{braito2007}
 {Braito} V., {Reeves} J.~N., {Dewangan} G.~C., {George} I., {Griffiths} R.~E.,
@@ -184,6 +196,10 @@
 \bibitem[\protect\astroncite{{Cordova} \& {Mason}}{1982}]{cordova1982}
 {Cordova} F.~A., {Mason} K.~O., 1982,
   \apj~  260, 716
+
+\bibitem[\protect\astroncite{{Cottis} et~al.}{2010}]{cottis2010}
+{Cottis} C.~E., {Goad} M.~R., {Knigge} C., {Scaringi} S., 2010,
+  \mnras~  406, 2094
 
 \bibitem[\protect\astroncite{{Crenshaw} et~al.}{1996}]{crenshaw1996}
 {Crenshaw} D.~M., {Rodriguez-Pascual} P.~M., {Penton} S.~V., {Edelson} R.~A.,
@@ -405,6 +421,10 @@
 {Ganguly} R., {Sembach} K.~R., {Tripp} T.~M., {Savage} B.~D., {Wakker} B.~P.,
   2006,
   \apj~  645, 868
+
+\bibitem[\protect\astroncite{{Gardner} \& {Done}}{2016}]{gardnerdone2016}
+{Gardner} E., {Done} C., 2016,
+  ArXiv e-prints~
 
 \bibitem[\protect\astroncite{{Ghosh} \& {Punsly}}{2007}]{ghoshpunsly2007}
 {Ghosh} K.~K., {Punsly} B., 2007,
@@ -980,6 +1000,10 @@
 {Noebauer} U.~M., {Long} K.~S., {Sim} S.~A., {Knigge} C., 2010,
   \apj~  719, 1932
 
+\bibitem[\protect\astroncite{{North} et~al.}{2006}]{north2006}
+{North} M., {Knigge} C., {Goad} M., 2006,
+  \mnras~  365, 1057
+
 \bibitem[\protect\astroncite{{O'Dowd} et~al.}{2015}]{odowd2015}
 {O'Dowd} M.~J., {Bate} N.~F., {Webster} R.~L., {Labrie} K., {Rogers} J., 2015,
   ArXiv e-prints~
@@ -1029,6 +1053,10 @@
 {Penrose} R., {Floyd} R.~M., 1971,
   Nature Physical Science~  229, 177
 
+\bibitem[\protect\astroncite{{Pereyra} et~al.}{1997}]{pereyra1997}
+{Pereyra} N.~A., {Kallman} T.~R., {Blondin} J.~M., 1997,
+  \apj~  477, 368
+
 \bibitem[\protect\astroncite{{Perley} et~al.}{1984}]{perley1984}
 {Perley} R.~A., {Dreher} J.~W., {Cowan} J.~J., 1984,
   \apjl~  285, L35
@@ -1054,9 +1082,24 @@
 {Pounds} K.~A., {Reeves} J.~N., 2009,
   \mnras~  397, 249
 
+\bibitem[\protect\astroncite{{Proga}}{2005}]{proga2005}
+{Proga} D., 2005,
+\newblock in J.-M. {Hameury}, J.-P. {Lasota} (eds.), The Astrophysics of
+  Cataclysmic Variables and Related Objects,
+  Vol. 330 of {\em Astronomical Society of the Pacific Conference Series\/},
+  103
+
 \bibitem[\protect\astroncite{{Proga} \& {Kallman}}{2004}]{PK04}
 {Proga} D., {Kallman} T.~R., 2004,
   \apj~  616, 688
+
+\bibitem[\protect\astroncite{{Proga} et~al.}{2002}]{proga2002}
+{Proga} D., {Kallman} T.~R., {Drew} J.~E., {Hartley} L.~E., 2002,
+  \apj~  572, 382
+
+\bibitem[\protect\astroncite{{Proga} et~al.}{1998}]{proga1998}
+{Proga} D., {Stone} J.~M., {Drew} J.~E., 1998,
+  \mnras~  295, 595
 
 \bibitem[\protect\astroncite{{Proga} et~al.}{2000}]{PSK2000}
 {Proga} D., {Stone} J.~M., {Kallman} T.~R., 2000,

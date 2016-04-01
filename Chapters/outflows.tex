@@ -194,12 +194,12 @@ the blueshifted ($\sim 0.1~c$) broad absorption lines (BALs) in the
 ultraviolet seen in approximately $20-40\%$ of quasars
 \citep{weymann1991, knigge2008, dai2008, allen2011}. Five example
 spectra of BAL quasars from the HST and SDSS archives are shown in 
-figure~\ref{fig:bals}. In addition to the most common High-ionization
+figure~\ref{fig:bals}. In addition to the most common high-ionization
 BAL quasars (HiBALs), approximately $10\%$ of BALQSOs show absorption
 in lower ionization species such as \mgii\ and \aliii\ 
-\citep[LoBALs; ][]{voit1993,gibson2009}
+\citep[LoBALs;][]{voit1993,gibson2009}
 and an even smaller subset also show absorption in Fe~\textsc{ii} and 
-\textsc{iii} \citep[FeLoBALs; ][]{becker2000,hall2002}. 
+\textsc{iii} \citep[FeLoBALs;][]{becker2000,hall2002}. 
 
 The simplest explanation for the incidence of 
 BAL quasars (BALQSOs) is in terms of an accretion disc wind viewed
@@ -213,11 +213,11 @@ values ranging between $10$ and $40\%$ depending on corrections
 and the classification scheme used 
 \citep{weymann1991, trump2006, knigge2008, dai2008, allen2011}
 
-BAL quasars can also interpreted in an {\em evolutionary}
+BAL quasars can also be interpreted in an {\em evolutionary}
 context, in which quasars spend a certain proportion of their life
 in the `BAL phase'. Models generally put this phase near the start
 of the quasar lifetime \citep{hazard1984,surdej1987,boroson1992,zubovas2013}, 
-after a dust enshrowded phase but before
+after a dust-enshrouded phase but before
 the main quasar period. It is perhaps more likely that {\em both} 
 evolutionary and geometric effects are at work \citep{borguet2010,dai2012}.
 One of the main problems with testing these two paradigms is that many of
@@ -257,13 +257,13 @@ line profiles themselves often show complex structure
 Furthermore, there are a set of quasar absorption systems that show
 BAL-like absorption troughs with much smaller velocity widths. Depending 
 on their width, these are known as narrow absorption lines (NALs) or `mini-BALs'
-\citep{misawa2007,misawa2008,nestor2008,hamann2012}.
+\citep{misawa2007,misawa2008,nestor2008}.
 While some of this behaviour can be explained once again as a viewing angle
 effect \citep[e.g. ][]{ganguly2001}, the range of BAL profile shapes suggests that they 
 are far from a homogenous population, and may also possess
 multi-scale substructures (clumps) in their flows. Clumping
 is discussed in more detail in sections~\ref{sec:stellar_winds} and 
-\ref{sec:rad_winds}, as well as in Chapter 6.
+\ref{sec:rad_winds}, as well as in chapter 5.
 
 Due to the connection between X-rays and photoionization / absorption, the 
 X-ray properties of BAL quasars are particularly important. BALQSOs
@@ -522,16 +522,21 @@ effect of lines on the radiation force is via the {\em CAK force multiplier}, $M
 which modifies the equation for the radiation force to give \citep[][CAK, ]{castor1974}
 \begin{equation}
 \label{eq:force_multiplier}
-\vec{F}_{rad} = \frac{\sigma_e F}{c} M(t),
+\vec{F}_{rad} = \frac{\sigma_e F}{c} {\cal M}(t),
 \end{equation}
-where $t = \beta \tau_L$ for a given line and $M(t)$ is given by 
+where $t = \beta \tau_L$ for a given line and ${\cal M}(t)$ can be approximated by
 \begin{equation}
 \label{eq:force_multiplier2}
-M(t) = \sum_{lines} F_C \Delta \nu_D min (1/t, 1/\beta) 
+%% \cal{M}(t) = \sum_{lines} F_C \Delta \nu_D min (1/t, 1/\beta) 
+{\cal M}(t) = t^{-\alpha} 
+\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta W^{-\delta}.
 \end{equation}
-and $\beta$ is the ratio of the mass scattering coefficient of the free
-electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
-width. It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
+% and $\beta$ is the ratio of the mass scattering coefficient of the free
+% electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
+% width. 
+Here $W$ is the dilution factor, and $k$, $\alpha$ and $\delta$ are constants with
+values of 0.28, 0.56 and 0.99 respectively in O-star winds (REFs).
+It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
 is around $2000-4000$. This is already an interesting result, as it tells us
 that line-driven outflows can be accelerated when accretion rates / luminosities
 are much lower than the Eddington limit. Indeed, using 
@@ -539,23 +544,26 @@ equation~\ref{eq:force_multiplier} we can see that a radiatively driven wind
 can be accelerated when $L_{UV} > L_{Edd} / M_{UV}(t)$, where the UV subscript 
 pertains to the UV region of the spectrum and $M_{UV}(t)$ will thus depend on
 the lines in this region and their relative ionization and excitation fractions.
-
 Line-driven winds are present in O-stars and Wolf-Rayet stars and the theory
-produces good matches with observations (REFs). It is also thought to be responsible
-for the strong winds seen in high-state CVs when the accretion disc is UV bright.
-{\bf LDI, clumping, vorocity?}
+produces good matches with observations (REFs). It is also a strong candidate for driving
+the strong winds seen in high-state CVs when the accretion disc is UV bright 
+\citep[e.g.][see also section~\ref{sec:proga}]{pereyra1997,proga1998,proga2005}.
 
-Line driving is also a promising candidate to explain BALQSO outflows. 
-Line-locking features have been in several BALQSO profiles (REFs), and 
-the `ghost of \la' provides further evidence that line acceleration is 
-at least partially contributing to the acceleration of BAL winds. 
+Line driving is also a promising candidate to explain BAL outflows, as
+the strong UV resonance lines seen in absorption in O stars are also 
+present in BALQSOs. The presence of `line-locked' features \citep{bowler2014} 
+and the `ghost of \la' \citep{arav1995, arav1996, north2006}
+in the spectra of some BALQSOs also gives clearer evidence that line-driving is
+at least partially contributing to the acceleration of the wind 
+\citep[but see also][]{cottis2010}.
 However, the presence of an X-ray source complicates matters.
 We have already briefly touched on the `over-ionization' problem
 in AGN outflows, but it now has another consequence. Not only will 
 strong X-rays prevent the right features forming in the spectrum, but, if
 the outflow is line-driven, they will prevent the wind existing in the first 
 place. Despite these problems, potential solutions exist and hydrodynamic
-simulations have been successful in producing high mass-loss rates (see section~??).
+simulations have been successful in producing high mass-loss rates 
+(see section~\ref{sec:proga}).
 
 \subsection{Magnetic Winds}
 \label{sec:mag_winds}
@@ -573,13 +581,13 @@ the {\em poloidal} magnetic field is dominant, and
 \label{sec:wind_models}
 
 A number of different wind models have appeared in the literature over the 
-years, each attempting to explain a number of different observational characteristics
+years, each attempting to explain the different observational characteristics
 of quasars with a mixture of conceptual frameworks and underlying physics. 
 Typically, the models attempt to explain the origins of BLR and BAL gas, although
 some extend their remit into the infra-red, radio and X-ray regimes.
 I will briefly discuss a few examples that have gained traction over the years,
-before outlining the kinematic prescription I have used in the science chapters
-of this thesis. 
+before outlining the kinematic prescription I have used in the modelling that forms 
+part of this thesis. 
 
 \subsection{MCGV95: A Line-driven Wind Model for AGN}
 
@@ -612,7 +620,7 @@ The MCGV95 model was one of the first successful disc-wind unification models,
 and is especially impressive as it includes photoionization calculations and 
 quantitative estimates of the resultant line EWs. However, the effects of multiple
 scattering and complex radiative transfer effects could not be included 
-in their calculations (see Chapter 5).
+in their calculations (see chapter 5).
 
 \subsection{De Kool \& Begelman: A Radiatively Driven, Magnetically Confined Wind}
 
@@ -674,23 +682,67 @@ purely by the viewing angle of the observer.
 \end{figure}
 
 \subsection{Proga et al.: Line-driven Hydrodynamic Models for AGN and CVs}
+\label{sec:proga}
 
+Around the turn of the century, Daniel Proga and collaborators 
+published a series of important papers in which they conducted 
+hydrodynamic simulations of accretion disc winds in AGN and CVs. 
+In the first of these, the problem considered was that of disc
+winds in CVs \citep{proga1998}. In their model, the disc was assumed
+to radiate according to the $\alpha$-disc model, and the central WD was also included
+as a radiating source. They found, that when the disc had an Eddington fraction 
+of greater than $\approx 1 / {\cal M_{max}} (t) = 0.001$, then strong, line-driven
+outflows were driven from a few WD radii with bending angles of $\sim45^\circ$.
+This result agreed qualitatively with outflows in CVs and later efforts to compute
+synthetic line profiles produced promising results \citep{proga2002}. This was the
+first successful demonstration of line-driving in a full hydrodynamic simulation.
 
+The same principle was then applied to the problem of AGN outflows, with the
+additional complication of an ionization X-ray source now included 
+\citep[][hereafter PK04]{PSK2000,PK04}. A density snapshot from the PK04 model
+is shown in figure~\ref{fig:PK04}. An inner `failed' wind formed in this simulation,
+which initially rose up from the disc before being over-ionized by the central X-rays.
+Crucially, this acted as a shield, similarly to the hitchhiking gas proposed by
+MCGV95, and allowed a line-driven wind to be accelerated further out in the disc. 
+This outflow can be seen clearly in figure~\ref{fig:PK04}.
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/02-outflows/proga2.png}
 \caption
 {
-{\sl Credit: Proga, stone \& Kallman 2000}. 
-Density structure of the PSK00 model.
+{\sl Credit: Proga \& Kallman 2004}. 
+Density snapshot of the PK04 model.
 } 
 \label{fig:PK04}
 \end{figure}
 
+One of the interesting results of the Proga-led simulations is that they tended
+to produce somewhat unsteady, clumpy flows. In the CV case, this was caused by
+the interaction between the line force and gravity, as both force terms varied 
+differently with height. In the AGN case, it was instead due to the critical
+importance of the ionization state on the line force. Parcels of gas could only 
+be accelerated when they were of the right ionization state, and this depended
+critically on their density and the radiation field they see. This caused a complicated
+interaction between the dynamics of the flow and the path of ionizing radiation, 
+which are coupled. The radiation field also helped
+determine the geometry of the outflow, as increasing the strength of the radiation
+interior to the launch radius tends to flatten out the wind and lead to more
+equatorial outflows \citep{proga2005}.
+This is particularly important when considering quasars and unification, as it means
+the viewing angles of BALQSOs can tell us about where the wind is launched.
+
+It is worth noting that the smaller scale LDI could not be included in this model,
+partly for computational reasons and partly because of the approximations 
+used to treat the radiation field. Indeed, in a subsequent study 
+\citep[][hereafter H14]{H14} showed that treating the radiation transport 
+properly is crucially important, as in this particular geometry 
+multiple scattering means that the shielding region
+is ineffective, and radiation will simply find its way around the failed wind
+to over-ionize the flow beyond.
 Ideally, full radiative transfer and hydrodynamical simulations would be used
 to estimate the viability of line-driven winds. Our team is currently working 
-on this problem \citep[see][for a first step]{H14}; however, much 
+on this problem (see H14 for the first step); however, much 
 can also be learned from simpler, kinematic prescriptions for outflows, which
 can then be treated with full radiative transfer and ionization treatments.  
 
@@ -702,10 +754,10 @@ in proposing a kinematic prescription for an accretion disc wind. Unlike
 hydrodynamical models, this model has no real predictive power in terms of velocities
 and mass-loss rates. Instead, one sets these quantities in advance and examines the 
 resultant properties of the flow and emergent spectra. The SV93 prescription
-is the most common wind model used in the radiative transfer code \py\ (see Chapter 3),
-and has been used to simulate spectra for CVs \citep[][Chapter 5]{LK02, M15}, 
+is the most common wind model used in the radiative transfer code \py\ (see chapter 3),
+and has been used to simulate spectra for CVs \citep[][chapter 4]{LK02, M15}, 
 AM CVn systems \citep{kusterer2014} and AGN/quasars 
-\citep[][Chapter 6]{higginbottom2013, M16, yong2016}. 
+\citep[][chapter 5]{higginbottom2013, M16, yong2016}. 
 A similar philosophy applied to the model of \cite{KWD95}, and which has been used
 with similar applications \citep{LK02, simlong2008, sim2010}, as 
 well as young-stellar objects \citep[YSOs;][]{simmacro2005}.
