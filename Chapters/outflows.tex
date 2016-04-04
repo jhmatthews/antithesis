@@ -328,6 +328,7 @@ the properties of the mysterious, but ubiquitous,
 AGN WAs \citep{silva2015}.
 
 \subsubsection{Ultra-fast Outflows}
+\label{sec:ufos}
 
 As well as acting as WAs, winds also imprint clear absorption features
 in highly ionized Fe~K$\alpha$ lines in AGN such as PDS~456 
@@ -542,7 +543,7 @@ Under the right ionization conditions, radiation pressure mediated by spectral l
 can be a significant  acceleration term in 
 a partially ionized plasma \citep[][hereafter CAK]{CAK75}. 
 The most common way to parameterise the cumulative
-effect of lines on the radiation force is via the {\em CAK force multiplier}, $M(t)$,
+effect of lines on the radiation force is via the {\em CAK force multiplier}, ${\cal M}(t)$,
 which modifies the equation for the radiation force to give \citep[][CAK, ]{castor1974}
 \begin{equation}
 \label{eq:force_multiplier}
@@ -718,8 +719,8 @@ hydrodynamic simulations of accretion disc winds in AGN and CVs.
 In the first of these, the problem considered was that of disc
 winds in CVs \citep{proga1998}. In their model, the disc was assumed
 to radiate according to the $\alpha$-disc model, and the central WD was also included
-as a radiating source. They found, that when the disc had an Eddington fraction 
-of greater than $\approx 1 / {\cal M_{max}} (t) = 0.001$, then strong, line-driven
+as a radiating source. They found that when the disc had an Eddington fraction 
+of greater than $\approx 1 / {\cal M}_{max} (t) = 0.001$, then strong, line-driven
 outflows were driven from a few WD radii with bending angles of $\sim45^\circ$.
 This result agreed qualitatively with outflows in CVs and later efforts to compute
 synthetic line profiles produced promising results \citep{proga2002}. This was the
@@ -775,9 +776,10 @@ can also be learned from simpler, kinematic prescriptions for outflows, which
 can then be treated with full radiative transfer and ionization treatments.  
 
 \section{A Kinematic Prescription}
+\label{sec:sv93_model}
 
-\citep[][hereafter SV93]{SV93} expanded on the work of the stellar wind community
-\citep[e.g.][]{AL85} 
+\cite[][hereafter SV93]{SV93} 
+expanded on the work of the stellar wind community \citep[e.g.][]{AL85} 
 in proposing a kinematic prescription for an accretion disc wind. Unlike 
 hydrodynamical models, this model has no real predictive power in terms of velocities
 and mass-loss rates. Instead, one sets these quantities in advance and examines the 
@@ -800,14 +802,14 @@ also controlled by the inner and outer opening angles of the wind, $\theta_{min}
 $\theta_{max}$, and the launch angle of the other streamlines is givenby 
 \begin{equation}
 \theta(r_0) = \theta_{min} + (\theta_{max} - \theta_{min}) \left(\frac{r_0 - r_{min}}{r_{max} - r_{min}} \right)^{\gamma},
-\label{theta}
+\label{eq:wind_theta}
 \end{equation}
 where $r_0$ is the launch radius of the streamline.
 
 The poloidal (non-rotational) velocity field of the wind, $v_l$, is given by
 \begin{equation}
 v_l=v_0+\left[v_{\infty}(r_0)-v_0\right]\frac{\left(l/R_v\right)^{\alpha}}{\left(l/R_v\right)^{\alpha}+1},
-\label{v_law}
+\label{eq:v_law}
 \end{equation}
 where $l$ is the poloidal distance along a particular wind
 streamline. The terminal velocity along a streamline, $v_{\infty}$, is
@@ -824,7 +826,7 @@ Keplerian at the base of the streamline
 and the wind conserves specific angular momentum, such that
 \begin{equation}
 v_\phi r = v_{k} r_0,
-\label{v_law}
+\label{eq:vrot}
 \end{equation}
 where $v_{k}=(GM_{WD}/r_0)^{1/2}$.
 
@@ -880,17 +882,14 @@ be transferred to the BH environment.
 
 \subsection{Observational evidence for feedback}
 
-{
-\color{blue}
-Go over the various pieces of observational evidence for feedback
-and the role of winds.
-}
-\bigskip
-
 Perhaps the most famous pieces of evidence for some kind of long-distance 
 relationship between a central BH and its host galaxy are the 
-$M_{BH}-\sigma_*$ and $M_{BH}-M_{bulge}$ correlations, shown in figures~\ref{fig:msigma}
-and \ref{fig:mbulge} respectively.
+$M_{BH}-\sigma_*$ and $M_{BH}-M_{bulge}$ correlations, 
+shown in figures~\ref{fig:msigma} and \ref{fig:mbulge} respectively.
+By itself, these correlations would not necessarily imply
+that the AGN is having an impact on its environment. However, there
+are many other clues that outflows and jets from AGN can affect
+the host galaxy evolution and morphology.
 
 \nocite{mcconnell2013,gultekin2009}
 \begin{figure}
@@ -901,7 +900,7 @@ and \ref{fig:mbulge} respectively.
 {\sl Credit: Gultekin et al. 2009}. 
 The $M_{BH}-\sigma_*$ correlation.
 } 
-\label{fig:mbulge}
+\label{fig:msigma}
 \end{figure}
 
 \begin{figure}
@@ -915,10 +914,75 @@ The $M_{BH}-M_{bulge}$ correlation.
 \label{fig:mbulge}
 \end{figure}
 
-\subsection{Radiative or quasar mode feedback}
+The galaxy luminosity function, shown in Fig.~?, describes
+the number of galaxies in each bin of luminosity. Theories of 
+galaxy evolution tend to overpredict the number of galaxies at the
+high luminosity end (REFs). This implies that some mechanism is 
+preventing star formation (REFs), and AGN feedback has been invoked
+successfully in models to explain this discrepancy (REFs).
+Galaxies also show bimodality in their colour distributions 
+(REFs), with a clear separation between a blue, star-forming
+main sequence, and a red sequence with lower specific star formation
+rate (sSFR). Furthermore, these two sequences tend to lie in the 
+same regions of colour space as the host galaxies of high and low 
+Eddington fraction AGN respectively, implying that the AGN may be 
+directly responsible for quenching the star formation and moving 
+a galaxy onto the `red and dead' branch (REFs).
 
-\subsection{Kinetic or radio mode feedback}
+There is also more direct evidence that AGN are at least energetically 
+significant when compared to the galactic bulge. X-ray observations
+of cool core clusters tend to show dramatic `bubbles' on scales of
+up to 50~kpc, with a radio-loud AGN at the centre (REF, Fig~?). This
+shows how radio jets can significantly impact the surrounding gas,
+a flavour of feedback known as `radio' or `kinetic' mode feedback.
+These bubbles also provide an estimate of the kinetic power of a radio
+jet, as the volume of the bubble and surrounding gas pressure gives a 
+rough estimate of the $P~dV$ work done by the jet. This can be divided by
+the timescale for the bubble formation, giving kinetic luminosities
+of around ??, which are only weakly correlated with the radio luminosity
+of the source. 
+
+However, jets are not the most efficient way for AGN to interact with 
+their environment. I have already briefly discussed in section~\ref{sec:ufos}
+how fast AGN winds can drive larger-scale molecular outflows.
+This can be seen spectacularly in the FeLoBALQSO Mrk231, 
+where integrated field spectroscopy shows kiloparsec-scale
+neutral gas outflows \citep[see Fig.~\ref{fig:rupke};][]{rupke2011}.
+\cite{king2003} expanded on the ideas of \cite{silkrees1998} and showed
+considered a super-Eddington, momentum-driven outflow expanding into the surrounding gas. 
+This model naturally reproduces the observed slope of the $M_{BH}-\sigma_*$
+relation. This line of argument was used to suggest that super-Eddington accretion must be
+common near the end of a quasar cycle, although it is worth noting that line-driving,
+or non-radiative driving, would mean that super-Eddington accretion rates are 
+not required to drive such an outflow.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/02-outflows/rupke2.png}
+\caption
+{
+{\sl Credit: Rupke \& Veilleux 2011}. 
+Results of Gaussian line profile fitting to 
+integral field spectroscopy of Mrk 231. The quantity
+shown, $v_{50\%}$, corresponds to the centre of the fitted Gaussian
+profile and indicates that high outflow velocities 
+are present in the neutral gas.
+} 
+\label{fig:rupke}
+\end{figure}
+
 
 \subsection{Alternative Explanations}
+
+It cannot yet be proven that AGN are the drivers of the observed 
+galaxy colour evolution, luminosity function and BH-bulge correlations.
+Indeed, it is also possible that mergers are responsible for these phenomena 
+(REFs). Regardless of the effect of mergers, AGN winds and jets are clearly 
+energetically significant with respect to their host galaxies, and estimating
+their kinetic powers accurately is important in discriminating between in-situ
+and ex-situ scenarios. Now the astrophysical importance of AGN winds has 
+been established, I shall move on to discussing how we might go about 
+accurately modelling the ionization states and emergent spectra associated 
+with outflows in general.
 
 

@@ -200,10 +200,19 @@ for the majority of the work in this thesis.
 \section{{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}
 
 \py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
-programming language.} is a Monte Carlo  ionization and radiative transfer code. 
-The code has already been described extensively by LK02, SDL05 and 
-Higginbottom et al. (2013; hereafter H13), so here we provide only a brief summary of its operation, 
-focusing particularly on new aspects of our implementation of macro-atoms into the code.
+programming language.} is a confusingly named 
+Monte Carlo ionization and radiative transfer code. 
+The general philosophy of the code is to be able to produce synthetic spectra
+for astrophysical objects with outflows in 2.5D, using a self-consistent ionization 
+treatment. The code is written in C, and has been in development since the mid-1990s.
+Throughout this time it has been used with application to CVs \citep{LK02, M15},
+YSOs \citep{simmacro2005}, Supernovae \citep{kerzendorfsim} and AGN/quasars 
+\citep{higginbottom2013,H14,M16}. It is also capable of producing spectra 
+for stellar winds and conducting simple photoionization balance calculations for
+comparison with codes such as \textsc{cloudy}. Some more detail on code testing and 
+development can be found in sections~\ref{sec:code_validation} and \ref{sec:code_maintenance}
+respectively. Although the operation of \py\ is well-described by the above authors,
+it is central to this Thesis and I will thus provide substantial detail on its operation. 
 
 \subsection{Basics}
 
@@ -217,13 +226,23 @@ A flowchart showing the basic operation of \py.
 \label{fig:flowchart}
 \end{figure}
 
-
 \py\ operates in three distinct stages, shown in figure~\ref{fig:flowchart}. 
 First, the user specifies the photon sources,
 geometry and kinematics of the system, normally with a similar parameterisation
-to the SV93 model described in section~\ref{sec:sv93_model}. The outflow
-is then discretised into a logarithmic grid with a user-specified resolution,
-and the density and velocity in each cell is calculated. 
+to the SV93 model described in section~\ref{sec:sv93_model}. 
+The code can operate with multiple coordinate systems 
+(1D, spherical polar, cylindrical), but in this work I use cylindrical coordinates.
+In this case, the outflow is discretised into a $n_x \times n_y$ logarithmic grid with 
+user-specified dimensions. The co-ordinates, $(x_i, z_i$), 
+of the corner of the $i$th cell are then given by
+\begin{equation}
+x_i = L_{x}~10^{(i-1)\frac{\log (R_{max} / L_{x})}{n_x}};~~
+z_i = L_{z}~10^{(i-1)\frac{\log (R_{max} / L_{z})}{n_z}}, \\
+\end{equation}
+where $L_x$ and $L_z$ are appropriately chosen (but hardwired) scale lengths.
+From these co-ordinates the poloidal distance can be calculated and
+the velocity set according to equation~\ref{eq:v_law}. The density
+is then calculated by imposing conservation of mass.
 
 Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
@@ -275,8 +294,8 @@ from LTE.
 % `macro-atoms', and radiant and kinetic energy into indivisible energy
 % packets (r- and k- packets, respectively). 
 His macro-atom scheme allows for all possible transition paths from a given level,
-dispending with the two-level approximation, and
-provides a full non-local thermodynamic equilibrium (NLTE) solution
+dispensing with the two-level approximation, and
+provides a full non-local-thermodynamic-equilibrium (NLTE) solution
 for the level populations based on Monte Carlo estimators. The macro-atom
 technique has already been used to model Wolf-Rayet star
 winds \citep{sim2004}, AGN disc winds \citep{simlong2008, tatum2012},
@@ -286,7 +305,7 @@ description of the approach can be found in L02 and L03.
 The fundamental approach here requires somewhat of a philosophical shift.
 Normally MCRT is described in the most intuitive way- that is, we imagine
 real photons striking atoms and scattering, or photoionizing 
-and depositing energy in a plasma. With Lucy's scheme one should instead 
+and depositing energy in a plasma. With Lucy's scheme we should instead 
 reimagine the MC quanta as a packets of quantised energy flow, and the scheme as a 
 {\em statistical} one. The amount of time a given energy quanta spends in a specific atomic
 level or thermal pool is then somewhat analogous to the absolute energy 
@@ -302,8 +321,8 @@ are given by
 \;\;  \dot{E}_{i}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
 
-Where we adopt Lucy's convention in which the subscript $\ellp$ denotes a summation over
-all lower states.
+Where I have adopted Lucy's convention in which the subscript 
+$\ellp$ denotes a summation over all lower states.
 Similarly, the rates corresponding to {\em kinetic} energy transport can then be written as
 
 \begin{equation}
@@ -683,6 +702,7 @@ and
 
 
 \section{Code Validation}
+\label{sec:code_validation}
 
 The main challenge for high performance scientific computing can be 
 elegantly summarised by Ferland's (2002) epitaph, {\sl `Reliability in the face 
@@ -698,6 +718,7 @@ results.
 
 
 \section{Code Maintenance and Version Control}
+\label{sec:code_maintenance}
 
 As part of the expansion of the team working on \py\, I was responsible
 for bringing the code under the auspices of a robust version control system.
