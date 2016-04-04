@@ -1,5 +1,9 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{{Abbott}}{1982}]{abbott1982}
+{Abbott} D.~C., 1982,
+  \apj~  259, 282
+
 \bibitem[\protect\astroncite{{Abbott} \& {Lucy}}{1985}]{AL85}
 {Abbott} D.~C., {Lucy} L.~B., 1985,
   \apj~  288, 679
@@ -96,6 +100,11 @@
 {Bondi} H., {Hoyle} F., 1944,
   \mnras~  104, 273
 
+\bibitem[\protect\astroncite{{Bonning} et~al.}{2007}]{bonning2007}
+{Bonning} E.~W., {Cheng} L., {Shields} G.~A., {Salviander} S., {Gebhardt} K.,
+  2007,
+  \apj~  659, 211
+
 \bibitem[\protect\astroncite{{Borguet} \&
   {Hutsem{\'e}kers}}{2010}]{borguet2010}
 {Borguet} B., {Hutsem{\'e}kers} D., 2010,
@@ -118,6 +127,11 @@
   {Markowitz} A., {Nandra} K., {Porquet} D., {Ptak} A., {Turner} T.~J.,
   {Yaqoob} T., {Weaver} K., 2007,
   \apj~  670, 978
+
+\bibitem[\protect\astroncite{{Brown} et~al.}{1995}]{brown1995}
+{Brown} J.~C., {Richardson} L.~L., {Antokhin} I., {Robert} C., {Moffat}
+  A.~F.~J., {St-Louis} N., 1995,
+  \aap~  295, 725
 
 \bibitem[\protect\astroncite{{Capellupo} et~al.}{2014}]{capellupo2014}
 {Capellupo} D.~M., {Hamann} F., {Barlow} T.~A., 2014,
@@ -227,6 +241,11 @@
 {Dabrowski} Y., {Fabian} A.~C., {Iwasawa} K., {Lasenby} A.~N., {Reynolds}
   C.~S., 1997,
   \mnras~  288, L11
+
+\bibitem[\protect\astroncite{{Dai} et~al.}{2010}]{dai2010}
+{Dai} X., {Kochanek} C.~S., {Chartas} G., {Koz{\l}owski} S., {Morgan} C.~W.,
+  {Garmire} G., {Agol} E., 2010,
+  \apj~  709, 278
 
 \bibitem[\protect\astroncite{{Dai} et~al.}{2008}]{dai2008}
 {Dai} X., {Shankar} F., {Sivakoff} G.~R., 2008,
@@ -542,10 +561,18 @@
 {Hamann} W.-R., {Koesterke} L., 1998,
   \aap~  335, 1003
 
+\bibitem[\protect\astroncite{{Hamann} et~al.}{1992}]{hamann1992wr}
+{Hamann} W.-R., {Leuenhagen} U., {Koesterke} L., {Wessolowski} U., 1992,
+  \aap~  255, 200
+
 \bibitem[\protect\astroncite{{Hamann} et~al.}{2008}]{hamann2008}
 {Hamann} W.-R., {Oskinova} L.~M., {Feldmeier} A., 2008,
 \newblock in W.-R. {Hamann}, A. {Feldmeier}, L.~M. {Oskinova} (eds.), Clumping
   in Hot-Star Winds, ~75
+
+\bibitem[\protect\astroncite{{Hamann} et~al.}{1994}]{hamann1994}
+{Hamann} W.-R., {Wessolowski} U., {Koesterke} L., 1994,
+  \aap~  281, 184
 
 \bibitem[\protect\astroncite{{H{\"a}ring} \& {Rix}}{2004}]{haring2004}
 {H{\"a}ring} N., {Rix} H.-W., 2004,
@@ -591,6 +618,14 @@
 {Higginbottom} N., {Proga} D., {Knigge} C., {Long} K.~S., {Matthews} J.~H.,
   {Sim} S.~A., 2014,
   \apj~  789, 19
+
+\bibitem[\protect\astroncite{{Hillier}}{1984}]{hillier1984}
+{Hillier} D.~J., 1984,
+  \apj~  280, 744
+
+\bibitem[\protect\astroncite{{Hillier}}{1991}]{hillier1991eswingsmodel}
+{Hillier} D.~J., 1991,
+  \aap~  247, 455
 
 \bibitem[\protect\astroncite{{Hillier} \& {Miller}}{1999}]{hilliermiller1999}
 {Hillier} D.~J., {Miller} D.~L., 1999,
@@ -1027,6 +1062,10 @@
   {Tanaka} Y., 1996,
   \pasj~  48, 211
 
+\bibitem[\protect\astroncite{{Owocki}}{2014}]{owocki2014}
+{Owocki} S., 2014,
+  ArXiv e-prints~
+
 \bibitem[\protect\astroncite{{Owocki} et~al.}{1988}]{owocki1988}
 {Owocki} S.~P., {Castor} J.~I., {Rybicki} G.~B., 1988,
   \apj~  335, 914
@@ -1081,6 +1120,10 @@
 \bibitem[\protect\astroncite{{Pounds} \& {Reeves}}{2009}]{poundsreeves2009}
 {Pounds} K.~A., {Reeves} J.~N., 2009,
   \mnras~  397, 249
+
+\bibitem[\protect\astroncite{{Prinja} \& {Smith}}{1992}]{prinja1992}
+{Prinja} R.~K., {Smith} L.~J., 1992,
+  \aap~  266, 377
 
 \bibitem[\protect\astroncite{{Proga}}{2005}]{proga2005}
 {Proga} D., 2005,
@@ -1184,6 +1227,10 @@
 {Schmidt} M., 1965b,
   \apj~  141, 1
 
+\bibitem[\protect\astroncite{{Schmutz}}{1997}]{schmutz1997}
+{Schmutz} W., 1997,
+  \aap~  321, 268
+
 \bibitem[\protect\astroncite{{Setti} \& {Woltjer}}{1989}]{setti1989}
 {Setti} G., {Woltjer} L., 1989,
   \aap~  224, L21
@@ -1195,6 +1242,13 @@
 \bibitem[\protect\astroncite{{Shakura} \& {Sunyaev}}{1973}]{shakurasunyaev1973}
 {Shakura} N.~I., {Sunyaev} R.~A., 1973,
   \aap~  24, 337
+
+\bibitem[\protect\astroncite{{Shankar} et~al.}{2016}]{shankar2016}
+{Shankar} F., {Calderone} G., {Knigge} C., {Matthews} J., {Buckland} R.,
+  {Hryniewicz} K., {Sivakoff} G., {Dai} X., {Richardson} K., {Riley} J., {Gray}
+  J., {La Franca} F., {Altamirano} D., {Croston} J., {Gandhi} P., {H{\"o}nig}
+  S., {McHardy} I., {Middleton} M., 2016,
+  \apjl~  818, L1
 
 \bibitem[\protect\astroncite{{Shaviv} \& {Wehrse}}{1991}]{shaviv1991}
 {Shaviv} G., {Wehrse} R., 1991,

@@ -384,9 +384,22 @@ with two combined {\sl NuStar} observations in blue.
 Although stellar winds are clearly not accretion disc winds,
 they provide a useful, and better understood, testing ground for much
 of the physics of radiatively-driven outflows. 
-Wolf-Rayet stars and O-stars
+Wolf-Rayet (WR) stars and O-stars possess strong outflows with mass-loss rates
+of up to $10^{-5}~M_\odot~$yr$^{-1}$, throught to be driven by radiation pressure
+mediated by spectral lines (see section~\ref{sec:line_driving}. 
+Over the typical lifetime of a massive
+star ($\sim10^6$~yr), this can have a significant impact on the overall mass,
+causing losses of around $10~M_\odot$ of material. 
 
-\nocite{pauldrach1994}
+As with the systems described previously, the P-Cygni profiles
+in spectra from hot, massive stars are the main pieces of evidence that
+a strong wind is present (see figure~\ref{fig:hot_star_wind}). Mass-loaded
+winds are also thought to be responsible for the emission lines 
+seen in hot star spectra \citep[e.g.][]{pauldrach1994}. Indeed, emission
+line diagnostics have been particularly important in determining
+the mass-loss rates of stellar winds, and have been used to demonstrate 
+that line-driven stellar winds are expected to be clumpy. 
+
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/02-outflows/hot_star_wind.png}
@@ -401,22 +414,31 @@ marked.
 \label{fig:hot_star_wind}
 \end{figure}
 
+\subsubsection{Clumping in stellar winds}
 
-{\bf LDI, clumping, vorocity?} 
-
-\subsubsection{Clumping}
-
-{\bf LDI, clumping, vorocity?}
+Evidence for clumping in hot star winds comes from a wide range of sources.
+Perhaps the most conclusive evidence comes from electron scattering wings
+in emission lines; homogenous models overestimate the strength of these
+wings, whereas clumpy models produce good agreement with data 
+\citep{hillier1984,hillier1991eswingsmodel,hamann1992wr,hamann1994,schmutz1997}.
+Further evidence for clumping comes from line variability \citep{prinja1992}
+and polarisation \citep{brown1995}. Clumping is theoretically expected
+in line-driven winds 
+\citep[see section~\ref{sec:line_driving} and the review by][]{owocki2014}, 
+and is directly dealt with in this thesis.
+I describe the treatment of clumping I have implemented in our radiative 
+transfer code in section~\ref{sec:microclumping}, before presenting
+results from a clumpy AGN wind model in chapter~5.
 
 \subsection{Outflow Physics}
 
 The spectra in figures~\ref{fig:cordova}, \ref{fig:bals}
 and \ref{fig:hot_star_wind} show striking similarities -- 
 characteristic broad, P-Cygni-like absorption features in UV resonance
-lines extending to high blueward velocities. Furthermore, some of the
-phenomena observed in e.g. stellar winds may naturally solve some of 
-the unanswered questions in other systems -- for example, clumping
-in the outflow as a moderator of the ionization state. It would seem
+lines extending to high blueward velocities -- despite vast differences in mass. 
+Furthermore, some of the phenomena observed in e.g. stellar winds may naturally solve some of 
+the unanswered questions in other systems; for example, clumping
+may prevent over-ionization in AGN outflows. It would seem
 that at least some of the physics of outflows, like accretion,
 is universal, and that lessons learned from smaller scale systems may be
 scaleable to AGN and quasars. To understand if the similarity extends beyond
@@ -430,7 +452,7 @@ Let us consider a parcel of ideal gas. By imposing nothing more than
 conservation of mass, energy and momentum on that parcel we can write down
 three equations of hydrodynamics
 \footnote{I stress that these equations are not used in hydrodynamic
-simulations in this thesis (see section ?, for example); 
+simulations in this thesis (see chapter~5, for example); 
 they are discussed here because they provide a natural reference point
 for exploring potential driving mechanisms for winds in accreting systems.
 }
@@ -456,10 +478,10 @@ force per unit mass and $\vec{g}$ denotes the gravitational acceleration vector.
 Equation~\ref{eq:continuity} is the {\em continuity equation} and describes conservation of mass. 
 Equation~\ref{eq:motion} is the {\em equation of motion} and describes conservation of momentum.
 Equation~\ref{eq:energy} is the {\em equation of energy conservation}. 
-We can use equation~\ref{eq:motion} to neatly demonstrate how an outflow can be driven. I have 
-deliberately written the equation so that all the force terms lie on the RHS. We can then see that
-for an outflow to be driven from an accreting object one simply needs one of the terms on
-the RHS to dominate over gravity, $\rho \vec{g}$. These terms thus signify three potential
+Equation~\ref{eq:motion} can be used to neatly demonstrate how an outflow can be driven. I have 
+deliberately written the equation so that all the force terms lie on the RHS. 
+For an outflow to be driven from an accreting object one of terms on the RHS must
+dominate over gravity, $\rho \vec{g}$. These terms thus signify three potential
 driving mechanisms.
 
 \begin{itemize}
@@ -514,6 +536,8 @@ powerful outflows in these systems even at $L / L_{Edd} \sim 10^{-3}$.
 
 \subsection{Line-driven Winds}
 
+\label{sec:line_driving}
+
 Under the right ionization conditions, radiation pressure mediated by spectral lines
 can be a significant  acceleration term in 
 a partially ionized plasma \citep[][hereafter CAK]{CAK75}. 
@@ -535,7 +559,7 @@ where $t = \beta \tau_L$ for a given line and ${\cal M}(t)$ can be approximated 
 % electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
 % width. 
 Here $W$ is the dilution factor, and $k$, $\alpha$ and $\delta$ are constants with
-values of 0.28, 0.56 and 0.99 respectively in O-star winds (REFs).
+values of 0.28, 0.56 and 0.99 respectively in O-star winds \citep{abbott1982}.
 It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
 is around $2000-4000$. This is already an interesting result, as it tells us
 that line-driven outflows can be accelerated when accretion rates / luminosities
@@ -575,7 +599,11 @@ then attractive as a driving mechanism for disc winds.
 
 There are two main ways in which magnetic forces can drive an 
 accretion disc wind. Historically, the most popular idea has been the `bead on a wire' mechanism proposed by \citep{blandfordpayne}. In this model,
-the {\em poloidal} magnetic field is dominant, and 
+the {\em poloidal} magnetic field is dominant, and the wind is driven by magnetic
+{\em tension}. 
+
+In alternative magnetic models the magnetic pressure ($B/8\pi$ in CGS units)
+is responsible for driving the outflow (REFs and explanation).
 
 \section{Accretion Disc Wind Models}
 \label{sec:wind_models}
