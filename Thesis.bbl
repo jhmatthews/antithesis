@@ -8,6 +8,10 @@
 {Abbott} D.~C., {Lucy} L.~B., 1985,
   \apj~  288, 679
 
+\bibitem[\protect\astroncite{{Adams} et~al.}{2001}]{adams2001}
+{Adams} F.~C., {Graff} D.~S., {Richstone} D.~O., 2001,
+  \apjl~  551, L31
+
 \bibitem[\protect\astroncite{{Alexander} et~al.}{2011}]{alexander2011}
 {Alexander} D.~M., {Bauer} F.~E., {Brandt} W.~N., {Daddi} E., {Hickox} R.~C.,
   {Lehmer} B.~D., {Luo} B., {Xue} Y.~Q., {Young} M., {Comastri} A., {Del Moro}
@@ -57,6 +61,11 @@
 {Baldi} R.~D., {Capetti} A., {Robinson} A., {Laor} A., {Behar} E., 2016,
   \mnras~
 
+\bibitem[\protect\astroncite{{Baldry} et~al.}{2004}]{baldry2004}
+{Baldry} I.~K., {Glazebrook} K., {Brinkmann} J., {Ivezi{\'c}} {\v Z}., {Lupton}
+  R.~H., {Nichol} R.~C., {Szalay} A.~S., 2004,
+  \apj~  600, 681
+
 \bibitem[\protect\astroncite{{Baptista} et~al.}{2000}]{baptista2000}
 {Baptista} R., {Silveira} C., {Steiner} J.~E., {Horne} K., 2000,
   \mnras~  314, 713
@@ -75,6 +84,10 @@
 {Begelman} M.~C., {McKee} C.~F., {Shields} G.~A., 1983,
   \apj~  271, 70
 
+\bibitem[\protect\astroncite{{Bell} et~al.}{2003}]{bell2003a}
+{Bell} E.~F., {McIntosh} D.~H., {Katz} N., {Weinberg} M.~D., 2003,
+  \apjs~  149, 289
+
 \bibitem[\protect\astroncite{{Belloni}}{2010}]{bellonijet2010}
 {Belloni} T. (ed.), 2010,
 \newblock {The Jet Paradigm},
@@ -83,6 +96,11 @@
 \bibitem[\protect\astroncite{{Benz} et~al.}{1983}]{benz1983}
 {Benz} A.~O., {Fuerst} E., {Kiplinger} A.~L., 1983,
   \nat~  302, 45
+
+\bibitem[\protect\astroncite{{B{\^i}rzan} et~al.}{2008}]{birzan2008}
+{B{\^i}rzan} L., {McNamara} B.~R., {Nulsen} P.~E.~J., {Carilli} C.~L., {Wise}
+  M.~W., 2008,
+  \apj~  686, 859
 
 \bibitem[\protect\astroncite{{Blandford} \& {Payne}}{1982}]{blandfordpayne}
 {Blandford} R.~D., {Payne} D.~G., 1982,
@@ -99,6 +117,12 @@
 \bibitem[\protect\astroncite{{Bondi} \& {Hoyle}}{1944}]{bondi1944}
 {Bondi} H., {Hoyle} F., 1944,
   \mnras~  104, 273
+
+\bibitem[\protect\astroncite{{Bongiorno} et~al.}{2016}]{bongiorno2016}
+{Bongiorno} A., {Schulze} A., {Merloni} A., {Zamorani} G., {Ilbert} O., {La
+  Franca} F., {Peng} Y., {Piconcelli} E., {Mainieri} V., {Silverman} J.~D.,
+  {Brusa} M., {Fiore} F., {Salvato} M., {Scoville} N., 2016,
+  \aap~  588, A78
 
 \bibitem[\protect\astroncite{{Bonning} et~al.}{2007}]{bonning2007}
 {Bonning} E.~W., {Cheng} L., {Shields} G.~A., {Salviander} S., {Gebhardt} K.,
@@ -132,6 +156,10 @@
 {Brown} J.~C., {Richardson} L.~L., {Antokhin} I., {Robert} C., {Moffat}
   A.~F.~J., {St-Louis} N., 1995,
   \aap~  295, 725
+
+\bibitem[\protect\astroncite{{Burkert} \& {Silk}}{2001}]{burkert2001}
+{Burkert} A., {Silk} J., 2001,
+  \apjl~  554, L151
 
 \bibitem[\protect\astroncite{{Capellupo} et~al.}{2014}]{capellupo2014}
 {Capellupo} D.~M., {Hamann} F., {Barlow} T.~A., 2014,
@@ -168,6 +196,11 @@
 \bibitem[\protect\astroncite{{Castor}}{1974}]{castor1974}
 {Castor} J.~L., 1974,
   \mnras~  169, 279
+
+\bibitem[\protect\astroncite{{Cavagnolo} et~al.}{2011}]{cavagnolo2011}
+{Cavagnolo} K.~W., {McNamara} B.~R., {Wise} M.~W., {Nulsen} P.~E.~J.,
+  {Br{\"u}ggen} M., {Gitti} M., {Rafferty} D.~A., 2011,
+  \apj~  732, 71
 
 \bibitem[\protect\astroncite{{Chamberlain} et~al.}{2015}]{chamberlain2015}
 {Chamberlain} C., {Arav} N., {Benn} C., 2015,
@@ -236,6 +269,11 @@
   {Wagner} S., {Wanders} I., {Welsh} W.~F., {Weymann} R.~J., {Wilkes} B.~J.,
   {Zheng} W., 1996,
   \apj~  470, 322
+
+\bibitem[\protect\astroncite{{Croton} et~al.}{2006}]{croton2006}
+{Croton} D.~J., {Springel} V., {White} S.~D.~M., {De Lucia} G., {Frenk} C.~S.,
+  {Gao} L., {Jenkins} A., {Kauffmann} G., {Navarro} J.~F., {Yoshida} N., 2006,
+  \mnras~  365, 11
 
 \bibitem[\protect\astroncite{{Dabrowski} et~al.}{1997}]{dabrowski1997}
 {Dabrowski} Y., {Fabian} A.~C., {Iwasawa} K., {Lasenby} A.~N., {Reynolds}
@@ -387,6 +425,10 @@
 {Fender} R.~P., {Gallo} E., {Russell} D., 2010,
   \mnras~  406, 1425
 
+\bibitem[\protect\astroncite{{Ferrarese} \& {Merritt}}{2000}]{ferrarese2000}
+{Ferrarese} L., {Merritt} D., 2000,
+  \apjl~  539, L9
+
 \bibitem[\protect\astroncite{{Filiz Ak} et~al.}{2012}]{filizak2012}
 {Filiz Ak} N., {Brandt} W.~N., {Hall} P.~B., {Schneider} D.~P., {Anderson}
   S.~F., {Gibson} R.~R., {Lundgren} B.~F., {Myers} A.~D., {Petitjean} P.,
@@ -444,6 +486,13 @@
 \bibitem[\protect\astroncite{{Gardner} \& {Done}}{2016}]{gardnerdone2016}
 {Gardner} E., {Done} C., 2016,
   ArXiv e-prints~
+
+\bibitem[\protect\astroncite{{Gebhardt} et~al.}{2000}]{gebhardt2000}
+{Gebhardt} K., {Bender} R., {Bower} G., {Dressler} A., {Faber} S.~M.,
+  {Filippenko} A.~V., {Green} R., {Grillmair} C., {Ho} L.~C., {Kormendy} J.,
+  {Lauer} T.~R., {Magorrian} J., {Pinkney} J., {Richstone} D., {Tremaine} S.,
+  2000,
+  \apjl~  539, L13
 
 \bibitem[\protect\astroncite{{Ghosh} \& {Punsly}}{2007}]{ghoshpunsly2007}
 {Ghosh} K.~K., {Punsly} B., 2007,
@@ -759,6 +808,10 @@
 {K{\"o}rding} E., {Rupen} M., {Knigge} C., {Fender} R., {Dhawan} V.,
   {Templeton} M., {Muxlow} T., 2008,
   Science~  320, 1318
+
+\bibitem[\protect\astroncite{{Kormendy} \& {Ho}}{2013}]{kormendy2013}
+{Kormendy} J., {Ho} L.~C., 2013,
+  \araa~  51, 511
 
 \bibitem[\protect\astroncite{{Kotov} et~al.}{2001}]{kotov2001}
 {Kotov} O., {Churazov} E., {Gilfanov} M., 2001,
@@ -1157,6 +1210,16 @@
 {Puebla} R.~E., {Diaz} M.~P., {Hillier} D.~J., {Hubeny} I., 2011,
   \apj~  736, 17
 
+\bibitem[\protect\astroncite{{Randall} et~al.}{2011}]{randall2011}
+{Randall} S.~W., {Forman} W.~R., {Giacintucci} S., {Nulsen} P.~E.~J., {Sun} M.,
+  {Jones} C., {Churazov} E., {David} L.~P., {Kraft} R., {Donahue} M., {Blanton}
+  E.~L., {Simionescu} A., {Werner} N., 2011,
+  \apj~  726, 86
+
+\bibitem[\protect\astroncite{{Read} \& {Trentham}}{2005}]{read2005}
+{Read} J.~I., {Trentham} N., 2005,
+  Philosophical Transactions of the Royal Society of London Series A~  363
+
 \bibitem[\protect\astroncite{{Reeves} et~al.}{2003}]{reeves2003}
 {Reeves} J.~N., {O'Brien} P.~T., {Ward} M.~J., 2003,
   \apjl~  593, L65
@@ -1218,6 +1281,10 @@
 {Scaringi} S., {Maccarone} T.~J., {Koerding} E., {Knigge} C., {Vaughan} S.,
   {Marsh} T.~R., {Aranzana} E., {Dhillon} V., {Barros} S.~C.~C., 2015,
   ArXiv e-prints~
+
+\bibitem[\protect\astroncite{{Schechter}}{1976}]{schechter1976}
+{Schechter} P., 1976,
+  \apj~  203, 297
 
 \bibitem[\protect\astroncite{{Schmidt}}{1963}]{schmidt1963}
 {Schmidt} M., 1963,
@@ -1308,6 +1375,14 @@
 {Smak} J., 1981,
   \actaa~  31, 395
 
+\bibitem[\protect\astroncite{{Soltan}}{1982}]{soltan1982}
+{Soltan} A., 1982,
+  \mnras~  200, 115
+
+\bibitem[\protect\astroncite{{Somerville} et~al.}{2001}]{somerville2001}
+{Somerville} R.~S., {Primack} J.~R., {Faber} S.~M., 2001,
+  \mnras~  320, 504
+
 \bibitem[\protect\astroncite{{Springel} et~al.}{2005}]{springel2005}
 {Springel} V., {Di Matteo} T., {Hernquist} L., 2005,
   \apjl~  620, L79
@@ -1319,6 +1394,16 @@
 \bibitem[\protect\astroncite{{Stockman} et~al.}{1979}]{stockman1979}
 {Stockman} H.~S., {Angel} J.~R.~P., {Miley} G.~K., 1979,
   \apjl~  227, L55
+
+\bibitem[\protect\astroncite{{Strateva} et~al.}{2001}]{strateva2001}
+{Strateva} I., {Ivezi{\'c}} {\v Z}., {Knapp} G.~R., {Narayanan} V.~K.,
+  {Strauss} M.~A., {Gunn} J.~E., {Lupton} R.~H., {Schlegel} D., {Bahcall}
+  N.~A., {Brinkmann} J., {Brunner} R.~J., {Budav{\'a}ri} T., {Csabai} I.,
+  {Castander} F.~J., {Doi} M., {Fukugita} M., {Gy{\H o}ry} Z., {Hamabe} M.,
+  {Hennessy} G., {Ichikawa} T., {Kunszt} P.~Z., {Lamb} D.~Q., {McKay} T.~A.,
+  {Okamura} S., {Racusin} J., {Sekiguchi} M., {Schneider} D.~P., {Shimasaku}
+  K., {York} D., 2001,
+  \aj~  122, 1861
 
 \bibitem[\protect\astroncite{{Struve}}{1935}]{struve1935}
 {Struve} O., 1935,
