@@ -5,7 +5,7 @@
 In the previous chapters I have given an introduction to the field and 
 some relevant background relating to accretion 
 discs and their associated outflows. Now it proves useful
-to discuss some of the specific {\em methods} one might be able to use
+to discuss some of the specific {\em methods} we might be able to use
 in order to answer some of the questions raised in the previous sections.
 In particular, I will discuss radiative transfer techniques and 
 their potential applications.
@@ -102,12 +102,40 @@ see an emission line, and if $T < T_0$ we will see an absorption line.
 This approach describes line emission in the blackbody limit; for more complicated SED shapes
 it is necessary to construct simple model atoms.
 
+\subsection{}
+
+
+
+
+
 \subsection{The Two Level Atom}
 
-The two level atom formalism is well described by Mihalas (1978). 
+The two level atom formalism is well described by \cite{mihalas}.
+Let us consider an atomic model consisting of two levels that are linked 
+by radiative and collisional transitions, that can also interact with the 
+continuum. Whilst this model is clearly a simplification, it nonetheless allows
+for a first step into non-LTE line transfer and proves useful for modelling
+the resonance lines briefly touched on in chapter 2.
+
+To construct our simple model we must make a few assumptions. The first
+is the assumption of {\em statistical equilibrium}. This is the principle 
+The second is the assumption of {\em complete redistribution}.
+The rate equations for level one and two can then be written as 
+
+\begin{equation}
+n_1 (B_{12})
+\label{eq:rate_einstein}
+\end{equation}
+
+\begin{equation}
+B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
+\label{eq:rate_einstein}
+\end{equation}
 
 
-\subsubsection{Einstein Coefficients}
+
+
+\subsubsection{Einstein coefficients and the two-level atom}
 
 Within the two level atom, the rate equation between the two levels in LTE can
 can be written by invoking detailed balance, such that 
@@ -139,14 +167,11 @@ A_{ul} / B_{ul} = (2 h \nu_{ul}^3)~B_{lu} / B_{ul} = g_u / g_l
 
 
 
-\subsubsection{Collision Strengths}
+% \subsubsection{Collision Strengths}
 
-As well as radiative excitation and de-excitation, bound electrons 
-can also interact with the thermal pool of free electrons, meaning that
-collisional rates also affect 
-
-
-
+% As well as radiative excitation and de-excitation, bound electrons 
+% can also interact with the thermal pool of free electrons, meaning that
+% collisional rates also affect 
 
 \subsection{The Sobolev Approximation}
 
@@ -171,16 +196,16 @@ a given photon will interact with a line of frequency $\nu_{lu}$
 is then given, in velocity space, by
 \begin{equation}
 v = c~\left(\frac{\nu}{\nu_{lu}} + 1\right).
+\label{eq:resonance}
 \end{equation}
 The Sobolev optical depth is then
 \begin{equation}
 d \tau = \frac{\pi e^2}{m c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{c | dv / ds |}.
+\label{eq:tau_sob}
 \end{equation}
 We can see that the physical quantities determining line opacity are therefore 
 the level populations in the plasma, the velocity gradient and the atomic physics
 associated with the bound-bound transition.
-
-
 
 \subsubsection{Escape Probabilities}
 
@@ -236,14 +261,17 @@ The code can operate with multiple coordinate systems
 In this case, the outflow is discretised into a $n_x \times n_y$ logarithmic grid with 
 user-specified dimensions. The co-ordinates, $(x_i, z_i$), 
 of the corner of the $i$th cell are then given by
-\begin{equation}
-x_i = L_{x}~10^{(i-1)\frac{\log (R_{max} / L_{x})}{n_x}};~~
-z_i = L_{z}~10^{(i-1)\frac{\log (R_{max} / L_{z})}{n_z}}, \\
-\end{equation}
+\begin{align}
+x_i &= L_{x}~10^{(i-1)\frac{\log (R_{max} / L_{x})}{n_x}},\\
+z_i &= L_{z}~10^{(i-1)\frac{\log (R_{max} / L_{z})}{n_z}},
+\end{align}
 where $L_x$ and $L_z$ are appropriately chosen (but hardwired) scale lengths.
 From these co-ordinates the poloidal distance can be calculated and
 the velocity set according to equation~\ref{eq:v_law}. The density
-is then calculated by imposing conservation of mass.
+is then calculated from equation~\ref{eq:rho_rz}. An initial temperature,
+$T_{init}$ is set by the user. The ionization fractions throughout
+the wind are then to Saha (LTE) abundances at $T_{init}$, and the level 
+populations are set according to the Boltzmann formula.
 
 Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
@@ -266,20 +294,55 @@ The emergent spectrum over the desired spectral range is synthesized by
 tracking populations of energy packets through the wind and computing the emergent spectra at
 a number of user-specified viewing angles.  
 
-\py\ is designed to operate in a number of different
-regimes, both in terms of the scale of the system and in terms of the
-characteristics of the underlying radiation field.
-It was originally developed by LK02 in order to model the UV spectra
-of CVs with a simple biconical disc wind model. SDL05
-\nocite{simmacro2005} used the code to model Brackett
-and Pfund line profiles of H in young-stellar objects (YSOs). As part
-of this effort, they implemented a `macro-atom' mode (see below) in
-order to correctly treat H recombination lines with
-\py. Finally, H13 used \py\ to model broad absorption line (BAL) QSOs. For
-this application, an improved treatment of ionization was implemented,
-so that the code is now capable of dealing with arbitrary
-photo-ionizing SEDs, including non-thermal and multi-component ones. 
+% \py\ is designed to operate in a number of different
+% regimes, both in terms of the scale of the system and in terms of the
+% characteristics of the underlying radiation field.
+% It was originally developed by LK02 in order to model the UV spectra
+% of CVs with a simple biconical disc wind model. SDL05
+% \nocite{simmacro2005} used the code to model Brackett
+% and Pfund line profiles of H in young-stellar objects (YSOs). As part
+% of this effort, they implemented a `macro-atom' mode (see below) in
+% order to correctly treat H recombination lines with
+% \py. Finally, H13 used \py\ to model broad absorption line (BAL) QSOs. For
+% this application, an improved treatment of ionization was implemented,
+% so that the code is now capable of dealing with arbitrary
+% photo-ionizing SEDs, including non-thermal and multi-component ones. 
+\subsection{Radiation Packets}
 
+Every energy packet in the simulation starts out as a radiation packet generated
+from one of $N_S$ photon sources. To ensure that the frequency distribution
+of photons is adequately sampled in important frequency regimes, 
+{\em stratified sampling} is used. A specified fraction, $f_i$,
+of photons must then emerge each band $i$, whose frequency boundaries
+can be adapted for the astrophysical situation considered. 
+The weight, $w_i$, of the radiation packets in a given energy band $i$, with boundaries
+$\nu_i$ and $\nu_{i+1}$ is then given by
+\begin{equation}
+w_i = \frac{\sum_j^{N_S} \int_{\nu_i}^{\nu_{i+1}} L_{\nu,j}}{f_i~N_p},
+\end{equation}
+where $N_p$ is the {\em total} number of photons desired 
+and $L_{\nu,j}$ is the monochromatic 
+luminosity of photon source $j$. 
+The frequency of photons is 
+calculated by constructing a cumulative distribution function (CDF) from the
+spectral energy distribution in each band.  
+\begin{equation}
+w = \frac{\sum_j^{N_S} \int L_{\nu,j}}{N_p},
+\end{equation}
+A photon frequency can then be generated by cycling through the bands. In each band,
+a random number is chosen between 0 and 1, and then the frequency is 
+selected by interpolating on the sampled CDF. This process is repeated until 
+each band has the specified number of photons, with the packet
+weights adjusted accordingly.
+
+\py\ can operate in two modes concerning the approach to energy packets. 
+In the original mode described by LK02, continuum processes attenuate 
+the weight of the radiation packets. This attenuation is accounted for 
+by including the wind as an additional photon source.
+In the second mode, energy packets are indivisible and strict radiative equilibrium is
+enforced. From here on I will only be discussing this indivisible packet scheme, 
+as it is required in order to be able to use macro-atoms to accurately
+treat recombination in H and He.
 
 \section{Macro-atoms}
 
@@ -296,7 +359,7 @@ from LTE.
 % packets (r- and k- packets, respectively). 
 His macro-atom scheme allows for all possible transition paths from a given level,
 dispensing with the two-level approximation, and
-provides a full non-local-thermodynamic-equilibrium (NLTE) solution
+provides a full non-LTE solution
 for the level populations based on Monte Carlo estimators. The macro-atom
 technique has already been used to model Wolf-Rayet star
 winds \citep{sim2004}, AGN disc winds \citep{simlong2008, tatum2012},
@@ -337,22 +400,19 @@ If we now impose statistical equilibrium
 \begin{equation}
  ({\cal R}_{\ellp j}-{\cal R}_{j \ell})+({\cal R}_{uj}-{\cal R}_{ju})=0 \;\;\;.
 \end{equation}
- 
 we can then obtain 
-
 \begin{eqnarray}
  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{ju}\epsilon_{i}+
- {\cal R}_{j \ell}\epsilon_{\ell}  \nonumber \\  
+ {\cal R}_{j \ell}\epsilon_{\ellp}  \nonumber \\  
  = \dot{A}_{j}^{R}+\dot{A}_{j}^{C}+{\cal R}_{uj} \epsilon_{i}
- +{\cal R}_{\ell j} \epsilon_{\ell}           .  
+ +{\cal R}_{\ellp j} \epsilon_{\ellp}           .  
  \label{eq:matom_SE}     
 \end{eqnarray}
-
 This equation is the starting point for the macro-atom scheme. It shows 
 that, when assuming only radiative equilibrium, the energy flows through
 a system depend only on the transition probabilities and atomic physics
 associated with the levels the energy flow interacts with.
-By quantising this energy flow into radiant (r-) and kinetic (k-) packets, 
+By quantising this energy flow into radiant ($r$-) and kinetic ($k$-) packets, 
 we can simulate the energy transport through
 a plasma discretised into volume elements (``macro-atoms''),
 whose associated transition probabilities govern the interaction 
@@ -363,6 +423,92 @@ Although equation~\ref{eq:matom_SE} assumes strict radiative equilbrium,
 it is trivial to adjust it to include non-radiative source and sink terms. 
 For example, in an expanding parcel of plasma, adiabatic cooling may be 
 included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
+
+\subsection{Transition Probabilities}
+
+Having interpreted equation~\ref{eq:matom_SE} in a {\em stochastic} way,
+we can now construct our Monte Carlo scheme, following \cite{lucy2002}.
+A macro-atom in state $j$ always has a finite probability of deactivating
+radiatively or collisionally:
+\begin{equation}
+ \dot{p}_{j}^{R} = \dot{E}_{j}^{R} / D_j \;\;\;\;\; and \;\;\;
+\;\; \dot{p}_{j}^{C} = \dot{E}_{j}^{C} / D_j
+\end{equation}
+where I have defined
+\begin{equation}
+D_j =  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{ju}\epsilon_{j}+
+ {\cal R}_{j \ellp}\epsilon_{\ellp} = ({\cal R}_{j\ellp} + {\cal R}_{ju}) \epsilon_{j}.
+\end{equation}
+The corresponding {\em jumping} probabilities, which describe the probability
+that the macro-atom transitions to a different state while remaining active, 
+are given by
+\begin{equation}
+ \dot{p}_{ju} = {\cal R}_{ju} \epsilon_{j} / D_j \;\;\;\;\; and \;\;\;
+\;\; \dot{p}_{jl} = {\cal R}_{jl} \epsilon_{l} / D_j.
+\end{equation}
+Note that the jumping probability is always proportional to the energy
+of the lower level, whereas the emission probability is proportional
+to the energy {\em difference} between the levels. With these transition
+probabilities identified, a Monte Carlo calculation can proceed by formulating
+the normal statistical equilibrium rate equations that will depend on
+the ambient conditions of the plasma. The effect of these ambient conditions
+is expressed through the use of Monte Carlo {\em estimators}.
+
+\subsection{Transition Probabilities}
+
+
+
+\section{Radiative Transfer procedure}
+
+As a photon travels through a plasma, it has a finite probability
+of interacting with the free or bound electrons and undergoing a scattering
+or absorption event. To deal with this in a Monte Carlo sense, a random optical 
+depth is generated before an $r$-packet is moved,
+\begin{equation}
+\tau_R = - \ln (1 - {\cal Z}),
+\end{equation}
+where ${\cal Z}$ is a random number between 0 and 1. 
+The $r$-packet is then gradually transported through a given cell. 
+As it moves, the optical depth, $\tau^\prime$, it experiences
+is incremented continuously, representing continuum processes. When the $r$-packet comes
+into resonance with a line, according to equation~\ref{eq:resonance}, then
+the Sobolev optical depth is calculated from equation~\ref{eq:tau_sob} and added to 
+$\tau^\prime$. This process is shown in Fig.~\ref{fig:scatter_ml93}, and
+continues until $\tau^\prime \geq \tau_R$ or the $r$-packet leaves the cell. If the
+photon leaves the cell then the values of $\tau_R$ and $\tau^\prime$ are preserved,
+and the process continues using the conditions in the new cell. If 
+$\tau^\prime \geq \tau_R$, then an interaction with the plasma has occurred, and
+the process governing this interaction must be identified. This is done by
+randomly picking an interaction process in proportion with their contributions
+to $\tau^\prime$. If the process is an electron scatter then a new, isotropic
+direction is generated for the $r$-packet. Otherwise, the packet must
+interact with either the thermal pool or the excitation energy of the plasma.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/tau_scat.png}
+\caption
+{
+{\sl Credit: Mazzali \& Lucy 1993}. 
+The process of choosing a scattering location in a cell.
+} 
+\label{fig:scatter_ml93}
+\end{figure}
+
+\subsection{Macro-atom Line Transfer}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth, clip=true, trim=0 1.5in 0in 0in ]{figures/03-radtrans/flow_matom3.pdf}
+\caption
+{
+The radiative transfer procedure in macro-atom mode, depicting the interaction
+between radiation ($r$-packets), the thermal pool ($k$-packets), and ionization
+and excitation energy (macro-atoms and simple-atoms).
+} 
+\label{fig:flowchart}
+\end{figure}
+
 %% XXX CHECK THIS.
 
 % \subsection{Superlevels}
@@ -401,7 +547,7 @@ included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
 % The speed-up can be huge in certain limits-- some models can undergo $\sim10^8$ jumps before deactivation,
 % compared to an average of $\sim2$ in Lucy's original simulations.
 
-\subsection{Macro-Atom Estimators}
+\subsection{Monte Carlo Estimators}
 
 
 \subsubsection{Radiation Field Estimators}
@@ -655,7 +801,8 @@ A number of different implementations of clumping have been explored in previous
 mostly in the stellar winds community. Perhaps the simplest method is 
 when one assumes that the individual clumps are both optically and geometrically thin;
 this is known as {\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}. 
-This technique has been particularly successful in reconciling discrepant mass-loss estimates.
+This technique has been particularly successful in reconciling 
+discrepant mass-loss estimates.
 It was found that one would obtain different mass-loss rates depending on whether
 they were calculated from (i) UV resonance scattering of continuum photons 
 (which scales linearly with density; a `$\rho$-diagnostic') or (ii) recombination 
