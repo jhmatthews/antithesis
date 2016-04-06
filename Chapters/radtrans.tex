@@ -102,9 +102,83 @@ see an emission line, and if $T < T_0$ we will see an absorption line.
 This approach describes line emission in the blackbody limit; for more complicated SED shapes
 it is necessary to construct simple model atoms.
 
-\subsection{}
+\subsection{Local thermodynamic equlibrium}
 
+An important physical limit is that of local thermodynamic equilibrium (LTE).
+This is a first-order way to describe the physical conditions of a plasma, and assumes
+that all the properties of the plasma, such as the level populations and source function,
+are the same as those in thermodynamic equilibrium for local values of 
+temperature and density. For this to be the case, the principle of 
+{\em detailed balance} must also apply, in which every 
+process by which electrons transition in state must be exactly 
+balanced by its inverse process. LTE also assumes that $T_e = T_R$, and that
+the source function is given by a blackbody, i.e. $S_\nu = B_\nu (T_R)$.
+When the assumption of LTE is made three {\em microscopic} 
+requirements also follow \citep{mihalas}:
 
+a) The velocities of the electrons and ions in the plasma obey Maxwellian
+distributions, such that
+\begin{equation}
+f(v) = 4 \pi \left( \frac{m}{2 \pi kT} \right)^{3/2} v^2 
+\exp \left( - \frac{mv^2}{2kT} \right)
+\label{eq:maxwellian}
+\end{equation}
+
+\smallskip
+
+b) the ionization state of the plasma is governed by the {\em Saha equation},
+which states that two adjacent ions have relative populations given by
+\begin{equation}
+\frac{N_{i+1}n_e}{N_i} = \frac{2g_{i+1}}{g_i} 
+\left( \frac{2 \pi m_e kT}{h^2} \right)^{3/2}
+\exp(-h \nu_0/kT)
+\label{eq:saha}
+\end{equation}
+
+\smallskip
+
+c) the excitation state of the plasma is governed by {\em Boltzmann statistics}.
+Two adjacent levels then have relative populations given by
+\begin{equation}
+\frac{n_{j}}{n_i} = \frac{g_j}{z_i(T_R)} \exp(-E_j/kT_R), 
+\label{eq:boltzmann}
+\end{equation}
+
+\smallskip
+
+Although these three assumptions are often valid, in most astrophysical situations
+there can be large departures from LTE. A good example of these departures is when
+the SED is not a blackbody and is affected by absorption -- 
+as is the case in AGN and other accreting systems. The Maxwellian assumption 
+is probably the most reliable, but even this may break down
+when high-energy photons create suprathermal electron distributions (REFs). 
+
+\subsubsection{Dilute approximation}
+A first step away from LTE is to introduce the dilute approximation. In this case,
+we relax the assumption that $T_R = T_e$, and assume that the mean intensity is given
+by a dilute blackbody, i.e. 
+\begin{equation}
+J_\nu = W B_\nu (T_R),
+\label{eq:dilute_jnu}
+\end{equation}
+where $W$ is the dilution factor. We can then approximate the ionization state
+with a modified Saha equation \citep{ML93},
+\begin{equation}
+\frac{N_{i+1} n_e}{N_i} = W [\xi + W(1-\xi)]
+\left(\frac{T_e}{T_R}\right)^{1/2}
+\left(\frac{N_{i+1}n_e}{N_i}\right)^*_{T_R}, \label{eq:ml93}
+\end{equation}
+where $\xi$ is the fraction of recombinations that go directly to
+the ground state.
+The excitation state can be approximated with a dilute Boltzmann equation
+\begin{equation}
+\frac{n_{ij}}{n_i} = \frac{W g_j}{z_i(T_R)} \exp(-E_j/kT_R), 
+\label{eq:dilute_boltzmann}
+\end{equation}
+where $n_{ij}$ is the population of level $j$ in ionic stage $i$,
+$E_j$ is the energy difference between level $j$ and the ground state,
+$g_j$ is the statistical weight of level $j$
+and $z_i(T_R)$ is the partition function of ionic stage $i$. 
 
 
 
@@ -121,19 +195,6 @@ To construct our simple model we must make a few assumptions. The first
 is the assumption of {\em statistical equilibrium}. This is the principle 
 The second is the assumption of {\em complete redistribution}.
 The rate equations for level one and two can then be written as 
-
-\begin{equation}
-n_1 (B_{12})
-\label{eq:rate_einstein}
-\end{equation}
-
-\begin{equation}
-B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
-\label{eq:rate_einstein}
-\end{equation}
-
-
-
 
 \subsubsection{Einstein coefficients and the two-level atom}
 
@@ -381,16 +442,18 @@ a level i then the rates at which the level $j$ absorbs and emits radiant energy
 are given by
 
 \begin{equation}
- \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ellp} \;\;\;\;\; and \;\;\;
+ \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and} \;\;\;
 \;\;  \dot{E}_{i}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
 
 Where I have adopted Lucy's convention in which the subscript 
-$\ellp$ denotes a summation over all lower states.
-Similarly, the rates corresponding to {\em kinetic} energy transport can then be written as
+$\ellp$ denotes a summation over all lower states ($\ellp<j$), and
+$\up$ will thus denote a summation over all states ($\up>j$).
+Similarly, the rates corresponding to {\em kinetic} (collisional)
+energy transport can then be written as
 
 \begin{equation}
- \dot{A}_{j}^{C} = C_{\ellp j} \epsilon_{j \ellp} \;\;\;\;\; and
+ \dot{A}_{j}^{C} = C_{\ellp j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and}
 \;\;\;
 \;\;  \dot{E}_{j}^{C} = C_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
@@ -402,9 +465,9 @@ If we now impose statistical equilibrium
 \end{equation}
 we can then obtain 
 \begin{eqnarray}
- \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{ju}\epsilon_{i}+
+ \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{j\up}\epsilon_{j}+
  {\cal R}_{j \ell}\epsilon_{\ellp}  \nonumber \\  
- = \dot{A}_{j}^{R}+\dot{A}_{j}^{C}+{\cal R}_{uj} \epsilon_{i}
+ = \dot{A}_{j}^{R}+\dot{A}_{j}^{C}+{\cal R}_{\up j} \epsilon_{j}
  +{\cal R}_{\ellp j} \epsilon_{\ellp}           .  
  \label{eq:matom_SE}     
 \end{eqnarray}
@@ -431,30 +494,42 @@ we can now construct our Monte Carlo scheme, following \cite{lucy2002}.
 A macro-atom in state $j$ always has a finite probability of deactivating
 radiatively or collisionally:
 \begin{equation}
- \dot{p}_{j}^{R} = \dot{E}_{j}^{R} / D_j \;\;\;\;\; and \;\;\;
-\;\; \dot{p}_{j}^{C} = \dot{E}_{j}^{C} / D_j
+ \dot{p}_{j}^{R} = \dot{E}_{j}^{R} / D_j \;\;\;\;\; {\rm and} \;\;\;
+\;\; \dot{p}_{j}^{C} = \dot{E}_{j}^{C} / D_j,
 \end{equation}
 where I have defined
 \begin{equation}
-D_j =  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{ju}\epsilon_{j}+
- {\cal R}_{j \ellp}\epsilon_{\ellp} = ({\cal R}_{j\ellp} + {\cal R}_{ju}) \epsilon_{j}.
+D_j =  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{j\up}\epsilon_{j}+
+ {\cal R}_{j \ellp}\epsilon_{\ellp} = ({\cal R}_{j\ellp} + {\cal R}_{j\up}) \epsilon_{j}.
 \end{equation}
-The corresponding {\em jumping} probabilities, which describe the probability
+The corresponding jumping probabilities, which describe the probability
 that the macro-atom transitions to a different state while remaining active, 
 are given by
 \begin{equation}
- \dot{p}_{ju} = {\cal R}_{ju} \epsilon_{j} / D_j \;\;\;\;\; and \;\;\;
-\;\; \dot{p}_{jl} = {\cal R}_{jl} \epsilon_{l} / D_j.
+ \dot{p}_{j\up} = {\cal R}_{ju} \epsilon_{j} / D_j \;\;\;\;\; {\rm and} \;\;\;
+\;\; \dot{p}_{j\ellp} = {\cal R}_{j\ellp} \epsilon_{\ellp} / D_j.
 \end{equation}
 Note that the jumping probability is always proportional to the energy
 of the lower level, whereas the emission probability is proportional
-to the energy {\em difference} between the levels. With these transition
+to the energy {\em difference} between the levels, as 
+$\dot{E}_{j}^{R} = R_{j\ellp} (\epsilon_j - \epsilon_\ellp)$. We can also
+trivially show that the probabilities are correctly normalised, as
+\begin{eqnarray}
+p_{j}^{R} + p_{j}^{C} + p_{j\ellp} + p_{j\up} = \nonumber \\
+(1/D_j) ( {\cal R}_{j\up} \epsilon_{j} + {\cal R}_{j\ellp} \epsilon_{\ellp} +
+\dot{E}_{j}^{R} + \dot{E}_{j}^{C}) 
+= 1
+\end{eqnarray}
+
+With these transition
 probabilities identified, a Monte Carlo calculation can proceed by formulating
 the normal statistical equilibrium rate equations that will depend on
 the ambient conditions of the plasma. The effect of these ambient conditions
 is expressed through the use of Monte Carlo {\em estimators}.
 
-\subsection{Transition Probabilities}
+\subsection{Macro-atom estimators}
+
+
 
 
 
