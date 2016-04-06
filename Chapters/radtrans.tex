@@ -10,6 +10,19 @@ in order to answer some of the questions raised in the previous sections.
 In particular, I will discuss radiative transfer techniques and 
 their potential applications.
 
+{\sl Notation: This section contains a lot of algebraic quantities and sums over
+ions, levels, and so on. Throughout, I use $N$ to denote fractional
+populations of ions and $n$ to denote fractional populations of levels. 
+The primed quantities $\ellp$ and $\up$ follow the convention of 
+\cite{lucy2002} in that they denote sums over all lower/upper levels.
+The symbol ${\cal R}$ denotes a total rate (radiative + collisional), 
+and the symbol $C$ is a collisional rate, whereas ${\cal C}$ is a cooling 
+rate. Starred quantities mean they are evaluated at the stated temperature but 
+in local thermodynamic equilibrium, following \cite{mihalas1982}. 
+}
+
+
+
 \section{Fundamentals of Radiative Transfer}
 
 \begin{figure}
@@ -84,9 +97,14 @@ the integral can be easily evaluated to give
 I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
 \label{eq:rte_solution}
 \end{equation}
+It becomes useful at this stage
+
+
 
 % The mean intensity, $J_\nu$ is a particularly useful quantity when calculation the ionization
 % state 
+
+
 
 \subsection{Spectral Line Formation}
 
@@ -707,7 +725,7 @@ q_{l\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{\nu_0}~
 \exp \left( \frac{- h \nu_{ul}}{k T_e} \right),
 \label{eq:vanregemorterw}
 \end{equation}
-where $\sigma_{\nu_0}$ is the photoionziation cross-section at the threshold energy.
+where $\sigma_{\nu_0}$ is the photoionization cross-section at the threshold energy.
 $\bar{g}_{i}$ is an effective gaunt factor for ion $i$ and is approximately
 equal to $0.1,0.2,0.3$ for $Z=1,2$ and $>2$ respectively,
 where $Z$ is the atomic number. 
@@ -823,7 +841,7 @@ p_{i,destruct} = C_i / (C_{bf} + C_{ff} + C_{bb} + C_{comp} + C_a).
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth, clip=true, trim=0 1.5in 0in 0in ]{figures/03-radtrans/flow_colour.pdf}
+\includegraphics[width=1.0\textwidth, clip=true, trim=0 2.6in 0in 0in ]{figures/03-radtrans/flow_colour.pdf}
 \caption
 {
 The decision tree traversed by an energy packet 
@@ -834,7 +852,7 @@ The probabilities at each decision point are
 marked, and are defined in the text. The red, blue and green coloured arrows
 represent radiant, kinetic and ionization/excitation energy respectively.
 } 
-\label{fig:flowchart}
+\label{fig:flow_matom}
 \end{figure}
 
 %% XXX CHECK THIS.
@@ -890,22 +908,85 @@ In section~\ref{sec:lte} I described how it is possible to calculate the
 ionization and excitation of a plasma under LTE or dilute approximations.
 Macro-atoms are not approximated -- their level and ion populations are 
 calculated by solving the rate equations formulated in section~??. 
-This is done via matrix inversion. For an element with $n$ ions and $m_n$
-levels in each ions, we construct a matrix with dimensions $\sum_n m_n$.
-This matrix is then populated with the rates 
-
-
+This is done via matrix inversion. For an element with $n$ ions and $m_i$
+levels in each ion, we construct a square matrix with dimensions 
+$m = \sum_i^n m_i$.
+This element then has a total number density of $N_{elem} = \sum_i^n N_i$.
+To turn the system of rate equations for this element into matrix form, we
+populate the $j$th diagonal of the matrix with the negative of the rate out of
+level $j$, $-({\cal R}_{j\ellp} + {\cal R}_{j\up})$, 
+and populate the off-diagonals $(j,k)$ with the positive rate 
+${\cal R}_{jk}$. These are then multiplied by a vector of the fractional level
+populations, and must equal a vector of zeros, due to statistical equilibrium.
+Our matrix equation is then
+%
+\begin{equation}
+\begin{bmatrix}
+    -{\cal R}_{1\up} & {\cal R}_{21} & {\cal R}_{31} & \dots & {\cal R}_{m1} \\
+    {\cal R}_{12} & -({\cal R}_{2\ellp} + {\cal R}_{2\up}) & {\cal R}_{32} & \dots & {\cal R}_{m2} \\
+    {\cal R}_{13}  & {\cal R}_{23} & -({\cal R}_{3\ellp} + {\cal R}_{3\up}) & \dots & {\cal R}_{m3} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    {\cal R}_{1m}      & {\cal R}_{2m} & {\cal R}_{3m} & \dots & -{\cal R}_{m\ellp}
+\end{bmatrix}
+\begin{bmatrix}
+    n_1 / N_{elem} \\
+    n_2 / N_{elem} \\
+    n_3 / N_{elem} \\
+    \vdots         \\
+    n_m / N_{elem} 
+\end{bmatrix}
+=
+\begin{bmatrix}
+    0 \\
+    0 \\
+    0 \\
+    \vdots \\
+    0
+\end{bmatrix}
+.
+\end{equation}
+%
+This problem is not yet soluble, as a valid solution is that all levels 
+could simply have occupation numbers of $0$. To close the problem, we must impose the boundary condition, that the sum of the fractional populations is 1, i.e.
+%
+\begin{equation}
+\sum_i \frac{N_i}{N_{elem}} = 1.
+\end{equation}
+In matrix form, this is equivalent to replacing the entire first row
+of the rate matrix with 1, and the first entry of the RHS vector with a 1,
+so that we have
+%
+\begin{equation}
+\begin{bmatrix}
+    1  & 1 & 1 & \dots & 1\\
+    {\cal R}_{12} & -({\cal R}_{2\ellp} + {\cal R}_{2\up}) & {\cal R}_{32} & \dots & {\cal R}_{m2} \\
+    {\cal R}_{13}  & {\cal R}_{23} & -({\cal R}_{3\ellp} + {\cal R}_{3\up}) & \dots & {\cal R}_{m3} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    {\cal R}_{1m}      & {\cal R}_{2m} & {\cal R}_{3m} & \dots & -{\cal R}_{m\ellp}
+\end{bmatrix}
+\begin{bmatrix}
+    n_1 \\
+    n_2 \\
+    n_3 \\
+    \vdots \\
+    n_m
+\end{bmatrix}
+=
+\begin{bmatrix}
+    1 \\
+    0 \\
+    0 \\
+    \vdots \\
+    0
+\end{bmatrix}
+\end{equation}
+%
+This matrix equation can now be solved.
 To do the actual matrix manipulation, the code uses the GNU 
 scientific libraries \citep[GSL;][]{GSL} implementation of
 LU decomposition \citep{turing}. This is a fast and reliable way of
-inverting large matrices and encorporates error handling and enables
+inverting large matrices that includes error handling and enables
 checking of, for example, singular rate matrices.
-
-
-
-
-
-
 
 
 
@@ -926,6 +1007,58 @@ checking of, for example, singular rate matrices.
 
 \section{A hybrid line transfer scheme: including simple-atoms}
 
+I have now described in detail how the macro-atom approach is 
+implemented in \py. A pure macro-atom approach can be easily used for
+some situations -- for example, in the YSO application described by 
+\cite{simmacro2005}, which uses a H-only model. However, in accretion
+disc winds the densities can be very high and higher $Z$ ions must be 
+included 
+
+\subsection{Line Transfer}
+
+In order to include simple-atoms, we must add in a few extra pathways
+to Fig.~\ref{fig:flow_matom}, so that energy packets can also
+undergo excite simple-atoms, through either bound-free or bound-bound
+processes. This is done in proportion with the simple-atom opacities.
+
+This approach does necessitate a few approximations.
+
+\subsection{Estimators}
+In simple-ions it is in some ways a little more complicated. 
+First we define $q$ which will be different for each b-b transition, 
+following Nick's thesis, which is given by 
+(NB: I don't actually know how to derive this)
+\begin{equation}
+q = \frac{q_{ul} n_e (1 - e^{-h\nu/kT_e})}{\beta_{ul} A_{ul} + q_{ul} n_e (1 - e^{-h\nu/kT_e})}
+\end{equation}
+where $\beta_{ul}$ is the angle-averaged escape probability. 
+$q$ represents {\em the probability that an excited bound electron
+will collisionally de-excite}.
+Our b-b heating rate is computed during the photon propagation and is a sum
+over photons which come into resonance with each line, given by 
+\begin{equation}
+H_{bb,simple} = \sum_{photons} \sum_{lines} (1 - q) (1 - e^{-\tau_S}) w_{photon}
+\end{equation}
+And our bound bound cooling rate is given by 
+\begin{equation}
+C_{bb,simple} = \sum_{lines} q \left(n_l\frac{g_u}{g_l} - n_u\right) q_{ul} n_e 
+\frac{(1 - e^{-h\nu/kT_e})}{(e^{h\nu/kT_e} - 1)}  h \nu_{ul}
+\end{equation}
+%%note the difference to the macro-atom approach- here this is already 
+\noindent
+The bound-free heating rate is given by
+\begin{equation}
+H_{bf,simple} = \sum_{photons} \sum_{bfjumps} w_{photon} e^{-\tau} \frac{\nu - \nu_{0}}{\nu}
+\end{equation}
+where $\nu$ here is the frequency of the photon in question, and $\nu_{0}$.
+The bound-free cooling rate is then
+
+\begin{equation}
+C_{bf,simple} = ??
+%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
+\end{equation}
+
+\subsection{Ionization and Excitation}
 
 
 % Prior to SDL05, the relative ionization fractions for all atomic
@@ -976,73 +1109,54 @@ checking of, for example, singular rate matrices.
 % estimating excited level populations and simulating line transfer is
 % needed in order to model recombination lines and continua.
 
-\section{Heating And Cooling}
+\section{Heating And Cooling Balance}
+\label{sec:heating_cooling}
+I have already given the estimators used to calculate
+heating and cooling rates in the plasma. These are not only used
+in the creation and elimination of $k$-packets, but also in the heating
+and cooling balance carried out in \py\ to achieve a self-consistent
+temperature structure in the wind. 
 
-\subsection{Heating And Cooling Balance}
-
-\subsection{Heating And Cooling Estimators}
-
-
-Here I've tried to use Lucy's notation for macro-atom estimators. Take a three level system, in
-which $l$ and $u$ represent lower and upper levels, 
-and $\kappa$ represents the continuum level or upper ion.
-q is the `absorption fraction' derived below, and $q_{ul}$ and $q_{lu}$ are the collisional
-rate coefficients.
-
-
-\subsubsection{Simple-atoms}
-\noindent
-In simple-ions it is in some ways a little more complicated. 
-First we define $q$ which will be different for each b-b transition, 
-following Nick's thesis, which is given by 
-(NB: I don't actually know how to derive this)
+At the end of each ionization cycle, the code has stored a new set
+of MC estimators for radiative heating of the plasma. We then
+assume that each cell is in thermal equilibrium then the appropriate
+electron temperature is simply the value of $T_e$ that is a solution
+to the equation
 \begin{equation}
-q = \frac{q_{ul} n_e (1 - e^{-h\nu/kT_e})}{\beta_{ul} A_{ul} + q_{ul} n_e (1 - e^{-h\nu/kT_e})}
-\end{equation}
-where $\beta_{ul}$ is the angle-averaged escape probability. 
-$q$ represents {\em the probability that an excited bound electron
-will collisionally de-excite}.
-Our b-b heating rate is computed during the photon propagation and is a sum
-over photons which come into resonance with each line, given by 
-\begin{equation}
-H_{bb,simple} = \sum_{photons} \sum_{lines} (1 - q) (1 - e^{-\tau_S}) w_{photon}
-\end{equation}
-And our bound bound cooling rate is given by 
-\begin{equation}
-C_{bb,simple} = \sum_{lines} q \left(n_l\frac{g_u}{g_l} - n_u\right) q_{ul} n_e 
-\frac{(1 - e^{-h\nu/kT_e})}{(e^{h\nu/kT_e} - 1)}  h \nu_{ul}
-\end{equation}
-%%note the difference to the macro-atom approach- here this is already 
-\noindent
-The bound-free heating rate is given by
-\begin{equation}
-H_{bf,simple} = \sum_{photons} \sum_{bfjumps} w_{photon} e^{-\tau} \frac{\nu - \nu_{0}}{\nu}
-\end{equation}
-where $\nu$ here is the frequency of the photon in question, and $\nu_{0}$.
-The bound-free cooling rate is then
-
-\begin{equation}
-C_{bf,simple} = ??
+H_{tot} - C_{tot} ( T_e) = 0,
 %%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
+where $H_{tot}$ and $C_{tot}$ are the total heating and cooling rates in 
+the plasma. A number of checks are in place to ensure numerical stability,
+namely a maximum temperature and a maximum change in temperature from cycle
+to cycle. This is especially important in cases where the initial
+guess at wind temperature is far from the true value.
 
+\subsection{Convergence}
 
+\py\ always runs a fixed number of ionization cycles, rather than terminating
+when a convergence criterion is reached. As a result, it is up to the user
+to check that the simulation is converged. An individual cell is considered
+converged when a) the temperature stops changing signicantly, i.e. both
+$T_R$ and $T_e$ satisfy
+\begin{equation}
+\frac{|T_{new} - T_{old}|}{T_{new} + T_{old}} < 0.05,
+%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
+\end{equation}
+and b) the heating and cooling rates are well balanced such that
+\begin{equation}
+\frac{|H_{tot} - C_{tot}|}{H_{tot} + C_{tot}} < 0.05.
+%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
+\end{equation}
+This convergence criterion could doubtless be improved, but is nonetheless
+a good way of ensuring that thermal and radiative equilibrium holds in the 
+plasma.
 
-
-
-
-
-
-
-
-
-
-
-\section{Spectral Synthesis}
-
+\section{Spectral Cycles}
+\label{sec:spectral_cycles}
 The primary output from \py\ is a synthetic spectrum 
-across a range of viewing angles. 
-The code utilises a variance reduction technique in order to minimise the amount of 
+across a range of viewing angles. The code utilises a variance 
+reduction technique in order to minimise the amount of 
 time spent in the portion of the code. This technique is based 
 on a similar method implemented by \citep{woods1991}.
 
