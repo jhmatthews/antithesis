@@ -542,6 +542,12 @@
 {Goodrich} R.~W., {Miller} J.~S., 1995,
   \apjl~  448, L73
 
+\bibitem[\protect\astroncite{Gough}{2009}]{GSL}
+Gough B., 2009,
+\newblock GNU Scientific Library Reference Manual - Third Edition,
+\newblock Network Theory Ltd.,
+  3rd edition
+
 \bibitem[\protect\astroncite{{Green} et~al.}{1993}]{green1993}
 {Green} A.~R., {McHardy} I.~M., {Lehto} H.~J., 1993,
   \mnras~  265, 664
@@ -719,6 +725,10 @@
 {Hubeny} I., {Agol} E., {Blaes} O., {Krolik} J.~H., 2000,
   \apj~  533, 710
 
+\bibitem[\protect\astroncite{{Humphrey} \& {Binette}}{2014}]{humphrey2014}
+{Humphrey} A., {Binette} L., 2014,
+  \mnras~  442, 753
+
 \bibitem[\protect\astroncite{{Idan} et~al.}{2010}]{idanshaviv2010}
 {Idan} I., {Lasota} J.-P., {Hameury} J.-M., {Shaviv} G., 2010,
   \aap~  519, A117
@@ -742,6 +752,10 @@
 \bibitem[\protect\astroncite{{Janiuk} et~al.}{2001}]{januik2001}
 {Janiuk} A., {Czerny} B., {Madejski} G.~M., 2001,
   \apj~  557, 408
+
+\bibitem[\protect\astroncite{{Ju} et~al.}{2016}]{ju2016}
+{Ju} W., {Stone} J.~M., {Zhu} Z., 2016,
+  ArXiv e-prints~
 
 \bibitem[\protect\astroncite{{Kaastra} et~al.}{2014}]{kaastra2014}
 {Kaastra} J.~S., {Kriss} G.~A., {Cappi} M., {Mehdipour} M., {Petrucci} P.-O.,
@@ -1454,6 +1468,10 @@
   {Brinkman} J., {Kleinman} S.~J., {Nitta} A., 2006,
   \apjs~  165, 1
 
+\bibitem[\protect\astroncite{{Turing}}{1948}]{turing}
+{Turing} A.~M., 1948,
+  QJMAM~  1(1), 287
+
 \bibitem[\protect\astroncite{{Urrutia} et~al.}{2009}]{urrutia2009}
 {Urrutia} T., {Becker} R.~H., {White} R.~L., {Glikman} E., {Lacy} M., {Hodge}
   J., {Gregg} M.~D., 2009,
@@ -1478,6 +1496,10 @@
 \bibitem[\protect\astroncite{{Van de Sande} et~al.}{2015}]{vandesande2015}
 {Van de Sande} M., {Scaringi} S., {Knigge} C., 2015,
   \mnras~  448, 2430
+
+\bibitem[\protect\astroncite{{van Regemorter}}{1962}]{vanregemorter}
+{van Regemorter} H., 1962,
+  \apj~  136, 906
 
 \bibitem[\protect\astroncite{{Voit} et~al.}{1993}]{voit1993}
 {Voit} G.~M., {Weymann} R.~J., {Korista} K.~T., 1993,

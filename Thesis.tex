@@ -125,33 +125,56 @@
 
 %% ----------------------------------------------------------------
 % The "Funny Quote Page"
-% \pagestyle{empty}  % No headers or footers for the following pages
+\pagestyle{empty}  % No headers or footers for the following pages
 
-% \null\vfill
-% % Now comes the "Funny Quote", written in italics
-% \textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world.\\\\And it's breathtaking.''}
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world.\\\\And it's breathtaking.''}
 
-% \begin{flushright}
-% Seven Brief Lessons on Physics, Carlo Rovelli
-% \end{flushright}
+\begin{flushright}
+Seven Brief Lessons on Physics, Carlo Rovelli
+\end{flushright}
 
-% \textit{``Good enough for government work.''}
+\textit{``Good enough for government work.''}
 
-% \begin{flushright}
-% Christian Knigge
-% \end{flushright}
+\begin{flushright}
+Christian Knigge
+\end{flushright}
 
-% \vfill\vfill\vfill\vfill\vfill\vfill\null
-% \clearpage  % Funny Quote page ended, start a new page
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Funny Quote page ended, start a new page
 %% ----------------------------------------------------------------
 
 % The Abstract Page
 \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+Outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass. 
+They can take the form of highly collimated radio jets, or less collimated, mass loaded
+winds emanating from the accretion disc. Perhaps the most spectacular evidence
+for accretion disc winds is the blue-shifted, broad absorption lines (BALs) in UV resonance
+lines, seen in cataclysmic variables (CVs) and approximately $20\%$ of quasars. In addition to 
+directly producing absorption in the spectrum, it is possible that accretion disc winds
+may significantly affect the line and continuum {\em emission} from CVs and quasars -- as a result,
+they may even dominate the spectral appearance of such objects. When one considers that
+disc winds are also a possible mechanism for AGN feedback, it becomes clear that understanding
+the physics and true spectral imprint of these winds is of wide-ranging astrophysical significance.
 
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+In this thesis I use the confusingly named Monte Carlo radiative transfer (MCRT) code, \py, 
+to conduct a series of MCRT and photoionization simulations designed to test
+simple biconical disc wind models. I provide a detailed description of
+these methods, focusing particularly on the macro-atom implementation developed by Leon Lucy.
+First, I apply them to the optical spectra of CVs. 
+Second, I conduct tests of quasar unification models. 
+Finally, informed by the previous study, I use Sloan Digital Sky Survey and Hubble Space 
+Telescope data to test the models in an empirical way, by using emission line equivalent widths
+as a probe of unification geometries.
 
+Overall, the work presented here suggests that {\em disc winds matter}. 
+They not only act as a spectral `filter' for the underlying
+accretion continuum, but may actually dominate the emergent spectrum from accreting objects.
+As a result, unveiling their driving mechanisms, mass-loss rates, and ionization structure
+is an important goal for the astronomical community. 
 }
 
 \clearpage  % Abstract ended, start a new page
@@ -168,10 +191,11 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % volumes -- and I greatly enjoyed our conversations about science,
 % Explosions in the Sky and Japanese whisky. Especially when they were in New York.
 % I am also extremely grateful to Knox Long
-% for writing the majority of the code and sharing some of his astronomy knowledge
+% for all his help and advice, writing the majority of the code and sharing some
+% of his astronomy knowledge
 % with me, and Stuart `radiative transfer guru' Sim for being always correct
 % and immensely helpful, especially when it came to understanding macro-atoms.
-% I would also like to thank Nick Higginbottom for hours upon hours of help
+% I would also like to thank Nick Higginbottom for hours upon hours of assistance
 % and friendship. Nick, I think we make a great team, and I am really grateful for
 % all the time you put in teaching me the ropes, 
 % particularly near the start of my PhD.
@@ -180,8 +204,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % code bug with a knowing smile and ironic joke. In some ways, our group
 % is best summed up by the fact that we work on a code called Python!
 
-% % Scientifically speaking, I would also like to thank Daniel Proga, Sebastien Hoenig,
-% % Poshak Gandhi, Francesco Shankar, 
+% % I would also like to thank Daniel Proga, Sebastien Hoenig,
+% % Poshak Gandhi, Francesco Shankar, Diego Altamirano, 
 
 
 % Apart from those who I worked with, I would like to thank 
@@ -189,13 +213,12 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % There are too many to name, but I will indulge a few. To Sam Connolly -- thanks 
 % for being a true friend for what is now a lot of years. You have been an ever-present
 % and someone who I can always rely on for good beer, music and knowing looks.
-% Sadie Jones -- you were there when I need you most for a cwtch, and I really am 
+% Sadie Jones -- you were there when I needed you most for a cwtch, and I really am 
 % incredibly grateful for that. I probably should tell you that more.
 % Rob Firth -- my gym buddy and best punner. Aarran Shaw -- perpetually first
 % and Juan Venancio Hernandez Santisteban -- telepathic football partner
 % and legend of a house and office mate. Thankyou to all of you.
-% In a bid to improve the diversity of my acknowledgements, I would also
-% like to thank Richard Latouche for all the gains and just being a generally
+% I would also like to thank Richard Latouche for all the gains and just being a generally
 % great housemate. 
 
 % There are also many people, outside of Southampton, who I must thank.
@@ -204,8 +227,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % spending e.g. Christmas with muh. Auntie Caz, Sean and Annabel - thanks for letting me stay
 % every time I needed to go to Gatwick, and welcoming me with a beer and a smile.
 % Nick and Jack -- 
-% And how could I forget the beys. Thankyou Josh, James and Alex, and of course the 
-% Goblin King, for allowing me to play music that I love in Waking Aida. 
+% And how could I forget the beys. Thankyou Josh, James and Alex, and our now manager John,
+% for allowing me to play music that I love in Waking Aida. 
 % Eschaton and Full Heal were both released during my PhD, and in many ways 
 % they are each a thesis within themselves. }
 
