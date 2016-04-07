@@ -1,0 +1,212 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex
+%% ---------------------------------------------------------------- 
+\documentclass{uni_sou_jm}      % Use the Thesis Style
+\graphicspath{{figures/}}   % Location of your graphics files
+\usepackage[round]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\bibpunct{(}{)}{;}{a}{}{,}
+\usepackage{hyperref}
+\usepackage{nomencl}
+\usepackage{makeidx}
+\usepackage{tablefootnote}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{nicefrac} % For comparison
+\usepackage{animate}
+\usepackage{ mathrsfs }
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  
+\usepackage{epigraph}
+\usepackage{pdfpages}
+\usepackage{textcmds}
+\usepackage{forloop}
+%\usepackage{doi}
+
+\lstdefinestyle{SQL-Michalstyle}
+{%
+  language   = SQL,
+ % caption    = {SQL query explained},
+  basicstyle = \tiny\ttfamily,
+  columns    = fixed,
+  breakatwhitespace=true,
+  breaklines=true
+}
+\lstset{style=SQL-Michalstyle}
+%\usepackage{memoir}
+
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = red, %Colour for external hyperlinks
+  linkcolor    = red, %Colour of iternal links
+  citecolor   = blue %Colour of citations
+}
+%% ----------------------------------------------------------------
+%% -------- To just highlight the year in references in text ------
+%% ----------------------------------------------------------------
+
+% In preamble:
+\usepackage{etoolbox}
+\makeatletter
+% Patch case where name and year are separated by aysep
+% https://github.com/pkgw/yahapj
+\patchcmd{\NAT@citex}
+  {\@citea\NAT@hyper@{%
+     \NAT@nmfmt{\NAT@nm}%
+     \hyper@natlinkbreak{\NAT@aysep\NAT@spacechar}{\@citeb\@extra@b@citeb}%
+     \NAT@date}}
+  {\@citea\NAT@nmfmt{\NAT@nm}%
+   \NAT@aysep\NAT@spacechar\NAT@hyper@{\NAT@date}}{}{}
+
+% Patch case where name and year are separated by opening bracket
+\patchcmd{\NAT@citex}
+  {\@citea\NAT@hyper@{%
+     \NAT@nmfmt{\NAT@nm}%
+     \hyper@natlinkbreak{\NAT@spacechar\NAT@@open\if*#1*\else#1\NAT@spacechar\fi}%
+       {\@citeb\@extra@b@citeb}%
+     \NAT@date}}
+  {\@citea\NAT@nmfmt{\NAT@nm}%
+   \NAT@spacechar\NAT@@open\if*#1*\else#1\NAT@spacechar\fi\NAT@hyper@{\NAT@date}}
+  {}{}
+
+\makeatother
+%% ----------------------------------------------------------------
+
+\input{Definitions}            % Include your abbreviations
+%% ----------------------------------------------------------------
+\makeindex 
+\usepackage[totoc]{idxlayout}
+
+
+
+
+\begin{document}
+\frontmatter
+
+\title      {Disc Winds Matter: Modelling Accretion and Outflow on All Scales}
+\nomi       {Disc Winds Matter: Modelling Accretion and Outflow on All Scales}
+
+%\nomi2{Accreting Compact Objects:\\a working title}
+%\tool2{The Late Evolution \\of Cataclysmic Variables}
+\authors  {\texorpdfstring
+            {\href{jm8g08@soton.ac.uk}{James Matthews}}
+            {James Matthews}
+            }
+\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+\date       {\today}
+\subject    {}
+\keywords   {}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The Abstract Page
+
+\begin{abstract}
+Outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass. 
+They can take the form of highly collimated radio jets, or less collimated, mass loaded
+winds emanating from the accretion disc. Perhaps the most spectacular evidence
+for accretion disc winds is the blue-shifted, broad absorption lines (BALs) in UV resonance
+lines, seen in cataclysmic variables (CVs) and approximately $20\%$ of quasars. In addition to 
+directly producing absorption in the spectrum, it is possible that accretion disc winds
+may significantly affect the line and continuum {\em emission} from CVs and quasars -- as a result,
+they may even dominate the spectral appearance of such objects. When one considers that
+disc winds are also a possible mechanism for AGN feedback, it becomes clear that understanding
+the physics and true spectral imprint of these winds is of
+wide-ranging astrophysical significance.
+
+In this thesis I use the confusingly named Monte Carlo radiative transfer (MCRT) code, \py, 
+to conduct a series of MCRT and photoionization simulations designed to test
+simple biconical disc wind models. I provide a detailed description of
+these methods, focusing particularly on the macro-atom implementation developed by Leon Lucy.
+First, I apply them to the optical spectra of CVs. 
+Second, I conduct tests of quasar unification models. 
+Finally, informed by the previous study, I use Sloan Digital Sky Survey and Hubble Space 
+Telescope data to test the models in an empirical way, by using emission line equivalent widths
+as a probe of unification geometries.
+
+Overall, the work presented here suggests that {\em disc winds matter}. 
+They not only act as a spectral `filter' for the underlying
+accretion continuum, but may actually dominate the emergent spectrum from accreting objects.
+As a result, unveiling their driving mechanisms, mass-loss rates, and ionization structure
+is an important goal for the astronomical community. 
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\listoffigures
+\listoftables
+%\lstlistoflistings
+\makenomenclature
+
+%\listofsymbols{ll}{$w$ & The weight vector}
+%\include{declaration}
+%\authorshipdeclaration{Hernandez Santisteban et al.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgements
+{
+Some acknowledgements
+}
+%\include{Acknowledgements}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\dedicatory{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world. And it's breathtaking.''}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter   % Begin normal, numeric (1,2,3...) page numbering
+%\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis, as separate files
+% Just uncomment the lines as you write the chapters
+% \newpage
+% \lhead{\emph{1. Introduction}}  % Set the left side page header to "Contents"
+
+\input{Chapters/Chapter1} % Introduction
+
+% %\input{Chapters/accretion} % Background Theory 
+% \newpage
+% \lhead{\emph{2. Accretion Disc Winds}}  % Set the left side page header to "Contents"
+
+\input{Chapters/outflows} % Experimental Setup
+
+% \newpage
+% \lhead{\emph{3. Radiative Transfer and Ionization}}  % Set the left side page header to "Contents"
+\input{Chapters/radtrans} 
+
+% % \clearpage
+% % \input{Chapters/paper_cover} % Experimental Setup
+% \pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+% \input{Chapters/cvpaper} % Experiment 1
+
+% \input{Chapters/agnpaper} % Experiment 2
+
+%\newpage
+%\lhead{\emph{6. Orientation Effects and Equivalent Width Distributions in Quasars}}
+\input{Chapters/ewpaper} % Experiment 2
+
+%\input{Chapters/Chapter7} % Conclusion
+
+
+
+%% ----------------------------------------------------------------
+% Now begin the Appendices, including them as separate files
+% \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+% \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+% % \input{Appendices/AppendixA}  % Appendix Title
+% \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+\backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliographystyle{ecs}
+%\bibliographystyle{apj}
+%\label{Bibliography}
+%\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
+\bibliographystyle{yahapj}
+%\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{bibs/mybib.bib,bibs/stellar.bib,bibs/h14.bib,bibs/h13.bib,bibs/hamann.bib,bibs/krolik.bib,bibs/lk02.bib,bibs/agn.bib,bibs/proga_theory.bib,bibs/cv.bib,bibs/bals.bib}  % The references (bibliography) information are stored in the file named "Bibliography.bib"l
+\printindex
+
+\end{document}
+%% -------------------------------------------------------------

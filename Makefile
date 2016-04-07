@@ -18,6 +18,14 @@ all:
 	${CMD} Thesis
 	${CMD} Thesis
 	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
+
+new:
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
+	${CMD} Thesis_newstyle
+	bibtex Thesis_newstyle
+	${CMD} Thesis_newstyle
+	${CMD} Thesis_newstyle
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1	
 dv:
 	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 	${LCMD} Thesis
