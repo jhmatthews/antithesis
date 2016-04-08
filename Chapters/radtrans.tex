@@ -172,6 +172,7 @@ when high-energy photons create suprathermal electron distributions
 \citep{humphrey2014}. 
 
 \subsubsection{Dilute approximation}
+\label{sec:dilute}
 A first step away from LTE is to introduce the dilute approximation. In this case,
 we relax the assumption that $T_R = T_e$, and assume that the mean intensity is given
 by a dilute blackbody, i.e. 
@@ -180,7 +181,7 @@ J_\nu = W B_\nu (T_R),
 \label{eq:dilute_jnu}
 \end{equation}
 where $W$ is the dilution factor. We can then approximate the ionization state
-with a modified Saha equation \citep{ML93},
+with a modified Saha equation \citep{AL85,ML93},
 \begin{equation}
 \frac{N_{i+1} n_e}{N_i} = W [\xi + W(1-\xi)]
 \left(\frac{T_e}{T_R}\right)^{1/2}
@@ -188,7 +189,7 @@ with a modified Saha equation \citep{ML93},
 \end{equation}
 where $\xi$ is the fraction of recombinations that go directly to
 the ground state.
-The excitation state can be approximated with a dilute Boltzmann equation
+The excitation state can be approximated with a dilute Boltzmann equation \citep{lucy1999sn}
 \begin{equation}
 \frac{n_{ij}}{n_i} = \frac{W g_j}{z_i(T_R)} \exp(-E_j/kT_R), 
 \label{eq:dilute_boltzmann}
@@ -407,7 +408,7 @@ a number of user-specified viewing angles.
 % so that the code is now capable of dealing with arbitrary
 % photo-ionizing SEDs, including non-thermal and multi-component ones. 
 \subsection{Radiation Packets}
-
+\label{sec:packets}
 Every energy packet in the simulation starts out as a radiation packet generated
 from one of $N_S$ photon sources. To ensure that the frequency distribution
 of photons is adequately sampled in important frequency regimes, 
@@ -482,13 +483,74 @@ The process of choosing a scattering location in a cell.
 \label{fig:scatter_ml93}
 \end{figure}
 
+\subsubsection{Continuum opacities}
+
+In order to calculate $\tau^\prime$ in the above approach, we need
+to know the opacities that will contribute to it. An opacity 
+at a given frequency, $\kappa(\nu)$,
+is related to an optical depth, $\tau(\nu)$, by
+\begin{equation}
+\tau(\nu) = \kappa(\nu)~\Delta s,
+\end{equation}
+where $\Delta s$ is the distance moved by the photon. The bound-free
+opacity is calculated from a sum over photoionization cross-section,
+such that
+\begin{equation}
+\kappa_{bf} = .
+\end{equation}
+The free-free emission coefficient for an individual ion $i$ is \citep{gayet1970}
+\begin{equation}
+j_{ff,i} (\nu) = \bar{g}_{ff}\frac{8Z_i^2e^6}{3m_e c^2}
+\frac{2\pi m_e}{3 k T_e}^{1/2}
+N_i n_e \exp(-h\nu/kT_e).
+\label{eq:jff} 
+\end{equation}
+The free-free opacity is then calculated from Kirchhoff's law, 
+\begin{equation}
+\kappa_{ff, i}(\nu) = \frac{B_\nu (T_e)}{j_{ff,i} (\nu)},
+\end{equation}
+which gives
+\begin{equation}
+\kappa_{ff, i}(\nu) = n_e N_i \frac{4}{3} \left(\frac{2\pi}{3}\right)^{1/2} 
+\frac{Z_i^2}{e^6 m_e^2 hc} \left(\frac{m_e}{kT_e}\right)^{1/2} 
+g_{ff} \nu^{-3} [1 - \exp(-h\nu/kT_e)].
+\end{equation}
+The electron scattering opacity is then 
+\begin{equation}
+\kappa_{es} = \sigma_T n_e \Delta s.
+\end{equation}
+These opacities are all used in the heating and cooling estimators 
+introduced in section~\ref{sec:estimators}. In addition the
+Compton opacity is required in order to estimate the Compton heating effect on the plasma.
+The Compton opacity is given by
+\begin{equation}
+\kappa_{C} = ,
+\end{equation}
+where $\sigma_KN (\nu)$ is the cross-section computed 
+from the Klein-Nishina formula \citep{klein-nishina}, and unliked $\sigma_T$
+is frequency dependent. This opacity is not included in the actual radiative transfer 
+in the simulations presented in this Thesis.
+
 \subsubsection{Doppler Shifts}
 
+To calculate the opacities correctly, the frequency must be shifted from
+the co-moving frame of the photon into the co-moving frame of the cell.
+This is done...
 
 
 
-\subsubsection{Choosing Photon Directions}
 
+\subsubsection{Choosing packet directions}
+
+The initial directions from the photon sources are chosen
+depending on an angular emissivity function, $\eta(\theta)$.
+
+
+Whenever a radiation packet undergoes an electron scatter,
+the new direction is simply chosen to be isotropic. However,
+when the photon is a line photon then the new direction is chosen
+according to a line trapping model, which depends on the Sobolev
+optical depths in different directions. 
 
 
 
@@ -536,24 +598,20 @@ Following L02, let us consider an atomic species interacting with a radiation fi
 If the quantity $\epsilon_j$ represents the ionization plus excitation energy of 
 a level i then the rates at which the level $j$ absorbs and emits radiant energy 
 are given by
-
 \begin{equation}
  \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and} \;\;\;
 \;\;  \dot{E}_{i}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
-
 Where I have adopted Lucy's convention in which the subscript 
 $\ellp$ denotes a summation over all lower states ($\ellp<j$), and
 $\up$ will thus denote a summation over all states ($\up>j$).
 Similarly, the rates corresponding to {\em kinetic} (collisional)
 energy transport can then be written as
-
 \begin{equation}
  \dot{A}_{j}^{C} = C_{\ellp j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and}
 \;\;\;
 \;\;  \dot{E}_{j}^{C} = C_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
-
 If we now impose statistical equilibrium
 %
 \begin{equation}
@@ -670,19 +728,19 @@ q_{ul} n_u n_e.
 \end{equation}
 
 The photoionization and collisional ionization rates
-between a lower level, $l$, and the continuum (or, in the case of ions
-with more than one bound electron, the ground state of the upper ion),
+between a lower level, $l$, and the continuum level $\kappa$ 
+(or, in the case of ions with more than one bound electron, 
+the ground state of the upper ion),
 $\kappa$, are
 \begin{equation}
-{\cal R}_{jk \kappa}= n_l \gamma_{l\kappa} + q_{l \kappa} n_l n_e.
+{\cal R}_{jk \kappa}= n_l (\gamma_{l\kappa} - \alpha^{st}_{\kappa l})  + q_{l \kappa} n_l n_e.
 \end{equation}
-Here, $\sigma_{\nu}$ is the photoionization cross section, and $J_{\nu}$
-is the mean intensity. $\gamma_{l\kappa}$, the photoionization rate
-from $l \rightarrow \kappa$, is
-\begin{equation}
-\gamma_{l\kappa} = \int_{\nu_0}^{\infty} \frac{ 4 \pi J_{\nu}
-  \sigma_{\nu}}{h \nu} d\nu. \\
-\end{equation}
+Here, $q_{l \kappa}$ is the collisional ionization rate coefficient, 
+$\gamma_{l\kappa}$ is the photoionization rate
+from $l \rightarrow \kappa$ and $\alpha^{st}_{\kappa l}$ is the stimulated recombination
+coefficient. This is included as a negative photoionization term rather 
+than a positive recombination term as in \cite{lucy2003}, which requires no
+population inversions (see section ??).
 The corresponding recombination rate is given by 
 \begin{equation}
 {\cal R}_{\kappa l} = \alpha_{\kappa l} n_{\kappa} n_e + q_{\kappa l}
@@ -692,7 +750,7 @@ where $\alpha_{\kappa l}$ is the radiative recombination coefficient
 to level $l$, and is given by 
 \begin{equation}
 \alpha_{\kappa l} = 4\pi \Phi^*_{l\kappa} \int^\infty_{\nu_0} 
-\frac{\sigma_\nu}{h \nu} \frac{2 h \nu^3}{c^2} 
+\frac{\sigma_{l\kappa} (\nu)}{h \nu} \frac{2 h \nu^3}{c^2} 
 \exp \left( \frac{- h \nu}{k T_e} \right) d\nu.
 \end{equation}
 This treatment means that radiative and collisional
@@ -729,15 +787,18 @@ is indeed the case in the He~\textsc{i} emission regions in our models.
 The bound-free collision strengths are calculated using equation~(5.79) of
 \cite{mihalas}. The collisional ionization rate is
 \begin{equation}
-q_{l\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{\nu_0}~
+q_{l\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{l\kappa} (\nu_0)~
 \frac{h \nu_0}{k T_e^{3/2}}
 \exp \left( \frac{- h \nu_{ul}}{k T_e} \right),
 \label{eq:vanregemorterw}
 \end{equation}
-where $\sigma_{\nu_0}$ is the photoionization cross-section at the threshold energy.
+where $\sigma_{l\kappa} (\nu_0)$ is the photoionization cross-section 
+at the threshold energy.
 $\bar{g}_{i}$ is an effective gaunt factor for ion $i$ and is approximately
 equal to $0.1,0.2,0.3$ for $Z=1,2$ and $>2$ respectively,
-where $Z$ is the atomic number. 
+where $Z$ is the atomic number. Note that the use of this estimator
+implies a $\nu^{-3}$ shape to the photoionization cross-section,
+which is only strictly true for for hydrogenic ions.
 The collisional (three-body) recombination rate is found using the Saha equation
 and given by
 \begin{equation}
@@ -755,28 +816,35 @@ possible, to avoid multiplying two exponentials together.
 %ESTIMATORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Macro-atom estimators}
-
-% \noindent
-% In the macro-atom approach, we basically treat two communication pathways.
-% bound-free transitions represent a way
-% for radiant energy to communicate with the thermal pool
-% and bound-bound transitions represent a way
-% for excitation energy to communicate with the thermal pool.
-
-The heating and cooling rates for macro-atom bound-bound transitions are the rates of
-collisional excitations and de-excitations
-- i.e. the rate at which thermal energy is converted into
-bound-bound excitation energy and vice versa.
-
+\label{sec:estimators}
+To be able to solve the above rate equations and compute the transition 
+probabilities, it is necessary to construct estimators for the various properties
+of the radiation field that appear in said equations. This is done
+by converting integrals over the radiation field into summations over 
+$r$-packets passing through a cell. This represents the stochastic nature of
+a MC simulation, and is by no means unique to the macro-atom formalism.
+The first step is to apply the energy-density argument of \citep{lucy1999radeq},
+which gives, for a time-independent code
 \begin{equation}
-C_{bb} = \sum_{lines} q_{lu} n_l n_e h \nu_{ul} V
+J_\nu~d\nu = \frac{1}{4\pi}\frac{1}{V} \sum_{d\nu} w_i \Delta s.
 \end{equation}
+where the summations is over all photons between $(\nu, \nu+'d\nu)$. This allows
+us to formulate estimators in a MC sense, rather than in integral form. 
 
+\subsubsection{Bound-free estimators}
+The estimator for the photoionization rate is 
 \begin{equation}
-H_{bb} = \sum_{lines} q_{ul} n_u n_e h \nu_{ul} V
+\gamma_{l\kappa} = \frac{1}{V} \sum_i^{photons} 
+\frac{w_i~\sigma_{l\kappa}({\nu})}{h \nu}~\Delta s
 \end{equation}
-
-\noindent
+and for the stimulated recombination rate is
+\begin{equation}
+\alpha_{l\kappa}^{st} = \Phi^*_{l\kappa}
+\frac{1}{V} \sum_i^{photons} 
+\frac{w_i~\sigma_{l\kappa}({\nu})}{h \nu}
+~\exp(-h\nu/kT_e)~\Delta s,
+\end{equation}
+where $\sigma_{l\kappa} (\nu)$ is the photoionization cross-section for this transition.
 For bound-free transitions, we define the normal photoionization and recombination
 rate coefficients $\gamma$ and $\alpha$, where $\alpha$ includes
 stimulated recombination as we do in the code. Note
@@ -787,7 +855,7 @@ are the rates at which b-f transitions add and remove energy to the radiation fi
 These are denoted $\gamma^E$ and $\alpha^E$, and given by
 
 \begin{equation}
-\gamma^E = \sum_i^{photons} \frac{w_i ds \sigma_{\nu_0}}{h \nu V}
+\gamma^E = \frac{1}{V} \sum_i^{photons} \frac{w_i~\sigma_{\nu_0}}{h \nu}~\Delta s 
 \end{equation}
 
 \begin{equation}
@@ -797,7 +865,10 @@ These are denoted $\gamma^E$ and $\alpha^E$, and given by
 \end{equation}
 
 \begin{equation}
-\alpha^E_{st} = .
+\alpha_{l\kappa}^{st,E} = \Phi^*_{l\kappa}
+\frac{1}{V} \sum_i^{photons} 
+\frac{w_i~\sigma_{l\kappa}({\nu})}{h \nu}
+~\exp(-h\nu/kT_e)~\Delta s
 \end{equation}
 
 The rate at which recombinations convert
@@ -809,7 +880,7 @@ The amount of this energy which is removed from the actual thermal pool
 therefore needs a quantity $\alpha h\nu_{\kappa l} n_\kappa n_e$ subtracted from it,
 giving
 \begin{equation}
-C_{bf} = \sum_{bf jumps} (\alpha^E - \alpha) n_e n_{\kappa}\nu_{\kappa l} V 
+\cc_{bf} = \sum_{bf jumps} (\alpha^E - \alpha) n_e n_{\kappa}\nu_{\kappa l} V 
 \end{equation}
 where here I have also included stimulated recombination as we do in the code. Note
 this differs to the approach in Lucy (2003), where it is instead included as a 
@@ -818,9 +889,63 @@ For photoionizations, we write a similar expression. The rate of at which
 a level $l$ absorbs energy by b-f transitions is given by $\gamma^E h\nu_{\kappa l} n_\kappa n_e$,
 but the amount $\gamma h \nu_{\kappa l} n_l$ goes into ionization energy, giving 
 \begin{equation}
-H_{bf} = \sum_{bf jumps} (\gamma^E - \gamma) n_l h \nu_{\kappa l} V
+\hh_{bf} = \sum_{bf jumps} (\gamma^E - \gamma) n_l h \nu_{\kappa l} V
 \end{equation}
 as the rate at which radiant energy heats the plasma via b-f transitions.
+
+\subsubsection{Bound-bound estimators}
+The heating and cooling rates for macro-atom bound-bound transitions are the rates of
+collisional excitations and de-excitations
+- i.e. the rate at which thermal energy is converted into
+bound-bound excitation energy and vice versa.
+
+\begin{equation}
+\cc_{bb} = \sum_{lines} q_{lu} n_l n_e h \nu_{ul} V
+\end{equation}
+
+\begin{equation}
+\hh_{bb} = \sum_{lines} q_{ul} n_u n_e h \nu_{ul} V
+\end{equation}
+
+
+\subsubsection{Other heating and cooling estimators}
+Although we have now formulated the estimators required to calculate the 
+transition probabilities and level populations, there are still a number of 
+heating and cooling mechanisms that do not involve macro-atoms. 
+
+The free-free cooling estimator is calculated from the emission coefficient
+in equation~\ref{eq:jff} 
+\begin{equation}
+\cc_{ff} = V \sum_i^{ions} \int \frac{j_{ff,i}(\nu)}{4\pi} d\nu,
+\end{equation}
+where the integral is over all frequencies included in the simulation,
+and the sum is also over all ions included in the simulation.
+\begin{equation}
+\hh_{ff} = \sum w_i \kappa_{ff} \Delta s
+\end{equation}
+Compton heating and cooling is included in the thermal balance and as
+$(r\rightarrow k)$ and $(k\rightarrow r)$ transitions.
+\begin{equation}
+\cc_{comp} = 16 \pi \sigma_T V J \frac{k T_e}{m_e c^2},
+\end{equation}
+\begin{equation}
+\hh_{comp} = n_e \sum \frac{h\nu}{m_e c^2} w_i (\kappa_{C} + \kappa_{IC}) \Delta s,
+\end{equation}
+and induced Compton heating is then given by \citep{cloudy2013}
+\begin{equation}
+\hh_{ind comp} = n_e \sum \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
+w_i \kappa_{C} \Delta s,
+\end{equation}
+where the first $J_\nu c^2/h \nu^3$ term represents the `photon occupation number'.
+The adiabatic cooling rate is
+\begin{equation}
+\cc_{a} = k T_e V (\nabla \cdot v) \left(n_e + \sum\limits_{i=1}^{ions} N_i\right),
+\end{equation}
+where $\nabla \cdot v$ is the divergence of the 
+velocity field at the centre of the cell. The sum is over all ions 
+included in the simulation.
+
+\noindent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % K PACKETS
@@ -838,8 +963,11 @@ thermal energy flow in a finite volume element. Hence, when they are produced,
 their destruction path is decided according to the different cooling mechanisms
 in the plasma. A $k$-packet then has a probability of being destroyed by process $i$ of
 \begin{equation}
-p_{i,destruct} = C_i / (C_{bf} + C_{ff} + C_{bb} + C_{comp} + C_a).
+p_{i,destruct} = \cc_i / (\cc_{bf} + \cc_{ff} + \cc_{bb} + \cc_{comp} + \cc_a).
 \end{equation}
+Note that only adiabatic cooling leads to an actual destruction of the energy packet,
+as a departure from radiative equilibrium. All other processes will lead to the 
+creation of an active macro-atom or an $r$-packet.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -865,45 +993,6 @@ represent radiant, kinetic and ionization/excitation energy respectively.
 \end{figure}
 
 %% XXX CHECK THIS.
-
-% \subsection{Superlevels}
-% One undesirable aspect of the macro-atom scheme is that the number of 
-% jumps made inside a macro-atom can become large in certain limits.
-% For example, when the plasma starts to approach LTE conditions
-% the energy packets will spend a huge amount of time
-% jumping between high up levels in a macro-atom. Fortunately, there
-% are a number of fairly elegant solutions here. The first would be simply 
-% to keep track of net rates-- if two large rates go in opposite directions
-% but have a net difference, then all one needs to do is take account of that net
-% difference and set the other rate to zero. This could be implemented in \py\, but
-% is not currently. Instead, we adopt a method I shall refer to using the 
-% term `superlevels'. 
-
-% Once a cycle has been computed, it is possible to calculate departure coefficients, $D_j$
-% for a level $j$, which are defined as
-
-% \begin{equation}
-% D_j = \frac{n_j}{n_j^{*,T_e}},
-% \end{equation}
-
-% which is simply the ratio of a level's population to it's LTE population at the electron temperature.
-% If these coefficients approach unity at all levels above some threshold then these
-% levels are said to be part of a superlevel. Any time we jump to a level $j$ inside a superlevel
-% we instantly select a new level $k$ with a probability
-
-% \begin{equation}
-% P(j,k) = \frac{1}{N} \frac{n_j^{*,T_e}}{g_k} \sum_l P(k,l),
-% \end{equation}
- 
-% where $1/N$ is just a normalisation over the sum of these quantities and $\sum_l P(k,l)$ represents 
-% the sum of jumping probabilities to lower levels below the superlevel threshold.
-% This formula produces the required jumping and deactivation distributions in the limit of LTE
-% without having to actually go through the lengthy process of MC sampling the probability space.
-% The speed-up can be huge in certain limits-- some models can undergo $\sim10^8$ jumps before deactivation,
-% compared to an average of $\sim2$ in Lucy's original simulations.
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1047,7 +1136,7 @@ processes. This is done in proportion with the simple-atom opacities.
 
 This approach does necessitate a few approximations.
 
-\subsection{Estimators}
+\subsection{Heating and Cooling Estimators}
 In simple-ions it is in some ways a little more complicated. 
 First we define $q$ which will be different for each b-b transition, 
 following Nick's thesis, which is given by 
@@ -1076,13 +1165,51 @@ H_{bf,simple} = \sum_{photons} \sum_{bfjumps} w_{photon} e^{-\tau} \frac{\nu - \
 \end{equation}
 where $\nu$ here is the frequency of the photon in question, and $\nu_{0}$.
 The bound-free cooling rate is then
-
 \begin{equation}
 C_{bf,simple} = ??
 %%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 
+\subsubsection{Radiation Field Estimators}
+
+For simple-atoms we do not record radiation field estimators for discrete 
+transitions, as for macro-atoms. Instead, we record estimators to
+give us a model of the radiation field. The estimators needed
+depend on the ionization mode employed (see section~\ref{sec:simple_ionization}).
+The radiation temperature, $T_R$, is estimated by recorded the mean frequency, 
+$\bar{\nu}$, of the photons passing through a cell:
+\begin{equation}
+\bar{\nu} = \frac{\sum_{photons} w_i \nu_i \Delta s}{\sum_{photons} w_i \Delta s}.
+%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
+\end{equation}
+This is then used to calculate the radiation temperature by
+considering the value expected from a blackbody \cite{ML93}, giving 
+\begin{equation}
+T_r = \frac{h\bar{\nu}}{3.832~k}
+\end{equation}
+The dilution factor can be calculated by comparing the estimator for the mean intensity 
+to the Stefan-Boltzmann law:
+\begin{equation}
+W = \frac{\pi J}{\sigma~T_r^4}.
+\end{equation}
+This set of estimators is sufficient to describe the 
+radiation field if one is adopting the dilute approximation (section~\ref{sec:dilute}).
+\cite{higginbottom2013} improved on this by developing a method for
+modelling the SED in the cell using a series of band-limited 
+radiation field estimators. In this scheme, a series of bands is defined
+in which to record these estimators. These bands are different to the bands
+discussed in section~\ref{sec:packets} as those instead govern photon generation.
+In H13, the band limited estimators were used to construct a correction factor
+that could be used in a modified Saha equation 
+(similar in form to equation~\ref{eq:ml93}). However, the code has now been
+improved so that the ion populations are computed by solving the rate equations.
+Thus, we now simply need to calculate photoionization rate estimators for simple 
+ions, which rely on being able to integrate a modelled form of the mean intensity.
+
+
+
 \subsection{Ionization and Excitation}
+\label{sec:simple_ionization}
 
 
 % Prior to SDL05, the relative ionization fractions for all atomic
@@ -1105,21 +1232,13 @@ C_{bf,simple} = ??
 % improved, but more complex treatment of ionization that is appropriate
 % for more complex SEDs is described in H13.) 
 
-% Similarly, the relative excitation fractions within each ionization
-% stage of a given species were estimated via a modified (dilute) Boltzmann
-% equation,
-% \begin{equation}
-% \frac{n_{jk}}{n_j} = \frac{W g_k}{z_j(T_R)} \exp(-E_k/kT_R),
-% \end{equation}
-% where $n_{jk}$ is the population of level $k$ in ionic stage $j$,
-% $E_k$ is the energy difference between level $k$ and the ground state,
-% $g_k$ is the statistical weight of level $k$
-% and $z_j(T_R)$ is the partition function of ionic stage $j$. 
-% This equation is approximate, and in general this approximation 
-% is not good. We therefore endeavour to treat any species in
-% which the excitation state of the ions is thought to be important
-% in determining either the ionizing radiation field, or emergent spectrum,
-% as macro-atoms.
+Regardless of ion mode, the relative excitation fractions of simple-atoms
+within each ionization stage of a given species are estimated via a modified (dilute) Boltzmann
+equation (equation~\ref{eq:dilute_boltzmann}). This equation is approximate, and in 
+general this approximation is not good. We therefore endeavour to treat any species in
+which the excitation state of the ions is thought to be important
+in determining either the ionizing radiation field, or emergent spectrum,
+as macro-atoms.
 
 % Finally, \py\ originally modelled all bound-bound processes as transitions
 % within a simple two-level atom \cite[e.g.][]{mihalas}. 
@@ -1147,10 +1266,10 @@ assume that each cell is in thermal equilibrium then the appropriate
 electron temperature is simply the value of $T_e$ that is a solution
 to the equation
 \begin{equation}
-H_{tot} - C_{tot} ( T_e) = 0,
+\hh_{tot} - \cc_{tot} ( T_e) = 0,
 %%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
-where $H_{tot}$ and $C_{tot}$ are the total heating and cooling rates in 
+where $\hh_{tot}$ and $\cc_{tot}$ are the total heating and cooling rates in 
 the plasma. A number of checks are in place to ensure numerical stability,
 namely a maximum temperature and a maximum change in temperature from cycle
 to cycle. This is especially important in cases where the initial
@@ -1169,7 +1288,7 @@ $T_R$ and $T_e$ satisfy
 \end{equation}
 and b) the heating and cooling rates are well balanced such that
 \begin{equation}
-\frac{|H_{tot} - C_{tot}|}{H_{tot} + C_{tot}} < 0.05.
+\frac{|\hh_{tot} - \cc_{tot}|}{\hh_{tot} + \cc_{tot}} < 0.05.
 %%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 These criteria could doubtless be improved, but they are nonetheless
@@ -1243,71 +1362,91 @@ from a given {\em level}. We neglect photoionizations to excited configurations
 of the upper ion. For simple-atoms they are from the ground state.
 The \top\ cross-sections have two major drawbacks in that 
 
+In order to improve the \top\ cross-sections, I have extrapolated them to larger
+energies. This was done by finding the slope, in log-log space
+of the cross-section at the maximum energy, and extrapolating to $100$~keV.
+In some cases, the slope near the maximum energy was anomalous 
+due to resonances or similar structure in the cross-section, or possibly
+simply due to unknown problems in the \top\ calculations. These
+cases were identified by eye, and instead a $\nu^{-3}$ extrapolation
+was applied. The results of this extrapolation on the H13 model
+are shown in figure~\ref{fig:xs}. Where previously there was a sharp,
+unphysical edge, we know observe the typical recovery to an X-ray 
+power law we expect.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/xs.png}
+\caption{
+A comparison of the soft X-ray regime of the H13 model, with two different
+datasets. standard73 is the dataset with old, unextrapolated cross-sections 
+and standard77 instead includes extrapolated cross-sections as described in
+the text.
+}
+\label{fig:xs}
+\end{figure}
+
+% \section{Clumping}
+
+% \label{sec:microclumping}
+
+% \subsection{Motivation}
+
+% As described in section~??, observational evidence for inhomogeneities in 
+% outflows is widespread. Clumping a plasma can have a significant effect on its
+% ionization, emission and absorption characteristics. Clearly, the interplay between
+% these effects will be somewhat complex 
+
+% A number of different implementations of clumping have been explored in previous studies,
+% mostly in the stellar winds community. Perhaps the simplest method is 
+% when one assumes that the individual clumps are both optically and geometrically thin;
+% this is known as {\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}. 
+% This technique has been particularly successful in reconciling 
+% discrepant mass-loss estimates.
+% It was found that one would obtain different mass-loss rates depending on whether
+% they were calculated from (i) UV resonance scattering of continuum photons 
+% (which scales linearly with density; a `$\rho$-diagnostic') or (ii) recombination 
+% and free-free emission process (which scale with the square of density; 
+% `$\rho^2$-diagnostics'). A clumped outflow would have enhanced densities in 
+% certain regions, and would thus mean that $\rho^2$-diagnostics tend to 
+% overestimate the total mass-loss rates. Microclumping has helped verify this
+% hypothesis with radiative transfer modelling (REFs). These clumpy models also
+% provide better fits to the electron scattering wings of emission lines in stellar
+% winds \citep{hillier1991}.
+
+% The second-generation of stellar wind codes went on step further by addressing the issue
+% of {\em porosity}; that clumps will have a finite size, and thus gaps between the clumps
+% may affect the emergent radiation field. This approach is known as {\em macroclumping}.
+% {\bf Describe macroclumping with references.}
+
+% Implementing a treatment of clumping in accretion disc wind models is challenging, for
+% two main reasons. First, the physical scale lengths and density contrasts 
+% in disc winds are not well-constrained from observations, especially in AGN.  
+% Second, there are significant computational difficulties associated with adequately
+% resolving and realistically modelling a series of small scale, high density
+% regions with a MCRT code. Given the lack of knowledge about the actual 
+% type of clumping, we encorporated the simpler microclumping approach into our code.
+% This is partly because our primary concern was the ionization and 
+% emission characteristics of the flow, and porosity was a secondary concern.
 
 
+% \subsection{Microclumping}
 
+% To take account of clumping in our outflow we adopt a simple parameterization
+% used in stellar wind modelling. The key assumption here is that typical clump sizes
+% are much smaller than the typical photon mean free path, and thus the clumps are 
+% both geometrically and optically thin. This approach is typically 
+% known as microclumping and allows one to introduce a `filling factor', $f$, which is the 
+% fraction of the volume of the plasma filled by clumps. We can then introduce the 
+% `density enhancement', $D$, which is simply 
 
-\section{Clumping}
+% \begin{equation}
+% D = \frac{1}{f}
+% \end{equation}
 
-\label{sec:microclumping}
-
-\subsection{Motivation}
-
-As described in section~??, observational evidence for inhomogeneities in 
-outflows is widespread. Clumping a plasma can have a significant effect on its
-ionization, emission and absorption characteristics. Clearly, the interplay between
-these effects will be somewhat complex 
-
-A number of different implementations of clumping have been explored in previous studies,
-mostly in the stellar winds community. Perhaps the simplest method is 
-when one assumes that the individual clumps are both optically and geometrically thin;
-this is known as {\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}. 
-This technique has been particularly successful in reconciling 
-discrepant mass-loss estimates.
-It was found that one would obtain different mass-loss rates depending on whether
-they were calculated from (i) UV resonance scattering of continuum photons 
-(which scales linearly with density; a `$\rho$-diagnostic') or (ii) recombination 
-and free-free emission process (which scale with the square of density; 
-`$\rho^2$-diagnostics'). A clumped outflow would have enhanced densities in 
-certain regions, and would thus mean that $\rho^2$-diagnostics tend to 
-overestimate the total mass-loss rates. Microclumping has helped verify this
-hypothesis with radiative transfer modelling (REFs). These clumpy models also
-provide better fits to the electron scattering wings of emission lines in stellar
-winds \citep{hillier1991}.
-
-The second-generation of stellar wind codes went on step further by addressing the issue
-of {\em porosity}; that clumps will have a finite size, and thus gaps between the clumps
-may affect the emergent radiation field. This approach is known as {\em macroclumping}.
-{\bf Describe macroclumping with references.}
-
-Implementing a treatment of clumping in accretion disc wind models is challenging, for
-two main reasons. First, the physical scale lengths and density contrasts 
-in disc winds are not well-constrained from observations, especially in AGN.  
-Second, there are significant computational difficulties associated with adequately
-resolving and realistically modelling a series of small scale, high density
-regions with a MCRT code. Given the lack of knowledge about the actual 
-type of clumping, we encorporated the simpler microclumping approach into our code.
-This is partly because our primary concern was the ionization and 
-emission characteristics of the flow, and porosity was a secondary concern.
-
-
-\subsection{Microclumping}
-
-To take account of clumping in our outflow we adopt a simple parameterization
-used in stellar wind modelling. The key assumption here is that typical clump sizes
-are much smaller than the typical photon mean free path, and thus the clumps are 
-both geometrically and optically thin. This approach is typically 
-known as microclumping and allows one to introduce a `filling factor', $f$, which is the 
-fraction of the volume of the plasma filled by clumps. We can then introduce the 
-`density enhancement', $D$, which is simply 
-
-\begin{equation}
-D = \frac{1}{f}
-\end{equation}
-
-The densities in the model are then multiplied by this factor. This has the effect 
-of enhancing `$\rho^2$' processes such as recombination or collisional excitation,
-and 
+% The densities in the model are then multiplied by this factor. This has the effect 
+% of enhancing `$\rho^2$' processes such as recombination or collisional excitation,
+% and 
 
 
 \section{Code Validation}
@@ -1319,12 +1458,90 @@ of complexity'}. I have already delved into some of the complexity in this case,
 so it is important to assess whether the code is also reliable before I present
 results. 
 
-\subsection{Testing against Cloudy}
+\subsection{Testing against \cld}
 
 
 
-\subsection{Testing against Tardis}
+\subsection{Macro-atom testing against \tar and theory}
 
+\tar\ is a 1D photoionization and radiative transfer designed to
+model SNe in a quick and easy python package, and is described in detail by
+\cite{kerzendorfsim}. Although \tar\ is simpler in terms
+of geometry, it has many of the same capabilities of \py\ and 
+thus makes for an excellent comparison. 
+
+Fig.~\ref{fig:caseb_tests} shows the results of two code tests. 
+In the top panel, I show a comparison of the Balmer series 
+emissivities as predicted by \py\ in the l-mixed Case~B limit against the
+analytical calculations by \cite{seaton1959}. 
+Both calculations are calculated at $T_e=10,000$K.
+Case B is an approximation commonly used in nebular astrophysics in which
+one assumes that all transitions are optically thin, except
+for the \la\ transition, which is taken as optically thick.
+Thus, this test comparison is carried out using a thin shell
+of plasma in which the escape probabilities, $\beta_{ul}$ 
+are artificially set to 1 in all transitions except \la, which
+has its $\beta_{ul}$ set to 0.
+
+The bottom panel shows a comparison of He I level populations 
+(the most complex ion currently 
+treated as a macro-atom) between \py\ and \tar models.
+The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
+$T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
+Considering the two codes use different atomic data and 
+\textsc{Tardis,} unlike \textsc{Python,} currently has a 
+complete treatment of collisions between 
+radiatively forbidden transitions, the factor of 
+$<2$ agreement is encouraging. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/05-cvpaper/fig_caseb_tardis.eps}
+\caption{
+{\sl Top Panel:} `Case B' Balmer decrements computed 
+with \textsc{Python} compared to analytic calculations
+by Seaton (1959). Both calculations are calculated at $T_e=10,000$K.
+(see Osterbrock 1989 for a discussion of this commonly used approximation).
+{\sl Bottom Panel:}  a comparison of He I level populations (the most complex ion we currently 
+treat as a macro-atom) between \py\ and \tar models. 
+The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
+$T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
+Considering the two codes use different atomic data and 
+\textsc{Tardis,} unlike \textsc{Python,} currently has a 
+complete treatment of collisions between 
+radiatively forbidden transitions, the factor of 
+$<2$ agreement is encouraging. 
+}
+\label{fig:caseb_tests}
+\end{figure}
+
+Fig.~\ref{fig:tardis_spec} shows a comparison 
+between \tar\ and \py\ synthetic spectra from 
+a simple 1D SN model. The model involves a full 
+computation of the ionization state in the ML93 mode, and, although
+run in 1D, still tests must of the radiative transfer
+machinery of the code. The spectra are in good agreement, considering
+there are differences in their excitation treatments and atomic data.
+This comparison is also particular encouraging when we consider
+that \cite{kerzendorfsim} also show comparisons with other SN codes such
+as \textsc{Artis} \citep{kromersim2009}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/tardis_spec.png}
+\caption{
+{\sl Credit: Kerzendorf \& Sim 2014}.
+Comparison between \tar\ and \py\ synthetic spectra from 
+a simple 1D Supernova model.
+$\delta$ is an additional parameter that can be included in the ML93 equation,
+and thus the appropriate comparison here is with the $\delta=1$ case.
+}
+\label{fig:tardis_spec}
+\end{figure}
+
+\subsection{Testing line transfer modes}
+
+Include a test of simple ion v standard mode...
 
 \section{Code Maintenance and Version Control}
 \label{sec:code_maintenance}
@@ -1355,6 +1572,20 @@ using the Github API and plotting capability.
 
 
 
+
+% \section{My Contribution}
+
+% The code and techniques described represent a large collaborative effort
+% by a number of different people. It is therefore important to clearly
+% identify my specific contribution to the above work.
+
+% \begin{itemize}
+% 	\item Parallelisation of the macro-atom estimators (so they are correctly communicated between threads), and the emissivity calculation described in section~??.
+% 	\item Improvement of photoionization cross-sections as described in section~??.
+% 	\item Incorporation of Helium macro-atom atomic data.
+% 	\item Tabulation of VFKY photoionization cross-sections to avoid on the fly calculations
+% 	from the fitting formulae.  
+% \end{itemize}
 
 
 
