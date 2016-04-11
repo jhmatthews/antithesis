@@ -39,7 +39,7 @@ astrophysical situations; for example, the geometry is rarely spherically
 symmetric, and the line is rarely a pure scattering case. Indeed, the potential 
 for complicated radiative transfer effects and variety in line formation mechanisms
 is one of the reasons why 3D Monte Carlo radiative transfer simulations are necessary
-to effectively model disc winds (see section 3).
+to effectively model disc winds (see chapter 3).
 
 
 
@@ -86,6 +86,20 @@ UV spectrum of Z Cam, compared to a synthetic spectrum from MCRT simulations.
 \label{fig:zcam_lk02}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/02-outflows/mc_line.png}
+\caption
+{
+{\sl Credit: Murray \& Chiang (1997)}. 
+A comparison between a line profile, normalised to have peak intensity of 1,
+produced from a Keplerian disk (solid line) and the same model with an additional
+disc wind (dashed line). The radial velocity component of the disc wind modifies
+the escape probabilities across the disc, causing a single-peaked line to form.
+} 
+\label{fig:mc_line}
+\end{figure}
+
 Much less is known about the effect of these outflows on the optical
 spectra of high-state CVs. Direct evidence of wind-formed lines comes from
 isolated observations of P-Cygni-like line profiles in
@@ -95,17 +109,19 @@ the {\em emission} aspects of the optical spectrum is not well known.
 \cite{MC96, MC97} have shown that the presence of disc winds may
 offer a natural explanation for the single-peaked optical emission lines in
 high-state CVs, since they can strongly affect the radiative transfer
-of line photons (see Fig.~??). Stronger support for a significant wind contribution to the
+of line photons \citep[see also Fig.~\ref{fig:mc_line} and][]{flohic2012}. 
+Stronger support for a significant wind contribution to the
 optical emission lines comes from observations of eclipsing
 systems. There, the single-peaked lines are often only weakly
 eclipsed, and a significant fraction of the line flux remains visible
 even near mid-eclipse \citep[e.g.][]{baptista2000,groot2004}. 
 This points to line formation in a spatially
-extended region, such as a disc wind (see section~\ref{novalikes}).
+extended region, such as a disc wind.
 It is also possible that a wind may affect the continuum emission of CVs,
-as described in section~??. The effect of an accretion disc wind
-on the optical line and continuum emission of CVs is addressed directly,
-via radiative transfer modelling, in chapter 4.
+as described. The effect of an accretion disc wind
+on the optical line and continuum emission of CVs is addressed directly
+in chapter 4.
+
 
 % These spectra are typically characterized
 % by H and He emission lines superposed on a blue continuum. In many
@@ -135,10 +151,10 @@ via radiative transfer modelling, in chapter 4.
 Like CVs, evidence for fast outflows in LMXBs is not constrained to 
 a single waveband. UV absorption in outflows was detected when
 \cite{ioannau2003} observed \civfull\ P-Cygni profiles with blueshifts 
-of $\sim1500$km~s$^{-1}$. Shortly after, a series of papers found 
-highly ionized Fe absorption with similar blueshifts and FWHM of around 
-$1500$km~s$^-1$ (REFs). These absorption features tended to be detected
-in high-inclination, `dipping' LMXBs, and this was confirmed in more sources
+of $\sim1500$km~s$^{-1}$. A series of papers also found 
+X-ray absorption features in similar objects \citep{ueda1998,kotani2000,parmar2002}. 
+These absorption features tended to be detected
+in high-inclination, `dipping' LMXBs. This was confirmed in more sources
 by \cite{ponti2012}, who proposed an equatorial geometry based on this (see 
 Fig.~\ref{fig:ponti_cartoon}). 
 The same study demonstrated (Fig.~\ref{fig:ponti_hid}) that
@@ -191,7 +207,7 @@ Five examples of BAL quasar spectra, from HST and SDSS.
 
 Perhaps the clearest evidence of outflows in AGN is  
 the blueshifted ($\sim 0.1~c$) broad absorption lines (BALs) in the 
-ultraviolet seen in approximately $20-40\%$ of quasars
+ultraviolet seen in approximately $20\%$ of quasars
 \citep{weymann1991, knigge2008, dai2008, allen2011}. Five example
 spectra of BAL quasars from the HST and SDSS archives are shown in 
 Fig.~\ref{fig:bals}. In addition to the most common high-ionization
@@ -224,15 +240,15 @@ One of the main problems with testing these two paradigms is that many of
 the properties of BAL quasars fit naturally into either picture, and so
 disentangling their true nature if challenging. 
 The latter chapters of this thesis attempt to address this issue by testing the 
-geometric unification model, or `Occam's quasar' (see Chapter 1),
-and establishing how close this simple picture can get to explaining 
+geometric unification model
+and seeing how close this simple picture can get to explaining 
 the BAL phenomenon.  
 
 While the BAL fraction, $f_{BAL}$, is a very useful number and must be at least
 related to the covering factor of the outflow, continuum selection
 effects \citep{goodrich1997,krolikvoit1998}, 
 as well as reddening \citep{allen2011}, could significantly
-alter the true value of $f_{BAL}$. The degree of collimation of the BAL wind
+alter its true value. The degree of collimation of the BAL wind
 is also not well known. Polarisation studies suggest that the 
 wind is roughly equatorial \citep{goodrich1995, cohen1995}, 
 as also found from hydrodynamical and radiative transfer simulations 
@@ -358,8 +374,10 @@ Under these assumptions, the mass loss rate can be estimated using
 \dot{M} \sim \Omega N_H m_p v_{out} R_{in}
 \end{equation}
 In reality, the absorber is probably much more complex, and full 
-RT and photoionization simulations are required. In a series of papers, 
-\cite{simlong2008,sim2010,sim2010_hydro} carried out such calculations,
+RT and photoionization simulations are required to accurately model 
+the expected spectrum. 
+In a series of papers, 
+\cite{simlong2008,sim2010_hydro,sim2010_hydro} carried out such calculations,
 and found reasonable verisimilitude with Fe line profiles could be achieved.
 However, as with many models for AGN, a holistic, broad wavelength range
 fit is still required.
@@ -387,9 +405,9 @@ they provide a useful, and better understood, testing ground for much
 of the physics of radiatively-driven outflows. 
 Wolf-Rayet (WR) stars and O-stars possess strong outflows with mass-loss rates
 of up to $10^{-5}~M_\odot~$yr$^{-1}$, throught to be driven by radiation pressure
-mediated by spectral lines (see section~\ref{sec:line_driving}. 
+mediated by spectral lines (see section~\ref{sec:line_driving}). 
 Over the typical lifetime of a massive
-star ($\sim10^6$~yr), this can have a significant impact on the overall mass,
+star ($\sim10^6$~yr), this can have a significant impact on the overall stellar mass,
 causing losses of around $10~M_\odot$ of material. 
 
 As with the systems described previously, the P-Cygni profiles
@@ -417,8 +435,8 @@ marked.
 
 \subsubsection{Clumping in stellar winds}
 
-Evidence for clumping in hot star winds comes from a wide range of sources.
-Perhaps the most conclusive evidence comes from electron scattering wings
+Evidence for clumping in hot star winds comes from a range of sources.
+Perhaps the most conclusive is from electron scattering wings
 in emission lines; homogenous models overestimate the strength of these
 wings, whereas clumpy models produce good agreement with data 
 \citep{hillier1984,hillier1991eswingsmodel,hamann1992wr,hamann1994,schmutz1997}.
@@ -428,7 +446,7 @@ in line-driven winds
 \citep[see section~\ref{sec:line_driving} and the review by][]{owocki2014}, 
 and is directly dealt with in this thesis.
 I describe the treatment of clumping I have implemented in our radiative 
-transfer code in section~\ref{sec:microclumping}, before presenting
+transfer code in chapter 5, before presenting
 results from a clumpy AGN wind model in chapter~5.
 
 \subsection{Outflow Physics}
@@ -440,7 +458,7 @@ lines extending to high blueward velocities -- despite vast differences in mass.
 Furthermore, some of the phenomena observed in e.g. stellar winds may naturally solve some of 
 the unanswered questions in other systems; for example, clumping
 may prevent over-ionization in AGN outflows. It would seem
-that at least some of the physics of outflows, like accretion,
+that at least some of the physics of outflows, like accretion physics,
 is universal, and that lessons learned from smaller scale systems may be
 scaleable to AGN and quasars. To understand if the similarity extends beyond
 a cosmetic one, I will discuss some of the 
@@ -451,26 +469,26 @@ these outflows.
 
 Let us consider a parcel of ideal gas. By imposing nothing more than
 conservation of mass, energy and momentum on that parcel we can write down
-three equations of hydrodynamics
-\footnote{I stress that these equations are not used in hydrodynamic
-simulations in this thesis (see chapter~5, for example); 
-they are discussed here because they provide a natural reference point
-for exploring potential driving mechanisms for winds in accreting systems.
-}
+three equations of hydrodynamics:
+% \footnote{I stress that these equations are not used in hydrodynamic
+% simulations in this thesis (see chapter~5, for example); 
+% they are discussed here because they provide a natural reference point
+% for exploring potential driving mechanisms for winds in accreting systems.
+% }
 
 \begin{equation}
 \label{eq:continuity}
-\frac{D \rho}{Dt} + \rho \nabla \cdot \vec{v} = 0
+\frac{D \rho}{Dt} + \rho \nabla \cdot \vec{v} = 0,
 \end{equation}
 
 \begin{equation}
 \label{eq:motion}
-\rho \frac{Dv}{Dt} = -\nabla P + \frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B} + \rho \vec{F}_{rad} + \rho \vec{g}
+\rho \frac{Dv}{Dt} = -\nabla P + \frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B} + \rho \vec{F}_{rad} + \rho \vec{g},
 \end{equation}
 
 \begin{equation}
 \label{eq:energy}
-\rho \frac{D}{Dt} \left(\frac{e}{\rho}\right) = P \nabla \cdot \vec{v} + \rho \cal{L}
+\rho \frac{D}{Dt} \left(\frac{e}{\rho}\right) = P \nabla \cdot \vec{v} + \rho \cal{L}.
 \end{equation}
 
 Here $D$ denotes a derivative within the comoving frame of the gas parcel, $\vec{v}$ is the velocity,
@@ -486,7 +504,7 @@ dominate over gravity, $\rho \vec{g}$. These terms thus signify three potential
 driving mechanisms.
 
 \begin{itemize}
-	\item Magnetic Forces, $\frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B}$.
+	\item Magnetic / Lorentz Forces, $\frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B}$.
 	\item Radiative Forces, $\rho \vec{F}_{rad}$.
 	\item Thermal Pressure, $-\nabla P$.
 \end{itemize}
@@ -530,8 +548,9 @@ pressure on electrons. There are a number of accreting systems that may drive
 super-Eddington (or close to Eddington) outflows, 
 such as AGN with UFOs \citep[e.g.][]{reeves2002,pounds2016},
 NLSIs \citep{done2015} and ultra-luminous X-ray sources \citep[ULXs;][]{walton2013}.
-However, high-state CVs are certainly significantly below the Eddington limit (REF),
-and at least some BALQSOs have low Eddington fractions \citep{grupenousek2015}
+However, high-state CVs are significantly below the Eddington limit 
+\citep{warnerbook},
+and at least some BALQSOs have low Eddington fractions \citep{grupenousek2015}.
 Despite this, line opacity may mean that radiation is still responsible for the 
 powerful outflows in these systems even at $L / L_{Edd} \sim 10^{-3}$.
 
@@ -544,7 +563,7 @@ can be a significant  acceleration term in
 a partially ionized plasma \citep[][hereafter CAK]{CAK75}. 
 The most common way to parameterise the cumulative
 effect of lines on the radiation force is via the {\em CAK force multiplier}, ${\cal M}(t)$,
-which modifies the equation for the radiation force to give \citep[][CAK, ]{castor1974}
+which modifies the equation for the radiation force to give \citep[][CAK]{castor1974}
 \begin{equation}
 \label{eq:force_multiplier}
 \vec{F}_{rad} = \frac{\sigma_e F}{c} {\cal M}(t),
@@ -570,11 +589,12 @@ can be accelerated when $L_{UV} > L_{Edd} / M_{UV}(t)$, where the UV subscript
 pertains to the UV region of the spectrum and $M_{UV}(t)$ will thus depend on
 the lines in this region and their relative ionization and excitation fractions.
 Line-driven winds are present in O-stars and Wolf-Rayet stars and the theory
-produces good matches with observations (REFs). It is also a strong candidate for driving
-the strong winds seen in high-state CVs when the accretion disc is UV bright 
+produces good matches with observations \citep[e.g.][]{pauldrach1994,hamann2008}. 
+It is also a strong candidate for driving
+the winds seen in high-state CVs when the accretion disc is UV bright 
 \citep[e.g.][see also section~\ref{sec:proga}]{pereyra1997,proga1998,proga2005}.
 
-Line driving is also a promising candidate to explain BAL outflows, as
+Line driving is also a promising mechanism to explain BAL outflows, as
 the strong UV resonance lines seen in absorption in O stars are also 
 present in BALQSOs. The presence of `line-locked' features \citep{bowler2014} 
 and the `ghost of \la' \citep{arav1995, arav1996, north2006}
@@ -603,8 +623,18 @@ accretion disc wind. Historically, the most popular idea has been the `bead on a
 the {\em poloidal} magnetic field is dominant, and the wind is driven by magnetic
 {\em tension}. 
 
-In alternative magnetic models the magnetic pressure ($B/8\pi$ in CGS units)
-is responsible for driving the outflow (REFs and explanation).
+In alternative magnetic models the isotropic
+magnetic pressure ($B/8\pi$ in CGS units)
+is responsible for driving the outflow (REFs).
+In this case the toroidal component 
+is responsible for this pressure and drives an outflow which
+behaves more like a thermally-driven wind 
+(i.e. conserves angular momentum rather than angular velocity)
+There is still great uncertainty over the magnetic fields in accretion discs
+and the physics of these magnetic processes,
+but in many senses they are attractive mechanisms as magnetic processes
+are already expected to be important in accretion disc winds
+due to the MRI.
 
 \section{Accretion Disc Wind Models}
 \label{sec:wind_models}
@@ -631,11 +661,11 @@ Cartoon showing the geometry of the MCGV95 model.
 \label{fig:MCGV95}
 \end{figure}
 
-In the MCGC95 model, a smooth wind rises from an accretion disc with a launch
+MCGV95 proposed a model in which a smooth wind rises from an accretion disc with a launch
 radius of around $10^{16}$~cm. The wind is equatorial, with an opening angle
 of $5^\circ$, and is accelerated by line forces up to a terminal velocity of $0.1c$.
 A diagram of the geometry is shown in Fig.~\ref{fig:MCGV95}.
-One of the key features of the models is the presence of a `shield' of hitchhiking
+One of the key features of the model is the presence of a `shield' of hitchhiking
 gas, which protects the outflow from X-ray over-ionization 
 and allows radiation pressure on UV resonance lines to efficiently 
 accelerate the flow. 
@@ -715,7 +745,7 @@ purely by the viewing angle of the observer.
 
 Around the turn of the century, Daniel Proga and collaborators 
 published a series of important papers in which they conducted 
-hydrodynamic simulations of accretion disc winds in AGN and CVs. 
+hydrodynamic simulations of live-driven disc winds in AGN and CVs. 
 In the first of these, the problem considered was that of disc
 winds in CVs \citep{proga1998}. In their model, the disc was assumed
 to radiate according to the $\alpha$-disc model, and the central WD was also included
@@ -752,20 +782,20 @@ the interaction between the line force and gravity, as both force terms varied
 differently with height. In the AGN case, it was instead due to the critical
 importance of the ionization state on the line force. Parcels of gas could only 
 be accelerated when they were of the right ionization state, and this depended
-critically on their density and the radiation field they see. This caused a complicated
-interaction between the dynamics of the flow and the path of ionizing radiation, 
+critically on their density and the radiation field they see. This causes
+an interplay between the dynamics of the flow and the path of ionizing radiation, 
 which are coupled. The radiation field also helped
 determine the geometry of the outflow, as increasing the strength of the radiation
 interior to the launch radius tends to flatten out the wind and lead to more
 equatorial outflows \citep{proga2005}.
 This is particularly important when considering quasars and unification, as it means
-the viewing angles of BALQSOs can tell us about where the wind is launched.
+the viewing angles of BALQSOs can provide information about where the wind is launched.
 
 It is worth noting that the smaller scale LDI could not be included in this model,
 partly for computational reasons and partly because of the approximations 
-used to treat the radiation field. Indeed, in a subsequent study 
-\citep[][hereafter H14]{H14} showed that treating the radiation transport 
-properly is crucially important, as in this particular geometry 
+used to treat the radiation field. Treating the radiation transport is also
+important for other reasons. In a subsequent study 
+\citep[][hereafter H14]{H14} showed that in this particular geometry 
 multiple scattering means that the shielding region
 is ineffective, and radiation will simply find its way around the failed wind
 to over-ionize the flow beyond.
@@ -778,7 +808,7 @@ can then be treated with full radiative transfer and ionization treatments.
 \section{A Kinematic Prescription}
 \label{sec:sv93_model}
 
-\cite[][hereafter SV93]{SV93} 
+\citet[][hereafter SV93]{SV93} 
 expanded on the work of the stellar wind community \citep[e.g.][]{AL85} 
 in proposing a kinematic prescription for an accretion disc wind. Unlike 
 hydrodynamical models, this model has no real predictive power in terms of velocities
@@ -860,9 +890,9 @@ passes through $(r,z)$. I have now specified the equations that govern the kinem
 and densities in the wind for the SV93 prescription. 
 This prescription is used to describe the outflow in
 the radiative transfer code \py. The radiative transfer procedure and 
-ionization calculation is described in section~\ref{sec:python} 
-The radiation sources must also be described, but this is discussed in 
-chapters 4 and 5 as it is specific to the object being modelled.
+ionization calculation is described in chapter 3, and specific
+applications of this model are described in
+chapters 4 and 5.
 
 
 \begin{figure}
@@ -883,7 +913,7 @@ acceleration exponent, $\alpha$.
 \label{sec:agn_feedback}
 
 The event horizon of a $10^9~M_\odot$ BH is approximately 
-$10^{15}$~cm across, a billionth of the size of a typical galactic bulge. This is 
+$10^{15}$~cm across, a billionth of the radius of a typical galactic bulge. This is 
 roughly the difference in size between a small coin and the 
 Earth. Even the sphere of gravitational influence of the BH is roughly 
 $1000$ times smaller than the size of the galactic bulge.
@@ -952,7 +982,7 @@ The $M_{BH}-M_{bulge}$ correlation.
 \end{figure}
 
 The galaxy luminosity function describes
-the number of galaxies in each bin of luminosity, and is generally modelled
+the number of galaxies as a function of luminosity, and is generally modelled
 with the \cite{schechter1976} function. Theories of 
 galaxy evolution tend to overpredict the number of galaxies at the
 high luminosity end, which can be avoided by invoking quenching
@@ -999,13 +1029,13 @@ b) elliptical galaxy NGC 5813 (Randall et al. 2011).
 \label{fig:xray_bubbles}
 \end{figure}
 
-However, jets are not the most efficient way for AGN to interact with 
+However, jets are not the only way for AGN to interact with 
 their environment. I have already briefly discussed in section~\ref{sec:ufos}
 how fast AGN winds can drive larger-scale molecular outflows.
 This can be seen spectacularly in the FeLoBALQSO Mrk231, 
 where integrated field spectroscopy shows kiloparsec-scale
 neutral gas outflows \citep[see Fig.~\ref{fig:rupke};][]{rupke2011}.
-\cite{king2003} expanded on the ideas of \cite{silkrees1998} and
+Furthermore, \cite{king2003} expanded on the ideas of \cite{silkrees1998} and
 considered a super-Eddington, momentum-driven outflow expanding into the surrounding gas. 
 This model naturally reproduced the observed slope of the $M_{BH}-\sigma_*$
 relation. This line of argument was used to suggest that super-Eddington accretion must be

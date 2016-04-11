@@ -701,10 +701,10 @@ In the framework of the Sobolev escape probability formalism
 (Rybicki \& Hummer 1978; L02; Sim 2004), 
 the bound-bound excitation rate, ${\cal R}_{lu}$, in an ion is given by 
 \begin{equation}
-{\cal R}_{lu} = B_{lu} n_l J_{est} + q_{lu} n_l n_e,
+{\cal R}_{ju} = B_{ju} n_j J_{est} + q_{ju} n_j n_e,
 \label{eq:rad_rate}
 \end{equation}
-where $u$ and $l$ denote the upper and lower levels and $q_{lu}$ is the collisional
+where $u$ is now a specific upper level and $q_{ju}$ is the collisional
 rate coefficient (see section~\ref{sec:coll}).
 $J_{est}$ is the Monte Carlo estimator for the mean intensity 
 impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
@@ -722,8 +722,8 @@ from the $J^b_{ji}$ quantity in equation~(20) of \cite{lucy2002} as
 there is no assumption of homologous flow or symmetric escape probabilities.
 The corresponding de-excitation rate is then 
 \begin{equation}
-{\cal R}_{ul} = \beta_{lu} A_{ul} n_u + B_{ul} n_u J_{est} +
-q_{ul} n_u n_e.
+{\cal R}_{uj} = \beta_{ju} A_{uj} n_u + B_{uj} n_u J_{est} +
+q_{uj} n_u n_e.
 \label{eq:nlte_rul}
 \end{equation}
 
@@ -733,24 +733,24 @@ between a lower level, $l$, and the continuum level $\kappa$
 the ground state of the upper ion),
 $\kappa$, are
 \begin{equation}
-{\cal R}_{jk \kappa}= n_l (\gamma_{l\kappa} - \alpha^{st}_{\kappa l})  + q_{l \kappa} n_l n_e.
+{\cal R}_{j \kappa}= n_j (\gamma_{j\kappa} - \alpha^{st}_{\kappa j})  + q_{j \kappa} n_j n_e.
 \end{equation}
-Here, $q_{l \kappa}$ is the collisional ionization rate coefficient, 
-$\gamma_{l\kappa}$ is the photoionization rate
-from $l \rightarrow \kappa$ and $\alpha^{st}_{\kappa l}$ is the stimulated recombination
+Here, $q_{j \kappa}$ is the collisional ionization rate coefficient, 
+$\gamma_{j \kappa}$ is the photoionization rate
+from $j \rightarrow \kappa$ and $\alpha^{st}_{\kappa j}$ is the stimulated recombination
 coefficient. This is included as a negative photoionization term rather 
 than a positive recombination term as in \cite{lucy2003}, which requires no
-population inversions (see section ??).
+population inversions (see section ??). 
 The corresponding recombination rate is given by 
 \begin{equation}
-{\cal R}_{\kappa l} = \alpha_{\kappa l} n_{\kappa} n_e + q_{\kappa l}
+{\cal R}_{\kappa j} = \alpha_{\kappa j} n_{\kappa} n_e + q_{\kappa j}
 n_\kappa n_e, \\
 \end{equation}
 where $\alpha_{\kappa l}$ is the radiative recombination coefficient
 to level $l$, and is given by 
 \begin{equation}
-\alpha_{\kappa l} = 4\pi \Phi^*_{l\kappa} \int^\infty_{\nu_0} 
-\frac{\sigma_{l\kappa} (\nu)}{h \nu} \frac{2 h \nu^3}{c^2} 
+\alpha_{\kappa j} = 4\pi \Phi^*_{j\kappa} \int^\infty_{\nu_0} 
+\frac{\sigma_{j\kappa} (\nu)}{h \nu} \frac{2 h \nu^3}{c^2} 
 \exp \left( \frac{- h \nu}{k T_e} \right) d\nu.
 \end{equation}
 This treatment means that radiative and collisional
@@ -764,13 +764,13 @@ ionization directly to excited levels of the upper ion.
 The bound-bound collisional rate coefficient $q_{lu}$ is calculated from the
 \cite{vanregemorter} approximation, given by
 \begin{equation}
-q_{lu} = 2.388 \times 10^{-6}~\lambda_{ul}^3~A_{ul}~g_u~\bar{g}
+q_{ju} = 2.388 \times 10^{-6}~\lambda_{uj}^3~A_{uj}~g_u~\bar{g}
 \label{eq:vanregemorter}
 \end{equation}
 and the inverse rate can just be calculated by considering detailed balance, 
 such that
 \begin{equation}
-q_{ul} = q_{lu} \frac{g_u}{g_l} \exp \left( \frac{h \nu_{ul}}{k T_e} \right)
+q_{uj} = q_{ju} \frac{g_u}{g_j} \exp \left( \frac{h \nu_{uj}}{k T_e} \right)
 \label{eq:vanregemorterw}
 \end{equation}
 Using equation~\ref{eq:vanregemorter} means that collisions between radiatively
@@ -787,9 +787,9 @@ is indeed the case in the He~\textsc{i} emission regions in our models.
 The bound-free collision strengths are calculated using equation~(5.79) of
 \cite{mihalas}. The collisional ionization rate is
 \begin{equation}
-q_{l\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{l\kappa} (\nu_0)~
-\frac{h \nu_0}{k T_e^{3/2}}
-\exp \left( \frac{- h \nu_{ul}}{k T_e} \right),
+q_{j\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{j\kappa} (\nu_0)~
+\frac{h \nu_{uj}}{k T_e^{3/2}}
+\exp \left( \frac{- h \nu_{\kappa j}}{k T_e} \right),
 \label{eq:vanregemorterw}
 \end{equation}
 where $\sigma_{l\kappa} (\nu_0)$ is the photoionization cross-section 
@@ -802,7 +802,7 @@ which is only strictly true for for hydrogenic ions.
 The collisional (three-body) recombination rate is found using the Saha equation
 and given by
 \begin{equation}
-q_{\kappa l} = q_{l\kappa} \frac{n_l^*}{n_e^* n_\kappa^*},
+q_{\kappa j} = q_{j\kappa} \frac{n_j^*}{n_e^* n_\kappa^*},
 \label{eq:vanregemorterw}
 \end{equation}
 For numerical reasons, the above two expressions are combined in \py\ where 
@@ -834,14 +834,14 @@ us to formulate estimators in a MC sense, rather than in integral form.
 \subsubsection{Bound-free estimators}
 The estimator for the photoionization rate is 
 \begin{equation}
-\gamma_{l\kappa} = \frac{1}{V} \sum_i^{photons} 
-\frac{w_i~\sigma_{l\kappa}({\nu})}{h \nu}~\Delta s
+\gamma_{j\kappa} = \frac{1}{V} \sum_i^{photons} 
+\frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}~\Delta s
 \end{equation}
 and for the stimulated recombination rate is
 \begin{equation}
-\alpha_{l\kappa}^{st} = \Phi^*_{l\kappa}
+\alpha_{\kappa j}^{st} = \Phi^*_{j\kappa}
 \frac{1}{V} \sum_i^{photons} 
-\frac{w_i~\sigma_{l\kappa}({\nu})}{h \nu}
+\frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}
 ~\exp(-h\nu/kT_e)~\Delta s,
 \end{equation}
 where $\sigma_{l\kappa} (\nu)$ is the photoionization cross-section for this transition.
@@ -855,19 +855,19 @@ are the rates at which b-f transitions add and remove energy to the radiation fi
 These are denoted $\gamma^E$ and $\alpha^E$, and given by
 
 \begin{equation}
-\gamma^E = \frac{1}{V} \sum_i^{photons} \frac{w_i~\sigma_{\nu_0}}{h \nu}~\Delta s 
+\gamma^E_{j\kappa} = \frac{1}{V} \sum_i^{photons} \frac{w_i~\sigma_{\nu_0}}{h \nu}~\Delta s 
 \end{equation}
 
 \begin{equation}
-\alpha^E = 4\pi \Phi^*_{i\kappa} \int^\infty_{\nu_0} 
-\frac{\sigma_\nu}{h \nu_0} \frac{2 h \nu^3}{c^2} 
+\alpha^E_{\kappa j} = 4\pi \Phi^*_{i\kappa} \int^\infty_{\nu_{\kappa j}} 
+\frac{\sigma_{\kappa j}(\nu)}{h \nu_{\kappa j}} \frac{2 h \nu^3}{c^2} 
 \exp \left( \frac{- h \nu}{k T_e} \right) d\nu
 \end{equation}
 
 \begin{equation}
-\alpha_{l\kappa}^{st,E} = \Phi^*_{l\kappa}
+\alpha_{\kappa j}^{st,E} = \Phi^*_{j\kappa}
 \frac{1}{V} \sum_i^{photons} 
-\frac{w_i~\sigma_{l\kappa}({\nu})}{h \nu}
+\frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}
 ~\exp(-h\nu/kT_e)~\Delta s
 \end{equation}
 
@@ -937,7 +937,7 @@ and induced Compton heating is then given by \citep{cloudy2013}
 w_i \kappa_{C} \Delta s,
 \end{equation}
 where the first $J_\nu c^2/h \nu^3$ term represents the `photon occupation number'.
-The adiabatic cooling rate is
+The adiabatic cooling rate is derived from $PdV$ work and is given by
 \begin{equation}
 \cc_{a} = k T_e V (\nabla \cdot v) \left(n_e + \sum\limits_{i=1}^{ions} N_i\right),
 \end{equation}
