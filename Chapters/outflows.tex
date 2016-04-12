@@ -50,7 +50,7 @@ accretion disc are important in shaping the ultraviolet (UV) spectra
 of high-state CVs \citep{heap1978, greensteinoke1982}. 
 The most spectacular evidence for such
 outflows are the P-Cygni-like profiles seen in UV resonance lines such as
-\civfull\ \citep[][see Fig.~\ref{fig:cordova}]{cordova1982}). 
+\civfull\ \citep[][see Fig.~\ref{fig:cordova}]{cordova1982}. 
 Considerable effort has been spent over the
 years on understanding and modelling these UV features 
 \citep[e.g.][]{drewverbunt1985,maucheraymond1987,SV93,KWD95,
@@ -433,7 +433,9 @@ marked.
 \label{fig:hot_star_wind}
 \end{figure}
 
-\subsubsection{Clumping in stellar winds}
+\subsubsection{Clumping in Stellar Winds}
+
+\label{sec:clumpy_stellar}
 
 Evidence for clumping in hot star winds comes from a range of sources.
 Perhaps the most conclusive is from electron scattering wings
@@ -483,7 +485,7 @@ three equations of hydrodynamics:
 
 \begin{equation}
 \label{eq:motion}
-\rho \frac{Dv}{Dt} = -\nabla P + \frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B} + \rho \vec{F}_{rad} + \rho \vec{g},
+\rho \frac{Dv}{Dt} = -\nabla P + \frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B} + \rho \vec{g}_{rad} + \rho \vec{g},
 \end{equation}
 
 \begin{equation}
@@ -505,7 +507,7 @@ driving mechanisms.
 
 \begin{itemize}
 	\item Magnetic / Lorentz Forces, $\frac{1}{4 \pi}(\nabla \times \vec{B}) \times \vec{B}$.
-	\item Radiative Forces, $\rho \vec{F}_{rad}$.
+	\item Radiative Forces, $\rho \vec{g}_{rad}$.
 	\item Thermal Pressure, $-\nabla P$.
 \end{itemize}
 
@@ -517,11 +519,12 @@ In other words: {\em what might drive a wind?}
 
 \subsection{Thermal Winds}
 
-In hydrostatic equilibrium (HSE), thermal pressure balances gravity and no other forces 
-are present, meaning that the equation of motion can be written as 
+In a disc in hydrostatic equilibrium (HSE), 
+thermal pressure balances gravity in the vertical direction. 
+The equation of motion in this $z$ direction can then be written as 
 \begin{equation}
 \label{eq:hse}
-\rho \frac{Dv}{Dt} = -\nabla P +  \rho \vec{g} = 0
+\rho \frac{Dv_z}{Dt} = -\frac{\partial P}{\partial z} +  \rho g_z = 0
 \end{equation}
 Clearly, if the thermal pressure is then significantly 
 increased then this equilibrium condition no longer holds. 
@@ -530,8 +533,10 @@ where other forces are negligible compared to thermal pressure --
 and where the escape velocities are relatively low (i.e. far out in the disc).
 Due to the temperature and gravity scalings, this means
 that XRBs are natural candidates for showing evidence of thermally driven
-winds. The outer disc can be heated to the Compton temperature by the central X-ray source,
-potentially driving relatively high mass-loss rate outflows \citep{begelman1983,woods1996}. 
+winds. The outer disc can be heated to the Compton temperature by 
+the central X-ray source,
+potentially driving relatively high mass-loss rate outflows 
+\citep{begelman1983,woods1996}. 
 This driving mechanism has been proposed as a natural explanation
 for the ever-present equatorial outflows in soft state XRBs \citep{ponti2012}.
 However, they are much less likely candidates in CVs and AGN, because
@@ -562,24 +567,33 @@ Under the right ionization conditions, radiation pressure mediated by spectral l
 can be a significant  acceleration term in 
 a partially ionized plasma \citep[][hereafter CAK]{CAK75}. 
 The most common way to parameterise the cumulative
-effect of lines on the radiation force is via the {\em CAK force multiplier}, ${\cal M}(t)$,
-which modifies the equation for the radiation force to give \citep[][CAK]{castor1974}
+effect of lines on the radiation force is via the 
+{\em CAK force multiplier}, ${\cal M}(t)$,
+which modifies the equation for the acceleration due to radiation
+to give \citep[][CAK]{castor1974}
 \begin{equation}
 \label{eq:force_multiplier}
-\vec{F}_{rad} = \frac{\sigma_e F}{c} {\cal M}(t),
+\vec{g}_{rad} = \frac{\sigma_T F}{\mu c m_p} {\cal M}(t),
 \end{equation}
-where $t = \beta \tau_L$ for a given line and ${\cal M}(t)$ can be approximated by
+where $F$ is the flux and $\mu$ is the mean atomic weight.
+${\cal M}(t)$ can be approximated by
 \begin{equation}
 \label{eq:force_multiplier2}
 %% \cal{M}(t) = \sum_{lines} F_C \Delta \nu_D min (1/t, 1/\beta) 
 {\cal M}(t) = t^{-\alpha} 
-\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta W^{-\delta}.
+\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta W^{-\delta},
+\end{equation}
+amd $t$ is the dimensionless optical depth, given by
+\begin{equation}
+t = \frac{\sigma_T \rho v_{th}}{m_p | d(v_i) / ds |}
 \end{equation}
 % and $\beta$ is the ratio of the mass scattering coefficient of the free
 % electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
 % width. 
 Here $W$ is the dilution factor, and $k$, $\alpha$ and $\delta$ are constants with
 values of 0.28, 0.56 and 0.99 respectively in O-star winds \citep{abbott1982}.
+$v_i$ is the component of the velocity field in the direction
+being considered, normally a line between the source of radiation and the wind.
 It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
 is around $2000-4000$. This is already an interesting result, as it tells us
 that line-driven outflows can be accelerated when accretion rates / luminosities
@@ -589,10 +603,11 @@ can be accelerated when $L_{UV} > L_{Edd} / M_{UV}(t)$, where the UV subscript
 pertains to the UV region of the spectrum and $M_{UV}(t)$ will thus depend on
 the lines in this region and their relative ionization and excitation fractions.
 Line-driven winds are present in O-stars and Wolf-Rayet stars and the theory
-produces good matches with observations \citep[e.g.][]{pauldrach1994,hamann2008}. 
+produces good matches with observations 
+\citep[e.g.][]{friend1986,pauldrach1986,pauldrach1994,hamann2008}. 
 It is also a strong candidate for driving
 the winds seen in high-state CVs when the accretion disc is UV bright 
-\citep[e.g.][see also section~\ref{sec:proga}]{pereyra1997,proga1998,proga2005}.
+\citep[][see also section~\ref{sec:proga}]{pereyra1997,proga1998,proga2005}.
 
 Line driving is also a promising mechanism to explain BAL outflows, as
 the strong UV resonance lines seen in absorption in O stars are also 
@@ -610,31 +625,63 @@ place. Despite these problems, potential solutions exist and hydrodynamic
 simulations have been successful in producing high mass-loss rates 
 (see section~\ref{sec:proga}).
 
+Line-driving is subject to a strong instability known
+as the line deshadowing instability 
+\citep[LDI;][]{lucysolomon1970,macgregor1979,owockirybicki1984,owockirybicki1985}
+The basic idea is that any velocity perturbation in a line-driven flow can cause a 
+`deshadowing' effect, as the fluid element will now
+be in resonance with a region of the spectrum that is less absorbed.
+Thus, an increase in the line force will occur in proportion
+with this velocity perturbation, and the instability can grow. 
+Time-dependent numerical modelling of the LDI has shown that it can
+produce a clumpy flow \citep{owocki1988,feldmeier1995,surlan2012,owocki2014}
+that may explain the observational characteristics of clumping in 
+stellar winds (see section~\ref{sec:clumpy_stellar}). 
+The LDI is also of interest in CV and AGN winds, as it
+may affect the ionization state of the flow and possibly inferred
+mass-loss rates.
+
+
 \subsection{Magnetic Winds}
 \label{sec:mag_winds}
 
-Magnetic fields are one of the main proposed mechanisms for transporting
-angular momentum outwards in the disc via the MRI. This would imply
-that magnetic fields are important in shaping accretion discs and makes
-then attractive as a driving mechanism for disc winds.
-
-There are two main ways in which magnetic forces can drive an 
-accretion disc wind. Historically, the most popular idea has been the `bead on a wire' mechanism proposed by \citep{blandfordpayne}. In this model,
-the {\em poloidal} magnetic field is dominant, and the wind is driven by magnetic
-{\em tension}. 
-
-In alternative magnetic models the isotropic
-magnetic pressure ($B/8\pi$ in CGS units)
-is responsible for driving the outflow (REFs).
-In this case the toroidal component 
-is responsible for this pressure and drives an outflow which
-behaves more like a thermally-driven wind 
-(i.e. conserves angular momentum rather than angular velocity)
 There is still great uncertainty over the magnetic fields in accretion discs
 and the physics of these magnetic processes,
 but in many senses they are attractive mechanisms as magnetic processes
 are already expected to be important in accretion disc winds
 due to the MRI.
+There are two main ways in which magnetic forces can drive an 
+accretion disc wind, which are best explained by writing down an 
+alternative form for the Lorentz force,
+\begin{equation}
+\vec{F_m} = \frac{1}{4\pi} \vec{B} \cdot \nabla \vec{B} - \nabla \frac{B^2}{8\pi}.
+\end{equation}
+The first term can then be thought of as a magnetic {\em tension}
+associated with the field lines and the second as an isotropic magnetic
+{\em pressure}.
+
+Historically, the most popular magnetic wind model has been 
+the `bead on a wire' mechanism proposed by \cite{blandfordpayne} and 
+\cite{pelletier_pudritz}. In these models, 
+the poloidal magnetic field is dominant and is anchored in the 
+accretion disc, and the wind is driven by magnetic tension as the
+first term in the above equation operates on fluid elements (`beads') 
+on the surface of the accretion disc. This can accelerate
+a wind when the poloidal component of the field makes an angle of 
+$>30^\circ$ with the normal to the disc surface. These models
+are known as magnetocentrifugal winds as it is the interaction between
+a centrifugal force and a strong, large-scale, ordered magnetic field 
+threading the disc that drives the wind. 
+Magnetocentrifugal winds have been proposed in both
+AGN and YSOs \citep{pelletier_pudritz,konigl1994,kudoh1997}
+and numerical simulations have demonstrated that this mechanism can produce
+jets and outflows \citep{romanova1997,ouyed1997,ustygova1999}.
+
+In an alternative magnetohydrodynamic (MHD) model the isotropic magnetic pressure 
+is responsible for driving the outflow \citep{proga2003a}.
+In this case the toroidal component dominates over the poloidal component
+and drives a slow, dense outflow which behaves more like a thermally-driven wind 
+(i.e. conserves angular momentum rather than angular velocity). 
 
 \section{Accretion Disc Wind Models}
 \label{sec:wind_models}
@@ -805,16 +852,17 @@ on this problem (see H14 for the first step); however, much
 can also be learned from simpler, kinematic prescriptions for outflows, which
 can then be treated with full radiative transfer and ionization treatments.  
 
-\section{A Kinematic Prescription}
+\section{A Kinematic Prescription for a Biconical Wind}
 \label{sec:sv93_model}
 
 \citet[][hereafter SV93]{SV93} 
 expanded on the work of the stellar wind community \citep[e.g.][]{AL85} 
-in proposing a kinematic prescription for an accretion disc wind. Unlike 
+in proposing a kinematic model for an accretion disc wind. Unlike 
 hydrodynamical models, this model has no real predictive power in terms of velocities
 and mass-loss rates. Instead, one sets these quantities in advance and examines the 
 resultant properties of the flow and emergent spectra. The SV93 prescription
-is the most common wind model used in the radiative transfer code \py\ (see chapter 3),
+is the most common way of describing the outflow in the 
+radiative transfer code \py\ (see chapter 3),
 and has been used to simulate spectra for CVs \citep[][chapter 4]{LK02, M15}, 
 AM CVn systems \citep{kusterer2014} and AGN/quasars 
 \citep[][chapter 5]{higginbottom2013, M16, yong2016}. 
