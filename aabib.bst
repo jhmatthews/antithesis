@@ -240,7 +240,20 @@ FUNCTION {format.names}
 %%    { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=   % last name first
     { s nameptr "{vv~}{ll}{, jj}{ f.}" format.name$ 't :=  %AA , away after name
       nameptr #1 >
-        { namesleft #1 >
+%%        { namesleft #1 >
+%% JM These next lines are a hack to prevent long author lists %%
+%% JM ----------
+          {
+          nameptr #4      %% number of authors to print if truncating
+          #1 + =
+          numnames #5     %% if gtr than this then truncate. should be +1 above
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+%% JM ----------
             { ", " * t * }              %AA , behind > 3 names
             { numnames #2 >
                 { "" * }                %AA , away, before last pair names

@@ -36,6 +36,7 @@ dv:
 	ps2pdf Thesis.ps
 	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 
+
 wc:
 	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
 	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex Chapters/agnpaper.tex Chapters/cvpaper.tex Chapters/ewpaper.tex | tail -1

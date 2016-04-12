@@ -1,4 +1,4 @@
-\chapter{Radiative Transfer and Ionization}
+\chapter{Monte Carlo Radiative Transfer and Ionization}
 
 \epigraph{``I'm splashing greys where once was glowing white''}{{\sl Mike Vennart, Silent/Transparent}}
 
@@ -199,9 +199,7 @@ $E_j$ is the energy difference between level $j$ and the ground state,
 $g_j$ is the statistical weight of level $j$
 and $z_i(T_R)$ is the partition function of ionic stage $i$. 
 
-
-
-\subsection{The Two Level Atom}
+\subsection{The Two Level Atom and Escape Probabilities}
 
 The two level atom formalism is well described by \cite{mihalas}.
 Let us consider an atomic model consisting of two levels that are linked 
@@ -219,55 +217,54 @@ the ambient conditions change. The second is the assumption of
 {\em complete redistribution (CRD)}, which states that the emission
 and absorption line profiles are identical for a given transition. This 
 assumption is somewhat analogous to the Sobolev approximation 
-(see section~\ref{sec:sobolev}).
+(see section~\ref{sec:sobolev}). 
 These assumptions allow us to formulate rate equations and derive the 
 Einstein relations.
 
-\subsubsection{Einstein coefficients and the two-level atom}
+\subsubsection{Einstein coefficients}
 
-Within the two level atom, the rate equation between the two levels in LTE can
+Within a two level atom, the rate equation between the two levels in LTE can
 can be written by invoking detailed balance, such that 
 \begin{equation}
 B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
 \label{eq:rate_einstein}
 \end{equation}
-where $B_{ul}$, $B_{2ul}$ and $A_{ul}$ are the {\em Einstein coefficients}
+where $B_{ul}$, $B_{ul}$ and $A_{ul}$ are the {\em Einstein coefficients}
 for absorption, stimulated emission and spontaneous emission respectively.
 The `mean intensity in the line', $\bar{J}_{ul}$, is given by
 \begin{equation}
 \bar{J}_{ul} = \int \phi(\nu) J_\nu d\nu.
 \label{eq:jbar}
 \end{equation}
-In LTE, the level populations obey Boltzmann statistics, and thus we can also
-write
+We can then rearrange equation~\ref{eq:rate_einstein} in terms of 
+the mean intensity, giving
 \begin{equation}
-\frac{n_l}{n_u} = \frac{g_l}{g_u} \exp (h \nu_{ul} / k_B T)
+\bar{J}_{ul} = \frac{A_{ul} / B_{ul}}{(n_l/n_u)(B_{ul}/B_{lu}) - 1}.
+\label{eq:jbar2}
 \end{equation}
-We can then rearrange equation~\ref{eq:rate_einstein} in terms of the mean intensity,
-and use the fact that, in LTE, $\bar{J}_{ul} = B_\nu (T)$ to write
+In LTE, $\bar{J}_{ul} = B_\nu (T)$ and the level populations obey Boltzmann statistics, so we can combine equations~\ref{eq:planck}, \ref{eq:boltzmann}
+and \ref{eq:jbar2} to write
 \begin{equation}
-\bar{J}_{ul} = (2 h \nu_{ul}^3) / c^2.
+\frac{2 h \nu^3}{c^2} \frac{1}{\exp(h\nu / kT) - 1} =
+\frac{A_{ul}}{B_{ul}} \frac{1}{(g_l/g_u)(B_{ul}/B_{lu}) \exp(h\nu / kT) - 1}.
 \end{equation}
-Since this must be true at all values of $T$ we can also show that 
-\begin{equation}
-A_{ul} / B_{ul} = (2 h \nu_{ul}^3)~B_{lu} / B_{ul} = g_u / g_l
-\end{equation}
-
-
-
-% \subsubsection{Collision Strengths}
-
-% As well as radiative excitation and de-excitation, bound electrons 
-% can also interact with the thermal pool of free electrons, meaning that
-% collisional rates also affect 
+This must be true at all values of $T$, so we can simply equate coefficients
+to show that
+\begin{eqnarray}
+\frac{A_{ul}}{B_{ul}} &=& 2 h \nu_{ul}^3/c^2, \\  
+\frac{B_{lu}}{B_{ul}} &=& g_u/g_l.  
+ \label{eq:einstein_relations}     
+\end{eqnarray}
+These two equations are known as the {\em Einstein relations}, and have 
+no dependence on temperature. They are therefore purely atomic properties.
 
 \subsection{The Sobolev Approximation}
 \label{sec:sobolev}
-The Sobolev approximation (SA) is a useful limit originally developed.
-It is used to treat line transfer in fast-moving flows. Originally 
-the theory was mostly applied to Stellar winds, although since then
+The Sobolev approximation (SA) is a useful limit 
+used to treat line transfer in fast-moving flows. Originally 
+the theory was mostly applied to stellar winds, although since then
 a wide variety of astrophysical objects have been modelled using Sobolev treatments,
-such as accreting systems (this work) and Supernovae.
+such as accreting systems (this work) and supernovae.
 
 The Sobolev limit is when the local bulk velocity gradients in a flow 
 dominate other any thermal broadening. In the presence of these steep
@@ -295,9 +292,24 @@ We can see that the physical quantities determining line opacity are therefore
 the level populations in the plasma, the velocity gradient and the atomic physics
 associated with the bound-bound transition.
 
-\subsubsection{Escape Probabilities}
+\subsubsection{Two-level Atom with Escape Probabilities}
 
-
+Let us now write down the rate equation linking our two-level atom,
+\begin{equation}
+B_{lu} \bar{J}_{ul} n_l + C_lu n_l = 
+B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u + C_{ul} n_u,
+\label{eq:rate_2level}
+\end{equation}
+where we have now introduced collisional rates $C_{ul}$ and $C_{lu}$.
+We now seek to find a relation between the source function
+and the intensity that will simplify the coupled problem of radiative transfer
+and statistical equilibrium. When we consider a two-level atom
+plus continuum this can be written  as \citep{mihalas}
+\begin{equation}
+S = (1 - q) \bar{J}_{ul} + q B(\nu_{ul}),
+\label{eq:rate_2level}
+\end{equation}
+where $B(\nu_{ul})$ is the Planck function at line centre.
 
 
 
@@ -332,7 +344,7 @@ The general philosophy of the code is to be able to produce synthetic spectra
 for astrophysical objects with outflows in 2.5D, using a self-consistent ionization 
 treatment. The code is written in C, and has been in development since the mid-1990s.
 Throughout this time it has been used with application to CVs \citep{LK02, M15},
-YSOs \citep{simmacro2005}, Supernovae \citep{kerzendorfsim} and AGN/quasars 
+YSOs \citep{simmacro2005}, supernovae \citep{kerzendorfsim} and AGN/quasars 
 \citep{higginbottom2013,H14,M16}. It is also capable of producing spectra 
 for stellar winds and conducting simple photoionization balance calculations for
 comparison with codes such as \textsc{cloudy}. Some more detail on code testing and 
@@ -929,11 +941,11 @@ $(r\rightarrow k)$ and $(k\rightarrow r)$ transitions.
 \cc_{comp} = 16 \pi \sigma_T V J \frac{k T_e}{m_e c^2},
 \end{equation}
 \begin{equation}
-\hh_{comp} = n_e \sum \frac{h\nu}{m_e c^2} w_i (\kappa_{C} + \kappa_{IC}) \Delta s,
+\hh_{comp} = n_e \sum \frac{h\nu}{m_e c^2} w_i \kappa_{C}\Delta s,
 \end{equation}
 and induced Compton heating is then given by \citep{cloudy2013}
 \begin{equation}
-\hh_{ind comp} = n_e \sum \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
+\hh_{ind~comp} = n_e \sum \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
 w_i \kappa_{C} \Delta s,
 \end{equation}
 where the first $J_\nu c^2/h \nu^3$ term represents the `photon occupation number'.
@@ -1126,8 +1138,9 @@ This hybrid approach allows us to preserve the fast treatment
 of, for example, UV resonance lines, while accurately 
 modelling the recombination cascades that populate the levels 
 responsible for H and He line emission. As a result of this hybrid
-scheme, a separate set of estimators must be recorded, and the ionization
-and excitation of the plasma is calculated in a different manner.
+scheme, a separate set of estimators must be recorded for simple-atoms, 
+and the ionization and excitation of these elements is calculated 
+with a different, approximate approach.
 
 In order to include simple-atoms, we must add in a few extra pathways
 to Fig.~\ref{fig:flow_matom}, so that energy packets can also
@@ -1532,7 +1545,7 @@ as \textsc{Artis} \citep{kromersim2009}.
 \caption{
 {\sl Credit: Kerzendorf \& Sim 2014}.
 Comparison between \tar\ and \py\ synthetic spectra from 
-a simple 1D Supernova model.
+a simple 1D supernova model.
 $\delta$ is an additional parameter that can be included in the ML93 equation,
 and thus the appropriate comparison here is with the $\delta=1$ case.
 }
@@ -1570,6 +1583,29 @@ using the Github API and plotting capability.
 
 \subsection{Parallelisation} 
 
+Including macro-atoms in a simulation can have a significant impact 
+on runtime, especially when simulating dense regions of plasma. 
+By way of example, the CV model presented by LK02 takes approximately
+??s to produce a converged model and output spectrum. The model
+presented in chapter 4 takes ??s for the same number of cycles and 
+photon numbers. 
+
+Fortunately, MCRT codes are intuitively parallelisable, as is the macro-atom
+emissivity calculation described above. \py\ is parallelised using an open 
+source Message Passing Interface (MPI) implementation known as 
+Open MPI \citep{openmpi}. This library provides the core functions needed
+in order to distribute computing tasks among a series of parallel processors
+with distributed memory. The parallelised elements of \py\ include
+the photon propagation, updating of wind ionization and temperature structure
+and calculation of macro-atom emissivities. As a result, this involves
+a reasonable amount of book-keeping in that the radiation field estimators 
+must be communicated between threads so as to correctly account for all
+the photons that have interacted with a given cell.
+
+Fig.~?? shows the effect of parallelising a run. Due to the nature of MCRT,
+it is possible to achieve a roughly linear decrease in computing time
+for the photon propagation, which is the dominant factor in overall 
+runtime.
 
 
 
