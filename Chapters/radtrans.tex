@@ -554,6 +554,12 @@ This is done...
 
 \subsubsection{Choosing packet directions}
 
+In the case of isotropic emission the direction of a photon packet
+is chosen so that the probability of emission in each bin of solid
+angle is the same. It follows that 
+% \being{equation}
+% P(\Omega)d\Omega
+
 The initial directions from the photon sources are chosen
 depending on an angular emissivity function, $\eta(\theta)$.
 
@@ -835,7 +841,7 @@ of the radiation field that appear in said equations. This is done
 by converting integrals over the radiation field into summations over 
 $r$-packets passing through a cell. This represents the stochastic nature of
 a MC simulation, and is by no means unique to the macro-atom formalism.
-The first step is to apply the energy-density argument of \citep{lucy1999radeq},
+The first step is to apply the energy-density argument of \cite{lucy1999radeq},
 which gives, for a time-independent code
 \begin{equation}
 J_\nu~d\nu = \frac{1}{4\pi}\frac{1}{V} \sum_{d\nu} w_i \Delta s.
@@ -988,9 +994,15 @@ creation of an active macro-atom or an $r$-packet.
 
 \subsection{Putting it all together}
 
+I have now defined all quantities needed to write down the transition 
+probabilities in a macro-atom simulation. Fig.~\ref{fig:flow_matom}
+shows the decision tree traversed by an energy packet in the simulation,
+showing the complicated set of interactions it can undergo each time it 
+scatters.
+
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth, clip=true, trim=0 2.6in 0in 0in ]{figures/03-radtrans/flow_colour.pdf}
+\includegraphics[width=1.0\textwidth, clip=true, trim=0 2.6in 0in 0in ]{figures/03-radtrans/matom_flow_ca.pdf}
 \caption
 {
 The decision tree traversed by an energy packet 
@@ -1000,6 +1012,9 @@ and ionization/excitation energy (macro-atoms).
 The probabilities at each decision point are 
 marked, and are defined in the text. The red, blue and green coloured arrows
 represent radiant, kinetic and ionization/excitation energy respectively.
+The symbols are defined in the text, except ${\cal C}_{cont}$ and 
+${\cal C}_{ex}$ which refer to cooling contributions to radiative and excitation 
+energy respectively.
 } 
 \label{fig:flow_matom}
 \end{figure}
@@ -1473,6 +1488,28 @@ results.
 
 \subsection{Testing against \cld}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/h_comp.png}
+\caption
+{
+Relative ion fractions as a function of ionization parameter from the
+hybrid macro-atom scheme, with H treated as a full macro-atom, compared
+to \cld\ and \py\ in standard weight reduction mode. 
+}
+\label{fig:h_cloudy}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/he_comp.png}
+\caption{
+Relative ion fractions as a function of ionization parameter from the
+hybrid macro-atom scheme, with He treated as a full macro-atom, compared
+to \cld\ and \py\ in standard weight reduction mode. 
+}
+\label{fig:he_cloudy}
+\end{figure}
 
 
 \subsection{Macro-atom testing against \tar and theory}
@@ -1541,13 +1578,15 @@ as \textsc{Artis} \citep{kromersim2009}.
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/03-radtrans/tardis_spec.png}
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/tardispython_thesis.png}
 \caption{
-{\sl Credit: Kerzendorf \& Sim 2014}.
+% {\sl Credit: Kerzendorf \& Sim 2014}.
 Comparison between \tar\ and \py\ synthetic spectra from 
-a simple 1D supernova model.
-$\delta$ is an additional parameter that can be included in the ML93 equation,
-and thus the appropriate comparison here is with the $\delta=1$ case.
+a simple 1D supernova model. A bug in Doppler shifting of
+photons was discovered in \py\ 77, meaning that the code now gives
+even better agreement than presented in Kerzendorf \& Sim 2014.
+% $\delta$ is an additional parameter that can be included in the ML93 equation,
+% and thus the appropriate comparison here is with the $\delta=1$ case.
 }
 \label{fig:tardis_spec}
 \end{figure}
