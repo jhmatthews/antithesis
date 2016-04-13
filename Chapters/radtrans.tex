@@ -1801,12 +1801,25 @@ the photons that have interacted with a given cell. I have been responsible
 for all of the parallelisation implemented that is
 specific to the macro-atom routines.
 
-Fig.~?? shows the effect of parallelising a run. Due to the nature of MCRT,
+Fig.~\ref{fig:para_times} shows the effect of parallelising a run. Due to the nature of MCRT,
 it is possible to achieve a roughly linear decrease in computing time
 for the photon propagation, which is the dominant factor in overall 
 runtime. This improvement was crucial in order to be able to run the simulation
 grids used for chapters 4 and 5.
 
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/para_times.png}
+\caption
+[Total runtime per cycle for an AGN run as a 
+function of the number of processors.]
+{
+Total runtime per cycle for an AGN run as a 
+function of the number of processors.
+} 
+\label{fig:para_times}
+\end{figure}
 
 
 % \section{My Contribution}
