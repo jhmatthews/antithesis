@@ -630,10 +630,12 @@ energy transport can then be written as
 \;\;\;
 \;\;  \dot{E}_{j}^{C} = C_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
+Let us define ${\cal R}$ as a total rate, such that
+${\cal R}_{\ellp j}  = R_{\ellp j} + C_{\ellp j}$.
 If we now impose statistical equilibrium
 %
 \begin{equation}
- ({\cal R}_{\ellp j}-{\cal R}_{j \ell})+({\cal R}_{uj}-{\cal R}_{ju})=0 \;\;\;.
+ ({\cal R}_{\ellp j}-{\cal R}_{j \ellp})+({\cal R}_{\up j}-{\cal R}_{j\up})=0 \;\;\;.
 \end{equation}
 we can then obtain 
 \begin{eqnarray}
@@ -735,8 +737,8 @@ is the line frequency, $dv/ds$ is the velocity gradient and
 $\tau_s$ is the Sobolev optical depth.
 The sum is over all photons that come into resonance with the line,
 and thus represents an integral over solid angle.
-This is essentially the MC estimator form of $\bar{J}_{ul}$, and differs
-from the $J^b_{ji}$ quantity in equation~(20) of \cite{lucy2002} as 
+This is essentially the MC estimator form of $\beta_{uj}\bar{J}_{uj}$, and differs
+from the estimator in equation~(20) of \cite{lucy2002} as 
 there is no assumption of homologous flow or symmetric escape probabilities.
 The corresponding de-excitation rate is then 
 \begin{equation}
@@ -757,8 +759,8 @@ Here, $q_{j \kappa}$ is the collisional ionization rate coefficient,
 $\gamma_{j \kappa}$ is the photoionization rate
 from $j \rightarrow \kappa$ and $\alpha^{st}_{\kappa j}$ is the stimulated recombination
 coefficient. This is included as a negative photoionization term rather 
-than a positive recombination term as in \cite{lucy2003}, which requires no
-population inversions (see section ??). 
+than a positive recombination term as in \cite{lucy2003}, which requires that there are
+no population inversions (see section~\ref{sec:numerical_matom}). 
 The corresponding recombination rate is given by 
 \begin{equation}
 {\cal R}_{\kappa j} = \alpha_{\kappa j} n_{\kappa} n_e + q_{\kappa j}
@@ -1028,7 +1030,7 @@ energy respectively.
 
 
 \subsection{Ionization Fractions and Level Populations}
-
+\label{sec:matom_pops}
 In section~\ref{sec:lte} I described how it is possible to calculate the
 ionization and excitation of a plasma under LTE or dilute approximations.
 Macro-atoms are not approximated -- their level and ion populations are 
@@ -1113,7 +1115,8 @@ LU decomposition \citep{turing}. This is a fast and reliable way of
 inverting large matrices that includes error handling and enables
 checking of, for example, singular rate matrices.
 
-
+\subsection{Numerical Issues and Population Inversions}
+\label{sec:numerical_matom}
 
 
 
@@ -1349,11 +1352,6 @@ reduction technique in order to minimise the amount of
 time spent in the portion of the code. This technique is based 
 on a similar method implemented by \citep{woods1991}.
 
-
-
-
-
-
 A comparison between the two methods is shown in figure~\ref{fig:extract_demo}.
 
 \begin{figure}
@@ -1370,8 +1368,36 @@ be clearly seen, and we can see that the spectral shape is unaltered.
 \label{fig:extract_demo}
 \end{figure}
 
+\subsection{Macro-atom Emissivity Calculation}
 
+In order to preserve the philosophy that a detailed 
+spectrum is calculated in a limited wavelength regime, \py\ carries
+out a macro-atom emissivity calculation before the spectral cycles.
+This procedure is shown in Fig.??
+This can be very computationally intensive, especially if the wavelength regime
+being simulated has very little emission from bound-free and line processes
+in the wind, but the overall broadband emissivity is high.
 
+During the ionization cycles, the energy absorbed into $k$-packets and 
+every macro-atom level is recorded using the following estimators. Once 
+the ionization cycles are finished and the model has converged, these absorption
+energies are split into a certain number of packets and tracked through
+the macro-atom machinery until a deactivation occurs. When this happens,
+the emissivity of the level the macro-atom de-activated from is incremented
+if the packet lies in the requested wavelength range. If it does not, then 
+the packet is thrown away. It is easy to see how what is essentially a MC rejection
+method can be an inefficient way of sampling this parameter space. Fortunately,
+this problem is parallelisable (see section~\ref{sec:parallel}).
+
+Once the emissivites have been calculated then the spectral synthesis can proceed.
+This is done in a different way to the ionization cycles. Photons 
+are generated from the specified photon sources over the required wavelength range,
+but are now also generated according to the calculated macro-atom and 
+$k$-packer emissivities in each cell. To now ensure that radiative equilibrium 
+holds, any photon that interacts with a macro-atom or $k$-packet is immediately 
+destroyed. The photons are tracked and extracted as normal until they escape the 
+simulation, and resonant scatters are dealt with by a combination of
+macro-atom photon production and destruction.
 
 \section{Atomic Data}
 
@@ -1487,6 +1513,26 @@ so it is important to assess whether the code is also reliable before I present
 results. 
 
 \subsection{Testing against \cld}
+
+\cld\ is a spectral synthesis and photoionization code used to simulate
+the emergent spectrum and ionization conditions in nebulae and other plasma
+environments. As a result, it uses many of the same techniques as \py\
+in order to compute ionization states, level populations and heating and cooling
+rates, and represents an excellent comparison tool. \py\ has been tested extensively
+against \cld\ in the past; some of these tests can be found in H13 and LK02,
+and generally show excellent agreement, especially in lower $Z$ ions.
+
+Figs.~\ref{fig:h_cloudy} to \ref{{fig:he_cloudy}} show a series of 
+ionization plots comparing relative ion fractions as a function of
+ionization parameter, $U$. I have shown two separate ionization modes
+in \py: standard mode, in which nothing is treated as a macro-atom
+and the spectral modelling ionization scheme is used to calculate
+ion fractions, and hybrid mode in which H and He are treated as 
+macro-atoms and their level populations and ion fractions are solved
+using MC estimators according to the routine
+described in section~\ref{sec:matom_pops}.
+
+
 
 \begin{figure}
 \centering
@@ -1624,6 +1670,7 @@ using the Github API and plotting capability.
 \end{figure}
 
 \subsection{Parallelisation} 
+\label{sec:parallel}
 
 Including macro-atoms in a simulation can have a significant impact 
 on runtime, especially when simulating dense regions of plasma. 
@@ -1633,7 +1680,8 @@ presented in chapter 4 takes ??s for the same number of cycles and
 photon numbers. 
 
 Fortunately, MCRT codes are intuitively parallelisable, as is the macro-atom
-emissivity calculation described above. \py\ is parallelised using an open 
+emissivity calculation described above, as opertions on cells or photons can
+simply be divided up between processors. \py\ is parallelised using an open 
 source Message Passing Interface (MPI) implementation known as 
 Open MPI \citep{openmpi}. This library provides the core functions needed
 in order to distribute computing tasks among a series of parallel processors
@@ -1647,7 +1695,8 @@ the photons that have interacted with a given cell.
 Fig.~?? shows the effect of parallelising a run. Due to the nature of MCRT,
 it is possible to achieve a roughly linear decrease in computing time
 for the photon propagation, which is the dominant factor in overall 
-runtime.
+runtime. This improvement was crucial in order to be able to run the simulation
+grids used for chapters 4 and 5.
 
 
 
