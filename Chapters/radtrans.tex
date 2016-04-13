@@ -397,14 +397,19 @@ that more closely balances heating and cooling in the
 plasma. The radiative estimators and updated electron
 temperature are then used to revise the ionization state of the wind,
 and a new ionization cycle is started. The process is repeated until
-heating and cooling are balanced throughout the wind. 
+heating and cooling are balanced throughout the wind (see sections~\ref{sec:convergence}
+and \ref{sec:heating_cooling}. 
 
 This converged model as the basis for the second set of
-iterations (`spectral cycles'), in order to compute the synthetic spectrum based on the 
+iterations (`spectral cycles'; section~\ref{sec:spectral_cycles}), 
+in order to compute the synthetic spectrum based on the 
 MC estimators record during the ionization cycles. 
 The emergent spectrum over the desired spectral range is synthesized by 
 tracking populations of energy packets through the wind and computing the emergent spectra at
-a number of user-specified viewing angles.  
+a number of user-specified viewing angles.  In the next sections,
+I will describe each of the above steps in more detail, particularly
+with regards to the macro-atom mode of operation.
+
 
 % \py\ is designed to operate in a number of different
 % regimes, both in terms of the scale of the system and in terms of the
@@ -460,6 +465,8 @@ treat recombination in H and He.
 
 \subsection{Radiative Transfer procedure}
 
+\label{sec:rt_procedure}
+
 As a photon travels through a plasma, it has a finite probability
 of interacting with the free or bound electrons and undergoing a scattering
 or absorption event. To deal with this in a Monte Carlo sense, a random optical 
@@ -488,6 +495,7 @@ interact with either the thermal pool or the excitation energy of the plasma.
 \centering
 \includegraphics[width=0.7\textwidth]{figures/03-radtrans/tau_scat.png}
 \caption
+[The process of choosing a scattering location in a cell.]
 {
 {\sl Credit: Mazzali \& Lucy 1993}. 
 The process of choosing a scattering location in a cell.
@@ -536,9 +544,9 @@ introduced in section~\ref{sec:estimators}. In addition the
 Compton opacity is required in order to estimate the Compton heating effect on the plasma.
 The Compton opacity is given by
 \begin{equation}
-\kappa_{C} = ,
+\kappa_{C} = \sigma_{KN} (\nu) n_e \Delta s,
 \end{equation}
-where $\sigma_KN (\nu)$ is the cross-section computed 
+where $\sigma_{KN} (\nu)$ is the cross-section computed 
 from the Klein-Nishina formula \citep{klein-nishina}, and unliked $\sigma_T$
 is frequency dependent. This opacity is not included in the actual radiative transfer 
 in the simulations presented in this Thesis.
@@ -547,28 +555,55 @@ in the simulations presented in this Thesis.
 
 To calculate the opacities correctly, the frequency must be shifted from
 the co-moving frame of the photon into the co-moving frame of the cell.
-This is done...
-
-
+This shift depends on the before and after direction of the photon. Let us denote
+these two directions with unit vectors $\vec{n}_i$ and $\vec{n_f}$ respectively,
+and consider a situation when a photon scatters of an electron in a region of the
+wind moving at velocity $\vec{v}$.
+The final frequency of the photon with initial frequency $\nu_i$ is then 
+\begin{equation}
+\nu_f = \nu_i ~\frac{1 - (\vec{v} \cdot \vec{n}_i) / c}{1 - (\vec{v} \cdot \vec{n}_f) / c}.
+\end{equation}
+In the case of a resonance scatter with line transition $u \rightarrow j$, the 
+new frequency is
+\begin{equation}
+\nu_f = \frac{\nu_{uj}}{1 - (\vec{v} \cdot \vec{n}_f) / c}.
+\end{equation}
+when we consider that the resonant point is chosen according to 
+equation~\ref{eq:resonance} and that $v=\vec{v} \cdot \vec{n}_f$ in this case,
+it is clear that the above two equations are equivalent.
 
 
 \subsubsection{Choosing packet directions}
 
+The last variable, in addition to $w_i$ and $\nu$, needed to define a 
+radiation packet is the direction of travel.
 In the case of isotropic emission the direction of a photon packet
 is chosen so that the probability of emission in each bin of solid
 angle is the same. It follows that 
-% \being{equation}
-% P(\Omega)d\Omega
-
-The initial directions from the photon sources are chosen
-depending on an angular emissivity function, $\eta(\theta)$.
-
-
-Whenever a radiation packet undergoes an electron scatter,
-the new direction is simply chosen to be isotropic. However,
+\begin{equation}
+P(\Omega)d\Omega \propto cos \theta sin \theta d\theta d\phi,
+\end{equation}
+where the angles are in polar coordinates and relative to the local
+outward normal. Clearly, for a spherical emitting source such as 
+a star then one must first generate a location on the star's surface,
+and then calculate the photon direction relative to the normal at the point.
+For emission from solid surfaces the above equation is modified
+to include linear limb darkening, $\eta(\theta)$:
+\begin{equation}
+p(\theta \phi) d\theta d\phi = \eta(\theta) cos \theta sin \theta d\theta d\phi,
+\end{equation}
+where, under the Eddington approximation use in the code, $\eta(\theta)$
+is given by
+\begin{equation}
+\eta(\theta) = a (1 - \frac{3}{2} cos \theta).
+\end{equation}
+The constant $a$ is simply normalised such that the total probability
+sums to $1$. Whenever a radiation packet undergoes an electron scatter,
+the new direction is chosen to be isotropic. However,
 when the photon is a line photon then the new direction is chosen
-according to a line trapping model, which depends on the Sobolev
-optical depths in different directions. 
+according to a line trapping model, which samples a probability 
+distribution according to the Sobolev escape probability in different 
+directions. 
 
 
 
@@ -1006,6 +1041,8 @@ scatters.
 \centering
 \includegraphics[width=1.0\textwidth, clip=true, trim=0 2.6in 0in 0in ]{figures/03-radtrans/matom_flow_ca.pdf}
 \caption
+[The decision tree traversed by an energy packet 
+in macro-atom mode.]
 {
 The decision tree traversed by an energy packet 
 in macro-atom mode, depicting the interaction
@@ -1228,7 +1265,7 @@ radiation field if one is adopting the dilute approximation (section~\ref{sec:di
 \cite{higginbottom2013} improved on this by developing a method for
 modelling the SED in the cell using a series of band-limited 
 radiation field estimators. In this scheme, a series of bands is defined
-in which to record these estimators. These bands are different to the bands
+in which to record these estimators. These bands are different to those
 discussed in section~\ref{sec:packets} as those instead govern photon generation.
 In H13, the band limited estimators were used to construct a correction factor
 that could be used in a modified Saha equation 
@@ -1308,6 +1345,8 @@ guess at wind temperature is far from the true value.
 
 \subsection{Convergence}
 
+\label{sec:convergence}
+
 \py\ always runs a fixed number of ionization cycles, rather than terminating
 when a convergence criterion is reached. As a result, it is up to the user
 to check that the simulation is converged. An individual cell is considered
@@ -1346,20 +1385,45 @@ completed.
 
 \section{Spectral Cycles}
 \label{sec:spectral_cycles}
-The primary output from \py\ is a synthetic spectrum 
-across a range of viewing angles. The code utilises a variance 
-reduction technique in order to minimise the amount of 
-time spent in the portion of the code. This technique is based 
-on a similar method implemented by \citep{woods1991}.
+The primary output from \py\ is a synthetic spectrum over a specific wavelength
+range produced at user-specified viewing angles. This spectrum is produced 
+in a separate cycle from the calculation of the ionization state as it is concerned
+with producing detailed, high-resolution spectra in a specific wavelength regime
+that can then be compared to observations.
 
-A comparison between the two methods is shown in figure~\ref{fig:extract_demo}.
+The code utilises a variance reduction technique in order to minimise the amount of 
+time spent in the portion of the code. This technique is based 
+on a similar method implemented by \citep{woods1991} and is known in the code
+as the `extract' method. This method works by 
+tracking photon packets until they scatter or interact with the plasma, according
+to the procedure described in section~\ref{sec:rt_procedure}. 
+At the scattering location, the optical depth the photon would
+experience were it to escape to infinity along each requested viewing angle, 
+$\tau_{extract}(\theta_i)$, is calculated. The spectrum at each 
+viewing angle $\theta_i$ is then incremented by an amount
+\begin{equation}
+\Delta L = w f(\theta_i) \exp(-\tau_{extract}(\theta_i)),
+\end{equation}
+where $w$ is the weight of the photon and $f(\theta_i)$ is a weighting proportional to
+the probability that the photon would have scattered in direction $\theta_i$. Once this
+value has been added to the corresponding wavelength bin then the photon
+proceeds as normal in its new random direction.
+
+In the alternative `live or die' method this extraction procedure is not
+carried out and a user simply has to run enough escaping photons so that enough will happen
+to fall into the angle bins requested. This is clearly significantly
+less efficient. A comparison between the two methods is shown in 
+figure~\ref{fig:extract_demo} for a standard CV model, showing that the spectrum 
+produced is identical in shape but with significantly higher signal-to-noise (for
+fixed number of cycles) in the `extract' case.
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/03-radtrans/extract_demo.png}
 \caption
+[A comparison of synthetic spectra produced in extract and live or die modes.]
 {
-A Synthetic spectrum after $30$ spectral cycles with $100,000$ photons
+A synthetic spectrum after $30$ spectral cycles with $100,000$ photons
 from simple CV wind model at a $60^\circ$ viewing angle.
 Spectra produced with both the extract and live or die modes
 are shown. The effectiveness of the extract variance reduction technique can
@@ -1373,13 +1437,12 @@ be clearly seen, and we can see that the spectral shape is unaltered.
 In order to preserve the philosophy that a detailed 
 spectrum is calculated in a limited wavelength regime, \py\ carries
 out a macro-atom emissivity calculation before the spectral cycles.
-This procedure is shown in Fig.??
 This can be very computationally intensive, especially if the wavelength regime
 being simulated has very little emission from bound-free and line processes
 in the wind, but the overall broadband emissivity is high.
 
-During the ionization cycles, the energy absorbed into $k$-packets and 
-every macro-atom level is recorded using the following estimators. Once 
+During the ionization cycles, the amount of energy absorbed into $k$-packets and 
+every macro-atom level is recorded using MC estimators. Once 
 the ionization cycles are finished and the model has converged, these absorption
 energies are split into a certain number of packets and tracked through
 the macro-atom machinery until a deactivation occurs. When this happens,
@@ -1389,11 +1452,13 @@ the packet is thrown away. It is easy to see how what is essentially a MC reject
 method can be an inefficient way of sampling this parameter space. Fortunately,
 this problem is parallelisable (see section~\ref{sec:parallel}).
 
-Once the emissivites have been calculated then the spectral synthesis can proceed.
+Once the emissivities have been calculated then the spectral synthesis can proceed.
 This is done in a different way to the ionization cycles. Photons 
 are generated from the specified photon sources over the required wavelength range,
 but are now also generated according to the calculated macro-atom and 
-$k$-packer emissivities in each cell. To now ensure that radiative equilibrium 
+$k$-packet emissivities in each cell. These photons are `extracted' according
+to the procedure outlined above.
+To now ensure that radiative equilibrium 
 holds, any photon that interacts with a macro-atom or $k$-packet is immediately 
 destroyed. The photons are tracked and extracted as normal until they escape the 
 simulation, and resonant scatters are dealt with by a combination of
@@ -1431,7 +1496,9 @@ power law we expect.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/03-radtrans/xs.png}
-\caption{
+\caption
+[The effect of extrapolated cross-sections on the soft X-ray spectrum]
+{
 A comparison of the soft X-ray regime of the H13 model, with two different
 datasets. standard73 is the dataset with old, unextrapolated cross-sections 
 and standard77 instead includes extrapolated cross-sections as described in
@@ -1519,29 +1586,41 @@ the emergent spectrum and ionization conditions in nebulae and other plasma
 environments. As a result, it uses many of the same techniques as \py\
 in order to compute ionization states, level populations and heating and cooling
 rates, and represents an excellent comparison tool. \py\ has been tested extensively
-against \cld\ in the past; some of these tests can be found in H13 and LK02,
-and generally show excellent agreement, especially in lower $Z$ ions.
+against \cld\ in the past; some of these successful
+tests can be found in H13 and LK02.
 
-Figs.~\ref{fig:h_cloudy} to \ref{{fig:he_cloudy}} show a series of 
-ionization plots comparing relative ion fractions as a function of
-ionization parameter, $U$. I have shown two separate ionization modes
-in \py: standard mode, in which nothing is treated as a macro-atom
-and the spectral modelling ionization scheme is used to calculate
+Figs.~\ref{fig:h_cloudy} to \ref{fig:ox_cloudy} show a series of 
+ionization plots with relative ion fractions plotted as a function of
+ionization parameter, $U$. This test is designed to check that \py\ still agrees
+well with \cld\ when we turn on the full macro-atom machinery.
+The calculations are conducted using the same 
+incident SEDs, densities and abundances, and \py\ is operated in
+1D, thin shell mode to simulate an optically thin plasma and facilitate
+comparison with \cld. I have shown two separate ionization modes
+from \py: standard mode, in which nothing is treated as a macro-atom
+and the spectral model ionization scheme of H13 is used to calculate
 ion fractions, and hybrid mode in which H and He are treated as 
 macro-atoms and their level populations and ion fractions are solved
 using MC estimators according to the routine
-described in section~\ref{sec:matom_pops}.
+described in section~\ref{sec:matom_pops}. Thus, in both 
+cases the simple-atoms have their populations calculated using the H13 scheme.
+
+In general, the calculated fractions are in excellent agreement, with a few 
+exceptions. 
 
 
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/03-radtrans/h_comp.png}
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/hy_comp.png}
 \caption
+[Relative ion fractions for Hydrogen in \cld,\py\ in standard mode and 
+\py\ in hybrid mode.]
 {
 Relative ion fractions as a function of ionization parameter from the
-hybrid macro-atom scheme, with H treated as a full macro-atom, compared
-to \cld\ and \py\ in standard weight reduction mode. 
+hybrid macro-atom scheme, with Hydrogen and Helium 
+treated as a full macro-atom, compared
+to both \cld\ and \py\ in simple-atom only mode.  
 }
 \label{fig:h_cloudy}
 \end{figure}
@@ -1550,15 +1629,42 @@ to \cld\ and \py\ in standard weight reduction mode.
 \centering
 \includegraphics[width=1.0\textwidth]{figures/03-radtrans/he_comp.png}
 \caption{
-Relative ion fractions as a function of ionization parameter from the
-hybrid macro-atom scheme, with He treated as a full macro-atom, compared
-to \cld\ and \py\ in standard weight reduction mode. 
+As figure~\ref{fig:h_cloudy}, but for Helium.
 }
 \label{fig:he_cloudy}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/ca_comp.png}
+\caption
+{
+As figure~\ref{fig:h_cloudy}, but for Carbon.
+}
+\label{fig:c_cloudy}
+\end{figure}
 
-\subsection{Macro-atom testing against \tar and theory}
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/ni_comp.png}
+\caption{
+As figure~\ref{fig:h_cloudy}, but for Nitrogen.
+}
+\label{fig:n_cloudy}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/03-radtrans/ox_comp.png}
+\caption
+{
+As figure~\ref{fig:h_cloudy}, but for Oxygen.
+}
+\label{fig:ox_cloudy}
+\end{figure}
+
+
+\subsection{Macro-atom testing against \tar\ and theory}
 
 \tar\ is a 1D photoionization and radiative transfer designed to
 model SNe in a quick and easy python package, and is described in detail by
@@ -1571,8 +1677,9 @@ In the top panel, I show a comparison of the Balmer series
 emissivities as predicted by \py\ in the l-mixed Case~B limit against the
 analytical calculations by \cite{seaton1959}. 
 Both calculations are calculated at $T_e=10,000$K.
-Case B is an approximation commonly used in nebular astrophysics in which
-one assumes that all transitions are optically thin, except
+Case B is an approximation commonly used in nebular astrophysics 
+\citep[see e.g.][]{osterbrock} in which
+one assumes that all line transitions are optically thin, except
 for the \la\ transition, which is taken as optically thick.
 Thus, this test comparison is carried out using a thin shell
 of plasma in which the escape probabilities, $\beta_{ul}$ 
@@ -1581,11 +1688,11 @@ has its $\beta_{ul}$ set to 0.
 
 The bottom panel shows a comparison of He I level populations 
 (the most complex ion currently 
-treated as a macro-atom) between \py\ and \tar models.
+treated as a macro-atom) between \py\ and \tar\ models.
 The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
 $T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
 Considering the two codes use different atomic data and 
-\textsc{Tardis,} unlike \textsc{Python,} currently has a 
+\tar, unlike \py, currently has a 
 complete treatment of collisions between 
 radiatively forbidden transitions, the factor of 
 $<2$ agreement is encouraging. 
@@ -1593,20 +1700,18 @@ $<2$ agreement is encouraging.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/05-cvpaper/fig_caseb_tardis.eps}
-\caption{
+\caption
+[Balmer decrements in \py\ compared to Seaton (1959), and He level populations
+compared to \tar.]
+{
 {\sl Top Panel:} `Case B' Balmer decrements computed 
-with \textsc{Python} compared to analytic calculations
+with \py\ compared to analytic calculations
 by Seaton (1959). Both calculations are calculated at $T_e=10,000$K.
-(see Osterbrock 1989 for a discussion of this commonly used approximation).
 {\sl Bottom Panel:}  a comparison of He I level populations (the most complex ion we currently 
-treat as a macro-atom) between \py\ and \tar models. 
-The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
+treat as a macro-atom) between \py\ and \tar\ models. 
+The calculation is conducted in thin shell mode
+with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
 $T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
-Considering the two codes use different atomic data and 
-\textsc{Tardis,} unlike \textsc{Python,} currently has a 
-complete treatment of collisions between 
-radiatively forbidden transitions, the factor of 
-$<2$ agreement is encouraging. 
 }
 \label{fig:caseb_tests}
 \end{figure}
@@ -1628,7 +1733,9 @@ as \textsc{Artis} \citep{kromersim2009}.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/03-radtrans/tardispython_thesis.png}
-\caption{
+\caption[Comparison between \tar\ and \py\ synthetic spectra from 
+a simple 1D supernova model.]
+{
 % {\sl Credit: Kerzendorf \& Sim 2014}.
 Comparison between \tar\ and \py\ synthetic spectra from 
 a simple 1D supernova model. A bug in Doppler shifting of
@@ -1661,6 +1768,7 @@ run every night on a multi-core server.
 \centering
 \includegraphics[width=1.0\textwidth]{figures/03-radtrans/github1.png}
 \caption
+[Github commit history for \py\ from 2013-2016.]
 {
 Commit history from Feb 3, 2013 to Feb 29, 2016, showing the regular code development
 that makes version control such a necessity to a collaborative code project. Produced
@@ -1675,22 +1783,23 @@ using the Github API and plotting capability.
 Including macro-atoms in a simulation can have a significant impact 
 on runtime, especially when simulating dense regions of plasma. 
 By way of example, the CV model presented by LK02 takes approximately
-??s to produce a converged model and output spectrum. The model
-presented in chapter 4 takes ??s for the same number of cycles and 
-photon numbers. 
+118s to run one ionization cycle with $10^6$ photons. One of the macro-atom 
+models presented in chapter 4 takes 5651s to complete the same task. 
 
 Fortunately, MCRT codes are intuitively parallelisable, as is the macro-atom
-emissivity calculation described above, as opertions on cells or photons can
+emissivity calculation described above, as operations on cells or photons can
 simply be divided up between processors. \py\ is parallelised using an open 
 source Message Passing Interface (MPI) implementation known as 
 Open MPI \citep{openmpi}. This library provides the core functions needed
-in order to distribute computing tasks among a series of parallel processors
+in order to share out computing tasks among a series of parallel processors
 with distributed memory. The parallelised elements of \py\ include
 the photon propagation, updating of wind ionization and temperature structure
 and calculation of macro-atom emissivities. As a result, this involves
 a reasonable amount of book-keeping in that the radiation field estimators 
 must be communicated between threads so as to correctly account for all
-the photons that have interacted with a given cell.
+the photons that have interacted with a given cell. I have been responsible
+for all of the parallelisation implemented that is
+specific to the macro-atom routines.
 
 Fig.~?? shows the effect of parallelising a run. Due to the nature of MCRT,
 it is possible to achieve a roughly linear decrease in computing time

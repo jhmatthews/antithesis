@@ -79,9 +79,13 @@ Gough B., 2009,
 {Mazzali} P.~A., {Lucy} L.~B., 1993,
   \aap~  279, 447
 
-\bibitem[\protect\astroncite{{Mihalas}}{1982}]{mihalas}
-{Mihalas} D.~M., 1982,
-\newblock {Stellar atmospheres.}
+\bibitem[\protect\astroncite{{Mihalas}}{1978}]{mihalas}
+{Mihalas} D., 1978,
+\newblock {Stellar atmospheres /2nd edition/}
+
+\bibitem[\protect\astroncite{{Osterbrock}}{1989}]{osterbrock}
+{Osterbrock} D.~E., 1989,
+\newblock {Astrophysics of gaseous nebulae and active galactic nuclei}
 
 \bibitem[\protect\astroncite{{Seaton}}{1959}]{seaton1959}
 {Seaton} M.~J., 1959,
