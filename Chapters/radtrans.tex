@@ -1567,12 +1567,15 @@ $<2$ agreement is encouraging.
 
 Fig.~\ref{fig:tardis_spec} shows a comparison 
 between \tar\ and \py\ synthetic spectra from 
-a simple 1D SN model. The model involves a full 
-computation of the ionization state in the ML93 mode, and, although
-run in 1D, still tests must of the radiative transfer
+a simple 1D SN model. This comparison was originally presented by
+\cite{kerzendorfsim}, but I have since then discovered a bug in the Doppler shifting
+routine in \py, introduced around \py\ 76, which was present in this test. 
+Fixing this issue leads to slightly better agreement between the two codes. 
+The model involves a full computation of the ionization state in the 
+ML93 mode, and, although run in 1D, still tests most of the radiative transfer
 machinery of the code. The spectra are in good agreement, considering
 there are differences in their excitation treatments and atomic data.
-This comparison is also particular encouraging when we consider
+This comparison is particular encouraging when we consider
 that \cite{kerzendorfsim} also show comparisons with other SN codes such
 as \textsc{Artis} \citep{kromersim2009}.
 
@@ -1583,7 +1586,7 @@ as \textsc{Artis} \citep{kromersim2009}.
 % {\sl Credit: Kerzendorf \& Sim 2014}.
 Comparison between \tar\ and \py\ synthetic spectra from 
 a simple 1D supernova model. A bug in Doppler shifting of
-photons was discovered in \py\ 77, meaning that the code now gives
+photons was discovered around \py\ 76, meaning that the code now gives
 even better agreement than presented in Kerzendorf \& Sim 2014.
 % $\delta$ is an additional parameter that can be included in the ML93 equation,
 % and thus the appropriate comparison here is with the $\delta=1$ case.
