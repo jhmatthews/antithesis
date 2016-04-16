@@ -1068,6 +1068,10 @@ Gough B., 2009,
 {McHardy} I.~M., {Koerding} E., {Knigge} C., {Uttley} P., {Fender} R.~P., 2006,
   \nat~  444, 730
 
+\bibitem[\protect\astroncite{{Menzel} \& {Pekeris}}{1935}]{menzel1935}
+{Menzel} D.~H., {Pekeris} C.~L., 1935,
+  \mnras~  96, 77
+
 \bibitem[\protect\astroncite{{Mihalas}}{1978}]{mihalas}
 {Mihalas} D., 1978,
 \newblock {Stellar atmospheres /2nd edition/}
@@ -1631,9 +1635,17 @@ Gough B., 2009,
 {van Regemorter} H., 1962,
   \apj~  136, 906
 
-\bibitem[\protect\astroncite{{Verner} et~al.}{1996}]{vfky}
-{Verner} D.~A., {Ferland} G.~J., {Korista} K.~T., {Yakovlev} D.~G., 1996,
+\bibitem[\protect\astroncite{{Verner} et~al.}{1994}]{vernerbarthel1994}
+{Verner} D.~A., {Barthel} P.~D., {Tytler} D., 1994,
+  \aaps~  108, 287
+
+\bibitem[\protect\astroncite{{Verner} et~al.}{1996a}]{vfky}
+{Verner} D.~A., {Ferland} G.~J., {Korista} K.~T., {Yakovlev} D.~G., 1996a,
   \apj~  465, 487
+
+\bibitem[\protect\astroncite{{Verner} et~al.}{1996b}]{verner1996}
+{Verner} D.~A., {Verner} E.~M., {Ferland} G.~J., 1996b,
+  Atomic Data and Nuclear Data Tables~  64, 1
 
 \bibitem[\protect\astroncite{{Voit} et~al.}{1993}]{voit1993}
 {Voit} G.~M., {Weymann} R.~J., {Korista} K.~T., 1993,

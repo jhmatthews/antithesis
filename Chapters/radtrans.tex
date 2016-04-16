@@ -44,7 +44,7 @@ flow can then be related to the
 I_\nu = \frac{dE}{d\Omega~dt~dA~d\nu},
 \end{equation}
 which has CGS units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$. The specific
-intensity is the msot fundamental quantity of radiative transfer as it describes 
+intensity is the most fundamental quantity of radiative transfer as it describes 
 everything about the radiation field; its time, angular, spatial and frequency
 dependence.
 By successively multiplying by $\cos \theta$ and integrating over solid angle we 
@@ -1159,12 +1159,40 @@ checking of, for example, singular rate matrices.
 \subsection{Numerical Issues and Population Inversions}
 \label{sec:numerical_matom}
 
+An inherent problem in MC simulations is noise, particularly
+when the MC estimators involved rely on specific frequencies of
+photons in order to be incremented. One of the side effects
+of this is that population inversions can occur. A population
+inversion is present when 
+\begin{equation}
+??
+\label{eq:pop_inverse}
+\end{equation}
+This can cause clear problems, for example, with the inclusion
+of the stimulated recombination rate as a negative photoionization
+term. Inspection of equations~?? and ?? reveals that a negative
+photoionization rate would be obtained in this situation.
 
+To prevent this problem, we can simply `clean' our level populations
+after calculation, as suggested by \cite{lucy2002}. 
+This is done by cycling through the levels
+after the above calculation has been carried our and checking if
+condition~\ref{eq:pop_inverse} is ever satisfied. If it is, then
+the upper population is simply set to a value just below this limit.
+This is only necessary when there is a permitted dipole transition 
+between the two levels being compared.
 
-
-
-
-
+In addition to the population inversion problem, it is also possible to 
+produce singular rate matrixes when photon statistics are poor, 
+particularly in heavily absorbed portions of the wind where photons
+which come into resonance with lines, or are above threshold frequencies,
+may be rare. To deal with this issue, I have written a routine in \py\
+that checks if the rate matrix is singular and if any anomalous (negative or
+non-finite) populations exist in the solution found. If either of these 
+conditions are met, then the calculation is redone using dilute estimators.
+This procedure is also carried out for the simple-atom ionization
+calculation when the rate matrix approach is in use 
+(see section~\ref{sec:simple_ionization})
 
 
 
@@ -1243,7 +1271,7 @@ C_{bf,simple} = ??
 \end{equation}
 
 \subsubsection{Radiation Field Estimators, Ionization and Excitation}
-
+\label{sec:simple_ionization}
 For simple-atoms we do not record radiation field estimators for discrete 
 transitions, as for macro-atoms. Instead, we record estimators to
 give us a model of the radiation field. The estimators needed
@@ -1548,13 +1576,51 @@ or predicted from atomic structure codes which derive the atomic physics from
 quantum theory.
 
 Throughout this work, I have used very similar atomic data to that described 
-by LK02 and H13. Elements included are H, He, C, N, O, Fe
+by LK02 and H13. Elements included are H, He, C, N, O, Ne, Na, Mg, Al, Si, S,
+Ar, Ca and Fe, although this can be easily be adapted. Generally, solar abundances from
+\cite{vernerbarthel1994} are adopted, although for supernova models these 
+are modified to reflect the higher metallicity. Ionization potentials and ion
+multiplicities are from \cite{verner1996}. Line information for simple-atoms 
+is obtained from \citep{verner1996} ($\sim5,000$ lines) and \citep{kurucz1994} 
+($\sim55,000$ lines). The level information for simple-atoms is constructed 
+from the line lists using the technique described by \cite{lucy1999sn}.
 
 Radiative recombination rate coefficients are taken from 
 the \textsc{Chianti} database version 7.0 \citep{dere1997,landi2012}.
-We use ground state recombination rates from \cite{badnell2006} where available,
-and otherwise default to calculating recombination rates from the Milne
+Ground state recombination rates from \cite{badnell2006} are adopted where available,
+and otherwise the code defaults to calculating recombination rates from the Milne
 relation. Free-free Gaunt factors are from \cite{sutherland1998}.
+
+\subsection{Macro-atom Level and Line Data}
+
+A 20-level model H atom was incorporated into \py\ by SDL05,
+and includes line oscillator strengths from \cite{menzel1935}.
+This model atom is only split according to principle quantum number $n$,
+and it is thus assumed that collisions in the plasma will cause 
+the $l$-subshells to be populated according to statistical weights. 
+This is known as {\em $l$-mixing} and is a good approximation for hydrogen in
+dense astrophysical plasmas due to the near degeneracy of the subshell 
+energy levels.
+
+In order to correctly model He recombination lines in CVs and AGN, such as the 
+prominent \heiiuv\ line, I expanded the atomic dataset such that \py\
+now contains all the atomic data needed for a He macro-atom. This data was 
+obtained from \textsc{Topbase}, with the exception that some of the line wavelengths
+were inaccurate and modified to the experimental values from the National 
+Institute of Standards and Technology (NIST\footnote{\url{http://www.nist.gov/}}).
+He~\textsc{i} is split into $l$ and $s$ subshells so as to correctly model the
+singlet and triplet lines observed in many optical spectra. He~\textsc{ii} assumed
+to be $l$-mixed as it is a hydrogenic ion.
+
+For CV modelling (chapter 4), I used the full 20 level hydrogen atom, with 53 levels of 
+He~\textsc{i} up to principle quantum number 10, and 10 levels of He~\textsc{ii}. 
+This can provide a performance hit in macro-atoms (see section~??), but is necessary
+as we were concerned with modelling recombination lines from upper levels
+close to the continuum energy. In quasar models (chapter 5) 
+this was not as important, and the
+plasma is generally more ionized. There, a 10 level hydrogen atom was used and
+He~\textsc{i} was treated with only the ground state for stability -- this simplification
+had no effect on the temperature structure of the wind or emergent spectrum.
 
 \subsection{Photoionization Cross-sections}
 
@@ -1710,7 +1776,7 @@ agrees well with \cld\ and standard mode.
 The second problem lies in Fe, where there can be quite large differences
 between \py\ and \cld. This is mainly due to Auger ionization and charge 
 exchange and has recently been improved in \py. This curve is overplotted 
-on figure~
+on figure~??, and the effect on quasar models is discussed in chapter 5. 
 
 
 \begin{figure}
@@ -1766,15 +1832,15 @@ As figure~\ref{fig:h_cloudy}, but for Oxygen.
 \label{fig:ox_cloudy}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/03-radtrans/ir_comp.png}
-\caption
-{
-As figure~\ref{fig:h_cloudy}, but for the first 11 ionization stages of Iron.
-}
-\label{fig:ir_cloudy}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=1.0\textwidth]{figures/03-radtrans/ir_comp.png}
+% \caption
+% {
+% As figure~\ref{fig:h_cloudy}, but for the first 11 ionization stages of Iron.
+% }
+% \label{fig:ir_cloudy}
+% \end{figure}
 
 
 
