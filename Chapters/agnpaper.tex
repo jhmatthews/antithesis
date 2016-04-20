@@ -439,7 +439,7 @@ BAL viewing angles;
 \end{itemize}
 Here $BI$ is the `Balnicity Index' (Weymann et al. 1991), given by
 \begin{equation}
-BI = \int^{25000~{\rm km~s}^{-1}}_{3000~{\rm km~s}^{-1}} \left( 1 - \frac{f(v)}{0.9} \right) dv.
+BI = \int^{25000~{\rm km~s}^{-1}}_{3000~{\rm km~s}^{-1}} C \left( 1 - \frac{f(v)}{0.9} \right) dv.
 \end{equation}
 The constant $C=0$ everywhere, unless the normalized flux
 has satisfied $f(v)<0.9$ continuously for at least $2000$~km~s$^{−1}$, 
@@ -483,7 +483,7 @@ further in section~\ref{sec:param_sens}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Results and Discussion From A Fiducial Model}
+\section{Results and Analysis From A Fiducial Model}
 Here we describe the results from a fiducial model,
 and discuss these results in the context of the criteria 
 presented in section 3.4. The parameters of this model are shown in Table~2.
@@ -924,8 +924,9 @@ although BAL fraction inferences are fraught with complex selection
 effects \citep{goodrich1997,krolikvoit1998}.
 
 
-\subsection{Parameter Sensitivity}
+\section{Discussion}
 
+\subsection{Parameter Sensitivity}
 \label{sec:param_sens}
 
 \begin{figure*}
@@ -971,6 +972,58 @@ indicators appears to be a crucial observational task if we are to
 further our understanding of BAL outflows 
 and their connection, or lack thereof, to the 
 broad line region. 
+
+\subsection{Inclination Trends: FWHM and EW}
+
+\subsubsection{Black Hole Mass Estimates}
+
+In a recent study, \cite{yong2016} used the SV93 wind prescription
+assess the variation of full-width at half-maximum (FWHM) of 
+\hb\ (and resultant BH mass estimates)
+with inclination in a disc wind model. Although their model is fairly simple -- 
+it does not include, for example, full radiative transfer or ionization physics --
+this analysis still gives interesting insights into how emission lines
+from a disc wind might bias BH mass estimates.
+
+If the BLR gas is virialised, as often assumed, then the black hole mass
+is related to the velocity dispersion, $\Delta v$, of the gas by
+\begin{equation}
+M_{BH} = f \frac{\Delta v^2 R_{BLR}}{G},
+\end{equation}
+where $R_{BLR}$ is some appropriate emissivity-weighted radius and is often 
+either assumed, estimated from ionization arguments or calculated from reverberation
+mapping. When using FWHM to estimate the velocity disperson the above
+equation can be rewritten as
+\begin{equation}
+M_{BH} = f_{FWHM}~\left[c~\frac{(FWHM)}{\lambda}\right]^2~\frac{R_{BLR}}{G},
+\end{equation}
+where $\lambda$ is the central wavelength of the line in question.
+In a model such as ours the BH mass is known, and determines
+the escape velocities and rotational motions of the outflow. Thus, 
+using a typical radius for line formation in the model it is trivial to 
+calculate $f_{FWHM}$ for each viewing angle. Fig.~\ref{fig:FWHM}
+shows $f_{FWHM}$ as a function of inclination for the 
+\civ, \mg\ and \hb\ emission lines in our model. For \civ\ and \mg\
+the wind angles are not plotted as BAL profiles affect the measurement. 
+The values from our model agree fairly well with the predictions
+of \cite{yong2016} from their simpler analysis, suggesting that,
+at least in this specific set-up,
+radiative transfer and ionization has a minimal role in determining
+the emergent FWHM. Instead, the effect is dominated by velocity projection
+effects.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/06-agnpaper/f_factor.png}
+\caption
+[$f_{FWHM}$ as a function of inclination]
+{
+$f_{FWHM}$ as a function of inclination from the fiducial model
+for three different lines, compared to values from
+Yong et al. 2016 and Pancoast et al. 2014. 
+}
+\label{fig:FWHM}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
