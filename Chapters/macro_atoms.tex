@@ -143,7 +143,7 @@ The macroscopic transition probabilities above depend on the traditional
 rate equations formulated according to statistical equilibrium. 
 In the framework of the Sobolev escape probability formalism 
 (Rybicki \& Hummer 1978; L02; Sim 2004), 
-the bound-bound excitation rate, ${\cal R}_{lu}$, in an ion is given by 
+the bound-bound excitation rate, ${\cal R}_{ju}$, in an ion is given by 
 \begin{equation}
 {\cal R}_{ju} = B_{ju} n_j J_{est} + q_{ju} n_j n_e,
 \label{eq:rad_rate}
@@ -328,7 +328,7 @@ The amount of this energy which is removed from the thermal pool
 therefore needs a quantity $\alpha_{\kappa j} h\nu_{\kappa j} n_\kappa n_e$ subtracted from it,
 giving the bound-free cooling estimator
 \begin{equation}
-\cc_{bf} = \sum_{bf jumps} (\alpha^E_{\kappa j} - \alpha_{\kappa j}) n_e n_{\kappa}h\nu_{\kappa j} V,
+\cc_{bf} = \sum_{j\kappa}^{bfjumps} (\alpha^E_{\kappa j} - \alpha_{\kappa j}) n_e n_{\kappa}h\nu_{\kappa j} V,
 \end{equation}
 where the sum is over all the macro-atom bound-free transitions ($j\rightarrow\kappa$) 
 in the simulation, set by
@@ -338,7 +338,7 @@ a level $l$ absorbs energy by bound-free
 transitions is given by $\gamma^E_{j\kappa} h\nu_{\kappa j} n_\kappa n_e$,
 but the amount $\gamma_{j\kappa} h \nu_{\kappa j} n_l$ goes into ionization energy, giving 
 \begin{equation}
-\hh_{bf} = \sum_{bf jumps} (\gamma^E_{\kappa j} - \gamma_{\kappa j} - \alpha^{st,E}_{\kappa j} + \alpha^{st}_{\kappa j}) n_j h \nu_{\kappa j} V
+\hh_{bf} = \sum_{j\kappa}^{bfjumps} (\gamma^E_{\kappa j} - \gamma_{\kappa j} - \alpha^{st,E}_{\kappa j} + \alpha^{st}_{\kappa j}) n_j h \nu_{\kappa j} V
 \end{equation}
 as the rate at which radiant energy heats the plasma via bound-free transitions.
 
@@ -350,12 +350,12 @@ bound-bound excitation energy and vice versa.
 These heating and cooling rate estimators are:
 
 \begin{equation}
-\hh_{bb} = \sum_{lines} q_{ul} n_u n_e h \nu_{ul} V,
+\hh_{bb} = \sum_{ju}^{lines} q_{uj} n_u n_e h \nu_{uj} V,
 \end{equation}
 
 
 \begin{equation}
-\cc_{bb} = \sum_{lines} q_{lu} n_l n_e h \nu_{ul} V.
+\cc_{bb} = \sum_{ju}^{lines} q_{ju} n_j n_e h \nu_{uj} V.
 \end{equation}
 
 \subsubsection{Other heating and cooling estimators}
@@ -372,7 +372,7 @@ where the integral is over all frequencies included in the simulation,
 and the sum is also over all ions included in the simulation.
 The corresponding heating rate is then
 \begin{equation}
-\hh_{ff} = \sum w_i \kappa_{ff} \Delta s.
+\hh_{ff} = \sum_i^{photons} w_i \kappa_{ff} \Delta s.
 \end{equation}
 Compton heating and cooling is included in the thermal balance and as
 $(r\rightarrow k)$ and $(k\rightarrow r)$ transitions:
@@ -380,14 +380,22 @@ $(r\rightarrow k)$ and $(k\rightarrow r)$ transitions:
 \cc_{comp} = 16 \pi \sigma_T V J \frac{k T_e}{m_e c^2},
 \end{equation}
 \begin{equation}
-\hh_{comp} = n_e \sum \frac{h\nu}{m_e c^2} w_i \kappa_{C}\Delta s,
+\hh_{comp} = n_e \sum_i^{photons} \frac{h\nu}{m_e c^2} w_i \kappa_{C}\Delta s,
 \end{equation}
-and induced Compton heating is then given by \citep{cloudy2013}
+where the estimator for the frequency-integrated mean intensity is
 \begin{equation}
-\hh_{ind~comp} = n_e \sum \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
+J = \frac{1}{4\pi V} \sum_i^{photons} w_i \Delta s.
+\label{eq:j}
+\end{equation}
+Induced Compton heating is then given by \citep{cloudy2013}
+\begin{equation}
+\hh_{ind~comp} = n_e \sum_i^{photons} \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
 w_i \kappa_{C} \Delta s,
 \end{equation}
-where the first $J_\nu c^2/h \nu^3$ term represents the photon occupation number.
+where the first $J_\nu c^2/h \nu^3$ term represents the
+photon occupation number, and $J_\nu$ is either 
+calculated from the spectral model
+described in section~\ref{sec:simple_ionization} or a dilute blackbody.
 The adiabatic cooling rate is derived from $PdV$ work and is given by
 \begin{equation}
 \cc_{a} = k T_e V (\nabla \cdot v) \left(n_e + \sum\limits_{i=1}^{ions} N_i\right),

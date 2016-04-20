@@ -342,7 +342,7 @@ where $B(\nu_{ul})$ is the Planck function at line centre and $q$ is the
 `absorption fraction'. This form can be obtained by splitting
 equation~\ref{eq:rte} into scattering and absorption components, and then
 substituting in approximate forms for the opacities and emissivities.
-If we now consider that the emissivity in the line is simply given
+If we now consider that the emissivity in the line is simply give\cal n
 by $n_u A_{ul} h \nu_{ul} / 4 \pi$, then it is possible to show that
 the absorption fraction is given by
 \begin{equation}
@@ -558,7 +558,7 @@ where $\Delta s$ is the distance moved by the photon. The bound-free
 opacity is calculated from a sum over photoionization cross-section,
 such that
 \begin{equation}
-\kappa_{bf} = .
+\kappa_{bf} = \sum_{j\kappa}^{bfjumps} \sigma_{j\kappa} (\nu) n_j.
 \end{equation}
 The free-free emission coefficient for an individual ion $i$ is \citep{gayet1970}
 \begin{equation}
@@ -678,6 +678,27 @@ Simple-atoms still interact with $r$- and $k$-packets,
 but do not possess internal transition probabilities. As a result,
 they are analogous to the two-level atom treatment, as any excitation
 is immediately followed by a deactivation into an $r$- or $k$-packet.
+The choice of radiative or kinetic deactivation is made according 
+to the relative rates in the two-level atom formalism. 
+For a bound-bound transition $u\rightarrow j$, these two probabilities
+are then
+\begin{equation}
+p_{uj}^{S,R} = \frac{ A_{uj} \beta_{uj} }
+{ A_{uj} \beta_{uj} + C_{uj} \exp(-h\nu_{uj} / k T_e) }
+= 1 - q
+\end{equation}
+and
+\begin{equation}
+p_{uj}^{S,C} = \frac{ C_{uj} \exp(-h\nu_{uj} / k T_e) }
+{ A_{uj} \beta_{uj} + C_{uj} \exp(-h\nu_{uj} / k T_e) }
+= q.
+\end{equation}
+For a bound-free transition we assume radiative recombination and 
+thus any bound-free simple-atom activation is immediately followed 
+by the creation of $r$-packet. This approximates the bound-free continuunm, 
+even when compared to other two-level atom radiative transfer schemes. 
+This is discussed further and tested in section~\ref{sec:line_test}.
+
 This hybrid approach allows us to preserve the fast treatment 
 of, for example, UV resonance lines, while accurately 
 modelling the recombination cascades that populate the levels 
@@ -685,27 +706,30 @@ responsible for H and He line emission. As a result of this hybrid
 scheme, a separate set of estimators must be recorded for simple-atoms, 
 and the ionization and excitation of these elements is calculated 
 with a different, approximate approach.
-
 In order to include simple-atoms, we must add in a few extra pathways
 to Fig.~\ref{fig:flow_matom}, so that energy packets can also
 undergo excite simple-atoms, through either bound-free or bound-bound
 processes. This is done in proportion with the simple-atom opacities.
 
-This approach does necessitate a few approximations.
 
 \subsection{Heating and Cooling Estimators}
 \label{sec:simple_hc}
 
-Our b-b heating rate is computed during the photon propagation and is a sum
+The bound-bound heating rate is computed during the photon propagation and is a sum
 over photons which come into resonance with each line, given by 
 \begin{equation}
 {\cal H}_{bb}^S = \sum_i^{photons} \sum^{lines}_{ju} (1 - q) (1 - e^{-\tau_{S,ju}}) w_i,
 \end{equation}
 And our bound bound cooling rate is given by 
 \begin{equation}
-{\cal C}_{bb}^S = \sum_{lines} q \left(n_l\frac{g_u}{g_l} - n_u\right) q_{ul} n_e 
-\frac{(1 - e^{-h\nu/kT_e})}{(e^{h\nu/kT_e} - 1)}  h \nu_{ul}
+{\cal C}_{bb}^S = \sum_{ju}^{lines} q \left(n_j\frac{g_u}{g_j} - n_u\right) q_{uj} n_e 
+\frac{(1 - e^{-h\nu_{ju}/kT_e})}{(e^{h\nu_{ju}/kT_e} - 1)}  h \nu_{ju}.
 \end{equation}
+These estimators are fundamentally different quantities and are not used to
+calculate k-packet probabilities. Instead, they represent the amount of
+energy transferred to and from the plasma as a whole by the radiation field,
+whereas in the macro-atom case they represent that rate of collisional excitations
+and de-excitations.
 %%note the difference to the macro-atom approach- here this is already 
 \noindent
 The bound-free heating rate is given by
@@ -715,7 +739,7 @@ The bound-free heating rate is given by
 where $\nu$ here is the frequency of the photon in question, and $\nu_{0}$.
 The bound-free cooling rate is then
 \begin{equation}
-{\cal C}_{bf}^S = \sum_{ions} \sum_{bfjumps} \int_{\nu_{j \kappa}}^\infty
+{\cal C}_{bf}^S = \sum_{j\kappa}^{bfjumps} \int_{\nu_{j \kappa}}^\infty
 h \nu \left(\frac{2 \pi m_e k T_e}{h^2} \right)^{-3/2}
 \frac{2 h \nu^3}{c^2} 
 \frac{g_j}{g_\kappa g_e}
@@ -730,7 +754,7 @@ For simple-atoms we do not record radiation field estimators for discrete
 transitions, as for macro-atoms. Instead, we record estimators to
 give us a model of the radiation field. The estimators needed
 depend on the ionization mode employed (see section~\ref{sec:simple_ionization}).
-The radiation temperature, $T_R$, is estimated by recorded the mean frequency, 
+The radiation temperature, $T_R$, is estimated by first recording the mean frequency, 
 $\bar{\nu}$, of the photons passing through a cell:
 \begin{equation}
 \bar{\nu} = \frac{\sum_{photons} w_i \nu_i \Delta s}{\sum_{photons} w_i \Delta s}.
@@ -741,15 +765,9 @@ considering the value expected from a blackbody \citep{ML93}:
 \begin{equation}
 T_r = \frac{h\bar{\nu}}{3.832~k}
 \end{equation}
-The dilution factor can be calculated by comparing the estimator for the mean intensity 
-to the Stefan-Boltzmann law:
+The dilution factor can be calculated by comparing the estimator for the mean intensity (equation~\ref{eq:j}) to the Stefan-Boltzmann law:
 \begin{equation}
 W = \frac{\pi J}{\sigma~T_r^4},
-\end{equation}
-where the estimator for the mean intensity is
-\begin{equation}
-J = \frac{1}{4\pi V} \sum w_i \Delta s.
-\label{eq:j}
 \end{equation}
 This set of estimators is sufficient to describe the 
 radiation field if one is adopting the dilute approximation (section~\ref{sec:dilute}).
@@ -1316,9 +1334,9 @@ Case B is an approximation commonly used in nebular astrophysics
 one assumes that all line transitions are optically thin, except
 for the \la\ transition, which is taken as optically thick.
 Thus, this test comparison is carried out using a thin shell
-of plasma in which the escape probabilities, $\beta_{ul}$ 
+of plasma in which the escape probabilities, $\beta_{uj}$ 
 are artificially set to 1 in all transitions except \la, which
-has its $\beta_{ul}$ set to 0.
+has its $\beta_{uj}$ set to 0.
 
 The bottom panel shows a comparison of He I level populations 
 (the most complex ion currently 
@@ -1382,16 +1400,17 @@ even better agreement than presented in Kerzendorf \& Sim 2014.
 \end{figure}
 
 \subsection{Testing line transfer modes}
-
+\label{sec:line_test}
 The simple-atom approach has a few drawbacks. The first is that it cannot
 deal well with lines in which the lower level is an excited state, such as the 
 Balmer lines. This means that it is important to treat recombination lines using the 
 macro-atom approach. The second is that a bound-free continuum activation, 
-in normal terms a photoionization, is followed by either a collisional 
-deactivation (rarely) or radiative deactivation
-{\em at the original frequency}. This does not well represent reality where recombining
+in normal terms a photoionization, is followed by a radiative deactivation
+with the frequency chosen assuming a hydrogenic cross-section. 
+This does not well represent reality where recombining
 electrons tend to do so to a variety of levels and so there is a gradual
-redshifting of the radiation field. This problem has wider implications than
+redshifting of the radiation field, and also atoms are in general not hydrogenic. 
+This problem has wider implications than
 the first, as it could mean that the global ionization and temperature structure of the wind
 was affected, if, for example, opacities due to elements such as C, N and O were important
 in determining the ionizing radiation field.
