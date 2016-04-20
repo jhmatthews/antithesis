@@ -12,22 +12,22 @@ CMD = pdflatex
 
 
 all:
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex Chapters/outflows.tex | tail -1
 	${CMD} Thesis
 	bibtex Thesis
 	${CMD} Thesis
 	${CMD} Thesis
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex Chapters/outflows.tex | tail -1
 
 new:
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex Chapters/outflows.tex | tail -1
 	${CMD} Thesis_newstyle
 	bibtex Thesis_newstyle
 	${CMD} Thesis_newstyle
 	${CMD} Thesis_newstyle
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1	
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex  Chapters/outflows.tex | tail -1	
 dv:
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex Chapters/outflows.tex | tail -1
 	${LCMD} Thesis
 	bibtex Thesis
 	${LCMD} Thesis
@@ -38,8 +38,8 @@ dv:
 
 
 wc:
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex | tail -1
-	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/outflows.tex Chapters/agnpaper.tex Chapters/cvpaper.tex Chapters/ewpaper.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex Chapters/outflows.tex | tail -1
+	texcount -brief Chapters/Chapter1.tex Chapters/radtrans.tex Chapters/macro_atoms.tex Chapters/outflows.tex Chapters/agnpaper.tex Chapters/cvpaper.tex Chapters/ewpaper.tex | tail -1
 
 clean:	
 	/bin/rm -f *.aux *.log *.dvi 

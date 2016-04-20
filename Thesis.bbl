@@ -254,6 +254,10 @@
 {Connolly} S.~D., {McHardy} I.~M., {Dwelly} T., 2014,
   \mnras~  440, 3503
 
+\bibitem[\protect\astroncite{{Connolly} et~al.}{2016}]{connolly2016}
+{Connolly} S.~D., {McHardy} I.~M., {Skipper} C.~J., {Emmanoulopoulos} D., 2016,
+  \mnras~
+
 \bibitem[\protect\astroncite{{Coppejans} et~al.}{2015}]{coppejans2015}
 {Coppejans} D.~L., {K{\"o}rding} E.~G., {Miller-Jones} J.~C.~A., {Rupen} M.~P.
   et~al., 2015,
@@ -276,6 +280,10 @@
 {Croton} D.~J., {Springel} V., {White} S.~D.~M., {De Lucia} G. et~al., 2006,
   \mnras~  365, 11
 
+\bibitem[\protect\astroncite{{Crummy} et~al.}{2006}]{crummy2006}
+{Crummy} J., {Fabian} A.~C., {Gallo} L., {Ross} R.~R., 2006,
+  \mnras~  365, 1067
+
 \bibitem[\protect\astroncite{{Cunto} et~al.}{1993}]{cunto1993}
 {Cunto} W., {Mendoza} C., {Ochsenbein} F., {Zeippen} C.~J., 1993,
   \aap~  275, L5
@@ -296,10 +304,6 @@
 \bibitem[\protect\astroncite{{Dai} et~al.}{2012}]{dai2012}
 {Dai} X., {Shankar} F., {Sivakoff} G.~R., 2012,
   \apj~  757, 180
-
-\bibitem[\protect\astroncite{{Davis} \& {Hubeny}}{2006}]{davishubeny2006}
-{Davis} S.~W., {Hubeny} I., 2006,
-  \apjs~  164, 530
 
 \bibitem[\protect\astroncite{{Davis} et~al.}{2007}]{davis2007}
 {Davis} S.~W., {Woo} J.-H., {Blaes} O.~M., 2007,
@@ -399,6 +403,11 @@
 {Emmanoulopoulos} D., {Papadakis} I.~E., {Dov{\v c}iak} M., {McHardy} I.~M.,
   2014,
   \mnras~  439, 3931
+
+\bibitem[\protect\astroncite{{Emmanoulopoulos} et~al.}{2012}]{dimitri_llagn}
+{Emmanoulopoulos} D., {Papadakis} I.~E., {McHardy} I.~M., {Ar{\'e}valo} P.
+  et~al., 2012,
+  \mnras~  424, 1327
 
 \bibitem[\protect\astroncite{{Eracleous} \& {Halpern}}{1994}]{eracleous1994}
 {Eracleous} M., {Halpern} J.~P., 1994,
@@ -609,6 +618,10 @@ Gough B., 2009,
 {Grupe} D., {Nousek} J.~A., 2015,
   \aj~  149, 85
 
+\bibitem[\protect\astroncite{{Gu} \& {Cao}}{2009}]{gu2009}
+{Gu} M., {Cao} X., 2009,
+  \mnras~  399, 349
+
 \bibitem[\protect\astroncite{{G{\"u}ltekin} et~al.}{2009}]{gultekin2009}
 {G{\"u}ltekin} K., {Richstone} D.~O., {Gebhardt} K., {Lauer} T.~R. et~al.,
   2009,
@@ -747,9 +760,12 @@ Gough B., 2009,
 {Hoyle} F., {Lyttleton} R.~A., 1939,
   Proceedings of the Cambridge Philosophical Society~  35, 405
 
-\bibitem[\protect\astroncite{{Hubeny} et~al.}{2000}]{hubeny2000}
-{Hubeny} I., {Agol} E., {Blaes} O., {Krolik} J.~H., 2000,
-  \apj~  533, 710
+\bibitem[\protect\astroncite{{Hubeny}}{2001}]{hubeny2001rt}
+{Hubeny} I., 2001,
+\newblock in G. {Ferland}, D.~W. {Savin} (eds.), Spectroscopic Challenges of
+  Photoionized Plasmas,
+  Vol. 247 of {\em Astronomical Society of the Pacific Conference Series\/},
+  197
 
 \bibitem[\protect\astroncite{{Hubeny} \& {Lanz}}{1995}]{tlusty}
 {Hubeny} I., {Lanz} T., 1995,
@@ -848,6 +864,10 @@ Gough B., 2009,
 {K{\"o}rding} E., {Rupen} M., {Knigge} C., {Fender} R. et~al., 2008,
   Science~  320, 1318
 
+\bibitem[\protect\astroncite{{K{\"o}rding} et~al.}{2006}]{kording2006}
+{K{\"o}rding} E.~G., {Jester} S., {Fender} R., 2006,
+  \mnras~  372, 1366
+
 \bibitem[\protect\astroncite{{Kormendy} \& {Ho}}{2013}]{kormendy2013}
 {Kormendy} J., {Ho} L.~C., 2013,
   \araa~  51, 511
@@ -898,6 +918,10 @@ Gough B., 2009,
 \newblock in L. {Crivellari}, I. {Hubeny}, D.~G. {Hummer} (eds.), NATO ASIC
   Proc. 341: Stellar Atmospheres - Beyond Classical Models,  441
 
+\bibitem[\protect\astroncite{{Kurucz} \& {Bell}}{1995}]{kurucz1995}
+{Kurucz} R.~L., {Bell} B., 1995,
+\newblock {Atomic line list}
+
 \bibitem[\protect\astroncite{{Kusterer} et~al.}{2014}]{kusterer2014}
 {Kusterer} D.-J., {Nagel} T., {Hartmann} S., {Werner} K., {Feldmeier} A., 2014,
   \aap~  561, A14
@@ -938,10 +962,6 @@ Gough B., 2009,
 {Lasota} J.-P., 2001,
   \nar~  45, 449
 
-\bibitem[\protect\astroncite{{Lazarova} et~al.}{2012}]{lazarova2012}
-{Lazarova} M.~S., {Canalizo} G., {Lacy} M., {Sajina} A., 2012,
-  \apj~  755, 29
-
 \bibitem[\protect\astroncite{{Liebert} \& {Stockman}}{1985}]{liebert1985}
 {Liebert} J., {Stockman} H.~S., 1985,
 \newblock in D.~Q. {Lamb}, J. {Patterson} (eds.), Cataclysmic Variables and
@@ -964,9 +984,13 @@ Gough B., 2009,
 {Longmore} A.~J., {Lee} T.~J., {Allen} D.~A., {Adams} D.~J., 1981,
   \mnras~  195, 825
 
-\bibitem[\protect\astroncite{{Lucy}}{1999}]{lucy1999radeq}
-{Lucy} L.~B., 1999,
+\bibitem[\protect\astroncite{{Lucy}}{1999a}]{lucy1999radeq}
+{Lucy} L.~B., 1999a,
   \aap~  344, 282
+
+\bibitem[\protect\astroncite{{Lucy}}{1999b}]{lucy1999sne}
+{Lucy} L.~B., 1999b,
+  \aap~  345, 211
 
 \bibitem[\protect\astroncite{{Lucy}}{2002}]{lucy2002}
 {Lucy} L.~B., 2002,
@@ -1068,6 +1092,10 @@ Gough B., 2009,
 {McHardy} I.~M., {Koerding} E., {Knigge} C., {Uttley} P., {Fender} R.~P., 2006,
   \nat~  444, 730
 
+\bibitem[\protect\astroncite{{McHardy} et~al.}{1999}]{mchardy1999}
+{McHardy} I.~M., {Papadakis} I.~E., {Uttley} P., 1999,
+  Nuclear Physics B Proceedings Supplements~  69, 509
+
 \bibitem[\protect\astroncite{{Menzel} \& {Pekeris}}{1935}]{menzel1935}
 {Menzel} D.~H., {Pekeris} C.~L., 1935,
   \mnras~  96, 77
@@ -1112,10 +1140,6 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Motta} et~al.}{2015}]{motta_atel2015}
 {Motta} S., {Beardmore} A., {Oates} S., {Sanna} N.~P.~M.~K.~A. et~al., 2015,
   The Astronomer's Telegram~  7665
-
-\bibitem[\protect\astroncite{{Mu{\~n}oz-Darias} et~al.}{2013}]{munozdarias2013}
-{Mu{\~n}oz-Darias} T., {Coriat} M., {Plant} D.~S., {Ponti} G. et~al., 2013,
-  \mnras~  432, 1330
 
 \bibitem[\protect\astroncite{{Murray} \& {Chiang}}{1996}]{MC96}
 {Murray} N., {Chiang} J., 1996,
@@ -1187,10 +1211,6 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Orr} et~al.}{1997}]{orr1997}
 {Orr} A., {Molendi} S., {Fiore} F., {Grandi} P. et~al., 1997,
   \aap~  324, L77
-
-\bibitem[\protect\astroncite{{Orr} \& {Browne}}{1982}]{orr1982}
-{Orr} M.~J.~L., {Browne} I.~W.~A., 1982,
-  \mnras~  200, 1067
 
 \bibitem[\protect\astroncite{{Osaki}}{1974}]{osaki1974}
 {Osaki} Y., 1974,
@@ -1403,6 +1423,15 @@ Gough B., 2009,
 {Rutten} R.~G.~M., {van Paradijs} J., {Tinbergen} J., 1992,
   \aap~  260, 213
 
+\bibitem[\protect\astroncite{{Rybicki}}{1970}]{rybicki1970}
+{Rybicki} G., 1970,
+\newblock in H.~G. {Groth}, P. {Wellmann} (eds.), IAU Colloq. 2: Spectrum
+  Formation in Stars with Steady-State Extended Atmospheres, ~87
+
+\bibitem[\protect\astroncite{{Rybicki} \& {Hummer}}{1978}]{rybickihummer1978}
+{Rybicki} G.~B., {Hummer} D.~G., 1978,
+  \apj~  219, 654
+
 \bibitem[\protect\astroncite{{Sabra} \& {Hamann}}{2001}]{sabra2001}
 {Sabra} B.~M., {Hamann} F., 2001,
   \apj~  563, 555
@@ -1520,6 +1549,18 @@ Gough B., 2009,
 {Smak} J., 1995,
   \actaa~  45, 259
 
+\bibitem[\protect\astroncite{{Sobolev}}{1957}]{sobolev1957}
+{Sobolev} V.~V., 1957,
+  SvA~  1, 678
+
+\bibitem[\protect\astroncite{{Sobolev}}{1960}]{sobolev1960}
+{Sobolev} V.~V., 1960,
+\newblock {Moving envelopes of stars}
+
+\bibitem[\protect\astroncite{{Sobolewska} et~al.}{2011}]{sobolewska2011}
+{Sobolewska} M.~A., {Siemiginowska} A., {Gierli{\'n}ski} M., 2011,
+  \mnras~  413, 2259
+
 \bibitem[\protect\astroncite{{Soltan}}{1982}]{soltan1982}
 {Soltan} A., 1982,
   \mnras~  200, 115
@@ -1596,10 +1637,6 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Ueda} et~al.}{1998}]{ueda1998}
 {Ueda} Y., {Inoue} H., {Tanaka} Y., {Ebisawa} K. et~al., 1998,
   \apj~  492, 782
-
-\bibitem[\protect\astroncite{{Urrutia} et~al.}{2009}]{urrutia2009}
-{Urrutia} T., {Becker} R.~H., {White} R.~L., {Glikman} E. et~al., 2009,
-  \apj~  698, 1095
 
 \bibitem[\protect\astroncite{{Urry} \& {Padovani}}{1995}]{UP95}
 {Urry} C.~M., {Padovani} P., 1995,
@@ -1683,10 +1720,6 @@ Gough B., 2009,
 {White} N.~E., {Stella} L., {Parmar} A.~N., 1988,
   \apj~  324, 363
 
-\bibitem[\protect\astroncite{{Wills} \& {Brotherton}}{1995}]{wills1995}
-{Wills} B.~J., {Brotherton} M.~S., 1995,
-  \apjl~  448, L81
-
 \bibitem[\protect\astroncite{{Woltjer}}{1959}]{woltjer1959}
 {Woltjer} L., 1959,
   \apj~  130, 38
@@ -1713,10 +1746,6 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Zanstra}}{1929}]{zanstra1929}
 {Zanstra} H., 1929,
   Publications of the Dominion Astrophysical Observatory Victoria~  4, 209
-
-\bibitem[\protect\astroncite{{Zhang} et~al.}{1997}]{zhang1997}
-{Zhang} S.~N., {Cui} W., {Chen} W., 1997,
-  \apjl~  482, L155
 
 \bibitem[\protect\astroncite{{Zhou} et~al.}{2006}]{zhou2006}
 {Zhou} H., {Wang} T., {Wang} H., {Wang} J. et~al., 2006,
