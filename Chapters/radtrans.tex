@@ -1217,7 +1217,18 @@ tests can be found in H13 and LK02.
 
 Figs.~\ref{fig:h_cloudy} to \ref{fig:ir_cloudy} show a series of 
 ionization plots with relative ion fractions plotted as a function of
-ionization parameter, $U$. This test is designed to check that \py\ still agrees
+ionization parameter, $U$. The ionization parameter is a useful
+way to parameterise the ionization state of a plasma, and is given by
+\begin{equation}
+U = \frac{4\pi}{n_H c}\int_{13.6{\rm{eV}} / h}^{\infty}\frac{{J_{\nu}d\nu}}{h\nu}.
+\label{eq:ip}
+\end{equation}
+In \py, the ionization parameter in a cell
+is calculated via a MC estimator, such that
+\begin{equation}
+U_{\py} = \frac{1}{c~V~n_H} \sum_i^{photons} \frac{w_i \Delta s}{h \nu}.
+\end{equation}
+This test is designed to check that \py\ still agrees
 well with \cld\ when we turn on the full macro-atom machinery.
 The calculations are conducted using the same 
 incident SEDs, densities and abundances, and \py\ is operated in

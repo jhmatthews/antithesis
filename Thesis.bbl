@@ -153,6 +153,10 @@
 {Borguet} B.~C.~J., {Arav} N., {Edmonds} D., {Chamberlain} C., {Benn} C., 2013,
   \apj~  762, 49
 
+\bibitem[\protect\astroncite{{Boroson} \& {Green}}{1992}]{borosongreen}
+{Boroson} T.~A., {Green} R.~F., 1992,
+  \apjs~  80, 109
+
 \bibitem[\protect\astroncite{{Boroson} \& {Meyers}}{1992}]{boroson1992}
 {Boroson} T.~A., {Meyers} K.~A., 1992,
   \apj~  397, 442
@@ -304,6 +308,10 @@
 \bibitem[\protect\astroncite{{Dai} et~al.}{2012}]{dai2012}
 {Dai} X., {Shankar} F., {Sivakoff} G.~R., 2012,
   \apj~  757, 180
+
+\bibitem[\protect\astroncite{{Davis} \& {Hubeny}}{2006}]{davishubeny2006}
+{Davis} S.~W., {Hubeny} I., 2006,
+  \apjs~  164, 530
 
 \bibitem[\protect\astroncite{{Davis} et~al.}{2007}]{davis2007}
 {Davis} S.~W., {Woo} J.-H., {Blaes} O.~M., 2007,
@@ -767,6 +775,10 @@ Gough B., 2009,
   Vol. 247 of {\em Astronomical Society of the Pacific Conference Series\/},
   197
 
+\bibitem[\protect\astroncite{{Hubeny} et~al.}{2000}]{hubeny2000}
+{Hubeny} I., {Agol} E., {Blaes} O., {Krolik} J.~H., 2000,
+  \apj~  533, 710
+
 \bibitem[\protect\astroncite{{Hubeny} \& {Lanz}}{1995}]{tlusty}
 {Hubeny} I., {Lanz} T., 1995,
   \apj~  439, 875
@@ -962,6 +974,10 @@ Gough B., 2009,
 {Lasota} J.-P., 2001,
   \nar~  45, 449
 
+\bibitem[\protect\astroncite{{Lazarova} et~al.}{2012}]{lazarova2012}
+{Lazarova} M.~S., {Canalizo} G., {Lacy} M., {Sajina} A., 2012,
+  \apj~  755, 29
+
 \bibitem[\protect\astroncite{{Liebert} \& {Stockman}}{1985}]{liebert1985}
 {Liebert} J., {Stockman} H.~S., 1985,
 \newblock in D.~Q. {Lamb}, J. {Patterson} (eds.), Cataclysmic Variables and
@@ -1051,6 +1067,11 @@ Gough B., 2009,
 {Marsh} T.~R., {Horne} K., 1990,
   \apj~  349, 593
 
+\bibitem[\protect\astroncite{{Marziani} et~al.}{2001}]{marziani2001}
+{Marziani} P., {Sulentic} J.~W., {Zwitter} T., {Dultzin-Hacyan} D., {Calvani}
+  M., 2001,
+  \apj~  558, 553
+
 \bibitem[\protect\astroncite{{Mathur} et~al.}{2000}]{mathur2000}
 {Mathur} S., {Green} P.~J., {Arav} N., {Brotherton} M. et~al., 2000,
   \apjl~  533, L79
@@ -1100,6 +1121,10 @@ Gough B., 2009,
 {Menzel} D.~H., {Pekeris} C.~L., 1935,
   \mnras~  96, 77
 
+\bibitem[\protect\astroncite{{Merloni} et~al.}{2003}]{merloni2003}
+{Merloni} A., {Heinz} S., {di Matteo} T., 2003,
+  \mnras~  345, 1057
+
 \bibitem[\protect\astroncite{{Mihalas}}{1978}]{mihalas}
 {Mihalas} D., 1978,
 \newblock {Stellar atmospheres /2nd edition/}
@@ -1140,6 +1165,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Motta} et~al.}{2015}]{motta_atel2015}
 {Motta} S., {Beardmore} A., {Oates} S., {Sanna} N.~P.~M.~K.~A. et~al., 2015,
   The Astronomer's Telegram~  7665
+
+\bibitem[\protect\astroncite{{Mu{\~n}oz-Darias} et~al.}{2013}]{munozdarias2013}
+{Mu{\~n}oz-Darias} T., {Coriat} M., {Plant} D.~S., {Ponti} G. et~al., 2013,
+  \mnras~  432, 1330
 
 \bibitem[\protect\astroncite{{Murray} \& {Chiang}}{1996}]{MC96}
 {Murray} N., {Chiang} J., 1996,
@@ -1211,6 +1240,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Orr} et~al.}{1997}]{orr1997}
 {Orr} A., {Molendi} S., {Fiore} F., {Grandi} P. et~al., 1997,
   \aap~  324, L77
+
+\bibitem[\protect\astroncite{{Orr} \& {Browne}}{1982}]{orr1982}
+{Orr} M.~J.~L., {Browne} I.~W.~A., 1982,
+  \mnras~  200, 1067
 
 \bibitem[\protect\astroncite{{Osaki}}{1974}]{osaki1974}
 {Osaki} Y., 1974,
@@ -1488,6 +1521,10 @@ Gough B., 2009,
 {Shaviv} G., {Wehrse} R., 1991,
   \aap~  251, 117
 
+\bibitem[\protect\astroncite{{Shen} \& {Ho}}{2014}]{shenho2014}
+{Shen} Y., {Ho} L.~C., 2014,
+  \nat~  513, 210
+
 \bibitem[\protect\astroncite{{Shen} et~al.}{2011}]{shen2011}
 {Shen} Y., {Richards} G.~T., {Strauss} M.~A., {Hall} P.~B. et~al., 2011,
   \apjs~  194, 45
@@ -1594,6 +1631,10 @@ Gough B., 2009,
 {Suleimanov} V., {Hertfelder} M., {Werner} K., {Kley} W., 2014,
   ArXiv e-prints~
 
+\bibitem[\protect\astroncite{{Sulentic} et~al.}{2000}]{sulentic2000ev1}
+{Sulentic} J.~W., {Zwitter} T., {Marziani} P., {Dultzin-Hacyan} D., 2000,
+  \apjl~  536, L5
+
 \bibitem[\protect\astroncite{{Surdej} \& {Hutsemekers}}{1987}]{surdej1987}
 {Surdej} J., {Hutsemekers} D., 1987,
   \aap~  177, 42
@@ -1637,6 +1678,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Ueda} et~al.}{1998}]{ueda1998}
 {Ueda} Y., {Inoue} H., {Tanaka} Y., {Ebisawa} K. et~al., 1998,
   \apj~  492, 782
+
+\bibitem[\protect\astroncite{{Urrutia} et~al.}{2009}]{urrutia2009}
+{Urrutia} T., {Becker} R.~H., {White} R.~L., {Glikman} E. et~al., 2009,
+  \apj~  698, 1095
 
 \bibitem[\protect\astroncite{{Urry} \& {Padovani}}{1995}]{UP95}
 {Urry} C.~M., {Padovani} P., 1995,
@@ -1720,6 +1765,10 @@ Gough B., 2009,
 {White} N.~E., {Stella} L., {Parmar} A.~N., 1988,
   \apj~  324, 363
 
+\bibitem[\protect\astroncite{{Wills} \& {Brotherton}}{1995}]{wills1995}
+{Wills} B.~J., {Brotherton} M.~S., 1995,
+  \apjl~  448, L81
+
 \bibitem[\protect\astroncite{{Woltjer}}{1959}]{woltjer1959}
 {Woltjer} L., 1959,
   \apj~  130, 38
@@ -1746,6 +1795,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Zanstra}}{1929}]{zanstra1929}
 {Zanstra} H., 1929,
   Publications of the Dominion Astrophysical Observatory Victoria~  4, 209
+
+\bibitem[\protect\astroncite{{Zhang} et~al.}{1997}]{zhang1997}
+{Zhang} S.~N., {Cui} W., {Chen} W., 1997,
+  \apjl~  482, L155
 
 \bibitem[\protect\astroncite{{Zhou} et~al.}{2006}]{zhou2006}
 {Zhou} H., {Wang} T., {Wang} H., {Wang} J. et~al., 2006,
