@@ -153,6 +153,10 @@
 {Borguet} B.~C.~J., {Arav} N., {Edmonds} D., {Chamberlain} C., {Benn} C., 2013,
   \apj~  762, 49
 
+\bibitem[\protect\astroncite{{Borguet} et~al.}{2012}]{borguet2012}
+{Borguet} B.~C.~J., {Edmonds} D., {Arav} N., {Dunn} J., {Kriss} G.~A., 2012,
+  \apj~  751, 107
+
 \bibitem[\protect\astroncite{{Boroson} \& {Green}}{1992}]{borosongreen}
 {Boroson} T.~A., {Green} R.~F., 1992,
   \apjs~  80, 109
@@ -172,6 +176,10 @@
 \bibitem[\protect\astroncite{{Brandt} et~al.}{2000}]{brandt2000}
 {Brandt} W.~N., {Laor} A., {Wills} B.~J., 2000,
   \apj~  528, 637
+
+\bibitem[\protect\astroncite{{Brotherton} et~al.}{2006}]{brotherton2006}
+{Brotherton} M.~S., {De Breuck} C., {Schaefer} J.~J., 2006,
+  \mnras~  372, L58
 
 \bibitem[\protect\astroncite{{Brotherton} et~al.}{1997}]{brotherton1997}
 {Brotherton} M.~S., {Tran} H.~D., {van Breugel} W., {Dey} A., {Antonucci} R.,
@@ -349,9 +357,13 @@
 {D{\'{\i}}az Trigo} M., {Boirin} L., 2015,
   ArXiv e-prints~
 
-\bibitem[\protect\astroncite{{DiPompeo} et~al.}{2012}]{dipompeo2012b}
-{DiPompeo} M.~A., {Brotherton} M.~S., {Cales} S.~L., {Runnoe} J.~C., 2012,
+\bibitem[\protect\astroncite{{DiPompeo} et~al.}{2012a}]{dipompeo2012b}
+{DiPompeo} M.~A., {Brotherton} M.~S., {Cales} S.~L., {Runnoe} J.~C., 2012a,
   \mnras~  427, 1135
+
+\bibitem[\protect\astroncite{{DiPompeo} et~al.}{2012b}]{dipompeo2012a}
+{DiPompeo} M.~A., {Brotherton} M.~S., {De Breuck} C., 2012b,
+  \apj~  752, 6
 
 \bibitem[\protect\astroncite{{Done} et~al.}{2012}]{done2012}
 {Done} C., {Davis} S.~W., {Jin} C., {Blaes} O., {Ward} M., 2012,

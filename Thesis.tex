@@ -17,7 +17,6 @@
 \usepackage{textcmds}
 \usepackage{forloop}
 
-\setlength\epigraphrule{0pt}
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
 %% ----------------------------------------------------------------
@@ -331,23 +330,20 @@ is an important goal for the astronomical community.
 % % End of the pre-able, contents and lists of things
 % % Begin the Dedication page
 
-% \setstretch{1.3}  % Return the line spacing back to 1.3
+\setstretch{1.5}  % Return the line spacing back to 1.3
 
-% \pagestyle{empty}  % Page style needs to be empty for this page
-% \dedicatory{For/Dedicated to/To my\ldots}
+\pagestyle{empty}  % Page style needs to be empty for this page
+\dedicatory{For/Dedicated to/To my\ldots}
 
-% \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 
 
 %% ----------------------------------------------------------------
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
-% Include the chapters of the thesis, as separate files
-% Just uncomment the lines as you write the chapters
-% % \newpage
+\newpage
 \lhead{\emph{1. Introduction}}  % Set the left side page header to "Contents"
-
 \input{Chapters/Chapter1} % Introduction
 
 \newpage
@@ -357,24 +353,23 @@ is an important goal for the astronomical community.
 
 \newpage
 \lhead{\emph{3. MCRT and Ionization}}  % Set the left side page header to "Contents"
-
 \input{Chapters/radtrans} % Experimental Setup
 
-% % \clearpage
-
-% % \input{Chapters/paper_cover} % Experimental Setup
-
-% % \pagestyle{fancy}       % Return the page headers back to the "fancy" style
-
+\newpage
+\lhead{\emph{5. The Impact of Accretion Disc Winds on the Optical Spectra of CVs}} 
 \input{Chapters/cvpaper}  % Experiment 1
 
+\newpage
+\lhead{\emph{5. Testing Quasar Unification: Radiative Transfer In Clumpy Winds}}  
 \input{Chapters/agnpaper} % Experiment 2
 
-% \newpage
-% \lhead{\emph{6. Orientation Effects and Equivalent Width Distributions in Quasars}}
+\newpage
+\lhead{\emph{6. Quasar Emission Lines as Probes of Orientation and Unification}}
 \input{Chapters/ewpaper} % Experiment 2
 
-%\input{Chapters/Chapter7} % Conclusion
+\newpage
+\lhead{\emph{7. Conclusion}}
+\input{Chapters/conclusions} % Conclusion
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
@@ -382,14 +377,10 @@ is an important goal for the astronomical community.
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
-
 % \input{Appendices/AppendixA}	% Appendix Title
-
-%\input{Appendices/AppendixB} % Appendix Title
-
-%\input{Appendices/AppendixC} % Appendix Title
-
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+
 \backmatter
 
 %% ----------------------------------------------------------------

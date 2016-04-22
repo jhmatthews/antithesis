@@ -15,6 +15,10 @@
 \def\ovi{O~\textsc{vi}}
 \def\la{Ly$\alpha$}
 \def\ha{H$\alpha$}
+\def\oiii{O~\textsc{iii}}
+\def\oiiifull{O~\textsc{iii}~5007\AA}
+\def\fwh{FWHM[H$\beta$]}
+\def\ewo{EW[O~\textsc{iii}]}
 \def\ept{$\epsilon(\theta)$}
 
 %% Journal definitions
@@ -45,6 +49,52 @@ to be submitted to MNRAS.}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
+
+\section{Introduction}
+
+In the previous chapter, I presented tests of geometric unification
+models using MCRT and photoionization simulations. 
+One of the key results from that analysis is that trends with
+inclination prohibit models with equatorial outflows matching
+observations, as the EW of the emission lines tend
+to increase with inclination. This trend has clear implications for
+the geometries of BAL outflows; the viewing angle may determine many
+of the selection effects at work and must therefore be understood
+before the true covering factor of BAL outflows can be accurately 
+determined. The covering factor and opening angle of the outflow
+are important quantities to measure in order to calculate the
+feedback efficiency \citep[e.g.][]{borguet2012}, 
+and make inferences about the outflow physics \citep[e.g.][]{proga2005}. 
+
+Unlike in galactic accretion disc systems, measuring inclinations
+for quasars and AGN is notoriously difficult, and obtaining 
+reliable orientation indicators is thus an important observational
+goal for the community. Perhaps as a result of this problem, 
+directly opposing geometries have been proposed for 
+BAL outflows (see section~??). Here, I use observational 
+data from the Sloan Digital Sky Survey to constrain the inclinations
+of BAL quasars. Similar attempts have been made previously with
+different diagnostics; for example, by considering 
+radio properties \citep{zhou2006,dipompeo2012a}, 
+polarisation \citep{brotherton2006}
+and general emission line properties \citep{dipompeo2012b}.  
+
+This chapter is structured as follows. First, I describe
+the data sample and selection criteria being used. I begin by
+simply examining the distributions of the EW of the \oiiifull emission line,
+\ewo, and comparing the BAL and non-BAL quasar distributions. 
+In section~\ref{sec:disc_agn} I review the angular distribution of 
+continuum emission one would expect from simple $\alpha$-disc models, 
+as well as exploring the same quantity in more advanced disc models computed
+with \agn. I then use these theoretical 
+angular distributions applied to a simple toy model in 
+section~\ref{sec:mc_angular},
+and conduct MC simulations in an attempt to fit the observed BAL and non-BAL
+quasar distributions of \ewo. 
+In section~\ref{sec:discuss_ew} I discuss the results
+in the context of radio and polarisation measurements of AGN, as well
+as exploring the location of BAL quasars in `Eigenvector 1' parameter space.
+Finally, in section~\ref{sec:ew_conclusions}, I summarise the findings.
 
 % {\bf{\sl{\huge Abstract}}}
 
@@ -120,7 +170,8 @@ to be submitted to MNRAS.}
 % in some RL BALQSOs \citep{zhou2006} 
 % and the fact that RL BALQSOs possess similar radio spectral 
 % indices to normal RL quasars \citep{bruni2012}.  
-% In addition, \cite{marin2013} find a bending angle of $\sim45^\circ$ is required to 
+% In addition, \cite{marin2013} find a bending angle of 
+% $\sim45^\circ$ is required to 
 % explain the polarisation dichotomy of type 1 and 2 AGN using an Elvis-type wind 
 % model (Elvis 2000) --  a conclusion which is potentially extendable to BAL quasars.
 
@@ -185,15 +236,15 @@ to be submitted to MNRAS.}
 %     	  and inclination cutoffs?
 % \end{itemize}
 % }
-\begin{figure*} %fullpage
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/composites.png}
-\caption
-{
-SDSS Composite spectra
-}
-\label{fig:composite}
-\end{figure*} %fullpage
+% \begin{figure*} %fullpage
+% \centering
+% \includegraphics[width=1.0\textwidth]{figures/ewpaper/composites.png}
+% \caption
+% {
+% SDSS Composite spectra
+% }
+% \label{fig:composite}
+% \end{figure*} %fullpage
 % The Sloan Digital Sky Survey DR7 contains ~10,000 objects in its quasar
 % catalog. Many of these have been fitted with quasar templates, allowing 
 % easy comparison of the equivalent width properties between the BAL and 
@@ -239,39 +290,39 @@ Histograms of equivalent widths for three emission lines from the two different 
 \label{fig:ew_hists}
 \end{figure*} %fullpage
 
-To construct our sample, we start with the the Shen et al. (2010; hereafter S10) catalog of
-105,783 quasars from the The Sloan Digital Sky Survey (SDSS) DR7. 
-As we will use emission line diagnostics in this study, we must further divide
-this sample  according to which emission lines are present in 
+The data is sample is based upon the
+Shen et al. (2010; hereafter S10) catalog of
+105,783 quasars from the The Sloan Digital Sky Survey (SDSS) Data Release 7 (DR7). 
+As I will use emission line diagnostics in this study,
+this sample must be further divided according to which 
+emission lines are present in 
 the SDSS wavelength range at a given redshift. 
 Sample A contains all quasars within the redshift range $0.35<z<0.83$, 
-such that the Mg II 2800A and OIII 5007A line EWs are both measured, and Mg II BAL identification
-is possible.  Sample B contains all quasars within the redshift range $1.45<z<2.28$, such that 
+such that the Mg II 2800A and \oiiifull line EWs are both measured, 
+and Mg II BAL identification
+is possible.  Sample B contains all quasars within the redshift 
+range $1.45<z<2.28$, such that 
 the EWs and presence of BALs in Mg II 2800A and CIV 1550A are both measurable.
 The details of these samples are shown in table 1.
 
 In attempting to draw broad conclusions about unification models as a whole,
 we would like to be able to construct a large homogenous dataset of 
-{\em HiBAL} and non-BAL quasars with both OIII 5007A EWs. Unfortunately,
+{\em HiBAL} and non-BAL quasars, both with \oiiifull\ EWs. Unfortunately,
 the wavelength limits of SDSS do not allow this. One of the problems with
 using just LoBAL quasars as tests of unification is that there is evidence 
 that they are drawn from a different population than normal quasars, perhaps
 suggesting an {\em evolutionary} origin. Examples include anomalously 
 high LoBAL fractions in dust-reddened quasar samples \citep{urrutia2009} 
-and infra-red selected samples \citep{dai2012}; although see also \cite{lazarova2012}.
-To partially address this issue, we also build a small sample of HiBAL quasars in SDSS
-by cross-matching the S10 catalog with BALs identified in the HST COS archive.
-BALs were selected from the COS spectra using the balnicity index (Weymann et al. 1991), 
-$BI$, defined as
-\begin{equation}
-BI = \int^{25000~{\rm km~s}^{-1}}_{3000~{\rm km~s}^{-1}} C \left( 1 - \frac{f(v)}{0.9} \right) dv.
-\end{equation}
-The constant $C=0$ everywhere, unless the normalized flux
-has satisfied $f(v)<0.9$ continuously for at least $2000$~km~s$^{−1}$, 
-whereby $C$ is set to $1$. HST objects were designated as HiBALS 
+and infra-red selected samples \citep{dai2012}; 
+although see also \cite{lazarova2012}.
+To partially address this issue, I also build a small sample 
+of HiBAL quasars in SDSS
+by cross-matching the S11 catalog with BALs identified in the HST COS archive.
+BALs were selected from the COS spectra using the balnicity index, 
+$BI$, defined in equation~??. HST objects were designated as HiBALS 
 by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
-The mass and Eddington fraction measurements from S10, with errorbars, are shown against
-the background distribution of all quasars.
+The mass and Eddington fraction measurements from S11, with 
+errorbars, are shown against the background distribution of all quasars.
 
 Figure 2 shows histograms of a number of different 
 emission line properties for samples A and B. 
@@ -298,7 +349,7 @@ First, we will examine the motivations for different forms of \ept\
 in AGN and quasars.
 
 \section{The Angular Distribution of Emission from an Accretion Disc}
-\label{disc}
+\label{sec:disc_agn}
 
 \noindent 
 The most widely-used theoretical model for an accretion disc
@@ -370,9 +421,9 @@ models.
 \end{figure} 
 % Including GR, Comptonisation and Opacity Effects
 
-\subsection{Alternative Continuum Models: Irradiation and Truncated Discs}
+% \subsection{Alternative Continuum Models: Irradiation and Truncated Discs}
 
-Alternative Models exist...
+% Alternative Models exist...
 
 
 
@@ -439,7 +490,7 @@ $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate.
 
 \begin{figure*} %fullpage
 \centering
-\includegraphics[height=1.0\textwidth, angle=90,origin=c]{figures/ewpaper/contour_ew_o3.png}
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/four_ew_o3_max_sdss.png}
 \caption
 {
 Contour plots from the Monte Carlo simulations.
@@ -536,8 +587,8 @@ we find that equatorial viewing angles are strongly disfavoured.
 
 
 \section{Discussion}
-
-We have demonstrated that the EW distributions of the OIII emission line
+\label{sec:discuss_ew}
+I have demonstrated that the EW distributions of the \oiiifull\ emission line
 in quasars is not consistent with a model in which BALs are 
 viewed from equatorial angles and the continuum emission originates from
 a foreshortened accretion disc. This conclusion would be strengthened were 
@@ -550,10 +601,22 @@ A number of other observations...
 
 Eigenvector 1 (EV1) is a fundamental parameter space for AGN and quasars
 \citep{borosongreen,sulentic2000ev1,marziani2001,shenho2014}. It relates the 
-FWHM of \hb, the relative iron strength, $R_{{\rm Fe \textsc{ii}}}$ and
-the EW of OIII. 
+FWHM of \hb, \fwh, the relative iron strength, $R_{{\rm Fe \textsc{ii}}}$ and
+the \ewo. Both \ewo\ and \fwh\ have been used as orientation
+indicators, and so comparing the BAL EV1 distribution to the non-BAL EV1 
+distribution is particularly interesting. 
 
-
+Fig.~\ref{fig:bal_ev1} shows the quasar distribution from sample A 
+in EV1 parameter space, with BAL quasars from samples A and B overplotted.
+\cite{shenho2014} suggest that the main inclination driver in the figure
+is \fwh, and that high inclination sources should thus cluster around
+a diagonal line from the lower right to upper left quadrants. Conversely,
+\cite{risaliti2011} would suggest that high inclination sources should cluster
+around high EW OIII widths. As \ewo\ and \fwh\ are very weakly correlated
+(Spearman's rank coefficient of 0.13), this means they should lie to
+the left of the parameter space. Inspection of the figure shows that 
+BAL quasars are not exclusively found in one region of the EV1 parameter space. 
+In order to assess this more quantitavely, I have shown 
 % {\color{blue}
 % Alternative geometries and polarisation. Are there any problems with
 % a more moderate viewing angle for BALs? Do we want to show a cartoon?
@@ -561,19 +624,24 @@ the EW of OIII.
 % What about PHYSICS. Can we derive lower limits on outflow angles from
 % e.g. conservation of angular momentum??
 
+Overall, the behaviour of \fwh\ strengthens the above 
+conclusion that BAL quasars are not generally viewed from 
+high inclinations.
+
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/ev1_colour.png}
 \caption
 [Eigenvector 1 for BAL and non-BAL quasars.]
 {
-Eigenvector 1. FWHM of the \hb\ line plotted against the relative
+Eigenvector 1 for BAL and non-BAL quasars. 
+FWHM of the \hb\ line plotted against the relative
 iron strength, $R_{{\rm Fe \textsc{ii}}}$. The colour coding
 corresponds to the EW of OIII. The dots mark all quasars from
 sample A, while the squares mark those with \mgii\ BALs.
 The triangles show the HST BAL quasars from sample B.
 }
-\label{fig:lobal}
+\label{fig:bal_ev1}
 \end{figure}
 
 
@@ -629,7 +697,7 @@ Discuss Proga models: They tend to rise fairly equatorially (see eg. PK04) Talk 
 
 
 \section{Conclusions}
-
+\label{sec:ew_conclusions}
 We find four possible scenarios:
 
 \begin{itemize}
