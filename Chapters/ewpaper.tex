@@ -90,7 +90,8 @@ with \agn. I then use these theoretical
 angular distributions applied to a simple toy model in 
 section~\ref{sec:mc_angular},
 and conduct MC simulations in an attempt to fit the observed BAL and non-BAL
-quasar distributions of \ewo. 
+quasar distributions of \ewo, using a similar approach to 
+\cite[][hereafterR11]{risaliti2011}. 
 In section~\ref{sec:discuss_ew} I discuss the results
 in the context of radio and polarisation measurements of AGN, as well
 as exploring the location of BAL quasars in `Eigenvector 1' parameter space.
@@ -273,7 +274,7 @@ Finally, in section~\ref{sec:ew_conclusions}, I summarise the findings.
 \caption
 {
 BH mass and Eddington fraction for the BAL samples plotted 
-over the overall quasar sample from S10.
+over the overall quasar sample from S11.
 }
 \label{fig:bal_scatter}
 \end{figure*} %fullpage
@@ -291,8 +292,9 @@ Histograms of equivalent widths for three emission lines from the two different 
 \end{figure*} %fullpage
 
 The data is sample is based upon the
-Shen et al. (2010; hereafter S10) catalog of
-105,783 quasars from the The Sloan Digital Sky Survey (SDSS) Data Release 7 (DR7). 
+\citep[][hereafter S11]{shen2011} catalog of
+105,783 quasars from the The Sloan Digital Sky Survey (SDSS) 
+Data Release 7 (DR7). 
 As I will use emission line diagnostics in this study,
 this sample must be further divided according to which 
 emission lines are present in 
@@ -445,8 +447,7 @@ The geometry of the toy model used to carry out the Monte Carlo simulations
 \end{figure}
 
 
-We assume
-$\epsilon(\theta) = \cos \theta$, as this is the conservative estimate. 
+I assume $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate. 
 % Unfortunately, it is very difficult to construct an intrinsic `face-on' distribution
 % of EWs in quasars. This is mainly because the intrinsic face-on luminosities
 % and inclination distribution of the systems is not known, meaning that deconvolving
@@ -629,29 +630,38 @@ distribution is particularly interesting.
 
 Fig.~\ref{fig:bal_ev1} shows the quasar distribution from sample A 
 in EV1 parameter space, with BAL quasars from samples A and B overplotted.
-\cite{shenho2014} suggest that the main inclination driver in the figure
+\cite[][hereafter SH14]{shenho2014} propose 
+that the main inclination driver in the parameter space
 is \fwh, and that high inclination sources should thus cluster around
 a diagonal line from the lower right to upper left quadrants. Conversely,
-\cite{risaliti2011} would suggest that high inclination sources should cluster
+R11's analysis instead suggests that high inclination sources should cluster
 around high EW OIII widths. As \ewo\ and \fwh\ are very weakly correlated
 (Spearman's rank coefficient of 0.13), this means they should lie to
-the left of the parameter space. Inspection of the figure shows that 
-BAL quasars are not exclusively found in one region of the EV1 parameter space. 
-In order to assess this more quantitavely, I have shown 
-% {\color{blue}
-% Alternative geometries and polarisation. Are there any problems with
-% a more moderate viewing angle for BALs? Do we want to show a cartoon?
-% Discuss modelling work. Also discuss compton-thick fraction at high mass end.
-% What about PHYSICS. Can we derive lower limits on outflow angles from
-% e.g. conservation of angular momentum??
+the left of the parameter space. Inspection of the figure clearly 
+shows that BAL quasars are not only found in one region of the 
+EV1 parameter space. 
+
+In order to assess this more quantitavely, I have shown contours of 
+quasar counts overlaid on the scatter plot. The contours correspond
+to the number of objects in each bin, where the bins are of size
+$\Delta R_{{\rm Fe \textsc{ii}}} = 0.2$ and $\Delta$\fwh$=500$km~s$^{-1}$.
+The percentage of quasars falling within the inner contour is 45\%, 
+whereas only 18\% of BAL quasars fall in the space. Conversely, 24\% 
+of BAL quasars fall outside the outermost contour compared to 10\% of 
+non-BAL quasars. It would therefore appear that BAL 
+quasars are preferentially clustered towards the high-mass and 
+high-inclination end of EV1 space (under the interpretation of SH14).
+However, it is clear once again that a unification picture in which BAL 
+quasars are viewed exclusively from high inclinations is ruled out,
+under both the R11 and SH14 interpretations.
 
 Overall, the behaviour of \fwh\ strengthens the above 
 conclusion that BAL quasars are not generally viewed from 
-high inclinations.
+extreme inclinations.
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/ev1_colour.png}
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/ev1.png}
 \caption
 [Eigenvector 1 for BAL and non-BAL quasars.]
 {
@@ -675,7 +685,6 @@ Distribution of \fwh\ in BAL and non-BAL quasars.
 }
 \label{fig:fwhm_hb}
 \end{figure}
-
 
 \subsection{Radio Observations}
 
