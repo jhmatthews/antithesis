@@ -64,16 +64,15 @@ Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., Mangham S. W.
 
 \section{Introduction}
 
-In the earlier chapters we examined the evidence for accretion disc
-winds in quasars and luminous AGN, and saw how they may be responsible
+In the earlier chapters I presented the evidence for accretion disc
+winds in quasars and luminous AGN, and showed how they may be responsible
 for more than just the broad absorption lines and P-Cygni profiles
 seen in quasar spectra. In particular, they offer a natural way to
 {\em unify} much of the complex phenomenology into one simple picture.
 
-Here, we aim to test that picture using \py, with
+Here, I aim to test that picture using \py, with
 the specific aim of determining whether it is possible to 
-simulate the properties of 
-the spectra of AGN, including BALQSOs, 
+simulate the properties of the spectra of AGN, including BALQSOs, 
 using simple kinematic prescriptions for biconical disc winds. 
 Past results have been encouraging; H13
 produced simulated spectra that resembled that of BALQSOs, as long as 
@@ -84,13 +83,13 @@ so ionized that UV absorption lines were not produced.  In addition, and
 in part due to limitations in our radiative transfer code, the model failed 
 to produce spectra with strong emission lines at any inclination angle.
 
-Here we attempt to address both of these issues, by
-introducing clumping into our model and a more complete
-treatment of H and He into our radiative transfer calculations.
+Here I attempt to address both of these issues, by
+introducing clumping into \py\ and a more complete
+treatment of H and He into the radiative transfer calculations.
 Thus, the simulations presented in this chapter treat H \& He as full
 macro-atoms, and model metals as simple-atoms as described extensively
 in chapter 3. In order to correctly model the ionizing spectrum for simple-atoms 
-we dispense with the ML93 modified Saha approach and fully solve the ionization
+I dispense with the ML93 modified Saha approach and fully solve the ionization
 balance using the spectral modelling approach described 
 in section~\ref{sec:simple_ionization}. Macro-atoms still have their
 ionization and excitation states calculated from MC estimators.
@@ -103,7 +102,7 @@ with comparisons to observational data, as well as some discussion.
 Further discussion and examination of sensitivity to model parameters
 and viewing angle can be found in section~\ref{sec:qso_discuss}, which
 expands somewhat on the work presented in \citep{M16}.
-Finally, we summarise our findings in section~\ref{sec:qso_conclusions}.
+Finally, I summarise the findings in section~\ref{sec:qso_conclusions}.
 
 % The spectra of 
 % quasars and luminous active galactic nuclei (AGN) 
@@ -528,7 +527,7 @@ The aim here was to first fix $M_{BH}$ and $\dot{m}$ to their H13 values,
 and increase $L_X$ to $10^{45}$~erg~s$^{-1}$ (a more realistic value for a 
 quasar of $10^9M_\odot$ and an Eddington fraction of $0.2$; see section~\ref{sec:xray}).
 
-We then evaluated these models based on 
+These models were then evaluated based on 
 how closely their synthetic spectra reproduced the 
 following properties of quasars and BALQSOs:
 
@@ -561,13 +560,13 @@ The full grid, including output synthetic spectra and plots can be found at
 \begin{table}
 \centering
 \begin{tabular}{p{2cm}p{1cm}p{1cm}p{1cm}p{1cm}}
-Parameter & \multicolumn{4}{|l|}{Grid Point Values}  \\
+Parameter & \multicolumn{4}{l}{Grid Point Values}  \\
 \hline \hline 
-$r_{min}$ 	&	 $60r_{g}$ & $180r_{g}$ & \multicolumn{2}{|l|}{$300r_{g}$} \\ 
-$\theta_{min}$ 	& $55^{\circ}$ & \multicolumn{3}{|l|}{$70^{\circ}$} \\ 
-$R_v$  	        &	 $10^{18}$cm & \multicolumn{3}{|l|}{$10^{19}$cm} \\ 
+$r_{min}$ 	&	 $60r_{g}$ & $180r_{g}$ & \multicolumn{2}{l}{$300r_{g}$} \\ 
+$\theta_{min}$ 	& $55^{\circ}$ & \multicolumn{3}{l}{$70^{\circ}$} \\ 
+$R_v$  	        &	 $10^{18}$cm & \multicolumn{3}{l}{$10^{19}$cm} \\ 
 $\alpha$ 	&	 $0.5$ & $0.6$ & $0.75$ & $1.5$ \\
-$f_V$ 	&	 $0.01$ & \multicolumn{3}{|l|}{$0.1$}  \\
+$f_V$ 	&	 $0.01$ & \multicolumn{3}{l}{$0.1$}  \\
 \hline 
 \end{tabular}
 \caption
@@ -767,14 +766,15 @@ from highly ionized (yellow) to low ionization (purple) material.
 
 \begin{figure*}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/06-agnpaper/fig5.png}
+\includegraphics[width=0.9\textheight, angle=270]
+{figures/06-agnpaper/fig5.png}
 \caption
 [Synthetic spectra at two viewing angles compared to the non-BAL SDSS quasar composite.]
 {
 Synthetic spectra at two viewing angles, 
 this time in frequency space and including the optical band,
 compared to the non-BAL SDSS quasar composite. The spectra are normalised to the flux at 
-$2000$\AA, then an offset of 2 is applied per spectrum for clarity -- the dotted lines show the zero point of $F_\nu / F_{2000\AA}$ in each case.
+$2000$\AA, then an offset of 2 is applied per spectrum for clarity -- the dotted lines show the zero point of $F_\nu / F_{2000}$ in each case.
 }
 \label{fig:sed}
 \end{figure*}
@@ -1042,7 +1042,8 @@ effects \citep{goodrich1997,krolikvoit1998}.
 
 \begin{figure*}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/06-agnpaper/fig8.png}
+\includegraphics[width=0.85\textwidth]
+{figures/06-agnpaper/thesis_c4_grid.png}
 \caption
 [Equivalent widths and BALnicities of some important lines for the quasar wind grid.]
 {
@@ -1062,7 +1063,8 @@ to briefly explore how specialised this model is, and how small parameter
 changes can affect the synthetic spectra. Fig.~\ref{fig:grid}
 shows the EW at a low inclination, and $BI$ at a high inclination for the simulation
 grid. A few conclusions can be drawn from this plot straight away. 
-First, we can see that almost all the models with $f_V=0.1$ are over-ionized, and 
+First, almost all the models with 
+$f_V=0.1$ are over-ionized, and 
 fail to produce strong \civ\ BALs or emission lines. Second,  
 it is difficult to significantly increase line emission while
 keeping the luminosity and mass loss rate of the system fixed. 
@@ -1198,11 +1200,13 @@ Yong et al. 2016 and Pancoast et al. 2014.
 \label{sec:qso_conclusions}
 We have carried out MCRT simulations using a simple
 prescription for a biconical disc wind, with
-the aim of expanding on the work of H13. To do this, we introduced two main
-improvements: First, we included a simple treatment of clumping, and second, 
-we improved the modelling of recombination lines by treating H and He as
-`macro-atoms'. Having selected a fiducial model from an initial simulation grid,
-we assessed the viability of such a model for geometric 
+the aim of expanding on the work of H13. To do this, two main
+improvements were necessary: First, I included a simple treatment of 
+clumping, and second, 
+the modelling of recombination lines was improved by treating H and He as
+`macro-atoms'. 
+Having selected a fiducial model from an initial simulation grid,
+I assessed the viability of such a model for geometric 
 unification of quasars, and found the following main points:
 \begin{enumerate}
 \item Clumping moderates the ionization state

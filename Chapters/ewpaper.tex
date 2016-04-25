@@ -36,7 +36,7 @@
 \def\rmxaa{RMXAA}
 \def\ew{{\rm EW}}
 
-{\em This chapter is based on a paper in prepation, entitled:
+{\em This chapter is based on a paper in prepation:
 
 Matthews J. H., Knigge C., 
 `Quasar Emission Lines as Probes of Orientation and Unification',
@@ -81,7 +81,7 @@ and general emission line properties \citep{dipompeo2012b}.
 
 This chapter is structured as follows. First, I describe
 the data sample and selection criteria being used. I begin by
-simply examining the distributions of the EW of the \oiiifull emission line,
+simply examining the distributions of the EW of the \oiiifull\ emission line,
 \ewo, and comparing the BAL and non-BAL quasar distributions. 
 In section~\ref{sec:disc_agn} I review the angular distribution of 
 continuum emission one would expect from simple $\alpha$-disc models, 
@@ -298,7 +298,7 @@ this sample must be further divided according to which
 emission lines are present in 
 the SDSS wavelength range at a given redshift. 
 Sample A contains all quasars within the redshift range $0.35<z<0.83$, 
-such that the Mg II 2800A and \oiiifull line EWs are both measured, 
+such that the Mg II 2800A and \oiiifull\ line EWs are both measured, 
 and Mg II BAL identification
 is possible.  Sample B contains all quasars within the redshift 
 range $1.45<z<2.28$, such that 
@@ -316,17 +316,17 @@ high LoBAL fractions in dust-reddened quasar samples \citep{urrutia2009}
 and infra-red selected samples \citep{dai2012}; 
 although see also \cite{lazarova2012}.
 To partially address this issue, I also build a small sample 
-of HiBAL quasars in SDSS
-by cross-matching the S11 catalog with BALs identified in the HST COS archive.
+of HiBAL quasars in SDSS by cross-matching the S11 catalog with 
+BALs identified in the HST COS archive.
 BALs were selected from the COS spectra using the balnicity index, 
 $BI$, defined in equation~??. HST objects were designated as HiBALS 
 by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
 The mass and Eddington fraction measurements from S11, with 
 errorbars, are shown against the background distribution of all quasars.
 
-Figure 2 shows histograms of a number of different 
+Fig. 2 shows histograms of a number of different 
 emission line properties for samples A and B. 
-As discussed by previous authors \cite[e.g.][]{weymann1991}, we find that BAL
+As discussed by previous authors \cite[e.g.][]{weymann1991}, I find that BAL
 and non-BAL quasars really do seem to possess very similar emission line 
 properties. The EW is related to the `face-on' equivalent width,
 $EW_0$ by the equation
@@ -345,7 +345,7 @@ is not systematically higher than the non-BAL
 mean -- in fact, it is lower. This is not expected from a model
 in which the continuum is foreshortened and BAL outflows are at all equatorial.
 This problem is examined further in section~\ref{sec:mc_angular}. 
-First, we will examine the motivations for different forms of \ept\ 
+First, I will examine the motivations for different forms of \ept\ 
 in AGN and quasars.
 
 \section{The Angular Distribution of Emission from an Accretion Disc}
@@ -362,10 +362,10 @@ and microlensing \citep{morgan2010}. Despite these problems,
 \cite{capellupo2015} recently had 
 some success fitting VLT XSHOOTER spectra of AGN when the effects of
 GR, mass-loss and comptonisation were included.
-In this section, we start by discussing the angular distribution of
+In this section, I start by discussing the angular distribution of
 emission from an SS73 disc, before discussing opacity and GR 
-effects. In order to explore these effects, we use \agn\
-\citep{hubeny2000,davishubeny2006,davis2007}. We stress that the 
+effects. In order to explore these effects, I use \agn\
+\citep{hubeny2000,davishubeny2006,davis2007}. I stress that the 
 discussion here is not limited to SS73 discs; the only real condition
 for the expected angular distributions derived here is that the 
 disc is geometrically thin and optically thick.
@@ -400,10 +400,11 @@ depends on the bound-free and bound-bound opacities in the disc.
 In addition, it has been shown that GR can `isotropize' the radiation
 field in XRBs \citep{zhang1997,munozdarias2013}, in some cases overcoming
 foreshortening effects. To assess the impact of GR and disc opacities
-on \ept\ we use \agn\ models, which uses stellar atmosphere calculations to calculate the 
+on \ept\ I use \agn\ models, which uses stellar atmosphere 
+calculations to calculate the 
 SED in a series of annuli, before using the \kerrtrans\ code 
 to calculate the emergent SED by ray-tracing along Kerr geodesics.
-In Fig.~\ref{fig:agnspec_disc}, we show \ept\ as a function of 
+Fig.~\ref{fig:agnspec_disc} shows \ept\ as a function of 
 $\theta$ for \agn\ models for minimally and maximally spinning BHs,
 compared to foreshortened and limb-darkened predictions for SS73 models.
 Clearly, there is very little effect; 
@@ -498,7 +499,7 @@ Contour plots from the Monte Carlo simulations.
 \label{fig:contour}
 \end{figure*} %fullpage
 
-Our Monte Carlo simulation undergoes the following steps:
+The Monte Carlo simulation undergoes the following steps:
 
 \begin{enumerate}
 	\setlength\itemsep{1em}
@@ -508,29 +509,31 @@ Our Monte Carlo simulation undergoes the following steps:
 	the object is ignored. To be included in the sample, the object also has to 
 	survive a selection test based on a arbritrary flux selection limit, to simulate the
 	distribution of angles in a flux-limited sample.
-	\item We then construct our best estimate of the intrinsic (i.e. `face-on')
+	\item I then construct a best estimate of the intrinsic (i.e. `face-on')
 	EW distribution for non-BAL quasars. This is done via a $\chi^2$ minimisation,
 	by finding the gaussian with $\mu$ and $\sigma$ which best 
 	reproduces the observed distribution when convolved with
 	the non-BAL angles generated in the previous step. 
 	a $\chi^2$ minimisation.
 	\item For each mock sample, a EW$_0$ is drawn from the intrinsic gaussian.
-	\item a mock EW is estimated such that $\ew = EW_0 / \epsilon(\theta)$,
+	\item A mock EW is estimated such that $\ew = EW_0 / \epsilon(\theta)$,
 	and this process is repeated to build up a mock sample of objects.
 	\item The number of objects in the mock sample with 
 	$\theta_{min}<\theta<\theta_{max}$ is recorded, providing an 
 	estimate of the expected BAL fraction for this wind geometry. 
 	This already includes a selection effect for the weaker continuum flux.
 	\item The value of the K-S test statistic is recorded, in which the 
-	mock BAL sample is compared to the real BAL sample. We also record the 
-	mean and variance of the mock sample. This allows us to ascertain which regions
+	mock BAL sample is compared to the real BAL sample. The 
+	mean and variance of the mock sample is also recorded. 
+	This allows us to ascertain which regions
 	of parameter space best fit the observed BAL distribution
 \end{enumerate}
 
 This process is repeated for a grid of $\theta_{min}$ and $\theta_{max}$. The 
-results are shown in figure~\ref{fig:contour}, in which we plot the mean, standard deviation 
-and $f_{BAL}$ as a function of $\theta_{min}$ and $\theta_{max}$. As expected,
-we find that equatorial viewing angles are strongly disfavoured. 
+results are shown in figure~\ref{fig:contour}, in which the mean, 
+standard deviation and $f_{BAL}$ are shown as a function of $\theta_{min}$ 
+and $\theta_{max}$. As expected, equatorial viewing angles are strongly 
+disfavoured. 
 
 
 
@@ -592,12 +595,30 @@ I have demonstrated that the EW distributions of the \oiiifull\ emission line
 in quasars is not consistent with a model in which BALs are 
 viewed from equatorial angles and the continuum emission originates from
 a foreshortened accretion disc. This conclusion would be strengthened were 
-we to include limb darkening. This conclusion is extendible to the broad 
+I to include limb darkening. This conclusion is extendible to the broad 
 emission lines (IS IT?), with the caveat that those lines are dipole 
 transitions and so opacity effects can change the angular distribution of 
 emission. A number of other observations...
 
 \subsection{Eigenvector 1}
+
+\begin{table}
+\centering
+\begin{tabular}{p{2cm}p{2cm}p{2cm}p{2cm}}
+\hline Par. A & Par. B & $r_{corr,AB}$ (non-BALs) & $r_{corr,AB}$ (BALs) \\ 
+\hline \hline 
+$\log$[\ewo] & \fwh\ & 0.14 & 0.18 \\
+$\log$[\ewo] & $R_{{\rm Fe \textsc{ii}}}$ & $-0.51$ & $-0.67$ \\
+\fwh\ & $R_{{\rm Fe \textsc{ii}}}$ & $-0.26$ & $-0.42$ \\
+\end{tabular}
+\centering
+\caption
+[Eigenvector 1 correlation coefficients]
+{
+Eigenvector 1 correlation coefficients
+}
+\label{ev1_corr}
+\end{table}
 
 Eigenvector 1 (EV1) is a fundamental parameter space for AGN and quasars
 \citep{borosongreen,sulentic2000ev1,marziani2001,shenho2014}. It relates the 
@@ -644,6 +665,16 @@ The triangles show the HST BAL quasars from sample B.
 \label{fig:bal_ev1}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/fwhm_hist.png}
+\caption
+[Distribution of \fwh\ in BAL and non-BAL quasars.]
+{
+Distribution of \fwh\ in BAL and non-BAL quasars.
+}
+\label{fig:fwhm_hb}
+\end{figure}
 
 
 \subsection{Radio Observations}
@@ -653,9 +684,7 @@ split into core or lobe dominated. This designation is commonly used
 as an orientation indicator \citep{orr1982,wills1995}. 
 Although th
 
-
-In this case, we can
-see that 
+In this case, we can see that 
 A full investigation of this is beyond the scope 
 
 % {\color{blue}
@@ -708,15 +737,16 @@ Discuss Proga models: They tend to rise fairly equatorially (see eg. PK04) Talk 
 I have explored the emission line properties of BAL and non-BAL quasars 
 and found that they are inconsistent with a unification picture in which 
 BAL outflows rise equatorially from a foreshortened or limb darkened accretion
-disc. I have ruled out the possibility that the \ewo\ distribution in quasars
-is dominated by absorption effects. Based on these findings, it is possible to 
+disc. Based on these findings, it is possible to 
 construct a few possible scenarios that are not ruled out by the above results.
+these conclusions have the caveat that I have assumed that conclusions drawn about
+LoBAL quasars can be extended to BAL quasars in general.
 \begin{itemize}
-	\item {\sl Scenario 1:} The quasar continuum are roughly isotropic, which is not 
+	\item {\sl Scenario 1:} The quasar continuum is roughly isotropic, which is not 
 	expected from a geometrically thin, optically thick accretion disc.
-    I have demonstrated that general relativistic effects cannot account for discrepancy in the 
+    I have demonstrated that general relativistic effects cannot account for this discrepancy in the 
     UV. Reprocessing by surrounding dense plasma with a large covering factor or limb brightening 
-    in the disc may provide possible explanations which this analysis cannot confirm or refute.
+    in the disc may provide possible explanations which this analysis cannot yet confirm or refute.
     \smallskip
 	\item {\sl Scenario 2:} Quasar discs are strongly anisotropic, as expected from a 
 	geometrically thin, optically thick accretion disc. In this case, BAL outflows cannot 
@@ -742,12 +772,18 @@ construct a few possible scenarios that are not ruled out by the above results.
 	only for $\sim 20\%$ of a quasar's lifetime. Even if this is the case, then the covering 
 	factor of the outflow still needs to be constrained in order to estimate the BAL duty cycle.
 \end{itemize}
-Of these, we favour scenario 3, as RT modelling of complex geometries is often degenerate
-(see Borguet et al. 2010 and Matthews et al. 2015 for details) 
-and the differences in measured polarisation angle to not necessarily.
-
 Regardless of the conclusions about BAL quasars and their outflow geometries,
-is is clear from this analysis that $\log R$, EW OIII
-and FWHM \hb\ are {\em cannot all} be reliable orientation indicators.
+this analysis allows conclusions to be drawn about the {\em overall} 
+quasar population. In scenario 1, the \ewo\ distribution of quasars cannot
+be driven by inclination as suggested by \citep{risaliti2011}. 
+It is also clear from the work presented here that $\log R$, \ewo\ and FWHM \hb\ 
+are {\em cannot all} be reliable orientation indicators. 
+Furthermore, if a geometric unification does explain BAL quasars, then 
+absorption effects cannot be responsible for the observed \ewo\ distribution.
+The above conclusions each pose a different challenge to the current
+understanding of, respectively, accretion physics, polarisation measurements 
+and geometric unification models. This work therefore adds to the
+growing evidence that our simplest models are not sufficient to
+describe the overal quasars and that alternatives should be sought.
 
 
