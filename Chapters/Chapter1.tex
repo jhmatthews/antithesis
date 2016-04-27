@@ -122,36 +122,36 @@ $\eta=0.007$. If we rearrange the above equations in terms of $\eta$ we find
 \end{equation} 
 In other words, the efficiency of accretion is directly related 
 to the {\em compactness}, $M/R_*$, of the central object. 
-% Values of compactness for four different compact objects
-% are shown in table~\ref{compactness}. 
+Values of compactness for four different compact objects
+are shown in table~\ref{compactness}. 
 
-% \begin{table}
-% \centering
-% \begin{tabular}{p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
-% \hline Object & $M (M_\odot)$ & $R_*$ (cm) & $M/R_* (M_\odot / R_\odot)$ & $\eta$\\ 
-% \hline \hline 
-% White Dwarf & $0.8$ & $0.01$ & $79.4$ & $1.6\times10^{-4}$
-% Neutron Star & $1.4$ & $1.4\times10^{-5}$ & $10^5$ & $0.2$
-% Black Hole & $10$ & $2GM/c^2 = 4.2\times10^{-6}$ & $2.4\times10^5$ & $0.48$
-% SMBH & $10^9$ & $2GM/c^2 = 4244$ & $2.4\times10^5$ & $0.48$
-% \end{tabular}
-% \centering
-% \caption
-% [Approximate values of compactness for four different compact objects.]
-% {
-% Approximate values of compactness for four different compact objects with typical
-% parameters. Note that here $R_*$ for black holes is set to the event horizon
-% for a Schwarzschild black hole.
-% }
-% \label{compact}
-% \end{table}
+\begin{table}
+\centering
+\begin{tabular}{p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
+\hline Object & $M (M_\odot)$ & $R_*$ (cm) & $M/R_* (M_\odot / R_\odot)$ & $\eta$\\ 
+\hline \hline 
+White Dwarf & $0.8$ & $0.01$ & $79.4$ & $1.6\times10^{-4}$
+Neutron Star & $1.4$ & $1.4\times10^{-5}$ & $10^5$ & $0.2$
+Black Hole & $10$ & $2GM/c^2 = 4.2\times10^{-6}$ & $2.4\times10^5$ & $0.48$
+SMBH & $10^9$ & $2GM/c^2 = 4244$ & $2.4\times10^5$ & $0.48$
+\end{tabular}
+\centering
+\caption
+[Approximate values of compactness for four different compact objects.]
+{
+Approximate values of compactness for four different compact objects with typical
+parameters. Note that here $R_*$ for black holes is set to the event horizon
+for a Schwarzschild black hole.
+}
+\label{compact}
+\end{table}
 
 \subsection{Spherical Accretion and The Eddington Limit}
 \label{sec:eddington}
 
 The simplest geometry one might propose for accretion
-would be one in which a central mass accretes matter from
-an all-encompassing cloud.
+would be one in which a central mass accretes matter 
+from an all-encompassing cloud.
 The process of spherical accretion has come to be known as 
 Bondi-Hoyle-Lyttleton accretion \citep{hoyle1939,bondi1944}.
 In particular, \cite{bondi1952} studied spherically symmetric 
@@ -174,7 +174,7 @@ F_{rad} = \frac{L \sigma_T}{4 \pi r^2 c},
 where $\sigma_T = 6.65\times10^{-25}$cm$^2$ is the Thomson cross-section.
 If this radiation force term dominates over the gravitational
 force, then the material will no longer fall inwards. Consider
-radiation pressure acting on electron-proton pairs, for which the gravitational
+radiation pressure acting on ionized hydrogen, for which the gravitational
 force is approximately given by $G M m_p / r^2$. Combining this expression
 with equation~\ref{eq:frad} gives a natural
 maximum accretion luminosity, known as the {\em Eddington limit}, of
@@ -204,7 +204,8 @@ to characterise the {\em state} of an accretion disc.
 In general, sources above $\sim 0.1~L_{Edd}$ find themselves in a 
 `soft' or thin-disc state, whereas for much lower Eddington 
 fractions, sources will possess advection-dominated accretion flows
-\citep[ADAFs; ][]{narayan1994,narayan1995}.
+\citep[ADAFs; ][]{narayan1994,narayan1995} or, more generally, 
+radiatively inefficient accretion flows (RIAFs).
 It is also clear that around the Eddington limit radiation pressure
 must play a major role in determining the disc morphology 
 (see section~\ref{sec:rad_winds}).
@@ -232,10 +233,11 @@ in which accretion discs are subject to a strong shearing instability even
 when the magnetic field is weak. Possible alternative are
 that the angular momentum is lost
 via a a magnetohydrodynamic outflow \citep{blandfordpayne} or spiral shock waves
-\citep{ju2016}. An efficient mechanism
-for angular momentum transport is necessary as the 
-viscosity introduced in the next section is
-generally inefficient in this regard \citep{pringle1991}.
+\citep{ju2016}. An efficient mechanism for angular momentum transport is 
+necessary as molecular viscosity introduced in the next section is
+generally inefficient in this regard \citep{pringle1991}. It is therefore
+convenient to simply parameterise the unknown physics in 
+an effective viscosity.
 
 
 % \begin{table}
@@ -258,14 +260,15 @@ generally inefficient in this regard \citep{pringle1991}.
 
 
 
-\subsubsection{Steady-state Accretion Discs: The $\alpha$-prescription}
+\subsubsection{Steady-state Accretion Discs: the $\alpha$-prescription}
 
 \label{sec:alpha_disc}
 
 The so-called $\alpha$-disc model developed by 
 \citet[][hereafter SS73]{shakurasunyaev1973} and \cite{lyndenbell1969} is
-currently the leading candidate for explaining how energy and angular momentum
-is transported an accretion disc. 
+a simple approximation for how energy and angular momentum
+is transported in an accretion disc, and provides useful insights into
+the expected observational appearance. 
 The starting point for this model is the parameterisation
 of viscosity, $\nu^\prime$, using the simple form
 \begin{equation}
@@ -280,7 +283,7 @@ If we make one further assumption, that the accretion rate is
 constant throughout the disc, we can write down a mass continuity equation
 valid at all radii, given by
 \begin{equation}
-\dot{M} \equiv 2 \pi R V_R \Sigma = 0,
+\dot{M} \equiv 2 \pi R V_R \Sigma = constant,
 \end{equation}
 where $\Sigma$ is the surface density at that point. 
 The angular momentum equation then becomes
@@ -289,7 +292,8 @@ The angular momentum equation then becomes
 \label{eq:viscous_angmom}
 \end{equation}
 The viscous torques throughout the disc cause a local loss of mechanical energy, allowing 
-one to derive \citep[see, e.g.][]{fkrbook} a rate of viscous dissipation, per unit area, given by
+us to derive \citep[see, e.g.][]{fkrbook} a rate of viscous dissipation, 
+per unit area, given by
 \begin{equation}
 D(R) = \frac{1}{2} \nu^\prime \Sigma (R \Omega^\prime)^2.
 \label{eq:dissipation1}
@@ -304,7 +308,7 @@ D(R) = \frac{G M \dot{M}}{8 \pi R^3} \left[1 - \left( \frac{R}{R_*} \right)^{1/2
 where we have also set the angular velocity to the Keplerian velocity. 
 This expression is independent of viscosity -- which is fortunate, because
 we do not know what value of $\alpha$ to use in equation~\ref{eq:viscosity}.
-This result comes about because of the implicit assumption that the viscosity regulates
+This result comes about because of the explicit assumption that the viscosity regulates
 the mass accretion rate so as to achieve a steady state.
 
 We can now integrate across both sides of the whole disc to obtain the disc luminosity,
@@ -312,9 +316,10 @@ We can now integrate across both sides of the whole disc to obtain the disc lumi
 L_{disc} = 2 \int^\infty_{R_*} D(R) 2\pi R dR = \frac{G M \dot{M}}{2 R_*} = \frac{1}{2} L_{acc}\, .
 \label{eq:ldisc}
 \end{equation}
-This result can also be shown by considering the binding energy of gas at $R_*$ and infinity.
-From equation~\ref{eq:dissipation2} one can also derive an effective temperature distribution,
-by setting
+This result can also be shown by considering the gravitational
+binding energy of gas in Keplerian rotation at $R_*$ and infinity.
+From equation~\ref{eq:dissipation2} an 
+effective temperature distribution can be derived by setting
 \begin{equation}
 \sigma T_{eff}^4 (R) = D(R),
 \end{equation}
@@ -331,7 +336,7 @@ When $R>>R_*$ this simplifies to
 \begin{equation}
 T_{eff} (R) = T_* (R / R_*)^{-3/4}.
 \end{equation}
-Now we have not only derived the total luminosity of an accretion disc, but
+Now I have not only derived the total luminosity of an accretion disc, but
 also the effective temperature profile which will govern the shape of the emergent SED.
 This temperature profile is shown in figure~\ref{fig:disk_t}
 for three different compact objects, assuming an Eddington fraction of 0.2.
@@ -349,10 +354,11 @@ of compact object.
 \label{fig:disk_t}
 \end{figure}
 
-\subsection{Boundary layers, black hole spin and the ISCO}
+\subsection{Boundary Layers, Black Hole Spin and the ISCO}
 
-In equation~\ref{eq:ldisc} I showed that $L_{disc} = 1/2~L_{acc}$. 
-One might then ask: where does the rest of the luminosity go?
+In equation~\ref{eq:ldisc}, I showed that $L_{disc} = 1/2~L_{acc}$. 
+One might then ask: where does the rest of the luminosity go? Alternatively, 
+what happens to the kinetic energy the material has at the inner disc edge?
 The answer is dependent on the compact object in question. 
 In an accreting WD, the rotating matter must eventually deposit itself 
 on the surface of the WD. This is illustrated in figure~\ref{fig:omega},
@@ -405,9 +411,9 @@ of this orbit, $R_{ISCO}$, and the horizon radius, $R_H$,
 is shown for different values of the BH spin parameter, $a_*$, 
 in figure~\ref{fig:isco}, showing how matter can orbit closer to a prograde spinning BH. 
 In estimating the luminosity of a Keplerian disc around a BH, 
-one should really set $R_* = R_{ISCO}$ in equation~\ref{eq:eta}, giving us the interesting
-result that rapidly spinning (Kerr) BHs are more radiatively efficient 
-than Schwarzschild BHs.
+we should really set $R_* = R_{ISCO}$ in equation~\ref{eq:eta}, 
+giving the interesting result that rapidly spinning (Kerr) BHs ($\eta~0.4$)
+are more radiatively efficient than Schwarzschild BHs ($\eta~0.1$).
 
 \nocite{narayan2014, thorne1974}
 \begin{figure}
@@ -429,7 +435,7 @@ which actually limits $a_*$ to a value of around $0.998$ (Thorne 1974).
 \end{figure}
 
 
-\subsection{The emergent spectrum}
+\subsection{The Emergent Spectrum}
 
 
 \begin{figure}
@@ -501,7 +507,7 @@ A comparison between a Planck curve and Kurucz (1991) stellar atmosphere model
 at $T_{eff}=50,000$K and surface gravity of $\log(g)=5$. The major photoabsorption
 edges are marked. Flux is reprocessed into different wavelengths by bound-free opacities,
 and line blanketing also has a big effect on the spectrum. The Hydrogen and Helium lines
-also experience significant pressure broadening.
+also experience a degree of pressure broadening.
 } 
 \label{fig:bb_v_sa}
 \end{figure}
@@ -532,7 +538,7 @@ and the companion as the `secondary'.
 In high-mass X-ray binaries (HMXBs), the opposite is formally true.
 There are only two ways by which matter can transfer 
 from the secondary to the compact object. One is by Roche Lobe-overflow (RLOF),
-whereby stellar evolution causes the donor star to fill its Roche Lobe, the surface
+where the donor star expands to fill its Roche Lobe, the surface
 of equipotential around the star. The alternative is that the donor may expel
 material via a disc or radiatively driven stellar wind, 
 allowing some of it to flow onto the compact object. 
@@ -894,7 +900,7 @@ Obtained from \url{http://www.stsci.edu/hst/observatory/crds/cdbs_agn.html}.
 % \subsubsection{Low-luminosity AGN}
 
 
-\subsection{AGN Unification and the dusty Torus}
+\subsection{AGN Unification and the Dusty Torus}
 \label{agn_unification}
 
 Although Seyfert had identified type 1 and 2 AGN, a physical explanation
@@ -1006,11 +1012,11 @@ reflection off the inner parts of the accretion disc
 If this is the case, and the broadening of the iron line is relativistic,
 this would allow for measurements of the BH spin 
 \citep{laor1991,iwasawa1996a,dabrowski1997}.
-This hypothesis is somewhat controversial. Multiple authors have found that 
-many of the relativistic features supposedly imprinted by BH spin can in fact be explained
-by Comptonisation or absorption \citep[e.g.][]{misra1998,miller2013}, 
-and radiative transfer modelling has shown that
-an outflow can naturally produce the characteristic broad red Fe K$\alpha$ wing \citep{sim2010}.
+This hypothesis is somewhat controversial, as 
+many of the relativistic features supposedly imprinted by BH spin can also be explained
+by Comptonisation or absorption \citep[e.g.][]{misra1998,miller2013}.
+In addition, an outflow can naturally produce the characteristic 
+broad red Fe K$\alpha$ wing \citep{sim2010}.
 
 In Compton-thick AGN, the intrinsic continuum is heavily absorbed with columns of
 $N_H\sim10^{24}$~cm$^{-2}$ -- this absorption is normally attributed to the dusty torus, 
@@ -1036,14 +1042,14 @@ relativistically smeared line and
 free-free emission \citep{rossfabian2005,crummy2006} 
 and a variety of cool Comptonised component geometries such as an 
 inner accretion flow \citep{magdiarz1998,done2012} 
-and thin layer on top of the disc \citep{januik2001}. 
+and geometrically thin layer on top of the disc \citep{januik2001}. 
 While the SXXS poses a challenge to
 the simplest pictures of AGN, it may also solve some of the issues, as
 some of the geometries proposed may help to explain the 
 accretion disc size problem discussed in 
 section~\ref{sec:disc_continuum} \citep{gardnerdone2016}.
 
-\subsection{The Broad Line Region: Connection to winds and unification}
+\subsection{The Broad Line Region: Connection to Winds and Unification}
 
 In the UP95 unification model, the broad emission lines
 come from a series of virialised clouds close to the disc plane.
@@ -1119,7 +1125,7 @@ From eclipse mapping, it has been shown that the inferred accretion
 rate increases with radius in NLs \citep{rutten1992, horne1993}.
 These results suggest that a non-radiative form of energy loss
 is present in the inner regions of the disc, of which potential forms
-would be advection or mass loss. This is yet another piece of evidence
+may be advection or mass loss. This is yet another piece of evidence
 that the understanding of accretion and outflow 
 are intertwined, although hopefully not inextricably.
 
