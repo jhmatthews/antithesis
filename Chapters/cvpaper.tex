@@ -531,7 +531,9 @@ be treated either as a blackbody with the corresponding effective
 temperature or as a stellar atmosphere model with the appropriate
 surface gravity and effective temperature. Here, blackbodies are used
 during the ionization cycles and to compute our Monte Carlo
-estimators. However, during the spectral synthesis stage of the 
+estimators. The input SED for the ionization cycles is shown in 
+Fig.~\ref{cv_model_sed}
+However, during the spectral synthesis stage of the 
 simulation stellar atmosphere models are used. This produces more
 realistic model spectra and allows us to test if recombination
 emission from the wind base can fill in the Balmer jump, which is
@@ -540,6 +542,15 @@ spectra are calculated with
 \textsc{Synspec}\footnote{http://nova.astro.umd.edu/Synspec43/synspec.html}
 from either Kurucz \citep{kurucz1991} atmospheres (for $T_{eff} \leq
 50,000$~K) or from \textsc{TLUSTY} \citep{tlusty} models (for $T_{eff} > 50,000$~K). 
+
+\begin{figure} 
+\centering
+\includegraphics[width=1.0\textwidth]{figures/05-cvpaper/sed.png}
+\caption{The spectral energy distribution of the 
+accretion disc and white dwarf used in the ionization cycles for
+the CV modelling.}
+\label{cartoon}
+\end{figure} 
 
 \subsubsection{White Dwarf}
 

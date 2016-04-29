@@ -59,6 +59,10 @@
 {Ar{\'e}valo} P., {Uttley} P., 2006,
   \mnras~  367, 801
 
+\bibitem[\protect\astroncite{{Badnell}}{2006}]{badnell2006}
+{Badnell} N.~R., 2006,
+  \apjs~  167, 334
+
 \bibitem[\protect\astroncite{{Balbus} \& {Hawley}}{1991}]{balbus1991}
 {Balbus} S.~A., {Hawley} J.~F., 1991,
   \apj~  376, 214
@@ -101,6 +105,14 @@
 \bibitem[\protect\astroncite{{Benz} et~al.}{1983}]{benz1983}
 {Benz} A.~O., {Fuerst} E., {Kiplinger} A.~L., 1983,
   \nat~  302, 45
+
+\bibitem[\protect\astroncite{{Beuermann} et~al.}{1992}]{beuermann1992}
+{Beuermann} K., {Stasiewski} U., {Schwope} A.~D., 1992,
+  \aap~  256, 433
+
+\bibitem[\protect\astroncite{{Beuermann} \& {Thomas}}{1990}]{beuermann1990}
+{Beuermann} K., {Thomas} H.-C., 1990,
+  \aap~  230, 326
 
 \bibitem[\protect\astroncite{{B{\^i}rzan} et~al.}{2008}]{birzan2008}
 {B{\^i}rzan} L., {McNamara} B.~R., {Nulsen} P.~E.~J., {Carilli} C.~L., {Wise}
@@ -284,6 +296,10 @@
 {Crummy} J., {Fabian} A.~C., {Gallo} L., {Ross} R.~R., 2006,
   \mnras~  365, 1067
 
+\bibitem[\protect\astroncite{{Cunto} et~al.}{1993}]{cunto1993}
+{Cunto} W., {Mendoza} C., {Ochsenbein} F., {Zeippen} C.~J., 1993,
+  \aap~  275, L5
+
 \bibitem[\protect\astroncite{{Dabrowski} et~al.}{1997}]{dabrowski1997}
 {Dabrowski} Y., {Fabian} A.~C., {Iwasawa} K., {Lasenby} A.~N., {Reynolds}
   C.~S., 1997,
@@ -316,6 +332,11 @@
 \bibitem[\protect\astroncite{{Denney} et~al.}{2014}]{denney2014}
 {Denney} K.~D., {De Rosa} G., {Croxall} K., {Gupta} A. et~al., 2014,
   \apj~  796, 134
+
+\bibitem[\protect\astroncite{{Dere} et~al.}{1997}]{dere1997}
+{Dere} K.~P., {Landi} E., {Mason} H.~E., {Monsignori Fossi} B.~C., {Young}
+  P.~R., 1997,
+  \aaps~  125, 149
 
 \bibitem[\protect\astroncite{{Dexter} \& {Agol}}{2011}]{dexteragol2011}
 {Dexter} J., {Agol} E., 2011,
@@ -444,6 +465,11 @@
 {Fender} R.~P., {Gallo} E., {Russell} D., 2010,
   \mnras~  406, 1425
 
+\bibitem[\protect\astroncite{{Ferland} et~al.}{2013}]{cloudy2013}
+{Ferland} G.~J., {Porter} R.~L., {van Hoof} P.~A.~M., {Williams} R.~J.~R.
+  et~al., 2013,
+  \rmxaa~  49, 137
+
 \bibitem[\protect\astroncite{{Ferrarese} \& {Merritt}}{2000}]{ferrarese2000}
 {Ferrarese} L., {Merritt} D., 2000,
   \apjl~  539, L9
@@ -468,6 +494,10 @@
 {Frank} J., {King} A., {Raine} D., 1992,
 \newblock {Accretion power in astrophysics.}
 
+\bibitem[\protect\astroncite{{Frank} \& {King}}{1981}]{frankking1981}
+{Frank} J., {King} A.~R., 1981,
+  \mnras~  195, 227
+
 \bibitem[\protect\astroncite{{Friend} \& {Abbott}}{1986}]{friend1986}
 {Friend} D.~B., {Abbott} D.~C., 1986,
   \apj~  311, 701
@@ -475,6 +505,12 @@
 \bibitem[\protect\astroncite{{Fukumura} et~al.}{2015}]{fukumura2015}
 {Fukumura} K., {Tombesi} F., {Kazanas} D., {Shrader} C. et~al., 2015,
   \apj~  805, 17
+
+\bibitem[\protect\astroncite{Gabriel et~al.}{2004}]{openmpi}
+Gabriel E., Fagg G.~E., Bosilca G., Angskun T. et~al., 2004,
+\newblock in Proceedings, 11th European PVM/MPI Users' Group Meeting, Budapest,
+  Hungary,
+  p.~97
 
 \bibitem[\protect\astroncite{{Gallagher} et~al.}{2002}]{gallagher2002}
 {Gallagher} S.~C., {Brandt} W.~N., {Chartas} G., {Garmire} G.~P., 2002,
@@ -513,6 +549,10 @@
 \bibitem[\protect\astroncite{{Gardner} \& {Done}}{2016}]{gardnerdone2016}
 {Gardner} E., {Done} C., 2016,
   ArXiv e-prints~
+
+\bibitem[\protect\astroncite{{Gayet}}{1970}]{gayet1970}
+{Gayet} R., 1970,
+  \aap~  9, 312
 
 \bibitem[\protect\astroncite{{Gebhardt} et~al.}{2000}]{gebhardt2000}
 {Gebhardt} K., {Bender} R., {Bower} G., {Dressler} A. et~al., 2000,
@@ -559,6 +599,12 @@
 \bibitem[\protect\astroncite{{Goodrich} \& {Miller}}{1995}]{goodrich1995}
 {Goodrich} R.~W., {Miller} J.~S., 1995,
   \apjl~  448, L73
+
+\bibitem[\protect\astroncite{Gough}{2009}]{GSL}
+Gough B., 2009,
+\newblock GNU Scientific Library Reference Manual - Third Edition,
+\newblock Network Theory Ltd.,
+  3rd edition
 
 \bibitem[\protect\astroncite{{Green} et~al.}{1993}]{green1993}
 {Green} A.~R., {McHardy} I.~M., {Lehto} H.~J., 1993,
@@ -641,6 +687,15 @@
 \bibitem[\protect\astroncite{{H{\"a}ring} \& {Rix}}{2004}]{haring2004}
 {H{\"a}ring} N., {Rix} H.-W., 2004,
   \apjl~  604, L89
+
+\bibitem[\protect\astroncite{{Harrop-Allin} \&
+  {Warner}}{1996}]{harropallinwarner1996}
+{Harrop-Allin} M.~K., {Warner} B., 1996,
+  \mnras~  279, 219
+
+\bibitem[\protect\astroncite{{Hartley} et~al.}{2005}]{hartley2005}
+{Hartley} L.~E., {Murray} J.~R., {Drew} J.~E., {Long} K.~S., 2005,
+  \mnras~  363, 285
 
 \bibitem[\protect\astroncite{{Hassall}}{1985}]{hassall}
 {Hassall} B.~J.~M., 1985,
@@ -725,9 +780,24 @@
 {Hoyle} F., {Lyttleton} R.~A., 1939,
   Proceedings of the Cambridge Philosophical Society~  35, 405
 
+\bibitem[\protect\astroncite{{Hubeny}}{2001}]{hubeny2001rt}
+{Hubeny} I., 2001,
+\newblock in G. {Ferland}, D.~W. {Savin} (eds.), Spectroscopic Challenges of
+  Photoionized Plasmas,
+  Vol. 247 of {\em Astronomical Society of the Pacific Conference Series\/},
+  197
+
 \bibitem[\protect\astroncite{{Hubeny} et~al.}{2000}]{hubeny2000}
 {Hubeny} I., {Agol} E., {Blaes} O., {Krolik} J.~H., 2000,
   \apj~  533, 710
+
+\bibitem[\protect\astroncite{{Hubeny} \& {Lanz}}{1995}]{tlusty}
+{Hubeny} I., {Lanz} T., 1995,
+  \apj~  439, 875
+
+\bibitem[\protect\astroncite{{Humphrey} \& {Binette}}{2014}]{humphrey2014}
+{Humphrey} A., {Binette} L., 2014,
+  \mnras~  442, 753
 
 \bibitem[\protect\astroncite{{Idan} et~al.}{2010}]{idanshaviv2010}
 {Idan} I., {Lasota} J.-P., {Hameury} J.-M., {Shaviv} G., 2010,
@@ -770,9 +840,17 @@
 {Kaspi} S., {Brandt} W.~N., {Maoz} D., {Netzer} H. et~al., 2007,
   \apj~  659, 997
 
+\bibitem[\protect\astroncite{{Kerzendorf} \& {Sim}}{2014}]{kerzendorfsim}
+{Kerzendorf} W.~E., {Sim} S.~A., 2014,
+  \mnras~  440, 387
+
 \bibitem[\protect\astroncite{{King}}{2003}]{king2003}
 {King} A., 2003,
   \apjl~  596, L27
+
+\bibitem[\protect\astroncite{{Klein} \& {Nishina}}{1929}]{klein-nishina}
+{Klein} O., {Nishina} T., 1929,
+  Zeitschrift fur Physik~  52, 853
 
 \bibitem[\protect\astroncite{{Knigge} et~al.}{2011}]{knigge2011_evo}
 {Knigge} C., {Baraffe} I., {Patterson} J., 2011,
@@ -851,6 +929,10 @@
 {Krolik} J.~H., {Voit} G.~M., 1998,
   \apjl~  497, L5
 
+\bibitem[\protect\astroncite{{Kromer} \& {Sim}}{2009}]{kromersim2009}
+{Kromer} M., {Sim} S.~A., 2009,
+  \mnras~  398, 1809
+
 \bibitem[\protect\astroncite{{Kudoh} \& {Shibata}}{1997}]{kudoh1997}
 {Kudoh} T., {Shibata} K., 1997,
   \apj~  474, 362
@@ -858,6 +940,15 @@
 \bibitem[\protect\astroncite{{Kurosawa} \& {Proga}}{2009}]{KP09}
 {Kurosawa} R., {Proga} D., 2009,
   \apj~  693, 1929
+
+\bibitem[\protect\astroncite{{Kurucz}}{1991}]{kurucz1991}
+{Kurucz} R.~L., 1991,
+\newblock in L. {Crivellari}, I. {Hubeny}, D.~G. {Hummer} (eds.), NATO ASIC
+  Proc. 341: Stellar Atmospheres - Beyond Classical Models,  441
+
+\bibitem[\protect\astroncite{{Kurucz} \& {Bell}}{1995}]{kurucz1995}
+{Kurucz} R.~L., {Bell} B., 1995,
+\newblock {Atomic line list}
 
 \bibitem[\protect\astroncite{{Kusterer} et~al.}{2014}]{kusterer2014}
 {Kusterer} D.-J., {Nagel} T., {Hartmann} S., {Werner} K., {Feldmeier} A., 2014,
@@ -867,13 +958,21 @@
 {Kuulkers} E., {Motta} S., {Kajava} J., {Homan} J. et~al., 2015,
   The Astronomer's Telegram~  7647
 
-\bibitem[\protect\astroncite{{La Dous}}{1989}]{ladous1989b}
-{La Dous} C., 1989,
+\bibitem[\protect\astroncite{{La Dous}}{1989a}]{ladous1989b}
+{La Dous} C., 1989a,
   \mnras~  238, 935
+
+\bibitem[\protect\astroncite{{La Dous}}{1989b}]{ladous1989}
+{La Dous} C., 1989b,
+  \aap~  211, 131
 
 \bibitem[\protect\astroncite{{Lamy} \& {Hutsem{\'e}kers}}{2000}]{lamy2000}
 {Lamy} H., {Hutsem{\'e}kers} D., 2000,
   \aap~  356, L9
+
+\bibitem[\protect\astroncite{{Landi} et~al.}{2012}]{landi2012}
+{Landi} E., {Del Zanna} G., {Young} P.~R., {Dere} K.~P., {Mason} H.~E., 2012,
+  \apj~  744, 99
 
 \bibitem[\protect\astroncite{{Laor}}{1991}]{laor1991}
 {Laor} A., 1991,
@@ -912,6 +1011,26 @@
 \bibitem[\protect\astroncite{{Long} et~al.}{1994}]{long1994}
 {Long} K.~S., {Wade} R.~A., {Blair} W.~P., {Davidsen} A.~F., {Hubeny} I., 1994,
   \apj~  426, 704
+
+\bibitem[\protect\astroncite{{Longmore} et~al.}{1981}]{longmore1981}
+{Longmore} A.~J., {Lee} T.~J., {Allen} D.~A., {Adams} D.~J., 1981,
+  \mnras~  195, 825
+
+\bibitem[\protect\astroncite{{Lucy}}{1999a}]{lucy1999radeq}
+{Lucy} L.~B., 1999a,
+  \aap~  344, 282
+
+\bibitem[\protect\astroncite{{Lucy}}{1999b}]{lucy1999sne}
+{Lucy} L.~B., 1999b,
+  \aap~  345, 211
+
+\bibitem[\protect\astroncite{{Lucy}}{2002}]{lucy2002}
+{Lucy} L.~B., 2002,
+  \aap~  384, 725
+
+\bibitem[\protect\astroncite{{Lucy}}{2003}]{lucy2003}
+{Lucy} L.~B., 2003,
+  \aap~  403, 261
 
 \bibitem[\protect\astroncite{{Lucy} \& {Solomon}}{1970}]{lucysolomon1970}
 {Lucy} L.~B., {Solomon} P.~M., 1970,
@@ -998,6 +1117,10 @@
 {Mauche} C.~W., {Raymond} J.~C., 1987,
   \apj~  323, 690
 
+\bibitem[\protect\astroncite{{Mazzali} \& {Lucy}}{1993}]{ML93}
+{Mazzali} P.~A., {Lucy} L.~B., 1993,
+  \aap~  279, 447
+
 \bibitem[\protect\astroncite{{McConnell} \& {Ma}}{2013}]{mcconnell2013}
 {McConnell} N.~J., {Ma} C.-P., 2013,
   \apj~  764, 184
@@ -1009,6 +1132,10 @@
 \bibitem[\protect\astroncite{{McHardy} et~al.}{1999}]{mchardy1999}
 {McHardy} I.~M., {Papadakis} I.~E., {Uttley} P., 1999,
   Nuclear Physics B Proceedings Supplements~  69, 509
+
+\bibitem[\protect\astroncite{{Menzel} \& {Pekeris}}{1935}]{menzel1935}
+{Menzel} D.~H., {Pekeris} C.~L., 1935,
+  \mnras~  96, 77
 
 \bibitem[\protect\astroncite{{Merloni} et~al.}{2003}]{merloni2003}
 {Merloni} A., {Heinz} S., {di Matteo} T., 2003,
@@ -1109,6 +1236,11 @@
 {Neugebauer} G., {Oke} J.~B., {Becklin} E.~E., {Matthews} K., 1979,
   \apj~  230, 79
 
+\bibitem[\protect\astroncite{{Neustroev} et~al.}{2011}]{neustroev2011}
+{Neustroev} V.~V., {Suleimanov} V.~F., {Borisov} N.~V., {Belyakov} K.~V.,
+  {Shearer} A., 2011,
+  \mnras~  410, 963
+
 \bibitem[\protect\astroncite{{Noebauer} et~al.}{2010}]{noebauer}
 {Noebauer} U.~M., {Long} K.~S., {Sim} S.~A., {Knigge} C., 2010,
   \apj~  719, 1932
@@ -1132,6 +1264,10 @@
 \bibitem[\protect\astroncite{{Osaki}}{1974}]{osaki1974}
 {Osaki} Y., 1974,
   \pasj~  26, 429
+
+\bibitem[\protect\astroncite{{Osterbrock}}{1989}]{osterbrock}
+{Osterbrock} D.~E., 1989,
+\newblock {Astrophysics of gaseous nebulae and active galactic nuclei}
 
 \bibitem[\protect\astroncite{{Otani} et~al.}{1996}]{otani1996}
 {Otani} C., {Kii} T., {Reynolds} C.~S., {Fabian} A.~C. et~al., 1996,
@@ -1219,6 +1355,10 @@
 {Pounds} K.~A., {Reeves} J.~N., 2009,
   \mnras~  397, 249
 
+\bibitem[\protect\astroncite{{Prinja} et~al.}{2000}]{prinja2000}
+{Prinja} R.~K., {Ringwald} F.~A., {Wade} R.~A., {Knigge} C., 2000,
+  \mnras~  312, 316
+
 \bibitem[\protect\astroncite{{Prinja} \& {Smith}}{1992}]{prinja1992}
 {Prinja} R.~K., {Smith} L.~J., 1992,
   \aap~  266, 377
@@ -1238,8 +1378,12 @@
 {Proga} D., {Kallman} T.~R., 2004,
   \apj~  616, 688
 
-\bibitem[\protect\astroncite{{Proga} et~al.}{2002}]{proga2002}
-{Proga} D., {Kallman} T.~R., {Drew} J.~E., {Hartley} L.~E., 2002,
+\bibitem[\protect\astroncite{{Proga} et~al.}{2002a}]{proga2002}
+{Proga} D., {Kallman} T.~R., {Drew} J.~E., {Hartley} L.~E., 2002a,
+  \apj~  572, 382
+
+\bibitem[\protect\astroncite{{Proga} et~al.}{2002b}]{pkdh2002}
+{Proga} D., {Kallman} T.~R., {Drew} J.~E., {Hartley} L.~E., 2002b,
   \apj~  572, 382
 
 \bibitem[\protect\astroncite{{Proga} et~al.}{1998}]{proga1998}
@@ -1328,6 +1472,15 @@
 {Rutten} R.~G.~M., {van Paradijs} J., {Tinbergen} J., 1992,
   \aap~  260, 213
 
+\bibitem[\protect\astroncite{{Rybicki}}{1970}]{rybicki1970}
+{Rybicki} G., 1970,
+\newblock in H.~G. {Groth}, P. {Wellmann} (eds.), IAU Colloq. 2: Spectrum
+  Formation in Stars with Steady-State Extended Atmospheres, ~87
+
+\bibitem[\protect\astroncite{{Rybicki} \& {Hummer}}{1978}]{rybickihummer1978}
+{Rybicki} G.~B., {Hummer} D.~G., 1978,
+  \apj~  219, 654
+
 \bibitem[\protect\astroncite{{Sabra} \& {Hamann}}{2001}]{sabra2001}
 {Sabra} B.~M., {Hamann} F., 2001,
   \apj~  563, 555
@@ -1359,6 +1512,10 @@
 \bibitem[\protect\astroncite{{Schmutz}}{1997}]{schmutz1997}
 {Schmutz} W., 1997,
   \aap~  321, 268
+
+\bibitem[\protect\astroncite{{Seaton}}{1959}]{seaton1959}
+{Seaton} M.~J., 1959,
+  \mnras~  119, 90
 
 \bibitem[\protect\astroncite{{Setti} \& {Woltjer}}{1989}]{setti1989}
 {Setti} G., {Woltjer} L., 1989,
@@ -1404,6 +1561,10 @@
 {Silva} C., {Uttley} P., {Costantini} E., 2015,
 \newblock in The Extremes of Black Hole Accretion, ~63
 
+\bibitem[\protect\astroncite{{Sim}}{2004}]{sim2004}
+{Sim} S.~A., 2004,
+  \mnras~  349, 899
+
 \bibitem[\protect\astroncite{{Sim} et~al.}{2005}]{simmacro2005}
 {Sim} S.~A., {Drew} J.~E., {Long} K.~S., 2005,
   \mnras~  363, 615
@@ -1436,6 +1597,18 @@
 \bibitem[\protect\astroncite{{Smak}}{1981}]{smak1981}
 {Smak} J., 1981,
   \actaa~  31, 395
+
+\bibitem[\protect\astroncite{{Smak}}{1995}]{smak1995}
+{Smak} J., 1995,
+  \actaa~  45, 259
+
+\bibitem[\protect\astroncite{{Sobolev}}{1957}]{sobolev1957}
+{Sobolev} V.~V., 1957,
+  SvA~  1, 678
+
+\bibitem[\protect\astroncite{{Sobolev}}{1960}]{sobolev1960}
+{Sobolev} V.~V., 1960,
+\newblock {Moving envelopes of stars}
 
 \bibitem[\protect\astroncite{{Sobolewska} et~al.}{2011}]{sobolewska2011}
 {Sobolewska} M.~A., {Siemiginowska} A., {Gierli{\'n}ski} M., 2011,
@@ -1482,6 +1655,14 @@
 {Surdej} J., {Hutsemekers} D., 1987,
   \aap~  177, 42
 
+\bibitem[\protect\astroncite{{Sutherland}}{1998}]{sutherland1998}
+{Sutherland} R.~S., 1998,
+  \mnras~  300, 321
+
+\bibitem[\protect\astroncite{{Tatum} et~al.}{2012}]{tatum2012}
+{Tatum} M.~M., {Turner} T.~J., {Sim} S.~A., {Miller} L. et~al., 2012,
+  \apj~  752, 94
+
 \bibitem[\protect\astroncite{{Thorne}}{1974}]{thorne1974}
 {Thorne} K.~S., 1974,
   \apj~  191, 507
@@ -1505,6 +1686,10 @@
 \bibitem[\protect\astroncite{{Trump} et~al.}{2006}]{trump2006}
 {Trump} J.~R., {Hall} P.~B., {Reichard} T.~A., {Richards} G.~T. et~al., 2006,
   \apjs~  165, 1
+
+\bibitem[\protect\astroncite{{Turing}}{1948}]{turing}
+{Turing} A.~M., 1948,
+  QJMAM~  1(1), 287
 
 \bibitem[\protect\astroncite{{Ueda} et~al.}{1998}]{ueda1998}
 {Ueda} Y., {Inoue} H., {Tanaka} Y., {Ebisawa} K. et~al., 1998,
@@ -1544,6 +1729,22 @@
 {Van de Sande} M., {Scaringi} S., {Knigge} C., 2015,
   \mnras~  448, 2430
 
+\bibitem[\protect\astroncite{{van Regemorter}}{1962}]{vanregemorter}
+{van Regemorter} H., 1962,
+  \apj~  136, 906
+
+\bibitem[\protect\astroncite{{Verner} et~al.}{1994}]{vernerbarthel1994}
+{Verner} D.~A., {Barthel} P.~D., {Tytler} D., 1994,
+  \aaps~  108, 287
+
+\bibitem[\protect\astroncite{{Verner} et~al.}{1996a}]{vfky}
+{Verner} D.~A., {Ferland} G.~J., {Korista} K.~T., {Yakovlev} D.~G., 1996a,
+  \apj~  465, 487
+
+\bibitem[\protect\astroncite{{Verner} et~al.}{1996b}]{verner1996}
+{Verner} D.~A., {Verner} E.~M., {Ferland} G.~J., 1996b,
+  Atomic Data and Nuclear Data Tables~  64, 1
+
 \bibitem[\protect\astroncite{{Voit} et~al.}{1993}]{voit1993}
 {Voit} G.~M., {Weymann} R.~J., {Korista} K.~T., 1993,
   \apj~  413, 95
@@ -1555,6 +1756,10 @@
 \bibitem[\protect\astroncite{{Wade}}{1988}]{wade1988}
 {Wade} R.~A., 1988,
   \apj~  335, 394
+
+\bibitem[\protect\astroncite{{Walker}}{1963}]{walker1963}
+{Walker} M.~F., 1963,
+  \apj~  137, 485
 
 \bibitem[\protect\astroncite{{Walton} et~al.}{2013}]{walton2013}
 {Walton} D.~J., {Miller} J.~M., {Harrison} F.~A., {Fabian} A.~C. et~al., 2013,
@@ -1588,6 +1793,11 @@
 {Woods} D.~T., {Klein} R.~I., {Castor} J.~I., {McKee} C.~F., {Bell} J.~B.,
   1996,
   \apj~  461, 767
+
+\bibitem[\protect\astroncite{{Woods}}{1991}]{woods1991}
+{Woods} J.~A., 1991,
+\newblock Ph.D. thesis,
+  D.~Phil thesis, Univ.~Oxford , (1991)
 
 \bibitem[\protect\astroncite{{Yong} et~al.}{2016}]{yong2016}
 {Yong} S.~Y., {Webster} R.~L., {King} A.~L., 2016,
