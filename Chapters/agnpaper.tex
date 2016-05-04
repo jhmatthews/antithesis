@@ -80,7 +80,8 @@ the luminosity of the X-ray source was relatively low, of order
 \POW{43}{\LUM} and the mass loss rate was relatively high, of order the 
 mass accretion rate.  However, at higher X-ray luminosities, the wind was
 so ionized that UV absorption lines were not produced.  In addition, and 
-in part due to limitations in our radiative transfer code, the model failed 
+in part due to limitations inherent in 
+the radiative transfer methods, the model failed 
 to produce spectra with strong emission lines at any inclination angle.
 
 Here I attempt to address both of these issues, by
@@ -125,10 +126,10 @@ of quasars and BALQSOs.
 \includegraphics[width=1.0\textwidth]{figures/06-agnpaper/fig1.png}
 \caption
 [A cartoon showing the geometry and some key parameters of
-our biconical quasar wind model.]
+the biconical quasar wind model.]
 {
 A cartoon showing the geometry and some key parameters of
-our biconical wind model.
+the biconical quasar wind model.
 }
 \label{fig:cartoon}
 \end{figure} 
@@ -137,14 +138,14 @@ our biconical wind model.
 \label{sec:photon_sources}
 
 Two sources of r-packets are included in the model:
-An accretion disc and a central X-ray source.
+An accretion disc and a central X-ray s ce.
 The accretion disc is assumed to be geometrically thin, 
 but optically thick.
 Accordingly, the disc is modelled as an ensemble of blackbodies with a 
 \cite{shakurasunyaev1973} effective temperature profile. 
 The emergent SED is then determined by the specified accretion rate ($\dot{m}$)
 and central BH mass ($M_{BH}$).
-All photon sources in our model are opaque, meaning
+All photon sources in the model are opaque, meaning
 that r-packets that strike them are destroyed.
 The inner radius of the disc extends to the innermost 
 stable circular orbit (ISCO) of the BH. 
@@ -161,7 +162,7 @@ F_X (\nu) = K_X \nu^{\alpha_X}.
 \end{equation}
 The normalisation, $K_X$ of this power law is such that it 
 produces the specified 2-10~keV luminosity, $L_X$.
-The input spectrum for our simulations is therefore a simple combination
+The input spectrum for the simulations is therefore a simple combination
 of a power law X-ray component and accretion disc spectrum; an example input
 spectrum is shown in Fig.~\ref{fig:qso_model_sed}. In actual fact, this
 spectrum will be angle dependent due to the geometry of the system and 
@@ -176,9 +177,9 @@ via an indivisible energy packet constraint (see Lucy 2002, M15).
 \centering
 \includegraphics[width=1.0\textwidth]{figures/06-agnpaper/qso_model_sed.png}
 \caption
-[The input spectrum used for our quasar modelling.]
+[The input spectrum used for the quasar modelling.]
 {
-The input spectrum used for our quasar modelling.
+The input spectrum used for the quasar modelling.
 }
 \label{fig:qso_model_sed}
 \end{figure} 
@@ -192,9 +193,9 @@ AGN winds exhibit significant substructure -- the outflow is expected to be
 {\em clumpy}, rather than smooth, and probably on a variety of scales. 
 A clumpy outflow offers a possible solution to the so-called `over-ionization problem' in 
 quasar and AGN outflows \citep[e.g.][]{junk1983,weymann1985,hamann2013}. 
-This is the main motivation for incorporating clumping into our model.
+This is the main motivation for incorporating clumping into the model.
 
-Deciding on how to implement clumping into our existing wind models was not straightforward.
+Deciding on how to implement clumping into the existing wind models was not straightforward.
 First, and most importantly, the physical scale lengths and density contrasts in AGN outflows are not well-constrained from observations or theory.  As a result, while one could envision in principle, clouds with a variety of sizes and density contrasts varying perhaps as function of radius, there would have been very little guidance on how to set nominal values of the various parameters of such a model.
 Second, there are significant computational difficulties associated with adequately resolving and realistically modelling a series of small scale, high density regions with a MCRT
 -- or for that matter, a hydrodynamical -- code. 
@@ -208,7 +209,7 @@ typical photon mean free path, and thus the clumps are
 both geometrically and optically thin. This approach 
 allows one to treat clumps only in terms of their volume filling factor, $f_V$, 
 instead of having to specify separately their size and density distributions.
-In our model, $f_V$ is independent of position (see section~4.4).
+In this model, $f_V$ is independent of position (see section~4.4).
 The inter-clump medium is modeled as a vacuum,
 although the outflow is still non-porous and axisymmetric.
 This approach therefore assumes that the inter-clump medium
@@ -226,10 +227,10 @@ enhanced density in the clump. The resultant effect is that, {\em for fixed temp
 processes that are linear in density, such as electron scattering, are unchanged, 
 as $f_V$ and $D$ will cancel out. However, any quantity that scales with the square of density, 
 such as collisional excitation or recombination, will increase by a factor of $D$.
-In our models, the temperature is not fixed, and is instead set by balancing heating and 
+In \py, the temperature is not fixed, and is instead set by balancing heating and 
 cooling in a given cell. In the presence of an X-ray source, this thermal balance is 
 generally dominated by bound-free heating and line cooling. The main effect of including 
-clumping in our modelling is that it moderates the ionization state due to the increased 
+clumping in this modelling is that it moderates the ionization state due to the increased 
 density. This allows an increase in the ionizing luminosity, amplifying the amount of
 bound-free heating and also increasing the competing line cooling term
 (thermal line emission).
@@ -459,7 +460,7 @@ as it represents the ratio of the number density of
 H ionizing photons to the local H density.
 It is, however, a poor representation of the 
 ionization state of species such as \civ\ as it encodes no information
-about the shape of the SED. In our case, the X-ray photons 
+about the shape of the SED. In this case, the X-ray photons 
 are dominant in the photoionization of the UV resonance line ions. 
 This explains why a factor of 100 increase in X-ray luminosity requires
 a clumping factor of 0.01, even though the value of $U_H$ decreases by only a factor of $\sim10$ compared to H13. 
@@ -561,7 +562,7 @@ the output spectra is shown in Fig.~\ref{fig:sightline}.
 
 The UV spectrum is characterised by strong BAL 
 profiles at high inclinations ($> 70^\circ$). 
-This highlights the first success of our model: 
+This highlights the first success of the model: 
 clumping allows the correct ionization state 
 to be maintained in the presence of strong X-rays, 
 resulting in large resonance line opacities. 
@@ -589,12 +590,12 @@ The scattered light explanation is supported by spectropolarimetry results
 \citep{lamy2000}. Our spectra do not show non-black, saturated profiles.
 Black, saturated troughs are seen at angles $i > 73^\circ$, and the BALs
 are non-saturated at lower inclinations. The reasons for this are inherent 
-in the construction of our model. 
+in the construction of the model. 
 First, the microclumping assumption does not allow for 
 porosity in the wind, meaning that it does not naturally produce
 a partial covering absorber. To allow this, an alternative approach
 such as {\em macroclumping} would be required \citep[e.g.][]{hamann2008,surlan2012}.
-Second, our wind does not have a significant scattering contribution 
+Second, the wind does not have a significant scattering contribution 
 along sightlines which do not pass through the BAL region,
 meaning that any scattered component to the BAL troughs is absorbed by line opacity.
 This suggests that either the scattering cross-section of the wind must
@@ -646,11 +647,11 @@ mean values from a subsample of the SDSS DR7 quasar catalog \citep{shen2011}
 with BH mass and Eddington fraction estimates similar to the fiducial model values 
 (see caption). The spectra do not contain the strong 
 C~\textsc{iii}]~1909\AA\ line seen in the quasar composite spectra, 
-but this is due to a limitation of our current treatment of C; semi-forbidden
-(intercombination) lines are not included in our modelling.
+but this is due to a limitation of the current treatment of C; semi-forbidden
+(intercombination) lines are not included in this modelling.
 
 In Fig.~\ref{fig:sed}, I show an $F_{\nu}$ spectrum with broader waveband coverage
-that includes the optical, showing that our synthetic spectra 
+that includes the optical, showing that the synthetic spectra 
 also exhibit \ha\ and \hb\ emission. 
 In this panel, I include a low inclination and 
 also a very high inclination 
@@ -699,10 +700,10 @@ This is discussed further in section~\ref{sec:ew_in_model}.
 [X-ray properties of the clumped quasar model compared to H13 and samples
 from the literature.]
 {
-X-ray ($2$~keV) luminosity of the our clumped model (red squares) 
+X-ray ($2$~keV) luminosity of the clumped model (red squares) 
 and the H13 model (blue squares), plotted against monochromatic luminosity 
 at 2500\AA. The points are labeled according to inclination; angles
-$>70^\circ$ correspond to BALs in our scheme (see figure 4).
+$>70^\circ$ correspond to BALs in this scheme (see figure 4).
 Also plotted are masurements from 
 the COMBI-7 AGN and the BQS samples (Steffen et al. 2006) and the Saez et al. (2012) 
 sample of BALQSOs. The dotted line shows the best fit relation for non-BALQSOs 
@@ -720,7 +721,7 @@ inclinations.
 
 Fig.~\ref{fig:xray} shows the emergent
 monochromatic luminosity ($L_\nu$) at 2~keV and 
-plotted against $L_\nu$ at $2500$\AA\ for a number of different viewing angles in our model.
+plotted against $L_\nu$ at $2500$\AA\ for a number of different viewing angles in the model.
 The monochromatic luminosities are calculated from the synthetic spectra and thus include
 the effects of wind reprocessing and attenuation. In addition to model outputs,
 I also show the BALQSO sample of Saez et al. (2012) and luminous AGN and quasar
@@ -857,7 +858,7 @@ EW increases with inclination in the fiducial model.
 This trend means that even though significantly denser
 models can match the line EWs fairly well at low inclinations, they will then
 possess overly strong red wings to the BAL P-Cygni profiles at high inclinations.
-The fact that the EW increase in our model are directly related to limb-darkening 
+The fact that the EW increase in this model are directly related to limb-darkening 
 and foreshortening of the continuum. 
 This appears to contradict observations, which show remarkably uniform emission
 line properties in quasars and BALQSOs \citep{weymann1991,dipompeo2012b}. 
@@ -921,19 +922,19 @@ M_{BH} = f_{FWHM}~\left[c~\frac{(FWHM)}{\lambda_0}\right]^2~\frac{R_{BLR}}{G},
 \end{equation}
 where $\lambda_0$ is the central wavelength of the line in question
 and the FWHM is in the same wavelength units.
-In a model such as ours the BH mass is known, and determines
+In a model such as this the BH mass is known, and determines
 the escape velocities and rotational motions of the outflow. Thus, 
 using a typical radius for line formation in the model it is trivial to 
 calculate $f_{FWHM}$ for each viewing angle. Fig.~\ref{fig:FWHM}
 shows $f_{FWHM}$ as a function of inclination for the 
-\civ, \mg\ and \ha\ emission lines in our model, 
+\civ, \mg\ and \ha\ emission lines in the fiducial model, 
 assuming $R_{BLR}=10^{17}$~cm. 
 For \civ\ and \mg\ the wind angles are not plotted as BAL profiles affect 
 the measurement, and I have compared to \ha\ rather than \hb\ due to the
 low \hb\ luminosity at some viewing angles. Nevertheless,
 this value should trace $f_{FWHM}$ from \hb\ fairly well.
 
-The values from our model agree fairly well with the predictions
+The values from the model presented here agree fairly well with the predictions
 of \cite{yong2016} from their simpler analysis, suggesting that,
 at least in this specific set-up,
 radiative transfer and ionization has a minimal role in determining
@@ -988,7 +989,7 @@ LoBAL line profiles are seen at a subset of viewing angles, and Fe~\textsc{ii}
 absorption is seen at particularly high inclinations. 
 \smallskip
 \item The synthetic spectra show \la\ line and weak He~\textsc{ii}~$1640$\AA\ line
-as a result of our improved treatment of recombination using macro-atoms. 
+as a result of the improved treatment of recombination using macro-atoms. 
 Balmer emission lines and a Balmer recombination continuum are also
 seen in the optical spectrum, but this
 is only really significant at high inclination where 
@@ -1002,7 +1003,7 @@ observations, suggesting that a greater volume of dense ($n_e\sim10^{10}$~cm$^{-
 material may be required.
 \smallskip
 \item The line EWs in the synthetic spectra increase with inclination.
-BAL and non-BAL quasar composites have comparable EWs, so our model
+BAL and non-BAL quasar composites have comparable EWs, so the fiducial model
 fails to reproduce this behaviour.
  If the BLR emits fairly isotropically then for a 
 foreshortened, limb-darkened accretion disc 
@@ -1015,7 +1016,7 @@ line and continuum emission is a crucial question for theoretical models.
 \end{enumerate}
 This work confirms a number of expected outcomes from a geometric unification 
 model, and suggests that a simple biconical geometry such as this can come close to 
-explaining much of the  phenomenology of quasars. However, our conclusions pose 
+explaining much of the  phenomenology of quasars. However, these conclusions pose 
 some challenges to a picture in which BALQSOs are
 explained by an {\em equatorial} wind rising from a classical thin disc, and suggest 
 the angular distribution of emission is important to understand if this 
