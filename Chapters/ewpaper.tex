@@ -433,8 +433,98 @@ models.
 
 
 
+
+
+
+
+
 \section{Predicted EW Distributions Compared to Observations}
 \label{sec:mc_angular}
+
+\subsection{Fitting the Quasar Distribution}
+
+\citet[][hereafter R11]{risaliti2011} analysed the \ewo\ 
+distribution of 6029 quasars in SDSS DR5. They demonstrated
+that a foreshortened disc and isotropic \oiiifull\ line produces
+a high EW tail to the distribution with a characteristic 
+slope of $\Gamma_{EW}=-3.5$. In order to first reproduce their
+result and discuss its implications, I have 
+created a sample according to their selection
+criteria. The criteria are that the object in question lies in the redshift
+range 0.01 to 0.8, have an absolute magnitude $M_i>22$, an 
+apparent magnitude $m_i>19.1$, and signal to noise per pixel of greater
+than 5. Using the updated SDSS quasar sample of S11, this defines
+a sample of 14,424 quasars.
+
+To fit the distribution, I conduct the following procedure,
+which is similar to the method R11 use to demonstrate that the power
+law tail is expected.
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	\item A set of isotropic angles is chosen such that 
+	$P(\theta)\propto d\Omega(\theta)$. 
+	If $\theta<\theta_{1}$ then the fake object is designated as unobscured, 
+	and otherwise the object is ignored. 
+	\item To be included in the sample, the object also has to 
+	survive a selection test
+	to simulate the distribution of angles in a flux-limited sample.
+	This is done by drawing a random sample from the real quasar sample, 
+	and calculating a `doubly observed continuum flux', $F_O$ at $5100\AA$ 
+	(rest frame), such that $F_O = F_{5100}~\epsilon(\theta)$. The flux limit
+	is set at $5\times10^{-13}$~erg~s$^{-1}$~cm$^{-1}$~\AA$^{-1}$, but the results
+	are fairly insensitive to the limit chosen.
+	\item For each mock sample, an EW$_*$ is drawn from an intrinsic 
+	(i.e. `face-on') EW distribution for quasars. This is assumed to be a
+	gaussian. The mean, $\mu_*$, and width, $\sigma_*$, of this Gaussian
+	can either be set arbitrarily -- for example, to demonstrate trends
+	in mock data -- or obtained from a $\chi^2$ fit to the observed EW
+	distribution.
+	\item A mock EW is estimated such that $\ew = EW_0 / \epsilon(\theta)$,
+	and this process is repeated to build up a mock sample of $10^6$ objects.
+\end{enumerate}
+The result of this numerical experiment is, as found by R11, a distribution
+with a high EW tail of slope $-3.5$. We can now vary the maximum angle, $\theta_1$,
+and examine how this tail changes. Mock data for a series
+of cutoff angles is shown in Fig.~\ref{fig:cutoff}, for two intrinsic 
+Gaussian. The power law behaviour is only seen when the maximum angle is
+sufficiently large, and a rapid decay in the distribution is observed
+at a characteristic EW related to both the width and mean of the
+intrinsic distribution as well as the cosine of the maximum angle.
+The top panel has $\mu_*$ and $\sigma_*$ of the R11 Model 1, 
+whereas the bottom panel shows a narrower distribution to illustrate the 
+earlier onset of the high EW cutoff.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/cutoff.png}
+\caption
+{
+EW distribution
+}
+\label{fig:chi2}
+\end{figure}
+
+
+Fig.~\ref{fig:chi2} shows the result of a $\chi^2$ minimization fit 
+to the R11 sample. A good fit is achieved with similar values to
+the intrinsic gaussian than those used by R11.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/log_quasar_fit.png}
+\caption
+{
+The EW distribution of quasars in the R11 sample (red errorbars)
+and the best fit model with a maximum viewing angle of
+$84^\circ$.
+}
+\label{fig:chi2}
+\end{figure}
+
+
+
+
+
 
 \subsection{A Monte Carlo Approach}
 
@@ -528,48 +618,7 @@ and BAL quasars are viewed from high inclinations. I will show this byconducting
 a simple Monte Carlo experiment to ascertain which geometries best reproduce the observed
 distributions. Throughout these simulations, 
 
-\subsection{\ewo\ in LoBAL quasars}
 
-% I assume $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate. 
-% Unfortunately, it is very difficult to construct an intrinsic `face-on' distribution
-% of EWs in quasars. This is mainly because the intrinsic face-on luminosities
-% and inclination distribution of the systems is not known, meaning that deconvolving
-% these effects is challenging. If an intrinsic, face-on distribution could be constructed
-% then models of continuum emission could be used to derive predicted EW distributions
-% for a grid of outflow geometries. These predicted distributions could then be compared 
-% to the observed distributions and constraints placed on BAL viewing angles via,
-% e.g., a Kologomorov-Smirnov test. Despite these difficulties, it is still relatively easy to 
-% demonstrate that the EW distribution in BAL quasars is not well produced by a model in which 
-% the accretion disc is foreshortened and BAL quasars are viewed from high inclinations. 
-% I will show this by conducting a simple Monte Carlo experiment to ascertain which 
-% geometries best reproduce the observed distributions.
-
-% \subsection{The Effect of Inclination on a Log-normal EW distribution}
-
-% Fig.~\ref{fig:ew_cartoon} shows the effect of different viewing angles 
-% for BAL and non-BAL quasars for four different geometries. In each case, the
-% intrinsic EW distribution, $g({\rm EW})$ is taken to be a normal
-% distribution with $\mu=10$\AA and $\sigma=5\AA$. 
-% We then choose $10^6$ isotropic angles on the sky and apply a 
-% flux selection effect, and designate each of the angles that passes the selection 
-% criteria as a BAL or non-BAL viewing angle. We assume
-% $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate. 
-% Viewing BALs from high inclinations results in both a systematic shift in the mean to
-% higher EWs, as well as a broader distribution, with the characteristic tail at 
-% extreme inclinations. 
-
-% \begin{figure*} %fullpage
-% \centering
-% \includegraphics[width=1.0\textwidth]{figures/ewpaper/ew_with_cartoon.png}
-% \caption
-% {
-% Histograms of equivalent widths for BAL and non-BAL quasars for a number of
-% different toy unification geometries.
-% }
-% \label{fig:ew_cartoon}
-% \end{figure*} %fullpage
-
-% \subsection{Monte Carlo Approach}
 
 \begin{figure*} %fullpage
 \centering
@@ -580,6 +629,35 @@ Contour plots from the Monte Carlo simulations.
 }
 \label{fig:contour}
 \end{figure*} %fullpage
+
+\begin{figure} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/faceon_ew_o3_faceon_sdss.png}
+\caption
+{
+Contour plots from the Monte Carlo simulations.
+}
+\label{fig:o3_faceon}
+\end{figure} %fullpage
+
+\begin{figure} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/faceon_ew_c4_faceon_sdss.png}
+\caption
+{
+Contour plots from the Monte Carlo simulations.
+}
+\label{fig:c4_faceon}
+\end{figure} %fullpage
+
+
+
+
+
+
+\subsection{\ewo\ in LoBAL quasars}
+
+
 
 
 As expected, equatorial viewing angles are strongly 
