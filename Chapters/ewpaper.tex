@@ -442,6 +442,7 @@ models.
 \label{sec:mc_angular}
 
 \subsection{Fitting the Quasar Distribution}
+\label{sec:fitting}
 
 \citet[][hereafter R11]{risaliti2011} analysed the \ewo\ 
 distribution of 6029 quasars in SDSS DR5. They demonstrated
@@ -486,28 +487,45 @@ The result of this numerical experiment is, as found by R11, a distribution
 with a high EW tail of slope $-3.5$. We can now vary the maximum angle, $\theta_1$,
 and examine how this tail changes. Mock data for a series
 of cutoff angles is shown in Fig.~\ref{fig:cutoff}, for two intrinsic 
-Gaussian. The power law behaviour is only seen when the maximum angle is
+Gaussians. The power law behaviour is only seen when the maximum angle is
 sufficiently large, and a rapid decay in the distribution is observed
 at a characteristic EW related to both the width and mean of the
 intrinsic distribution as well as the cosine of the maximum angle.
 The top panel has $\mu_*$ and $\sigma_*$ of the R11 Model 1, 
 whereas the bottom panel shows a narrower distribution to illustrate the 
-earlier onset of the high EW cutoff.
+earlier onset of the high EW cutoff. In principle, this cutoff could
+be used to infer information about the viewing angle distribution
+of quasars, but this is complicated by poor statistics in the tail,
+seleciton effects and lack of knowledge about the true face-on
+distribution.
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/cutoff.png}
 \caption
 {
-EW distribution
+Theoretical Ew distributions from the numerical experiment 
+described in section~\ref{sec:fitting} for a few different 
+maximum angles. The results in the top panel use the same intrinsic
+distribution as Model 1 from R11 (shown in black), 
+whereas the bottom panel shows the distributions 
+obtained from a narrower intrinsic Gaussian. By the time the maximum
+angle is limited to around $70^\circ$ the cutoff is
+clear even at moderate values of EW.
 }
-\label{fig:chi2}
+\label{fig:cutoff}
 \end{figure}
 
-
 Fig.~\ref{fig:chi2} shows the result of a $\chi^2$ minimization fit 
-to the R11 sample. A good fit is achieved with similar values to
-the intrinsic gaussian than those used by R11.
+to the R11 sample. The best fit is achieved with a maximum angle of 
+$\theta_{1}=84^\circ$ and a slightly broader intrinsic distribution
+than model 1 of R11. I adopt linear binning
+to facilitate easy comparison with R11, and only fit up $EW=100$\AA
+due to poor statistics above that limit. Unfortunately, this 
+makes inferring any information about a potential high EW cutoff 
+difficult as a more complete sample at high EW is required. 
+
+
 
 \begin{figure}
 \centering
@@ -522,11 +540,7 @@ $84^\circ$.
 \end{figure}
 
 
-
-
-
-
-\subsection{A Monte Carlo Approach}
+\subsection{Comparing non-BAL and BAL Distributions}
 
 \begin{figure}
 \centering
@@ -537,6 +551,11 @@ The geometry of the toy model used to carry out the Monte Carlo simulations
 }
 \label{fig:cartoon}
 \end{figure}
+
+In order to compare the observed distributions to those expected for BALs and
+non-BALs I repeat the process described in section~\ref{sec:fitting} with a few 
+key differences
+
 
 I assume $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate
 from section~\ref{sec:disc_agn}. 
@@ -578,17 +597,17 @@ cannot be well-fitted unless quasars are viewed from a wide range of angles,
 right up to edge-on. The best fit is obtained for $\theta_{min}=85^\circ$ and
 is shown in Fig.~\ref{fig:chi2}.
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/quasar_fit.png}
-\caption
-{
-The EW distribution of quasars in sample A (red errorbars)
-and the best fit model with a maximum viewing angle of
-$85^\circ$.
-}
-\label{fig:chi2}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=1.0\textwidth]{figures/ewpaper/quasar_fit.png}
+% \caption
+% {
+% The EW distribution of quasars in sample A (red errorbars)
+% and the best fit model with a maximum viewing angle of
+% $85^\circ$.
+% }
+% \label{fig:chi2}
+% \end{figure}
 
 Although the quasar EW distribution can be fitted with the above 
 model, neither the true distribution of viewing angles 
@@ -622,10 +641,10 @@ distributions. Throughout these simulations,
 
 \begin{figure*} %fullpage
 \centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/four_ew_o3_max_sdss.png}
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/mesh4_ew_o3_max_sdss.png}
 \caption
 {
-Contour plots from the Monte Carlo simulations.
+Heatmap showing the results 
 }
 \label{fig:contour}
 \end{figure*} %fullpage
