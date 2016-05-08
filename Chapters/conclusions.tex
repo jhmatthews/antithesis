@@ -4,37 +4,110 @@
 {{\sl Mike Vennart, Silent/Transparent}}
 
 I began this thesis with the fundamental tenet that accreting systems
-and their associated outflows are astrophysically important, but that
-much of the diverse phenomenology associated with such systems, as well
+and their associated outflows are astrophysically important. However, I also
+demonstrated that much of the diverse phenomenology associated with such systems, as well
 as the underlying {\em physics}, is not well understood.  
 Having attempted to address some of the issues raised in the 
 introductory chapters, I will provide some concluding remarks. 
 First, I will summarise my findings, before 
-commenting on how future research can unveil the true nature of 
+commenting on how future research can help unveil the true nature of 
 accretion discs and their winds.
 
-A large portion of the time of this PhD has been spent maintaining,
+A large portion of this PhD has been spent maintaining,
 testing and developing the MCRT and ionization code, \py. The first 
-step in this thesis was 
+step in this project was to understand the macro-atom scheme
+developed by \cite{lucy2002,2003}, and it's specific integration
+into \py. I described the scheme and the operation of \py\ in detail
+in chapter 3, partly in the hope that it will prove a useful document
+for future efforts involving this useful, but complex, piece of software.
+The latter parts of the same chapter focused on the series of tests
+I conducted to robustly verify that the code worked as expected and that 
+it could reproduce the analytical and computational results in the 
+right physical limits. Near the start of the project many of these tests
+would fail, either because \py\ did not possess the relevant atomic data,
+or because the necessary integration between the macro-atom and simple-atom
+portions of the code was not yet in place. Thus, while time consuming,
+progressing to the point where all the tests shown in chapter 3 could be
+passed was an important milestone, and enabled the techniques in question
+to be applied to astrophysical problems with confidence.
 
+The first of these astrophysical problems involved CVs, and in particular
+those accreting at a relatively high rate, such as DNe or NLs. Having 
+improved the radiative transfer techniques from previous CV modelling efforts
+involving \py\ \citep[LK02 ][]{noebauer2010}, it was now possible to see
+if the outflows that are responsible for the P-Cygni profiles seen
+in UV resonance lines could also affect the {\em optical} line and continuum
+emission. The results were unambiguous. By simply taking the SV93/LK02
+models -- designed to reproduce the UV spectra of high-state CVs --
+and `turning on' the improved radiative transfer mode, the wind already 
+had a significant effect on the optical spectrum, producing strong
+\ha, \heiiopt\ and \heiioptnew\ lines, among others, at high inclinations.
 
-
-In the first study I demonstrated that accretion disc winds
-can have a profound impact on the optical spectra of CVs -- a region
-of the spectrum often assumed to have nothing to do with outflows.
+I then conducted a small parameter search over just two kinematic parameters, 
+to see if a model could produce {\em all} of the optical H and He lines observed 
+in high-state CVs. A model with a more slowly accelerating outflow produced
+synthetic spectra showing the full sequence of H and He recombination lines, with 
+the observed trend from strong emission at high inclination to weaker lines
+at low inclination. Furthermore, the dense outflow now produced strong Balmer
+recombination emission that was sufficient to `fill in' the Balmer 
+absorption edge intrinsic to the disc atmosphere input spectrum. The optically
+optimised model is not without issues; the red wing to the \civ\ line
+is now overly strong, particularly at high inclinations, and \heii\ emission
+is stronger than that observed. Nevertheless, the synthetic spectra exhibited
+reasonable verisimilitude with observations of the high inclination NL RW Tri,
+and the results indicated that disc winds may have a much broader impact,
+especially in wavelength terms, than is traditionally expected. Furthermore,
+the large vertical extent of the line emitting region has implications
+for techniques that assume planar line emission, such as Doppler tomograpgy (REFs)
+and eclipse mapping (REFs).
 
 In chapter 5, I applied similar techniques to the question of quasar 
-unification.
+unification, but with one additional adaptation. In order to simultaneously
+increase the emission measure of the wind, as well as moderate the ionization
+state in the presence of strong X-rays, I incorporated a simple treatment of clumping 
+into \py. The technique -- known as {\em microclumping} -- is prevalent 
+in the stellar wind community, but this was the first time it had been
+applied to quasar winds in this context. Although the motivation for including
+clumping was in some sense empirical, in that H13 could not produce a 
+model with strong \civ\ BALs without severely limiting the X-ray luminosity, 
+the validity of this approach is strengthened by the theoretical and observational
+evidence for clumping in line-driven hot star winds 
+(see section~\ref{sec:clumpy_stellar} and \ref{sec:line_driving}).
 
 \section{Suggestions for Future Work}
 
 \subsection{CVs as Accretion and Outflow Laboratories}
 
+CVs are the closest and best understood laboratories for
+our understanding of accretion physics. In particular, the NL
+variables make excellent testbeds for the $\alpha$-disc model,
+as they are one of the few accreting systems known to
+lie in a relatively constant accretion rate state -- fulfilling 
+an explicit assumption of the SS73 prescription. I suggest
+that two observational programs relating to NLs are pursued.
+The first is to take broadband, simultaneous spectroscopy of a number
+of NL variables. This will allow the impact of winds on the spectrum
+to be assessed more carefully as modelling of the entire wavelength
+range can be undertaken, possibly including fits to the observed spectrum.
+It will also allow the broadband SED to be fitted with confidence,
+and inferences made about the temperature profile of the disc. 
+The second is to take measurements of the depth of the Balmer jump
+in a relatively large sample of NLs, either through narrow band spectroscopy
+or two-band photometry. Together with inclination measurements the predictions
+of disc and outflow models can be tested directly by exploring how the depth
+of the Balmer absorption edge varies with viewing angle and accretion rate.
+
 \subsection{Improving the Treatment of Clumping}
 
 A few 
 
-\subsection{Expanding the Capabilities of \py}
+\subsection{Improving Atomic Models}
+
+In chapter 4, the dominant source of heating in the benchmark CV model
+is line heating. This means that accurate collision strengths are needed
+in order 
+
+\subsection{Using Radiative Transfer to Test }
 
 \subsection{Obtaining Reliable Orientation Indicators}
 
@@ -50,10 +123,14 @@ In order to distinguish between geometric unification, obscuration
 and evolutionary scenarios for the diversity of AGN it is 
 critical to constrain their inclinations.
 
-One of the conclusions presented in chapter 6, and also found
-from multiple studies (REFs), is that it is not possib
+% One of the conclusions presented in chapter 6, and also found
+% from multiple studies (REFs), is that it is not possib
 
-One possible way in which 
+% One possible way in which 
+
+\subsection{Placing BAL Quasars on the Eigenvector 1 Parameter Space}
+
+
 
 
 \section{Closing Remarks}
