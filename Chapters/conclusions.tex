@@ -16,7 +16,7 @@ accretion discs and their winds.
 A large portion of this PhD has been spent maintaining,
 testing and developing the MCRT and ionization code, \py. The first 
 step in this project was to understand the macro-atom scheme
-developed by \cite{lucy2002,2003}, and it's specific integration
+developed by \cite{lucy2002,lucy2003}, and it's specific integration
 into \py. I described the scheme and the operation of \py\ in detail
 in chapter 3, partly in the hope that it will prove a useful document
 for future efforts involving this useful, but complex, piece of software.
@@ -34,32 +34,33 @@ to be applied to astrophysical problems with confidence.
 The first of these astrophysical problems involved CVs, and in particular
 those accreting at a relatively high rate, such as DNe or NLs. Having 
 improved the radiative transfer techniques from previous CV modelling efforts
-involving \py\ \citep[LK02 ][]{noebauer2010}, it was now possible to see
+involving \py\ \citep[LK02, ][]{noebauer2010}, it was now possible to see
 if the outflows that are responsible for the P-Cygni profiles seen
 in UV resonance lines could also affect the {\em optical} line and continuum
-emission. The results were unambiguous. By simply taking the SV93/LK02
+emission. The results are unambiguous. By simply taking the SV93/LK02
 models -- designed to reproduce the UV spectra of high-state CVs --
-and `turning on' the improved radiative transfer mode, the wind already 
-had a significant effect on the optical spectrum, producing strong
+and `turning on' the improved radiative transfer mode, the wind
+has a significant effect on the optical spectrum, producing strong
 \ha, \heiiopt\ and \heiioptnew\ lines, among others, at high inclinations.
 
 I then conducted a small parameter search over just two kinematic parameters, 
 to see if a model could produce {\em all} of the optical H and He lines observed 
-in high-state CVs. A model with a more slowly accelerating outflow produced
-synthetic spectra showing the full sequence of H and He recombination lines, with 
+in high-state CVs. Synthetic spectra from a model 
+with a more slowly accelerating outflow show 
+the full sequence of H and He recombination lines, with 
 the observed trend from strong emission at high inclination to weaker lines
-at low inclination. Furthermore, the dense outflow now produced strong Balmer
-recombination emission that was sufficient to `fill in' the Balmer 
+at low inclination. Furthermore, the dense outflow now produces strong Balmer
+recombination emission that is sufficient to `fill in' the Balmer 
 absorption edge intrinsic to the disc atmosphere input spectrum. The optically
 optimised model is not without issues; the red wing to the \civ\ line
 is now overly strong, particularly at high inclinations, and \heii\ emission
-is stronger than that observed. Nevertheless, the synthetic spectra exhibited
+is stronger than that observed. Nevertheless, the synthetic spectra exhibit
 reasonable verisimilitude with observations of the high inclination NL RW Tri,
-and the results indicated that disc winds may have a much broader impact,
+and the results indicate that disc winds may have a much broader impact,
 especially in wavelength terms, than is traditionally expected. Furthermore,
 the large vertical extent of the line emitting region has implications
-for techniques that assume planar line emission, such as Doppler tomograpgy (REFs)
-and eclipse mapping (REFs).
+for techniques that assume planar line emission, such as Doppler tomography 
+\citep[e.g.][]{marsh1988} and eclipse mapping \citep[e.g.][]{horne1994}.
 
 In chapter 5, I applied similar techniques to the question of quasar 
 unification, but with one additional adaptation. In order to simultaneously
@@ -73,6 +74,57 @@ model with strong \civ\ BALs without severely limiting the X-ray luminosity,
 the validity of this approach is strengthened by the theoretical and observational
 evidence for clumping in line-driven hot star winds 
 (see section~\ref{sec:clumpy_stellar} and \ref{sec:line_driving}).
+
+Once again, I conducted a parameter search, this time in 5 dimensions. 
+A broad family of models produce strong UV emission lines at low inclinations
+and UV BALs at high inclinations. 
+Thus, the first success of the clumpy quasar wind model is that,
+for clumping factors comparable to those required 
+in stellar wind modelling \citep{hamann2008}, the ionization
+state of the wind matches well with observations despite the presence
+of strong X-ray radiation. Indeed, the X-ray properties of the model now 
+agree well with observed non-BAL and BAL quasar values for $L_X$, suggesting
+that the partially self-shielding BAL outflow itself might be responsible 
+for the observed X-ray weakness of BAL quasars. Perhaps the most
+compelling attribute of the wind model is that it naturally reproduces
+the broad range of ionization states observed in AGN such that the wind 
+emission has very similar characteristics to the observed BLR spectrum 
+(see, e.g., Fig.~\ref{fig:sed}). The primary limitation of the fiducial
+quasar model is a geometric one; it is not possible to produce comparable
+line EWs at low inclination to those at high inclination, due to the
+foreshortened, limb-darkened, and absorbed disc emission. Thus, even 
+if the low inclination line emission could be matched to the observed quasar EWs,
+the model would then over-predict the line emission emerging at high inclination
+`BALQSO-like' angles. This suggests an issue with an equatorial unification model,
+and provides the motivation for exploring the observational
+characteristics of emission lines in BAL and non-BAL quasars.
+
+The final project in this PhD saw a switch in philosophy, as, informed
+by the radiative transfer modelling, I turned to observations and in particular
+the invaluable dataset that is the {\sl Sloan Digital Sky Survey}. 
+The aim of this exercise was to more quantitatively assess the apparent
+similarity in emission line properties in BAL and non-BAL quasars. I first
+reproduced the results of \cite{risaliti2011} using the updated dataset 
+by fitting the distribution of the EW of the \oiiifull\ emission line 
+with a simple geometric model, in which an intrinsic Gaussian distribution
+was convolved with the expected angular distribution of quasars expected in a 
+flux-limited sample. I then constructed a simple toy geometric unification model,
+and showed that predictions from the simplest quasar wind models -- 
+those where an equatorial outflow rises from a geometrically thin, 
+optically thick accretion disc -- are not consistent with the observed 
+EW distributions of quasar emission lines. The results also suggest that
+obscuration is not the key driver of the \ewo\ distribution -- albeit
+under the assumption that BAL
+quasars are drawn from the same population as non-BAL quasars.
+
+The overall conclusions of this final study are striking, and extend far 
+beyond just constraining BAL outflow parameters. 
+They suggest a few possible scenarios, all of which present some problems
+that the data cannot yet confirm or refute.
+
+
+
+
 
 \section{Suggestions for Future Work}
 
