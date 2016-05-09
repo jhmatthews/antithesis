@@ -34,7 +34,7 @@ to be applied to astrophysical problems with confidence.
 The first of these astrophysical problems involved CVs, and in particular
 those accreting at a relatively high rate, such as DNe or NLs. Having 
 improved the radiative transfer techniques from previous CV modelling efforts
-involving \py\ \citep[LK02, ][]{noebauer2010}, it was now possible to see
+involving \py\ \citep[LK02, ][]{noebauer}, it was now possible to see
 if the outflows that are responsible for the P-Cygni profiles seen
 in UV resonance lines could also affect the {\em optical} line and continuum
 emission. The results are unambiguous. By simply taking the SV93/LK02
@@ -73,7 +73,7 @@ clumping was in some sense empirical, in that H13 could not produce a
 model with strong \civ\ BALs without severely limiting the X-ray luminosity, 
 the validity of this approach is strengthened by the theoretical and observational
 evidence for clumping in line-driven hot star winds 
-(see section~\ref{sec:clumpy_stellar} and \ref{sec:line_driving}).
+(see sections~\ref{sec:clumpy_stellar} and \ref{sec:line_driving}).
 
 Once again, I conducted a parameter search, this time in 5 dimensions. 
 A broad family of models produce strong UV emission lines at low inclinations
@@ -114,17 +114,28 @@ those where an equatorial outflow rises from a geometrically thin,
 optically thick accretion disc -- are not consistent with the observed 
 EW distributions of quasar emission lines. The results also suggest that
 obscuration is not the key driver of the \ewo\ distribution -- albeit
-under the assumption that BAL
+under the assumption that LoBAL
 quasars are drawn from the same population as non-BAL quasars.
 
-The overall conclusions of this final study are striking, and extend far 
+The overall conclusions of this final study are striking, and extend 
 beyond just constraining BAL outflow parameters. 
-They suggest a few possible scenarios, all of which present some problems
-that the data cannot yet confirm or refute.
+They suggest a few possible scenarios; perhaps quasar discs are much
+more isotropic than one might expect. If this is the case, how is it
+reconciled with the {\em theory} of accretion? Alternatively, BAL and
+non-BAL quasars may be viewed from a similar range of angles, in 
+which case their differences in polarisation properties must be 
+understood. The final possibility is of course that geometric unification
+does not explain the incidence of BALs in the UV spectra of quasars.
+This final scenario is not a solution to the problem, {\sl per se}. After all, BAL
+outflows {\em must} emerge at some range of angles, and this range of 
+angles is important to constrain in order to understand the outflow physics.
 
-
-
-
+Perhaps unsurprisingly, the work presented in this thesis has raised 
+many questions, some of which are fundamental to our understanding of CVs, 
+quasars and accreting systems generlly. I
+will therefore devote some time to discussing what I believe are 
+natural next steps in furthering our understanding of accretion
+and outflow on all scales.
 
 \section{Suggestions for Future Work}
 
@@ -151,13 +162,44 @@ of the Balmer absorption edge varies with viewing angle and accretion rate.
 
 \subsection{Improving the Treatment of Clumping}
 
-A few 
+One of the limitations of the work presented in chapter 5 is that the
+treatment of clumping is fairly simple, and does not adequately capture the
+physics of potential dense substructures in AGN outflows. 
+Indeed, it is considered a `first step' towards
+accurately including clumpiness in \py. So, what is the next step? One fairly 
+simple way of including some degree of porosity in the treatment would 
+be to relax the assumption that the Sobolev length is larger than the
+clump size. The Sobolev optical depth can then be calculated either
+or in or out of a clump, based on a random number choice proportional
+to the clump filling factor. This would mean that there is a chance 
+that photons will not interact with clumps, possibly leading to
+the non-black saturation that is observed in BAL troughs 
+\citep[][see also section~\ref{sec:balqso_angles}]{arav1999b,arav1999a}.
+More generally, an approach similar to {\em macroclumping}, as 
+used in stellar wind modelling \citep[e.g.][]{hamann2008,surlan2012},
+would allow the inclusion of porosity.
+
+More complex approaches could also be considered here, 
+such as the `two-phase' ideas used in clumpy torus models 
+\citep{stalevski2013} and suggested for the BLR 
+\citep[e.g.][]{netzer1990, dekool1995, elvis2000}.
+However, the general problem here is that, while introducing more freedom into 
+the wind model would certainly allow one to fit quasar spectra
+more effectively, the question is whether this provides useful physical insight.
+This is is somewhat open to interpretation, as the filling factors and origins of clumps
+in BLR and outflow models are not well constrained. I would therefore suggest that
+some of the above techniques are implemented, and experimented with,
+but would urge caution with regards to the interpretation of the overall
+results.
 
 \subsection{Improving Atomic Models}
 
 In chapter 4, the dominant source of heating in the benchmark CV model
 is line heating. This means that accurate collision strengths are needed
 in order 
+
+
+Fig.~\ref{}
 
 \subsection{Using Radiative Transfer to Test }
 
@@ -175,21 +217,34 @@ In order to distinguish between geometric unification, obscuration
 and evolutionary scenarios for the diversity of AGN it is 
 critical to constrain their inclinations.
 
-% One of the conclusions presented in chapter 6, and also found
-% from multiple studies (REFs), is that it is not possib
-
-% One possible way in which 
 
 \subsection{Placing BAL Quasars on the Eigenvector 1 Parameter Space}
 
-
+In chapter 6 it was only possible to 
 
 
 \section{Closing Remarks}
 
-Above all, this work demonstrates that {\em disc winds matter}.
-They are ubiquitous in accreting systems and appear to have a 
-profound connection with the accretion process. 
+Disc winds are ubiquitous in accreting systems and have a 
+profound connection with the accretion process. I have demonstrated,
+through state-of-the-art MCRT simulations, that disc winds extend their
+influence beyond the blue-shifted BALs and P-Cygni profiles traditionally
+associated with outflow. They may produce the optical line and continuum emission
+in CVs, possibly even dominating the observed spectrum. Simple clumpy biconical
+wind models also naturally exhibit the range of ionization states
+and emission lines seen in type 1 AGN and quasars, and once again
+may significantly alter the continuum shape. Regardless of their true
+impact, the influence of disc winds on the spectra of accreting systems
+must be understood, and the outflow covering factors and opening angles 
+accurately estimated, for three main reasons. First, so that the feedback 
+efficiency of BAL outflows, and mass-loss rates in CVs,
+can be calculated. Second, so that the true intrinsic continuum can be unveiled, and 
+the viability of the current `best-bet' accretion disc models can be assessed. 
+Third, so that the orientations of AGN and quasars can be properly constrained,
+allowing us to unify their diverse phenomenology. 
+These questions are still unanswered, but I hope that in this thesis I have
+demonstrated that {\em disc winds matter}, and are fundamental
+to our understanding of accreting compact objects.
 
 
 

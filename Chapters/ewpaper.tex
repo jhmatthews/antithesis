@@ -245,8 +245,6 @@ over the overall quasar sample from S11.
 \label{fig:bal_scatter}
 \end{figure*} %fullpage
 
-
-
 \begin{figure*} %fullpage
 \centering
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/ew_hist_qsos.png}
@@ -266,31 +264,50 @@ this sample must be further divided according to which
 emission lines are present in 
 the SDSS wavelength range at a given redshift. 
 Sample A contains all quasars within the redshift range $0.35<z<0.83$, 
-such that the Mg II 2800A and \oiiifull\ line EWs are both measured, 
-and Mg II BAL identification
+such that the \mgline\ and \oiiifull\ line EWs are both measured, 
+and \mg\ BAL identification
 is possible.  Sample B contains all quasars within the redshift 
 range $1.45<z<2.28$, such that 
 the EWs and presence of BALs in Mg II 2800A and CIV 1550A are both measurable.
 The details of these samples are shown in table 1.
+The mass and Eddington fraction measurements from S11 of the two samples,
+are shown in Fig.~\ref{fig:bal_scatter}
+against the background distribution of all S11 quasars.
+
+S11 are careful to take into account traditional problems with quasar line fitting,
+such as narrow line or Fe pseudocontinuum contamination, in their fits to 
+emission line profiles and resultant EW measurements. For \mgline\
+this includes careful subtraction of the Fe emission using the templates
+of \citep{vestergaard2001}. This subtraction is not included for \civfull,
+as the Fe emission is less prominent and harder to model, which may lead to
+a systematic overestimate by $\sim0.05$ dex in the line EW. 
+The \oiiifull\ line is fitted
+with a Gaussian and the flux ratio with the sister component 
+of the doublet, \oiiidoublet, is found to agree well with the theoretical
+expectation of around 3, implying a reliable subtraction of broad \hb.
+To mask out the effects of e.g., absorption, on \civ, S11 ignore 
+$3\sigma$ outliers in the fit to the profile. Based on these
+considerations, the S11 catalog makes for a reliable set of EW 
+measurements. This is especially true when making inferences from 
+multiple emission lines, as systematics inherent to individual lines 
+or spectral windows are less likely to affect the analysis as a whole.
 
 In attempting to draw broad conclusions about unification models as a whole,
-we would like to be able to construct a large homogenous dataset of 
+I would ideally construct a large, homogenous dataset of 
 {\em HiBAL} and non-BAL quasars, both with \oiiifull\ EWs. Unfortunately,
-the wavelength limits of SDSS do not allow this. One of the problems with
+the wavelength limits of SDSS do not allow this, and only LoBAL quasars have 
+both BALs and \ewo\ measurements. One of the problems with
 using just LoBAL quasars as tests of unification is that there is evidence 
 that they are drawn from a different population than normal quasars, perhaps
 suggesting an {\em evolutionary} origin. Examples include anomalously 
 high LoBAL fractions in dust-reddened quasar samples \citep{urrutia2009} 
 and infra-red selected samples \citep{dai2012}; 
 although see also \cite{lazarova2012}.
-To partially address this issue, I also build a small sample 
-of HiBAL quasars in SDSS by cross-matching the S11 catalog with 
-BALs identified in the HST COS archive.
-BALs were selected from the COS spectra using the balnicity index, 
-$BI$, defined in equation~??. HST objects were designated as HiBALS 
-by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
-The mass and Eddington fraction measurements from S11, with 
-errorbars, are shown against the background distribution of all quasars.
+% in SDSS by cross-matching the S11 catalog with BALs identified in the HST 
+% COS archive.BALs were selected from the COS spectra using the balnicity index, 
+% $BI$, defined in equation~??. HST objects were designated as HiBALS 
+% by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
+
 
 Fig. 2 shows histograms of a number of different 
 emission line properties for samples A and B. 
@@ -309,8 +326,8 @@ For a foreshortened disc this is simply $\epsilon(\theta) = \cos \theta$.
 Thus, if BAL quasars are viewed from a larger viewing angle on average then one
 would expect them to possess higher EWs, with a broader distribution.
 It is already apparent from figure 1 that the BAL distribution mean 
-is not systematically higher than the non-BAL
-mean -- in fact, it is lower. This is not expected from a model
+is not significantly higher than the non-BAL
+mean -- in fact, in many cases it is lower. This is not expected from a model
 in which the continuum is foreshortened and BAL outflows are at all equatorial.
 This problem is examined further in section~\ref{sec:mc_angular}. 
 First, I will examine the motivations for different forms of \ept\ 
@@ -359,6 +376,18 @@ combined to give an angular emissivity function, of
 
 \subsection{Including GR, Comptonisation and Opacity Effects}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/agnspec.png}
+\caption
+{
+Monochromatic continuum luminosities from AGNSPEC and classical thin disc
+models.
+}
+\label{fig:agnspec_disc}
+\end{figure} 
+
+
 \noindent
 In reality, limb darkening is not frequency independent and 
 depends on the bound-free and bound-bound opacities in the disc.
@@ -375,16 +404,6 @@ compared to foreshortened and limb-darkened predictions for SS73 models.
 Clearly, there is very little effect; 
 the accretion disc is still strongly anisotropic in the relevant wavebands.
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/agnspec.png}
-\caption
-{
-Monochromatic continuum luminosities from AGNSPEC and classical thin disc
-models.
-}
-\label{fig:agnspec_disc}
-\end{figure} 
 % Including GR, Comptonisation and Opacity Effects
 
 % \subsection{Alternative Continuum Models: Irradiation and Truncated Discs}
@@ -447,7 +466,7 @@ law tail is expected.
 	and this process is repeated to build up a mock sample of $10^6$ objects.
 \end{enumerate}
 The result of this numerical experiment is, as found by R11, a distribution
-with a high EW tail of slope $-3.5$. We can now vary the maximum angle, $\theta_1$,
+with a high EW tail of slope $-3.5$. I can now vary the maximum angle, $\theta_1$,
 and examine how this tail changes. Mock data for a series
 of cutoff angles is shown in Fig.~\ref{fig:cutoff}, for two intrinsic 
 Gaussians. The power law behaviour is only seen when the maximum angle is
@@ -459,7 +478,7 @@ whereas the bottom panel shows a narrower distribution to illustrate the
 earlier onset of the high EW cutoff. In principle, this cutoff could
 be used to infer information about the viewing angle distribution
 of quasars, but this is complicated by poor statistics in the tail,
-seleciton effects and lack of knowledge about the true face-on
+selection effects and lack of knowledge about the true face-on
 distribution.
 
 \begin{figure}
@@ -481,14 +500,16 @@ clear even at moderate values of EW.
 
 Fig.~\ref{fig:chi2} shows the result of a $\chi^2$ minimization fit 
 to the R11 sample. The best fit is achieved with a maximum angle of 
-$\theta_{1}=84^\circ$ and a slightly broader intrinsic distribution
-than model 1 of R11. I adopt linear binning
-to facilitate easy comparison with R11, and only fit up $EW=100$\AA
+$\theta_{1}=84^\circ$ and a narrower intrinsic distribution
+than model 1 of R11. The run of reduced $\chi^2$ with maximum angle
+is shown in Fig.~\ref{fig:chi2_curve}, where the choice for $\mu_*$
+and $\sigma_*$ is left free in each case. This shows
+how maximum angles below $\sim80^\circ$ are strongly disfavoured
+by this model. I adopt linear binning to facilitate easy comparison 
+with R11, and only fit up $\ew=100$\AA\
 due to poor statistics above that limit. Unfortunately, this 
 makes inferring any information about a potential high EW cutoff 
 difficult as a more complete sample at high EW is required. 
-
-
 
 \begin{figure}
 \centering
@@ -502,12 +523,25 @@ $84^\circ$.
 \label{fig:chi2}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/ewpaper/chi2_o3.png}
+\caption
+{
+$\chi^2/dof$ as a function of maximum angle, $\theta_1$, calculated in
+steps of $0.1^\circ$. The choice for $\mu_*$ and $\sigma_*$ is 
+left free in each case.
+}
+\label{fig:chi2_curve}
+\end{figure}
 
-\subsection{Comparing non-BAL and BAL Distributions}
+
+\subsection{Comparing non-BAL and LoBAL Distributions}
+\label{sec:bal_v_nonbal}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/fig2_cartoon.png}
+\includegraphics[width=0.8\textwidth]{figures/ewpaper/fig2_cartoon.png}
 \caption
 {
 The geometry of the toy model used to carry out the Monte Carlo simulations
@@ -516,209 +550,133 @@ The geometry of the toy model used to carry out the Monte Carlo simulations
 \end{figure}
 
 In order to compare the observed distributions to those expected for BALs and
-non-BALs I repeat the process described in section~\ref{sec:fitting} with a few 
-key differences
+non-BALs I conduct a Monte Carlo simulation similar to
+the process described in section~\ref{sec:fitting}, but with a few 
+key differences. I once again assume $\epsilon(\theta) = \cos \theta$.
+The geometry of the toy model used in this simulation is shown in
+Fig.~\ref{fig:cartoon}.
 
+First, A set of isotropic angles is generated.
+If $\theta_{min}<\theta<\theta_{max}$ then the fake object 
+is flagged as a mock BAL. If $\theta<\theta_{min}$ then the 
+fake object is designated a non-BAL, and otherwise
+the object is ignored. Once again, the object also has to 
+survive a selection test based on a arbitrary flux selection limit.
+I then fit the non-BAL distribution using the method described previously.
+For each mock sample, a EW$_*$ is drawn from the intrinsic gaussian,
+and a mock EW is estimated such that $\ew = EW_* / \epsilon(\theta)$.
+This process is repeated to build up a mock sample of objects, and 
+carried out for a series of pairs of $\theta_{min}$ and $\theta_{max}$.
+This allows theoretical distributions for BAL and non-BAL quasars
+for a series of different outflow geometries to be derived.
 
-I assume $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate
-from section~\ref{sec:disc_agn}. 
-The Monte Carlo simulation undergoes the following steps:
+The diagnostics recorded from the simulation are the following four
+quantities:
+\begin{itemize}
+	\item The $p$-value associated with the Kolgomorov-Smirnov (K-S) 
+	test statistic, $p_{KS}$, in which the mock BAL sample is compared
+	to the real LoBAL sample.
+	\item The BAL fraction, $f_{BAL}$, is calculated from the 
+	number of objects in the mock sample with $\theta_{min}<\theta<\theta_{max}$.
+	\item The $\chi^2/dof$ from the fit to the non-BAL quasar distribution.
+	\item $\Delta \mu$, the difference between the mean value of the mock BAL
+	distribution and the mean value of the mock non-BAL distribution.
+\end{itemize}
+The simulation results are shown in figure~\ref{fig:contour}, in which the 
+four diagnostics are plotted as a function of $\theta_{min}$ 
+and $\theta_{max}$. 
 
-\begin{enumerate}
-	\setlength\itemsep{1em}
-	\item A set of isotropic angles is chosen such that $P(\theta)\propto d\Omega(\theta)$.
-	If $\theta_{min}<\theta<\theta_{max}$ then the fake object is flagged as a mock BAL. 
-	If $\theta<\theta_{min}$ then the fake object is designated a non-BAL, and otherwise
-	the object is ignored. To be included in the sample, the object also has to 
-	survive a selection test based on a arbritrary flux selection limit, to simulate the
-	distribution of angles in a flux-limited sample.
-	\item I then construct a best estimate of the intrinsic (i.e. `face-on')
-	EW distribution for non-BAL quasars. This is done via a $\chi^2$ minimisation,
-	by finding the gaussian with $\mu$ and $\sigma$ which best 
-	reproduces the observed distribution when convolved with
-	the non-BAL angles generated in the previous step. 
-	a $\chi^2$ minimisation.
-	\item For each mock sample, a EW$_0$ is drawn from the intrinsic gaussian.
-	\item A mock EW is estimated such that $\ew = EW_0 / \epsilon(\theta)$,
-	and this process is repeated to build up a mock sample of objects.
-	\item The number of objects in the mock sample with 
-	$\theta_{min}<\theta<\theta_{max}$ is recorded, providing an 
-	estimate of the expected BAL fraction for this wind geometry. 
-	This already includes a selection effect for the weaker continuum flux.
-	\item The value of the K-S test statistic is recorded, in which the 
-	mock BAL sample is compared to the real BAL sample. The 
-	mean and variance of the mock sample is also recorded. 
-	This allows us to ascertain which regions
-	of parameter space best fit the observed BAL distribution
-\end{enumerate}
-
-This process is repeated for a grid of $\theta_{min}$ and $\theta_{max}$. The 
-results are shown in figure~\ref{fig:contour}, in which the mean, 
-standard deviation and $f_{BAL}$ are shown as a function of $\theta_{min}$ 
-and $\theta_{max}$. First, I find that the quasar EW distribution
-cannot be well-fitted unless quasars are viewed from a wide range of angles,
-right up to edge-on. The best fit is obtained for $\theta_{min}=85^\circ$ and
-is shown in Fig.~\ref{fig:chi2}.
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=1.0\textwidth]{figures/ewpaper/quasar_fit.png}
-% \caption
-% {
-% The EW distribution of quasars in sample A (red errorbars)
-% and the best fit model with a maximum viewing angle of
-% $85^\circ$.
-% }
-% \label{fig:chi2}
-% \end{figure}
-
-Although the quasar EW distribution can be fitted with the above 
-model, neither the true distribution of viewing angles 
-or the intrinsic `face-on' EW distribution of the emission line in 
-question is known. If an intrinsic, face-on distribution could be constructed
-then the Kologomorov-Smirnov test and $\chi^2$ minimization could be used
-to place constraints placed on BAL and non-BAL viewing angles.
-Furthermore, the distribution of \civ\ quasar EW cannot 
-
-% \subsection{Fitting the Quasar EW Distribution}
-
-% It is possible to fit the EW distribution of quasars for a given
-% form of \ept\ if one knows either the distribution of viewing angles 
-% or the intrinsic `face-on' EW distribution of the emission line in 
-% question. Unfortunately, neither of these distributions are known and deconvolving
-% their physical effects is challenging. If an intrinsic, face-on distribution could be constructed
-% then the models of continuum emission introduced above 
-% could be used to derive predicted EW distributions
-% for a grid of outflow geometries. These predicted distributions could then be compared 
-% to the observed distributions and constraints placed on BAL viewing angles via,
-% e.g., a Kologomorov-Smirnov test. 
-
-Despite these difficulties, it is still relatively easy to 
-demonstrate that the EW distribution in BAL quasars is not well produced by a 
-model in which the accretion disc is foreshortened 
-and BAL quasars are viewed from high inclinations. I will show this byconducting
-a simple Monte Carlo experiment to ascertain which geometries best reproduce the observed
-distributions. Throughout these simulations, 
-
-
-
-\begin{figure*} %fullpage
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/mesh4_ew_o3_max_sdss.png}
-\caption
-{
-Heatmap showing the results 
-}
-\label{fig:contour}
-\end{figure*} %fullpage
-
-\begin{figure} %fullpage
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/faceon_ew_o3_faceon_sdss.png}
-\caption
-{
-Contour plots from the Monte Carlo simulations.
-}
-\label{fig:o3_faceon}
-\end{figure} %fullpage
-
-\begin{figure} %fullpage
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/faceon_ew_c4_faceon_sdss.png}
-\caption
-{
-Contour plots from the Monte Carlo simulations.
-}
-\label{fig:c4_faceon}
-\end{figure} %fullpage
-
-
-
-
-
-
-\subsection{\ewo\ in LoBAL quasars}
-
-
-
-
-As expected, equatorial viewing angles are strongly 
-disfavoured, and furthermore, it is only possible to fit
+As expected, equatorial viewing angles for BAL quasars 
+are disfavoured, and furthermore, it is only possible to fit
 the tail to the \ewo\ distribution if non-BAL quasars are allowed 
 to be viewed from high inclinations. However, any conclusions
 are somewhat limited by the lack of knowledge about the 
 intrinsic face-on distribution of \ewo, or equivalently,
 the orientations of the quasars themselves. If either of these
 quantities were known then specific viewing angles of
-BAL outflows could be 
+K-S test and $\chi^2$ minimization could be used
+to place constraints on BAL and non-BAL viewing angles, and the
+associated covering factor of the outflow.
+Furthermore, the distribution of \civ\ quasar EW cannot be fit by 
+the same model as the \ewo\ distribution.
+% Despite these difficulties, it is still relatively easy to 
+% demonstrate that the EW distribution in BAL quasars is not well produced by a 
+% model in which the accretion disc is foreshortened 
+% and BAL quasars are viewed from high inclinations. I will show this byconducting
+% a slightly simpler Monte Carlo experiment to ascertain which geometries 
+% best reproduce the observed distributions.
+
+% First, I find that the quasar EW distribution
+% cannot be well-fitted unless quasars are viewed from a wide range of angles,
+% right up to edge-on. This was already known from the analysis in 
+% section~\ref{sec:fitting}. However, now we can see that this region of
+% parameter space is the region most disfavoured when comparing the mock BAL
+% dataset to the observed BAL dataset, and outflows occupying those
+% opening angles would have significantly higher EWs than the non-BAL
+% quasars.
+
+% Although the quasar EW distribution can be fitted with the above 
+% model, neither the true distribution of viewing angles 
+% or the intrinsic `face-on' EW distribution of the emission line in 
+% question is known. If an intrinsic, face-on distribution could be constructed
+% then the Kologomorov-Smirnov test and $\chi^2$ minimization could be used
+% to place constraints placed on BAL and non-BAL viewing angles.
+% Furthermore, the distribution of \civ\ quasar EW cannot be fit by the same
+% model as the \ewo\ distribution.
+% Despite these difficulties, it is still relatively easy to 
+% demonstrate that the EW distribution in BAL quasars is not well produced by a 
+% model in which the accretion disc is foreshortened 
+% and BAL quasars are viewed from high inclinations. I will show this byconducting
+% a slightly simpler
+% Monte Carlo experiment to ascertain which geometries best reproduce the observed
+% distributions. Throughout these simulations, 
+
+\begin{figure*} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/mesh4_ew_o3_max_sdss.png}
+\caption
+{
+Heat map showing the results of the MC simulation described in 
+section~\ref{sec:bal_v_nonbal}. The quantities shown are discussed 
+further in the text, but correspond to (clockwise from top left):
+the $p_{KS}$ value from a comparison between the mock BAL dataset
+and the observed BAL dataset, the reduced $\chi^2$ from the fit to
+the non-BAL EW distribution, the difference in mean EW between the 
+mock BAL and mock non-BAL datasets, and the BAL fraction expected
+for the geometry in question.
+}
+\label{fig:contour}
+\end{figure*} %fullpage
 
 An additional limitation is due to the SDSS wavelength coverage
-and means that only LoBALs can be used when \ewo\ is present.
+and means that only LoBALs can be used when \ewo\ is present (sample A).
 I would suggest that future observational programs might 
 look to build up a large sample of \ewo\ measurements for HiBAL
 quasars. In the mean time, I will turn to the UV broad emission
-lines to examine if the above conclusions also hold sway
-when it is possible to consider HiBAL quasars.
+lines to examine if the above conclusions also hold
+when examining the properties of the HiBAL quasars in sample B.
 
 \subsection{Broad Emission Lines in HiBAL quasars}
+\label{sec:hibal_v_nonbal}
+
+\begin{figure} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/faceon_ew_c4_faceon_sdss.png}
+\caption
+{
+Heat map showing the results of the MC simulation described in 
+section~\ref{sec:hibal_v_nonbal}. The top panel shows the expected 
+BAL fraction for the geometry in question, and the 
+}
+\label{fig:c4_faceon}
+\end{figure} %fullpage
 
 The situation involving broad emission lines is somewhat different,
 as the lines are dipole permitted transitions and can thus be optically
-thick. 
+thick. An additional complication is that they are formed much closer to the 
+accretion disc, and so may be subject to the same absorption effects as
+the continuum. 	
 
-
-
-
-% \subsection{Favoured Geometries}
-
-% The methods above imply that we favour blah.
-
-% \section{The Angular Distribution of Line Emission}
-
-% {\color{blue}
-% Angular distribution of line emission derivations,
-% showing in what limits emission lines will have the same
-% angular emissivity distribution as an accretion disc.
-% }
-
-% \bigskip
-
-% \label{lines}
-% Here we consider three geometries for BLR emission regions. The first is
-% a spherical, cloud-like structure with no velocity gradients. 
-% The second is a disc structure with Keplerian velocity components, 
-% potentially with the addition of outflowing material. the third is a 
-% disc-like geometry with turbulent velocity gradients.
-
-% Optically thin line emission is always isotropic in the rest frame
-% of the emitting plasma. Optically thick line emission will have an angular
-% emissivity function that varies according to the geometry of the 
-% emitting region and the velocity gradients present. 
-% We can thus use Sobolev
-% theory to derive the angular emissivity function for
-% line emission. Invoking the Sobolev approximation, we can write the 
-% optical depth in a non-monotonic velocity field as
-
-% \begin{equation}
-% \tau = \frac{\kappa~\rho~\sigma}{| \mathbf{\hat{n} \cdot \Lambda \cdot \hat{n} |}}
-% \end{equation}
-
-% And following \cite{MCGV95} we can derive an expression for $Q=|\mathbf{\hat{n}\cdot\Lambda \cdot\hat{n}}|$
-
-% \begin{equation}
-% Q = x
-% \end{equation}
-
-
-% Following \cite{hornemarsh1986} and \cite{horne1995}, we can write the line optical depth as
-% \begin{equation}
-% \tau_\nu = \tau_0 \exp \left[ - \frac{1}{2} 
-% \left( \frac{V - V_0}{\Delta V} \right)^2 \right],
-% \end{equation}
-% where $\tau_0$ is the line centre optical depth given by
-% \begin{equation}
-% \tau_0 = \frac{W}{}
-% \end{equation}
 
 
 \section{Discussion}

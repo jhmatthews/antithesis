@@ -17,6 +17,7 @@
 \usepackage{textcmds}
 \usepackage{forloop}
 
+\setlength\epigraphrule{0pt}
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
 %% ----------------------------------------------------------------
@@ -47,11 +48,12 @@
 \def\pasa{PASA}
 
 %% define some control sequences for lines
-\def\heiiopt{He~\textsc{ii}~$\lambda4686$\AA}
-\def\heiiuv{He~\textsc{ii}~$\lambda1640$\AA}
+\def\heiiopt{He~\textsc{ii}~$4686$\AA}
+\def\heiiuv{He~\textsc{ii}~$1640$\AA}
 \def\heiioptnew{He~\textsc{ii}~$3202$\AA}
 \def\civfull{C~\textsc{iv}~$1550$\AA}
 \def\oiiifull{O~\textsc{iii}~$5007$\AA}
+\def\oiiidoublet{O~\textsc{iii}~$4959$\AA}
 \def\fwh{FWHM[H$\beta$]}
 \def\ewo{EW[O~\textsc{iii}]}
 \def\la{Ly$\alpha$}
@@ -65,9 +67,11 @@
 \def\nv{N~\textsc{v}}
 \def\civ{C~\textsc{iv}}
 \def\mgii{Mg~\textsc{ii}}
+\def\mg{Mg~\textsc{ii}}
 \def\hei{He~\textsc{i}}
 \def\heii{He~\textsc{ii}}
 \def\aliii{Al~\textsc{iii}}
+\def\al{Al~\textsc{iii}}
 \def\ciii{C~\textsc{iii}}
 \def\ellp{{\ell^\prime}}
 \def\up{{u^\prime}}
@@ -370,25 +374,25 @@ is an important goal for the astronomical community.
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
-% \newpage
-% \lhead{\emph{1. Introduction}}  % Set the left side page header to "Contents"
-% \input{Chapters/Chapter1} % Introduction
+\newpage
+\lhead{\emph{1. Introduction}}  % Set the left side page header to "Contents"
+\input{Chapters/Chapter1} % Introduction
 
-% \newpage
-% \lhead{\emph{2. Accretion Disc Winds}}  % Set the left side page header to "Contents"
-% \input{Chapters/outflows} % Experimental Setup
+\newpage
+\lhead{\emph{2. Accretion Disc Winds}}  % Set the left side page header to "Contents"
+\input{Chapters/outflows} % Experimental Setup
 
-% \newpage
-% \lhead{\emph{3. MCRT and Ionization}}  % Set the left side page header to "Contents"
-% \input{Chapters/radtrans} % Experimental Setup
+\newpage
+\lhead{\emph{3. MCRT and Ionization}}  % Set the left side page header to "Contents"
+\input{Chapters/radtrans} % Experimental Setup
 
-% \newpage
-% \lhead{\emph{4. The Impact of Accretion Disc Winds on the Optical Spectra of CVs}} 
-% \input{Chapters/cvpaper}  % Experiment 1
+\newpage
+\lhead{\emph{4. The Impact of Accretion Disc Winds on the Optical Spectra of CVs}} 
+\input{Chapters/cvpaper}  % Experiment 1
 
-% \newpage
-% \lhead{\emph{5. Testing Quasar Unification: Radiative Transfer In Clumpy Winds}}  
-% \input{Chapters/agnpaper} % Experiment 2
+\newpage
+\lhead{\emph{5. Testing Quasar Unification: Radiative Transfer In Clumpy Winds}}  
+\input{Chapters/agnpaper} % Experiment 2
 
 \newpage
 \lhead{\emph{6. Quasar Emission Lines as Probes of Orientation and Unification}}
