@@ -162,13 +162,44 @@ of the Balmer absorption edge varies with viewing angle and accretion rate.
 
 \subsection{Improving the Treatment of Clumping}
 
-A few 
+One of the limitations of the work presented in chapter 5 is that the
+treatment of clumping is fairly simple, and does not adequately capture the
+physics of potential dense substructures in AGN outflows. 
+Indeed, it is considered a `first step' towards
+accurately including clumpiness in \py. So, what is the next step? One fairly 
+simple way of including some degree of porosity in the treatment would 
+be to relax the assumption that the Sobolev length is larger than the
+clump size. The Sobolev optical depth can then be calculated either
+or in or out of a clump, based on a random number choice proportional
+to the clump filling factor. This would mean that there is a chance 
+that photons will not interact with clumps, possibly leading to
+the non-black saturation that is observed in BAL troughs 
+\citep[][see also section~\ref{sec:balqso_angles}]{arav1999b,arav1999a}.
+More generally, an approach similar to {\em macroclumping}, as 
+used in stellar wind modelling \citep[e.g.][]{hamann2008,surlan2012},
+would allow the inclusion of porosity.
+
+More complex approaches could also be considered here, 
+such as the `two-phase' ideas used in clumpy torus models 
+\citep{stalevski2013} and suggested for the BLR 
+\citep[e.g.][]{netzer1990, dekool1995, elvis2000}.
+However, the general problem here is that, while introducing more freedom into 
+the wind model would certainly allow one to fit quasar spectra
+more effectively, the question is whether this provides useful physical insight.
+This is is somewhat open to interpretation, as the filling factors and origins of clumps
+in BLR and outflow models are not well constrained. I would therefore suggest that
+some of the above techniques are implemented, and experimented with,
+but would urge caution with regards to the interpretation of the overall
+results.
 
 \subsection{Improving Atomic Models}
 
 In chapter 4, the dominant source of heating in the benchmark CV model
 is line heating. This means that accurate collision strengths are needed
 in order 
+
+
+Fig.~\ref{}
 
 \subsection{Using Radiative Transfer to Test }
 
@@ -186,14 +217,10 @@ In order to distinguish between geometric unification, obscuration
 and evolutionary scenarios for the diversity of AGN it is 
 critical to constrain their inclinations.
 
-% One of the conclusions presented in chapter 6, and also found
-% from multiple studies (REFs), is that it is not possib
-
-% One possible way in which 
 
 \subsection{Placing BAL Quasars on the Eigenvector 1 Parameter Space}
 
-
+In chapter 6 it was only possible to 
 
 
 \section{Closing Remarks}

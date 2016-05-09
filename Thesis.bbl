@@ -1634,6 +1634,10 @@ Gough B., 2009,
 {Springel} V., {Di Matteo} T., {Hernquist} L., 2005,
   \apjl~  620, L79
 
+\bibitem[\protect\astroncite{{Stalevski} et~al.}{2013}]{stalevski2013}
+{Stalevski} M., {Fritz} J., {Baes} M., {Popovic} L.~C., 2013,
+  ArXiv e-prints~
+
 \bibitem[\protect\astroncite{{Stalin} et~al.}{2011}]{stalin2011}
 {Stalin} C.~S., {Srianand} R., {Petitjean} P., 2011,
   \mnras~  413, 1013
@@ -1752,6 +1756,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Verner} et~al.}{1996b}]{verner1996}
 {Verner} D.~A., {Verner} E.~M., {Ferland} G.~J., 1996b,
   Atomic Data and Nuclear Data Tables~  64, 1
+
+\bibitem[\protect\astroncite{{Vestergaard} \& {Wilkes}}{2001}]{vestergaard2001}
+{Vestergaard} M., {Wilkes} B.~J., 2001,
+  \apjs~  134, 1
 
 \bibitem[\protect\astroncite{{Voit} et~al.}{1993}]{voit1993}
 {Voit} G.~M., {Weymann} R.~J., {Korista} K.~T., 1993,
