@@ -245,8 +245,6 @@ over the overall quasar sample from S11.
 \label{fig:bal_scatter}
 \end{figure*} %fullpage
 
-
-
 \begin{figure*} %fullpage
 \centering
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/ew_hist_qsos.png}
@@ -272,6 +270,9 @@ is possible.  Sample B contains all quasars within the redshift
 range $1.45<z<2.28$, such that 
 the EWs and presence of BALs in Mg II 2800A and CIV 1550A are both measurable.
 The details of these samples are shown in table 1.
+The mass and Eddington fraction measurements from S11 of the two samples,
+are shown in Fig.~\ref{fig:bal_scatter}
+against the background distribution of all S11 quasars.
 
 In attempting to draw broad conclusions about unification models as a whole,
 we would like to be able to construct a large homogenous dataset of 
@@ -283,14 +284,11 @@ suggesting an {\em evolutionary} origin. Examples include anomalously
 high LoBAL fractions in dust-reddened quasar samples \citep{urrutia2009} 
 and infra-red selected samples \citep{dai2012}; 
 although see also \cite{lazarova2012}.
-To partially address this issue, I also build a small sample 
-of HiBAL quasars in SDSS by cross-matching the S11 catalog with 
-BALs identified in the HST COS archive.
-BALs were selected from the COS spectra using the balnicity index, 
-$BI$, defined in equation~??. HST objects were designated as HiBALS 
-by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
-The mass and Eddington fraction measurements from S11, with 
-errorbars, are shown against the background distribution of all quasars.
+% in SDSS by cross-matching the S11 catalog with BALs identified in the HST 
+% COS archive.BALs were selected from the COS spectra using the balnicity index, 
+% $BI$, defined in equation~??. HST objects were designated as HiBALS 
+% by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
+
 
 Fig. 2 shows histograms of a number of different 
 emission line properties for samples A and B. 
@@ -309,8 +307,8 @@ For a foreshortened disc this is simply $\epsilon(\theta) = \cos \theta$.
 Thus, if BAL quasars are viewed from a larger viewing angle on average then one
 would expect them to possess higher EWs, with a broader distribution.
 It is already apparent from figure 1 that the BAL distribution mean 
-is not systematically higher than the non-BAL
-mean -- in fact, it is lower. This is not expected from a model
+is not significantly higher than the non-BAL
+mean -- in fact, in many cases it is lower. This is not expected from a model
 in which the continuum is foreshortened and BAL outflows are at all equatorial.
 This problem is examined further in section~\ref{sec:mc_angular}. 
 First, I will examine the motivations for different forms of \ept\ 
@@ -359,6 +357,18 @@ combined to give an angular emissivity function, of
 
 \subsection{Including GR, Comptonisation and Opacity Effects}
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/agnspec.png}
+\caption
+{
+Monochromatic continuum luminosities from AGNSPEC and classical thin disc
+models.
+}
+\label{fig:agnspec_disc}
+\end{figure} 
+
+
 \noindent
 In reality, limb darkening is not frequency independent and 
 depends on the bound-free and bound-bound opacities in the disc.
@@ -375,16 +385,6 @@ compared to foreshortened and limb-darkened predictions for SS73 models.
 Clearly, there is very little effect; 
 the accretion disc is still strongly anisotropic in the relevant wavebands.
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/ewpaper/agnspec.png}
-\caption
-{
-Monochromatic continuum luminosities from AGNSPEC and classical thin disc
-models.
-}
-\label{fig:agnspec_disc}
-\end{figure} 
 % Including GR, Comptonisation and Opacity Effects
 
 % \subsection{Alternative Continuum Models: Irradiation and Truncated Discs}
@@ -447,7 +447,7 @@ law tail is expected.
 	and this process is repeated to build up a mock sample of $10^6$ objects.
 \end{enumerate}
 The result of this numerical experiment is, as found by R11, a distribution
-with a high EW tail of slope $-3.5$. We can now vary the maximum angle, $\theta_1$,
+with a high EW tail of slope $-3.5$. I can now vary the maximum angle, $\theta_1$,
 and examine how this tail changes. Mock data for a series
 of cutoff angles is shown in Fig.~\ref{fig:cutoff}, for two intrinsic 
 Gaussians. The power law behaviour is only seen when the maximum angle is
@@ -459,7 +459,7 @@ whereas the bottom panel shows a narrower distribution to illustrate the
 earlier onset of the high EW cutoff. In principle, this cutoff could
 be used to infer information about the viewing angle distribution
 of quasars, but this is complicated by poor statistics in the tail,
-seleciton effects and lack of knowledge about the true face-on
+selection effects and lack of knowledge about the true face-on
 distribution.
 
 \begin{figure}
@@ -481,14 +481,16 @@ clear even at moderate values of EW.
 
 Fig.~\ref{fig:chi2} shows the result of a $\chi^2$ minimization fit 
 to the R11 sample. The best fit is achieved with a maximum angle of 
-$\theta_{1}=84^\circ$ and a slightly broader intrinsic distribution
-than model 1 of R11. I adopt linear binning
-to facilitate easy comparison with R11, and only fit up $EW=100$\AA
+$\theta_{1}=84^\circ$ and a narrower intrinsic distribution
+than model 1 of R11. The run of reduced $\chi^2$ with maximum angle
+is shown in Fig.~\ref{fig:chi2_curve}, where the choice for $\mu_*$
+and $\sigma_*$ is left free in each case. This shows
+how maximum angles below $\sim80^\circ$ are strongly disfavoured
+by this model. I adopt linear binning to facilitate easy comparison 
+with R11, and only fit up $\ew=100$\AA\
 due to poor statistics above that limit. Unfortunately, this 
 makes inferring any information about a potential high EW cutoff 
 difficult as a more complete sample at high EW is required. 
-
-
 
 \begin{figure}
 \centering
@@ -500,6 +502,18 @@ and the best fit model with a maximum viewing angle of
 $84^\circ$.
 }
 \label{fig:chi2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/chi2_o3.png}
+\caption
+{
+$\chi^2/dof$ as a function of maximum angle, $\theta_1$, calculated in
+steps of $0.1^\circ$. The choice for $\mu_*$ and $\sigma_*$ is 
+left free in each case.
+}
+\label{fig:chi2_curve}
 \end{figure}
 
 
@@ -516,41 +530,70 @@ The geometry of the toy model used to carry out the Monte Carlo simulations
 \end{figure}
 
 In order to compare the observed distributions to those expected for BALs and
-non-BALs I repeat the process described in section~\ref{sec:fitting} with a few 
-key differences
+non-BALs I conduct a Monte Carlo simulation similar to
+the process described in section~\ref{sec:fitting}, but with a few 
+key differences. I once again assume $\epsilon(\theta) = \cos \theta$.
+The geometry of the toy model used in this simulation is shown in
+Fig.~\ref{fig:cartoon}.
+
+First, A set of isotropic angles is generated.
+If $\theta_{min}<\theta<\theta_{max}$ then the fake object 
+is flagged as a mock BAL. If $\theta<\theta_{min}$ then the 
+fake object is designated a non-BAL, and otherwise
+the object is ignored. Once again, the object also has to 
+survive a selection test based on a arbitrary flux selection limit.
+I then fit the non-BAL distribution using the method described previously.
+For each mock sample, a EW$_*$ is drawn from the intrinsic gaussian,
+and a mock EW is estimated such that $\ew = EW_* / \epsilon(\theta)$.
+This process is repeated to build up a mock sample of objects, and 
+carried out for a series of pairs of $\theta_{min}$ and $\theta_{max}$.
+This allows theoretical distributions for BAL and non-BAL quasars
+for a series of different outflow geometries to be derived.
+
+The diagnostics recorded from the simulation are the following four
+quantities:
+\begin{itemize}
+	\item The $p$-value associated with the K-S test statistic, $p_{KS}$, 
+	in which the mock BAL sample is compared to the real LoBAL sample.
+	\item The BAL fraction, $f_{BAL}$, is calculated from the 
+	number of objects in the mock sample with $\theta_{min}<\theta<\theta_{max}$.
+	\item The $\chi^2/dof$ from the fit to the non-BAL quasar distribution.
+	\item $\Delta \mu$, the difference between the mean value of the mock BAL
+	distribution and the mean value of the mock non-BAL distribution.
+\end{itemize}
+The simulation results are shown in figure~\ref{fig:contour}, in which the 
+four diagnostics are shown as a function of $\theta_{min}$ 
+and $\theta_{max}$. First, I find that the quasar EW distribution
+cannot be well-fitted unless quasars are viewed from a wide range of angles,
+right up to edge-on. This was already known from the analysis in 
+section~\ref{sec:fitting}.
 
 
-I assume $\epsilon(\theta) = \cos \theta$, as this is the conservative estimate
-from section~\ref{sec:disc_agn}. 
-The Monte Carlo simulation undergoes the following steps:
-
-\begin{enumerate}
-	\setlength\itemsep{1em}
-	\item A set of isotropic angles is chosen such that $P(\theta)\propto d\Omega(\theta)$.
-	If $\theta_{min}<\theta<\theta_{max}$ then the fake object is flagged as a mock BAL. 
-	If $\theta<\theta_{min}$ then the fake object is designated a non-BAL, and otherwise
-	the object is ignored. To be included in the sample, the object also has to 
-	survive a selection test based on a arbritrary flux selection limit, to simulate the
-	distribution of angles in a flux-limited sample.
-	\item I then construct a best estimate of the intrinsic (i.e. `face-on')
-	EW distribution for non-BAL quasars. This is done via a $\chi^2$ minimisation,
-	by finding the gaussian with $\mu$ and $\sigma$ which best 
-	reproduces the observed distribution when convolved with
-	the non-BAL angles generated in the previous step. 
-	a $\chi^2$ minimisation.
-	\item For each mock sample, a EW$_0$ is drawn from the intrinsic gaussian.
-	\item A mock EW is estimated such that $\ew = EW_0 / \epsilon(\theta)$,
-	and this process is repeated to build up a mock sample of objects.
-	\item The number of objects in the mock sample with 
-	$\theta_{min}<\theta<\theta_{max}$ is recorded, providing an 
-	estimate of the expected BAL fraction for this wind geometry. 
-	This already includes a selection effect for the weaker continuum flux.
-	\item The value of the K-S test statistic is recorded, in which the 
-	mock BAL sample is compared to the real BAL sample. The 
-	mean and variance of the mock sample is also recorded. 
-	This allows us to ascertain which regions
-	of parameter space best fit the observed BAL distribution
-\end{enumerate}
+% \begin{enumerate}
+% 	\setlength\itemsep{1em}
+% 	\item A set of isotropic angles is chosen such that 
+% 	$P(\theta)\propto d\Omega(\theta)$.
+% 	If $\theta_{min}<\theta<\theta_{max}$ then the fake object is flagged as a mock BAL. 
+% 	If $\theta<\theta_{min}$ then the fake object is designated a non-BAL, and otherwise
+% 	the object is ignored. To be included in the sample, the object also has to 
+% 	survive a selection test based on a arbritrary flux selection limit, to simulate the
+% 	distribution of angles in a flux-limited sample.
+% 	\item I then construct a best estimate of the intrinsic (i.e. `face-on')
+% 	EW distribution for non-BAL quasars using the method described in section~
+% 	\ref{}
+% 	\item For each mock sample, a EW$_*$ is drawn from the intrinsic gaussian.
+% 	\item A mock EW is estimated such that $\ew = EW_0 / \epsilon(\theta)$,
+% 	and this process is repeated to build up a mock sample of objects.
+% 	\item The number of objects in the mock sample with 
+% 	$\theta_{min}<\theta<\theta_{max}$ is recorded, providing an 
+% 	estimate of the expected BAL fraction for this wind geometry. 
+% 	This already includes a selection effect for the weaker continuum flux.
+% 	\item The value of the K-S test statistic is recorded, in which the 
+% 	mock BAL sample is compared to the real BAL sample. The 
+% 	mean and variance of the mock sample is also recorded. 
+% 	This allows us to ascertain which regions
+% 	of parameter space best fit the observed BAL distribution
+% \end{enumerate}
 
 This process is repeated for a grid of $\theta_{min}$ and $\theta_{max}$. The 
 results are shown in figure~\ref{fig:contour}, in which the mean, 
