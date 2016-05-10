@@ -433,6 +433,10 @@
 {Eracleous} M., {Halpern} J.~P., 1994,
   \apjs~  90, 1
 
+\bibitem[\protect\astroncite{{Evans} et~al.}{2004}]{evans2004}
+{Evans} P.~A., {Hellier} C., {Ramsay} G., {Cropper} M., 2004,
+  \mnras~  349, 715
+
 \bibitem[\protect\astroncite{{Fabian}}{2012}]{fabian2012}
 {Fabian} A.~C., 2012,
   \araa~  50, 455
@@ -855,6 +859,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Klein} \& {Nishina}}{1929}]{klein-nishina}
 {Klein} O., {Nishina} T., 1929,
   Zeitschrift fur Physik~  52, 853
+
+\bibitem[\protect\astroncite{{Knigge}}{1999}]{knigge1999}
+{Knigge} C., 1999,
+  \mnras~  309, 409
 
 \bibitem[\protect\astroncite{{Knigge} et~al.}{2011}]{knigge2011_evo}
 {Knigge} C., {Baraffe} I., {Patterson} J., 2011,
@@ -1363,6 +1371,10 @@ Gough B., 2009,
 {Pounds} K.~A., {Reeves} J.~N., 2009,
   \mnras~  397, 249
 
+\bibitem[\protect\astroncite{{Pringle}}{1981}]{pringle1981}
+{Pringle} J.~E., 1981,
+  \araa~  19, 137
+
 \bibitem[\protect\astroncite{{Prinja} et~al.}{2000}]{prinja2000}
 {Prinja} R.~K., {Ringwald} F.~A., {Wade} R.~A., {Knigge} C., 2000,
   \mnras~  312, 316
@@ -1633,6 +1645,12 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Springel} et~al.}{2005}]{springel2005}
 {Springel} V., {Di Matteo} T., {Hernquist} L., 2005,
   \apjl~  620, L79
+
+\bibitem[\protect\astroncite{{Spruit}}{1996}]{spruit1996}
+{Spruit} H.~C., 1996,
+\newblock in R.~A.~M.~J. {Wijers}, M.~B. {Davies}, C.~A. {Tout} (eds.), NATO
+  Advanced Science Institutes (ASI) Series C,
+  Vol. 477 of {\em NATO Advanced Science Institutes (ASI) Series C\/}, p.~249
 
 \bibitem[\protect\astroncite{{Stalevski} et~al.}{2013}]{stalevski2013}
 {Stalevski} M., {Fritz} J., {Baes} M., {Popovic} L.~C., 2013,
