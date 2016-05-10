@@ -114,8 +114,8 @@ spectra of high-state CVs. Direct evidence of wind-formed lines comes from
 isolated observations of P-Cygni-like line profiles in
 \ha\ and He \textsc{i} $\lambda5876$, 
 \citep{patterson1996, RN98, kafka2004}. 
-However, the effect on
-the {\em emission} aspects of the optical spectrum is not well known.
+However, the effect of a wind  on the {\em emission} lines in the optical 
+spectrum is unclear.
 \cite{MC96, MC97} have shown that the presence of disc winds may
 offer a natural explanation for the single-peaked optical emission lines in
 high-state CVs, since they can strongly affect the radiative transfer
@@ -128,10 +128,10 @@ even near mid-eclipse \citep[e.g.][]{baptista2000,groot2004}.
 This points to line formation in a spatially
 extended region, such as a disc wind.
 It is also possible that a wind may affect the continuum emission of CVs,
-as described. The effect of an accretion disc wind
+as described in section~\ref{sec:disc_continuum}. 
+The effect of an accretion disc wind
 on the optical line and continuum emission of CVs is addressed directly
 in chapter 4.
-
 
 % These spectra are typically characterized
 % by H and He emission lines superposed on a blue continuum. In many
@@ -161,8 +161,8 @@ in chapter 4.
 As in CVs, evidence for fast outflows in LMXBs is not constrained to 
 a single waveband. UV absorption in outflows was detected when
 \cite{ioannau2003} observed \civfull\ P-Cygni profiles with blueshifts 
-of $\sim1500$km~s$^{-1}$. A series of papers also found 
-X-ray absorption features in similar objects 
+of $\sim1500$km~s$^{-1}$ in the LMXB X2127+119. 
+A series of studies also found X-ray absorption features in similar objects 
 \citep{ueda1998,kotani2000,parmar2002}. 
 These absorption features appeared to be preferentially detected
 in high-inclination, `dipping' LMXBs. This was confirmed
@@ -264,7 +264,7 @@ While the BAL fraction, $f_{BAL}$, is a very useful number and must be at least
 related to the covering factor of the outflow, continuum selection
 effects \citep{goodrich1997,krolikvoit1998}, 
 as well as reddening \citep{allen2011}, could significantly
-alter its true value. The degree of collimation of the BAL wind
+bias $f_{BAL}$ estimates. The degree of collimation of the BAL wind
 is also not well known. Polarisation studies suggest that the 
 wind is roughly equatorial \citep{goodrich1995, cohen1995}, 
 as also found from hydrodynamical and radiative transfer simulations 
@@ -273,13 +273,15 @@ but there is also evidence for polar BAL outflows in
 radio-loud (RL) sources \citep{zhou2006,ghoshpunsly2007}.
 In addition to these uncertainties, the physical scale of the BAL
 phenomenon is also disputed and may vary from object to object.
-If one assumes that the BAL region is roughly co-spatial with
-the BLR, then the radius of the absorbing material
+A common assumption is that the BAL region is roughly co-spatial with
+the BLR, which is reasonable considering the similar velocity widths
+and ionization states in BELs and BALs. In this case, 
+the radius of the absorbing material
 can be estimated as $\sim 100 r_G -1000 r_G$ from reverberation mapping
 and microlensing \citep[e.g., for BLRs in BALQSOs,][]{sluse2015,odowd2015}.
 However, distances of  $\sim0.1$~pc ($\sim 10^4 r_G$) 
-have been estimated in at least 
-some objects from atomic physics arguments and ionization models
+have been estimated in at least some objects from photionization modelling, 
+conducted using densities calculated from absorption line doublets
 \citep{borguet2013,chamberlain2015}.
 
 BAL quasars display a wide variety of different trough shapes, 
@@ -389,11 +391,16 @@ As with WAs, many of the models
 used to constrain physical parameters are simplistic, and assume 
 single ionization parameters, large covering factors
 and thin expanding shells of outflow.
-Under these assumptions, the mass loss rate can be estimated using
+Under the assumption of a thin expanding shell, 
+the mass-loss rate can be estimated using
+\citep[e.g.][]{borguet2012}
 \begin{equation}
 \label{eq:hse}
-\dot{M} \sim \Omega N_H m_p v_{out} R_{in}
+\dot{M} \sim \Omega N_H m_p v_{out} R_{in},
 \end{equation}
+where $\Omega$ is the solid angle covered by the outflow, $N_H$
+is the column density, $m_p$ is the proton mass, $v_{out}$ is the outflow velocity
+and $R_{in}$ is the launch radius of the outflow.
 In reality, the absorber is probably much more complex, and full 
 RT and photoionization simulations are required to accurately model 
 the expected spectrum. 
@@ -479,8 +486,10 @@ results from a clumpy AGN wind model.
 The spectra in figures~\ref{fig:cordova}, \ref{fig:bals}
 and \ref{fig:hot_star_wind} show striking similarities -- 
 characteristic broad, P-Cygni-like absorption features in UV resonance
-lines extending to high blueward velocities -- despite vast differences in mass. 
-Furthermore, some of the phenomena observed in e.g. stellar winds may naturally solve some of 
+lines extending to high blueward velocities -- 
+despite vast differences in mass, scale and the source of radiation. 
+Furthermore, some of the phenomena observed in e.g. stellar winds may 
+naturally solve some of 
 the unanswered questions in other systems. For example, clumping
 may prevent over-ionization in AGN outflows. It would seem
 that at least some of the physics of outflows, like accretion physics,
@@ -494,7 +503,7 @@ these outflows.
 
 Let us consider a parcel of ideal gas. By imposing nothing more than
 conservation of mass, energy and momentum on that parcel we can write down
-three equations of hydrodynamics:
+three equations of magnetohydrodynamics (MHD):
 % \footnote{I stress that these equations are not used in hydrodynamic
 % simulations in this thesis (see chapter~5, for example); 
 % they are discussed here because they provide a natural reference point
@@ -513,12 +522,14 @@ three equations of hydrodynamics:
 
 \begin{equation}
 \label{eq:energy}
-\rho \frac{D}{Dt} \left(\frac{e}{\rho}\right) = P \nabla \cdot \vec{v} + \rho \cal{L}.
+\rho \frac{D}{Dt} \left(\frac{e}{\rho}\right) = P (\nabla \cdot \vec{v}) + \rho \cal{L}.
 \end{equation}
 
 Here $D$ denotes a derivative within the comoving frame of the gas parcel, $\vec{v}$ is the velocity,
 $\rho$ is the gas density, $\vec{B}$ is the local magnetic field, $\vec{F}_{rad}$ is the radiation
-force per unit mass and $\vec{g}$ denotes the gravitational acceleration vector.
+force per unit mass, $\cal{L}$ is the cooling rate of the gas 
+and $\vec{g}$ denotes the gravitational acceleration vector.
+
 Equation~\ref{eq:continuity} is the {\em continuity equation} and describes conservation of mass. 
 Equation~\ref{eq:motion} is the {\em equation of motion} and describes conservation of momentum.
 Equation~\ref{eq:energy} is the {\em equation of energy conservation}. 
@@ -577,10 +588,12 @@ super-Eddington (or close to Eddington) outflows,
 such as AGN with UFOs \citep[e.g.][]{reeves2002,pounds2016},
 NLSIs \citep{done2015} and ultra-luminous X-ray sources \citep[ULXs;][]{walton2013}.
 However, high-state CVs are significantly below the Eddington limit 
-\citep{warnerbook},
-and at least some BALQSOs have low Eddington fractions \citep{grupenousek2015}.
-Despite this, line opacity may mean that radiation is still responsible for the 
-powerful outflows in these systems even at $L / L_{Edd} \sim 10^{-3}$.
+\citep{warnerbook}, and at least some BALQSOs have low Eddington fractions 
+\citep[$\sim25\%$ have $L/L_{Edd}<0.1$;][]{grupenousek2015}.
+These systems may nevertheless be capable of radiatively driving strong 
+strong radiatively driven outflows due to the influence of line opacity.
+% Despite this, line opacity may mean that radiation is still responsible for the 
+% powerful outflows in these systems even at $L / L_{Edd} \sim 10^{-3}$.
 
 \subsection{Line-driven Winds}
 
@@ -668,10 +681,10 @@ mass-loss rates.
 \label{sec:mag_winds}
 
 There is still great uncertainty over the magnetic fields in accretion discs
-and the physics of these magnetic processes,
-but, in many senses, they are attractive mechanisms as magnetic processes
-are already expected to be important in accretion disc winds
-due to the MRI.
+and the physics of these magnetic processes. However, the MRI is one of the 
+leading candidates for explaining angular momentum transport in accretion discs,
+implying that magnetic processes are important in their dynamics. 
+Thus, in many senses, magnetic driving is an attractive wind driving mechanism.
 There are two main ways in which magnetic forces can drive an 
 accretion disc wind, which are best explained by writing down an 
 alternative form for the Lorentz force,

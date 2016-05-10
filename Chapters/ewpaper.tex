@@ -41,9 +41,9 @@ BAL outflows (see section~??). Here, I use observational
 data from the Sloan Digital Sky Survey to constrain the inclinations
 of BAL quasars. Similar attempts have been made previously with
 different diagnostics; for example, by considering 
-radio properties \citep{zhou2006,dipompeo2012a}, 
+radio measurements \citep{zhou2006,dipompeo2012a}, 
 polarisation \citep{brotherton2006}
-and general emission line properties \citep{dipompeo2012b}.  
+and emission line properties \citep{dipompeo2012b}.  
 
 This chapter is structured as follows. First, I describe
 the data sample and selection criteria being used. I begin by
@@ -51,17 +51,18 @@ simply examining the distributions of the EW of the \oiiifull\ emission line,
 \ewo, and comparing the BAL and non-BAL quasar distributions. 
 In section~\ref{sec:disc_agn} I review the angular distribution of 
 continuum emission one would expect from simple $\alpha$-disc models, 
-as well as exploring the same quantity in more advanced disc models computed
+as well as exploring more advanced disc models computed
 with \agn. I then use these theoretical 
 angular distributions applied to a simple toy model in 
 section~\ref{sec:mc_angular},
-and conduct MC simulations in an attempt to fit the observed BAL and non-BAL
+and conduct MC simulations in an attempt to fit the observed LoBAL and non-BAL
 quasar distributions of \ewo, using a similar approach to 
-\citet[][hereafter R11]{risaliti2011}. 
+\cite{risaliti2011}. I also discuss the broad emission
+line distribution in HiBAL quasars more detail in this section. 
 In section~\ref{sec:discuss_ew} I discuss the results
 in the context of radio and polarisation measurements of AGN, as well
 as exploring the location of BAL quasars in `Eigenvector 1' parameter space.
-Finally, in section~\ref{sec:ew_conclusions}, I summarise the findings.
+Finally, in section~\ref{sec:ew_conclusions}, I summarise the results.
 
 % {\bf{\sl{\huge Abstract}}}
 
@@ -279,8 +280,8 @@ such as narrow line or Fe pseudocontinuum contamination, in their fits to
 emission line profiles and resultant EW measurements. For \mgline\
 this includes careful subtraction of the Fe emission using the templates
 of \citep{vestergaard2001}. This subtraction is not included for \civfull,
-as the Fe emission is less prominent and harder to model, which may lead to
-a systematic overestimate by $\sim0.05$ dex in the line EW. 
+as the Fe emission is less prominent and harder to model. Thismay lead to
+a systematic overestimate by $\sim0.05$ dex in the \civ\ line EW. 
 The \oiiifull\ line is fitted
 with a Gaussian and the flux ratio with the sister component 
 of the doublet, \oiiidoublet, is found to agree well with the theoretical
@@ -345,11 +346,11 @@ Despite these problems, \cite{capellupo2015} recently had
 some success fitting spectra of AGN when the effects of
 GR, mass-loss and comptonisation were included.
 In this section, I start by discussing the angular distribution of
-emission from an SS73 disc, before discussing opacity and GR 
-effects. In order to explore these effects, I use \agn\
+emission from an SS73 disc, before exploring opacity and GR 
+effects. In order to do so, I use \agn\
 \citep{hubeny2000,davishubeny2006,davis2007}. I stress that the 
 discussion here is not limited to SS73 discs; the only real condition
-for the expected angular distributions derived here is that the 
+for the angular distributions derived here is that the 
 disc is geometrically thin and optically thick.
 
 \subsection{Standard Thin Disc Models}
@@ -468,7 +469,7 @@ law tail is expected.
 The result of this numerical experiment is, as found by R11, a distribution
 with a high EW tail of slope $-3.5$. I can now vary the maximum angle, $\theta_1$,
 and examine how this tail changes. Mock data for a series
-of cutoff angles is shown in Fig.~\ref{fig:cutoff}, for two intrinsic 
+of maximum angles is shown in Fig.~\ref{fig:cutoff}, for two different intrinsic 
 Gaussians. The power law behaviour is only seen when the maximum angle is
 sufficiently large, and a rapid decay in the distribution is observed
 at a characteristic EW related to both the width and mean of the
@@ -503,8 +504,8 @@ to the R11 sample. The best fit is achieved with a maximum angle of
 $\theta_{1}=84^\circ$ and a narrower intrinsic distribution
 than model 1 of R11. The run of reduced $\chi^2$ with maximum angle
 is shown in Fig.~\ref{fig:chi2_curve}, where the choice for $\mu_*$
-and $\sigma_*$ is left free in each case. This shows
-how maximum angles below $\sim80^\circ$ are strongly disfavoured
+and $\sigma_*$ is left free in each case. 
+Maximum angles below $\sim80^\circ$ are strongly disfavoured
 by this model. I adopt linear binning to facilitate easy comparison 
 with R11, and only fit up $\ew=100$\AA\
 due to poor statistics above that limit. Unfortunately, this 
@@ -593,10 +594,10 @@ to be viewed from high inclinations. However, any conclusions
 are somewhat limited by the lack of knowledge about the 
 intrinsic face-on distribution of \ewo, or equivalently,
 the orientations of the quasars themselves. If either of these
-quantities were known then specific viewing angles of
+quantities were known then the results of the
 K-S test and $\chi^2$ minimization could be used
-to place constraints on BAL and non-BAL viewing angles, and the
-associated covering factor of the outflow.
+to place more robust constraints on BAL and non-BAL viewing angles 
+and the associated covering factor of the outflow.
 Furthermore, the distribution of \civ\ quasar EW cannot be fit by 
 the same model as the \ewo\ distribution.
 % Despite these difficulties, it is still relatively easy to 
