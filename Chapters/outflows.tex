@@ -50,7 +50,7 @@ to effectively model disc winds (see chapter 3).
 
 
 \subsection{Cataclysmic Variables}
-
+\label{sec:cv_winds}
 It has been known for a long time that winds emanating from
 accretion discs are important in shaping the ultraviolet (UV) spectra
 of high-state CVs \citep{heap1978, greensteinoke1982}. 
@@ -214,7 +214,12 @@ demonstrating that winds appear only in the soft state.
 \includegraphics[width=1.0\textwidth]{figures/02-outflows/bal_spectra.png}
 \caption
 {
-Five examples of BAL quasar spectra, from HST and SDSS.
+Top Panel: A comparison between the SDSS non-BAL, HiBAL and LoBAL
+composite spectra as presented in \cite{reichard2003}. 
+Bottom Two Panels: Two individual examples of a HiBAL and LoBAL quasar
+spectrum, respectively. In all panels some of the more prominent
+lines are labeled and shaded, and the object name is given in 
+the bottom two plots.
 } 
 \label{fig:bals}
 \end{figure}
@@ -222,14 +227,19 @@ Five examples of BAL quasar spectra, from HST and SDSS.
 Perhaps the clearest evidence of outflows in AGN is provided by  
 the blueshifted ($\sim 0.1~c$) ultraviolet 
 BALs seen in approximately $20\%$ of quasars
-\citep{weymann1991, knigge2008, dai2008, allen2011}. Five example
-spectra of BAL quasars from the HST and SDSS archives are shown in 
-Fig.~\ref{fig:bals}. In addition to the more common high-ionization
-BAL quasars (HiBALs), approximately $10\%$ of BALQSOs show absorption
+\citep{weymann1991, knigge2008, dai2008, allen2011}. 
+High-ionization BAL quasars (HiBALs) show
+only show broad, blue-shifted absorption in species such as 
+\civ, Si~\textsc{iv}, \nv\ and \ovi, the most prominent BAL
+profile often being the \civline\ line.
+In addition to the more common HiBALs, 
+approximately $10\%$ of BALQSOs show absorption
 in lower ionization species such as \mgii\ and \aliii\ 
 \citep[LoBALs;][]{voit1993,gibson2009}
 and an even smaller subset also show absorption in Fe~\textsc{ii} and 
 \textsc{iii} \citep[FeLoBALs;][]{becker2000,hall2002}. 
+Some example spectra of BAL quasars from the HST and SDSS archives are shown in 
+Fig.~\ref{fig:bals}, with important spectral lines marked.
 
 The simplest explanation for the incidence of 
 BAL quasars (BALQSOs) is in terms of an accretion disc wind viewed
@@ -261,10 +271,11 @@ and seeing how close this simple picture can get to explaining
 the BAL phenomenon.  
 
 While the BAL fraction, $f_{BAL}$, is a very useful number and must be at least
-related to the covering factor of the outflow, continuum selection
-effects \citep{goodrich1997,krolikvoit1998}, 
-as well as reddening \citep{allen2011}, could significantly
-bias $f_{BAL}$ estimates. The degree of collimation of the BAL wind
+related to the covering factor of the outflow, continuum selection 
+\citep{goodrich1997,krolikvoit1998} and reddening \citep{allen2011} effects
+could lead to significant underestimates of its true value. 
+Unfortunately, accurate corrections for these effects are challenging. 
+The degree of collimation of the BAL wind
 is also not well known. Polarisation studies suggest that the 
 wind is roughly equatorial \citep{goodrich1995, cohen1995}, 
 as also found from hydrodynamical and radiative transfer simulations 
@@ -294,12 +305,12 @@ BAL-like absorption troughs with much smaller velocity widths. Depending
 on their width, these are known as narrow absorption lines (NALs) or `mini-BALs'
 \citep{misawa2007,misawa2008,nestor2008}.
 While some of this behaviour can be explained once again as a viewing angle
-effect \citep[e.g. ][]{ganguly2001}, the range of 
-BAL profile shapes suggests that they 
-are far from a homogenous population, and may also possess
-multi-scale substructures (clumps) in their flows. Clumping
-is discussed in more detail in sections~\ref{sec:stellar_winds} and 
-\ref{sec:rad_winds}, as well as in chapter 5.
+effect \citep[e.g. ][]{ganguly2001}, the
+BAL profile variety and variability suggests that BALQSOs 
+are far from a homogenous population, and may point towards dense 
+substructures (clumps) in their flows. Clumpiness has been invoked
+in disc wind unification models for AGN and quasars
+(see section~\ref{sec:wind_models})
 
 The X-ray properties of BAL quasars are particularly important due
 to the strong ionizing potential of the X-ray radiation. 
@@ -344,24 +355,25 @@ comes from the measured blueshifts of the lines, typically on the order of
 $\sim100$km~s$^{-1}$. X-ray absorption and WAs are often
 variable \citep{fabian1994,otani1996}, which may be interpreted in terms of 
 changing kinematics of an accretion disc wind \citep{connolly2014}. 
-There is also evidence of contemporary UV and X-ray absorption 
+There is also evidence of contemporary and associated UV and X-ray absorption 
 in NGC 5548 \citep{kaastra2014} and mini-BALS \citep{giustini2011},
-and as mentioned above BALQSOs 
-are often absorbed in the X-rays. This suggests that the outflow phenomenon 
-across a large range of ionization states and line energies is linked. 
+and, as mentioned above, BALQSOs often show strong X-ray absorption. 
+This suggests the same outflow phenomenon produces observational signatures  
+across a large range of ionization states and line energies. 
 
-Some WAs be modelled well with single component 
-models \citep{kaastra2000}, but most
-require multiple absorbers with different ionization states
+Some WAs can be modelled well with single absorbers \citep{kaastra2000}, 
+but most require multiple absorption components with different ionization states
 \citep[e.g.][]{kriss1996,orr1997,krolikkriss2001,connolly2014}.
 If this is the case, then self-consistent ionization and radiative transfer models
-should really be used to model the spectrum (see e.g. chapter 3), 
-as optically thin ionization parameter estimates will not capture 
-the ionization and radiation physics.
-The collated observations point towards some kind of outflow with a stratified ionization
-structure, with $\log \xi \sim 0-2$, and densities on the order of $10^8$~cm. 
+should really be used to model the spectrum (see e.g. chapter 3). This is 
+because optically thin ionization parameter estimates will not properly capture 
+the ionization physics in a complex geometry and radiation field.
+The overall body of observations points towards an outflow with a 
+stratified ionization structure ranging from $\log \xi \sim 0-2$, 
+and densities on the order of $10^7$~cm$^{-3}$ located at around $\sim10^{16}$cm. 
 These physical conditions or scales are not well constrained, and the connection to 
-other outflows is unknown. Timing observations may help to shed light on 
+other outflows, such as the ultra-fast outflows introduced in the next section, 
+is unknown. Timing observations may help to shed light on 
 the properties of the mysterious, but ubiquitous, 
 AGN WAs \citep{silva2015}.
 
@@ -502,7 +514,8 @@ these outflows.
 \section{Driving Mechanisms}
 
 Let us consider a parcel of ideal gas. By imposing nothing more than
-conservation of mass, energy and momentum on that parcel we can write down
+conservation of mass, energy and momentum on that parcel, and using 
+Maxwell's equations, we can write down 
 three equations of magnetohydrodynamics (MHD):
 % \footnote{I stress that these equations are not used in hydrodynamic
 % simulations in this thesis (see chapter~5, for example); 
@@ -526,7 +539,8 @@ three equations of magnetohydrodynamics (MHD):
 \end{equation}
 
 Here $D$ denotes a derivative within the comoving frame of the gas parcel, $\vec{v}$ is the velocity,
-$\rho$ is the gas density, $\vec{B}$ is the local magnetic field, $\vec{F}_{rad}$ is the radiation
+$\rho$ is the gas density, $\vec{B}$ is the local magnetic field, 
+$\vec{F}_{rad}$ is the radiation
 force per unit mass, $\cal{L}$ is the cooling rate of the gas 
 and $\vec{g}$ denotes the gravitational acceleration vector.
 
@@ -626,10 +640,12 @@ t = \frac{\sigma_T \rho v_{th}}{m_p | d(v_i) / ds |}
 % and $\beta$ is the ratio of the mass scattering coefficient of the free
 % electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
 % width. 
-Here $W$ is the dilution factor, and $k$, $\alpha$ and $\delta$ are constants with
-values of 0.28, 0.56 and 0.99 respectively in O-star winds \citep{abbott1982}.
-$v_i$ is the component of the velocity field in the direction
-being considered, normally a line between the source of radiation and the wind.
+Here, $W$ is the dilution factor, $k$, $\alpha$ and $\delta$ are parameters
+with best-fit 
+values of 0.28, 0.56 and 0.99 respectively in O-star winds \citep{abbott1982},
+and $v_i$ is the component of the velocity field in the direction
+being considered. This is normally a line between the source of radiation and any
+given location in the wind.
 It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
 is around $2000-4000$. This is already an interesting result, as it tells us
 that line-driven outflows can be accelerated when accretion rates / luminosities
@@ -638,7 +654,7 @@ equation~\ref{eq:force_multiplier} we can see that a radiatively driven wind
 can be accelerated when $L_{UV} > L_{Edd} / M_{UV}(t)$, where the UV subscript 
 pertains to the UV region of the spectrum and $M_{UV}(t)$ will thus depend on
 the lines in this region and their relative ionization and excitation fractions.
-Line-driven winds are present in O-stars and Wolf-Rayet stars and the theory
+Line-driven winds are present in O-stars and Wolf-Rayet stars, and the theory
 produces good matches with observations 
 \citep[e.g.][]{friend1986,pauldrach1986,pauldrach1994,hamann2008}. 
 It is also a strong candidate for driving
@@ -723,12 +739,16 @@ and drives a slow, dense outflow which behaves more like a thermally-driven wind
 
 A number of different wind models have appeared in the literature over the 
 years, each attempting to explain the different observational characteristics
-of quasars with a mixture of conceptual frameworks and underlying physics. 
-Typically, the models attempt to explain the origins of BLR and BAL gas, although
-some extend their remit into the infra-red, radio and X-ray regimes.
+of quasars and CVs with a mixture of conceptual frameworks and underlying physics.
+In AGN and quasars, the authors behind the models attempt to explain the origins of 
+BELs and BALs, although some extend their remit into the infra-red, 
+radio and X-ray regimes. In CVs, the picture is slightly more straightforward as 
+the geometry of the outflow is better constrained (see section~\ref{sec:cv_winds}).
 I will briefly discuss a few examples that have gained traction over the years,
+particular those describing quasars and unification,
 before outlining the kinematic prescription I have used in the modelling that forms 
-part of this thesis. 
+part of this thesis. This prescription has been successfully applied to both CVs 
+and AGN.
 
 \subsection{MCGV95: A Line-driven Wind Model for AGN}
 
@@ -865,7 +885,7 @@ The radial lines separate three areas described by H14.
 \label{fig:PK04}
 \end{figure}
 
-One of the interesting results of the Proga-led simulations is that they tended
+One of the interesting results of these  simulations is that they tended
 to produce somewhat unsteady, clumpy flows. In the CV case, this was caused by
 the interaction between the line force and gravity, as both force terms varied 
 differently with height. In the AGN case, it was instead due to the critical
