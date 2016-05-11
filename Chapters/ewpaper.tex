@@ -317,11 +317,12 @@ and non-BAL quasars really do seem to possess very similar emission line
 properties. The EW is related to the `face-on' equivalent width,
 $EW_0$ by the equation
 \begin{equation}
-\ew = \ew_0 /~\epsilon(\theta)
+\ew = \ew_0 /~\frac{\epsilon(\theta)}{\epsilon_{line}(\theta)}
 \end{equation}
 where $\theta$ is the viewing angle with respect to the symmetry axis 
 and $\epsilon(\theta)$ is the `angular emissivity function', which describes 
 how the continuum luminosity from the disc varies as a function of viewing angle.
+The corresponding quantity for line emission is $\epsilon_{line}(\theta)$.
 For a foreshortened disc this is simply $\epsilon(\theta) = \cos \theta$.
 
 Thus, if BAL quasars are viewed from a larger viewing angle on average then one
@@ -334,7 +335,7 @@ This problem is examined further in section~\ref{sec:mc_angular}.
 First, I will examine the motivations for different forms of \ept\ 
 in AGN and quasars.
 
-\section{The Angular Distribution of Emission from an Accretion Disc}
+\section{The Angular Distribution of Emission from an Accretion Disc and Broad-Line Region}
 \label{sec:disc_agn}
 
 \noindent 
@@ -402,8 +403,13 @@ to calculate the emergent SED by ray-tracing along Kerr geodesics.
 Fig.~\ref{fig:agnspec_disc} shows \ept\ as a function of 
 $\theta$ for \agn\ models for minimally and maximally spinning BHs,
 compared to foreshortened and limb-darkened predictions for SS73 models.
-Clearly, there is very little effect; 
-the accretion disc is still strongly anisotropic in the relevant wavebands.
+Although the continuum is significantly more isotropic at $500$\AA,
+there is very little effect redward of around $1000$\AA, which is the relevant
+region of \ept\ for \oiiifull, \civline\ and \mgline . 
+In fact, using the foreshortened estimate is 
+the conservative approach in these regimes. I will thus adopt \ept$=\cos \theta$
+for the remainder of this work.
+
 
 % Including GR, Comptonisation and Opacity Effects
 
@@ -412,10 +418,21 @@ the accretion disc is still strongly anisotropic in the relevant wavebands.
 % Alternative Models exist...
 
 
+\subsection{Angular Distribution of Line Emission}
 
-
-
-
+Lines can be classified according to whether they violate quantum selection rules.
+In order of decreasing oscillator strength, they comprise
+dipole permitted transitions, such as \civline\ and \hb, 
+semi-forbidden or intercombination
+lines such as \ciiiline, and forbidden lines such as \oiiifull.
+As the optical depth in a line is proportional to the oscillator strength,
+we can see that we should expect lines such as \oiiifull\ to be optically
+thin, whereas dipole transitions may be subject to local line
+opacity effects. It is worth noting, of course, that all lines can be absorbed by 
+continuum processes. Ignoring the effect of obscuration, we thus expect all 
+forbidden lines to be isotropic (i.e. \eptl$={\rm constant}$. 
+But what about permitted lines? What is their expected angular distribution
+of emission
 
 
 

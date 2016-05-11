@@ -78,10 +78,12 @@
 \def\cc{{\cal C}}
 \def\hh{{\cal H}}
 \def\ept{$\epsilon(\theta)$}
+\def\eptl{$\epsilon_{line}(\theta)$}
 \def\al{Al~\textsc{iii}}
 \def\civline{C~\textsc{iv}~$1550$\AA}
 \def\nvline{N~\textsc{v}~$1240$\AA}
 \def\mgline{Mg~\textsc{ii}~$2800$\AA}
+\def\ciiiline{C~\textsc{iii}]~$1909$\AA}
 
 \def\top{\textsc{Topbase}}
 \def\py{\textsc{Python}}
@@ -184,30 +186,35 @@ Christian Knigge
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 Outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass. 
 They can take the form of highly collimated radio jets, or less collimated, mass loaded
-winds emanating from the accretion disc. Perhaps the most spectacular evidence
-for accretion disc winds is the blue-shifted, broad absorption lines (BALs) in UV resonance
-lines, seen in cataclysmic variables (CVs) and approximately $20\%$ of quasars. In addition to 
+winds emanating from the accretion disc. 
+Perhaps the most spectacular evidence
+for accretion disc winds is the blue-shifted, 
+broad absorption lines (BALs) in UV resonance
+lines, seen in cataclysmic variables (CVs) and approximately 
+$20\%$ of quasars. In addition to 
 directly producing absorption in the spectrum, it is possible that accretion disc winds
-may significantly affect the line and continuum {\em emission} from CVs and quasars -- as a result,
+may significantly affect the line and continuum {\em emission} 
+from CVs and quasars -- as a result,
 they may even dominate the spectral appearance of such objects. When one considers that
 disc winds are also a possible mechanism for AGN feedback, it becomes clear that understanding
 the physics and true spectral imprint of these winds is of wide-ranging astrophysical significance.
 
-In this thesis I use the confusingly named Monte Carlo radiative transfer (MCRT) code, \py, 
-to conduct a series of MCRT and photoionization simulations designed to test
+In this thesis I use the stet-of-the-art Monte Carlo radiative transfer (MCRT) code, 
+\py, to conduct a series of MCRT and photoionization simulations designed to test
 simple biconical disc wind models. I provide a detailed description of
-these methods, focusing particularly on the macro-atom implementation developed by Leon Lucy.
-First, I apply them to the optical spectra of CVs. 
+these methods, focusing particularly on the macro-atom implementation 
+developed by Leon Lucy. First, I apply them to the optical spectra of CVs. 
 Second, I conduct tests of quasar unification models. 
 Finally, informed by the previous study, I use Sloan Digital Sky Survey and Hubble Space 
-Telescope data to test the models in an empirical way, by using emission line equivalent widths
+Telescope data to test the models in an empirical way, 
+by using emission line equivalent widths
 as a probe of unification geometries.
 
 Overall, the work presented here suggests that {\em disc winds matter}. 
 They not only act as a spectral `filter' for the underlying
-accretion continuum, but may actually dominate the emergent spectrum from accreting objects.
-As a result, unveiling their driving mechanisms, mass-loss rates, and ionization structure
-is an important goal for the astronomical community. 
+accretion continuum, but may actually dominate the emergent spectrum from 
+accreting objects. As a result, unveiling their driving mechanisms, mass-loss rates, and 
+ionization structure is an important goal for the astronomical community. 
 }
 
 \clearpage  % Abstract ended, start a new page
@@ -399,7 +406,7 @@ is an important goal for the astronomical community.
 \input{Chapters/ewpaper} % Experiment 2
 
 \newpage
-\lhead{\emph{7. Conclusion}}
+\lhead{\emph{7. Conclusions \& Future Work}}
 \input{Chapters/conclusions} % Conclusion
 
 %% ----------------------------------------------------------------

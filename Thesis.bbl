@@ -469,6 +469,10 @@
 {Fender} R.~P., {Gallo} E., {Russell} D., 2010,
   \mnras~  406, 1425
 
+\bibitem[\protect\astroncite{{Ferland}}{2005}]{ferland2005}
+{Ferland} G.~J., 2005,
+\newblock {Hazy, A Brief Introduction to Cloudy 05.07}
+
 \bibitem[\protect\astroncite{{Ferland} et~al.}{2013}]{cloudy2013}
 {Ferland} G.~J., {Porter} R.~L., {van Hoof} P.~A.~M., {Williams} R.~J.~R.
   et~al., 2013,
@@ -515,6 +519,10 @@ Gabriel E., Fagg G.~E., Bosilca G., Angskun T. et~al., 2004,
 \newblock in Proceedings, 11th European PVM/MPI Users' Group Meeting, Budapest,
   Hungary,
   p.~97
+
+\bibitem[\protect\astroncite{{Gaetz} \& {Salpeter}}{1983}]{gaetz1983}
+{Gaetz} T.~J., {Salpeter} E.~E., 1983,
+  \apjs~  52, 155
 
 \bibitem[\protect\astroncite{{Gallagher} et~al.}{2002}]{gallagher2002}
 {Gallagher} S.~C., {Brandt} W.~N., {Chartas} G., {Garmire} G.~P., 2002,
@@ -1197,6 +1205,11 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Motta} et~al.}{2015}]{motta_atel2015}
 {Motta} S., {Beardmore} A., {Oates} S., {Sanna} N.~P.~M.~K.~A. et~al., 2015,
   The Astronomer's Telegram~  7665
+
+\bibitem[\protect\astroncite{{Mu{\~n}oz-Darias} et~al.}{2016}]{munozdarias2016}
+{Mu{\~n}oz-Darias} T., {Casares} J., {Mata S{\'a}nchez} D., {Fender} R.~P.
+  et~al., 2016,
+  \nat~
 
 \bibitem[\protect\astroncite{{Mu{\~n}oz-Darias} et~al.}{2013}]{munozdarias2013}
 {Mu{\~n}oz-Darias} T., {Coriat} M., {Plant} D.~S., {Ponti} G. et~al., 2013,
