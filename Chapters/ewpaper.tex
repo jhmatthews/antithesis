@@ -504,7 +504,7 @@ distribution.
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/cutoff.png}
 \caption
 {
-Theoretical Ew distributions from the numerical experiment 
+Theoretical EW distributions from the numerical experiment 
 described in section~\ref{sec:fitting} for a few different 
 maximum angles. The results in the top panel use the same intrinsic
 distribution as Model 1 from R11 (shown in black), 
@@ -553,7 +553,6 @@ left free in each case.
 \label{fig:chi2_curve}
 \end{figure}
 
-
 \subsection{Comparing non-BAL and LoBAL Distributions}
 \label{sec:bal_v_nonbal}
 
@@ -567,7 +566,13 @@ The geometry of the toy model used to carry out the Monte Carlo simulations
 \label{fig:cartoon}
 \end{figure}
 
-In order to compare the observed distributions to those expected for BALs and
+% For LoBALs, \ewo\ measurements are available. This means the 
+% non-BAL quasar \ewo\ distribution can actually be fitted in
+% the LoBAL redshift range, and the expected LoBAL \ewo\ distribution
+% predicted for a grid of $\theta_{min}$ and $\theta_{max}$. To do this,
+% the procedure used to generate
+
+In order to compare the observed distributions to those expected for LoBALs and
 non-BALs I conduct a Monte Carlo simulation similar to
 the process described in section~\ref{sec:fitting}, but with a few 
 key differences. I once again assume $\epsilon(\theta) = \cos \theta$.
@@ -674,7 +679,7 @@ quasars. In the mean time, I will turn to the UV broad emission
 lines to examine if the above conclusions also hold
 when examining the properties of the HiBAL quasars in sample B.
 
-\subsection{Broad Emission Lines in HiBAL quasars}
+\subsection{Broad Emission Lines in HiBAL quasars: Theoretical EW Distributions}
 \label{sec:hibal_v_nonbal}
 
 \begin{figure} %fullpage
@@ -697,6 +702,7 @@ the continuum.
 
 
 
+
 \section{Discussion}
 \label{sec:discuss_ew}
 I have demonstrated that the EW distributions of the 
@@ -708,7 +714,8 @@ I to include limb darkening. This conclusion is extendible to the broad
 emission lines, with the caveat that those lines are dipole 
 transitions and so opacity effects can change the angular distribution of 
 emission. I will now explore how the above results compare to other
-observations of quasars that are expected to probe system orientation.
+observations of quasars that are expected to probe system orientation, as 
+well as the potential impact of obscuration on the results.
 
 \subsection{Eigenvector 1}
 
@@ -815,17 +822,13 @@ reference.
 % }
 % \label{fig:fwhm_hb}
 % \end{figure}
-
-\subsection{Radio Observations}
-
-Fig.~? shows the equivalent width distributions in radio-loud quasars, 
-split into core or lobe dominated. This designation is commonly used
-as an orientation indicator \citep{orr1982,wills1995}. 
-Although th
-
-In this case, we can see that 
-A full investigation of this is beyond the scope 
-
+% \subsection{Radio Observations}
+% Fig.~? shows the equivalent width distributions in radio-loud quasars, 
+% split into core or lobe dominated. This designation is commonly used
+% as an orientation indicator \citep{orr1982,wills1995}. 
+% Although th
+% In this case, we can see that 
+% A full investigation of this is beyond the scope 
 % {\color{blue}
 % Alternative geometries and polarisation. Are there any problems with
 % a more moderate viewing angle for BALs? Do we want to show a cartoon?
@@ -837,22 +840,21 @@ A full investigation of this is beyond the scope
 
 \subsection{Polarisation}
 
-Polarisation measurements of BAL quasars tend to show two properties.
+Polarisation measurements of BAL quasars tend to show two key properties.
 The first is a polarisation angle of $\gtrsim60^\circ$ with respect
 to the radio jet axis in RL source \citep{brotherton2006}. The second
 is a polarisation percentage of around $2.4$ times greater, 
-on average, than the 
-non-BAL population. The polarisation percentages of a sample 
-of BAL quasars from REF
-are compared to the Type I and Type II AGN populations from REF in 
-Fig.~\ref{fig:bal_polarisation}.
+on average, than the non-BAL population \citep{schmidt1999}. 
+The polarisation percentages of a sample of BAL quasars from 
+\cite{schmidt1999} are compared to the Type I and Type II AGN 
+populations from \cite{marin2014} in Fig.~\ref{fig:bal_polarisation}.
 
 The polarisation properties of BAL quasars offer some of
 the best insights into the geometries of BAL outflows, some of which
 appear to be in contrast with the conclusions drawn from emission
 line and radio properties. 
 
-\begin{figure}
+\begin{figure
 \centering
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/hist_p.png}
 \caption
@@ -868,9 +870,13 @@ Marin et al. (2015) AGN sample.
 \end{figure}
 
 
-\subsection{Theoretical Considerations}
+% \subsection{Theoretical Considerations}
 
-Discuss Proga models: They tend to rise fairly equatorially (see eg. PK04) Talk to Nick?
+% Discuss Proga models: They tend to rise fairly equatorially (see eg. PK04) Talk to Nick?
+
+\subsection{The Effect of Obscuration}
+
+
 
 
 \section{Conclusions}
