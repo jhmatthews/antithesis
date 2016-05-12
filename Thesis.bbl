@@ -990,6 +990,10 @@ Gough B., 2009,
 {Lamy} H., {Hutsem{\'e}kers} D., 2000,
   \aap~  356, L9
 
+\bibitem[\protect\astroncite{{Lamy} \& {Hutsem{\'e}kers}}{2004}]{lamy2004}
+{Lamy} H., {Hutsem{\'e}kers} D., 2004,
+  \aap~  427, 107
+
 \bibitem[\protect\astroncite{{Landi} et~al.}{2012}]{landi2012}
 {Landi} E., {Del Zanna} G., {Young} P.~R., {Dere} K.~P., {Mason} H.~E., 2012,
   \apj~  744, 99
@@ -1088,6 +1092,18 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Mangham} et~al.}{2016}]{mangham}
 {Mangham} S.~W., {Knigge} C., {Matthews} J.~H., {Long} K.~S. et~al., 2016,
   in prep.~
+
+\bibitem[\protect\astroncite{{Marin}}{2014}]{marin2014}
+{Marin} F., 2014,
+  \mnras~  441, 551
+
+\bibitem[\protect\astroncite{{Marin}}{2016}]{marin2016}
+{Marin} F., 2016,
+  ArXiv e-prints~
+
+\bibitem[\protect\astroncite{{Marin} \& {Goosmann}}{2013}]{marin2013}
+{Marin} F., {Goosmann} R.~W., 2013,
+  \mnras~  436, 2522
 
 \bibitem[\protect\astroncite{{Marinucci} et~al.}{2016}]{marinucci2016}
 {Marinucci} A., {Bianchi} S., {Matt} G., {Alexander} D.~M. et~al., 2016,
@@ -1285,10 +1301,6 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Orr} et~al.}{1997}]{orr1997}
 {Orr} A., {Molendi} S., {Fiore} F., {Grandi} P. et~al., 1997,
   \aap~  324, L77
-
-\bibitem[\protect\astroncite{{Orr} \& {Browne}}{1982}]{orr1982}
-{Orr} M.~J.~L., {Browne} I.~W.~A., 1982,
-  \mnras~  200, 1067
 
 \bibitem[\protect\astroncite{{Osaki}}{1974}]{osaki1974}
 {Osaki} Y., 1974,
@@ -1529,6 +1541,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Schechter}}{1976}]{schechter1976}
 {Schechter} P., 1976,
   \apj~  203, 297
+
+\bibitem[\protect\astroncite{{Schmidt} \& {Hines}}{1999}]{schmidt1999}
+{Schmidt} G.~D., {Hines} D.~C., 1999,
+  \apj~  512, 125
 
 \bibitem[\protect\astroncite{{Schmidt}}{1963}]{schmidt1963}
 {Schmidt} M., 1963,
@@ -1827,10 +1843,6 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{White} et~al.}{1988}]{white1988}
 {White} N.~E., {Stella} L., {Parmar} A.~N., 1988,
   \apj~  324, 363
-
-\bibitem[\protect\astroncite{{Wills} \& {Brotherton}}{1995}]{wills1995}
-{Wills} B.~J., {Brotherton} M.~S., 1995,
-  \apjl~  448, L81
 
 \bibitem[\protect\astroncite{{Woltjer}}{1959}]{woltjer1959}
 {Woltjer} L., 1959,
