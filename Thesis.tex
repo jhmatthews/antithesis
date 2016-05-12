@@ -128,35 +128,63 @@
 
 %% ----------------------------------------------------------------
 % Declaration Page required for the Thesis, your institution may give you a different text to place here
-% \Declaration{
+\Declaration{
 
-% \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-% I, James Matthews, declare that this thesis titled, `Disc Winds Matter: Modelling Accretion and Outflow on All Scales' and the work presented in it are my own. I confirm that:
+I, James Matthews, declare that this thesis titled, `Disc Winds Matter: Modelling Accretion and Outflow on All Scales' and the work presented in it are my own. I confirm that:
 
-% \begin{itemize} 
-% \item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
+\begin{itemize} 
+\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
  
-% \item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
  
-% \item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
+\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
  
-% \item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
  
-% \item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
+\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
  
-% \item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-% \\
-% \end{itemize}
+\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
+\\
+\end{itemize}
+The first two chapters of this thesis provide a general introduction to the field, and thus
+are based on the relevant literature. Where a figure is not produced by me, I have acknowledged 
+this clearly with a credit to the relevant publication. Chapter 3 contains a description
+of the methods used. This is partly a description of the radiative transfer code \py, which
+was originally developed by Knox Long and Christian Knigge \citep{LK02}, but also includes substantial
+detail on the `macro-atom' technique, which was proposed by Leon Lucy and incorporated into \py\
+by Stuart Sim for a study on young-stellar objects \citep{simmacro2005}. 
+My role was, partly, to test, fix, develop and improve this scheme -- I did not write the
+original code to deal with macro-atoms in \py.
+
+Chapter 4, 5 and 6 were studies I led under the guidance of my supervisor, and all text
+and data analysis is my own. A publication based on chapter 6 is in preparation, and
+chapters 4 and 5 are based on the following papers:
+\begin{itemize}
+	\item Chapter 4: Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., 
+`The impact of accretion disc winds on the optical spectra of 
+cataclysmic variables',
+2015, MNRAS, 450, 3331.
+	\item Chapter 5: Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., Mangham S. W., 
+`Testing quasar unification: radiative transfer in clumpy winds',
+2016, MNRAS, 458, 293.
+\end{itemize}
+The following additional publications are not included in this thesis, although some of the work 
+I carried out did contribute towards the respective results
+\begin{itemize}
+	\item H13
+	\item H14
+	\item Shankar et al. 2015
+\end{itemize} 
+
+Signed:\\
+\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
  
- 
-% Signed:\\
-% \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
- 
-% Date:\\
-% \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
-% }
-% \clearpage  % Declaration ended, now start a new page
+Date:\\
+\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+}
+\clearpage  % Declaration ended, now start a new page
 
 %% ----------------------------------------------------------------
 % The "Funny Quote Page"
@@ -199,11 +227,24 @@ they may even dominate the spectral appearance of such objects. When one conside
 disc winds are also a possible mechanism for AGN feedback, it becomes clear that understanding
 the physics and true spectral imprint of these winds is of wide-ranging astrophysical significance.
 
-In this thesis I use the stet-of-the-art Monte Carlo radiative transfer (MCRT) code, 
+In this thesis I use the state-of-the-art Monte Carlo radiative transfer (MCRT) code, 
 \py, to conduct a series of MCRT and photoionization simulations designed to test
 simple biconical disc wind models. I provide a detailed description of
 these methods, focusing particularly on the macro-atom implementation 
-developed by Leon Lucy. First, I apply them to the optical spectra of CVs. 
+developed by Leon Lucy and implemented in \py\ by Stuart Sim. 
+I also detail a series of code validation exercises designed to 
+test hybrid scheme used throughout this thesis, in which H \& He are treated as macro-atoms
+but the heavier elements as two-level `simple-atoms'. The aim of this exercise
+was to assess if the kind of winds that are responsible for the UV resonance
+line BALs in high-state CVs could also have an effect on the optical spectrum. I find
+that the improved treatment of recombination afforded by macro-atoms means that
+strong optical line emission in \ha\, \heiiopt\ and a series of He~\textsc{i} lines
+is present in the synthetic spectra. In addition, the model reproduces the observed
+trends with inclination and produces sufficient recombination continuum emission
+to fill in the Balmer jump at high inclinations. 
+
+
+First, I apply them to the optical spectra of CVs. 
 Second, I conduct tests of quasar unification models. 
 Finally, informed by the previous study, I use Sloan Digital Sky Survey and Hubble Space 
 Telescope data to test the models in an empirical way, 
