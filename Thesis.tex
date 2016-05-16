@@ -3,7 +3,7 @@
 %% ---------------------------------------------------------------- 
 
 % Set up the document
-\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\documentclass[a4paper, 11pt, twoside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \graphicspath{figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 % Include any extra LaTeX packages required
@@ -16,6 +16,8 @@
 \usepackage{pdfpages}
 \usepackage{textcmds}
 \usepackage{forloop}
+
+%\usepackage[hmarginratio=1:1]{geometry}
 
 \setlength\epigraphrule{0pt}
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
@@ -101,12 +103,27 @@
 \def\FLUX{\:{\rm erg\:cm^{-2}\:s^{-1}}}
 \def\OIGS{\:{\rm erg\:cm^{-2}\:s^{-1}\:\AA^{-1}}}
 
+\def\mch{M$\rm^{c}$Hardy\,}
+\def\Msol{$M_{\odot}\ $}
+\def\mdote{\.m$\mathrm{_{Edd}}$}
+\def\mdotes{\.m$\mathrm{_{Edd}~}$}
+\def\mcrit{\.m$\mathrm{_{crit}}$}
+\def\rg{$R_G$}
+\def\mdot{\.m}
+
+% \newcommand\blankpage{%
+%     \null
+%     \thispagestyle{empty}%
+%     \addtocounter{page}{-1}%
+%     \newpage}
+
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
 \title  {Disc Winds Matter: Modelling Accretion and Outflow on All Scales}
 \authors  {\texorpdfstring
-            {\href{jm8g08@soton.ac.uk}{James Matthews}}
+            {\href{jm8g08@soton.ac.uk}
+            {James Matthews}}
             {James Matthews}
             }
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
@@ -127,10 +144,112 @@
 \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
 %% ----------------------------------------------------------------
+% The "Funny Quote Page"
+\pagestyle{empty}  % No headers or footers for the following pages
+
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world.\\\\And it's breathtaking.''}
+
+\begin{flushright}
+Seven Brief Lessons on Physics, Carlo Rovelli
+\end{flushright}
+
+\textit{``Good enough for government work.''}
+
+\begin{flushright}
+Christian Knigge
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+
+
+%% ----------------------------------------------------------------
+\newpage % Funny Quote page ended, start a new page
+\clearpage
+
+\setstretch{1}  % It is better to have smaller font and larger line spacing than the other way round
+
+% The Abstract Page
+\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+\abstract{
+%\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+Outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass,
+and there is good evidence that wind launched from the accretion disc are present in
+quasars and cataclysmic variables (CVs). Perhaps the most spectacular evidence for accretion disc winds is the blue-shifted, 
+broad absorption lines (BALs) in UV resonance lines, seen in CVs and the 
+BAL quasars. As well as imprinting absorption features on the spectrum, disc winds
+may also affect the line and continuum emission from accreting objects. They thus offer
+a natural way to {\em unify} much of the phenemnology of CVs and active galactic nuclei.
+%Disc windsoffer a natural way to unify the phenomenol
+%
+% When one considers that
+% disc winds are also a possible mechanism for AGN feedback, it becomes clear 
+% that understanding the physics and true spectral imprint of these winds is of wide-ranging astrophysical significance.
+
+In this thesis, I use a Monte Carlo radiative transfer code, 
+\py, to conduct a series of simulations designed to test
+simple biconical disc wind models. I provide a detailed outline of
+these methods and describe a series of code validation exercises. 
+Having tested my methods thoroughly, I explore whether the winds that are 
+responsible for the UV resonance line BALs in high-state CVs could also have an 
+effect on the optical spectrum. I find that the wind produces
+strong emission in H and He recombination lines. 
+The synthetic spectra show the observed trends with inclination and in some cases 
+produce sufficient recombination continuum emission to fill in the Balmer jump. 
+The results suggests that disc winds could have a significant impact on the
+optical spectra of high-state CVs.
+
+The next step was to apply the techniques
+to quasar winds in a test of disc wind unification models. 
+Motivated by the problem of over-ionization, 
+I introduce a simple treatment of clumping, and find that it 
+allows BAL features to form in the rest-frame UV at realistic X-ray 
+luminosities. The fiducial model shows good agreement with AGN X-ray 
+properties and the wind produces strong line emission. 
+Despite these successes, the model 
+cannot reproduce all emission lines seen in quasar spectra with the correct 
+equivalent width (EW) ratios, and I find a strong angular dependence of EW.
+
+Informed by the quasar wind modelling, I use the EW distribution
+of quasars to test simple unification models. I find that the distributions
+are not consistent with a model in which an equatorial BAL 
+outflow rises from a foreshortened accretion disc. I discuss this finding
+in the context of other observational orientation indicators.
+Finally, I summarise my findings and suggest avenues for future work.
+Overall, the work presented here suggests that {\em disc winds matter}. 
+They not only act as a spectral `filter' for the underlying
+accretion continuum, but may actually dominate the emergent spectrum from 
+accreting objects. As a result, unveiling their driving mechanisms, 
+mass-loss rates, and 
+ionization structure is an important goal for the astronomical community. 
+}
+
+\cleardoublepage  % Abstract ended, start a new page
+%% ----------------------------------------------------------------
+
+
+%% ----------------------------------------------------------------
+
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+
+%% ----------------------------------------------------------------
+\lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+\tableofcontents  % Write out the Table of Contents
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
+\listoffigures  % Write out the List of Figures
+
+% %% ----------------------------------------------------------------
+\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+\listoftables  % Write out the List of Tables
+
 % Declaration Page required for the Thesis, your institution may give you a different text to place here
 \Declaration{
 
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+%\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
 I, James Matthews, declare that this thesis titled, `Disc Winds Matter: Modelling Accretion and Outflow on All Scales' and the work presented in it are my own. I confirm that:
 
@@ -146,7 +265,6 @@ I, James Matthews, declare that this thesis titled, `Disc Winds Matter: Modellin
 \item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
  
 \item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-\\
 \end{itemize}
 The first two chapters of this thesis provide a general introduction to the field, and thus
 are based on the relevant literature. Where a figure is not produced by me, I have acknowledged 
@@ -158,8 +276,9 @@ by Stuart Sim for a study on young-stellar objects \citep{simmacro2005}.
 My role was, partly, to test, fix, develop and improve this scheme -- I did not write the
 original code to deal with macro-atoms in \py.
 
-Chapter 4, 5 and 6 were studies I led under the guidance of my supervisor, and all text
-and data analysis is my own. A publication based on chapter 6 is in preparation, and
+Chapter 4, 5 and 6 were studies I led under the guidance of my supervisor. For these
+chapters I conducted all simulations and data analysis, produced all the figures and 
+wrote the text. A publication based on chapter 6 is in preparation, and
 chapters 4 and 5 are based on the following papers:
 \begin{itemize}
 	\item Chapter 4: Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., 
@@ -182,222 +301,159 @@ MNRAS, 436, 2.3
 	\item Shankar F., Calderone G., Knigge C., Matthews J. H., et al., `The Optical–UV Emissivity of Quasars: Dependence on Black Hole Mass and Radio Loudness', 2016, ApJ Letters, 818, 1.
 \end{itemize} 
 
+\bigskip
+\bigskip
+\bigskip
+
 Signed:\\
 \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
- 
+
+\bigskip
+
 Date:\\
 \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
 \clearpage  % Declaration ended, now start a new page
 
-%% ----------------------------------------------------------------
-% The "Funny Quote Page"
-\pagestyle{empty}  % No headers or footers for the following pages
-
-\null\vfill
-% Now comes the "Funny Quote", written in italics
-\textit{``Here, on the edge of what we know, in contact with the ocean of the unknown, shines the mystery and the beauty of the world.\\\\And it's breathtaking.''}
-
-\begin{flushright}
-Seven Brief Lessons on Physics, Carlo Rovelli
-\end{flushright}
-
-\textit{``Good enough for government work.''}
-
-\begin{flushright}
-Christian Knigge
-\end{flushright}
-
-\vfill\vfill\vfill\vfill\vfill\vfill\null
-\clearpage  % Funny Quote page ended, start a new page
-%% ----------------------------------------------------------------
-
-% The Abstract Page
-\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
-\abstract{
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-Outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass. 
-They can take the form of highly collimated radio jets, or less collimated, mass loaded
-winds emanating from the accretion disc. 
-Perhaps the most spectacular evidence
-for accretion disc winds is the blue-shifted, 
-broad absorption lines (BALs) in UV resonance
-lines, seen in cataclysmic variables (CVs) and approximately 
-$20\%$ of quasars. In addition to 
-directly producing absorption in the spectrum, it is possible that accretion disc winds
-may significantly affect the line and continuum {\em emission} 
-from CVs and quasars -- as a result,
-they may even dominate the spectral appearance of such objects. When one considers that
-disc winds are also a possible mechanism for AGN feedback, it becomes clear that understanding
-the physics and true spectral imprint of these winds is of wide-ranging astrophysical significance.
-
-In this thesis I use the state-of-the-art Monte Carlo radiative transfer (MCRT) code, 
-\py, to conduct a series of MCRT and photoionization simulations designed to test
-simple biconical disc wind models. I provide a detailed description of
-these methods, focusing particularly on the macro-atom implementation 
-developed by Leon Lucy and implemented in \py\ by Stuart Sim. 
-I also detail a series of code validation exercises designed to 
-test hybrid scheme used throughout this thesis, in which H \& He are treated as macro-atoms
-but the heavier elements as two-level `simple-atoms'. The aim of this exercise
-was to assess if the kind of winds that are responsible for the UV resonance
-line BALs in high-state CVs could also have an effect on the optical spectrum. I find
-that the improved treatment of recombination afforded by macro-atoms means that
-strong optical line emission in \ha\, \heiiopt\ and a series of He~\textsc{i} lines
-is present in the synthetic spectra. In addition, the model reproduces the observed
-trends with inclination and produces sufficient recombination continuum emission
-to fill in the Balmer jump at high inclinations. 
-
-
-First, I apply them to the optical spectra of CVs. 
-Second, I conduct tests of quasar unification models. 
-Finally, informed by the previous study, I use Sloan Digital Sky Survey and Hubble Space 
-Telescope data to test the models in an empirical way, 
-by using emission line equivalent widths
-as a probe of unification geometries.
-
-Overall, the work presented here suggests that {\em disc winds matter}. 
-They not only act as a spectral `filter' for the underlying
-accretion continuum, but may actually dominate the emergent spectrum from 
-accreting objects. As a result, unveiling their driving mechanisms, mass-loss rates, and 
-ionization structure is an important goal for the astronomical community. 
-}
-
-\clearpage  % Abstract ended, start a new page
-%% ----------------------------------------------------------------
-
 \setstretch{1.5}  % Reset the line-spacing to 1.3 for body text (if it has changed)
 
 % The Acknowledgements page, for thanking everyone
-% \acknowledgements{
-% \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-% First and foremost, I would like to thank Christian Knigge, for being
-% such an enthusiastic, helpful and stimulating supervisor throughout my PhD. 
-% Christian, I {\em always} left our meetings more positive than before -- that speaks
-% volumes -- and I greatly enjoyed our conversations about science,
-% Explosions in the Sky and Japanese whisky. Especially when they were in New York.
-% I am also extremely grateful to Knox Long
-% for all his help and advice, writing the majority of the code and sharing some
-% of his astronomy knowledge
-% with me, and Stuart `radiative transfer guru' Sim for being always correct
-% and immensely helpful, especially when it came to understanding macro-atoms.
-% I would also like to thank Nick Higginbottom for hours upon hours of assistance
-% and friendship. Nick, I think we make a great team, and I am really grateful for
-% all the time you put in teaching me the ropes, 
-% particularly near the start of my PhD.
-% To all of the above people; thankyou for being part of a collaboration that
-% did some great science, but also knew when to discuss a disastrous 
-% code bug with a knowing smile and ironic joke. In some ways, our group
-% is best summed up by the fact that we work on a code called Python!
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+First and foremost, I would like to thank Christian Knigge, for being
+such an enthusiastic, helpful and stimulating supervisor throughout my PhD. 
+Christian, I {\em always} left our meetings more positive than before -- that speaks
+volumes -- and I greatly enjoyed our conversations about science and
+Explosions in the Sky. I am also extremely grateful to Knox Long
+for all his assistance, writing the majority of the code and sharing some
+of his astronomy knowledge with me, and Stuart Sim for being immensely 
+helpful throughout, especially when it comes to radiative transfer.
+I would also like to thank Nick Higginbottom for hours upon hours of assistance
+and friendship, and Sam Mangham for his help and input nearer the end of my PhD.
+To all of the above people; thank you for being part of a collaboration that
+does some great science, but also knew when to discuss a disastrous 
+code bug with a knowing smile and ironic joke. 
+I would also like to thank Daniel Proga, Omer Blaes, Ivan Hubeny, Shane Davis,
+Mike Brotherton, Mike DiPompeo, Frederic Marin, Daniel Capellupo, Dirk Grupe,
+Simo Scaringi, Adam Foster, Randall Smith, Chris Done 
+and countless others for useful correspondence or stimulating scientific 
+conversations.
 
-% % I would also like to thank Daniel Proga, Sebastien Hoenig,
-% % Poshak Gandhi, Francesco Shankar, Diego Altamirano, 
+Apart from those who I worked with, I am grateful to 
+everyone who helped make Southampton a happy place to be over 3+ years.
+There are too many to name, but I will indulge a few. To Sam Connolly, 
+you have been an ever-present and someone who I can always rely on for good 
+beer, music and knowing looks. Sadie Jones, you were there when I needed 
+you most for a cwtch. To Rob, Aarran, Juan and Poppy, thanks for being true 
+friends throughout the process, and big thanks to everyone else in the 
+department for making it a super cool place to work, particularly my
+other office mates Mari, Judith, Stew and CFro.
+Thanks also goes to all the staff for being so friendly and approachable,
+particularly Poshak, Diego and Seb who have all helped me at various points
+through the PhD, and to Phil Charles for his sage advice since the early 
+days.
 
+There are also many people, outside of Southampton, who I must thank.
+Most of all, Mum, Dad, Beth and Nick, and the rest of my family. Thanks
+for supporting me throughout my studies and just being all round lovely people.
+Thank you Josh, James and Alex, and our now manager John,
+for allowing me to play music that I love in Waking Aida. 
+Eschaton and Full Heal were both released during my PhD, and in many ways 
+they are each a thesis within themselves. 
 
-% Apart from those who I worked with, I would like to thank 
-% everyone who helped make Southampton a happy place to be over 3+ years.
-% There are too many to name, but I will indulge a few. To Sam Connolly -- thanks 
-% for being a true friend for what is now a lot of years. You have been an ever-present
-% and someone who I can always rely on for good beer, music and knowing looks.
-% Sadie Jones -- you were there when I needed you most for a cwtch, and I really am 
-% incredibly grateful for that. I probably should tell you that more.
-% Rob Firth -- my gym buddy and best punner. Aarran Shaw -- perpetually first
-% and Juan Venancio Hernandez Santisteban -- telepathic football partner
-% and legend of a house and office mate. Thankyou to all of you.
-% I would also like to thank Richard Latouche for all the gains and just being a generally
-% great housemate. 
+In this thesis, figures were produced using the {\tt matplotlib} 
+plotting library. This work made use of the Sloan Digital Sky Survey.
+Funding for the Sloan Digital Sky Survey has been provided by
+the Alfred P. Sloan Foundation, the U.S. Department of Energy Office of
+Science, and the Participating Institutions.
+I acknowledge the use of the IRIDIS High Performance Computing 
+Facility, and associated support services at the University of 
+Southampton, in the completion of this work.
+}
 
-% There are also many people, outside of Southampton, who I must thank.
-% Most of all, Mum, Dad, Beth and Nick, and the rest of my family. Thanks
-% for supporting me throughout my studies and just being all round legends, and 
-% spending e.g. Christmas with muh. Auntie Caz, Sean and Annabel - thanks for letting me stay
-% every time I needed to go to Gatwick, and welcoming me with a beer and a smile.
-% Nick and Jack -- 
-% And how could I forget, Thankyou Josh, James and Alex, and our now manager John,
-% for allowing me to play music that I love in Waking Aida. 
-% Eschaton and Full Heal were both released during my PhD, and in many ways 
-% they are each a thesis within themselves. }
-
-
-
-
-
-\clearpage  % End of the Acknowledgements
-%% ----------------------------------------------------------------
-
-\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
-
+\clearpage
 
 %% ----------------------------------------------------------------
-\lhead{\emph{Contents}}  % Set the left side page header to "Contents"
-\tableofcontents  % Write out the Table of Contents
-
-%% ----------------------------------------------------------------
-\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
-\listoffigures  % Write out the List of Figures
+\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+\clearpage  % Start a new page
+\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+{
+% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+AGN & Active galactic nuclei/nucleus\\ 
+ADAF & Advection dominated accretion flow\\
+BAL & Broad absorption line\\
+BALQSO & Broad absorption line quasar\\
+BBB & Big blue bump
+BEL & Broad emission line\\
+BH & Black hole\\
+BI & Balnicity index\\
+BL & Boundary Layer\\
+BLR & Broad line region\\
+CDF & Cumulative distribution function\\
+CV & Cataclysmic variable\\
+DN(e) & Dwarf nova(e)\\
+EW & Equivalent width\\
+HERG & High excitation radio galaxy\\
+HMXB & High-mass X-ray binary\\
+HSE & Hydrostatic Equilibrium \\
+IP & Intermediate polar \\
+IR & Infra-red\\
+ISCO & Innermost stable circular orbit\\
+LINER & Low ionization nuclear emission-line region\\
+LMXB & Low-mass X-ray binary\\
+LTE & Local thermodynamic equilibrium\\
+MCRT & Monte Carlo radiative transfer\\
+MRI & Magneto-Rotational Instability\\
+NAL & Narrow absorption line\\
+NEL & Narrow emission line\\
+NLR & Narrow line region\\
+NL & Nova-like variable\\
+NS & Neutron Star\\
+OVV & Optically violent variable galaxy\\
+RL & Radio-loud\\
+RT & Radiative transfer\\
+RIAF & Radiative inefficient accretion flow\\
+RLOF & Roche lobe overflow\\
+SA & Sobolev approximation
+SED & Spectral energy distribution\\
+SFR & Star formation rate\\
+sSFR & Specific star formation rate\\
+SMBH & Supermassive black hole\\
+SSS & Supersoft Source\\
+SXXS & Soft X-ray excess \\
+UFO & Ultra-fast outflow\\
+%%UTA & Unresolved transition array \\
+UV & Ultraviolet\\
+WA & Warm absorber\\
+WD & White dwarf
+WHIM & Warm, highly ionized medium\\
+XRB & X-ray binary\\
+YSO & Young stellar object\\
+}
 
 % %% ----------------------------------------------------------------
-\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
-\listoftables  % Write out the List of Tables
-
-%% ----------------------------------------------------------------
-% \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
-% \clearpage  % Start a new page
-% \lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
-% \listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
-% {
-% % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-% AGN & Active galactic nuclei/nucleus\\ 
-% ADAF & Advection dominated accretion flow\\
-% BAL & Broad absorption line\\
-% BALQSO & Broad absorption line quasar\\
-% BEL & Broad emission line\\
-% BI & BALnicity index\\
-% BLR & Broad line region\\
-% CDF & Cumulative distribution function\\
-% CV & Cataclysmic variable\\
-% DN(e) & Dwarf Nova(e)\\
-% EW & Equivalent width\\
-% HERG & High excitation radio galaxy\\
-% HMXB & High-mass X-ray binary\\
-% HSE & Hydrostatic Equilibrium \\
-% IR & Infra-red\\
-% ISCO & Innermost stable circular orbit\\
-% LINER & Low ionization nuclear emission-line region\\
-% LMXB & Low-mass X-ray binary\\
-% LTE & Local thermodynamic equilibrium\\
-% MCR & Monte Carlo Radiative Transfer\\
-% NAL & Narrow absorption line\\
-% NEL & Narrow emission line\\
-% NLR & Narrow line region\\
-% NL & Nova-like variable\\
-% OVV & Optically violent variable galaxy\\
-% RL & Radio-loud\\
-% RT & Radiative transfer\\
-% RIAF & Radiative inefficient accretion flow\\
-% SA & Sobolev approximation
-% SED & Spectral energy distribution\\
-% SFR & Star formation rate\\
-% sSFR & Specific star formation rate\\
-% SMBH & Supermassive black hole\\
-% SSS & Supersoft Source\\
-% UFO & Ultra-fast outflow\\
-% %%UTA & Unresolved transition array \\
-% UV & Ultraviolet\\
-% WA & Warm absorber\\
-% WHIM & Warm, highly ionized medium\\
-% XRB & X-ray binary\\
-% YSO & Young stellar object\\
-% }
-
-% %% ----------------------------------------------------------------
-% \clearpage  % Start a new page
-% \lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-% \listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-% {
-% % Constant Name & Symbol & = & Constant Value (with units) \\
-% Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-
-% }
+\clearpage  % Start a new page
+\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
+\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
+{
+% Constant Name & Symbol & = & Constant Value (with units) \\
+Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{10}\ \mathrm{cm\ s^{-1}}$ \\
+Boltzmann Constant & $k$ & $=$ & $1.380\ 648\ 52 \times10^{-16}\ \mathrm{erg\ K^{-1}}$ \\
+Gravitational Constant & $G$ & $=$ & $6.672\ 59\times10^{-8}\ \mathrm{cm^3\ g^{-1}\ s^{-2}}$ \\
+Solar Mass & \Msol & $=$ & $1.988\ 55 \times10^{33}\ \mathrm{g}$ \\
+Solar Radius & $L_\odot$ & $=$ & $6.957\ 00 \times10^{10}\ \mathrm{cm}$ \\
+Thomson Cross-Section & $\sigma_T$ & $=$ & $6.652\ 458\ 734\times10^{-25}\ \mathrm{cm^{2}}$ \\
+Planck Constant & $h$ & $=$ & $6.626\ 075\ 5\times10^{-27}\ \mathrm{cm^2\ g\ s^{-1}}$ \\
+Stefan Boltzmann Constant & $\sigma$ & $=$ & $5.670\ 367\times10^{-5}\ \mathrm{erg\ cm^{-2}\ K^{-4}\ s^{-1}}$ \\
+Parsec & $pc$ & $=$ & $3.085\ 677\ 6\times10^{18}\ \mathrm{cm}$ \\
+%e & & $=$ & $2.718\ 281\ 828$ \\
+Proton mass & $m_p$ & $=$ & $1.672\ 621\ 58 \times 10^{-24}\ \mathrm{g}$ \\
+Electron mass & $m_e$ & $=$ & $9.109\ 389\ 7 \times 10^{-28}\ \mathrm{g}$ \\  
+Electron volt & eV & $=$ & $1.602\ 176\ 57 \times 10^{-12}\ \mathrm{erg}$ \\
+Charge of an electron & $e$ & $=$ & $4.803\ 206\ 8 \times 10^{-10}\ \mathrm{esu}$ \\
+$\pi$ & & $=$ & 3.141 592 65\\
+}
 
 %% ----------------------------------------------------------------
 % \clearpage  %Start a new page
@@ -419,7 +475,7 @@ ionization structure is an important goal for the astronomical community.
 \pagestyle{empty}  % Page style needs to be empty for this page
 \dedicatory{Dedicated to my family.}
 
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
 
 %% ----------------------------------------------------------------
@@ -470,6 +526,8 @@ ionization structure is an important goal for the astronomical community.
 \label{Bibliography}
 \lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
 \bibliographystyle{aabib}
+\setlength{\bibsep}{0pt}
+\setstretch{1.5}  % Return the line spacing back to 1
 %\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \bibliography{bibs/mybib.bib,bibs/stellar.bib,bibs/h14.bib,bibs/h13.bib,bibs/hamann.bib,bibs/krolik.bib,bibs/lk02.bib,bibs/agn.bib,bibs/proga_theory.bib,bibs/cv.bib,bibs/bals.bib}  % The references (bibliography) information are stored in the file named "Bibliography.bib"l
 

@@ -194,6 +194,11 @@
 {Burkert} A., {Silk} J., 2001,
   \apjl~  554, L151
 
+\bibitem[\protect\astroncite{{Caccianiga} \&
+  {Severgnini}}{2011}]{caccianiga2011}
+{Caccianiga} A., {Severgnini} P., 2011,
+  \mnras~  415, 1928
+
 \bibitem[\protect\astroncite{{Capellupo} et~al.}{2014}]{capellupo2014}
 {Capellupo} D.~M., {Hamann} F., {Barlow} T.~A., 2014,
   \mnras~  444, 1893
@@ -468,6 +473,10 @@
 \bibitem[\protect\astroncite{{Fender} et~al.}{2010}]{fender2010}
 {Fender} R.~P., {Gallo} E., {Russell} D., 2010,
   \mnras~  406, 1425
+
+\bibitem[\protect\astroncite{{Ferland}}{2002}]{ferland2002}
+{Ferland} G., 2002,
+  ArXiv Astrophysics e-prints~
 
 \bibitem[\protect\astroncite{{Ferland}}{2005}]{ferland2005}
 {Ferland} G.~J., 2005,
@@ -1209,6 +1218,11 @@ Gough B., 2009,
 {Mitsuda} K., {Inoue} H., {Nakamura} N., {Tanaka} Y., 1989,
   \pasj~  41, 97
 
+\bibitem[\protect\astroncite{{Morabito} et~al.}{2011}]{morabito2011}
+{Morabito} L.~K., {Dai} X., {Leighly} K.~M., {Sivakoff} G.~R., {Shankar} F.,
+  2011,
+  \apj~  737, 46
+
 \bibitem[\protect\astroncite{{Morabito} et~al.}{2013}]{morabito2013}
 {Morabito} L.~K., {Dai} X., {Leighly} K.~M., {Sivakoff} G.~R., {Shankar} F.,
   2013,
@@ -1289,6 +1303,14 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Noebauer} et~al.}{2010}]{noebauer}
 {Noebauer} U.~M., {Long} K.~S., {Sim} S.~A., {Knigge} C., 2010,
   \apj~  719, 1932
+
+\bibitem[\protect\astroncite{{Nomura} et~al.}{2016}]{nomura2016}
+{Nomura} M., {Ohsuga} K., {Takahashi} H.~R., {Wada} K., {Yoshida} T., 2016,
+  \pasj~  68, 16
+
+\bibitem[\protect\astroncite{{Nomura} et~al.}{2013}]{nomura2013}
+{Nomura} M., {Ohsuga} K., {Wada} K., {Susa} H., {Misawa} T., 2013,
+  \pasj~  65, 40
 
 \bibitem[\protect\astroncite{{North} et~al.}{2006}]{north2006}
 {North} M., {Knigge} C., {Goad} M., 2006,
@@ -1483,6 +1505,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Ringwald} \& {Naylor}}{1998}]{RN98}
 {Ringwald} F.~A., {Naylor} T., 1998,
   \aj~  115, 286
+
+\bibitem[\protect\astroncite{{Risaliti} \& {Elvis}}{2010}]{risalitielvis2010}
+{Risaliti} G., {Elvis} M., 2010,
+  \aap~  516, A89
 
 \bibitem[\protect\astroncite{{Risaliti} et~al.}{2007}]{risaliti2007}
 {Risaliti} G., {Elvis} M., {Fabbiano} G., {Baldi} A. et~al., 2007,

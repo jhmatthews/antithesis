@@ -26,15 +26,15 @@
 \newcommand\bhrule{\typeout{------------------------------------------------------------------------------}}
 
 \newcommand\Declaration[1]{
-\btypeout{Declaration of Authorship}
+%\btypeout{Declaration of Authorship}
 \addtotoc{Declaration of Authorship}
 \thispagestyle{plain}
-\null\vfil
+%\null\vfil
 %\vskip 60\p@
 \begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
 %\vskip 60\p@
 {\normalsize #1}
-\vfil\vfil\null
+%\vfil\vfil\null
 %\cleardoublepage
 }
 
@@ -149,16 +149,18 @@
 \examiner    {}
 \degree      {}
 \authors     {}
-\university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
+\university  {\texorpdfstring{\href{http://www.southampton.ac.uk/}
                 {University of Southampton}}
                 {University of Southampton}}
-\UNIVERSITY  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
+\UNIVERSITY  {\texorpdfstring
+{\href{http://www.southampton.ac.uk/}
                 {UNIVERSITY OF SOUTHAMPTON}}
-                {UNIVERSITY OF SOUTHAMPTON)}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
+                {UNIVERSITY OF SOUTHAMPTON}}
+\department  {\texorpdfstring
+{\href{http://www.phys.soton.ac.uk/}
                 {Department of Physics \& Astronomy}}
                 {Department of Physics \& Astronomy}}
-\DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
+\DEPARTMENT  {\texorpdfstring{\href{http://www.phys.soton.ac.uk/}
                 {DEPARTMENT OF PHYSICS AND ASTRONOMY}}
                 {DEPARTMENT OF PHYSICS AND ASTRONOMY}}
 \group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
@@ -167,12 +169,13 @@
 \GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
                 {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
                 {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
+\faculty     {\texorpdfstring{\href{http://www.fpse.soton.ac.uk/}
                 {Faculty of Physical Sciences and Engineering}}
                 {Faculty of Physical Sciences and Engineering}}
-\FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
+\FACULTY     {\texorpdfstring
+{\href{http://www.fpse.soton.ac.uk/}
+                {FACULTY OF PHYSICAL SCIENCES AND ENGINEERING}}
+                {FACULTY OF PHYSICAL SCIENCES AND ENGINEERING}}
 \addresses   {}
 \subject     {}
 \keywords    {}
@@ -193,6 +196,10 @@
     \begin{center}
       \setlength{\parskip}{0pt}
       {\large\textbf{\UNIVNAME}\par}
+      \bigskip
+      {\large \FACNAME \par}
+      \medskip
+      {\large \deptname \par}
       \vfill
       {\huge \bf \@title \par}
       \vfill
@@ -200,13 +207,11 @@
       \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
-      {\large degree of Doctor of Philosophy \par}
+      {\large A thesis submitted for the degree of Doctor of Philosophy \par}
       \bigskip
       \bigskip
-      {\large in the \par}
-      {\large \facname \par}
-      {\large \deptname \par}
+      %{\large in the \par}
+      %{\large \deptname \par}
       \bigskip
       \bigskip
       \bigskip
@@ -223,7 +228,7 @@
   \global\let\@thanks\@empty
   \global\let\@author\@empty
   \global\let\@date\@empty
-  \global\let\@title\@empty
+  %\global\let\@title\@empty
   \global\let\title\relax
   \global\let\author\relax
   \global\let\date\relax
@@ -232,24 +237,26 @@
 }
 \newenvironment{abstract}
 {
+  \cleardoublepage
+  \newpage
   \btypeout{Abstract Page}
   \thispagestyle{empty}
   \null\vfil
   \begin{center}
     \setlength{\parskip}{0pt}
     {\normalsize \UNIVNAME \par}
-    \bigskip
-    {\huge{\textit{Abstract}} \par}
-    \bigskip
-    {\normalsize \facname \par}
-    {\normalsize \deptname \par}
-    \bigskip
-    {\normalsize Doctor of Philosophy\par}
-    \bigskip
-    {\normalsize\bf \@title \par}
     \medskip
-    {\normalsize by \authornames \par}
+    {\huge \underline{ABSTRACT} \par}
     \bigskip
+    {\normalsize \FACNAME \par}
+    {\normalsize \deptname \par}
+    \medskip
+    {\normalsize \underline{Doctor of Philosophy}\par}
+    \medskip
+    {\normalsize\bf \MakeUppercase{\@title} \par}
+    \smallskip
+    {\normalsize by \authornames \par}
+    \medskip
   \end{center}
 }
 {

@@ -283,7 +283,7 @@ transition takes place over a small resonant zone, known as a
 \begin{equation}
 l_s = \frac{v_{th}}{dv / ds}.
 \end{equation}
-It is important that the physical conditions of the c do not change on this scale.
+It is important that the physical conditions of the plasma do not change on this scale.
 If this is the case, then we can assume that all line interactions for a given 
 frequency will occur at a single `resonant' point. The location at which
 a given photon will interact with a line of frequency $\nu_{ul}$
@@ -297,7 +297,7 @@ the dot product of the bulk velocity of the plasma
 and the unit vector of the photon direction. 
 The Sobolev optical depth is then
 \begin{equation}
-\tau_S = \frac{\pi e^2}{m c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{c | dv / ds |}.
+\tau_S = \frac{\pi e^2}{m_e c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{| dv / ds |}.
 \label{eq:tau_sob}
 \end{equation}
 We can see that the physical quantities determining line opacity are therefore 
@@ -380,19 +380,18 @@ for the majority of the work in this thesis.
 \label{sec:python}
 
 \py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
-programming language.} is a confusingly named 
-Monte Carlo ionization and radiative transfer code. 
+programming language.} is a Monte Carlo ionization and radiative transfer code. 
 The general philosophy of the code is to be able to produce synthetic spectra
 for astrophysical objects with outflows in 2.5D, using a self-consistent ionization 
 treatment. The code is written in C, and has been in development since the mid-1990s.
 Throughout this time it has been used with application to CVs \citep[hereafter LK02]{LK02},
-YSOs \citep[hereafter SDL05][]{simmacro2005}, supernovae \citep{kerzendorfsim} and AGN/quasars 
+YSOs \citep[][hereafter SDL05]{simmacro2005}, supernovae \citep{kerzendorfsim} and AGN/quasars 
 \citep[hereafter H13 and H14]{higginbottom2013,H14}. It is also capable of producing spectra 
 for stellar winds and conducting simple photoionization balance calculations for
 comparison with codes such as \textsc{cloudy}. Some more detail on code testing and 
 development can be found in sections~\ref{sec:code_validation} and \ref{sec:code_maintenance}
 respectively. Although the operation of \py\ is well-described by the above authors,
-it is central to this Thesis and I will thus provide substantial detail on its operation. 
+it is central to this thesis and I will thus provide substantial detail on its operation. 
 
 \subsection{Basics}
 
@@ -445,7 +444,7 @@ and \ref{sec:convergence}).
 This converged model as the basis for the second set of
 iterations (`spectral cycles'; section~\ref{sec:spectral_cycles}), 
 in order to compute the synthetic spectrum based on the 
-MC estimators record during the ionization cycles. 
+MC estimators recorded during the ionization cycles. 
 The emergent spectrum over the desired spectral range is synthesized by 
 tracking populations of energy packets through the wind and computing the emergent spectra at
 a number of user-specified viewing angles.  In the ensuing sections,
@@ -555,7 +554,7 @@ is related to an optical depth, $\tau(\nu)$, by
 \tau(\nu) = \kappa(\nu)~\Delta s,
 \end{equation}
 where $\Delta s$ is the distance moved by the photon. The bound-free
-opacity is calculated from a sum over photoionization cross-section,
+opacity is calculated from a sum over photoionization cross-sections,
 such that
 \begin{equation}
 \kappa_{bf} = \sum_{j\kappa}^{bfjumps} \sigma_{j\kappa} (\nu) n_j.
@@ -591,7 +590,7 @@ The Compton opacity is given by
 where $\sigma_{KN} (\nu)$ is the cross-section computed 
 from the Klein-Nishina formula \citep{klein-nishina}, and unlike $\sigma_T$
 is frequency dependent. This opacity is not included in the actual radiative transfer 
-in the simulations presented in this Thesis, but is included in the heating and 
+in the simulations presented in this thesis, but is included in the heating and 
 cooling balance (see section~\ref{sec:estimators}).
 
 \subsubsection{Doppler Shifts}
@@ -1088,9 +1087,10 @@ to be $l$-mixed, as it is hydrogenic.
 
 For CV modelling (chapter 4), I used the full 20 level hydrogen atom, with 53 levels of 
 He~\textsc{i} up to principle quantum number 10, and 10 levels of He~\textsc{ii}. 
-This can provide a performance hit in macro-atoms, but is necessary
-when modelling recombination lines from upper levels
-close to the continuum energy. In quasar models (chapter 5) 
+Modelling levels close to the continuum energy can
+provide a performance hit in macro-atom mode, but is necessary
+when modelling recombination lines from excited 
+upper levels. In quasar models (chapter 5) 
 this is not as important, and the
 plasma is generally more ionized. There, a 10 level hydrogen atom was used and
 He~\textsc{i} was treated with only the ground state for stability -- this simplification
@@ -1104,7 +1104,8 @@ these cross-sections are partial and represent the cross-section for a photoioni
 from a given {\em level}. We neglect photoionizations to excited configurations
 of the upper ion. For simple-atoms they are from the ground state.
 The \top\ cross-sections have two major drawbacks in that they do not 
-extend to particularly high energies 
+extend to particularly high energies and do not always contain accurate threshold
+energies.
 
 In order to improve the \top\ cross-sections, I extrapolated them to larger
 energies. This was done by finding the slope, in log-log space,
@@ -1200,9 +1201,9 @@ the text.
 \label{sec:code_validation}
 
 The main challenge for high performance scientific computing can be 
-elegantly summarised by Ferland's (2002) epitaph, {\sl `Reliability in the face 
+elegantly summarised by the \cite{ferland2002} epitaph, {\sl `Reliability in the face 
 of complexity'}. I have already delved into some of the complexity in this case,
-so it is important to assess whether the code is also reliable before I present
+so it is important to establish whether the code is also reliable before I present
 results. 
 
 \subsection{Testing against \cld}
