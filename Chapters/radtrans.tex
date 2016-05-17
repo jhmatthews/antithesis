@@ -112,7 +112,7 @@ see an emission line, and if $T < T_0$ we will see an absorption line.
 % This approach describes line emission in the blackbody limit; for more complicated SED shapes
 % it is necessary to construct simple model atoms.
 
-\subsection{Local thermodynamic equilibrium}
+\subsection{Local Thermodynamic Equilibrium}
 \label{sec:lte}
 
 
@@ -170,7 +170,7 @@ is probably the most reliable, but even this may break down
 when high-energy photons create suprathermal electron distributions 
 \citep{humphrey2014}. 
 
-\subsubsection{Dilute approximation}
+\subsubsection{Dilute Approximation}
 \label{sec:dilute}
 A first step away from LTE is to introduce the dilute approximation. In this case,
 I relax the assumption that $T_R = T_e$, and assume that the mean intensity is given
@@ -199,8 +199,8 @@ with a dilute Boltzmann equation \citep{AL85,lucy1999sne}
 
 The two level atom formalism is well described by \cite{mihalas}.
 Let us consider an atomic model consisting of two levels that are linked 
-by radiative and collisional transitions, that can also interact with the 
-continuum. Whilst this model is clearly a simplification, it nonetheless allows
+by radiative and collisional transitions. 
+Whilst this model is clearly a simplification, it nonetheless allows
 for a first step into non-LTE line transfer and proves useful for modelling
 the resonance lines briefly touched on in chapter 2.
 
@@ -352,7 +352,7 @@ estimators in section~\ref{sec:simple_hc}.
 
 
 
-\subsection{Monte Carlo approaches}
+\subsection{Monte Carlo Approaches}
 
 Simple radiation transfer problems can be solved analytically,
 but with more complicated geometries it is necessary to use Monte Carlo
@@ -501,7 +501,7 @@ enforced. From here on I will only be discussing this indivisible packet scheme,
 as it is required in order to be able to use macro-atoms to accurately
 treat recombination in H and He.
 
-\subsection{Radiative Transfer procedure}
+\subsection{Radiative Transfer Procedure}
 
 \label{sec:rt_procedure}
 
@@ -541,7 +541,7 @@ The process of choosing a scattering location in a cell.
 \label{fig:scatter_ml93}
 \end{figure}
 
-\subsubsection{Continuum opacities}
+\subsubsection{Continuum Opacities}
 
 In order to calculate $\tau^\prime$ in the above approach, we need
 to know the opacities that will contribute to it. An opacity 
@@ -787,9 +787,9 @@ with respective forms of
 J_{\nu,i} = K_{PL}~ \nu^{\alpha_{PL}}
 \end{equation}
 \begin{equation}
-J_{\nu,i} = K_{exp}~ \exp(-h\nu / k T_{exp})
+J_{\nu,i} = K_{\exp}~ \exp(-h\nu / k T_{\exp})
 \end{equation}
-where $T_{exp}$ and $\alpha_{PL}$ are the fit parameters and $K_{PL}$ and $K_{exp}$ 
+where $T_{\exp}$ and $\alpha_{PL}$ are the fit parameters and $K_{PL}$ and $K_{exp}$ 
 are the normalisation constants, which are obtained by ensuring that
 the model reproduces the band limited mean intensity from equation~\ref{eq:j}.
 An example of a modeled spectrum compared to the recorded MC spectrum from
@@ -812,15 +812,15 @@ Once the model for the mean intensity has been calculated it is possible
 to formulate a photoionization rate estimator from ion $i$ to $i+1$ 
 for simple-atoms:
 \begin{equation}
-\gamma_{i,i+1}^S = \sum_i^{bands} \int_{\nu_i}^{\nu_{i+1}} 
-\sum_j^{levels} \frac{J_{\nu,i} \sigma_{j\kappa}(\nu) }{h \nu} d\nu
+\gamma_{i,i+1}^S = \sum_i^{\mathrm{bands}} \int_{\nu_i}^{\nu_{i+1}} 
+\sum_j^{\mathrm{levels}} \frac{J_{\nu,i} \sigma_{j\kappa}(\nu) }{h \nu} d\nu
 \end{equation}
 Recombination rate coefficients are then obtained from 
 either tabulated data (see section~\ref{sec:atomic_data})
 or, failing that, the Milne relation (equation~\ref{eq:alpha_sp}).
 
 The rate matrix used to calculated the ionization state of simple-atoms
-can now be populated. An example rate matrix for H and He woulc be
+can now be populated. An example rate matrix for H and He would be
 \begin{equation}
 \begin{bmatrix}
     1  & 1 & 0 & 0 & 0 \\
@@ -905,9 +905,9 @@ assume that each cell is in thermal equilibrium then the appropriate
 electron temperature is simply the value of $T_e$ that is a solution
 to the equation
 \begin{equation}
-\hh_{tot} - \cc_{tot} ( T_e) = 0,
+\hh_{\mathrm{tot}} - \cc_{\mathrm{tot}} ( T_e) = 0,
 \end{equation}
-where $\hh_{tot}$ and $\cc_{tot}$ are the total heating and cooling rates in 
+where $\hh_{\mathrm{tot}}$ and $\cc_{\mathrm{tot}}$ are the total heating and cooling rates in 
 the plasma. A number of checks are in place to ensure numerical stability,
 namely a maximum temperature and a maximum change in temperature from cycle
 to cycle. This is especially important in cases where the initial
@@ -923,11 +923,11 @@ to check that the simulation is converged. An individual cell is considered
 converged when a) the temperature stops changing signicantly, i.e. both
 $T_R$ and $T_e$ satisfy
 \begin{equation}
-\frac{|T_{new} - T_{old}|}{T_{new} + T_{old}} < 0.05,
+\frac{|T_{\mathrm{new}} - T_{\mathrm{old}}|}{T_{\mathrm{new}} + T_{\mathrm{old}}} < 0.05,
 \end{equation}
 and b) the heating and cooling rates are well balanced such that
 \begin{equation}
-\frac{|\hh_{tot} - \cc_{tot}|}{\hh_{tot} + \cc_{tot}} < 0.05.
+\frac{|\hh_{\mathrm{tot}} - \cc_{\mathrm{tot}}|}{\hh_{\mathrm{tot}} + \cc_{\mathrm{tot}}} < 0.05.
 \end{equation}
 These criteria could doubtless be improved, but they are nonetheless
 a good way of ensuring that thermal and radiative equilibrium holds in the 
@@ -967,10 +967,10 @@ tracking photon packets until they scatter or interact with the plasma, accordin
 to the procedure described in section~\ref{sec:rt_procedure}. 
 At the scattering location, the optical depth the photon would
 experience were it to escape to infinity along each requested viewing angle, 
-$\tau_{extract}(\theta_i)$, is calculated. The spectrum at each 
+$\tau_{\mathrm{extract}}(\theta_i)$, is calculated. The spectrum at each 
 viewing angle $\theta_i$ is then incremented by an amount
 \begin{equation}
-\Delta L = w f(\theta_i) \exp(-\tau_{extract}(\theta_i)),
+\Delta L = w f(\theta_i) \exp(-\tau_{\mathrm{extract}}(\theta_i)),
 \end{equation}
 where $w$ is the weight of the photon and $f(\theta_i)$ is a weighting proportional to
 the probability that the photon would have scattered in direction $\theta_i$. Once this
@@ -1202,7 +1202,7 @@ of complexity'}. I have already delved into some of the complexity in this case,
 so it is important to establish whether the code is also reliable before I present
 results. 
 
-\subsection{Testing against \cld}
+\subsection{Testing Against \cld}
 
 \cld\ is a spectral synthesis and photoionization code used to simulate
 the emergent spectrum and ionization conditions in nebulae and other plasma
@@ -1324,7 +1324,7 @@ As figure~\ref{fig:h_cloudy}, but for the first 11 ionization stages of Iron.
 \label{fig:ir_cloudy}
 \end{figure}
 
-\subsection{Macro-atom testing against \tar\ and theory}
+\subsection{Macro-atom Testing Against \tar\ and Theory}
 
 \tar\ is a 1D photoionization and radiative transfer designed to
 model SNe in a quick and easy python package, and is described in detail by
@@ -1407,7 +1407,7 @@ even better agreement than presented in Kerzendorf \& Sim 2014.
 \label{fig:tardis_spec}
 \end{figure}
 
-\subsection{Testing line transfer modes}
+\subsection{Testing Line Transfer Modes}
 \label{sec:line_test}
 The simple-atom approach has a few drawbacks. The first is that it cannot
 deal well with lines in which the lower level is an excited state, such as the 

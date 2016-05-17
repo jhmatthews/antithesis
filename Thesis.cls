@@ -51,7 +51,7 @@
 \setmarginsrb           { 1.5in}  % left margin
                         { 0.6in}  % top margin
                         { 1.0in}  % right margin
-                        { 0.8in}  % bottom margin
+                        { 0.6in}  % bottom margin
                         {  20pt}  % head height
                         {0.25in}  % head sep
                         {   9pt}  % foot height
@@ -272,7 +272,7 @@
 \renewcommand\tableofcontents{
 \btypeout{Table of Contents}
 \begin{spacing}{1}{
-    \setlength{\parskip}{1pt}
+    \setlength{\parskip}{0.5pt}
     \if@twocolumn
       \@restonecoltrue\onecolumn
     \else
