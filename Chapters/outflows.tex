@@ -364,10 +364,17 @@ across a large range of ionization states and line energies.
 Some WAs can be modelled well with single absorbers \citep{kaastra2000}, 
 but most require multiple absorption components with different ionization states
 \citep[e.g.][]{kriss1996,orr1997,krolikkriss2001,connolly2014}.
-If this is the case, then self-consistent ionization and radiative transfer models
+One common way to parameterise the ionization state of a plasma is 
+via the energetic ionization parameter, given by \citep[e.g.]{reynolds1995}
+\begin{equation}
+\xi = \frac{L_{H}}{n_H R^2},
+\end{equation}
+where $L_H$ is the luminosity above $13.6$eV and $n_H$ is the number
+density of H atoms. If the absorber is stratified and the SED subject to absorption, 
+then self-consistent ionization and radiative transfer models
 should really be used to model the spectrum (see e.g. chapter 3). This is 
 because optically thin ionization parameter estimates will not properly capture 
-the ionization physics in a complex geometry and radiation field.
+the ionization physics due to variation in the SED shape.
 The overall body of observations points towards an outflow with a 
 stratified ionization structure ranging from $\log \xi \sim 0-2$, 
 and densities on the order of $10^7$~cm$^{-3}$ located at around $\sim10^{16}$cm. 
@@ -626,12 +633,12 @@ to give \citep[][CAK]{castor1974}
 \vec{g}_{rad} = \frac{\sigma_T F}{\mu c m_p} {\cal M}(t),
 \end{equation}
 where $F$ is the flux, and $\mu$ is the mean atomic weight.
-${\cal M}(t)$ can be approximated by
+${\cal M}(t)$ can be approximated by \citep{abbott1982}
 \begin{equation}
 \label{eq:force_multiplier2}
 %% \cal{M}(t) = \sum_{lines} F_C \Delta \nu_D min (1/t, 1/\beta) 
 {\cal M}(t) = t^{-\alpha} 
-\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta W^{-\delta},
+\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta,
 \end{equation}
 where $t$ is the dimensionless optical depth, given by
 \begin{equation}
@@ -640,20 +647,19 @@ t = \frac{\sigma_T \rho v_{th}}{m_p | d(v_i) / ds |}
 % and $\beta$ is the ratio of the mass scattering coefficient of the free
 % electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
 % width. 
-Here, $W$ is the dilution factor, $k$, $\alpha$ and $\delta$ are parameters
+Here, $k$, $\alpha$ and $\delta$ are parameters
 with best-fit 
-values of 0.28, 0.56 and 0.99 respectively in O-star winds \citep{abbott1982},
+values of 0.28, 0.56 and 0.90 respectively in O-star winds \citep{abbott1982},
 and $v_i$ is the component of the velocity field in the direction
 being considered. This is normally a line between the source of radiation and any
-given location in the wind.
+given location in the wind. 
 It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier
 is around $2000-4000$. This is already an interesting result, as it tells us
 that line-driven outflows can be accelerated when accretion rates / luminosities
 are much lower than the Eddington limit. Indeed, using 
 equation~\ref{eq:force_multiplier} we can see that a radiatively driven wind 
-can be accelerated when $L_{UV} > L_{Edd} / M_{UV}(t)$, where the UV subscript 
-pertains to the UV region of the spectrum and $M_{UV}(t)$ will thus depend on
-the lines in this region and their relative ionization and excitation fractions.
+can be accelerated when $L > L_{Edd} / M(t)$, where $M(t)$ will depend on
+the spectral lines in question and their relative ionization and excitation fractions.
 Line-driven winds are present in O-stars and Wolf-Rayet stars, and the theory
 produces good matches with observations 
 \citep[e.g.][]{friend1986,pauldrach1986,pauldrach1994,hamann2008}. 
@@ -1148,6 +1154,7 @@ and can be large for modest radio power \citep{birzan2008}.
 \centering
 \includegraphics[width=1.0\textwidth]{figures/02-outflows/xray_cavities.png}
 \caption
+[{\sl Chandra} X-ray images showing two examples of X-ray cavities.]
 {
 {\sl Figure adapted from Fabian 2012}. 
 {\sl Chandra} X-ray images showing two examples of X-ray cavities,

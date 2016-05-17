@@ -5,10 +5,10 @@
 In the previous chapters I have given an introduction to the field and 
 some relevant background relating to accretion 
 discs and their associated outflows. Now it proves useful
-to discuss some of the specific {\em methods} I will use
-in order to answer some of the questions raised in the previous sections.
-In particular, I will discuss radiative transfer techniques and 
-their potential applications.
+to discuss the specific {\em methods} I will use
+in order to answer some of the questions raised so far.
+In particular, I will discuss radiative transfer and photoionization
+techniques.
 
 {\sl Notation: This section contains a lot of algebraic quantities and sums over
 ions, levels, and so on. Throughout, I use $N$ to denote fractional
@@ -44,59 +44,50 @@ flow can then be related to the
 \begin{equation}
 I_\nu = \frac{dE}{d\Omega~dt~dA~d\nu},
 \end{equation}
-which has CGS units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$. The specific
+which has units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$. The specific
 intensity is the most fundamental quantity of radiative transfer as it describes 
 everything about the radiation field; its time, angular, spatial and frequency
 dependence.
-By successively multiplying by $\cos \theta$ and integrating over solid angle we 
-can obtain the first and second `moments' of the radiation field. These
-are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by
+% By successively multiplying by $\cos \theta$ and integrating over solid angle we 
+% can obtain the first and second `moments' of the radiation field. These
+% are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by
 
-\begin{equation}
-F_\nu = \int I_\nu \cos \theta~d \Omega,
-\end{equation}
+% \begin{equation}
+% F_\nu = \int I_\nu \cos \theta~d \Omega,
+% \end{equation}
 
-\begin{equation}
-p_\nu = \frac{1}{c} \int I_\nu \cos^2 \theta~d \Omega
-\end{equation}
+% \begin{equation}
+% p_\nu = \frac{1}{c} \int I_\nu \cos^2 \theta~d \Omega
+% \end{equation}
 
 We can also define the {\em mean intensity}, $J_\nu$, as
-
 \begin{equation}
 J_\nu = \frac{1}{4 \pi} \int I_\nu~d \Omega
 \end{equation}
-
 The mean intensity is particularly
 useful when one wants to ignore the solid angle dependence of the radiation,
 for example when considering the impact of an ionizing radiation field.
 
 The equation describing the specific intensity change along a path element $ds$
 is the radiative transfer equation, 
-
 \begin{equation}
 \frac{d I_\nu}{ds} = -\kappa_\nu I_\nu + j_\nu, 
 \label{eq:rte}
 \end{equation}
-
 where $\kappa_\nu$ and $j_\nu$ are the absorption and emission coefficients respectively.
-If we define the optical depth $d \tau_\nu = \kappa_\nu ds$ we can recast this as
-
+If we define the optical depth $d \tau_\nu = \kappa_\nu ds$ this can be recast as
 \begin{equation}
 \frac{d I_\nu}{d \tau_\nu} = -I_\nu + S_\nu
 \label{eq:formal_rte}
 \end{equation}
-
 where $S_\nu=j_\nu/\kappa_\nu$ is the source function. This equation
 can be solved to give the {\em formal solution to the radiative transfer equation}:
-
 \begin{equation}
 I_\nu = I_{\nu,0}~e^{-\tau_\nu} + \int^{\tau_\nu}_0 S_\nu (\tau^\prime_\nu)~e^{\tau^\prime_\nu-\tau_\nu} d \tau^\prime_\nu.
 \label{eq:rte_solution}
 \end{equation}
-
 A useful limit is when the source function is constant in the absorbing medium, in which case
 the integral can be easily evaluated to give
-
 \begin{equation}
 I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
 \label{eq:rte_solution}
@@ -132,10 +123,10 @@ are the same as those in thermodynamic equilibrium for local values of
 temperature and density. For this to be the case, the principle of 
 {\em detailed balance} must also apply, in which every 
 process by which electrons transition in state must be exactly 
-balanced by its inverse process. LTE also assumes that $T_e = T_R$, and that
+balanced by its inverse process. In LTE, the electron temperature, 
+$T_e$, is equal to the temperature of the radiation, $T_R$, and
 the source function is given by a blackbody, i.e. $S_\nu = B_\nu (T_R)$.
-Three {\em microscopic} 
-requirements of LTE also follow \citep{mihalas}:
+Three microscopic requirements of LTE also follow \citep{mihalas}:
 
 a) The velocities of the electrons and ions in the plasma obey Maxwellian
 distributions, such that
@@ -144,11 +135,11 @@ f(v) = 4 \pi \left( \frac{m_e}{2 \pi kT_e} \right)^{3/2} v^2
 \exp \left( - \frac{m_ev^2}{2kT_e} \right),
 \label{eq:maxwellian}
 \end{equation}
-where $m_e$ is the mass of an electron and $T_e$ is the electron temperature.
+where $m_e$ is the mass of an electron.
 
 \smallskip
 
-b) the ionization state of the plasma is governed by the {\em Saha equation},
+b) The ionization state of the plasma is governed by the {\em Saha equation},
 which states that two adjacent ions have relative populations given by
 \begin{equation}
 \frac{N_{i+1}n_e}{N_i} = \frac{2g_{i+1}}{g_i} 
@@ -160,7 +151,7 @@ where $g_i$ is the multiplicity of ion $i$ and $\nu_0$ is the threshold frequenc
 
 \smallskip
 
-c) the excitation state of the plasma is governed by {\em Boltzmann statistics}.
+c) The excitation state of the plasma is governed by {\em Boltzmann statistics}.
 A level $j$ then has a population relative to ground governed by
 \begin{equation}
 \frac{n_{j}}{n_1} = \frac{g_j}{g_1} \exp(-E_j/kT_e), 
@@ -182,13 +173,13 @@ when high-energy photons create suprathermal electron distributions
 \subsubsection{Dilute approximation}
 \label{sec:dilute}
 A first step away from LTE is to introduce the dilute approximation. In this case,
-we relax the assumption that $T_R = T_e$, and assume that the mean intensity is given
+I relax the assumption that $T_R = T_e$, and assume that the mean intensity is given
 by a dilute blackbody, i.e. 
 \begin{equation}
 J_\nu = W B_\nu (T_R),
 \label{eq:dilute_jnu}
 \end{equation}
-where $W$ is the dilution factor. We can then approximate the ionization state
+where $W$ is the dilution factor. The ionization state can then be approximated 
 with a modified Saha equation \citep{AL85,ML93},
 \begin{equation}
 \frac{N_{i+1} n_e}{N_i} = W [\xi + W(1-\xi)]
@@ -213,7 +204,7 @@ continuum. Whilst this model is clearly a simplification, it nonetheless allows
 for a first step into non-LTE line transfer and proves useful for modelling
 the resonance lines briefly touched on in chapter 2.
 
-To construct our simple model we must make a few assumptions. The first
+To construct our simple model a few assumptions are necessary. The first
 is the assumption of {\em statistical equilibrium}. This is the principle 
 that the total rate into a given atomic level/state is equal to the 
 total rate out of said state. This is clearly true whenever the timescale
@@ -228,8 +219,8 @@ Einstein relations.
 
 \subsubsection{Einstein coefficients}
 
-Within a two level atom, the rate equation between the two levels in LTE can
-can be written by invoking detailed balance, such that 
+Within a two level atom, the statistical equilibrium 
+rate equation between two levels can be written as
 \begin{equation}
 B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
 \label{eq:rate_einstein}
@@ -244,14 +235,15 @@ The `mean intensity in the line', $\bar{J}_{ul}$, is given by
 We can then rearrange equation~\ref{eq:rate_einstein} in terms of 
 the mean intensity, giving
 \begin{equation}
-\bar{J}_{ul} = \frac{A_{ul} / B_{ul}}{(n_l/n_u)(B_{ul}/B_{lu}) - 1}.
+\bar{J}_{ul} = \frac{A_{ul} / B_{ul}}{(n_l/n_u)(B_{lu}/B_{ul}) - 1}.
 \label{eq:jbar2}
 \end{equation}
-In LTE, $\bar{J}_{ul} = B_\nu (T)$ and the level populations obey Boltzmann statistics, so we can combine equations~\ref{eq:planck}, \ref{eq:boltzmann}
-and \ref{eq:jbar2} to write
+In LTE, $\bar{J}_{ul} = B_\nu (T)$ and the level populations obey Boltzmann statistics, 
+equations~\ref{eq:planck}, \ref{eq:boltzmann}
+and \ref{eq:jbar2}  can be combined to give
 \begin{equation}
-\frac{2 h \nu^3}{c^2} \frac{1}{\exp(h\nu / kT) - 1} =
-\frac{A_{ul}}{B_{ul}} \frac{1}{(g_l/g_u)(B_{ul}/B_{lu}) \exp(h\nu / kT) - 1}.
+\frac{2 h \nu_{ul}^3}{c^2} \frac{1}{\exp(h\nu_{ul} / kT) - 1} =
+\frac{A_{ul}}{B_{ul}} \frac{1}{(g_l/g_u)(B_{lu}/B_{ul}) \exp(h\nu_{ul} / kT) - 1}.
 \end{equation}
 This must be true at all values of $T$, so we can simply equate coefficients
 to show that
@@ -281,8 +273,11 @@ velocity gradients, one can assume that the interaction of a ray with a bound-bo
 transition takes place over a small resonant zone, known as a 
 `Sobolev surface'. The length of this zone is defined by
 \begin{equation}
-l_s = \frac{v_{th}}{dv / ds}.
+l_s = \frac{v_{th}}{dv / ds},
 \end{equation}
+where $v_{th}$ is the mean thermal speed of the particles in the flow and 
+$dv / ds$ is the velocity gradient. The Sobolev length is thus always defined
+both as a function of the position in the flow and the direction of the ray in question.
 It is important that the physical conditions of the plasma do not change on this scale.
 If this is the case, then we can assume that all line interactions for a given 
 frequency will occur at a single `resonant' point. The location at which
@@ -292,14 +287,16 @@ is then given, in velocity space, by
 v = c~\left(1 - \frac{\nu_{ul}}{\nu}\right),
 \label{eq:resonance}
 \end{equation}
-where the scalar velocity here is $v=\vec{v}\cdot \vec{n}$, 
-the dot product of the bulk velocity of the plasma
-and the unit vector of the photon direction. 
-The Sobolev optical depth is then
+where the scalar velocity here is $v=\vec{v}\cdot \vec{n}$, where $\vec{v}$
+is the velocity vector of the flow and $\vec{n}$ is the unit vector describing the
+the photon direction. The dot product of the bulk velocity of the plasma
+and the unit vector of the photon direction. The Sobolev optical depth is then
 \begin{equation}
-\tau_S = \frac{\pi e^2}{m_e c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{| dv / ds |}.
+\tau_S = \frac{\pi q_e^2}{m_e c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{| dv / ds |},
 \label{eq:tau_sob}
 \end{equation}
+where $q_e$ is the charge on an electron, $f_{lu}$ is the oscillator strength of the transition
+and $\lambda_{lu}$ is the line wavelength.
 We can see that the physical quantities determining line opacity are therefore 
 the level populations in the plasma, the velocity gradient and the atomic physics
 associated with the bound-bound transition. An obvious consequence of line opacities
@@ -409,7 +406,7 @@ A flowchart showing the basic operation of \py.
 First, the user specifies the photon sources,
 geometry and kinematics of the system, normally with a similar parameterisation
 to the SV93 model described in section~\ref{sec:sv93_model}. 
-The code can operate with multiple coordinate systems 
+The code can operate with a numnber of different coordinate systems 
 (1D, spherical polar, cylindrical), but in this work I use cylindrical coordinates.
 In this case, the outflow is discretised into a $n_x \times n_y$ logarithmic grid with 
 user-specified dimensions. The co-ordinates, $(x_i, z_i$), 
@@ -422,8 +419,8 @@ where $L_x$ and $L_z$ are appropriately chosen (but hardwired) scale lengths.
 From these co-ordinates the poloidal distance can be calculated and
 the velocity set according to equation~\ref{eq:v_law}. The density
 is then calculated from equation~\ref{eq:rho_rz}. An initial temperature,
-$T_{init}$ is set by the user. The ionization fractions throughout
-the wind are then to Saha (LTE) abundances at $T_{init}$, and the level 
+$T_{\mathrm{init}}$ is set by the user. The ionization fractions throughout
+the wind are then to Saha (LTE) abundances at $T_{\mathrm{init}}$, and the level 
 populations are set according to the Boltzmann formula.
 
 Once the basic setup process has been carried out, the ionization state,
@@ -478,7 +475,7 @@ $\nu_i$ and $\nu_{i+1}$ is then given by
 \begin{equation}
 w_i = \frac{\sum_j^{N_S} \int_{\nu_i}^{\nu_{i+1}} L_{\nu,j}~d\nu}{f_i~N_p},
 \end{equation}
-where $N_p$ is the {\em total} number of photons desired 
+where $N_p$ is the total number of photons desired 
 and $L_{\nu,j}$ is the monochromatic 
 luminosity of photon source $j$. 
 The frequency of photons is calculated by constructing a 
@@ -554,28 +551,31 @@ is related to an optical depth, $\tau(\nu)$, by
 \tau(\nu) = \kappa(\nu)~\Delta s,
 \end{equation}
 where $\Delta s$ is the distance moved by the photon. The bound-free
-opacity is calculated from a sum over photoionization cross-sections,
+opacity is calculated from a sum over photoionization cross-sections (bfjumps),
 such that
 \begin{equation}
-\kappa_{bf} = \sum_{j\kappa}^{bfjumps} \sigma_{j\kappa} (\nu) n_j.
+\kappa_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} \sigma_{j\kappa} (\nu) n_j.
 \end{equation}
-The free-free emission coefficient for an individual ion $i$ is \citep{gayet1970}
+The free-free emission coefficient for an individual ion $i$ of charge $Z_i$ 
+is \citep{gayet1970}
 \begin{equation}
-j_{ff,i} (\nu) = \bar{g}_{ff}\frac{8Z_i^2e^6}{3m_e c^2}
-\frac{2\pi m_e}{3 k T_e}^{1/2}
-N_i n_e \exp(-h\nu/kT_e).
+j_{ff,i} (\nu) = \bar{g}_{ff}\frac{8 Z_i^2 q_e^6}{3m_e^2 c^3}
+\left( \frac{2\pi m_e}{3 k T_e} \right)^{1/2}
+N_i n_e \exp(-h\nu/kT_e),
 \label{eq:jff} 
 \end{equation}
-The free-free opacity is then calculated from Kirchhoff's law, 
+where $\bar{g}_{ff}$ is the mean free-free Gaunt factor and formally
+depends on both frequency and temperature.
+The free-free opacity is calculated from Kirchhoff's law, 
 \begin{equation}
-\kappa_{ff, i}(\nu) = \frac{B_\nu (T_e)}{j_{ff,i} (\nu)},
+\kappa_{ff, i}(\nu) = \frac{j_{ff,i} (\nu)}{B_\nu (T_e)}.
 \end{equation}
-which gives
-\begin{equation}
-\kappa_{ff, i}(\nu) = n_e N_i \frac{4}{3} \left(\frac{2\pi}{3}\right)^{1/2} 
-\frac{Z_i^2}{e^6 m_e^2 hc} \left(\frac{m_e}{kT_e}\right)^{1/2} 
-g_{ff} \nu^{-3} [1 - \exp(-h\nu/kT_e)].
-\end{equation}
+% which gives
+% \begin{equation}
+% \kappa_{ff, i}(\nu) = \bar{g}_{ff} n_e N_i \frac{4}{3} \left(\frac{2\pi}{3}\right)^{1/2}~
+% \frac{Z_i^2 q_e^6}{m_e^2 hc} \left(\frac{m_e}{kT_e}\right)^{1/2}~
+%  \nu^{-3} [1 - \exp(-h\nu/kT_e)].
+% \end{equation}
 The electron scattering opacity is 
 \begin{equation}
 \kappa_{es} = \sigma_T n_e.
@@ -589,16 +589,16 @@ The Compton opacity is given by
 \end{equation}
 where $\sigma_{KN} (\nu)$ is the cross-section computed 
 from the Klein-Nishina formula \citep{klein-nishina}, and unlike $\sigma_T$
-is frequency dependent. This opacity is not included in the actual radiative transfer 
+is frequency dependent. Compton opacity is not included in the actual radiative transfer 
 in the simulations presented in this thesis, but is included in the heating and 
 cooling balance (see section~\ref{sec:estimators}).
 
 \subsubsection{Doppler Shifts}
 
 To calculate the opacities correctly, the frequency must be shifted from
-the co-moving frame of the photon into the co-moving frame of the cell.
+the rest frame of the photon into the rest frame of the plasma.
 This shift depends on the before and after direction of the photon. Let us denote
-these two directions with unit vectors $\vec{n}_i$ and $\vec{n_f}$ respectively,
+these two directions with unit vectors $\vec{n}_i$ and $\vec{n}_f$ respectively,
 and consider a situation when a photon scatters of an electron in a region of the
 wind moving at velocity $\vec{v}$.
 The final frequency of the photon with initial frequency $\nu_i$ is then 
@@ -615,7 +615,7 @@ equation~\ref{eq:resonance} and that $v=\vec{v} \cdot \vec{n}_f$ in this case,
 it is clear that the above two equations are equivalent.
 
 
-\subsubsection{Choosing packet directions}
+\subsubsection{Choosing Packet Directions}
 
 The last variable, in addition to $w_i$ and $\nu$, needed to define a 
 radiation packet is the direction of travel.
@@ -634,12 +634,12 @@ to include linear limb darkening, $\eta(\theta)$:
 \begin{equation}
 p(\theta \phi) d\theta d\phi = \eta(\theta) \cos \theta \sin \theta d\theta d\phi,
 \end{equation}
-where, under the Eddington approximation use in the code, $\eta(\theta)$
+where, under the Eddington approximation used in the code, $\eta(\theta)$
 is given by
 \begin{equation}
 \eta(\theta) = a (1 - \frac{3}{2} \cos \theta).
 \end{equation}
-The constant $a$ is simply normalised such that the total probability
+The constant $a$ is normalised such that the total probability
 sums to $1$. Whenever a radiation packet undergoes an electron scatter,
 the new direction is chosen to be isotropic. However,
 when the photon is a line photon then the new direction is chosen
@@ -692,16 +692,16 @@ p_{uj}^{S,C} = \frac{ C_{uj} \exp(-h\nu_{uj} / k T_e) }
 { A_{uj} \beta_{uj} + C_{uj} \exp(-h\nu_{uj} / k T_e) }
 = q.
 \end{equation}
-For a bound-free transition we assume radiative recombination and 
+For a bound-free transition the code assumes radiative recombination and 
 thus any bound-free simple-atom activation is immediately followed 
 by the creation of $r$-packet. This approximates the bound-free continuunm, 
 even when compared to other two-level atom radiative transfer schemes. 
 This is discussed further and tested in section~\ref{sec:line_test}.
 
-This hybrid approach allows us to preserve the fast treatment 
+This hybrid approach preserves the fast treatment 
 of, for example, UV resonance lines, while accurately 
 modelling the recombination cascades that populate the levels 
-responsible for H and He line emission. As a result of this hybrid
+responsible for, e.g., H and He line emission. As a result of this hybrid
 scheme, a separate set of estimators must be recorded for simple-atoms, 
 and the ionization and excitation of these elements is calculated 
 with a different, approximate approach.
@@ -717,34 +717,34 @@ processes. This is done in proportion with the simple-atom opacities.
 The bound-bound heating rate is computed during the photon propagation and is a sum
 over photons which come into resonance with each line, given by 
 \begin{equation}
-{\cal H}_{bb}^S = \sum_i^{photons} \sum^{lines}_{ju} (1 - q) (1 - e^{-\tau_{S,ju}}) w_i,
+{\cal H}_{bb}^S = \sum_i^{\mathrm{photons}} \sum^{\mathrm{lines}}_{ju} (1 - q) (1 - e^{-\tau_{S,ju}}) w_i,
 \end{equation}
 And our bound bound cooling rate is given by 
 \begin{equation}
-{\cal C}_{bb}^S = \sum_{ju}^{lines} q \left(n_j\frac{g_u}{g_j} - n_u\right) q_{uj} n_e 
+{\cal C}_{bb}^S = \sum_{ju}^{\mathrm{lines}} q \left(n_j\frac{g_u}{g_j} - n_u\right) q_{uj} n_e 
 \frac{(1 - e^{-h\nu_{ju}/kT_e})}{(e^{h\nu_{ju}/kT_e} - 1)}  h \nu_{ju}.
 \end{equation}
-These estimators are fundamentally different quantities and are not used to
+These estimators are fundamentally different quantities to the corresponding
+macro-atom estimators and are not used to
 calculate k-packet probabilities. Instead, they represent the amount of
 energy transferred to and from the plasma as a whole by the radiation field,
-whereas in the macro-atom case they represent that rate of collisional excitations
+whereas in the macro-atom case they represent the rate of collisional excitations
 and de-excitations.
 %%note the difference to the macro-atom approach- here this is already 
 \noindent
 The bound-free heating rate is given by
 \begin{equation}
-{\cal H}_{bf}^S = \sum_i^{photons} \sum_{j\kappa}^{bfjumps} w_{i} e^{-\tau} \frac{\nu - \nu_{j\kappa}}{\nu}
+{\cal H}_{bf}^S = \sum_i^{\mathrm{photons}} \sum_{j\kappa}^{\mathrm{bfjumps}} w_{i} e^{-\tau} \frac{\nu - \nu_{j\kappa}}{\nu}
 \end{equation}
 where $\nu$ here is the frequency of the photon in question, and $\nu_{0}$.
 The bound-free cooling rate is then
 \begin{equation}
-{\cal C}_{bf}^S = \sum_{j\kappa}^{bfjumps} \int_{\nu_{j \kappa}}^\infty
+{\cal C}_{bf}^S = \sum_{j\kappa}^{\mathrm{bfjumps}} \int_{\nu_{j \kappa}}^\infty
 h \nu \left(\frac{2 \pi m_e k T_e}{h^2} \right)^{-3/2}
 \frac{2 h \nu^3}{c^2} 
 \frac{g_j}{g_\kappa g_e}
 T_e^{-3/2} \sigma_{j \kappa} (\nu) 
 \exp(- h (\nu - \nu_{j \kappa}) / kT_e)
-%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 
 \subsubsection{Radiation Field Estimators, Ionization and Excitation}
@@ -757,7 +757,6 @@ The radiation temperature, $T_R$, is estimated by first recording the mean frequ
 $\bar{\nu}$, of the photons passing through a cell:
 \begin{equation}
 \bar{\nu} = \frac{\sum_{photons} w_i \nu_i \Delta s}{\sum_{photons} w_i \Delta s}.
-%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 This is then used to calculate the radiation temperature by
 considering the value expected from a blackbody \citep{ML93}:
@@ -907,7 +906,6 @@ electron temperature is simply the value of $T_e$ that is a solution
 to the equation
 \begin{equation}
 \hh_{tot} - \cc_{tot} ( T_e) = 0,
-%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 where $\hh_{tot}$ and $\cc_{tot}$ are the total heating and cooling rates in 
 the plasma. A number of checks are in place to ensure numerical stability,
@@ -926,12 +924,10 @@ converged when a) the temperature stops changing signicantly, i.e. both
 $T_R$ and $T_e$ satisfy
 \begin{equation}
 \frac{|T_{new} - T_{old}|}{T_{new} + T_{old}} < 0.05,
-%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 and b) the heating and cooling rates are well balanced such that
 \begin{equation}
 \frac{|\hh_{tot} - \cc_{tot}|}{\hh_{tot} + \cc_{tot}} < 0.05.
-%%\sum_{bfjumps} \alpha_{sp} n_e n_{\kappa}
 \end{equation}
 These criteria could doubtless be improved, but they are nonetheless
 a good way of ensuring that thermal and radiative equilibrium holds in the 
@@ -1227,7 +1223,7 @@ U = \frac{4\pi}{n_H c}\int_{13.6{\rm{eV}} / h}^{\infty}\frac{{J_{\nu}d\nu}}{h\nu
 In \py, the ionization parameter in a cell
 is calculated via a MC estimator, such that
 \begin{equation}
-U_{\py} = \frac{1}{c~V~n_H} \sum_i^{photons} \frac{w_i \Delta s}{h \nu}.
+U_{\py} = \frac{1}{c~V~n_H} \sum_i^{\mathrm{photons}} \frac{w_i \Delta s}{h \nu}.
 \end{equation}
 This test is designed to check that \py\ still agrees
 well with \cld\ when we turn on the full macro-atom machinery.

@@ -11,14 +11,11 @@ his 2002/03 papers. It was implemented in \py\ by Stuart Sim, initially
 for the study of recombination lines in YSOs (SDL05).
 }
 
-\cite[][hereafter L02, L03]{lucy2002, lucy2003}
+\citet[][hereafter L02, L03]{lucy2002, lucy2003}
 has shown that it is possible to calculate the emissivity of a gas in
 statistical equilibrium without approximation for problems with large departures
 from LTE.
-% accurately by quantising matter into
-% `macro-atoms', and radiant and kinetic energy into indivisible energy
-% packets (r- and k- packets, respectively). 
-His macro-atom scheme allows for all possible transition paths from a given level,
+This `macro-atom' scheme allows for all possible transition paths from a given level,
 dispensing with the two-level approximation, and
 provides a full non-LTE solution
 for the level populations based on Monte Carlo estimators. The macro-atom
@@ -45,8 +42,8 @@ are given by
 \;\;  \dot{E}_{i}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
 Where I have adopted Lucy's convention in which the subscript 
-$\ellp$ denotes a summation over all lower states ($\ellp<j$), and
-$\up$ will thus denote a summation over all states ($\up>j$).
+$\ellp$ denotes a summation over all lower states ($\ell<j$), and
+$\up$ a summation over all upper states ($u>j$).
 Similarly, the rates corresponding to {\em kinetic} (collisional)
 energy transport can then be written as
 \begin{equation}
@@ -70,7 +67,7 @@ we can then obtain
  \label{eq:matom_SE}     
 \end{eqnarray}
 This equation is the starting point for the macro-atom scheme. It shows 
-that, when assuming only radiative equilibrium, the energy flows through
+that, when assuming radiative equilibrium, the energy flows through
 a system depend only on the transition probabilities and atomic physics
 associated with the levels the energy flow interacts with.
 By quantising this energy flow into radiant ($r$-) and kinetic ($k$-) packets, 
@@ -93,7 +90,7 @@ included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
 \subsection{Transition Probabilities}
 
 Having interpreted equation~\ref{eq:matom_SE} in a {\em stochastic} way,
-we can now construct our Monte Carlo scheme, following L02.
+I can now construct a Monte Carlo scheme, following L02.
 A macro-atom in state $j$ always has a finite probability of deactivating
 radiatively or collisionally:
 \begin{equation}
@@ -129,7 +126,7 @@ With these transition
 probabilities identified, a Monte Carlo calculation can proceed by formulating
 the normal statistical equilibrium rate equations that will depend on
 the ambient conditions of the plasma. The effect of these ambient conditions
-is expressed through the use of Monte Carlo {\em estimators}.
+is expressed through the use of Monte Carlo estimators.
 
 
 
@@ -138,11 +135,11 @@ is expressed through the use of Monte Carlo {\em estimators}.
 % RATES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rate equations}
-
+\label{sec:rate_eq}
 The macroscopic transition probabilities above depend on the traditional
 rate equations formulated according to statistical equilibrium. 
 In the framework of the Sobolev escape probability formalism 
-(Rybicki \& Hummer 1978; L02; Sim 2004), 
+(see section~\ref{sec:sobolev}), 
 the bound-bound excitation rate, ${\cal R}_{ju}$, in an ion is given by 
 \begin{equation}
 {\cal R}_{ju} = B_{ju} n_j J_{est} + q_{ju} n_j n_e,
@@ -154,9 +151,9 @@ $J_{est}$ is the Monte Carlo estimator for the mean intensity
 impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
 given by \citep{sim2004}
 \begin{equation}
-J_{est} = \frac{c}{4 \pi \nu_0 V} \sum_{i} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
+J_{est} = \frac{c}{4 \pi \nu_{uj} V} \sum_{i} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
 \end{equation}
-Here $w$ is the photon weight (in luminosity units), $\nu_0$
+Here $w_i$ is the photon weight (in luminosity units), $\nu_{uj}$
 is the line frequency, $dv/ds$ is the velocity gradient and
 $\tau_s$ is the Sobolev optical depth.
 The sum is over all photons that come into resonance with the line,
@@ -215,7 +212,7 @@ The bound-bound collisional rate coefficient $q_{lu}$ is calculated from the
 q_{ju} = 2.388 \times 10^{-6}~\lambda_{uj}^3~A_{uj}~g_u~\bar{g},
 \label{eq:vanregemorter}
 \end{equation}
-where $\lambda_{uj}^3$ is the wavelength of the transition and $\bar{g}$ is 
+where $\lambda_{uj}$ is the wavelength of the transition and $\bar{g}$ is 
 an effective gaunt factor of order unity.
 The inverse rate can just be calculated by considering detailed balance, 
 such that
@@ -236,14 +233,14 @@ is indeed the case in the He~\textsc{i} emission regions in the models
 presented here.
 
 The bound-free collision strengths are calculated using equation~(5.79) of
-\cite{mihalas}. The collisional ionization rate is
+\cite{mihalas}. The collisional ionization rate coefficient is
 \begin{equation}
-q_{j\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{j\kappa} (\nu_0)~
-\frac{h \nu_{uj}}{k T_e^{3/2}}
+q_{j\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{j\kappa} (\nu_{\kappa j})~
+\frac{h \nu_{\kappa j}}{k T_e^{3/2}}
 \exp \left( \frac{- h \nu_{\kappa j}}{k T_e} \right),
 \label{eq:qioniz}
 \end{equation}
-where $\sigma_{j\kappa} (\nu_0)$ is the photoionization cross-section 
+where $\sigma_{j\kappa} (\nu_{\kappa j})$ is the photoionization cross-section 
 at the threshold energy.
 $\bar{g}_{i}$ is an effective gaunt factor for ion $i$ and is approximately
 equal to $0.1,0.2,0.3$ for $Z=1,2$ and $>2$ respectively,
@@ -280,18 +277,18 @@ which gives, for a time-independent code
 J_\nu~d\nu = \frac{1}{4\pi}\frac{1}{V} \sum_{d\nu} w_i \Delta s,
 \end{equation}
 where the summation is over all photons between $(\nu, \nu+'d\nu)$. This allows
-us to formulate estimators in a MC sense, rather than in integral form. 
+the formulation of estimators in a MC sense, rather than in integral form. 
 
 \subsubsection{Bound-free estimators}
 The estimator for the photoionization rate is 
 \begin{equation}
-\gamma_{j\kappa} = \frac{1}{V} \sum_i^{photons} 
+\gamma_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
 \frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}~\Delta s
 \end{equation}
 and for the stimulated recombination rate is
 \begin{equation}
 \alpha_{\kappa j}^{st} =\left( \frac{n_j}{n_e n_\kappa} \right)^*_{T_e}
-\frac{1}{V} \sum_i^{photons} 
+\frac{1}{V} \sum_i^{\mathrm{photons}} 
 \frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}
 ~\exp(-h\nu/kT_e)~\Delta s,
 \end{equation}
@@ -302,7 +299,7 @@ the radiation field. These are required for photoionization,
 spontaneous recombination and stimulated recombination, and are given by
 
 \begin{equation}
-\gamma^E_{j\kappa} = \frac{1}{V} \sum_i^{photons} 
+\gamma^E_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
 \frac{w_i~\sigma_{j\kappa}{\kappa j}}{h \nu_{\kappa j}}~\Delta s, 
 \end{equation}
 
@@ -315,7 +312,7 @@ spontaneous recombination and stimulated recombination, and are given by
 
 \begin{equation}
 \alpha_{\kappa j}^{st,E} = \left( \frac{n_j}{n_e n_\kappa} \right)^*_{T_e}
-\frac{1}{V} \sum_i^{photons} 
+\frac{1}{V} \sum_i^{\mathrm{photons}}
 \frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu_{\kappa j}}
 ~\exp(-h\nu/kT_e)~\Delta s.
 \end{equation}
@@ -328,7 +325,7 @@ The amount of this energy which is removed from the thermal pool
 therefore needs a quantity $\alpha_{\kappa j} h\nu_{\kappa j} n_\kappa n_e$ subtracted from it,
 giving the bound-free cooling estimator
 \begin{equation}
-\cc_{bf} = \sum_{j\kappa}^{bfjumps} (\alpha^E_{\kappa j} - \alpha_{\kappa j}) n_e n_{\kappa}h\nu_{\kappa j} V,
+\cc_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} (\alpha^E_{\kappa j} - \alpha_{\kappa j}) n_e n_{\kappa}h\nu_{\kappa j} V,
 \end{equation}
 where the sum is over all the macro-atom bound-free transitions ($j\rightarrow\kappa$) 
 in the simulation, set by
@@ -338,7 +335,7 @@ a level $l$ absorbs energy by bound-free
 transitions is given by $\gamma^E_{j\kappa} h\nu_{\kappa j} n_\kappa n_e$,
 but the amount $\gamma_{j\kappa} h \nu_{\kappa j} n_l$ goes into ionization energy, giving 
 \begin{equation}
-\hh_{bf} = \sum_{j\kappa}^{bfjumps} (\gamma^E_{\kappa j} - \gamma_{\kappa j} - \alpha^{st,E}_{\kappa j} + \alpha^{st}_{\kappa j}) n_j h \nu_{\kappa j} V
+\hh_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} (\gamma^E_{\kappa j} - \gamma_{\kappa j} - \alpha^{st,E}_{\kappa j} + \alpha^{st}_{\kappa j}) n_j h \nu_{\kappa j} V
 \end{equation}
 as the rate at which radiant energy heats the plasma via bound-free transitions.
 
@@ -350,46 +347,46 @@ bound-bound excitation energy and vice versa.
 These heating and cooling rate estimators are:
 
 \begin{equation}
-\hh_{bb} = \sum_{ju}^{lines} q_{uj} n_u n_e h \nu_{uj} V,
+\hh_{bb} = \sum_{ju}^{\mathrm{lines}} q_{uj} n_u n_e h \nu_{uj} V,
 \end{equation}
 
 
 \begin{equation}
-\cc_{bb} = \sum_{ju}^{lines} q_{ju} n_j n_e h \nu_{uj} V.
+\cc_{bb} = \sum_{ju}^{\mathrm{lines}} q_{ju} n_j n_e h \nu_{uj} V.
 \end{equation}
 
 \subsubsection{Other heating and cooling estimators}
-Although we have now formulated the estimators required to calculate the 
+Although I have now defined the estimators required to calculate the 
 transition probabilities, level populations, heating rates and cooling rates in macro-atoms, 
 there are still a number of heating and cooling mechanisms that do not involve macro-atoms. 
 
 The free-free cooling estimator is calculated from the emission coefficient
 in equation~\ref{eq:jff} 
 \begin{equation}
-\cc_{ff} = V \sum_i^{ions} \int \frac{j_{ff,i}(\nu)}{4\pi} d\nu,
+\cc_{ff} = V \sum_i^{\mathrm{ions}} \int \frac{j_{ff,i}(\nu)}{4\pi} d\nu,
 \end{equation}
 where the integral is over all frequencies included in the simulation,
 and the sum is also over all ions included in the simulation.
 The corresponding heating rate is then
 \begin{equation}
-\hh_{ff} = \sum_i^{photons} w_i \kappa_{ff} \Delta s.
+\hh_{ff} = \sum_i^{\mathrm{photons}} w_i \kappa_{ff} \Delta s.
 \end{equation}
 Compton heating and cooling is included in the thermal balance and as
 $(r\rightarrow k)$ and $(k\rightarrow r)$ transitions:
 \begin{equation}
-\cc_{comp} = 16 \pi \sigma_T V J \frac{k T_e}{m_e c^2},
+\cc_{\mathrm{comp}} = 16 \pi \sigma_T V J \frac{k T_e}{m_e c^2},
 \end{equation}
 \begin{equation}
-\hh_{comp} = n_e \sum_i^{photons} \frac{h\nu}{m_e c^2} w_i \kappa_{C}\Delta s,
+\hh_{\mathrm{comp}} = n_e \sum_i^{\mathrm{photons}} \frac{h\nu}{m_e c^2} w_i \kappa_{C}\Delta s,
 \end{equation}
 where the estimator for the frequency-integrated mean intensity is
 \begin{equation}
-J = \frac{1}{4\pi V} \sum_i^{photons} w_i \Delta s.
+J = \frac{1}{4\pi V} \sum_i^{\mathrm{photons}} w_i \Delta s.
 \label{eq:j}
 \end{equation}
 Induced Compton heating is then given by \citep{cloudy2013}
 \begin{equation}
-\hh_{ind~comp} = n_e \sum_i^{photons} \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
+\hh_{\mathrm{ind~comp}} = n_e \sum_i^{\mathrm{photons}} \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
 w_i \kappa_{C} \Delta s,
 \end{equation}
 where the first $J_\nu c^2/h \nu^3$ term represents the
@@ -398,7 +395,7 @@ calculated from the spectral model
 described in section~\ref{sec:simple_ionization} or a dilute blackbody.
 The adiabatic cooling rate is derived from $PdV$ work and is given by
 \begin{equation}
-\cc_{a} = k T_e V (\nabla \cdot v) \left(n_e + \sum\limits_{i=1}^{ions} N_i\right),
+\cc_{a} = k T_e V (\nabla \cdot v) \left(n_e + \sum\limits_{i=1}^{\mathrm{ions}} N_i\right),
 \end{equation}
 where $\nabla \cdot v$ is the divergence of the 
 velocity field at the centre of the cell. The sum is over all ions 
@@ -415,14 +412,14 @@ chain involving a $k$-packet thus represents interaction with the thermal
 pool of ions and electrons. $k$-packets can be produced either directly
 via a continuum heating process ($r \rightarrow k$), 
 or by the collisional de-activation of a macro-atom 
-($r \ldots \rightarrow A^* \rightarrow k$) according to equation~\ref{eq:deactivate}. 
+($r \rightarrow \ldots \rightarrow A^* \rightarrow k$) according to equation~\ref{eq:deactivate}. 
 
 Once they are produced, $k$-packets never move, as they represent the quantised
 thermal energy flow in a finite volume element. Hence, when they are produced,
 their destruction path is decided according to the different cooling mechanisms
 in the plasma. A $k$-packet then has a probability of being destroyed by process $i$ of
 \begin{equation}
-p_{i,destruct} = \cc_i / (\cc_{bf} + \cc_{ff} + \cc_{bb} + \cc_{comp} + \cc_a).
+p_{i,\mathrm{destruct}} = \cc_i / (\cc_{bf} + \cc_{ff} + \cc_{bb} + \cc_{\mathrm{comp}} + \cc_a).
 \end{equation}
 Note that only adiabatic cooling leads to an actual destruction of the energy packet,
 as a departure from radiative equilibrium. All other processes will lead to the 
@@ -455,8 +452,8 @@ and ionization/excitation energy (macro-atoms).
 The probabilities at each decision point are 
 marked, and are defined in the text. The red, blue and green coloured arrows
 represent radiant, kinetic and ionization/excitation energy respectively.
-The symbols are defined in the text, except ${\cal C}_{cont}$ and 
-${\cal C}_{ex}$ which refer to cooling contributions to radiative and excitation 
+The symbols are defined in the text, except ${\cal C}_{\mathrm{cont}}$ and 
+${\cal C}_{\mathrm{ex}}$ which refer to cooling contributions to radiative and excitation 
 energy respectively.
 } 
 \label{fig:flow_matom}
@@ -475,7 +472,7 @@ energy respectively.
 In section~\ref{sec:lte} I described how it is possible to calculate the
 ionization and excitation of a plasma under LTE or dilute approximations.
 Macro-atoms are not approximated -- their level and ion populations are 
-calculated by solving the rate equations formulated in section~??. 
+calculated by solving the rate equations formulated in section~\ref{sec:rate_eq}. 
 This is done via matrix inversion. For an element with $n$ ions and $m_i$
 levels in each ion, we construct a square matrix with dimensions 
 $m = \sum_i^n m_i$.
@@ -574,7 +571,7 @@ term. Inspection of equations~\ref{eq:einstein_relations}
 and \ref{eq:nlte_rul} reveals that a negative
 excitation rate would be obtained in this situation.
 
-To prevent this problem, we can simply `clean' our level populations
+To prevent this problem, the level populations are `cleaned' 
 after calculation, as suggested by L03. 
 This is done by cycling through the levels
 after the above calculation has been carried our and checking if

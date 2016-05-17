@@ -252,7 +252,7 @@
     {\normalsize \deptname \par}
     \medskip
     {\normalsize \underline{Doctor of Philosophy}\par}
-    \medskip
+    \bigskip
     {\normalsize\bf \MakeUppercase{\@title} \par}
     \smallskip
     {\normalsize by \authornames \par}
