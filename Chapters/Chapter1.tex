@@ -52,8 +52,8 @@ far beyond the accretion environment. They offer a potential mechanism by which 
 accretion engine can interact with the host galaxy and interstellar medium 
 via a `feedback' mechanism \citep{king2003,fabian2012}. 
 Feedback is required in models of galaxy evolution \citep{springel2005}
-and may explain the famous `$M_{BH}-\sigma$' \citep{silkrees1998,haring2004}
-and `$M_{BH}-M_{bulge}$' \citep{magorrian1998} relations.
+and may explain the famous `$M_{BH}-\sigma_*$' \citep{silkrees1998,haring2004}
+and `$M_{BH}-M_{\mathrm{bulge}}$' \citep{magorrian1998} relations.
 Winds also offer a natural way to {\em unify} much
 of the diverse phenomenology of AGN, CVs and XRBs. This principle of unification
 can be applied along more than one `axis' of parameter space. For example, 
@@ -99,7 +99,7 @@ is given by
 \end{equation} 
 meaning that the power by mass accreting at a rate $\dot{M}$ is given by
 \begin{equation}
-L_{acc} = \frac{GM \dot{M}}{R}.
+L_{\mathrm{acc}} = \frac{GM \dot{M}}{R}.
 \label{eq:acc_energy}
 \end{equation} 
 We can also characterise the efficiency of any energetic process by relating
@@ -330,7 +330,7 @@ the mass accretion rate so as to achieve a steady state.
 
 We can now integrate across both sides of the whole disc to obtain the disc luminosity,
 \begin{equation}
-L_{disc} = 2 \int^\infty_{R_*} D(R) 2\pi R dR = \frac{G M \dot{M}}{2 R_*} = \frac{1}{2} L_{acc}\, .
+L_{\mathrm{disc}} = 2 \int^\infty_{R_*} D(R) 2\pi R dR = \frac{G M \dot{M}}{2 R_*} = \frac{1}{2} L_{\mathrm{acc}}\, .
 \label{eq:ldisc}
 \end{equation}
 This result can also be shown by considering the gravitational
@@ -338,11 +338,11 @@ binding energy of gas in Keplerian rotation at $R_*$ and infinity.
 From equation~\ref{eq:dissipation2} an 
 effective temperature distribution can be derived by setting
 \begin{equation}
-\sigma T_{eff}^4 (R) = D(R),
+\sigma T_{\mathrm{eff}}^4 (R) = D(R),
 \end{equation}
 which then gives
 \begin{equation}
-T_{eff} (R) = T_* \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]^{1/4},
+T_{\mathrm{eff}} (R) = T_* \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]^{1/4},
 \label{disk_t_profile}
 \end{equation}
 where
@@ -351,7 +351,7 @@ T_* = \left ( \frac{3 G M \dot{M}}{8 \pi R_*^3 \sigma} \right)^{1/4}.
 \end{equation}
 When $R>>R_*$ this simplifies to
 \begin{equation}
-T_{eff} (R) = T_* (R / R_*)^{-3/4}.
+T_{\mathrm{eff}} (R) = T_* (R / R_*)^{-3/4}.
 \end{equation}
 Now I have not only derived the total luminosity of an accretion disc, but
 also the effective temperature profile which will govern the shape of the emergent SED.
@@ -373,7 +373,7 @@ of compact object.
 
 \subsection{Boundary Layers, Black Hole Spin and the ISCO}
 \label{sec:bl_isco}
-In equation~\ref{eq:ldisc}, I showed that $L_{disc} = 1/2~L_{acc}$. 
+In equation~\ref{eq:ldisc}, I showed that $L_{\mathrm{disc}} = 1/2~L_{\mathrm{acc}}$. 
 One might then ask: where does the rest of the luminosity go? Alternatively, 
 what happens to the kinetic energy the material has at the inner disc edge?
 The answer is dependent on the compact object in question. 
@@ -388,7 +388,7 @@ L_{BL} = \frac{1}{2}\frac{GM \dot{M}}{R} \left[1 - \left(\frac{\Omega_*}{\Omega_
 \end{equation}
 where $\Omega_K(R_*)$ is the Keplerian angular velocity at $R_*$, assuming the thickness
 of the BL is small. When $\Omega_K(R_*) \gg {\Omega_*}$, this reduces to 
-$L_{BL} = 1/2~L_{acc} = L_{disc}$
+$L_{BL} = 1/2~L_{\mathrm{acc}} = L_{\mathrm{disc}}$
 
 In cataclysmic variables, 
 BLs can be approximated with blackbodies and their temperatures estimated
@@ -473,7 +473,7 @@ It is important to recognise that the steady-state disc treatment
 {\sl does not specify the exact shape of the disc SED}. What it does do is 
 say where energy is originally released. The simplest assumption is
 that each annulus emits as a blackbody with temperature 
-$T_{eff} (R)$, and the specific intensity through the emitting surface
+$T_{\mathrm{eff}} (R)$, and the specific intensity through the emitting surface
 thus follows the Planck Law:
 \begin{equation}
 B_\nu (T) = \frac{2 h \nu^3}{c^2} \frac{1}{\exp(h\nu / kT) - 1}
@@ -490,8 +490,8 @@ objects as figure~\ref{fig:disk_t}, in
 which the $\nu^{1/3}$ portion can be clearly seen.
 A disc atmosphere model with frequency-dependent opacity creates a somewhat 
 different (and more realistic) spectrum. 
-Figure~\ref{fig:bb_v_sa} shows a comparison between a stellar atmosphere model and
-blackbody model for $T_{eff}=50,000$K, showing how an annulus at that temperature
+Figure~\ref{fig:bb_v_sa} shows a comparison between a disc spectrum computed with 
+stellar atmosphere models and standard multi-temperature blackbody disc, showing how the two treatments
 can have a significantly different spectral shape when one includes frequency-dependent opacities
 in the atmosphere. It is of course possible that {\em neither} blackbody or disc atmosphere
 treatments are realistic. I shall therefore devote a little time to discussing
@@ -520,8 +520,8 @@ the different classes of accreting objects.
 [A comparison between an accretion disc spectrum computed 
 with blackbody and stellar atmosphere spectra.]
 {
-A comparison between a Planck curve and Kurucz (1991) stellar atmosphere model
-at $T_{eff}=50,000$K and surface gravity of $\log(g)=5$. The major photoabsorption
+A comparison between a disc spectrum computed with 
+stellar atmosphere models and standard multi-temperature blackbody disc. The major photoabsorption
 edges are marked. Flux is reprocessed into different wavelengths by bound-free opacities,
 and line blanketing also has a big effect on the spectrum. The Hydrogen and Helium lines
 also experience a degree of pressure broadening.

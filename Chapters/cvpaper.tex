@@ -133,12 +133,12 @@ cataclysmic variables',
 Here, I present Monte Carlo radiative transfer simulations designed
 to assess the likely impact of accretion disc winds on the
 optical spectra of high-state CVs. The goal is to
-test whether disc winds of the type developed to account for the UV
-resonance lines would also naturally produce significant amounts of  
+test whether the disc winds that produce the UV
+resonance lines also naturally produce significant amounts of  
 optical emission. More specifically, I aim to investigate whether a 
 disc wind model can reproduce the optical lines observed in CV spectra,
-such as \ha, \hb, \heiiopt and the He~\textsc{i} lines, as well as
-the \heiiuv\ emission line. I also aim to assess whether the recombination
+such as \ha, \hb, \heiiopt\ and the He~\textsc{i} lines, as well as
+the \heiiuv\ emission line. I also aim to explore whether the recombination
 continuum from the wind can sucessfully `fill-in' the Balmer photoabsorption
 edge intrinsic to stellar or disc atmosphere spectra, and establish
 if a disc wind model can produce single-peaked lines as proposed
@@ -150,8 +150,8 @@ spectra of CVs, I use the `macro-atom' approach described in chapter 3.
 With this method, \py\ is able to deal correctly with processes involving
 excited levels, such as the recombination emission observed in CV spectra.
 The prescription used to describe the wind is the biconical SV93 model described in 
-section~\ref{sec:sv93_model}; a schematic is shown in Fig.~\ref{cartoon}.
-The remainder of this chapter is organized as follows. I begin
+section~\ref{sec:sv93_model}; a schematic for this specific application
+is shown in Fig.~\ref{cartoon}. The remainder of this chapter is organized as follows. I begin
 by describing the photon sources and input SED used in this modelling.
 In section~\ref{modela}, I present spectra simulated from the benchmark 
 model employed by LK02. In section~\ref{sec:modelb}, I present a revised model
@@ -204,8 +204,8 @@ emission from the wind base can fill in the Balmer jump, which is
 always in absorption in these models. The synthetic stellar atmosphere
 spectra are calculated with
 \textsc{Synspec}\footnote{http://nova.astro.umd.edu/Synspec43/synspec.html}
-from either Kurucz \citep{kurucz1991} atmospheres (for $T_{eff} \leq
-50,000$~K) or from \textsc{TLUSTY} \citep{tlusty} models (for $T_{eff} > 50,000$~K). 
+from either Kurucz \citep{kurucz1991} atmospheres (for $T_{\mathrm{eff}} \leq
+50,000$~K) or from \textsc{TLUSTY} \citep{tlusty} models (for $T_{\mathrm{eff}} > 50,000$~K). 
 
 \begin{figure} 
 \centering
@@ -234,7 +234,7 @@ luminosity. The models presented here initially follow LK02 in setting
 the BL luminosity to zero, partly as the temperature, luminosity, and even
 existence of a BL in CVs with strong winds is not certain \citep{hoaredrew1993}.
 However, I have confirmed that the addition 
-of an isotropic BL with $L_{BL} = 0.5 L_{acc}$ and temperatures in 
+of an isotropic BL with $L_{BL} = 0.5 L_{\mathrm{acc}}$ and temperatures in 
 the range $80~{\rm kK} \leq T_{BL} \leq 200~{\rm kK}$ would not change 
 any of the main conclusions here. 
 The influence of the BL on the heating and cooling balance
@@ -327,7 +327,7 @@ and LK02 to simulate the UV spectrum of a typical high-state
 system. The specific parameters for this model (model A) are listed in
 Table~1. A key point is that the wind mass-loss rate in this model is
 set to 10$\%$ of the accretion rate through the disc. I follow SV93
-in setting the inner edge of the wind ($r_{min}$) to $4~R_{WD}$. 
+in setting the inner edge of the wind ($r_{\mathrm{min}}$) to $4~R_{WD}$. 
 The sensitivity to some of these parameters is briefly discussed in
 section~\ref{sec:cv_params}. 
 
@@ -783,14 +783,14 @@ due to its unrealistically high continuum level in eclipse.
 This revised model demonstrates that one can achieve a more
 realistic optical spectrum by altering just two kinematic parameters. 
 However, it may also be possible to achieve this by modifying
-other free parameters such as $\dot{M}_{wind}$, the opening angles of the wind and the 
+other free parameters such as $\dot{M}_{W}$, the opening angles of the wind and the 
 inner and outer launch radii. For example, increasing the mass-loss rate of the wind
 increases the amount of recombination emission (which scales as $\rho^2$), 
 as well as lowering the ionization parameter and increasing the optical depth through the wind. 
 Larger launching regions and covering factors tend to lead to a larger emitting volume, 
 but this is moderated by a decrease in density 
 for a fixed mass-loss rate. I also note that the inner radius of $4~R_{WD}$ adopted by SV93 
-affects the emergent UV spectrum seen at inclinations $<\theta_{min}$ as 
+affects the emergent UV spectrum seen at inclinations $<\theta_{\mathrm{min}}$ as 
 the inner disc is uncovered. This causes less absorption in the UV resonance lines,
 but the effect on the optical spectrum is negligible.
 I have verified this general behaviour, but
@@ -823,7 +823,7 @@ somewhat uncertain, with estimates including $70.5^\circ$
 \citep{longmore1981} and $82^\circ$\citep{frankking1981}. Here, we
 adopt $i = 80^\circ$, but the qualitative conclusions are not
 particularly sensitive to this choice. 
-I follow LK02 is setting the value of $r_{disc}$ (the maximum radius of the accretion disc)
+I follow LK02 is setting the value of $r_{\mathrm{disc}}(\mathrm{max})$ (the maximum radius of the accretion disc)
 to $34.3~R_{WD}$. When compared to the semi-major axis of RW Tri,
 this value is perhaps lower than one might 
 typically expect for NLs \citep{harropallinwarner1996}. 
