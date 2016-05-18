@@ -151,7 +151,7 @@ $J_{est}$ is the Monte Carlo estimator for the mean intensity
 impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
 given by \citep{sim2004}
 \begin{equation}
-J_{est} = \frac{c}{4 \pi \nu_{uj} V} \sum_{i} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
+J_{est} = \frac{c}{4 \pi \nu_{uj} V} \sum_{i}^{\mathrm{photons}} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
 \end{equation}
 Here $w_i$ is the photon weight (in luminosity units), $\nu_{uj}$
 is the line frequency, $dv/ds$ is the velocity gradient and
@@ -325,7 +325,11 @@ The amount of this energy which is removed from the thermal pool
 therefore needs a quantity $\alpha_{\kappa j} h\nu_{\kappa j} n_\kappa n_e$ subtracted from it,
 giving the bound-free cooling estimator
 \begin{equation}
-\cc_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} (\alpha^E_{\kappa j} - \alpha_{\kappa j}) n_e n_{\kappa}h\nu_{\kappa j} V,
+\cc_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} 
+\left[ (\alpha^E_{\kappa j} + \alpha^{st,E}_{\kappa j} - \alpha_{\kappa j} - \alpha^{st}_{\kappa j}) 
+n_{\kappa} + 
+q_{j\kappa} n_j \right]
+n_e h\nu_{\kappa j} V,
 \end{equation}
 where the sum is over all the macro-atom bound-free transitions ($j\rightarrow\kappa$) 
 in the simulation, set by
@@ -335,7 +339,7 @@ a level $l$ absorbs energy by bound-free
 transitions is given by $\gamma^E_{j\kappa} h\nu_{\kappa j} n_\kappa n_e$,
 but the amount $\gamma_{j\kappa} h \nu_{\kappa j} n_l$ goes into ionization energy, giving 
 \begin{equation}
-\hh_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} (\gamma^E_{\kappa j} - \gamma_{\kappa j} - \alpha^{st,E}_{\kappa j} + \alpha^{st}_{\kappa j}) n_j h \nu_{\kappa j} V
+\hh_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} \left[ (\gamma^E_{\kappa j} - \gamma_{\kappa j}) n_j + n_\kappa n_e^2 q_{\kappa j} \right] h \nu_{\kappa j} V
 \end{equation}
 as the rate at which radiant energy heats the plasma via bound-free transitions.
 

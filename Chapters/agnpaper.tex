@@ -68,7 +68,7 @@ Finally, I summarise the findings in section~\ref{sec:qso_conclusions}.
 \label{sec:clumpy_wind_model}
 Here, I once again adopt the SV93 kinematic prescription for a 
 biconical disc wind model described in section~\ref{sec:sv93_model}
-LK02, H13 and M15. A schematic is shown in Fig.~\ref{fig:cartoon},
+A schematic is shown in Fig.~\ref{fig:cartoon},
 with key aspects marked. The general biconical
 geometry is similar to that invoked by \cite{MCGV95} and 
 \cite{elvis2000} to explain the phenomenonology
@@ -96,7 +96,7 @@ The accretion disc is assumed to be geometrically thin,
 but optically thick.
 Accordingly, the disc is modelled as an ensemble of blackbodies with a 
 \cite{shakurasunyaev1973} effective temperature profile. 
-The emergent SED is then determined by the specified accretion rate ($\dot{m}$)
+The emergent SED is then determined by the specified accretion rate ($\dot{M}$)
 and central BH mass ($M_{BH}$).
 All photon sources in the model are opaque, meaning
 that r-packets that strike them are destroyed.
@@ -237,7 +237,7 @@ Using this prescription, I conducted a limited parameter
 search over a 5-dimensional parameter space involving the 
 variables $r_{min}$, $\theta_{min}$, $f_V$, $\alpha$ and $R_v$.
 The grid points are shown in Table 1.
-The aim here was to first fix $M_{BH}$ and $\dot{m}$ to their H13 values,
+The aim here was to first fix $M_{BH}$ and $\dot{M}$ to their H13 values,
 and increase $L_X$ to $10^{45}$~erg~s$^{-1}$ (a more realistic value for a 
 quasar of $10^9M_\odot$ and an Eddington fraction of $0.2$; see section~\ref{sec:xray}).
 
@@ -276,8 +276,8 @@ The full grid, including output synthetic spectra and plots can be found at
 \begin{tabular}{p{2cm}p{1cm}p{1cm}p{1cm}p{1cm}}
 Parameter & \multicolumn{4}{l}{Grid Point Values}  \\
 \hline \hline 
-$r_{min}$ 	&	 $60r_{g}$ & $180r_{g}$ & \multicolumn{2}{l}{$300r_{g}$} \\ 
-$\theta_{min}$ 	& $55^{\circ}$ & \multicolumn{3}{l}{$70^{\circ}$} \\ 
+$r_{\mathrm{min}}$ 	&	 $60r_{g}$ & $180r_{g}$ & \multicolumn{2}{l}{$300r_{g}$} \\ 
+$\theta_{\mathrm{min}}$ 	& $55^{\circ}$ & \multicolumn{3}{l}{$70^{\circ}$} \\ 
 $R_v$  	        &	 $10^{18}$cm & \multicolumn{3}{l}{$10^{19}$cm} \\ 
 $\alpha$ 	&	 $0.5$ & $0.6$ & $0.75$ & $1.5$ \\
 $f_V$ 	&	 $0.01$ & \multicolumn{3}{l}{$0.1$}  \\
@@ -314,26 +314,27 @@ quasars and luminous AGN.
 \begin{table}
 \centering
 \begin{tabular}{p{3cm}p{4cm}}
-\hline Fiducial Model Parameters 	&	 Value \\ 
+\hline Parameter 	&	 Value \\ 
 \hline \hline 
 $M_{BH}$ 	 &	 $1\times 10^9~\rm{M_{\odot}}$ \\ 
-$\dot{m}_{acc}$ 	 &	 $5~M_{\odot}yr^{-1} \simeq 0.2~\dot{M}_{Edd}$\\ 
+$\dot{M}_{\mathrm{acc}}$ 	 &	 $5~M_{\odot}yr^{-1} \simeq 0.2~\dot{M}_{Edd}$\\ 
 $\alpha_X$ 	 &	 $-0.9$ \\ 
 $L_{X} $ 	 &	 $10^{45}~\rm{erg~s^{-1}}$$^*$ \\ 
-$r_{disc}(min)=r_{X}$   &	 $6r_g=8.8\times10^{14}~{\rm cm}$ \\ 
-$r_{disc}(max)$   &	 $3400r_g = 5\times10^{17}~{\rm cm}$ \\ 
-$\dot{m}_{wind}$  &	 $5~M_{\odot}yr^{-1}$ \\ 
-$r_{min}$ 	&	 $300r_{g} = 4.4\times10^{16}~{\rm cm}$\\ 
-$r_{max}$ 	&	 $600r_{g} = 8.8\times10^{16}~{\rm cm}$ \\ 
-$\theta_{min}$ 	&	 $70.0^{\circ}$ \\ 
-$\theta_{max}$ 	&	 $82.0^{\circ}$ \\ 
+$r_{\mathrm{disc}}(\mathrm{min})=r_{X}$   &	 $6r_g=8.8\times10^{14}~{\rm cm}$ \\ 
+$r_{\mathrm{disc}}(\mathrm{max})$   &	 $3400r_g = 5\times10^{17}~{\rm cm}$ \\ 
+$\dot{M}_W$  &	 $5~M_{\odot}yr^{-1}$ \\ 
+$r_{\mathrm{min}}$ 	&	 $300r_{g} = 4.4\times10^{16}~{\rm cm}$\\ 
+$r_{\mathrm{max}}$ 	&	 $600r_{g} = 8.8\times10^{16}~{\rm cm}$ \\ 
+$\theta_{\mathrm{min}}$ 	&	 $70.0^{\circ}$ \\ 
+$\theta_{\mathrm{max}}$ 	&	 $82.0^{\circ}$ \\ 
 %%$\lambda$ 	&	 $0$ \\ 
-$v_{\infty}(r_0)$ 	&	 $v_{esc}(r_0)$ \\ 
+$v_{\infty}(r_0)$ 	&	 $v_{\mathrm{esc}}(r_0)$ \\ 
 $R_v$  	        &	 $10^{19}$cm$^*$ \\ 
 $\alpha$ 	&	 $0.5^*$ \\
 $f_V$ 	&	 $0.01^*$  \\
 $n_x$ 	&	 $100$  \\
 $n_z$ 	&	 $200$  \\
+\hline 
 \end{tabular}
 \caption
 [Model parameters for the fiducial quasar model.]
@@ -577,7 +578,7 @@ $\log (\nu L_{\nu})_{3000}$  & $46.18$ & $45.79 \pm 0.30$ \\
 Some derived spectral properties of the fiducial model, at $20^\circ$,
 compared to observations. The observed values are taken from the Shen et al. (2011)
 SDSS DR7 Quasar catalog, and correspond to mean values with standard deviations in log space
-from a subsample with $8.5>\log(M_{BH})<9.5$ and $1.5<\log (L_{bol}/L_{Edd}) < 0$,
+from a subsample with $8.5>\log(M_{BH})<9.5$ and $-1.5<\log (L_{bol}/L_{Edd}) < 0$,
 where the BH mass is a \civ\ virial estimate. 
 Units are logarithms of values in erg~s$^{-1}$.
 %unless stated.otherwise.
@@ -826,7 +827,7 @@ may affect the line profile, I define the `red wing equivalent width' (EW$_{RW}$
 where $F_0$ is the continuum flux and the integral is calculated from $\lambda_0$, line centre,
 to a wavelength $\lambda^\prime$ where the flux has returned to the continuum level.
 This quantity is shown as a function of inclination in Fig.~\ref{fig:ew_in_model} for the \civ\ UV line.
-The $W_{\lambda,RW}$ expected from isotropic line emission and a foreshortened 
+The EW$_{RW}$ expected from isotropic line emission and a foreshortened 
 and limb darkened disc and $1/2$ equivalent widths from 
 \cite{dipompeo2012b} are also shown.
 
@@ -852,7 +853,7 @@ I shall explore this question further in chapter 6.
 
 \subsubsection{FWHM and Black Hole Mass Estimates}
 
-In a recent study, \cite{yong2016} used the SV93 wind prescription
+In a recent study, \cite[hereafter Y16]{yong2016} used the SV93 wind prescription
 assess the variation of full-width at half-maximum (FWHM) of 
 \hb\ (and resultant BH mass estimates)
 with inclination in a disc wind model. 
@@ -880,22 +881,38 @@ the escape velocities and rotational motions of the outflow. Thus,
 using a typical radius for line formation in the model it is trivial to 
 calculate $f_{FWHM}$ for each viewing angle. Fig.~\ref{fig:FWHM}
 shows $f_{FWHM}$ as a function of inclination for the 
-\civ, \mg\ and \ha\ emission lines in the fiducial model, 
-assuming $R_{BLR}=10^{17}$~cm. 
-For \civ\ and \mg\ the wind angles are not plotted as BAL profiles affect 
-the measurement, and I have compared to \ha\ rather than \hb\ due to the
+\ha\ emission line in the fiducial model, assuming $R_{BLR}=10^{17}$~cm. 
+The results are compared to predicted values for five Seyfert I galaxies
+from dynamical modelling \citep[][]hereafter P14]{pancoast2014b}, 
+and the Y16 predictions. Y16 designed two models using the SV93 prescription, 
+in order to mimic the MCGV95 and \cite{elvis2000} models described in
+section~\ref{sec:wind_models}. 
+Note that I have used FWHM of \ha\ rather than \hb\ due to the
 low \hb\ luminosity at some viewing angles. Nevertheless,
 this value should trace $f_{FWHM}$ from \hb\ fairly well.
 
-The values from the model presented here agree fairly well with the predictions
-of \cite{yong2016} from their simpler analysis, suggesting that,
-at least in this specific set-up,
+At `quasar-like' angles, the values from the model presented here 
+agree fairly well with the predictions
+of Y16 from their simpler analysis, suggesting that,
+at least in this specific set-up, 
 radiative transfer and ionization has a minimal role in determining
-the emergent FWHM. Instead, the effect is dominated by velocity projection
-effects. The reason for the significantly lower values for \mgii\ is that
-it is actually formed well inside $R_{BLR}=10^{17}$~cm, highlighting
-the dangers of using a single BLR radius for BH mass estimates
-from different lines.
+the emergent FWHM at those angles. Instead, at low inclinations 
+the effect is dominated by velocity projection
+effects. At inclinations looking into the wind radiative transfer
+and shielding effects become important, and the FWHM can actually
+decrease. The similarity to the P14 results suggest 
+that the behaviour of FWHM is somewhat degenerate with the BLR
+geometry. P14 found a thick disc model for the BLR best reproduced
+the observations, but these results suggest that a wind model can mimic 
+the behaviour of a disc-shaped BLR. Overall, the strong inclination dependence
+of $f_{FWHM}$ strengthens the argument that viewing angle can introduce
+significant uncertainty into virial mass estimates, and that individual
+values for $f_{FWHM}$ should really be used for different objects
+\citep[e.g.][]{kollatschny2011,pancoast2014a,pancoast2014b,shenho2014,brotherton2015,yong2016}.
+% The reason for the significantly lower values for \mgii\ is that
+% it is actually formed well inside $R_{BLR}=10^{17}$~cm, highlighting
+% the dangers of using a single BLR radius for BH mass estimates
+% from different lines.
 
 \begin{figure}
 \centering
@@ -964,6 +981,9 @@ it is not possible to achieve line ratios at low inclinations
 that are comparable to those at high inclinations. 
 I suggest that understanding the angular distribution of 
 line and continuum emission is a crucial question for theoretical models.
+\smallskip
+\item There is also a strong dependence on inclination in the FWHM of
+\ha, echoing results from dynamical modelling by \cite{yong2016}
 % Furthermore, this is conclusion is independent of the assumed 
 % BLR geometry and size.
 \end{enumerate}

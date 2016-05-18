@@ -251,9 +251,9 @@ shape and relative size are defined by setting the mass ratio of the system,
 $q_M = M_2/M_{WD}$. The inclusion of the donor star as an occulting body
 allows us to model eclipses of the disc and the wind. For this
 purpose, I assume a circular orbit with a semi-major axis $a$ and 
-specify orbital phase such that $\Phi_{orb} = 0$ is the
+specify orbital phase such that $\Phi_{\mathrm{orb}} = 0$ is the
 inferior conjunction of the secondary (i.e. mid-eclipse for $i \simeq
-90^o$).
+90^\circ$).
 
 
 
@@ -268,7 +268,7 @@ inferior conjunction of the secondary (i.e. mid-eclipse for $i \simeq
 \begin{table}
 \centering
 \begin{tabular}{p{2cm}p{2cm}p{2cm}}
-\multicolumn{2}{|l|}{Model Parameters}  \\
+%\multicolumn{2}{l}{Model Parameters}  \\
 %%Model Parameters \\
 \hline Parameter 	&	 Model A  & Model B \\ 
 \hline \hline 
@@ -277,30 +277,31 @@ $R_{WD}$ 	 &	 $7\times10^{8}$~cm  & \\
 $T_{WD}$ 	 &	 $40,000$~K        &  \\
 $M_{2}$ 	& -&	 $0.6~M_{\odot}$   \\ 
 $q_M$ 	&- &	 $0.75$   \\ 
-$P_{orb}$ 	&- &	 $5.57$~hr   \\ 
+$P_{\mathrm{orb}}$ 	&- &	 $5.57$~hr   \\ 
 $a$ 	& -&	 $194.4~R_{WD}$   \\ 
 $R_2$   &   -  &	 $69.0~R_{WD}$  \\ 
-$\dot{M}_{acc}$ 	 &	 $10^{-8}~M_{\odot}yr^{-1}$  &\\ 
-$\dot{M}_{wind}$  &	$10^{-9}~M_{\odot}yr^{-1}$å  & \\ 
-$r_{min}$ 	&	 $4~R_{WD}$ &  \\ 
-$r_{max}$ 	&	 $12~R_{WD}$  &  \\ 
-$r_{disc}$(max) 	&	 $34.3~R_{WD}$  &  \\ 
-$\theta_{min}$ 	&	 $20.0^{\circ}$  &  \\ 
-$\theta_{max}$ 	&	 $65.0^{\circ}$  &  \\ 
+$\dot{M}_{\mathrm{acc}}$ 	 &	 $10^{-8}~M_{\odot}yr^{-1}$  &\\ 
+$\dot{M}_W$  &	$10^{-9}~M_{\odot}yr^{-1}$å  & \\ 
+$r_{\mathrm{min}}$ 	&	 $4~R_{WD}$ &  \\ 
+$r_{\mathrm{min}}$ 	&	 $12~R_{WD}$  &  \\ 
+$r_{\mathrm{disc}}$(max) 	&	 $34.3~R_{WD}$  &  \\ 
+$\theta_{\mathrm{min}}$	&	 $20.0^{\circ}$  &  \\ 
+$\theta_{\mathrm{max}}$ 	&	 $65.0^{\circ}$  &  \\ 
 $\gamma$ 	&	 $1$  &  \\ 
-$v_{\infty}$ 	&	 $3~v_{esc}$  &  \\ 
+$v_{\infty}$ 	&	 $3~v_{\mathrm{esc}}$  &  \\ 
 $R_v$ 	        &	 $100~R_{WD}$  &  $142.9~R_{WD}$  \\ 
 $\alpha$ 	&	 $1.5$   &   $4$\\
-\end{tabular}
+\hline 
+\end{tabular} 
 \centering
 \caption
 [Model parameters for the CV wind models]
 {
 Parameters used for the geometry and kinematics of the benchmark 
 CV model (model A), which is optimized for the UV band, and a model
-which is optimized for the optical band and described in section~\ref{modelb} (model B).
+which is optimized for the optical band and described in section~\ref{sec:modelb} (model B).
 For model B, only parameters which are altered are given - otherwise the
-model A parameter is used. $P_{orb}$ is the orbital period 
+model A parameter is used. $P_{\mathrm{orb}}$ is the orbital period 
 (the value for RW Tri from Walker 1963 is adopted, see section~\ref{sec:rwtri}) and 
 $R_2$ is the radius of a sphere with the volume of the secondary's Roche lobe. 
 Other quantities are defined in the text or Fig.~\ref{cartoon}.
@@ -366,7 +367,7 @@ dominates in the near-disc regime, while outflow dominates further out
 in the wind. 
 
 The ionization equation used in the `simple atom' approach used by
-LK02 (see section~\ref{simpleatoms}) should be a reasonable approximation to
+LK02 (see section~\ref{sec:simple_ionization}) should be a reasonable approximation to
 the photoionization equilibrium in the benchmark wind model. Even
 though the macro-atom treatment of H and He does affect the 
 computation of the overall ionization equilibrium, the
@@ -724,7 +725,7 @@ the wind has a clear effect on the overall spectral shape.}
 for three models with varying kinematic 
 properties, computed at an inclination of $80^\circ$.
 The benchmark model and the improved optical
-model described in section~\ref{modelb} are labeled as A and B respectively,
+model described in section~\ref{sec:modelb} are labeled as A and B respectively,
 and a third model (X) which has an increased acceleration length of 
 $R_v = 283.8~R_{WD}$, and $\alpha=4$ is also shown. 
 The $x$-axis limits correspond to the Keplerian velocity at 

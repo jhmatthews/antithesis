@@ -208,6 +208,7 @@ demonstrating that winds appear only in the soft state.
 \label{sec:agn_winds}
 
 \subsubsection{Broad Absorption Line Quasars}
+\label{sec:balqsos}
 
 \begin{figure}
 \centering
@@ -228,12 +229,12 @@ Perhaps the clearest evidence of outflows in AGN is provided by
 the blueshifted ($\sim 0.1~c$) ultraviolet 
 BALs seen in approximately $20\%$ of quasars
 \citep{weymann1991, knigge2008, dai2008, allen2011}. 
-High-ionization BAL quasars (HiBALs) show
+High-ionization BAL quasars (HiBALs)
 only show broad, blue-shifted absorption in species such as 
 \civ, Si~\textsc{iv}, \nv\ and \ovi, the most prominent BAL
 profile often being the \civline\ line.
 In addition to the more common HiBALs, 
-approximately $10\%$ of BALQSOs show absorption
+approximately $10\%$ of BALQSOs also show absorption
 in lower ionization species such as \mgii\ and \aliii\ 
 \citep[LoBALs;][]{voit1993,gibson2009}
 and an even smaller subset also show absorption in Fe~\textsc{ii} and 
@@ -249,7 +250,7 @@ According to this paradigm, a biconical wind rises from
 the accretion disc so that the BALQSO fraction is associated with
 the covering factor of the outflow. This fraction
 has been estimated by various authors using different 
-selection criteria, with
+selection criteria, with 
 values ranging between $10\%$ and $40\%$ depending on the treatment 
 of selection effects and the classification scheme used 
 \citep{weymann1991, trump2006, knigge2008, dai2008, allen2011}
@@ -862,7 +863,7 @@ In the first of these, the problem considered was that of disc
 winds in CVs \citep{proga1998}. In their model, the disc was assumed
 to radiate according to the $\alpha$-disc model, and the central WD was also included
 as a radiating source. They found that when the disc had an Eddington fraction 
-of greater than $\approx 1 / {\cal M}_{max} (t) = 0.001$, then strong, line-driven
+of greater than $\approx 1 / {\cal M}_{\mathrm{max}} (t) = 0.001$, then strong, line-driven
 outflows were driven from a few WD radii with bending angles of $\sim45^\circ$.
 This result agreed qualitatively with outflows in CVs, and later efforts to compute
 synthetic line profiles produced promising results \citep{proga2002}. This was the
@@ -943,12 +944,12 @@ the observed spectra of a variety of disc wind systems.
 
 In the SV93 parametrization,
 a smooth, biconical disc wind emanates from the accretion disc between 
-$r_{min}$ and $r_{max}$. A schematic is shown in Fig.~\ref{fig:sv93}.
+$r_{\mathrm{\mathrm{min}}}$ and $r_{\mathrm{\mathrm{max}}}$. A schematic is shown in Fig.~\ref{fig:sv93}.
 The covering fraction of the outflow is 
-also controlled by the inner and outer opening angles of the wind, $\theta_{min}$ and
-$\theta_{max}$, and the launch angle of the other streamlines is given by 
+also controlled by the inner and outer opening angles of the wind, $\theta_{\mathrm{min}}$ and
+$\theta_{\mathrm{max}}$, and the launch angle of the other streamlines is given by 
 \begin{equation}
-\theta(r_0) = \theta_{min} + (\theta_{max} - \theta_{min}) \left(\frac{r_0 - r_{min}}{r_{max} - r_{min}} \right)^{\gamma},
+\theta(r_0) = \theta_{\mathrm{min}} + (\theta_{\mathrm{max}} - \theta_{\mathrm{min}}) \left(\frac{r_0 - r_{\mathrm{min}}}{r_{\mathrm{max}} - r_{\mathrm{max}}} \right)^{\gamma},
 \label{eq:wind_theta}
 \end{equation}
 where $r_0$ is the launch radius of the streamline.
@@ -971,7 +972,7 @@ v_l=v_0+\left[v_{\infty}(r_0)-v_0\right]\frac{\left(l/R_v\right)^{\alpha}}{\left
 \end{equation}
 where $l$ is the poloidal distance along a particular wind
 streamline. The terminal velocity along a streamline, $v_{\infty}$, is
-set to a fixed multiple of $v_{esc}$, the escape velocity at the launch
+set to a fixed multiple of $v_{\mathrm{esc}}$, the escape velocity at the launch
 point. The terminal velocity will therefore be higher for streamlines closer
 to the inner disc edge.
 The launch velocity from the disc surface, $v_0$, is assumed to
@@ -1054,9 +1055,9 @@ that the physics on the scale of the gravitational
 radius of the BH affects the evolution and dynamics of its host galaxy.
 This becomes less surprising when considering the {\em energetics} of accretion.
 The binding energy of a galactic bulge, with mass 
-$M_{bulge}$ and velocity dispersion $\sigma_*$, is 
+$M_{\mathrm{bulge}}$ and velocity dispersion $\sigma_*$, is 
 \begin{equation}
-E_{bulge} \approx M_{bulge} \sigma_*^2,
+E_{\mathrm{bulge}} \approx M_{\mathrm{bulge}} \sigma_*^2,
 \end{equation} 
 while the energy released in growing a black hole to a 
 mass $M_{BH}^\prime$ is (equation~\ref{eq:restmass}, assuming $\eta=0.1$)
@@ -1064,9 +1065,9 @@ mass $M_{BH}^\prime$ is (equation~\ref{eq:restmass}, assuming $\eta=0.1$)
 E_{BH} \approx 0.1 M_{BH}^\prime c^2.  
 \end{equation}
 By combining these two equations, and substituting in typical numbers 
-($\sigma_* = 0.001c$, $M_{BH}^\prime / M_{bulge} = 10^{-3}$), we can show that 
+($\sigma_* = 0.001c$, $M_{BH}^\prime / M_{\mathrm{bulge}} = 10^{-3}$), we can show that 
 \begin{equation}
-\frac{E_{BH}}{E_{bulge}} \approx 10^{-4} \left( \frac{c}{\sigma_*} \right)^2 \sim 10.
+\frac{E_{BH}}{E_{\mathrm{bulge}}} \approx 10^{-4} \left( \frac{c}{\sigma_*} \right)^2 \sim 10.
 \end{equation}
 In other words, the energy released when growing a BH can significantly exceed
 the binding energy of the galactic bulge. This energetic 
@@ -1082,7 +1083,7 @@ be transferred to the BH environment.
 
 Perhaps the most famous pieces of evidence for some kind of long-distance 
 relationship between a central BH and its host galaxy are the 
-$M_{BH}-\sigma_*$ \citep{ferrarese2000,gebhardt2000,gultekin2009} and $M_{BH}-M_{bulge}$ 
+$M_{BH}-\sigma_*$ \citep{ferrarese2000,gebhardt2000,gultekin2009} and $M_{BH}-M_{\mathrm{bulge}}$ 
 \citep{magorrian1998,haring2004,mcconnell2013} correlations, 
 shown in Fig.~\ref{fig:msigma} and Fig.~\ref{fig:mbulge}, respectively.
 By themselves, these correlations would not necessarily imply

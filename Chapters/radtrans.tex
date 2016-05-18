@@ -48,21 +48,18 @@ which has units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$. The specific
 intensity is the most fundamental quantity of radiative transfer as it describes 
 everything about the radiation field; its time, angular, spatial and frequency
 dependence.
-% By successively multiplying by $\cos \theta$ and integrating over solid angle we 
-% can obtain the first and second `moments' of the radiation field. These
-% are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by
-
-% \begin{equation}
-% F_\nu = \int I_\nu \cos \theta~d \Omega,
-% \end{equation}
-
-% \begin{equation}
-% p_\nu = \frac{1}{c} \int I_\nu \cos^2 \theta~d \Omega
-% \end{equation}
-
-We can also define the {\em mean intensity}, $J_\nu$, as
+By successively multiplying by $\cos \theta$ and integrating over solid angle we 
+can obtain the first and second `moments' of the radiation field. These
+are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by
 \begin{equation}
-J_\nu = \frac{1}{4 \pi} \int I_\nu~d \Omega
+F_\nu = \int I_\nu \cos \theta~d \Omega,
+\end{equation}
+\begin{equation}
+p_\nu = \frac{1}{c} \int I_\nu \cos^2 \theta~d \Omega.
+\end{equation}
+The {\em mean intensity}, $J_\nu$, is
+\begin{equation}
+J_\nu = \frac{1}{4 \pi} \int I_\nu~d \Omega.
 \end{equation}
 The mean intensity is particularly
 useful when one wants to ignore the solid angle dependence of the radiation,
@@ -243,10 +240,10 @@ equations~\ref{eq:planck}, \ref{eq:boltzmann}
 and \ref{eq:jbar2}  can be combined to give
 \begin{equation}
 \frac{2 h \nu_{ul}^3}{c^2} \frac{1}{\exp(h\nu_{ul} / kT) - 1} =
-\frac{A_{ul}}{B_{ul}} \frac{1}{(g_l/g_u)(B_{lu}/B_{ul}) \exp(h\nu_{ul} / kT) - 1}.
+\frac{A_{ul}/B_{ul}}{(g_l/g_u)(B_{lu}/B_{ul}) \exp(h\nu_{ul} / kT) - 1}.
 \end{equation}
-This must be true at all values of $T$, so we can simply equate coefficients
-to show that
+This must be true at all values of $T$, so we can 
+simply equate coefficients to show that
 \begin{eqnarray}
 \frac{A_{ul}}{B_{ul}} &=& 2 h \nu_{ul}^3/c^2, \\  
 \frac{B_{lu}}{B_{ul}} &=& g_u/g_l.  
@@ -412,10 +409,11 @@ In this case, the outflow is discretised into a $n_x \times n_y$ logarithmic gri
 user-specified dimensions. The co-ordinates, $(x_i, z_i$), 
 of the corner of the $i$th cell are then given by
 \begin{align}
-x_i &= L_{x}~10^{(i-1)\frac{\log (R_{max} / L_{x})}{n_x}},\\
-z_i &= L_{z}~10^{(i-1)\frac{\log (R_{max} / L_{z})}{n_z}},
+x_i &= L_{x}~10^{(i-1)\frac{\log (R_{\mathrm{max}} / L_{x})}{n_x}},\\
+z_i &= L_{z}~10^{(i-1)\frac{\log (R_{\mathrm{max}} / L_{z})}{n_z}},
 \end{align}
-where $L_x$ and $L_z$ are appropriately chosen (but hardwired) scale lengths.
+where $L_x$ and $L_z$ are appropriately chosen (but hardwired) scale lengths, and $R_{\mathrm{max}}$ 
+is the extent of the simulation domain.
 From these co-ordinates the poloidal distance can be calculated and
 the velocity set according to equation~\ref{eq:v_law}. The density
 is then calculated from equation~\ref{eq:rho_rz}. An initial temperature,
@@ -1052,7 +1050,7 @@ Ar, Ca and Fe, although this can be easily be adapted. Solar abundances from
 multiplicities are from \cite{verner1996}. Line information for simple-atoms 
 is obtained from \citep{verner1996} ($\sim5,000$ lines) and \citep{kurucz1995} 
 ($\sim55,000$ lines). The level information for simple-atoms is constructed 
-from the line lists using the technique described by \cite{lucy1999sn}.
+from the line lists using the technique described by \cite{lucy1999sne}.
 
 Radiative recombination rate coefficients are taken from 
 the \textsc{Chianti} database version 7.0 \citep{dere1997,landi2012}.

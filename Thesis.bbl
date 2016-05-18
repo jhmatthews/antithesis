@@ -848,6 +848,10 @@ Gough B., 2009,
 {Ju} W., {Stone} J.~M., {Zhu} Z., 2016,
   ArXiv e-prints~
 
+\bibitem[\protect\astroncite{{Junkkarinen} et~al.}{1983}]{junk1983}
+{Junkkarinen} V.~T., {Burbidge} E.~M., {Smith} H.~E., 1983,
+  \apj~  265, 51
+
 \bibitem[\protect\astroncite{{Kaastra} et~al.}{2014}]{kaastra2014}
 {Kaastra} J.~S., {Kriss} G.~A., {Cappi} M., {Mehdipour} M. et~al., 2014,
   Science~  345, 64
@@ -1865,6 +1869,11 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Weymann} et~al.}{1991}]{weymann1991}
 {Weymann} R.~J., {Morris} S.~L., {Foltz} C.~B., {Hewett} P.~C., 1991,
   \apj~  373, 23
+
+\bibitem[\protect\astroncite{{Weymann} et~al.}{1985}]{weymann1985}
+{Weymann} R.~J., {Turnshek} D.~A., {Christiansen} W.~A., 1985,
+\newblock in J.~S. {Miller} (ed.), Astrophysics of Active Galaxies and
+  Quasi-Stellar Objects, p.~333
 
 \bibitem[\protect\astroncite{{White} et~al.}{1988}]{white1988}
 {White} N.~E., {Stella} L., {Parmar} A.~N., 1988,
