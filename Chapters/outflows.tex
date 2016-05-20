@@ -612,7 +612,7 @@ such as AGN with UFOs \citep[e.g.][]{reeves2002,pounds2016},
 NLSIs \citep{done2015} and ultra-luminous X-ray sources \citep[ULXs;][]{walton2013}.
 However, high-state CVs are significantly below the Eddington limit 
 \citep{warnerbook}, and at least some BALQSOs have low Eddington fractions 
-\citep[$\sim25\%$ have $L/L_{Edd}<0.1$;][]{grupenousek2015}.
+\citep[$\sim25\%$ have $L/L_{\mathrm{Edd}}<0.1$;][]{grupenousek2015}.
 These systems may nevertheless be capable of radiatively driving strong 
 outflows due to the influence of line opacity.
 % Despite this, line opacity may mean that radiation is still responsible for the 
@@ -661,7 +661,7 @@ is around $2000-4000$. This is already an interesting result, as it tells us
 that line-driven outflows can be accelerated when accretion rates / luminosities
 are much lower than the Eddington limit. Indeed, using 
 equation~\ref{eq:force_multiplier} we can see that a radiatively driven wind 
-can be accelerated when $L > L_{Edd} / M(t)$, where $M(t)$ will depend in detail on
+can be accelerated when $L > L_{\mathrm{Edd}} / M(t)$, where $M(t)$ will depend in detail on
 the spectral lines in question and their relative ionization and excitation fractions.
 Line-driven winds are present in O-stars and Wolf-Rayet stars, and the theory
 produces good matches with observations 
@@ -670,7 +670,7 @@ It is also a strong candidate for driving
 the winds seen in high-state CVs when the accretion disc is UV bright 
 \citep[][see also section~\ref{sec:proga}]{pereyra1997,proga1998,proga2005}.
 
-Line driving is also a promising mechanism to explain BAL outflows, as
+Line driving may be a promising mechanism to explain BAL outflows as well, since
 the strong UV resonance lines seen in absorption in O stars are also 
 present in BALQSOs. The presence of `line-locked' features \citep{bowler2014} 
 and the `ghost of \la' \citep{arav1995, arav1996, north2006}
@@ -681,13 +681,13 @@ However, the presence of an X-ray source complicates matters.
 I have already briefly touched on the `over-ionization' problem
 in AGN outflows, but it now has another consequence. Not only will 
 strong X-rays prevent the right features forming in the spectrum, but, if
-the outflow is line-driven, they will prevent the wind existing in the first 
-place. Despite these problems, hydrodynamic simulations have been successful 
-in producing high mass-loss rates (see section~\ref{sec:proga}).
+the outflow is line-driven, they may prevent the wind existing in the first 
+place. Despite these problems, some hydrodynamic simulations of line-driven AGN winds
+have been successful in producing high mass-loss rates (see section~\ref{sec:proga}).
 
 Line-driving is subject to a strong instability known
 as the line deshadowing instability 
-\citep[LDI;][]{lucysolomon1970,macgregor1979,owockirybicki1984,owockirybicki1985}
+\citep[LDI;][]{lucysolomon1970,macgregor1979,owockirybicki1984,owockirybicki1985}.
 The basic idea is that any velocity perturbation in a line-driven flow can cause a 
 `deshadowing' effect, as the fluid element will now
 be in resonance with a region of the spectrum that is less absorbed.
@@ -729,10 +729,10 @@ first term in the above equation operates on fluid elements (`beads')
 on the surface of the accretion disc. This can accelerate
 a wind when the poloidal component of the field makes an angle of 
 $>30^\circ$ with the normal to the disc surface. These models
-are known as magnetocentrifugal winds as it is the interaction between
-a centrifugal force and a strong, large-scale, ordered magnetic field 
+are known as magnetocentrifugal winds, as it is the interaction between
+centrifugal forces and a strong, large-scale, ordered magnetic field 
 threading the disc that drives the wind. 
-Magnetocentrifugal winds have been proposed in both
+Magnetocentrifugal wind models have been proposed for both
 AGN and YSOs \citep{pelletier_pudritz,konigl1994,kudoh1997},
 and numerical simulations have demonstrated that this mechanism can produce
 jets and outflows \citep{romanova1997,ouyed1997,ustygova1999}.
@@ -751,10 +751,10 @@ years, each attempting to explain the different observational characteristics
 of quasars and CVs with a mixture of conceptual frameworks and underlying physics.
 In AGN and quasars, the authors behind the models attempt to explain the origins of 
 BELs and BALs, although some extend their remit into the infra-red, 
-radio and X-ray regimes. In CVs, the picture is slightly more straightforward as 
+radio and X-ray regimes. In CVs, the picture is slightly more straightforward, as 
 the geometry of the outflow is better constrained (see section~\ref{sec:cv_winds}).
-I will briefly discuss a few examples that have gained traction over the years,
-particular those describing quasars and unification,
+Below, I will briefly discuss a few examples that have gained traction over the years,
+particularly those describing quasars and unification,
 before outlining the kinematic prescription I have used in the modelling that forms 
 part of this thesis. This prescription has been successfully applied to both CVs 
 and AGN.
@@ -822,12 +822,12 @@ A cartoon showing the components in the De Kool \& Begelman model.
 \subsection{Elvis 2000: A Structure for Quasars}
 
 \cite{elvis2000} expanded on the work of MCGV95 by proposing a simple
-disc wind model, empirically derived to explain as much of quasar phenomenology
-as possible within one unifying framework. The geometry of the Elvis'
+disc wind model, empirically designed to explain as much of quasar phenomenology
+as possible within one unifying framework. The geometry of Elvis'
 is shown in Fig.~\ref{fig:elvis}. As in the two previous models, observers 
 looking into the wind cone will see a BALQSO, whereas observers looking down onto
 the wind will see a type 1 quasar. Initially, the wind rises vertically, so
-that observers looking underneath the flow will see NALs
+that observers looking underneath the flow will see NALs,
 due to the small range of velocities intercepted by their line of sight. 
 
 The flow conserves angular momentum, such that the initial Keplerian velocities
@@ -872,12 +872,12 @@ synthetic line profiles produced promising results \citep{proga2002}. This was t
 first successful demonstration of line driving in a full hydrodynamic simulation.
 
 The same principle was then applied to the problem of AGN outflows, with the
-additional complication of an ionization X-ray source now included 
-\citep[][hereafter PK04]{PSK2000,PK04}. A density snapshot from the PK04 model
-is shown in Fig.~\ref{fig:PK04}. An inner `failed' wind formed in this simulation,
-which initially rose up from the disc before being over-ionized by the central X-rays.
-Crucially, this acted as a shield, similarly to the hitchhiking gas proposed by
-MCGV95, and allowed a line-driven wind to be accelerated further out in the disc. 
+additional complication of an ionizing X-ray source now included 
+\citep[][hereafter PK04]{PSK2000,PK04}. A snapshot from the PK04 model
+is shown in Fig.~\ref{fig:PK04}. An inner `failed' wind forms in this simulation,
+which initially rises up from the disc before being over-ionized by the central X-rays.
+Crucially, this acts as a shield, similarly to the hitchhiking gas proposed by
+MCGV95, and allows a line-driven wind to be accelerated further out in the disc. 
 This outflow can be seen clearly in Fig.~\ref{fig:PK04}.
 
 \begin{figure}
