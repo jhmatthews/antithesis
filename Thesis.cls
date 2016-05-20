@@ -241,22 +241,22 @@
   \newpage
   \btypeout{Abstract Page}
   \thispagestyle{empty}
-  \null\vfil
+  %\null\vfil
   \begin{center}
     \setlength{\parskip}{0pt}
     {\normalsize \UNIVNAME \par}
-    \medskip
+    \smallskip
     {\huge \underline{ABSTRACT} \par}
-    \bigskip
+    \medskip
     {\normalsize \FACNAME \par}
     {\normalsize \deptname \par}
     \medskip
     {\normalsize \underline{Doctor of Philosophy}\par}
-    \bigskip
+    \smallskip
     {\normalsize\bf \MakeUppercase{\@title} \par}
     \smallskip
-    {\normalsize by \authornames \par}
-    \medskip
+    {\normalsize by \authornames}
+    %\medskip
   \end{center}
 }
 {
