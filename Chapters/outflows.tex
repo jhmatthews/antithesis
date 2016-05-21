@@ -896,13 +896,13 @@ The radial lines separate three areas described by H14.
 
 One of the interesting results of these  simulations is that they tended
 to produce somewhat unsteady, clumpy flows. In the CV case, this was caused by
-the interaction between the line force and gravity, as both force terms varied 
+the interaction between the line force and gravity, as both force terms vary 
 differently with height. In the AGN case, it was instead due to the critical
 importance of the ionization state on the line force. Parcels of gas can only 
-be accelerated when if they have the `right' ionization state, and this depends
-critically on their density and the radiation field they see. This causes
-an interplay between the dynamics of the flow and the path of ionizing radiation, 
-which are coupled. The radiation field also helped
+be accelerated if they have the `right' ionization state, and this depends
+critically on both their density and the radiation field they see. This causes
+a coupling between the dynamics of the flow and the path of ionizing radiation. 
+The radiation field also helps
 determine the geometry of the outflow, as increasing the strength of the radiation
 interior to the launch radius tends to flatten out the wind and lead to more
 equatorial outflows \citep{proga2005}.
@@ -914,14 +914,14 @@ partly for computational reasons and partly because of the approximations
 used to treat the radiation field. Treating the radiation transport is also
 important for other reasons. 
 \citet[][hereafter H14]{H14} showed that, in this particular geometry, 
-multiple scattering renders shielding region
+multiple scattering actually makes shielding
 ineffective, and radiation will simply find its way around the failed wind
 to over-ionize the flow beyond.
 Ideally, full radiative transfer and hydrodynamical simulations would be used
 to estimate the viability of line-driven winds. Our team is currently working 
 on this problem (see H14 for the first step); however, much 
 can also be learned from simpler, kinematic prescriptions for outflows, which
-can then be treated with full radiative transfer and ionization treatments.  
+already be modelled with full treatments of radiative transfer and ionization.  
 
 \section{A Kinematic Prescription for a Biconical Wind}
 \label{sec:sv93_model}
@@ -931,18 +931,18 @@ expanded on the work of the stellar wind community \citep[e.g.][]{AL85}
 in proposing a kinematic model for an accretion disc wind. Unlike 
 hydrodynamical models, this model has no real predictive power in terms of velocities
 and mass-loss rates. Instead, one sets these quantities in advance and examines the 
-resultant properties of the flow and emergent spectra. The SV93 prescription
+resultant properties of the flow and the emergent spectra. The SV93 prescription
 is the most common way of describing the outflow in the 
 radiative transfer code \py\ (see chapter 3)
 and has been used to simulate spectra for CVs \citep[][chapter 4]{LK02, M15}, 
 AM CVn systems \citep{kusterer2014} and AGN/quasars 
 \citep[][chapter 5]{higginbottom2013, M16, yong2016}. 
-A similar philosophy applied to the model of \cite{KWD95}, which has been used
+An alternative description was developed by \cite{KWD95} and has been used
 in similar applications \citep{LK02, simlong2008, sim2010}, as 
 well as for young-stellar objects \citep[YSOs;][]{simmacro2005}.
-Kinematic prescriptions have thus been a useful tool in providing quantitative
-tests of conceptual models, and specifically for assessing their ability to reproduce
-the observed spectra of a variety of disc wind systems.
+Kinematic prescriptions have thus been a useful tool in allowing quantitative
+tests of conceptual models, specifically for assessing their ability to reproduce
+the observed spectra of a variety of astrophysical systems.
 
 In the SV93 parametrization,
 a smooth, biconical disc wind emanates from the accretion disc between 
@@ -980,21 +980,20 @@ to the inner disc edge.
 The launch velocity from the disc surface, $v_0$, is assumed to
 be constant (set to $6$~km~s$^{-1}$). Once the wind is launched, it
 accelerates, reaching half of its terminal velocity at $l = R_v$. The
-velocity law exponent $\alpha$ controls how quickly the wind
+velocity law exponent, $\alpha$, controls how quickly the wind
 accelerates. Larger values of $\alpha$ cause the main region of 
 acceleration to occur close to $R_v$, whereas smaller values
 correspond to fast acceleration close to the disc (see
-Fig.~\ref{acc_law}). The rotational velocity $v_\phi$ is 
-Keplerian at the base of the streamline 
+Fig.~\ref{acc_law}). The rotational velocity, $v_\phi$, is 
+Keplerian at the base of the streamline, 
 and the wind conserves specific angular momentum, such that
 \begin{equation}
 v_\phi r = v_{k} r_0,
 \label{eq:vrot}
 \end{equation}
 where $v_{k}=(GM_{WD}/r_0)^{1/2}$.
-
 The mass-loss rate per unit surface area, $\dot{m}^\prime$,
-can be controlled by a free parameter $\lambda_m$ such that
+can be controlled by a free parameter, $\lambda_m$, such that
 \begin{equation}
 \dot{m}^\prime \propto \dot{M}_W~r_0^{\lambda_m} \cos [\theta(r_0)],
 \label{eq:dmda}
@@ -1012,7 +1011,7 @@ given by
 \end{equation}
 At a coordinate $(r,z)$ in the wind, the density is then
 \begin{equation}
-\rho (r, z) = \frac{r_0}{r} \frac{d r_0}{dr}\frac{\dot{m}^\prime(r_0)}{v_z(r,z)}
+\rho (r, z) = \frac{r_0}{r} \frac{d r_0}{dr}\frac{\dot{m}^\prime(r_0)}{v_z(r,z)},
 \label{eq:rho_rz}
 \end{equation}
 where the corresponding $r_0$ is found by considering the streamline that 
@@ -1132,8 +1131,8 @@ main sequence, and a red sequence with lower
 specific star formation rate (sSFR). Furthermore, these two 
 sequences tend to lie in the same regions of colour space as the 
 host galaxies of high and low 
-Eddington fraction AGN respectively, implying that the AGN may be 
-directly responsible for quenching the star formation and moving 
+Eddington fraction AGN, respectively, implying that the AGN may be 
+directly responsible for quenching star formation and moving 
 a galaxy onto the `red and dead' branch. This has been demonstrated in 
 several numerical simulations \citep[e.g.][]{springel2005,croton2006}.
 
@@ -1149,9 +1148,9 @@ These cavities also provide an estimate of the kinetic power of a radio
 jet, as the volume of the bubble and surrounding gas pressure gives a 
 rough estimate of the $PV$ work done by the jet. This can be divided by
 an age estimate for the cavity, giving powers
-of up to $10^{46}$erg~s$^{-1}$, which are weakly 
-correlated with the radio luminosity of the source, 
-and can be large for modest radio power \citep{birzan2008}. 
+of up to $10^{46}$~erg~s$^{-1}$, which are weakly 
+correlated with the radio luminosity of the source 
+and can be large even for modest radio power \citep{birzan2008}. 
 
 \begin{figure}
 \centering
@@ -1179,8 +1178,8 @@ considered a super-Eddington, momentum-driven outflow expanding into the surroun
 This model naturally reproduces the observed slope of the $M_{BH}-\sigma_*$
 relation. This line of argument was used to suggest that super-Eddington accretion must be
 common near the end of a quasar cycle, although it is worth noting that line-driving,
-or non-radiative driving, would mean that super-Eddington accretion rates are 
-not required to drive such an outflow. Intriguingly, this means that 
+or non-radiative driving, means that super-Eddington accretion rates are 
+not necessarily required to drive such an outflow. Intriguingly, this means that 
 understanding outflow physics has implications for the \cite{soltan1982} argument,
 SMBH spin and the accretion history of the Universe.
 
@@ -1217,7 +1216,7 @@ and ex-situ scenarios.
 
 Having established the astrophysical importance of outflows, 
 I will now move on to discussing how we might go about 
-accurately modelling the ionization states of accretion disc winds, 
+accurately modelling the ionization states of accretion disc winds 
 and their emergent spectra.
 
 
