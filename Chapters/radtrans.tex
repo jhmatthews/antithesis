@@ -185,7 +185,7 @@ with a modified Saha equation \citep{AL85,ML93},
 \end{equation}
 where $\xi$ is the fraction of recombinations that go directly to
 the ground state.
-The excitation state can be approximated (fairly poorly) 
+The excitation state can also be approximated (fairly poorly) 
 with a dilute Boltzmann equation \citep{AL85,lucy1999sne}
 \begin{equation}
 \frac{n_{j}}{n_{1}} = W \frac{g_j}{g_{1}} \exp(-E_j/kT_R).
@@ -208,9 +208,10 @@ total rate out of said state. This is clearly true whenever the timescale
 to establish this equilibrium is shorter than the timescale on which
 the ambient conditions change. The second is the assumption of
 {\em complete redistribution (CRD)}, which states that the emission
-and absorption line profiles are identical for a given transition. This 
-assumption is somewhat analogous to the Sobolev approximation 
-(see section~\ref{sec:sobolev}). 
+and absorption line profiles are identical for a given transition. 
+% This 
+% assumption is somewhat analogous to the Sobolev approximation 
+% (see section~\ref{sec:sobolev}). 
 These assumptions allow us to formulate rate equations and derive the 
 Einstein relations.
 
@@ -223,12 +224,13 @@ B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
 \label{eq:rate_einstein}
 \end{equation}
 where $B_{ul}$, $B_{ul}$ and $A_{ul}$ are the {\em Einstein coefficients}
-for absorption, stimulated emission and spontaneous emission respectively.
+for absorption, stimulated emission and spontaneous emission, respectively.
 The `mean intensity in the line', $\bar{J}_{ul}$, is given by
 \begin{equation}
-\bar{J}_{ul} = \int \phi(\nu) J_\nu d\nu.
+\bar{J}_{ul} = \int \phi(\nu) J_\nu d\nu,
 \label{eq:jbar}
 \end{equation}
+where $\phi(\nu)$ is the line profile.
 We can then rearrange equation~\ref{eq:rate_einstein} in terms of 
 the mean intensity, giving
 \begin{equation}
@@ -236,7 +238,7 @@ the mean intensity, giving
 \label{eq:jbar2}
 \end{equation}
 In LTE, $\bar{J}_{ul} = B_\nu (T)$ and the level populations obey Boltzmann statistics, 
-equations~\ref{eq:planck}, \ref{eq:boltzmann}
+so equations~\ref{eq:planck}, \ref{eq:boltzmann}
 and \ref{eq:jbar2}  can be combined to give
 \begin{equation}
 \frac{2 h \nu_{ul}^3}{c^2} \frac{1}{\exp(h\nu_{ul} / kT) - 1} =
@@ -249,13 +251,14 @@ simply equate coefficients to show that
 \frac{B_{lu}}{B_{ul}} &=& g_u/g_l.  
  \label{eq:einstein_relations}     
 \end{eqnarray}
-These two equations are known as the {\em Einstein relations}, and have 
-no dependence on temperature. They are therefore purely atomic properties.
+These two equations are known as the {\em Einstein relations} and have 
+no dependence on temperature. They are therefore relations between 
+purely atomic properties.
 
 \subsection{The Sobolev Approximation}
 \label{sec:sobolev}
 The Sobolev approximation (SA) is a useful limit 
-used to treat line transfer in fast-moving flows. Originally 
+for treating line transfer in fast-moving flows. Originally 
 the theory was mostly applied to stellar winds, although since then
 a wide variety of astrophysical objects have been modelled using Sobolev treatments,
 such as accreting systems (this work) and supernovae. The underlying theory
@@ -264,10 +267,10 @@ was originally developed by \cite{sobolev1957,sobolev1960}, but has since
 been expanded on by multiple authors 
 \citep[e.g.][]{rybicki1970,rybickihummer1978,hubeny2001rt}.
 
-The Sobolev limit is when the local bulk velocity gradients in a flow 
+The Sobolev limit applies when the local bulk velocity gradients in a flow 
 dominate other any thermal broadening. In the presence of these steep
-velocity gradients, one can assume that the interaction of a ray with a bound-bound
-transition takes place over a small resonant zone, known as a 
+velocity gradients, one can assume that the interaction of a ray with a particular 
+bound-bound transition takes place over a small resonant zone, known as a 
 `Sobolev surface'. The length of this zone is defined by
 \begin{equation}
 l_s = \frac{v_{th}}{dv / ds},
@@ -322,41 +325,41 @@ B_{lu} \bar{J}_{ul} n_l + C_{lu} n_l =
 B_{ul} \bar{J}_{ul} n_u + \beta_{ul} A_{ul} n_u + C_{ul} n_u,
 \label{eq:rate_2level}
 \end{equation}
-where I have now introduced collisional rates $C_{ul}$ and $C_{lu}$, and included
+where I have introduced the collisional rates $C_{ul}$ and $C_{lu}$, and included
 the effect of line trapping via the angle-averaged Sobolev escape probability.
 We now seek to find a relation between the source function in the line
 and the intensity that will simplify the coupled problem of radiative transfer
 and statistical equilibrium. When we consider a two-level atom
-plus continuum this can be written as \citep{mihalas}
+this can be written as \citep{mihalas}
 \begin{equation}
 S_{ul} = (1 - q) \bar{J}_{ul} + q B(\nu_{ul}),
 \label{eq:rate_2level}
 \end{equation}
 where $B(\nu_{ul})$ is the Planck function at line centre and $q$ is the 
 `absorption fraction'. This form can be obtained by splitting
-equation~\ref{eq:rte} into scattering and absorption components, and then
+equation~\ref{eq:rte} into scattering and absorption components and then
 substituting in approximate forms for the opacities and emissivities.
 If we now consider that the emissivity in the line is simply give\cal n
-by $n_u A_{ul} h \nu_{ul} / 4 \pi$, then it is possible to show that
+by $n_u A_{ul} h \nu_{ul} / 4 \pi$, it is possible to show that
 the absorption fraction is given by
 \begin{equation}
 q = \frac{C_{ul} (1 - e^{-h\nu/kT_e})}{\beta_{ul} A_{ul} + C_{ul} (1 - e^{-h\nu/kT_e})}.
 \end{equation}
 This quantity is approximately equal to
 the probability that an excited bound electron
-will collisionally de-excite, and is used in the formulation of two-level atom
+will collisionally de-excite and is used in the formulation of two-level atom
 estimators in section~\ref{sec:simple_hc}.
 
 
 
 \subsection{Monte Carlo Approaches}
 
-Simple radiation transfer problems can be solved analytically,
-but with more complicated geometries it is necessary to use Monte Carlo
-techniques, which are easily solved with modern computing approaches and 
-are intuitively parallelisable problems. I will describe one specific 
-Monte Carlo radiative transfer (MCRT) code, which has been used
-for the majority of the work in this thesis.
+Simple radiative transfer problems can be solved analytically,
+but with more complicated geometries it is necessary to use numerical techniques,
+such as Monte Carlo radiative transfer (MCRT). 
+MC techniques are easily implemented with modern computing approaches and 
+are intuitively parallelisable problems. I will now describe one specific 
+MCRT code, which has been used for the majority of the work in this thesis.
 
 
 
@@ -383,9 +386,10 @@ YSOs \citep[][hereafter SDL05]{simmacro2005}, supernovae \citep{kerzendorfsim} a
 \citep[hereafter H13 and H14]{higginbottom2013,H14}. It is also capable of producing spectra 
 for stellar winds and conducting simple photoionization balance calculations for
 comparison with codes such as \textsc{cloudy}. Some more detail on code testing and 
-development can be found in sections~\ref{sec:code_validation} and \ref{sec:code_maintenance}
-respectively. Although the operation of \py\ is well-described by the above authors,
-it is central to this thesis and I will thus provide substantial detail on its operation. 
+development can be found in 
+sections~\ref{sec:code_validation} and \ref{sec:code_maintenance},
+respectively. Although \py\ is well-described in the publications referenced above,
+it is central to this thesis, and I will thus provide substantial detail on its operation. 
 
 \subsection{Basics}
 
@@ -403,9 +407,9 @@ A flowchart showing the basic operation of \py.
 First, the user specifies the photon sources,
 geometry and kinematics of the system, normally with a similar parameterisation
 to the SV93 model described in section~\ref{sec:sv93_model}. 
-The code can operate with a numnber of different coordinate systems 
-(1D, spherical polar, cylindrical), but in this work I use cylindrical coordinates.
-In this case, the outflow is discretised into a $n_x \times n_y$ logarithmic grid with 
+The code can operate with a number of different coordinate systems 
+(1D, spherical polar, cylindrical), but in this work I use only cylindrical coordinates.
+In this case, the outflow is discretised into a $n_x \times n_z$ logarithmic grid with 
 user-specified dimensions. The co-ordinates, $(x_i, z_i$), 
 of the corner of the $i$th cell are then given by
 \begin{align}
@@ -418,13 +422,13 @@ From these co-ordinates the poloidal distance can be calculated and
 the velocity set according to equation~\ref{eq:v_law}. The density
 is then calculated from equation~\ref{eq:rho_rz}. An initial temperature,
 $T_{\mathrm{init}}$ is set by the user. The ionization fractions throughout
-the wind are then to Saha (LTE) abundances at $T_{\mathrm{init}}$, and the level 
-populations are set according to the Boltzmann formula.
+the wind are then initiated to Saha (LTE) abundances at $T_{\mathrm{init}}$, and the level 
+populations are initially set according to the Boltzmann formula.
 
 Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
 This is done via an iterative process, by transporting several populations of 
-Monte Carlo energy quanta (`photons' or `$r$-packets) through the outflow.
+Monte Carlo energy quanta (`photons' or `$r$-packets') through the outflow.
 This process is repeated until the code converges. 
 In each of these iterations (`ionization cycles'), the code records estimators that 
 characterize the radiation field in each grid cell. At the end 
@@ -436,15 +440,16 @@ and a new ionization cycle is started. The process is repeated until
 heating and cooling are balanced throughout the wind (see sections~\ref{sec:heating_cooling}
 and \ref{sec:convergence}). 
 
-This converged model as the basis for the second set of
+This converged model provides the basis for the second set of
 iterations (`spectral cycles'; section~\ref{sec:spectral_cycles}), 
-in order to compute the synthetic spectrum based on the 
+in which the code computes the synthetic spectrum based on the 
 MC estimators recorded during the ionization cycles. 
 The emergent spectrum over the desired spectral range is synthesized by 
-tracking populations of energy packets through the wind and computing the emergent spectra at
+tracking populations of energy packets through the wind and recording 
+the escaping energy packets for
 a number of user-specified viewing angles.  In the ensuing sections,
 I will describe each of the above steps in more detail, particularly
-with regards to the macro-atom mode of operation.
+with regards to the macro-atom mode of operation (section~\ref{sec:matoms}).
 
 
 % \py\ is designed to operate in a number of different
@@ -466,18 +471,18 @@ Every energy packet in the simulation starts out as a radiation packet generated
 from one of $N_S$ photon sources. To ensure that the frequency distribution
 of photons is adequately sampled in important frequency regimes, 
 {\em stratified sampling} is used. A specified fraction, $f_i$,
-of photons must then emerge each band $i$, whose frequency boundaries
+of photons must emerge each band $i$, whose frequency boundaries
 can be adapted for the astrophysical situation considered. 
-The weight, $w_i$, of the radiation packets in a given energy band $i$, with boundaries
+The weight, $w_i$, of the radiation packets in a given energy band with boundaries
 $\nu_i$ and $\nu_{i+1}$ is then given by
 \begin{equation}
 w_i = \frac{\sum_j^{N_S} \int_{\nu_i}^{\nu_{i+1}} L_{\nu,j}~d\nu}{f_i~N_p},
 \end{equation}
-where $N_p$ is the total number of photons desired 
+where $N_p$ is the total number of photons desired, 
 and $L_{\nu,j}$ is the monochromatic 
 luminosity of photon source $j$. 
 The frequency of photons is calculated by constructing a 
-cumulative distribution function (CDF), $f_{C,i}(\nu)$
+cumulative distribution function (CDF), $f_{C,i}(\nu)$,
 from the spectral energy distribution in each band $i$: 
 \begin{equation}
 f_{C,i} (\nu) = 
@@ -485,8 +490,8 @@ f_{C,i} (\nu) =
 {\int_{\nu_i}^{\nu_{i+1}} L_\nu~d\nu} ~.
 \end{equation}
 A photon frequency can then be generated by cycling through the bands. In each band,
-a random number is chosen between 0 and 1, and then the frequency is 
-selected by interpolating on the sampled CDF. This process is repeated until 
+a random number is chosen between 0 and 1, and the frequency is 
+then selected by interpolating on the sampled CDF. This process is repeated until 
 each band has the specified number of photons, with the packet
 weights adjusted accordingly.
 
@@ -504,8 +509,8 @@ treat recombination in H and He.
 \label{sec:rt_procedure}
 
 As a photon travels through a plasma, it has a finite probability
-of interacting with the free or bound electrons and undergoing a scattering
-or absorption event. To deal with this in a Monte Carlo sense, a random optical 
+of interacting with free or bound electrons and undergoing a scattering
+or absorption event. In order to deal with this in a Monte Carlo sense, a random optical 
 depth is generated before an $r$-packet is moved,
 \begin{equation}
 \tau_R = - \ln (1 - {\cal Z}),
@@ -514,11 +519,11 @@ where ${\cal Z}$ is a random number between 0 and 1.
 The $r$-packet is then gradually transported through a given cell. 
 As it moves, the optical depth, $\tau^\prime$, it experiences
 is incremented continuously, representing continuum processes. When the $r$-packet comes
-into resonance with a line, according to equation~\ref{eq:resonance}, then
+into resonance with a line, according to equation~\ref{eq:resonance},
 the Sobolev optical depth is calculated from equation~\ref{eq:tau_sob} and added to 
-$\tau^\prime$. This process is shown in Fig.~\ref{fig:scatter_ml93}, and
+$\tau^\prime$. This process is illustrated in Fig.~\ref{fig:scatter_ml93} and
 continues until $\tau^\prime \geq \tau_R$ or the $r$-packet leaves the cell. If the
-photon leaves the cell then the values of $\tau_R$ and $\tau^\prime$ are preserved,
+photon leaves the cell, the values of $\tau_R$ and $\tau^\prime$ are preserved,
 and the process continues using the conditions in the new cell. If 
 $\tau^\prime \geq \tau_R$, then an interaction with the plasma has occurred, and
 the process governing this interaction must be identified. This is done by
@@ -593,11 +598,11 @@ cooling balance (see section~\ref{sec:estimators}).
 
 \subsubsection{Doppler Shifts}
 
-To calculate the opacities correctly, the frequency must be shifted from
+When calculating opacities, the photon frequency must be shifted from
 the rest frame of the photon into the rest frame of the plasma.
-This shift depends on the before and after direction of the photon. Let us denote
-these two directions with unit vectors $\vec{n}_i$ and $\vec{n}_f$ respectively,
-and consider a situation when a photon scatters of an electron in a region of the
+This shift depends on the before and after directions of the photon. Let us denote
+these two directions with unit vectors $\vec{n}_i$ and $\vec{n}_f$, respectively,
+and consider a situation when a photon scatters off an electron in a region of the
 wind moving at velocity $\vec{v}$.
 The final frequency of the photon with initial frequency $\nu_i$ is then 
 \begin{equation}
@@ -608,7 +613,7 @@ new frequency is
 \begin{equation}
 \nu_f = \frac{\nu_{uj}}{1 - (\vec{v} \cdot \vec{n}_f) / c}.
 \end{equation}
-when we consider that the resonant point is chosen according to 
+When we consider that the resonant point is chosen according to 
 equation~\ref{eq:resonance} and that $v=\vec{v} \cdot \vec{n}_f$ in this case,
 it is clear that the above two equations are equivalent.
 
@@ -617,22 +622,22 @@ it is clear that the above two equations are equivalent.
 
 The last variable, in addition to $w_i$ and $\nu$, needed to define a 
 radiation packet is the direction of travel.
-In the case of isotropic emission the direction of a photon packet
+In the case of isotropic emission, the direction of a photon packet
 is chosen so that the probability of emission in each bin of solid
 angle is the same. It follows that 
 \begin{equation}
-P(\Omega)d\Omega \propto \cos \theta \sin \theta d\theta d\phi,
+p(\Omega)d\Omega \propto \cos \theta \sin \theta d\theta d\phi,
 \end{equation}
 where the angles are in polar coordinates and relative to the local
-outward normal. For a spherical emitting source such as 
-a star then one must first generate a location on the star's surface,
+outward normal. For a spherical emitting source, such as 
+a star, one must first generate a location on the star's surface
 and then calculate the photon direction relative to the normal at the point.
-For emission from solid surfaces the above equation is modified
+For emission from optically thick surfaces the above equation can be modified
 to include linear limb darkening, $\eta(\theta)$:
 \begin{equation}
-p(\theta \phi) d\theta d\phi = \eta(\theta) \cos \theta \sin \theta d\theta d\phi,
+p(\theta, \phi) d\theta d\phi = \eta(\theta) \cos \theta \sin \theta d\theta d\phi.
 \end{equation}
-where, under the Eddington approximation used in the code, $\eta(\theta)$
+The Eddington approximation is usually adopted in the code, so that $\eta(\theta)$
 is given by
 \begin{equation}
 \eta(\theta) = a (1 - \frac{3}{2} \cos \theta).
@@ -640,7 +645,7 @@ is given by
 The constant $a$ is normalised such that the total probability
 sums to $1$. Whenever a radiation packet undergoes an electron scatter,
 the new direction is chosen to be isotropic. However,
-when the photon is a line photon then the new direction is chosen
+when the photon is a line photon, the new direction is chosen
 according to a line trapping model, which samples a probability 
 distribution according to the Sobolev escape probability in different 
 directions. 
@@ -662,11 +667,11 @@ I have now described in detail how the macro-atom approach is
 implemented in \py. A pure macro-atom approach can be easily used for
 some situations -- for example, in the YSO application described by 
 SDL05, which uses a H-only model. However, in accretion
-disc winds the densities can be very high and higher $Z$ elements must be 
-included. To include all these elements as macro-atoms is not
+disc winds, the densities can be very high, and higher $Z$ elements must be 
+included. Including all these elements as macro-atoms is not
 currently computationally feasible in \py\ for anything but the simplest
-models. I will thus describe a `hybrid scheme', which treats H and He
-under the macro-atom approach but models all other atoms 
+models. I will thus now describe a `hybrid scheme', which treats H and He
+with the macro-atom approach, but models all other atoms 
 as `simple-atoms'. 
 
 \subsection{Line Transfer}
@@ -690,9 +695,9 @@ p_{uj}^{S,C} = \frac{ C_{uj} \exp(-h\nu_{uj} / k T_e) }
 { A_{uj} \beta_{uj} + C_{uj} \exp(-h\nu_{uj} / k T_e) }
 = q.
 \end{equation}
-For a bound-free transition the code assumes radiative recombination and 
+For a bound-free transition, the code assumes radiative recombination, and 
 thus any bound-free simple-atom activation is immediately followed 
-by the creation of $r$-packet. This approximates the bound-free continuunm, 
+by the creation of an $r$-packet. This approximates the bound-free continuunm, 
 even when compared to other two-level atom radiative transfer schemes. 
 This is discussed further and tested in section~\ref{sec:line_test}.
 
@@ -705,8 +710,9 @@ and the ionization and excitation of these elements is calculated
 with a different, approximate approach.
 In order to include simple-atoms, we must add in a few extra pathways
 to Fig.~\ref{fig:flow_matom}, so that energy packets can also
-undergo excite simple-atoms, through either bound-free or bound-bound
-processes. This is done in proportion with the simple-atom opacities.
+activate simple-atoms, through either bound-free or bound-bound
+processes. The relative probabilities of these channels are set
+in proportion with the simple-atom opacities.
 
 
 \subsection{Heating and Cooling Estimators}
@@ -715,17 +721,17 @@ processes. This is done in proportion with the simple-atom opacities.
 The bound-bound heating rate is computed during the photon propagation and is a sum
 over photons which come into resonance with each line, given by 
 \begin{equation}
-{\cal H}_{bb}^S = \sum_i^{\mathrm{photons}} \sum^{\mathrm{lines}}_{ju} (1 - q) (1 - e^{-\tau_{S,ju}}) w_i,
+{\cal H}_{bb}^S = \sum_i^{\mathrm{photons}} \sum^{\mathrm{lines}}_{ju} (1 - q) (1 - e^{-\tau_{S,ju}}) w_i.
 \end{equation}
-And our bound bound cooling rate is given by 
+Similarly, the bound-bound cooling rate is given by 
 \begin{equation}
 {\cal C}_{bb}^S = \sum_{ju}^{\mathrm{lines}} q \left(n_j\frac{g_u}{g_j} - n_u\right) q_{uj} n_e 
 \frac{(1 - e^{-h\nu_{ju}/kT_e})}{(e^{h\nu_{ju}/kT_e} - 1)}  h \nu_{ju}.
 \end{equation}
-These estimators are fundamentally different quantities to the corresponding
+These estimators are fundamentally different quantities from the corresponding
 macro-atom estimators and are not used to
 calculate k-packet probabilities. Instead, they represent the amount of
-energy transferred to and from the plasma as a whole by the radiation field,
+energy transferred to and from the plasma by the radiation field,
 whereas in the macro-atom case they represent the rate of collisional excitations
 and de-excitations.
 %%note the difference to the macro-atom approach- here this is already 
@@ -734,61 +740,62 @@ The bound-free heating rate is given by
 \begin{equation}
 {\cal H}_{bf}^S = \sum_i^{\mathrm{photons}} \sum_{j\kappa}^{\mathrm{bfjumps}} w_{i} e^{-\tau} \frac{\nu - \nu_{j\kappa}}{\nu}
 \end{equation}
-where $\nu$ here is the frequency of the photon in question, and $\nu_{0}$.
-The bound-free cooling rate is then
+where $\nu$ is the frequency of the photon in question, and $\nu_{j\kappa}$
+is the ionization threshold. The bound-free cooling rate is then
 \begin{equation}
 {\cal C}_{bf}^S = \sum_{j\kappa}^{\mathrm{bfjumps}} \int_{\nu_{j \kappa}}^\infty
 h \nu \left(\frac{2 \pi m_e k T_e}{h^2} \right)^{-3/2}
 \frac{2 h \nu^3}{c^2} 
 \frac{g_j}{g_\kappa g_e}
 T_e^{-3/2} \sigma_{j \kappa} (\nu) 
-\exp(- h (\nu - \nu_{j \kappa}) / kT_e)
+\exp(- h (\nu - \nu_{j \kappa}) / kT_e).
 \end{equation}
 
 \subsubsection{Radiation Field Estimators, Ionization and Excitation}
 \label{sec:simple_ionization}
 For simple-atoms we do not record radiation field estimators for discrete 
-transitions, as for macro-atoms. Instead, we record estimators to
+transitions, as we do for macro-atoms. Instead, we record estimators to
 give us a model of the radiation field. The estimators needed
-depend on the ionization mode employed (see section~\ref{sec:simple_ionization}).
+depend on the ionization mode employed.
 The radiation temperature, $T_R$, is estimated by first recording the mean frequency, 
-$\bar{\nu}$, of the photons passing through a cell:
+$\bar{\nu}$, of the photons passing through a cell
 \begin{equation}
 \bar{\nu} = \frac{\sum_{photons} w_i \nu_i \Delta s}{\sum_{photons} w_i \Delta s}.
 \end{equation}
-This is then used to calculate the radiation temperature by
+This is then used to estimate a radiation temperature by
 considering the value expected from a blackbody \citep{ML93}:
 \begin{equation}
 T_r = \frac{h\bar{\nu}}{3.832~k}
 \end{equation}
 The dilution factor can be calculated by comparing the estimator for the mean intensity (equation~\ref{eq:j}) to the Stefan-Boltzmann law:
 \begin{equation}
-W = \frac{\pi J}{\sigma~T_r^4},
+W = \frac{\pi J}{\sigma~T_r^4}.
 \end{equation}
 This set of estimators is sufficient to describe the 
-radiation field if one is adopting the dilute approximation (section~\ref{sec:dilute}).
-H13 improved on this by developing a method for
+radiation field if the dilute approximation is adopted(section~\ref{sec:dilute}).
+
+H13 improved on the dilute blackbody approximation by
 modelling the SED in the cell using a series of band-limited 
 radiation field estimators. In this scheme, a series of bands is defined
 in which to record these estimators. These bands are different to those
-discussed in section~\ref{sec:packets} as those instead govern photon generation.
-In H13, the band limited estimators were used to construct a correction factor
+discussed in section~\ref{sec:packets}, as those instead govern photon generation.
+In H13, the band-limited estimators were used to construct a correction factor
 that could be used in a modified Saha equation 
 (similar in form to equation~\ref{eq:ml93}). However, the code has now been
-improved so that the ion populations are computed by solving the rate equations.
-Thus, we now simply need to calculate photoionization rate estimators for simple 
+improved further, so that the ion populations are computed by solving the rate equations.
+Thus we now simply need to calculate photoionization rate estimators for simple 
 ions, which rely on being able to integrate a modelled form of the mean intensity.
 
 The mean intensity is modelled in each band $i$ using either a power law or exponential
 with respective forms of
 \begin{equation}
-J_{\nu,i} = K_{PL}~ \nu^{\alpha_{PL}}
+J_{\nu,i} = K_{PL}~ \nu^{\alpha_{PL}},~\mathrm{and}
 \end{equation}
 \begin{equation}
-J_{\nu,i} = K_{\exp}~ \exp(-h\nu / k T_{\exp})
+J_{\nu,i} = K_{\exp}~ \exp(-h\nu / k T_{\exp}),
 \end{equation}
-where $T_{\exp}$ and $\alpha_{PL}$ are the fit parameters and $K_{PL}$ and $K_{exp}$ 
-are the normalisation constants, which are obtained by ensuring that
+where $T_{\exp}$ and $\alpha_{PL}$ are fit parameters, and $K_{PL}$ and $K_{exp}$ 
+are normalisation constants, which are obtained by ensuring that
 the model reproduces the band limited mean intensity from equation~\ref{eq:j}.
 An example of a modeled spectrum compared to the recorded MC spectrum from
 the summed photons is shown in figure~\ref{fig:cell_spec}, showing how
@@ -806,12 +813,12 @@ from an individual cell in an AGN model.
 \label{fig:cell_spec}
 \end{figure}
 
-Once the model for the mean intensity has been calculated it is possible
+Once the model for the mean intensity has been calculated, it is possible
 to formulate a photoionization rate estimator from ion $i$ to $i+1$ 
-for simple-atoms:
+for simple-atoms,
 \begin{equation}
 \gamma_{i,i+1}^S = \sum_i^{\mathrm{bands}} \int_{\nu_i}^{\nu_{i+1}} 
-\sum_j^{\mathrm{levels}} \frac{J_{\nu,i} \sigma_{j\kappa}(\nu) }{h \nu} d\nu
+\sum_j^{\mathrm{levels}} \frac{J_{\nu,i} \sigma_{j\kappa}(\nu) }{h \nu} d\nu.
 \end{equation}
 Recombination rate coefficients are then obtained from 
 either tabulated data (see section~\ref{sec:atomic_data})
@@ -867,12 +874,14 @@ it is bounded differently.
 % improved, but more complex treatment of ionization that is appropriate
 % for more complex SEDs is described in H13.) 
 
-The rate matrix method with spectral model for the mean intensity is used
-in chapter 5 of this thesis, whereas for chapter 4 the approximate ML93 scheme is used.
-Regardless of ion mode, the relative excitation fractions of simple-atoms
-within each ionization stage of a given species are estimated via a modified (dilute) Boltzmann
-equation (equation~\ref{eq:dilute_boltzmann}). This equation is approximate, and in 
-general this approximation is not good. We therefore endeavour to treat any species in
+The rate matrix method with a banded spectral model for the mean intensity is used
+in chapter 5 of this thesis, whereas for chapter 4 the dilute approximation is adopted
+and ion fractions are obtained from a modified Saha equation (equation~\ref{eq:ml93}).
+Regardless of the ionization mode used, the relative excitation fractions of simple-atoms
+within each ionization stage of a given species are 
+estimated via a modified (dilute) Boltzmann
+equation (equation~\ref{eq:dilute_boltzmann}). This equation is approximate, and, in 
+general, this approximation is not good. We therefore endeavour to treat any species in
 which the excitation state of the ions is thought to be important
 in determining either the ionizing radiation field, or emergent spectrum,
 as macro-atoms.
@@ -899,7 +908,7 @@ temperature structure in the wind.
 
 At the end of each ionization cycle, the code has stored a new set
 of MC estimators for radiative heating of the plasma. We then
-assume that each cell is in thermal equilibrium then the appropriate
+assume that each cell is in thermal equilibrium, so that the appropriate
 electron temperature is simply the value of $T_e$ that is a solution
 to the equation
 \begin{equation}
@@ -909,7 +918,7 @@ where $\hh_{\mathrm{tot}}$ and $\cc_{\mathrm{tot}}$ are the total heating and co
 the plasma. A number of checks are in place to ensure numerical stability,
 namely a maximum temperature and a maximum change in temperature from cycle
 to cycle. This is especially important in cases where the initial
-guess at wind temperature is far from the true value.
+guess at the wind temperature is far from the true value.
 
 \subsection{Convergence}
 
@@ -923,7 +932,7 @@ $T_R$ and $T_e$ satisfy
 \begin{equation}
 \frac{|T_{\mathrm{new}} - T_{\mathrm{old}}|}{T_{\mathrm{new}} + T_{\mathrm{old}}} < 0.05,
 \end{equation}
-and b) the heating and cooling rates are well balanced such that
+and b) the heating and cooling rates are well balanced, such that
 \begin{equation}
 \frac{|\hh_{\mathrm{tot}} - \cc_{\mathrm{tot}}|}{\hh_{\mathrm{tot}} + \cc_{\mathrm{tot}}} < 0.05.
 \end{equation}
@@ -953,13 +962,13 @@ completed.
 \label{sec:spectral_cycles}
 The primary output from \py\ is a synthetic spectrum over a specific wavelength
 range produced at user-specified viewing angles. This spectrum is produced 
-in a separate cycle from the calculation of the ionization state as it is concerned
+in a separate cycle from the calculation of the ionization state, as we are then concerned
 with producing detailed, high-resolution spectra in a specific wavelength regime
 that can then be compared to observations.
 
 The code utilises a variance reduction technique in order to minimise the amount of 
-time spent in the portion of the code. This technique is based 
-on a similar method implemented by \citep{woods1991} and is known in the code
+time spent in this portion of the code. This technique is based 
+on a similar method implemented by \cite{woods1991} and is known in the code
 as the `extract' method. This method works by 
 tracking photon packets until they scatter or interact with the plasma, according
 to the procedure described in section~\ref{sec:rt_procedure}. 
@@ -970,17 +979,18 @@ viewing angle $\theta_i$ is then incremented by an amount
 \begin{equation}
 \Delta L = w f(\theta_i) \exp(-\tau_{\mathrm{extract}}(\theta_i)),
 \end{equation}
-where $w$ is the weight of the photon and $f(\theta_i)$ is a weighting proportional to
+where $w$ is the weight of the photon, and $f(\theta_i)$ is a weighting proportional to
 the probability that the photon would have scattered in direction $\theta_i$. Once this
-value has been added to the corresponding wavelength bin then the photon
+value has been added to the corresponding wavelength bin, the photon
 proceeds as normal in its new random direction.
 
 In the alternative `live or die' method this extraction procedure is not
-carried out and a user simply has to run enough escaping photons so that enough will happen
-to fall into the angle bins requested. This is clearly significantly
+carried out, and a user simply has to run a sufficient number of 
+photons to ensure that enough will happen
+to fall into the finite solid angle bins requested. This is significantly
 less efficient. A comparison between the two methods is shown in 
 figure~\ref{fig:extract_demo} for a standard CV model, showing that the spectrum 
-produced is identical in shape but with significantly higher signal-to-noise (for
+produced is identical in shape, but with significantly higher signal-to-noise (for
 fixed number of cycles) in the `extract' case.
 
 \begin{figure}
@@ -1006,13 +1016,13 @@ out a macro-atom emissivity calculation before the spectral cycles.
 The aim of this step is to calculate the luminosity contributed
 by macro-atoms -- equivalent to the total amount of reprocessed emission -- 
 in the wavelength range being considered.
+
 This process can be very computationally intensive, especially if the wavelength regime
 being simulated has very little emission from bound-free and line processes
-in the wind, but the overall broadband emissivity is high.
-
+in the wind, but the overall broad-band emissivity is high.
 During the ionization cycles, the amount of energy absorbed into $k$-packets and 
 every macro-atom level is recorded using MC estimators. Once 
-the ionization cycles are finished and the model has converged, these absorption
+the ionization cycles are finished, and the model has converged, these absorption
 energies are split into a certain number of packets and tracked through
 the macro-atom machinery until a deactivation occurs. When this happens,
 the emissivity of the level the macro-atom de-activated from is incremented
@@ -1021,26 +1031,26 @@ the packet is thrown away. It is easy to see how what is essentially a MC reject
 method can be an inefficient way of sampling this parameter space. Fortunately,
 this problem is parallelisable (see section~\ref{sec:parallel}).
 
-Once the emissivities have been calculated then the spectral synthesis can proceed.
+Once the emissivities have been calculated, the spectral synthesis can proceed.
 This is done in a different way to the ionization cycles. Photons 
 are generated from the specified photon sources over the required wavelength range,
 but are now also generated according to the calculated macro-atom and 
 $k$-packet emissivities in each cell. These photons are `extracted' according
 to the procedure outlined above.
-To now ensure that radiative equilibrium 
-holds, any photon that interacts with a macro-atom or $k$-packet is immediately 
+In order to ensure that radiative equilibrium 
+still holds, any photon that interacts with a macro-atom or $k$-packet is immediately 
 destroyed. The photons are tracked and extracted as normal until they escape the 
-simulation, and resonant scatters are dealt with by a combination of
+simulation; resonant scatters are dealt with by a combination of
 macro-atom photon production and destruction.
 
 \section{Atomic Data}
 \label{sec:atomic_data}
 One of the big challenges in building reliable photoionization and radiative
-transfer lies in the acquisition of accurate and complete atomic datasets.
+transfer codes lies in the acquisition of accurate and complete atomic datasets.
 All of the rates described so far contain a term, such as the oscillator strength 
 or dimensionless collision strength, that is dependent purely on the atomic physics
 associated with the transition. These quantities can be measured in laboratory experiments,
-or predicted from atomic structure codes which derive the atomic physics from 
+or predicted from atomic structure codes that derive the atomic physics from 
 quantum theory.
 
 Throughout this work, I have used very similar atomic data to that described 
@@ -1048,14 +1058,15 @@ by LK02 and H13. Elements included are H, He, C, N, O, Ne, Na, Mg, Al, Si, S,
 Ar, Ca and Fe, although this can be easily be adapted. Solar abundances from
 \cite{vernerbarthel1994} are adopted, and ionization potentials and ion
 multiplicities are from \cite{verner1996}. Line information for simple-atoms 
-is obtained from \citep{verner1996} ($\sim5,000$ lines) and \citep{kurucz1995} 
-($\sim55,000$ lines). The level information for simple-atoms is constructed 
+is obtained from \citet[][$\sim5,000$ lines]{verner1996} 
+and \citet[][$\sim55,000$ lines]{kurucz1995}. 
+The level information for simple-atoms is constructed 
 from the line lists using the technique described by \cite{lucy1999sne}.
 
 Radiative recombination rate coefficients are taken from 
 the \textsc{Chianti} database version 7.0 \citep{dere1997,landi2012}.
 Ground state recombination rates from \cite{badnell2006} are adopted where available,
-and otherwise the code defaults to calculating recombination rates from the Milne
+otherwise the code defaults to calculating recombination rates from the Milne
 relation. Free-free Gaunt factors are from \cite{sutherland1998}.
 
 \subsection{Macro-atom Level and Line Data}
@@ -1070,29 +1081,30 @@ dense astrophysical plasmas due to the near degeneracy of the subshell
 energy levels.
 
 In order to correctly model He recombination lines in CVs and AGN, such as the 
-prominent \heiiuv\ line, I expanded the atomic dataset such that \py\
+prominent \heiiuv\ line, I have expanded the atomic data set, so that \py\
 now contains all the atomic data needed for a He macro-atom. This data was 
-obtained from \textsc{Topbase}, with the exception that some of the line wavelengths
-were inaccurate and modified to the experimental values from the National 
+obtained from \textsc{Topbase}, except for some inaccurate line wavelengths
+that were set to the experimental values from the National 
 Institute of Standards and Technology (NIST\footnote{\url{http://www.nist.gov/}}).
 He~\textsc{i} is split into $l$ and $s$ subshells so as to correctly model the
 singlet and triplet lines observed in many optical spectra. He~\textsc{ii} is assumed
 to be $l$-mixed, as it is hydrogenic.
 
-For CV modelling (chapter 4), I used the full 20 level hydrogen atom, with 53 levels of 
+For CV modelling (chapter 4), I used the full 20-level hydrogen atom, with 53 levels of 
 He~\textsc{i} up to principle quantum number 10, and 10 levels of He~\textsc{ii}. 
 Modelling levels close to the continuum energy can
 provide a performance hit in macro-atom mode, but is necessary
 when modelling recombination lines from excited 
 upper levels. In quasar models (chapter 5) 
 this is not as important, and the
-plasma is generally more ionized. There, a 10 level hydrogen atom was used and
-He~\textsc{i} was treated with only the ground state for stability -- this simplification
+plasma is generally more ionized. There, a 10-level hydrogen atom was used and
+He~\textsc{i} was treated with only the ground state -- this simplification
 had no effect on the temperature structure of the wind or emergent spectrum.
 
 \subsection{Photoionization Cross-sections}
 
-Photoionization cross-sections are from \textsc{Topbase} \citep{cunto1993} and \cite{vfky}.
+Photoionization cross-sections are from \textsc{Topbase} \citep{cunto1993} and from 
+\cite{vfky}.
 Where possible, I use \top\ photoionization cross-sections. For macro-atoms,
 these cross-sections are partial and represent the cross-section for a photoionization
 from a given {\em level}. We neglect photoionizations to excited configurations
@@ -1107,10 +1119,13 @@ of the cross-section at the maximum energy, and extrapolating to $100$~keV.
 In some cases, the slope near the maximum energy was anomalous 
 due to resonances or similar structure in the cross-section, or possibly
 simply due to unknown problems in the \top\ calculations. These
-cases were identified by eye, and instead a $\nu^{-3}$ extrapolation
-was applied. The results of this extrapolation on the soft X-rays in an AGN model
+cases were identified by eye and a $\nu^{-3}$ extrapolation
+was then applied instead. 
+The results of this extrapolation on the soft X-rays in an AGN model
 are shown in figure~\ref{fig:xs}. Where previously there was a sharp,
-unphysical edge, there is now a smooth recovery to an X-ray 
+unphysical edge due to the lack of high energy 
+($\nu \gtrsim 10^{18}~\mathrm{Hz}$) data, 
+there is now a smooth recovery to an X-ray 
 power law we expect. I also manually adjusted the threshold energies in some
 cases to match the more accurate values from \cite{vfky}.
 
@@ -1206,7 +1221,7 @@ results.
 the emergent spectrum and ionization conditions in nebulae and other plasma
 environments. As a result, it uses many of the same techniques as \py\
 in order to compute ionization states, level populations and heating and cooling
-rates, and represents an excellent comparison tool. \py\ has been tested extensively
+rates. It thus represents an excellent benchmarking tool. \py\ has been tested extensively
 against \cld\ in the past; some of these successful
 tests can be found in H13 and LK02.
 

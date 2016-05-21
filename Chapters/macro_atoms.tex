@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Macro-atoms}
-
+\label{sec:matoms}
 {\sl The macro-atom scheme was created by Leon Lucy and is outlined in 
 his 2002/03 papers. It was implemented in \py\ by Stuart Sim, initially
 for the study of recombination lines in YSOs (SDL05).
@@ -15,7 +15,7 @@ for the study of recombination lines in YSOs (SDL05).
 has shown that it is possible to calculate the emissivity of a gas in
 statistical equilibrium without approximation for problems with large departures
 from LTE.
-This `macro-atom' scheme allows for all possible transition paths from a given level,
+His `macro-atom' scheme allows for all possible transition paths from a given level,
 dispensing with the two-level approximation, and
 provides a full non-LTE solution
 for the level populations based on Monte Carlo estimators. The macro-atom
@@ -39,9 +39,9 @@ a level i then the rates at which the level $j$ absorbs and emits radiant energy
 are given by
 \begin{equation}
  \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and} \;\;\;
-\;\;  \dot{E}_{i}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
+\;\;  \dot{E}_{j}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; .
 \end{equation}
-Where I have adopted Lucy's convention in which the subscript 
+Here, I have adopted Lucy's convention, in which the subscript 
 $\ellp$ denotes a summation over all lower states ($\ell<j$), and
 $\up$ a summation over all upper states ($u>j$).
 Similarly, the rates corresponding to {\em kinetic} (collisional)
@@ -56,9 +56,9 @@ ${\cal R}_{\ellp j}  = R_{\ellp j} + C_{\ellp j}$.
 If we now impose statistical equilibrium
 %
 \begin{equation}
- ({\cal R}_{\ellp j}-{\cal R}_{j \ellp})+({\cal R}_{\up j}-{\cal R}_{j\up})=0 \;\;\;.
+ ({\cal R}_{\ellp j}-{\cal R}_{j \ellp})+({\cal R}_{\up j}-{\cal R}_{j\up})=0 \;\;\;,
 \end{equation}
-we can then obtain 
+we obtain 
 \begin{eqnarray}
  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{j\up}\epsilon_{j}+
  {\cal R}_{j \ell}\epsilon_{\ellp}  \nonumber \\  
@@ -90,8 +90,8 @@ included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
 \subsection{Transition Probabilities}
 
 Having interpreted equation~\ref{eq:matom_SE} in a {\em stochastic} way,
-I can now construct a Monte Carlo scheme, following L02.
-A macro-atom in state $j$ always has a finite probability of deactivating
+we can now construct our Monte Carlo scheme, following L02.
+A macro-atom in state $j$ always has a finite probability of `deactivating'
 radiatively or collisionally:
 \begin{equation}
 p_{j}^{R} = \dot{E}_{j}^{R} / D_j \;\;\;\;\; {\rm and} \;\;\;
@@ -145,8 +145,8 @@ the bound-bound excitation rate, ${\cal R}_{ju}$, in an ion is given by
 {\cal R}_{ju} = B_{ju} n_j J_{est} + q_{ju} n_j n_e,
 \label{eq:rad_rate}
 \end{equation}
-where $u$ is now a specific upper level and $q_{ju}$ is the collisional
-rate coefficient (see section~\ref{sec:coll}).
+where $u$ is now a specific upper level, and $q_{ju}$ is the collisional
+rate coefficient (see section~\ref{sec:coll}). The quantity
 $J_{est}$ is the Monte Carlo estimator for the mean intensity 
 impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
 given by \citep{sim2004}
@@ -158,9 +158,9 @@ is the line frequency, $dv/ds$ is the velocity gradient and
 $\tau_s$ is the Sobolev optical depth.
 The sum is over all photons that come into resonance with the line,
 and thus represents an integral over solid angle.
-This is essentially the MC estimator form of $\beta_{uj}\bar{J}_{uj}$, and differs
-from the estimator in equation~(20) of L02 as 
-there is no assumption of homologous flow or symmetric escape probabilities.
+This is essentially the MC estimator form of $\beta_{uj}\bar{J}_{uj}$, and
+reduces to the estimator in equation~20 of L02 
+in the limit of homologous flow or symmetric escape probabilities.
 The corresponding de-excitation rate is then 
 \begin{equation}
 {\cal R}_{uj} = \beta_{ju} A_{uj} n_u + B_{uj} n_u J_{est} +
@@ -180,7 +180,7 @@ $\kappa$, are
 \end{equation}
 Here, $q_{j \kappa}$ is the collisional ionization rate coefficient, 
 $\gamma_{j \kappa}$ is the photoionization rate
-from $j \rightarrow \kappa$ and $\alpha^{st}_{\kappa j}$ is the stimulated recombination
+from $j \rightarrow \kappa$, and $\alpha^{st}_{\kappa j}$ is the stimulated recombination
 coefficient. This is included as a negative photoionization term rather 
 than a positive recombination term as in L03, which requires that there are
 no population inversions (see section~\ref{sec:numerical_matom}). 
@@ -206,7 +206,7 @@ neglected.
 \subsubsection{Collision Strengths}
 \label{sec:coll}
 
-The bound-bound collisional rate coefficient $q_{lu}$ is calculated from the
+The bound-bound collisional rate coefficient, $q_{ju}$, is calculated from the
 \cite{vanregemorter} approximation, given by
 \begin{equation}
 q_{ju} = 2.388 \times 10^{-6}~\lambda_{uj}^3~A_{uj}~g_u~\bar{g},
@@ -214,10 +214,10 @@ q_{ju} = 2.388 \times 10^{-6}~\lambda_{uj}^3~A_{uj}~g_u~\bar{g},
 \end{equation}
 where $\lambda_{uj}$ is the wavelength of the transition and $\bar{g}$ is 
 an effective gaunt factor of order unity.
-The inverse rate can just be calculated by considering detailed balance, 
+The inverse rate is calculated by considering detailed balance, 
 such that
 \begin{equation}
-q_{uj} = q_{ju} \frac{g_u}{g_j} \exp \left( \frac{h \nu_{uj}}{k T_e} \right)
+q_{uj} = q_{ju} \frac{g_u}{g_j} \exp \left( \frac{h \nu_{uj}}{k T_e} \right).
 \label{eq:vanregemorter2}
 \end{equation}
 Using equation~\ref{eq:vanregemorter} means that collisions between radiatively
@@ -242,8 +242,8 @@ q_{j\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{j\kappa} (\nu_{\kappa
 \end{equation}
 where $\sigma_{j\kappa} (\nu_{\kappa j})$ is the photoionization cross-section 
 at the threshold energy.
-$\bar{g}_{i}$ is an effective gaunt factor for ion $i$ and is approximately
-equal to $0.1,0.2,0.3$ for $Z=1,2$ and $>2$ respectively,
+The effective gaunt factor for ion $i$, $\bar{g}_{i}$, is approximately
+equal to $0.1,0.2,0.3$ for $Z=1,2$ and $>2$, respectively,
 where $Z$ is the atomic number. Note that the use of this estimator
 implies a $\nu^{-3}$ shape to the photoionization cross-section,
 which is only strictly true for for hydrogenic ions.
@@ -254,7 +254,7 @@ q_{\kappa j} = q_{j\kappa} \left( \frac{n_j}{n_e n_\kappa} \right)^*_{T_e}.
 \label{eq:qrecomb}
 \end{equation}
 For numerical reasons, the above two expressions are combined in \py\ where 
-possible, to avoid multiplying two exponentials together.
+possible, in order to avoid multiplying two exponentials.
 
 
 
@@ -265,12 +265,12 @@ possible, to avoid multiplying two exponentials together.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Macro-atom estimators}
 \label{sec:estimators}
-To be able to solve the above rate equations and compute the transition 
+In order to solve the above rate equations and compute the transition 
 probabilities, it is necessary to construct estimators for the various properties
-of the radiation field that appear in said equations. This is done
+of the radiation field that appear in the macro-atom rate equations. This is done
 by converting integrals over the radiation field into summations over 
 $r$-packets passing through a cell. This represents the stochastic nature of
-a MC simulation, and is by no means unique to the macro-atom formalism.
+a MC simulation and is by no means unique to the macro-atom formalism.
 The first step is to apply the energy-density argument of \cite{lucy1999radeq},
 which gives, for a time-independent code
 \begin{equation}
@@ -285,18 +285,18 @@ The estimator for the photoionization rate is
 \gamma_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
 \frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}~\Delta s
 \end{equation}
-and for the stimulated recombination rate is
+and that for the stimulated recombination rate is
 \begin{equation}
 \alpha_{\kappa j}^{st} =\left( \frac{n_j}{n_e n_\kappa} \right)^*_{T_e}
 \frac{1}{V} \sum_i^{\mathrm{photons}} 
 \frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}
 ~\exp(-h\nu/kT_e)~\Delta s,
 \end{equation}
-where $\sigma_{l\kappa} (\nu)$ is the photoionization cross-section for this transition.
-We also need to define modified rate coefficients which 
-are the rates at which bound-free transitions add energy to and remove energy from 
+where $\sigma_{j\kappa} (\nu)$ is the photoionization cross-section for this transition.
+We also need to define modified rate coefficients to represent
+the rates at which bound-free transitions add energy to, and remove energy from, 
 the radiation field. These are required for photoionization, 
-spontaneous recombination and stimulated recombination, and are given by
+spontaneous recombination and stimulated recombination and are given by
 
 \begin{equation}
 \gamma^E_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
@@ -318,12 +318,11 @@ spontaneous recombination and stimulated recombination, and are given by
 \end{equation}
 The rate at which recombinations convert
 thermal {\em and} ionization energy into radiant energy is then
-$\alpha^E h\nu_{\kappa j} n_\kappa n_e$, where $h \nu_{\kappa j}$ is the potential of the 
-bound-free transition, or the energy difference between continuum $\kappa$ and 
-the level $j$ the electron is recombining too. 
+$\alpha^E h\nu_{\kappa j} n_\kappa n_e$, where $h \nu_{\kappa j}$
+the energy difference between the continuum state $\kappa$ and 
+the level $j$ the electron is recombining into. 
 The amount of this energy which is removed from the thermal pool
-therefore needs a quantity $\alpha_{\kappa j} h\nu_{\kappa j} n_\kappa n_e$ subtracted from it,
-giving the bound-free cooling estimator
+therefore given by the estimator
 \begin{equation}
 \cc_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} 
 \left[ (\alpha^E_{\kappa j} + \alpha^{st,E}_{\kappa j} - \alpha_{\kappa j} - \alpha^{st}_{\kappa j}) 
@@ -334,10 +333,10 @@ n_e h\nu_{\kappa j} V,
 where the sum is over all the macro-atom bound-free transitions ($j\rightarrow\kappa$) 
 in the simulation, set by
 the number of photoionization cross-sections. 
-For bound-free heating, we write a similar expression. The rate of at which
-a level $l$ absorbs energy by bound-free 
+For bound-free heating, a similar expression can be derived. The rate at which
+a level $j$ absorbs energy by bound-free 
 transitions is given by $\gamma^E_{j\kappa} h\nu_{\kappa j} n_\kappa n_e$,
-but the amount $\gamma_{j\kappa} h \nu_{\kappa j} n_l$ goes into ionization energy, giving 
+of which $\gamma_{j\kappa} h \nu_{\kappa j} n_l$ goes into ionization energy, leaving 
 \begin{equation}
 \hh_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} \left[ (\gamma^E_{\kappa j} - \gamma_{\kappa j}) n_j + n_\kappa n_e^2 q_{\kappa j} \right] h \nu_{\kappa j} V
 \end{equation}
@@ -365,7 +364,7 @@ transition probabilities, level populations, heating rates and cooling rates in 
 there are still a number of heating and cooling mechanisms that do not involve macro-atoms. 
 
 The free-free cooling estimator is calculated from the emission coefficient
-in equation~\ref{eq:jff} 
+in equation~\ref{eq:jff},
 \begin{equation}
 \cc_{ff} = V \sum_i^{\mathrm{ions}} \int \frac{j_{ff,i}(\nu)}{4\pi} d\nu,
 \end{equation}
@@ -393,11 +392,12 @@ Induced Compton heating is then given by \citep{cloudy2013}
 \hh_{\mathrm{ind~comp}} = n_e \sum_i^{\mathrm{photons}} \frac{J_\nu c^2}{h \nu^3} \frac{h\nu}{m_e c^2} 
 w_i \kappa_{C} \Delta s,
 \end{equation}
-where the first $J_\nu c^2/h \nu^3$ term represents the
+where $J_\nu c^2/h \nu^3$ represents the
 photon occupation number, and $J_\nu$ is either 
 calculated from the spectral model
-described in section~\ref{sec:simple_ionization} or a dilute blackbody.
-The adiabatic cooling rate is derived from $PdV$ work and is given by
+described in section~\ref{sec:simple_ionization} or from a dilute blackbody.
+The adiabatic cooling rate is derived by considering the $PdV$ work done by the flow
+and is given by
 \begin{equation}
 \cc_{a} = k T_e V (\nabla \cdot v) \left(n_e + \sum\limits_{i=1}^{\mathrm{ions}} N_i\right),
 \end{equation}
@@ -416,12 +416,14 @@ chain involving a $k$-packet thus represents interaction with the thermal
 pool of ions and electrons. $k$-packets can be produced either directly
 via a continuum heating process ($r \rightarrow k$), 
 or by the collisional de-activation of a macro-atom 
-($r \rightarrow \ldots \rightarrow A^* \rightarrow k$) according to equation~\ref{eq:deactivate}. 
+($r \rightarrow \ldots \rightarrow A^* \rightarrow k$) in accordance with
+equation~\ref{eq:deactivate}. 
 
 Once they are produced, $k$-packets never move, as they represent the quantised
 thermal energy flow in a finite volume element. Hence, when they are produced,
 their destruction path is decided according to the different cooling mechanisms
-in the plasma. A $k$-packet then has a probability of being destroyed by process $i$ of
+in the plasma. A $k$-packet then has a probability of being destroyed by process $i$ that
+is given by
 \begin{equation}
 p_{i,\mathrm{destruct}} = \cc_i / (\cc_{bf} + \cc_{ff} + \cc_{bb} + \cc_{\mathrm{comp}} + \cc_a).
 \end{equation}
@@ -481,12 +483,12 @@ This is done via matrix inversion. For an element with $n$ ions and $m_i$
 levels in each ion, we construct a square matrix with dimensions 
 $m = \sum_i^n m_i$.
 This element then has a total number density of $N_{elem} = \sum_i^n N_i$.
-To turn the system of rate equations for this element into matrix form, we
+In order to turn the system of rate equations for this element into matrix form, we
 populate the $j$th diagonal of the matrix with the negative of the rate out of
 level $j$, $-({\cal R}_{j\ellp} + {\cal R}_{j\up})$, 
 and populate the off-diagonals $(j,k)$ with the positive rate 
-${\cal R}_{jk}$. These are then multiplied by a vector of the fractional level
-populations, and must equal a vector of zeros, due to statistical equilibrium.
+${\cal R}_{jk}$. These are then multiplied by a vector containing the fractional level
+populations and must equal a vector of zeros, due to statistical equilibrium.
 Our matrix equation is then
 %
 \begin{equation}
@@ -516,7 +518,7 @@ Our matrix equation is then
 \end{equation}
 %
 This problem is not yet soluble, as a valid solution is that all levels 
-could simply have occupation numbers of $0$. To close the problem, we must impose the boundary condition, that the sum of the fractional populations is 1, i.e.
+could simply have occupation numbers of $0$. In order to close the problem, we must impose the boundary condition that the sum of the fractional populations is 1, i.e.
 %
 \begin{equation}
 \sum_i \frac{N_i}{N_{elem}} = 1.
@@ -551,7 +553,7 @@ so that we have
 \end{equation}
 %
 This matrix equation can now be solved.
-To do the actual matrix manipulation, the code uses the GNU 
+The actual matrix manipulation in the code is handled by the GNU 
 scientific libraries \citep[GSL;][]{GSL} implementation of
 LU decomposition \citep{turing}. This is a fast and reliable way of
 inverting large matrices that includes error handling and enables
@@ -569,16 +571,16 @@ inversion is present when
 n_u > n_l \frac{g_u}{g_l}.
 \label{eq:pop_inverse}
 \end{equation}
-This can cause clear problems, for example, with the inclusion
-of the stimulated recombination rate as a negative photoionization
-term. Inspection of equations~\ref{eq:einstein_relations} 
+This can cause problems, for example, with the inclusion
+of stimulated recombination rates as negative photoionization
+terms. Inspection of equations~\ref{eq:einstein_relations} 
 and \ref{eq:nlte_rul} reveals that a negative
 excitation rate would be obtained in this situation.
 
-To prevent this problem, the level populations are `cleaned' 
-after calculation, as suggested by L03. 
+In order to prevent this problem, the level populations are `cleaned' 
+after each matrix calculation, as suggested by L03. 
 This is done by cycling through the levels
-after the above calculation has been carried our and checking if
+after the calculation has been carried out and checking if
 condition~\ref{eq:pop_inverse} is ever satisfied. If it is, then
 the upper population is simply set to a value just below this limit.
 This is only necessary when there is a permitted dipole transition 
@@ -586,12 +588,14 @@ between the two levels being compared.
 
 In addition to the population inversion problem, it is also possible to 
 produce singular rate matrixes when photon statistics are poor, 
-particularly in heavily absorbed portions of the wind where photons
-which come into resonance with lines, or are above threshold frequencies,
-may be rare. To deal with this issue, I have written a routine in \py\
+particularly in heavily absorbed portions of the wind. 
+% where photons
+% which come into resonance with lines, or are above threshold frequencies,
+% may be rare. 
+In order to deal with this issue, I have written a routine in \py\
 that checks if the rate matrix is singular and if any anomalous (negative or
 non-finite) populations exist in the solution found. If either of these 
-conditions are met, then the calculation is redone using dilute estimators.
+conditions are met, the calculation is redone using dilute estimators.
 This procedure is also carried out for the simple-atom ionization
 calculation when the rate matrix approach is in use 
 (see section~\ref{sec:simple_ionization}).
