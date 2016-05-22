@@ -160,7 +160,7 @@ typical photon mean free path, and thus the clumps are
 both geometrically and optically thin. This approach 
 allows one to treat clumps only in terms of their volume filling factor, $f_V$, 
 instead of having to specify separately their size and density distributions.
-In this model, $f_V$ is independent of position (see section~4.4).
+In this model, $f_V$ is independent of position.
 The inter-clump medium is modeled as a vacuum,
 although the outflow is still non-porous and axisymmetric.
 This approach therefore assumes that the inter-clump medium
@@ -168,10 +168,10 @@ is unimportant in determing the output spectrum, which
 is expected to be true only when density constrasts are large and
 the inter-clump medium is both very ionized and of low emissivity and opacity.
 The density of the clumps is multiplied by the ``density enhancement'' 
-$D=1/f_V$. Opacities, $\kappa$, and emissivities, $\epsilon$, 
+$D=1/f_V$. Opacities, $\kappa$, and emissivities, $j$, 
 can then be expressed as 
 \begin{equation}
-\kappa = f_V \kappa_C(D);~~\epsilon = f_V \epsilon_C(D).
+\kappa = f_V \kappa_C(D);~~j = f_V j_C(D).
 \end{equation}
 Here the subscript $C$ denotes that the quantity is calculated using the 
 enhanced density in the clump. The resultant effect is that, {\em for fixed temperature},
@@ -230,14 +230,14 @@ state and emergent line emission.
 
 
 \subsection{The Simulation Grid}
-
+\label{sec:sim_grid}
 Using this prescription, I conducted a limited parameter
 search over a 5-dimensional parameter space involving the 
-variables $r_{min}$, $\theta_{min}$, $f_V$, $\alpha$ and $R_v$.
-The grid points are shown in Table 1.
+variables $r_{\mathrm{min}}$, $\theta_{\mathrm{min}}$, $f_V$, $\alpha$ and $R_v$.
+The grid points are shown in table~\ref{grid_table}.
 The aim here was to first fix $M_{BH}$ and $\dot{M}$ to their H13 values,
 and increase $L_X$ to $10^{45}$~erg~s$^{-1}$ (a more realistic value for a 
-quasar of $10^9M_\odot$ and an Eddington fraction of $0.2$; see section~\ref{sec:xray}).
+quasar of $10^9~M_\odot$ and an Eddington fraction of $0.2$; see section~\ref{sec:xray}).
 
 These models were then evaluated based on 
 how closely their synthetic spectra reproduced the 
@@ -246,8 +246,8 @@ following properties of quasars and BALQSOs:
 \begin{itemize}
 \item UV absorption lines 
 with $BI > 0$ at $\sim20\%$ of viewing angles \cite[e.g.][]{knigge2008};
-\item Line emission emerging at low inclinations, with $\mathrm{EW}\sim40$\AA\ in \civline\ \citep[e.g. ][]{shen2011};
-\item H recombination lines with $EW\sim50$\AA\ in \la\ \citep[e.g. ][]{shen2011};
+\item Line emission emerging at low inclinations, with $\mathrm{EW}\sim40$~\AA\ in \civline\ \citep[e.g. ][]{shen2011};
+\item H recombination lines with $EW\sim50$~\AA\ in \la\ \citep[e.g. ][]{shen2011};
 \item  \mg\ and \al\ (LoBAL) absorption features with $BI > 0$ at a subset of 
 BAL viewing angles;
 \item Verisimilitude with quasar composite spectra.
@@ -277,7 +277,7 @@ Parameter & \multicolumn{4}{l}{Grid Point Values}  \\
 \hline \hline 
 $r_{\mathrm{min}}$ 	&	 $60r_{g}$ & $180r_{g}$ & \multicolumn{2}{l}{$300r_{g}$} \\ 
 $\theta_{\mathrm{min}}$ 	& $55^{\circ}$ & \multicolumn{3}{l}{$70^{\circ}$} \\ 
-$R_v$  	        &	 $10^{18}$cm & \multicolumn{3}{l}{$10^{19}$cm} \\ 
+$R_v$  	        &	 $10^{18}$~cm & \multicolumn{3}{l}{$10^{19}$~cm} \\ 
 $\alpha$ 	&	 $0.5$ & $0.6$ & $0.75$ & $1.5$ \\
 $f_V$ 	&	 $0.01$ & \multicolumn{3}{l}{$0.1$}  \\
 \hline 
@@ -303,7 +303,8 @@ further in section~\ref{sec:param_sens}}
 \label{sec:qso_results}
 Here I describe the results from a fiducial model,
 and discuss these results in the context of the criteria 
-presented in section 3.4. The parameters of this model are shown in Table~2.
+presented in section~\ref{sec:sim_grid}. 
+The parameters of this model are shown in table~\ref{wind_param}.
 Parameters differing from the benchmark model of H13 are 
 highlighted with an asterisk. In this section, I examine the physical 
 conditions of the flow, and present the synthetic spectra, before comparing
@@ -328,7 +329,7 @@ $\theta_{\mathrm{min}}$ 	&	 $70.0^{\circ}$ \\
 $\theta_{\mathrm{max}}$ 	&	 $82.0^{\circ}$ \\ 
 %%$\lambda$ 	&	 $0$ \\ 
 $v_{\infty}(r_0)$ 	&	 $v_{\mathrm{esc}}(r_0)$ \\ 
-$R_v$  	        &	 $10^{19}$cm$^*$ \\ 
+$R_v$  	        &	 $10^{19}$~cm$^*$ \\ 
 $\alpha$ 	&	 $0.5^*$ \\
 $f_V$ 	&	 $0.01^*$  \\
 $n_x$ 	&	 $100$  \\
@@ -454,8 +455,8 @@ an {\sl HST} STIS spectrum of the high BALnicity BALQSO
 PG0946+301 (Arav et al. 2000), and an SDSS spectrum of the LoBAL quasar 
 SDSS J162901.63+453406.0, respectively. The dotted line shows a disc
 only continuum to show the effect of the outflow on the continuum level. 
-All the spectra are scaled to the model flux at $2000$\AA, expect for the 
-{\sl HST} STIS spectrum of PG0946+301, which is scaled to $1350$\AA\
+All the spectra are scaled to the model flux at $2000$~\AA, expect for the 
+{\sl HST} STIS spectrum of PG0946+301, which is scaled to $1350$~\AA\
 due to the incomplete wavelength coverage.
 % HST STIS spectrum of PG0946+301 (Arav et al. 2000)
 }
@@ -489,7 +490,7 @@ from highly ionized (yellow) to low ionization (purple) material.
 Synthetic spectra at two viewing angles, 
 this time in frequency space and including the optical band,
 compared to the non-BAL SDSS quasar composite. The spectra are normalised to the flux at 
-$2000$\AA, then an offset of 2 is applied per spectrum for clarity -- the dotted lines show the zero point of $F_\nu / F_{2000}$ in each case.
+$2000$~\AA, then an offset of 2 is applied per spectrum for clarity -- the dotted lines show the zero point of $F_\nu / F_{2000}$ in each case.
 }
 \label{fig:sed}
 \end{figure*}
@@ -498,7 +499,7 @@ $2000$\AA, then an offset of 2 is applied per spectrum for clarity -- the dotted
 Fig.~\ref{fig:uvspec} shows the synthetic spectrum in the UV from the fiducial model. 
 To assess the ability of the synthetic spectra to match real 
 quasar spectra, I also show {\sl Sloan Digital Sky Survey} (SDSS) quasar
-composites from \cite{reichard2003}, normalised to the flux at 2000\AA\
+composites from \cite{reichard2003}, normalised to the flux at 2000~\AA\
 for low inclinations. Unfortunately, the wide variety of
 line profile shapes and internal trough structure in BALQSOs
 tends to `wash out' BAL troughs in composite spectra
@@ -590,17 +591,17 @@ Units are logarithms of values in erg~s$^{-1}$.
 Unlike H13, significant collisionally excited line emission now emerges
 at low inclinations in the synthetic spectra, particular in the \civ\ and \nv\
 lines. Strong \la\ and
-weak He~\textsc{ii}~$1640$\AA\ lines are also observed
+weak He~\textsc{ii}~$1640$~\AA\ lines are also observed
 as a result of the improved treatment of recombination using macro-atoms. 
 In the context of unification, this is a promising result, 
 and shows that a biconical wind can produce significant 
 emission at `quasar-like' angles. To demonstrate this further,
 I show line luminosities and monochromatic continuum luminosities
-from the synthetic spectra in Table~\ref{line_lums}. These are compared to
+from the synthetic spectra in table~\ref{line_lums}. These are compared to
 mean values from a subsample of the SDSS DR7 quasar catalog \citep{shen2011} 
 with BH mass and Eddington fraction estimates similar to the fiducial model values 
 (see caption). The spectra do not contain the strong 
-C~\textsc{iii}]~1909\AA\ line seen in the quasar composite spectra, 
+C~\textsc{iii}]~1909~\AA\ line seen in the quasar composite spectra, 
 but this is due to a limitation of the current treatment of C; semi-forbidden
 (intercombination) lines are not included in this modelling.
 
@@ -656,7 +657,7 @@ from the literature.]
 {
 X-ray ($2$~keV) luminosity of the clumped model (red squares) 
 and the H13 model (blue squares), plotted against monochromatic luminosity 
-at 2500\AA. The points are labeled according to inclination; angles
+at 2500~\AA. The points are labeled according to inclination; angles
 $>70^\circ$ correspond to BALs in this scheme (see figure 4).
 Also plotted are masurements from 
 the COMBI-7 AGN and the BQS samples (Steffen et al. 2006) and the Saez et al. (2012) 
@@ -675,7 +676,8 @@ inclinations.
 
 Fig.~\ref{fig:xray} shows the emergent
 monochromatic luminosity ($L_\nu$) at 2~keV and 
-plotted against $L_\nu$ at $2500$\AA\ for a number of different viewing angles in the model.
+plotted against $L_\nu$ at $2500$~\AA\ 
+for a number of different viewing angles in the model.
 The monochromatic luminosities are calculated from the synthetic spectra and thus include
 the effects of wind reprocessing and attenuation. In addition to model outputs,
 I also show the BALQSO sample of Saez et al. (2012) and luminous AGN and quasar
@@ -765,8 +767,8 @@ effects \citep{goodrich1997,krolikvoit1998}.
 \caption
 [Equivalent widths and BALnicities of some important lines for the quasar wind grid.]
 {
-The EW of the \civ~$1550$\AA\ line at $20^\circ$ plotted against a) the 
-$BI$ of \civ~$1550$\AA\ at $75^\circ$, b) the EW of the \mg~$2800$\AA\ line 
+The EW of the \civ~$1550$~\AA\ line at $20^\circ$ plotted against a) the 
+$BI$ of \civ~$1550$~\AA\ at $75^\circ$, b) the EW of the \mg~$2800$~\AA\ line 
 at $20^\circ$ and c) the EW of \la\ at $20^\circ$. The circles correspond 
 to the simulation grid for two different values of $f_V$, and the fiducial 
 model is marked with an orange star. 
@@ -809,9 +811,10 @@ broad line region.
 \label{sec:ew_in_model}
 
 EW increases with inclination in the fiducial model.
-This trend means that even though significantly denser
-models can match the line EWs fairly well at low inclinations, they will then
-possess overly strong red wings to the BAL P-Cygni profiles at high inclinations.
+This trend means that even though models with
+significantly denser and more strongly irradiated winds
+can match the line EWs fairly well at low inclinations, they will then
+produce overly strong red wings to the BAL P-Cygni profiles at high inclinations.
 The fact that the EW increase in this model are directly related to limb-darkening 
 and foreshortening of the continuum. 
 This appears to contradict observations, which show remarkably uniform emission
@@ -883,10 +886,10 @@ calculate $f_{FWHM}$ for each viewing angle. Fig.~\ref{fig:FWHM}
 shows $f_{FWHM}$ as a function of inclination for the 
 \ha\ emission line in the fiducial model, assuming $R_{BLR}=10^{17}$~cm. 
 The results are compared to predicted values for five Seyfert I galaxies
-from dynamical modelling \citep[][]hereafter P14]{pancoast2014b}, 
+from dynamical modelling \citep[][hereafter P14]{pancoast2014b}, 
 and the Y16 predictions. Y16 designed two models 
-in order to mimic the MCGV95 and \cite{elvis2000} models described in
-section~\ref{sec:wind_models}. 
+in order to mimic those proposed by MCGV95 and \cite{elvis2000}, 
+as described in section~\ref{sec:wind_models}. 
 Note that I have used FWHM of \ha\ rather than \hb\ due to the
 low \hb\ luminosity at some viewing angles. Nevertheless,
 this value should trace $f_{FWHM}$ from \hb\ fairly well.
@@ -904,7 +907,7 @@ Yong et al. 2016 and Pancoast et al. 2014.
 \label{fig:FWHM}
 \end{figure}
 
-At `quasar-like' angles ($0^\circ-60^\circ$, the values from the model presented here 
+At `quasar-like' angles ($0^\circ-60^\circ$), the values from the model presented here 
 agree fairly well with the predictions
 of Y16 from their simpler analysis, suggesting that,
 at least in this specific set-up, 
@@ -913,7 +916,7 @@ the emergent FWHM at those angles. Instead, at low inclinations
 the effect is dominated by velocity projection
 effects. At inclinations looking into the wind radiative transfer
 and shielding effects become important, and the FWHM can actually
-decrease. The similarity to the P14 results suggest 
+decrease. The similarity in the shape of the curve to the P14 results suggest 
 that the behaviour of FWHM is somewhat degenerate with the BLR
 geometry. P14 found a thick disc model for the BLR best reproduced
 the observations, but these results suggest that a wind model can mimic 
@@ -959,7 +962,7 @@ and temperature structure.
 LoBAL line profiles are seen at a subset of viewing angles, and Fe~\textsc{ii}
 absorption is seen at particularly high inclinations. 
 \smallskip
-\item The synthetic spectra show \la\ line and weak He~\textsc{ii}~$1640$\AA\ line
+\item The synthetic spectra show \la\ line and weak He~\textsc{ii}~$1640$~\AA\ line
 as a result of the improved treatment of recombination using macro-atoms. 
 Balmer emission lines and a Balmer recombination continuum are also
 seen in the optical spectrum, but this

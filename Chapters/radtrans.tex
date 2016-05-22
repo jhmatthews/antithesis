@@ -121,7 +121,7 @@ temperature and density. For this to be the case, the principle of
 {\em detailed balance} must also apply, in which every 
 process by which electrons transition in state must be exactly 
 balanced by its inverse process. In LTE, the electron temperature, 
-$T_e$, is equal to the temperature of the radiation, $T_R$, and
+$T_e$, is equal to the temperature of the radiation field, $T_R$, and
 the source function is given by a blackbody, i.e. $S_\nu = B_\nu (T_R)$.
 Three microscopic requirements of LTE also follow \citep{mihalas}:
 
@@ -170,7 +170,7 @@ when high-energy photons create suprathermal electron distributions
 \subsubsection{Dilute Approximation}
 \label{sec:dilute}
 A first step away from LTE is to introduce the dilute approximation. In this case,
-I relax the assumption that $T_R = T_e$, and assume that the mean intensity is given
+we relax the assumption that $T_R = T_e$ and assume that the mean intensity is given
 by a dilute blackbody, i.e. 
 \begin{equation}
 J_\nu = W B_\nu (T_R),
@@ -269,14 +269,16 @@ been expanded on by multiple authors
 
 The Sobolev limit applies when the local bulk velocity gradients in a flow 
 dominate other any thermal broadening. In the presence of these steep
-velocity gradients, one can assume that the interaction of a ray with a particular 
+velocity gradients, one can assume that the interaction of a photon of a given frequency
+with a particular 
 bound-bound transition takes place over a small resonant zone, known as a 
-`Sobolev surface'. The length of this zone is defined by
+`Sobolev surface'. The length of this zone is roughly
 \begin{equation}
-l_s = \frac{v_{th}}{dv / ds},
+l_s \approx \frac{v_{th}}{dv / ds},
 \end{equation}
-where $v_{th}$ is the mean thermal speed of the particles in the flow and 
-$dv / ds$ is the velocity gradient. The Sobolev length is thus always defined
+where $v_{th}$ is the mean thermal speed of the particles in the flow, and 
+$dv_s / ds$ is the velocity gradient along the direction of the ray. 
+The Sobolev length is thus always defined
 both as a function of the position in the flow and the direction of the ray in question.
 It is important that the physical conditions of the plasma do not change on this scale.
 If this is the case, then we can assume that all line interactions for a given 
@@ -284,33 +286,32 @@ frequency will occur at a single `resonant' point. The location at which
 a given photon will interact with a line of frequency $\nu_{ul}$
 is then given, in velocity space, by
 \begin{equation}
-v = c~\left(1 - \frac{\nu_{ul}}{\nu}\right),
+v_s = c~\left(1 - \frac{\nu_{ul}}{\nu}\right),
 \label{eq:resonance}
 \end{equation}
-where the scalar velocity here is $v=\vec{v}\cdot \vec{n}$, where $\vec{v}$
-is the velocity vector of the flow and $\vec{n}$ is the unit vector describing the
-the photon direction. The dot product of the bulk velocity of the plasma
-and the unit vector of the photon direction. The Sobolev optical depth is then
+where the scalar velocity here is $v_s=\vec{v}\cdot \vec{n_s}$, where $\vec{v}$
+is the velocity vector of the flow and $\vec{n_s}$ is the unit vector describing the
+photon direction. The Sobolev optical depth is then
 \begin{equation}
 \tau_S = \frac{\pi q_e^2}{m_e c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{| dv / ds |},
 \label{eq:tau_sob}
 \end{equation}
-where $q_e$ is the charge on an electron, $f_{lu}$ is the oscillator strength of the transition
+where $q_e$ is the electron charge, $f_{lu}$ is the oscillator strength of the transition,
 and $\lambda_{lu}$ is the line wavelength.
-We can see that the physical quantities determining line opacity are therefore 
+We can see that the physical quantities determining the line opacity are therefore 
 the level populations in the plasma, the velocity gradient and the atomic physics
-associated with the bound-bound transition. An obvious consequence of line opacities
+associated with the bound-bound transition. An obvious consequence of the line opacities
 in a resonant zone is that many line interactions may occur if the line is
 optically thick. The more line interactions that occur, the higher the chance
-that an electron will collisionally de-excite and the photon will be absorbed.
+that an electron will collisionally de-excite, and the photon will be absorbed.
 It thus becomes useful to introduce the angle-averaged Sobolev escape probability,
 given by
 \begin{equation}
 \beta_{ul} = \int \frac{1 - \exp(\tau_S)}{\tau_S} d\Omega,
 \label{eq:beta_sob}
 \end{equation}
-where here I will use the approximate form by taking an appropriate
-average, $<\tau_S>$, for the Sobolev optical depth, giving 
+which can be approximated by taking an appropriate
+average, $<\tau_S>$, of the Sobolev optical depth, giving 
 \begin{equation}
 \beta_{ul} = \frac{1 - \exp(-<\tau_S>)}{<\tau_S>}.
 \label{eq:beta_sob}
@@ -408,7 +409,7 @@ First, the user specifies the photon sources,
 geometry and kinematics of the system, normally with a similar parameterisation
 to the SV93 model described in section~\ref{sec:sv93_model}. 
 The code can operate with a number of different coordinate systems 
-(1D, spherical polar, cylindrical), but in this work I use only cylindrical coordinates.
+(e.g. spherical polar, cylindrical), but in this work I use only cylindrical coordinates.
 In this case, the outflow is discretised into a $n_x \times n_z$ logarithmic grid with 
 user-specified dimensions. The co-ordinates, $(x_i, z_i$), 
 of the corner of the $i$th cell are then given by
@@ -579,19 +580,21 @@ The free-free opacity is calculated from Kirchhoff's law,
 % \frac{Z_i^2 q_e^6}{m_e^2 hc} \left(\frac{m_e}{kT_e}\right)^{1/2}~
 %  \nu^{-3} [1 - \exp(-h\nu/kT_e)].
 % \end{equation}
-The electron scattering opacity is 
+These opacities are all used in the heating and cooling estimators 
+introduced in section~\ref{sec:estimators}.
+For radiative transfer purposes, electron scattering is treated in the Thomson
+limit 
 \begin{equation}
 \kappa_{es} = \sigma_T n_e.
 \end{equation}
-These opacities are all used in the heating and cooling estimators 
-introduced in section~\ref{sec:estimators}. In addition the
-Compton opacity is required in order to estimate the Compton heating effect on the plasma.
-The Compton opacity is given by
+However, for heating and cooling balance the electron scattering opacity 
+in the Compton limits is used in order to estimate the Compton heating and cooling 
+effect on the plasma. The Compton opacity is given by
 \begin{equation}
 \kappa_{C} = \sigma_{KN} (\nu) n_e,
 \end{equation}
 where $\sigma_{KN} (\nu)$ is the cross-section computed 
-from the Klein-Nishina formula \citep{klein-nishina}, and unlike $\sigma_T$
+from the Klein-Nishina formula \citep{klein-nishina} and, unlike $\sigma_T$,
 is frequency dependent. Compton opacity is not included in the actual radiative transfer 
 in the simulations presented in this thesis, but is included in the heating and 
 cooling balance (see section~\ref{sec:estimators}).
@@ -614,7 +617,7 @@ new frequency is
 \nu_f = \frac{\nu_{uj}}{1 - (\vec{v} \cdot \vec{n}_f) / c}.
 \end{equation}
 When we consider that the resonant point is chosen according to 
-equation~\ref{eq:resonance} and that $v=\vec{v} \cdot \vec{n}_f$ in this case,
+equation~\ref{eq:resonance}, and that $v=\vec{v} \cdot \vec{n}_f$ in this case,
 it is clear that the above two equations are equivalent.
 
 
@@ -1233,7 +1236,9 @@ way to parameterise the ionization state of a plasma, and is given by
 U = \frac{4\pi}{n_H c}\int_{13.6{\rm{eV}} / h}^{\infty}\frac{{J_{\nu}d\nu}}{h\nu}.
 \label{eq:ip}
 \end{equation}
-In \py, the ionization parameter in a cell
+Note the difference in form to equation~\ref{eq:xi}, as $U$ is proportionaly to
+the {\em number} of ionizing photons rather than the ionizing luminosity.
+In \py, the ionization parameter in a cell 
 is calculated via a MC estimator, such that
 \begin{equation}
 U_{\py} = \frac{1}{c~V~n_H} \sum_i^{\mathrm{photons}} \frac{w_i \Delta s}{h \nu}.
@@ -1244,23 +1249,24 @@ The calculations are conducted using the same
 incident SEDs, densities and abundances, and \py\ is operated in
 1D, thin shell mode to simulate an optically thin plasma and facilitate
 comparison with \cld. I have shown two separate ionization modes
-from \py: standard mode, in which nothing is treated as a macro-atom
+from \py: (i) standard mode, in which nothing is treated as a macro-atom,
 and the spectral model ionization scheme of H13 is used to calculate
-ion fractions, and hybrid mode in which H and He are treated as 
-macro-atoms and their level populations and ion fractions are solved
+ion fractions; (ii) hybrid mode, in which H and He are treated as 
+macro-atoms, and their level populations and ion fractions are solved
 using MC estimators according to the routine
-described in section~\ref{sec:matom_pops}. Thus, in both 
+described in section~\ref{sec:matom_pops}. In both 
 cases the simple-atoms have their populations calculated using the H13 scheme.
 
 In general, the calculated fractions are in excellent agreement, with a few 
 exceptions. The first problem is with He at low ionization parameters 
 (see Fig.~\ref{fig:he_cloudy}), where there is a discrepancy between 
-the macro-atom solution and the standard mode solution. This is due to 
+the macro-atom solution and the standard mode solution 
+(the latter agrees well with \cld). This is due to 
 differences in the calculated recombination rate. In macro-atom mode, 
 this is done using the Milne relation for all the bound-free jumps that 
 have been identified, which currently includes all transitions from the lower ion but
-ignores transitions to excited states of the upper ion. However, 
-in standard mode \py\ uses the recombination rates from Chianti,
+ignores transitions to excited states of the upper ion. By contrast, 
+in standard mode, \py\ uses the recombination rates from Chianti,
 which represent a weighted sum over all the possible bound-free transitions,
 and are thus in some ways more complete. Neverthless, the macro-atom
 scheme is self-consistent, in that all photoionization pathways have a matching 
@@ -1270,9 +1276,7 @@ $\log U \gtrsim -2$, where the calculation
 agrees well with \cld\ and standard mode.
 The second problem lies in Fe, where there can be quite large differences
 between \py\ and \cld. This is mainly due to Auger ionization and charge 
-exchange and has recently been improved in \py. 
-The effect on quasar models is discussed in chapter 5. 
-
+exchange and is currently been improved in \py, but is not included here.  
 
 \begin{figure}
 \centering
@@ -1339,8 +1343,8 @@ As figure~\ref{fig:h_cloudy}, but for the first 11 ionization stages of Iron.
 
 \subsection{Macro-atom Testing Against \tar\ and Theory}
 
-\tar\ is a 1D photoionization and radiative transfer designed to
-model SNe in a quick and easy python package, and is described in detail by
+\tar\ is a 1D photoionization and radiative transfer code designed to
+model supernovae in a quick and easy python package; it is described in detail by
 \cite{kerzendorfsim}. Although \tar\ is simpler in terms
 of geometry, it has many of the same capabilities of \py\ and 
 thus makes for an excellent comparison. 
@@ -1364,8 +1368,8 @@ The bottom panel shows a comparison of He I level populations
 treated as a macro-atom) between \py\ and \tar\ models.
 The calculation is conducted with physical parameters of $n_e=5.96\times10^4$~cm$^{-3}$,
 $T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$. 
-Considering the two codes use different atomic data and 
-\tar, unlike \py, currently has a 
+Considering that the two codes use different atomic data, and that
+\tar, unlike \py, includes a 
 complete treatment of collisions between 
 radiatively forbidden transitions, the factor of 
 $<2$ agreement is encouraging. 
@@ -1391,17 +1395,19 @@ $T_e=30,600$K, $T_R=43,482$K and $W=9.65\times10^{-5}$.
 
 Fig.~\ref{fig:tardis_spec} shows a comparison 
 between \tar\ and \py\ synthetic spectra from 
-a simple 1D SN model. This comparison was originally presented by
+a simple 1D supernova model. This comparison was originally presented by
 \cite{kerzendorfsim}, but I have since then discovered a bug in the Doppler shifting
 routine in \py, introduced around \py\ 76, which was present in this test. 
 Fixing this issue leads to slightly better agreement between the two codes. 
 The model involves a full computation of the ionization state in the 
-ML93 mode, and, although run in 1D, still tests most of the radiative transfer
+dilute blackbody mode, and, although run in 1D, it 
+still tests most of the radiative transfer
 machinery of the code. The spectra are in good agreement, considering
-there are differences in their excitation treatments and atomic data.
+there are differences in their treatment of excitation and their atomic data.
 This comparison is particular encouraging when we consider
-that \cite{kerzendorfsim} also show comparisons with other SN codes such
-as \textsc{Artis} \citep{kromersim2009}.
+that \cite{kerzendorfsim} also show comparisons with other supernova
+codes such as \textsc{Artis} \citep{kromersim2009}, 
+with similarly good agreement.
 
 \begin{figure}
 \centering
@@ -1428,22 +1434,24 @@ Balmer lines. This means that it is important to treat recombination lines using
 macro-atom approach. The second is that a bound-free continuum activation, 
 in normal terms a photoionization, is followed by a radiative deactivation
 with the frequency chosen assuming a hydrogenic cross-section. 
-This does not well represent reality where recombining
-electrons tend to do so to a variety of levels and so there is a gradual
-redshifting of the radiation field, and also atoms are in general not hydrogenic. 
+This does not well represent reality, where recombining
+electrons tend to do so to a variety of levels, so there is a gradual
+redshifting of the radiation field. In addition, most ions are not hydrogenic. 
 This problem has wider implications than
 the first, as it could mean that the global ionization and temperature structure of the wind
 was affected, if, for example, opacities due to elements such as C, N and O were important
 in determining the ionizing radiation field.
 
-To verify that this is a second order effect, 
-I have shown a test in Fig.~\ref{fig:line_transfer} in I have tested the indivisible
-line transfer mode against weight reduction mode, which does not make this 
-approximation. The model shown is the fiducial BAL quasar model from
+In order to verify that this is a second order effect, 
+I show a test in Fig.~\ref{fig:line_transfer} in which I compare the spectra calculated
+using the indivisible 
+line transfer mode against spectra calculated
+using weight reduction mode (which does not make this 
+approximation). The model shown is the fiducial BAL quasar model from
 H13, where modelling the aborption effect on the ionizing radiation field 
 properly is important due to the stratified
 and self-shielding flow. As long as H and He are treated as macro-atoms, the agreement
-between the modes is good and the ionization structure in the flow is very similar.
+between the modes is good, and the ionization structure in the flow is very similar.
 Many of the differences in the ionization structure in the flow are actually
 caused by the improved treatment of the Balmer and Lyman continua.
 
@@ -1454,7 +1462,8 @@ caused by the improved treatment of the Balmer and Lyman continua.
 [A comparison between weight reduction and line transfer mode.]
 {
 A comparison between weight reduction and line transfer mode. 
-The model
+The model is the H13 fiducial BALQSO model -- agreement is generally
+better for CV models. 
 } 
 \label{fig:line_transfer}
 \end{figure}
@@ -1462,15 +1471,15 @@ The model
 \section{Code Maintenance and Version Control}
 \label{sec:code_maintenance}
 
-As part of the expansion of the team working on \py\, I was responsible
+In an effort to manage the expansion of the team working on \py, I was responsible
 for bringing the code under the auspices of a robust version control system.
 Thanks to these efforts, the code is now hosted on GitHub at 
 \url{https://github.com/agnwinds/python/}. Our team uses a Pull \& Fork model
 for collaborative code development, in which major changes are made in a 
 forked repository before the developer submits a `Pull request' to the main 
-repository. To test the code, we use a combination of Travis CI build tests 
--- run per commit to the upstream repository -- and our own test suite which is 
-run every night on a multi-core server. 
+repository. In order to test the code, we use a combination of Travis CI build tests 
+-- run for each commit to the upstream repository -- and our own test suite, which is 
+run every night on a multi-core server. I have written both of these test suites.
 
 \begin{figure}
 \centering
@@ -1495,14 +1504,14 @@ By way of example, the CV model presented by LK02 takes approximately
 models presented in chapter 4 takes 5651s to complete the same task. 
 
 Fortunately, MCRT codes are intuitively parallelisable, as is the macro-atom
-emissivity calculation described above, as operations on cells or photons can
+emissivity calculation described above, since operations on cells or photons can
 simply be divided up between processors. \py\ is parallelised using an open 
 source Message Passing Interface (MPI) implementation known as 
 Open MPI \citep{openmpi}. This library provides the core functions needed
 in order to share out computing tasks among a series of parallel processors
 with distributed memory. The parallelised elements of \py\ include
-the photon propagation, updating of wind ionization and temperature structure
-and calculation of macro-atom emissivities. As a result, this involves
+photon propagation, updating of wind ionization and temperature structure
+and the calculation of macro-atom emissivities. This involves
 a reasonable amount of book-keeping in that the radiation field estimators 
 must be communicated between threads so as to correctly account for all
 the photons that have interacted with a given cell. I have been responsible

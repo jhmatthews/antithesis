@@ -178,8 +178,8 @@ Outflows are ubiquitous in accreting systems across 10 orders of magnitude in ma
 and there is good evidence that mass-loaded winds are launched from the accretion discs of
 quasars and cataclysmic variables (CVs). Perhaps the most spectacular evidence for accretion disc winds is the blue-shifted, 
 broad absorption lines (BALs) in UV resonance lines, seen in CVs and the 
-BAL quasars. As well as imprinting absorption features on the spectrum, disc winds
-may also affect the line and continuum emission from accreting objects. They thus offer
+BAL quasars. As well as imprinting absorption features, disc winds
+may affect the line and continuum emission from accreting objects. They thus offer
 a natural way to {\em unify} much of the phenomenology of CVs and active galactic nuclei (AGN).
 % When one considers that
 % disc winds are also a possible mechanism for AGN feedback, it becomes clear 
@@ -187,7 +187,7 @@ a natural way to {\em unify} much of the phenomenology of CVs and active galacti
 
 In this thesis, I use a state-of-the-art Monte Carlo radiative transfer (MCRT) 
 code, \py, to conduct a series of simulations designed to test
-simple biconical disc wind models. I provide a detailed outline of
+simple biconical disc wind models. I outline
 the MCRT techniques used, before describing a series of code validation exercises. 
 Having tested my methods thoroughly, I explore whether the winds that are 
 responsible for the UV BALs in high-state CVs could also have an 
@@ -204,7 +204,7 @@ disc wind unification models. In previous efforts, the outflow tended to become
 `over-ionized', and BAL features were only present if the X-ray luminosity was
 limited to around $10^{43}~\mathrm{erg~s^{-1}}$. The outflow also
 failed to produce significant line emission.
-Motivated by thse problems, I introduce a simple treatment of clumping, 
+Motivated by these problems, I introduce a simple treatment of clumping
 and find that it allows BAL features to form in the rest-frame UV at more 
 realistic X-ray luminosities. The fiducial model shows good agreement with AGN X-ray 
 properties and the wind produces strong line emission. 
@@ -222,7 +222,7 @@ Overall, the work presented here suggests that {\em disc winds matter}.
 They not only act as a spectral `filter' for the underlying
 accretion continuum, but may actually dominate the emergent spectrum from 
 accreting objects. As a result, unveiling their driving mechanisms, 
-mass-loss rates, and ionization structure is an important goal for the 
+mass-loss rates and ionization structure is an important goal for the 
 astronomical community. 
 }
 
@@ -397,6 +397,7 @@ BI & Balnicity index\\
 BL & Boundary Layer\\
 BLR & Broad line region\\
 CDF & Cumulative distribution function\\
+CGS & Centimetre-gram-second\\
 CV & Cataclysmic variable\\
 DN(e) & Dwarf nova(e)\\
 EW & Equivalent width\\
@@ -406,6 +407,7 @@ HSE & Hydrostatic Equilibrium \\
 IP & Intermediate polar \\
 IR & Infra-red\\
 ISCO & Innermost stable circular orbit\\
+LHS & Left-hand side\\
 LINER & Low ionization nuclear emission-line region\\
 LMXB & Low-mass X-ray binary\\
 LTE & Local thermodynamic equilibrium\\
@@ -419,6 +421,7 @@ NS & Neutron Star\\
 QSO & Quasa-stellar object / Quasar \\
 % OVV & Optically violent variable galaxy\\
 RL & Radio-loud\\
+RHS & Right-hand side\\
 RIAF & Radiatively inefficient accretion flow\\
 RLOF & Roche lobe overflow\\
 SA & Sobolev approximation\\
@@ -443,20 +446,20 @@ YSO & Young stellar object\\
 \listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
 {
 % Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{10}\ \mathrm{cm\ s^{-1}}$ \\
-Boltzmann Constant & $k$ & $=$ & $1.380\ 648\ 52 \times10^{-16}\ \mathrm{erg\ K^{-1}}$ \\
-Gravitational Constant & $G$ & $=$ & $6.672\ 59\times10^{-8}\ \mathrm{cm^3\ g^{-1}\ s^{-2}}$ \\
-Solar Mass & $M_\odot$ & $=$ & $1.988\ 55 \times10^{33}\ \mathrm{g}$ \\
-Solar Radius & $L_\odot$ & $=$ & $6.957\ 00 \times10^{10}\ \mathrm{cm}$ \\
-Thomson Cross-Section & $\sigma_T$ & $=$ & $6.652\ 458\ 734\times10^{-25}\ \mathrm{cm^{2}}$ \\
-Planck Constant & $h$ & $=$ & $6.626\ 075\ 5\times10^{-27}\ \mathrm{cm^2\ g\ s^{-1}}$ \\
-Stefan Boltzmann Constant & $\sigma$ & $=$ & $5.670\ 367\times10^{-5}\ \mathrm{erg\ cm^{-2}\ K^{-4}\ s^{-1}}$ \\
+Speed of light & $c$ & $=$ & $2.997\ 924\ 58\times10^{10}\ \mathrm{cm\ s^{-1}}$ \\
+Boltzmann constant & $k$ & $=$ & $1.380\ 648\ 52 \times10^{-16}\ \mathrm{erg\ K^{-1}}$ \\
+Gravitational constant & $G$ & $=$ & $6.672\ 59\times10^{-8}\ \mathrm{cm^3\ g^{-1}\ s^{-2}}$ \\
+Solar mass & $M_\odot$ & $=$ & $1.988\ 55 \times10^{33}\ \mathrm{g}$ \\
+Solar radius & $L_\odot$ & $=$ & $6.957\ 00 \times10^{10}\ \mathrm{cm}$ \\
+Thomson cross-Section & $\sigma_T$ & $=$ & $6.652\ 458\ 734\times10^{-25}\ \mathrm{cm^{2}}$ \\
+Planck constant & $h$ & $=$ & $6.626\ 075\ 5\times10^{-27}\ \mathrm{cm^2\ g\ s^{-1}}$ \\
+Stefan-Boltzmann constant & $\sigma$ & $=$ & $5.670\ 367\times10^{-5}\ \mathrm{erg\ cm^{-2}\ K^{-4}\ s^{-1}}$ \\
 Parsec & $pc$ & $=$ & $3.085\ 677\ 6\times10^{18}\ \mathrm{cm}$ \\
 %e & & $=$ & $2.718\ 281\ 828$ \\
 Proton mass & $m_p$ & $=$ & $1.672\ 621\ 58 \times 10^{-24}\ \mathrm{g}$ \\
 Electron mass & $m_e$ & $=$ & $9.109\ 389\ 7 \times 10^{-28}\ \mathrm{g}$ \\  
 Electron volt & eV & $=$ & $1.602\ 176\ 57 \times 10^{-12}\ \mathrm{erg}$ \\
-Charge of an electron & $q_e$ & $=$ & $4.803\ 206\ 8 \times 10^{-10}\ \mathrm{esu}$ \\
+Electron  charge & $q_e$ & $=$ & $4.803\ 206\ 8 \times 10^{-10}\ \mathrm{esu}$ \\
 $\pi$ & & $=$ & $3.141\ 592\ 65$\\
 $e$ & & $=$ & $2.718\ 281\ 828$\\
 }
@@ -496,25 +499,25 @@ $e$ & & $=$ & $2.718\ 281\ 828$\\
 \lhead{\emph{2. Accretion Disc Winds}}  % Set the left side page header to "Contents"
 \input{Chapters/outflows} % Experimental Setup
 
-% \newpage
-% \lhead{\emph{3. MCRT and Ionization}}  % Set the left side page header to "Contents"
-% \input{Chapters/radtrans} % Experimental Setup
+\newpage
+\lhead{\emph{3. MCRT and Ionization}}  % Set the left side page header to "Contents"
+\input{Chapters/radtrans} % Experimental Setup
 
-% \newpage
-% \lhead{\emph{4. The Impact of Accretion Disc Winds on the Optical Spectra of CVs}} 
-% \input{Chapters/cvpaper}  % Experiment 1
+\newpage
+\lhead{\emph{4. The Impact of Accretion Disc Winds on the Optical Spectra of CVs}} 
+\input{Chapters/cvpaper}  % Experiment 1
 
-% \newpage
-% \lhead{\emph{5. Testing Quasar Unification: Radiative Transfer In Clumpy Winds}}  
-% \input{Chapters/agnpaper} % Experiment 2
+\newpage
+\lhead{\emph{5. Testing Quasar Unification: Radiative Transfer In Clumpy Winds}}  
+\input{Chapters/agnpaper} % Experiment 2
 
-% \newpage
-% \lhead{\emph{6. Quasar Emission Lines as Probes of Orientation and Unification}}
-% \input{Chapters/ewpaper} % Experiment 2
+\newpage
+\lhead{\emph{6. Quasar Emission Lines as Probes of Orientation and Unification}}
+\input{Chapters/ewpaper} % Experiment 2
 
-% \newpage
-% \lhead{\emph{7. Conclusions \& Future Work}}
-% \input{Chapters/conclusions} % Conclusion
+\newpage
+\lhead{\emph{7. Conclusions \& Future Work}}
+\input{Chapters/conclusions} % Conclusion
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
