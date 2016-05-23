@@ -186,24 +186,7 @@ Finally, in section~\ref{sec:ew_conclusions}, I summarise the results.
 
 
 \section{Data Sample}
-% {\color{blue}
-% First we need to show that emission line properties of 
-% quasars and BAL quasars really are similar. Do that with histograms 
-% of EWs. We will probably show a mixture of emission lines so we cover
-% allowed dipole, forbidden and intercombination lines. 
 
-% Questions:
-
-% \begin{itemize}
-% 	\item Do we need some kind of test statistic here? e.g. K-S
-% 	\item Perhaps we should derive theoretical quasar distribution with different 
-% 		  inclination cutoffs?
-%     \item Do we want to repeat the analysis of Risaliti et al? 
-%     \item It may make sense to start with theory, derive model distributions and 
-%     	  then test them against real distributions for different physical models
-%     	  and inclination cutoffs?
-% \end{itemize}
-% }
 % \begin{figure*} %fullpage
 % \centering
 % \includegraphics[width=1.0\textwidth]{figures/ewpaper/composites.png}
@@ -288,11 +271,11 @@ templates. This subtraction is not included for \civfull,
 as the Fe emission is less prominent and harder to model. This may lead to
 a systematic overestimate by $\sim0.05$ dex in the \civ\ line EW. 
 The \oiiifull\ line is fitted
-with a Gaussian and the flux ratio with the sister component 
+with a Gaussian. The flux ratio of this line with the sister component 
 of the doublet, \oiiidoublet, is found to agree well with the theoretical
 expectation of around 3, implying a reliable subtraction of broad \hb.
-To mask out the effects of e.g., absorption, on \civ, S11 ignore 
-$3\sigma$ outliers in the fit to the profile. Based on these
+In order to mask out the effects of e.g., absorption, on the \civ\ and \mg\ lines, 
+S11 ignore $3\sigma$ outliers in the fit to the profile. Based on these
 considerations, the S11 catalog makes for a reliable set of EW 
 measurements. This is especially true when making inferences from 
 multiple emission lines, as systematics inherent to individual lines 
@@ -303,22 +286,17 @@ I would ideally construct a large, homogenous dataset of
 {\em HiBAL} and non-BAL quasars, both with \oiiifull\ EWs. Unfortunately,
 the wavelength limits of SDSS do not allow this, and only LoBAL quasars have 
 both BALs and \ewo\ measurements. One of the problems with
-using just LoBAL quasars as tests of unification is that there is evidence 
+using just LoBAL quasars in tests of unification is that there is evidence 
 that they are drawn from a different population than normal quasars. 
 Examples include anomalously 
 high LoBAL fractions in dust-reddened quasar samples \citep{urrutia2009} 
 and infra-red selected samples \citep{dai2012}; 
 although see also \cite{lazarova2012}.
-% in SDSS by cross-matching the S11 catalog with BALs identified in the HST 
-% COS archive.BALs were selected from the COS spectra using the balnicity index, 
-% $BI$, defined in equation~??. HST objects were designated as HiBALS 
-% by satisfying the condition that $BI>0$ in one of CIV, NV, SiIV.
-
 
 Fig. 2 shows histograms of a number of different 
 emission line properties for samples A and B. 
 As discussed by previous authors \cite[e.g.][]{weymann1991}, I find that BAL
-and non-BAL quasars really do seem to possess very similar emission line 
+and non-BAL quasars seem to possess very similar emission line 
 properties. The EW is related to the intrinsic, `face-on' equivalent width,
 $\ew_*$ by the equation
 \begin{equation}
@@ -331,32 +309,33 @@ For a foreshortened disc this is simply $\epsilon(\theta) = \cos \theta$.
 Note that this assumes isotropic line emission, but the effect of line
 anisotropy is discussed in section~\ref{sec:line_aniso}.
 
-Thus, if BAL quasars are viewed from a larger viewing angle on average then one
-would expect them to possess higher EWs, with a broader distribution.
-It is already apparent from Fig.~\ref{fig:ew_hists} that the BALQSO distribution mean 
-is not significantly higher than the non-BAL quasar
-mean -- in fact, in many cases it is lower. This is not expected from a model
-in which the continuum is foreshortened and BAL outflows are at all equatorial.
+Thus, if BALQSOs are preferentially viewed from larger-than-average viewing angles,
+we would expect them to possess higher EWs. We might also expect that the distribution
+of EWs is broader in this case due to the shape of a $\cos \theta$ curve.
+It is already apparent from Fig.~\ref{fig:ew_hists} that the BALQSO distribution means 
+are not significantly higher than the non-BAL quasar
+means -- in fact, in many cases they are lower. This is not expected from a model
+in which the continuum comes from a foreshortened disc, and BAL outflows are at all equatorial.
 This problem is examined further in section~\ref{sec:mc_angular}. 
 First, I will examine the motivations for different forms of \ept\ 
 in AGN and quasars.
 
-\section{The Angular Distribution of Emission from an Accretion Disc and Broad-Line Region}
+\section{The Angular Distribution of Emission from an Accretion Disc}
 \label{sec:disc_agn}
 
 \noindent 
-As introduced in chapter 1, the most widely-used theoretical model for an accretion disc
+As introduced in chapter 1, the most widely-used theoretical model for accretion discs
 is the so-called `$\alpha$-disc' model of SS73. 
 There are a number of well-documented problems when fitting 
 AGN SEDs with SS73 accretion disc models (see section~\ref{sec:disc_continuum}), 
-Despite these problems, \cite{capellupo2015} recently had 
-some success fitting spectra of AGN when the effects of
+Despite these problems, \cite{capellupo2015} succeeded
+fitting $\alpha$-disc models to AGN specta when the effects of
 GR, mass-loss and comptonisation were included.
 In this section, I start by discussing the angular distribution of
-emission from an SS73 disc, before exploring opacity and GR 
+emission from a classic SS73 disc, before exploring opacity and GR 
 effects. In order to do so, I use \agn\
 \citep{hubeny2000,davishubeny2006,davis2007}. I stress that the 
-discussion here is not limited to SS73 discs; the only real condition
+discussion here is not limited to $\alpha$-discs; the only real condition
 for the angular distributions derived here is that the 
 disc is geometrically thin and optically thick.
 
@@ -369,15 +348,16 @@ with height from the central disc plane).
 Foreshortening is a simple $\cos \theta$ geometric effect, 
 where $\theta$ is the inclination with respect to the vertical z axis, which
 is perpendicular to the disc plane.
-Limb darkening, $\eta(\theta)$, is given by
+Limb darkening, $\eta(\theta)$, is usually approximated by a linear dependence
+of the emergent flux on $\cos \theta$, i.e. 
 \begin{equation}
 \eta(\theta) = a \left( 1 + b \cos \theta \right),
 \end{equation}
-where $a$ is a normalisation constant and $b$ governs the strength
-of the limb darkening. $b=3/2$, known as the Eddington approximation
-tends to given good agreement with solar observations 
+where $a$ is a normalisation constant, and $b$ governs the strength
+of the limb darkening. Setting $b=3/2$, known as the Eddington approximation,
+tends to give good agreement with solar observations 
 \citep[e.g.][]{mihalas}. The two effects can be 
-combined to give an angular emissivity function, of
+combined to give a net angular emissivity function of
 \begin{equation}
 \epsilon(\theta) = a \cos \theta \left( 1 + \frac{3}{2} \cos \theta \right).
 \end{equation}
@@ -393,7 +373,7 @@ combined to give an angular emissivity function, of
 Angular variation of continuum luminosity from \agn\ and classical thin disc models.
 The monochromatic continuum luminosities is divided by the monochromatic continuum luminosity
 at $10^\circ$, from \agn\ and classical thin disc models, at three different wavelengths.
-The models are computed for an Eddington fraction of $0.2$ and assume a radiative efficiency of 0.1. 
+The models are computed for an Eddington fraction of $0.2$ and $M_{BH}=10^9~M_\odot$. 
 In each panel I show both Kerr and Schwarzschild \agn\ models, and the classical models are
 for both pure foreshortened discs and foreshortened and limb darkened (LD) discs.
 }
@@ -404,45 +384,31 @@ for both pure foreshortened discs and foreshortened and limb darkened (LD) discs
 \noindent
 In reality, limb darkening is not frequency independent and 
 depends on the bound-free and bound-bound opacities in the disc.
-In addition, it has been shown that GR can `isotropize' the radiation
+In addition, it has been shown that GR light bending can `isotropize' the radiation
 field in XRBs \citep{zhang1997,munozdarias2013}, in some cases overcoming
-foreshortening effects. To assess the impact of GR and disc opacities
+foreshortening effects. In order to assess the impact of GR and disc opacities
 on \ept, I use \agn\ models, which conducts a stellar atmosphere calculation
 to obtain the SED from a series of annuli, before using the \kerrtrans\ code 
 to calculate the emergent SED by ray-tracing along Kerr geodesics.
 Fig.~\ref{fig:agnspec_disc} shows \ept\ as a function of 
-$\theta$ for \agn\ models for minimally and maximally spinning BHs,
-compared to foreshortened and limb-darkened predictions for SS73 models.
-Although the continuum is significantly more isotropic at $500$\AA,
-there is very little effect redward of around $1000$\AA, which is the relevant
+$\theta$ for two \agn\ models for minimally and maximally spinning BHs. 
+The models are characterised by $M_{BH}=10^9~M_\odot$ and an Eddington fraction of $0.2$.
+The angular distribution is fairly insensitive to these choices.
+For comparison, I also show foreshortened and limb-darkened predictions for SS73 models.
+Although the \agn\ continua are significantly more isotropic at $500$~\AA,
+there is very little effect redward of around $1000$~\AA, which is the relevant
 region of \ept\ for \oiiifull, \civline\ and \mgline . 
-In fact, using the foreshortened estimate is 
-the conservative approach in these regimes. I will thus adopt \ept$=\cos \theta$
-for the remainder of this work.
+In fact, using the foreshortened estimate is the conservative (least anisotropic) prescription 
+in these regimes. I will thus adopt \ept$=\cos \theta$ for the remainder of this work.
 
 
-% Including GR, Comptonisation and Opacity Effects
-
-% \subsection{Alternative Continuum Models: Irradiation and Truncated Discs}
-
-% Alternative Models exist...
 
 
-% \subsection{Angular Distribution of Line Emission}
 
-% Lines can be classified according to whether they violate quantum selection rules.
-% In order of decreasing oscillator strength, they comprise
-% dipole permitted transitions, such as \civline\ and \hb, 
-% semi-forbidden or intercombination
-% lines such as \ciiiline, and forbidden lines such as \oiiifull.
-% As the optical depth in a line is proportional to the oscillator strength,
-% we can see that we should expect lines such as \oiiifull\ to be optically
-% thin, whereas dipole transitions may be subject to local line
-% opacity effects. It is worth noting, of course, that all lines can be absorbed by 
-% continuum processes. Ignoring the effect of obscuration, we thus expect all 
-% forbidden lines to be isotropic (i.e. \eptl$={\rm constant}$. 
-% But what about permitted lines? What is their expected angular distribution
-% of emission
+
+
+
+
 
 \section{Predicted EW Distributions Compared to Observations}
 \label{sec:mc_angular}
@@ -453,7 +419,7 @@ for the remainder of this work.
 \citet[][hereafter R11]{risaliti2011} analysed the \ewo\ 
 distribution of 6029 quasars in SDSS DR5. They demonstrated
 that a foreshortened disc and isotropic \oiiifull\ line produces
-a high EW tail to the distribution with a characteristic 
+a high EW tail in the EW distribution, with a characteristic 
 slope of $\Gamma_{EW}=-3.5$. In order to first reproduce their
 result and discuss its implications, I have 
 created a sample according to their selection
@@ -539,12 +505,14 @@ difficult as a more complete sample at high EW is required.
 \centering
 \includegraphics[width=1.0\textwidth]{figures/ewpaper/log_quasar_fit.png}
 \caption
-[The EW distribution of quasars in the R11 sample and the best fit model.]
+[The \ewo\ distribution of quasars in the R11 sample and the best fit model.]
 {
-The EW distribution of quasars in the R11 sample (black points), 
+The \ewo\ distribution of quasars in the R11 sample (black points), 
 with $\sqrt{N}$ errorbars, and the best fit model with a maximum 
 viewing angle of $84^\circ$. The intrinsic Gaussian distribution
-is shown with a dotted line. 
+is shown with a dotted line. The non-BAL plot is equivalent to the non-BAL histogram 
+in the top left panel of Fig.~\ref{fig:ew_hists}, except that it uses linear binning
+and adopts the R11 sample criteria rather than using sample A.
 }
 \label{fig:chi2}
 \end{figure}
@@ -574,12 +542,6 @@ The geometry of the toy model used to carry out the Monte Carlo simulations.
 }
 \label{fig:cartoon}
 \end{figure}
-
-% For LoBALs, \ewo\ measurements are available. This means the 
-% non-BAL quasar \ewo\ distribution can actually be fitted in
-% the LoBAL redshift range, and the expected LoBAL \ewo\ distribution
-% predicted for a grid of $\theta_{min}$ and $\theta_{max}$. To do this,
-% the procedure used to generate
 
 In order to compare the observed distributions to those expected for LoBALs and
 non-BALs I conduct a Monte Carlo simulation similar to
@@ -637,37 +599,6 @@ to place more robust constraints on BAL and non-BAL viewing angles
 and the associated covering factor of the outflow.
 Furthermore, the distribution of \civ\ quasar EW cannot be fit by 
 the same model as the \ewo\ distribution.
-% Despite these difficulties, it is still relatively easy to 
-% demonstrate that the EW distribution in BAL quasars is not well produced by a 
-% model in which the accretion disc is foreshortened 
-% and BAL quasars are viewed from high inclinations. I will show this byconducting
-% a slightly simpler Monte Carlo experiment to ascertain which geometries 
-% best reproduce the observed distributions.
-
-% First, I find that the quasar EW distribution
-% cannot be well-fitted unless quasars are viewed from a wide range of angles,
-% right up to edge-on. This was already known from the analysis in 
-% section~\ref{sec:fitting}. However, now we can see that this region of
-% parameter space is the region most disfavoured when comparing the mock BAL
-% dataset to the observed BAL dataset, and outflows occupying those
-% opening angles would have significantly higher EWs than the non-BAL
-% quasars.
-
-% Although the quasar EW distribution can be fitted with the above 
-% model, neither the true distribution of viewing angles 
-% or the intrinsic `face-on' EW distribution of the emission line in 
-% question is known. If an intrinsic, face-on distribution could be constructed
-% then the Kologomorov-Smirnov test and $\chi^2$ minimization could be used
-% to place constraints placed on BAL and non-BAL viewing angles.
-% Furthermore, the distribution of \civ\ quasar EW cannot be fit by the same
-% model as the \ewo\ distribution.
-% Despite these difficulties, it is still relatively easy to 
-% demonstrate that the EW distribution in BAL quasars is not well produced by a 
-% model in which the accretion disc is foreshortened 
-% and BAL quasars are viewed from high inclinations. I will show this byconducting
-% a slightly simpler
-% Monte Carlo experiment to ascertain which geometries best reproduce the observed
-% distributions. Throughout these simulations, 
 
 \begin{figure*} %fullpage
 \centering
@@ -688,13 +619,22 @@ for the geometry in question.
 \label{fig:contour}
 \end{figure*} %fullpage
 
-An additional limitation is due to the SDSS wavelength coverage
+A key limitation is due to the SDSS wavelength coverage
 and means that only LoBALs can be used when \ewo\ is present (sample A).
 I would suggest that future observational programs might 
 look to build up a large sample of \ewo\ measurements for HiBAL
-quasars. In the mean time, I will turn to the UV broad emission
-lines to examine if the above conclusions also hold
-when examining the properties of the HiBAL quasars in sample B.
+quasars. 
+% In the mean time, I will turn to the UV broad emission
+% lines to examine if the above conclusions also hold
+% when examining the properties of the HiBAL quasars in sample B.
+
+
+
+
+
+
+
+
 
 
 \section{Discussion}
@@ -706,7 +646,7 @@ model in which LoBAL quasars are viewed from equatorial angles
 and the continuum emission originates from
 a foreshortened accretion disc. The EW distributions of 
 \civline\ suggest that a similar conclusion applies to HiBAL quasars.
-This result would be strengthened were 
+This result would only be strengthened were 
 I to include limb darkening. I will now explore how the above results compare to other
 observations of quasars that might probe system orientation, as 
 well as the potential impact of obscuration and line anisotropy
@@ -725,11 +665,11 @@ HiBALs cannot be placed on this space due to the lack of rest-frame
 optical coverage.
 
 Fig.~\ref{fig:bal_ev1} shows the quasar distribution from sample A 
-in EV1 parameter space, with BAL quasars from samples A and B overplotted.
-\cite[][hereafter SH14]{shenho2014} propose 
-that the main inclination driver in the parameter space
+in EV1 parameter space, with LoBAL quasars from sample A overplotted.
+\citet[][hereafter SH14]{shenho2014} propose 
+that the main inclination driver in this parameter space
 is \fwh, and that high inclination sources should thus cluster around
-a diagonal line from the lower right to upper left quadrants. In constrast,
+a diagonal line from the lower right to upper left quadrants. In contrast,
 R11's analysis predicts that high inclination sources should cluster
 around high EW OIII widths. As \ewo\ and \fwh\ are very weakly correlated
 (Spearman's rank coefficient of 0.14), this means they should lie to
@@ -737,23 +677,23 @@ the left of the parameter space. Inspection of the figure clearly
 shows that BAL quasars are not only found in one region of the 
 EV1 parameter space. 
 
-In order to assess this more quantitavely, I have shown contours of 
+In order to assess this more quantitatively, I also show contours of 
 quasar counts overlaid on the scatter plot. The contours correspond
 to the number of objects in each bin, where the bins are of size
 $\Delta R_{{\rm Fe \textsc{ii}}} = 0.2$ and $\Delta$\fwh$=500$km~s$^{-1}$.
 The percentage of quasars falling within the inner contour is 45\%, 
-whereas only 18\% of LoBAL quasars fall in the space. Conversely, 24\% 
-of BAL quasars fall outside the outermost contour compared to 10\% of 
+whereas only 18\% of LoBALQSOs fall in the space. Conversely, 24\% 
+of LoBALQSOs fall outside the outermost contour compared to 10\% of 
 non-BAL quasars. It would therefore appear that BAL 
 quasars are preferentially clustered towards the high-mass and 
 high-inclination end of EV1 space (under the interpretation of SH14).
 This is further illustrated by Fig.~\ref{fig:bal_ev1_bins},
-which shows the LoBAL fraction in the same bins, compared to the 
-mean LoBAL fraction. This is again suggestive of an overdensity 
+which shows the LoBAL fraction in larger bins, compared to the 
+mean LoBAL fraction. This is again suggestive of an overdensity of LoBALQSOs 
 towards the upper right of the parameter space.
 It is also clear that a unification picture in which BAL 
-quasars are viewed exclusively from high inclinations is unlikely,
-under both the R11 and SH14 interpretations. 
+quasars are viewed exclusively from high inclinations is 
+inconsistent both the R11 and SH14 interpretations. 
 
 Larger datasets, preferably including HiBAL quasars with EV1 measurements, 
 are needed in order to properly constrain the EV1 behaviour of BAL quasars.
@@ -781,11 +721,14 @@ The triangles show the HST BAL quasars from sample B.
 \centering
 \includegraphics[width=0.8\textwidth]{figures/ewpaper/ev1_bins.png}
 \caption
-[LoBAL fraction compared to mean LoBAL fraction in Eigenvector 1 space.]
+[LoBAL fraction compared to global LoBAL fraction in Eigenvector 1 space.]
 {
-LoBAL fraction compared to mean LoBAL fraction in Eigenvector 1 space.
+LoBAL fraction compared to global LoBAL fraction in Eigenvector 1 space, in bins
+of $\Delta R_{{\rm Fe \textsc{ii}}} = 1$ and $\Delta$\fwh$=3000$km~s$^{-1}$..
 The contour shows the outermost contour from Fig.~\ref{fig:bal_ev1} for
-reference.
+reference. The text shows $N_{\mathrm{LoBAL}}/N_{\mathrm{non-BAL}}$, 
+where $N_{\mathrm{LoBAL}}$ is the number of LoBALQSOs in the bin and 
+$N_{\mathrm{non-BAL}}$ in the number of non-BAL quasars in the bin.
 }
 \label{fig:bal_ev1_bins}
 \end{figure}
@@ -819,30 +762,32 @@ reference.
 \subsection{Polarisation}
 
 Spectropolarimetry of BAL quasars offer some of
-the best insights into the geometries of BAL outflows, and 
+the best insights into the geometries of BAL outflows and 
 tends to show a few key properties. The first is enhanced 
 polarisation in the BAL troughs themselves \citep{schmidt1999}. 
 This is readily explained by a scattering region unobscured by the
 BAL trough, with the higher polarisation percentage simply due to the
 decreased direct flux. This may also explain the non-black saturation in
-BAL troughts (see section~\ref{sec:balqso_angles}).
+BAL troughs (see section~\ref{sec:balqso_angles}).
 
 The second property 
-is a continuum polarisation percentage of around $2.4$ times greater, 
-on average, than the non-BAL population \citep{schmidt1999}.
-The continuum polarisation percentages of a sample of BAL quasars from 
+is a continuum polarisation percentage that is around $2.4$ times greater, 
+on average, than seen in the non-BAL population \citep{schmidt1999}.
+A histogram of the continuum polarisation percentages of a sample of BAL quasars from 
 \cite{schmidt1999} are compared to the Type I and Type II AGN 
 populations from \cite{marin2014} in Fig.~\ref{fig:bal_polarisation}.
-As we can see, BAL polarisation percentages lie between those of type 1
+The corresponding cumulative distribution function is shown in Fig.~\ref{fig:cdf_pol}.
+These show that BAL polarisation percentages seem to lie between those of type 1
 and type 2 AGN. If type 1 and type 2 objects are viewed from low and high 
-inclinations respectively, as expected from unified models and measured by
-\cite{marin2014,marin2016}, this is suggestive of an intermediate inclination
-for BALQSOs. This enhanced polarisation is also well reproduced by intermediate
-inclination flows in simple radiative transfer models \citep{marin2013}.
+inclinations, respectively, as expected from unified models and suggested by
+\cite{marin2014,marin2016}, this would imply  an intermediate inclination
+for BALQSOs. This enhanced polarisation for BALQSOs, relative to non-BAL systems,
+is also well reproduced by intermediate
+inclination outflows in simple radiative transfer models \citep{marin2013}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{figures/ewpaper/hist_p2.png}
+\includegraphics[width=0.8\textwidth]{figures/ewpaper/hist_p.png}
 \caption
 {
 Histograms of polarisation percentages 
@@ -852,8 +797,23 @@ Marin et al. (2014) AGN sample.
 \label{fig:bal_polarisation}
 \end{figure}
 
-The third property is a polarisation angle of $\gtrsim60^\circ$ with respect
-to the radio jet axis in RL BALQSOs \citep[][and references therein]{brotherton2006}.
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/ewpaper/cdf_p.png}
+\caption
+{
+Cumulative distribution functions of the histograms shown in
+Fig.~\ref{fig:bal_polarisation} for BAL quasars from Schmidt et al. (1999) 
+together with the Marin et al. (2014) AGN sample. The colour-coding and 
+$x$-axis scale are the same as Fig.~\ref{fig:bal_polarisation}. 
+The translucent vertical lines mark the median value in each sample.
+}
+\label{fig:cdf_pol}
+\end{figure}
+
+The third characteristic polarisation property of BALQSOs 
+is a polarisation angle of $\gtrsim60^\circ$ with respect
+to the radio jet axis in RL objects \citep[][and references therein]{brotherton2006}.
 This suggests a higher inclination (compared to non-BAL quasars)
 viewing angle for BALQSOs under the interpretation of a geometric model. Indeed,
 early polarisation studies explained the observations with a polar scattering region,
@@ -863,15 +823,15 @@ the true geometry, the reason for the difference must be understood.
 I would suggest that polarisation predictions are made from wind
 models such as the one I presented in chapter 5, using a similar
 approach to \cite{marin2013}, but considering BALs in more detail. 
-Overall, however, polarisation measurements imply that BAL quasars are viewed
-from higher inclinations if the unified models are correct, and are 
+Overall, however, polarisation measurements seem to imply that BALQSOs are viewed
+from higher inclinations if geometric unification models are correct and are 
 in slight tension with the idea that BAL quasars are viewed from the same range
 of angles as non-BAL quasars.
 
 \subsection{The Effect of Obscuration}
 \label{sec:obscure}
 
-\cite[][hereafter C11]{caccianiga2011} showed that the distribution of \ewo\
+\citet[][hereafter C11]{caccianiga2011} showed that the distribution of \ewo\
 can also be well fitted by an obscuration model. They modelled the 
 \ewo\ distribution using an absorption model based on column densities
 obtained from the {\sl XMM Newton} Bright Serendipitous Source (XBS)
@@ -879,7 +839,7 @@ sample. They use a sample size of 169 objects, and find that AGN with
 column densities of $N_H\gtrsim10^{22}$~cm$^{-2}$ can explain the high
 EW powerlaw tail. 
 
-The column density measurements BAL quasars suggest that obscuration 
+The column density measurements for BAL quasars suggest that obscuration 
 cannot explain the distribution of \ewo\ in quasars. 
 As briefly discussed in chapter 5, BALs generally show
 strong X-ray absorption with column densities of $N_H\gtrsim10^{23}$~cm$^{-2}$
@@ -887,12 +847,13 @@ strong X-ray absorption with column densities of $N_H\gtrsim10^{23}$~cm$^{-2}$
 found all BAL quasars in a sample of 7 had $N_H>10^{22}$~cm$^{-2}$, placing
 them firmly in the EW tail according to the C11 model. This is broadly
 consistent with the mean value of $3.5\times10^{22}$~cm$^{-2}$ from
-\cite{morabito2014}, and would imply that BALQSOs should have significantly
+\cite{morabito2013}, and would imply that BALQSOs should have significantly
 higher EWs if obscuration governs the \ewo\ distribution.
 Of course, only LoBAL quasars had \ewo\ measurements 
-in the sample used here -- this actually strengthens the conclusion as low ionization 
-BALQSOs show even higher column densities approaching Compton-thick values 
-\citep{morabito2011}.
+in the sample used here -- this actually strengthens the conclusion, as low ionization 
+BALQSOs show even higher column densities, approaching Compton-thick values 
+\citep{morabito2011}. This holds regardless of the outflow geometry adopted,
+so I suggest that the obscured model of C11 is ruled out on this basis.
 
 
 \subsection{Line Anisotropy}
@@ -900,24 +861,23 @@ BALQSOs show even higher column densities approaching Compton-thick values
 
 Optically thin lines are isotropic -- the {\em local}
 escape probabilities in each direction are equal due to the 
-low optical depth. 
-When lines are optically thick, the situation is more
+low optical depth. When lines are optically thick, the situation is more
 complex, as local velocity gradients then determine the line 
 anisotropy. Indeed, Keplerian velocity shear has been shown to modify the
 shape of disc-formed emission lines \citep{hornemarsh1986}, and an additional
-radial shear from a wind could caused double-peaked lines
+radial shear from a wind can cause double-peaked lines
 to become single-peaked \citep{MC96,MC97,flohic2012}.
 
 R11 suggested that the broad emission lines trace the disc
 emission in terms of their anisotropy. 
-If this was the case, then we would not expect a difference in the BAL and non-BAL
+If this was the case, we would not expect a difference in the BAL and non-BAL
 quasar EW distributions. However, an emission line would only be purely 
-foreshortened if emitted from a disc with zero velocity shear. 
+foreshortened if emitted by a disc with zero velocity shear. 
 If the lines came from a region subject to
 Keplerian velocity shear then the surface brightness of an optically thick 
 line is \citep{hornemarsh1986}
 \begin{equation}
-J_{\mathrm{thick}} \approx \cos \theta~S_L~\Delta \nu~\sqrt{8 \ln \tau_0},
+J_{\mathrm{thick}}(\theta) \approx \cos \theta~S_L~\Delta \nu~\sqrt{8 \ln \tau_0},
 \end{equation}
 where $S_L$ is the line source function and
 $\tau_0$ is the line centre optical depth, given by
