@@ -551,8 +551,8 @@ The geometry of the toy model used in this simulation is shown in
 Fig.~\ref{fig:cartoon}.
 
 First, A set of isotropic angles is generated.
-If $\theta_{min}<\theta<\theta_{max}$ then the fake object 
-is flagged as a mock BAL. If $\theta<\theta_{min}$ then the 
+If $\theta_{\mathrm{min}}<\theta<\theta_{\mathrm{max}}$ then the fake object 
+is flagged as a mock BAL. If $\theta<\theta_{\mathrm{min}}$ then the 
 fake object is designated a non-BAL, and otherwise
 the object is ignored. Once again, the object also has to 
 survive a selection test based on a arbitrary flux selection limit.
@@ -560,7 +560,7 @@ I then fit the non-BAL distribution using the method described previously.
 For each mock sample, a $\ew_*$ is drawn from the intrinsic gaussian,
 and a mock EW is estimated such that $\ew = \ew_* / \epsilon(\theta)$.
 This process is repeated to build up a mock sample of objects, and 
-carried out for a series of pairs of $\theta_{min}$ and $\theta_{max}$.
+carried out for a series of pairs of $\theta_{\mathrm{min}}$ and $\theta_{\mathrm{max}}$.
 This allows theoretical distributions for BAL and non-BAL quasars
 for a series of different outflow geometries to be derived.
 
@@ -571,7 +571,7 @@ quantities:
 	test statistic, $p_{KS}$, in which the mock BAL sample is compared
 	to the real LoBAL sample.
 	\item The BAL fraction, $f_{BAL}$, is calculated from the 
-	number of objects in the mock sample with $\theta_{min}<\theta<\theta_{max}$.
+	number of objects in the mock sample with $\theta_{\mathrm{min}}<\theta<\theta_{\mathrm{max}}$.
 	\item The $\chi^2/dof$ from the fit to the non-BAL quasar distribution.
 	\item $\Delta \mu_{EW}$, the difference between the mean value of the mock BAL
 	distribution and the mean value of the mock non-BAL distribution.
@@ -703,7 +703,7 @@ extreme inclinations.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{figures/ewpaper/ev1.png}
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/ev1.png}
 \caption
 [Eigenvector 1 for BAL and non-BAL quasars.]
 {
@@ -712,14 +712,16 @@ FWHM of the \hb\ line plotted against the relative
 iron strength, $R_{{\rm Fe \textsc{ii}}}$. The colour coding
 corresponds to the EW of OIII. The dots mark all quasars from
 sample A, while the squares mark those with \mgii\ BALs.
-The triangles show the HST BAL quasars from sample B.
+The shaded triangles show the approximate 
+direction of the expected inclination
+trend under the SH14 and R11 interpretations.
 }
 \label{fig:bal_ev1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{figures/ewpaper/ev1_bins.png}
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/ev1_bins.png}
 \caption
 [LoBAL fraction compared to global LoBAL fraction in Eigenvector 1 space.]
 {
@@ -733,6 +735,16 @@ $N_{\mathrm{non-BAL}}$ in the number of non-BAL quasars in the bin.
 \label{fig:bal_ev1_bins}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/ewpaper/fw_v_ew.png}
+\caption
+[FWHM BLAH.]
+{
+FWHM BLAH
+}
+\label{fig:bal_ev1_bins}
+\end{figure}
 % \begin{figure}
 % \centering
 % \includegraphics[width=1.0\textwidth]{figures/ewpaper/fwhm_hist.png}
