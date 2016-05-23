@@ -343,8 +343,9 @@
           \MakeUppercase\listconstants}{\MakeUppercase\listconstants}}
 \begin{longtable}[c]{#1}#2\end{longtable}\par
 \bigskip
-Throughout this thesis I use the centimetre-gram-second (CGS) system of units unless otherwise
-stated. 
+All constants are given to 6 decimal places, except for the speed of light
+which is exact. Throughout this thesis I use the centimetre-gram-second (CGS) 
+system of units unless otherwise stated. 
     \cleardoublepage
 }
 \newcommand\listnomenclature{Symbols}
