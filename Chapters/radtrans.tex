@@ -46,7 +46,7 @@ I_\nu = \frac{dE}{d\Omega~dt~dA~d\nu},
 \end{equation}
 which has units of ${\rm erg~s^{-1}~Hz^{-1}~sr^{-1}~cm^{-2}}$. The specific
 intensity is the most fundamental quantity of radiative transfer as it describes 
-everything about the radiation field; its time, angular, spatial and frequency
+everything about the radiation field: its time, angular, spatial and frequency
 dependence.
 By successively multiplying by $\cos \theta$ and integrating over solid angle we 
 can obtain the first and second `moments' of the radiation field. These
@@ -71,14 +71,14 @@ is the radiative transfer equation,
 \frac{d I_\nu}{ds} = -\kappa_\nu I_\nu + j_\nu, 
 \label{eq:rte}
 \end{equation}
-where $\kappa_\nu$ and $j_\nu$ are the absorption and emission coefficients respectively.
-If we define the optical depth $d \tau_\nu = \kappa_\nu ds$ this can be recast as
+where $\kappa_\nu$ and $j_\nu$ are the absorption and emission coefficients, respectively.
+If we define the optical depth, $d \tau_\nu = \kappa_\nu ds$, this can be recast as
 \begin{equation}
-\frac{d I_\nu}{d \tau_\nu} = -I_\nu + S_\nu
+\frac{d I_\nu}{d \tau_\nu} = -I_\nu + S_\nu,
 \label{eq:formal_rte}
 \end{equation}
 where $S_\nu=j_\nu/\kappa_\nu$ is the source function. This equation
-can be solved to give the {\em formal solution to the radiative transfer equation}:
+can be solved to give the {\em formal solution to the radiative transfer equation},
 \begin{equation}
 I_\nu = I_{\nu,0}~e^{-\tau_\nu} + \int^{\tau_\nu}_0 S_\nu (\tau^\prime_\nu)~e^{\tau^\prime_\nu-\tau_\nu} d \tau^\prime_\nu.
 \label{eq:rte_solution}
@@ -289,8 +289,8 @@ is then given, in velocity space, by
 v_s = c~\left(1 - \frac{\nu_{ul}}{\nu}\right),
 \label{eq:resonance}
 \end{equation}
-where the scalar velocity here is $v_s=\vec{v}\cdot \vec{n_s}$, where $\vec{v}$
-is the velocity vector of the flow and $\vec{n_s}$ is the unit vector describing the
+where the scalar velocity here is $v_s=\vec{v}\cdot \vec{n}_s$, where $\vec{v}$
+is the velocity vector of the flow and $\vec{n}_s$ is the unit vector describing the
 photon direction. The Sobolev optical depth is then
 \begin{equation}
 \tau_S = \frac{\pi q_e^2}{m_e c}  \left(n_l - n_u \frac{g_l}{g_u} \right) \frac{f_{lu} \lambda_{lu}}{| dv / ds |},
@@ -429,7 +429,7 @@ populations are initially set according to the Boltzmann formula.
 Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
 This is done via an iterative process, by transporting several populations of 
-Monte Carlo energy quanta (`photons' or `$r$-packets') through the outflow.
+MC energy quanta (`photons' or `$r$-packets') through the outflow.
 This process is repeated until the code converges. 
 In each of these iterations (`ionization cycles'), the code records estimators that 
 characterize the radiation field in each grid cell. At the end 
@@ -588,16 +588,14 @@ limit
 \kappa_{es} = \sigma_T n_e.
 \end{equation}
 However, for heating and cooling balance the electron scattering opacity 
-in the Compton limits is used in order to estimate the Compton heating and cooling 
+is treated in the Compton limit, in order to estimate the Compton heating and cooling 
 effect on the plasma. The Compton opacity is given by
 \begin{equation}
 \kappa_{C} = \sigma_{KN} (\nu) n_e,
 \end{equation}
 where $\sigma_{KN} (\nu)$ is the cross-section computed 
 from the Klein-Nishina formula \citep{klein-nishina} and, unlike $\sigma_T$,
-is frequency dependent. Compton opacity is not included in the actual radiative transfer 
-in the simulations presented in this thesis, but is included in the heating and 
-cooling balance (see section~\ref{sec:estimators}).
+is frequency dependent. 
 
 \subsubsection{Doppler Shifts}
 
@@ -792,12 +790,12 @@ ions, which rely on being able to integrate a modelled form of the mean intensit
 The mean intensity is modelled in each band $i$ using either a power law or exponential
 with respective forms of
 \begin{equation}
-J_{\nu,i} = K_{PL}~ \nu^{\alpha_{PL}},~\mathrm{and}
+J_{\nu,i} = K_{PL} \nu^{\alpha_{PL}}~\mathrm{and}
 \end{equation}
 \begin{equation}
-J_{\nu,i} = K_{\exp}~ \exp(-h\nu / k T_{\exp}),
+J_{\nu,i} = K_{\exp} \exp(-h\nu / k T_{\exp}),
 \end{equation}
-where $T_{\exp}$ and $\alpha_{PL}$ are fit parameters, and $K_{PL}$ and $K_{exp}$ 
+where $T_{\exp}$ and $\alpha_{PL}$ are fit parameters, and $K_{PL}$ and $K_{\exp}$ 
 are normalisation constants, which are obtained by ensuring that
 the model reproduces the band limited mean intensity from equation~\ref{eq:j}.
 An example of a modeled spectrum compared to the recorded MC spectrum from
@@ -1107,11 +1105,13 @@ had no effect on the temperature structure of the wind or emergent spectrum.
 \subsection{Photoionization Cross-sections}
 
 Photoionization cross-sections are from \textsc{Topbase} \citep{cunto1993} and from 
-\cite{vfky}.
-Where possible, I use \top\ photoionization cross-sections. For macro-atoms,
+\cite{vfky}. Where possible, I use \top\ photoionization cross-sections. This is because
 these cross-sections are partial and represent the cross-section for a photoionization
-from a given {\em level}. We neglect photoionizations to excited configurations
-of the upper ion. For simple-atoms they are from the ground state.
+from a given {\em level}, and so can be used to specify macro-atom 
+bound-free rates to and from all configurations of the lower ion. 
+I neglect photoionizations to excited configurations
+of the upper ion. For simple-atoms, these cross-sections are included in the ionization
+calculation, by summing over levels, but are not used for a full level populations solution.
 The \top\ cross-sections have two major drawbacks in that they do not 
 extend to particularly high energies and do not always contain accurate threshold
 energies.
@@ -1287,8 +1287,10 @@ exchange and is currently been improved in \py, but is not included here.
 {
 Relative ion fractions as a function of ionization parameter from the
 hybrid macro-atom scheme, with Hydrogen and Helium 
-treated as a full macro-atom, compared
-to both \cld\ and \py\ in simple-atom only mode.  
+treated as a full macro-atom (dotted lines), compared
+to both \cld\ (solid lines) and \py\ in simple-atom only mode 
+(H13, crosses). The colours correspond to the different ionic stages 
+and are labeled for the \cld\ case.
 }
 \label{fig:h_cloudy}
 \end{figure}
@@ -1462,7 +1464,7 @@ caused by the improved treatment of the Balmer and Lyman continua.
 [A comparison between weight reduction and line transfer mode.]
 {
 A comparison between weight reduction and line transfer mode. 
-The model is the H13 fiducial BALQSO model -- agreement is generally
+The model is the H13 fiducial BALQSO model -- agreement is generally even
 better for CV models. 
 } 
 \label{fig:line_transfer}

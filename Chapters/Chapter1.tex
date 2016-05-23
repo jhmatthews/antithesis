@@ -174,8 +174,12 @@ r_B = \frac{G M}{c_S^2},
 \end{equation} 
 where $c_S = c_S(r_B)$ is the sound speed as a function of radius.
 The Bondi radius represents a critical point inside which the material
-is supersonic and will accrete on the free-fall timescale.
-
+is supersonic and will accrete on the free-fall timescale, $\tau_{\mathrm{ff}}$.
+For a cloud of uniform density, $\rho_0$, this is given by 
+\begin{equation}
+\tau_{\mathrm{ff}} = \sqrt{\frac{3 \pi}{32 G \rho_0}}.
+\label{eq:frad}
+\end{equation} 
 When this timescale is long enough, the accreting matter
 can radiate away its potential energy, generating a luminosity $L$. 
 This radiation will exert a force on the electrons at radius $r$ in the cloud, 
@@ -247,10 +251,10 @@ weaknesses of current accretion disc theory.
 Traditional molecular viscosity is insufficient in this regard 
 \citep{pringle1981}. The reasons for this are readily apparent
 when we consider that molecular viscosity operates over the Debye length,
-$\lambda_D$, and at the sound speed, $c_S$. This results in a 
-viscous force density that is much lower 
-than the inertial force density (or in other words,
-the Reynolds number is much greater than 1). The consequence is that
+$\lambda_D$, and at the sound speed, $c_S$. At density $\rho$, this results in a 
+viscous force density ($\sim \rho \lambda_D c_s v_\phi/R^2$) that is much lower 
+than the inertial force density ($\sim \rho v_\phi^2/R$)
+In other words, the Reynolds number is much greater than 1. The consequence is that
 molecular viscosity is dynamically unimportant in accretion flows.
 
 An alternative mechanism for angular momentum transport is therefore
@@ -311,10 +315,10 @@ If we make one further assumption, that the accretion rate is
 constant throughout the disc, we can write down a mass continuity equation
 valid at any radius, given by
 \begin{equation}
-\dot{M} \equiv 2 \pi R V_R \Sigma = \mathrm{constant},
+\dot{M} \equiv 2 \pi R v_R \Sigma = \mathrm{constant},
 \end{equation}
-where $\Sigma$ is the surface density at that radius and $V_R$ is the rotational
-velocity. The angular momentum equation then becomes
+where $\Sigma$ is the surface density at that radius and $v_R$ is the radial `drift' velocity
+towards the compact object. The angular momentum equation then becomes
 \begin{equation}
 \nu^\prime \Sigma = \frac{\dot{M}}{3 \pi} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]\, .
 \label{eq:viscous_angmom}
@@ -398,9 +402,10 @@ angular velocity. The luminosity of the boundary layer is \citep{fkrbook}
 L_{BL} = \frac{1}{2}\frac{GM \dot{M}}{R} \left[1 - \left(\frac{\Omega_*}{\Omega_K(R_*)}\right)\right]^2,
 \end{equation}
 where $\Omega_K(R_*)$ is the Keplerian angular velocity at $R_*$, 
-assuming the thickness
-of the BL is small. When $\Omega_K(R_*) \gg {\Omega_*}$, this reduces to 
-$L_{BL} = 1/2~L_{\mathrm{acc}} = L_{\mathrm{disc}}$.
+assuming the thickness, $b$, of the BL is small. 
+When $\Omega_K(R_*) \gg {\Omega_*}$, this reduces to 
+$L_{BL} = 1/2~L_{\mathrm{acc}} = L_{\mathrm{disc}}$. Any remaining energy
+is imparted to the WD as rotational energy.
 
 In cataclysmic variables, 
 BLs can be approximated with blackbodies and their temperatures estimated

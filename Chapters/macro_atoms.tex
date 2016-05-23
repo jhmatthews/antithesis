@@ -39,9 +39,10 @@ If the quantity $\epsilon_j$ represents the ionization plus excitation energy of
 a level $j$ then the rates at which the level absorbs and emits radiant energy 
 are given by
 \begin{equation}
- \dot{A}_{j}^{R} = R_{\ell j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and} \;\;\;
-\;\;  \dot{E}_{j}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; .
+ \dot{A}_{j}^{R} = R_{\ellp j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and} \;\;\;
+\;\;  \dot{E}_{j}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
 \end{equation}
+where $\epsilon_{j \ellp} = \epsilon_j - \epsilon_\ellp$.
 Here, I have adopted Lucy's convention, in which the subscript 
 $\ellp$ denotes a summation over all lower states ($\ell<j$), and
 $\up$ a summation over all upper states ($u>j$).
@@ -108,8 +109,8 @@ The corresponding jumping probabilities, which describe the probability
 that the macro-atom transitions to a different state while remaining active, 
 are given by
 \begin{equation}
-p_{j\up} = {\cal R}_{ju} \epsilon_{j} / D_j \;\;\;\;\; {\rm and} \;\;\;
-\;\; p_{j\ellp} = {\cal R}_{j\ellp} \epsilon_{\ellp} / D_j.
+p_{ju} = {\cal R}_{ju} \epsilon_{j} / D_j \;\;\;\;\; {\rm and} \;\;\;
+\;\; p_{jl} = {\cal R}_{jl} \epsilon_{l} / D_j.
 \end{equation}
 Note that the jumping probability is always proportional to the energy
 of the lower level, whereas the emission probability is proportional
@@ -117,7 +118,7 @@ to the energy {\em difference} between the levels, as
 $\dot{E}_{j}^{R} = R_{j\ellp} (\epsilon_j - \epsilon_\ellp)$. We can also
 trivially show that the probabilities are correctly normalised, as
 \begin{align}
-p_{j}^{R} + p_{j}^{C} + p_{j\ellp} + p_{j\up} &=
+p_{j}^{R} + p_{j}^{C} + p_{jl} + p_{ju} &=
 (1/D_j) ( {\cal R}_{j\up} \epsilon_{j} + {\cal R}_{j\ellp} \epsilon_{\ellp} +
 \dot{E}_{j}^{R} + \dot{E}_{j}^{C}) \\
 &= 1. \nonumber
@@ -143,16 +144,18 @@ In the framework of the Sobolev escape probability formalism
 (see section~\ref{sec:sobolev}), 
 the bound-bound excitation rate, ${\cal R}_{ju}$, in an ion is given by 
 \begin{equation}
-{\cal R}_{ju} = B_{ju} n_j J_{est} + q_{ju} n_j n_e,
-\label{eq:rad_rate}
+{\cal R}_{ju} = B_{ju} n_j J_{\mathrm{est}} \left(1 - \frac{n_j g_u}{n_u g_j} \right) + q_{ju} n_j n_e,
+\label{eq:rju}
 \end{equation}
 where $u$ is now a specific upper level, and $q_{ju}$ is the collisional
-rate coefficient (see section~\ref{sec:coll}). The quantity
-$J_{est}$ is the Monte Carlo estimator for the mean intensity 
+rate coefficient (see section~\ref{sec:coll}). The $(1 - n_j g_u/n_u g_j)$ term
+is the correction for stimulated emission from equation~\ref{eq:einstein_relations},
+and requires that there are no population inversions (see section~\ref{sec:numerical_matom}).
+The quantity $J_{\mathrm{est}}$ is the Monte Carlo estimator for the mean intensity 
 impinging on the Sobolev region, weighted by an angle-dependent escape probability, 
 given by \citep{sim2004}
 \begin{equation}
-J_{est} = \frac{c}{4 \pi \nu_{uj} V} \sum_{i}^{\mathrm{photons}} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
+J_{\mathrm{est}} = \frac{c}{4 \pi \nu_{uj} V} \sum_{i}^{\mathrm{photons}} w_i \frac{1 - e^{-\tau_{s,i}}}{\tau_{s,i}} \frac{1}{(dv/ds)_i}.
 \end{equation}
 Here $w_i$ is the photon weight (in luminosity units), $\nu_{uj}$
 is the line frequency, $dv/ds$ is the velocity gradient and
@@ -164,20 +167,18 @@ reduces to the estimator in equation~20 of L02
 in the limit of homologous flow or symmetric escape probabilities.
 The corresponding de-excitation rate is then 
 \begin{equation}
-{\cal R}_{uj} = \beta_{ju} A_{uj} n_u + B_{uj} n_u J_{est} +
+{\cal R}_{uj} = \beta_{ju} A_{uj} n_u + B_{uj} n_u J_{\mathrm{est}}  +
 q_{uj} n_u n_e.
-\label{eq:nlte_rul}
+\label{eq:ruj}
 \end{equation}
-In practice, the stimulated emission term is included as a negative contribution
-to the radiative excitation rate, requiring no population inversions 
-(see section~\ref{sec:numerical_matom}).
 The photoionization and collisional ionization rates
 between a lower level, $l$, and the continuum level $\kappa$ 
 (or, in the case of ions with more than one bound electron, 
 the ground state of the upper ion),
 $\kappa$, are
 \begin{equation}
-{\cal R}_{j \kappa}= n_j (\gamma_{j\kappa} - \alpha^{st}_{\kappa j})  + q_{j \kappa} n_j n_e.
+{\cal R}_{j \kappa}= \gamma_{j\kappa} n_j - \alpha^{st}_{\kappa j} n_\kappa n_e   + q_{j \kappa} n_j n_e.
+\label{eq:rjk}
 \end{equation}
 Here, $q_{j \kappa}$ is the collisional ionization rate coefficient, 
 $\gamma_{j \kappa}$ is the photoionization rate
@@ -193,7 +194,7 @@ n_\kappa n_e, \\
 where $\alpha_{\kappa l}$ is the radiative recombination coefficient
 to level $l$, and is given by 
 \begin{equation}
-\alpha_{\kappa j} = 4\pi \Phi^*_{j\kappa} \int^\infty_{\nu_0} 
+\alpha_{\kappa j} = 4\pi \left( \frac{n_j}{n_e n_\kappa} \right)^*_{T_e} \int^\infty_{\nu_0} 
 \frac{\sigma_{j\kappa} (\nu)}{h \nu} \frac{2 h \nu^3}{c^2} 
 \exp \left( \frac{- h \nu}{k T_e} \right) d\nu.
 \label{eq:alpha_sp}
@@ -207,33 +208,32 @@ neglected.
 \subsubsection{Collision Strengths}
 \label{sec:coll}
 
-The bound-bound collisional rate coefficient, $q_{ju}$, is calculated from the
+The bound-bound collisional de-excitation rate coefficient, $q_{uj}$, is calculated from the
 \cite{vanregemorter} approximation, given by
 \begin{equation}
-q_{ju} = 2.388 \times 10^{-6}~\lambda_{uj}^3~A_{uj}~g_u~\bar{g},
+q_{uj} = \bar{g} f_{ju}\frac{8.629\times10^{-6}}{g_u T_e^{1/2}}
+\frac{8 \pi}{\sqrt{3}}~\frac{g_j}{g_u} \frac{\nu_{\mathrm{Ryd}}}{\nu_{uj}}
 \label{eq:vanregemorter}
 \end{equation}
-where $\lambda_{uj}$ is the wavelength of the transition and $\bar{g}$ is 
+where $\lambda_{uj}$ is the wavelength of the transition, $\nu_{\mathrm{Ryd}}$
+is the frequency at $13.6$~eV and $\bar{g}$ is 
 an effective gaunt factor of order unity.
 The inverse rate is calculated by considering detailed balance, 
 such that
 \begin{equation}
-q_{uj} = q_{ju} \frac{g_u}{g_j} \exp \left( \frac{h \nu_{uj}}{k T_e} \right).
+q_{ju} = q_{uj} \frac{g_u}{g_j} \exp \left( \frac{-h \nu_{uj}}{k T_e} \right).
 \label{eq:vanregemorter2}
 \end{equation}
 Using equation~\ref{eq:vanregemorter} means that collisions between radiatively
 forbidden transitions are not taken into account when one 
 splits levels into $l$- and $s$-subshells, as well
 as principal quantum number, $n$ (as done with He~\textsc{i}; 
-see chapter 4). Although this approximation is, in general, 
+for the CV models in chapter 4). Although this approximation is, in general, 
 a poor one, the effect is second order in the physical 
-regime where recombination lines are formed in our models. 
-This is because bound-free processes are dominant in determining 
-level populations and emissivities. I have verified that this 
-is indeed the case in the He~\textsc{i} emission regions in the models
-presented here.
+regime where recombination lines are formed in the models presented here 
+(see section~\ref{sec:coll_bl}). 
 
-The bound-free collision strengths are calculated using equation~(5.79) of
+The bound-free collision strengths are calculated using equation~5.79 of
 \cite{mihalas}. The collisional ionization rate coefficient is
 \begin{equation}
 q_{j\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{j\kappa} (\nu_{\kappa j})~
@@ -301,7 +301,7 @@ spontaneous recombination and stimulated recombination and are given by
 
 \begin{equation}
 \gamma^E_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
-\frac{w_i~\sigma_{j\kappa}{\kappa j}}{h \nu_{\kappa j}}~\Delta s, 
+\frac{w_i~\sigma_{j\kappa}}{h \nu_{\kappa j}}~\Delta s, 
 \end{equation}
 
 \begin{equation}
@@ -574,8 +574,8 @@ n_u > n_l \frac{g_u}{g_l}.
 \end{equation}
 This can cause problems, for example, with the inclusion
 of stimulated recombination rates as negative photoionization
-terms. Inspection of equations~\ref{eq:einstein_relations} 
-and \ref{eq:nlte_rul} reveals that a negative
+terms. Inspection of equations~\ref{eq:rju} 
+and \ref{eq:rjk} reveals that a negative
 excitation rate would be obtained in this situation.
 
 In order to prevent this problem, the level populations are `cleaned' 
