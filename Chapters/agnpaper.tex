@@ -15,7 +15,7 @@ Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., Mangham S. W.
 
 \section{Introduction}
 
-In the earlier chapters I presented the evidence for accretion disc
+In chapters 1 and 2, I reviewed the observational evidence for accretion disc
 winds in quasars and luminous AGN, and showed how they may be responsible
 for more than just the broad absorption lines and P-Cygni profiles
 seen in quasar spectra. In particular, they offer a natural way to
@@ -23,12 +23,12 @@ seen in quasar spectra. In particular, they offer a natural way to
 
 Here, I aim to test that picture using \py, with
 the specific aim of determining whether it is possible to 
-simulate the properties of the spectra of AGN, including BALQSOs, 
+reproduce the key properties of AGN spectra, including those of BALQSOs, 
 using simple kinematic prescriptions for biconical disc winds. 
-Past results have been encouraging; H13
-produced simulated spectra that resembled that of BALQSOs, as long as 
+Past results have been encouraging: H13
+produced simulated spectra that resembled those of BALQSOs, as long as 
 the luminosity of the X-ray source was relatively low, of order 
-\POW{43}{\LUM}, and the mass loss rate was relatively high, of order the 
+\POW{43}{\LUM}, and the mass-loss rate was relatively high, of order the 
 mass accretion rate.  However, at higher X-ray luminosities, the wind was
 so ionized that UV absorption lines were not produced.  In addition, and 
 in part due to limitations inherent in 
@@ -36,12 +36,12 @@ the radiative transfer methods, the model failed
 to produce spectra with strong emission lines at any inclination angle.
 
 Here I attempt to address both of these issues, by
-introducing clumping into \py\ and a more complete
-treatment of H and He into the radiative transfer calculations.
+allowing for clumping in the outflow and a introducing a more complete
+treatment of H and He in the radiative transfer calculations.
 Thus, the simulations presented in this chapter treat H and He as full
-macro-atoms, and model metals as simple-atoms as described extensively
-in chapter 3. In order to correctly model the ionizing spectrum for simple-atoms 
-I dispense with the ML93 modified Saha approach and fully solve the ionization
+macro-atoms and metals as simple-atoms, as described extensively
+in chapter 3. In order to correctly model the ionizing spectrum for simple-atoms,
+I dispense with the dilute blackbody modified-Saha approach and fully solve the ionization
 balance using the spectral modelling approach described 
 in section~\ref{sec:simple_ionization}. Macro-atoms still have their
 ionization and excitation states calculated from MC estimators.
@@ -49,12 +49,12 @@ ionization and excitation states calculated from MC estimators.
 The kinematic model used once again follows the SV93
 prescription, and is described, together with the clumping 
 implementation, in section~\ref{sec:clumpy_wind_model}.
-Section~\ref{sec:qso_results} contains the results from a clumped model, 
-with comparisons to observational data, as well as some discussion. 
-Further discussion and examination of sensitivity to model parameters
-and viewing angle can be found in section~\ref{sec:qso_discuss}, which
+Section~\ref{sec:qso_results} contains the results obtained from the clumped wind model, 
+including comparisons to observational data, as well as some discussion. 
+I discuss the results further, and examine their sensitivity to model parameters
+and viewing angle in section~\ref{sec:qso_discuss}, which
 expands somewhat on the work presented in \cite{M16}.
-Finally, I summarise the findings in section~\ref{sec:qso_conclusions}.
+Finally, I summarise my findings in section~\ref{sec:qso_conclusions}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -66,7 +66,7 @@ Finally, I summarise the findings in section~\ref{sec:qso_conclusions}.
 \label{sec:clumpy_wind_model}
 Here, I once again adopt the SV93 kinematic prescription for a 
 biconical disc wind model described in section~\ref{sec:sv93_model}
-A schematic is shown in Fig.~\ref{fig:cartoon},
+A schematic is shown in Fig.~\ref{fig:cartoon_qso},
 with key aspects marked. The general biconical
 geometry is similar to that invoked by \cite{MCGV95} and 
 \cite{elvis2000} to explain the phenomenonology
@@ -82,7 +82,7 @@ the biconical quasar wind model.]
 A cartoon showing the geometry and some key parameters of
 the biconical quasar wind model.
 }
-\label{fig:cartoon}
+\label{fig:cartoon_qso}
 \end{figure} 
 
 \subsection{Photon Sources}
@@ -339,7 +339,7 @@ $n_z$ 	&	 $200$  \\
 \caption
 [Model parameters for the fiducial quasar model.]
 {Wind geometry parameters 
-used in the fiducial model, as defined in the text and figure 1.
+used in the fiducial model, as defined in the text and Fig.~\ref{fig:cartoon_qso}.
 Parameters differing from the benchmark model of H13 are 
 highlighted with an asterisk.}
 \label{wind_param}
@@ -658,7 +658,7 @@ from the literature.]
 X-ray ($2$~keV) luminosity of the clumped model (red squares) 
 and the H13 model (blue squares), plotted against monochromatic luminosity 
 at 2500~\AA. The points are labeled according to inclination; angles
-$>70^\circ$ correspond to BALs in this scheme (see figure 4).
+$>70^\circ$ correspond to BALs in this scheme (see Fig.~\ref{fig:sightline}).
 Also plotted are masurements from 
 the COMBI-7 AGN and the BQS samples (Steffen et al. 2006) and the Saez et al. (2012) 
 sample of BALQSOs. The dotted line shows the best fit relation for non-BALQSOs 
@@ -781,20 +781,22 @@ with a red star.
 Having selected an individual fiducial model from the simulation grid, it is important
 to briefly explore how specialised this model is, and how small parameter
 changes can affect the synthetic spectra. Fig.~\ref{fig:grid}
-shows the EW at a low inclination, and $BI$ at a high inclination for the simulation
+shows the EW of \la, \civline\ and \mgline\ 
+for a representative low inclination, and the $BI$ for a 
+representative high inclination, as produced by the models in the simulation
 grid. A few conclusions can be drawn from this plot straight away. 
 First, almost all the models with 
-$f_V=0.1$ are over-ionized, and 
+$f_V=0.1$ are over-ionized and 
 fail to produce strong \civ\ BALs or emission lines. Second,  
 it is difficult to significantly increase line emission while
-keeping the luminosity and mass loss rate of the system fixed. 
-I show an additional point on figure 7 corresponding to a 
+keeping the luminosity and mass-loss rate of the system fixed. 
+I show an additional point on Fig.~\ref{fig:grid} corresponding to a 
 model with an order of
 magnitude higher X-ray luminosity and double the mass loss rate. As expected, 
-this results in far higher line EWs, but fails to produce BALs because
+this results in far higher line EWs, but fails to produce BALs, because
 the collisionally excited emission swamps the BAL profile. In addition,
 this model would lie well above the expected $L_{2kev}-L_{2500}$ 
-relation in figure 5. Such a high X-ray luminosity could therefore 
+relation in Fig.~\ref{fig:xray}. Such a high X-ray luminosity could therefore 
 not be the cause of the strong line emission seen in {\em all} Type 1 quasars.
 
 The parameter search presented here is by no means exhaustive, and
@@ -803,36 +805,33 @@ kinematics used. Nevertheless, I suggest that the angular distribution
 of both the line and continuum emission is perhaps the crucial 
 aspect to understand. With this in mind, obtaining reliable orientation 
 indicators appears to be a crucial observational task if we are to
-further our understanding of BAL outflows 
-and their connection, or lack thereof, to the 
+further our understanding of BAL outflows and their connection, or lack thereof, to the 
 broad line region. 
 
 \subsection{Inclination Trends: FWHM and EW}
 \label{sec:ew_in_model}
 
-EW increases with inclination in the fiducial model.
+Broad line EWs increase with inclination in the fiducial model.
 This trend means that even though models with
 significantly denser and more strongly irradiated winds
-can match the line EWs fairly well at low inclinations, they will then
+can match the line EWs fairly well at low inclinations, they also
 produce overly strong red wings to the BAL P-Cygni profiles at high inclinations.
-The fact that the EW increase in this model are directly related to limb-darkening 
-and foreshortening of the continuum. 
-This appears to contradict observations, which show remarkably uniform emission
+This trend with inclination is directly related to limb-darkening 
+and foreshortening of the model continuum. 
+However, it appears to contradict observations, which show remarkably uniform emission
 line properties in quasars and BALQSOs \citep{weymann1991,dipompeo2012b}. 
 
 In order to quantitatively assess how emission lines change with 
 inclination when blue-shifted absorption 
 may affect the line profile, I define the `red wing equivalent width' (EW$_{RW}$) as
 \begin{equation}
-\mathrm{EW}_{RW} = \int_{\lambda_0}^{\lambda^\prime} \left( 1 - \frac{F_\lambda}{F_0} \right) d\lambda
+\mathrm{EW}_{RW} = \int_{\lambda_0}^{\lambda^\prime} \left( 1 - \frac{F_\lambda}{F_0} \right) d\lambda,
 \label{rwew}
 \end{equation}
-where $F_0$ is the continuum flux and the integral is calculated from $\lambda_0$, line centre,
+where $F_0$ is the continuum flux, and the integral is calculated from $\lambda_0$, line centre,
 to a wavelength $\lambda^\prime$ where the flux has returned to the continuum level.
 This quantity is shown as a function of inclination in Fig.~\ref{fig:ew_in_model} for the \civ\ UV line.
-The EW$_{RW}$ expected from isotropic line emission and a foreshortened 
-and limb darkened disc and $1/2$ equivalent widths from 
-\cite{dipompeo2012b} are also shown.
+I also show $1/2$ the EW value, together with the standard deviation, from \cite{dipompeo2012b}.
 
 \begin{figure*}
 \centering
@@ -841,7 +840,8 @@ and limb darkened disc and $1/2$ equivalent widths from
 [EW$_{RW}$ as a function of inclination in the fiducial model.]
 {
 EW$_{RW}$ as a function of inclination in the fiducial model, compared
-to 1/2 EW from the quasar sample of Di Pompeo et al. (2012; D12).
+to 1/2 EW from the quasar sample of Di Pompeo et al. (2012; D12). The shaded region
+corresponds to the standard deviation of the D12 sample.
 }
 \label{fig:ew_in_model}
 \end{figure*}
@@ -856,7 +856,7 @@ I shall explore this question further in chapter 6.
 
 \subsubsection{FWHM and Black Hole Mass Estimates}
 
-In a recent study, \cite[hereafter Y16]{yong2016} used the SV93 wind prescription
+In a recent study, \cite[hereafter Y16]{yong2016} used the SV93 wind prescription to
 assess the variation of full-width at half-maximum (FWHM) of 
 \hb\ (and resultant BH mass estimates)
 with inclination in a disc wind model. 
@@ -872,24 +872,25 @@ M_{BH} = f \frac{\Delta v^2 R_{BLR}}{G},
 \end{equation}
 where $R_{BLR}$ is some appropriate emissivity-weighted radius and is often 
 either assumed, estimated from ionization arguments or calculated from reverberation
-mapping. When using FWHM to estimate the velocity disperson the above
+mapping. When using the FWHM of a broad emission line to estimate the velocity disperson the above
 equation can be rewritten as
 \begin{equation}
 M_{BH} = f_{FWHM}~\left[c~\frac{(FWHM)}{\lambda_0}\right]^2~\frac{R_{BLR}}{G},
 \end{equation}
 where $\lambda_0$ is the central wavelength of the line in question
 and the FWHM is in the same wavelength units.
-In a model such as this the BH mass is known, and determines
+
+In our benchmark disc wind model, the BH mass is known, and determines
 the escape velocities and rotational motions of the outflow. Thus, 
-using a typical radius for line formation in the model it is trivial to 
-calculate $f_{FWHM}$ for each viewing angle. Fig.~\ref{fig:FWHM}
+using a typical radius for line formation in the model, it is trivial to 
+estimate $f_{FWHM}$ for each viewing angle. Fig.~\ref{fig:FWHM}
 shows $f_{FWHM}$ as a function of inclination for the 
 \ha\ emission line in the fiducial model, assuming $R_{BLR}=10^{17}$~cm. 
 The results are compared to predicted values for five Seyfert I galaxies
 from dynamical modelling \citep[][hereafter P14]{pancoast2014b}, 
 and the Y16 predictions. Y16 designed two models 
 in order to mimic those proposed by MCGV95 and \cite{elvis2000}, 
-as described in section~\ref{sec:wind_models}. 
+whose models are described in section~\ref{sec:wind_models}. 
 Note that I have used FWHM of \ha\ rather than \hb\ due to the
 low \hb\ luminosity at some viewing angles. Nevertheless,
 this value should trace $f_{FWHM}$ from \hb\ fairly well.
@@ -898,11 +899,12 @@ this value should trace $f_{FWHM}$ from \hb\ fairly well.
 \centering
 \includegraphics[width=0.8\textwidth]{figures/06-agnpaper/f_factor.png}
 \caption
-[$f_{FWHM}$ as a function of inclination]
+[$f_{FWHM}$ as a function of inclination from the fiducial model.]
 {
 $f_{FWHM}$ as a function of inclination from the fiducial model
-for three different lines, compared to values from
-Yong et al. 2016 and Pancoast et al. 2014. 
+for three different lines. The Yong et al. (2016) 
+predictions from two models, and the Pancoast et al. (2014) modelling results
+for five Seyfert I galaxies are also shown.
 }
 \label{fig:FWHM}
 \end{figure}
@@ -924,7 +926,7 @@ the behaviour of a disc-shaped BLR. Overall, the strong inclination dependence
 of $f_{FWHM}$ strengthens the argument that viewing angle can introduce
 significant uncertainty into virial mass estimates, and that individual
 values for $f_{FWHM}$ should really be used for different objects
-\citep[e.g.][]{kollatschny2011,pancoast2014a,pancoast2014b,shenho2014,brotherton2015,yong2016}.
+\citep[e.g.][]{decarli2008,kollatschny2011,pancoast2014a,pancoast2014b,shenho2014,brotherton2015,yong2016}.
 % The reason for the significantly lower values for \mgii\ is that
 % it is actually formed well inside $R_{BLR}=10^{17}$~cm, highlighting
 % the dangers of using a single BLR radius for BH mass estimates
@@ -989,8 +991,8 @@ line and continuum emission is a crucial question for theoretical models.
 \item There is also a strong dependence on inclination in the FWHM of
 \ha, as found in numerous other studies. The results add to the growing evidence
 that inclination introduces large uncertainties into virial 
-BH mass estimates, and suggest that disc wind models produce similar behaviour in 
-$f_{FWHM}$ to disc-shaped BLR models.
+BH mass estimates, and suggest that disc wind models might produce similar inclination-dependent
+behaviour in $f_{FWHM}$ to disc-shaped BLR models.
 % Furthermore, this is conclusion is independent of the assumed 
 % BLR geometry and size.
 \end{enumerate}

@@ -22,46 +22,80 @@ In the previous chapter, I presented tests of geometric unification
 models using MCRT and photoionization simulations. 
 One of the key results from that analysis is that trends with
 inclination prohibit models with equatorial outflows matching
-observations, as the EW of the emission lines tend
-to increase with inclination. This trend has clear implications for
-the geometries of BAL outflows; the viewing angle may determine many
-of the selection effects at work and must therefore be understood
-before the true covering factor of BAL outflows can be accurately 
-determined. The covering factor and opening angle of the outflow
-are important quantities to measure in order to calculate the
-feedback efficiency \citep[e.g.][]{borguet2012}, 
-and understand the outflow physics \citep[e.g.][]{proga2005}. 
+observations, as the EWs of the broad emission lines tend
+to increase with inclination. This conclusion is strongly dependent 
+on the outflow geometry and suggests that understanding the orientations
+of BALQSOs, or, equivalently, the opening angles of their winds, is crucially
+important if we are to establish the validity of geometric unification
+models. The motivation to measure orientations is not limited to disc wind models; the
+AM85 and UP95 unification schemes described in section~\ref{agn_unification}
+both attempt to explain the diverse behaviour of AGN merely as a function of viewing 
+angle. Orientation indicators therefore also allow us to explore if these models
+adequately explain the type 1/type 2 dichotomy in AGN.
+Furthermore, constraining outflow geometries is not only important 
+for unification. The covering factor and opening angle of the outflow
+are important quantities for estimating the
+feedback efficiency \citep[e.g.][]{borguet2012}, measuring
+the BAL fraction \citep[e.g.][]{krolikvoit1998}
+and understanding the outflow physics \citep[e.g.][]{proga2005}. 
 
 Unlike in galactic accretion disc systems, measuring inclinations
-for quasars and AGN is notoriously difficult, and obtaining 
+for quasars and AGN is notoriously difficult. Obtaining 
 reliable orientation indicators is thus an important observational
-goal for the community. Perhaps as a result of this problem, 
+goal for the community \citep[see e.g.][]{marin2016}. 
+Perhaps as a result of this problem, 
 directly opposing geometries have been proposed for 
-BAL outflows (see section~\ref{sec:balqsos}). Here, I use observational 
-data from the Sloan Digital Sky Survey to constrain the inclinations
-of BAL quasars. Similar attempts have been made previously with
+BAL outflows (see section~\ref{sec:balqsos}). 
+Attempts to constrain the inclinations
+of BALQSOs have been made previously with
 different diagnostics; for example, by considering 
 radio measurements \citep{zhou2006,dipompeo2012a}, 
 polarisation \citep{brotherton2006}
 and emission line properties \citep{dipompeo2012b}.  
 
+One potential way to estimate quasar inclination is by comparing
+the emergent flux of a roughly isotropic emission line to the continuum, which is
+expected to be strongly anisotropic if it is emitted from a geometrically thin, 
+optically thick accretion disc. 
+It follows that, if we can estimate the angular distribution of line and continuum emission,
+the EW of an emission line can act as an orientation indicator. Conversely, if the orientations
+of quasars were well-known then the emission line EW distribution could be used to test models
+for the origin of the UV and optical continuum.
+The variation of EW with inclination is demonstrated neatly by the behaviour 
+of emission lines in high-state CVs, where inclinations are fairly well constrained.
+High-state CVs show a clear trend of increasing line EW with inclination 
+\citep[][see also sections~\ref{sec:NLs} and \ref{sec:modela_spectra}]{hessman1984,patterson1984,echevarria1988,noebauer},
+a trend that is attributed to foreshortening of the disc continuum.
+
+The ideal emission line to use for this method would be one that is completely isotropic,
+i.e. {\em optically thin}. The \oiiifull\ narrow emission line is a strong, forbidden line
+formed in the narrow-line region (NLR) of AGN, and should thus be completely isotropic.
+Any dispersion in the distribution of \oiiifull\ EW (\ewo) must therefore be driven by some combination of
+the intrinsic luminosity \citep{borosongreen} 
+the covering factor/geometry of the NLR \citep{baskin2005} and the 
+inclination of the system. In a recent study, \citet{risaliti2011} showed that 
+the \ewo\ distribution could be well-fitted by a simple model driven purely by disc inclination.
+In this chapter, I apply a similar method in order to provide a fundamental test of
+BAL and non-BAL quasar unification models in which the continuum source is a geomtrically
+thin, optically thick disc. This is motivated by the remarkably similar
+emission line properties of BAL and non-BAL quasars -- a similarity that would not
+be expected from the simplest models in which BALQSOs are viewed from equatorial angles.
+
 This chapter is structured as follows. First, I describe
 the data sample and selection criteria being used. I begin by
 simply examining the distributions of the EW of the \oiiifull\ emission line,
 \ewo, and comparing the BAL and non-BAL quasar distributions. 
-In section~\ref{sec:disc_agn} I review the angular distribution of 
+In section~\ref{sec:disc_agn}, I review the angular distribution of 
 continuum emission one would expect from simple $\alpha$-disc models, 
 as well as exploring more advanced disc models computed
 with \agn. I then use these theoretical 
 angular distributions applied to a simple toy model in 
-section~\ref{sec:mc_angular},
-and conduct MC simulations in an attempt to fit the observed LoBAL and non-BAL
-quasar distributions of \ewo, using a similar approach to 
-\cite{risaliti2011}. I also discuss the broad emission
-line distribution in HiBAL quasars more detail in this section. 
-In section~\ref{sec:discuss_ew} I discuss the results
-in the context of radio and polarisation measurements of AGN, as well
-as exploring the location of BAL quasars in `Eigenvector 1' parameter space.
+section~\ref{sec:mc_angular}, and conduct MC simulations in an attempt to fit 
+the observed LoBAL and non-BAL quasar distributions of \ewo, using a similar approach to 
+\cite{risaliti2011}. In section~\ref{sec:discuss_ew}, I discuss the results
+in the context of radio and polarisation measurements of AGN,
+and explore the location of BAL quasars in `Eigenvector 1' parameter space.
+I also consider the broad emission line distribution in HiBAL quasars in more detail. 
 Finally, in section~\ref{sec:ew_conclusions}, I summarise the results.
 
 % {\bf{\sl{\huge Abstract}}}
@@ -314,7 +348,8 @@ we would expect them to possess higher EWs. We might also expect that the distri
 of EWs is broader in this case due to the shape of a $\cos \theta$ curve.
 It is already apparent from Fig.~\ref{fig:ew_hists} that the BALQSO distribution means 
 are not significantly higher than the non-BAL quasar
-means -- in fact, in many cases they are lower. This is not expected from a model
+means -- in fact, in many cases they are lower. 
+This is not expected from a model
 in which the continuum comes from a foreshortened disc, and BAL outflows are at all equatorial.
 This problem is examined further in section~\ref{sec:mc_angular}. 
 First, I will examine the motivations for different forms of \ept\ 
@@ -490,8 +525,8 @@ clear even at moderate values of EW.
 
 Fig.~\ref{fig:chi2} shows the result of a $\chi^2$ minimization fit 
 to the R11 sample. The best fit is achieved with a maximum angle of 
-$\theta_{1}=84^\circ$ and a narrower intrinsic distribution
-than model 1 of R11. The run of reduced $\chi^2$ with maximum angle
+$\theta_{1}=83.5^\circ$ and a narrower intrinsic distribution
+than model 1 of R11. The run of $\chi^2$ with maximum angle
 is shown in Fig.~\ref{fig:chi2_curve}, where the choice for $\mu_*$
 and $\sigma_*$ is left free in each case. 
 Maximum angles below $\sim80^\circ$ are strongly disfavoured
