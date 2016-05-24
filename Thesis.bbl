@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{{Agol}}{1997}]{agol1997}
+{Agol} E., 1997,
+\newblock Ph.D. thesis,
+  UNIVERSITY OF CALIFORNIA, SANTA BARBARA
+
 \bibitem[\protect\astroncite{{Alexander} et~al.}{2011}]{alexander2011}
 {Alexander} D.~M., {Bauer} F.~E., {Brandt} W.~N., {Daddi} E. et~al., 2011,
   \apj~  738, 44
@@ -88,6 +93,10 @@
 \bibitem[\protect\astroncite{{Boroson} \& {Green}}{1992}]{borosongreen}
 {Boroson} T.~A., {Green} R.~F., 1992,
   \apjs~  80, 109
+
+\bibitem[\protect\astroncite{{Boroson} \& {Meyers}}{1992}]{boroson1992}
+{Boroson} T.~A., {Meyers} K.~A., 1992,
+  \apj~  397, 442
 
 \bibitem[\protect\astroncite{{Brotherton} et~al.}{2006}]{brotherton2006}
 {Brotherton} M.~S., {De Breuck} C., {Schaefer} J.~J., 2006,
