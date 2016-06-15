@@ -129,6 +129,14 @@ In other words, the efficiency of accretion is directly related
 to the {\em compactness}, $M/R_*$, of the central object. 
 Values of compactness and the associated radiative efficiencies 
 for four different compact objects are shown in table~\ref{compact}. 
+The compactness for black holes was calculated using the Schwarzschild radius,
+\begin{equation}
+r_S = \frac{2GM}{c^2},
+\label{eq:eta}
+\end{equation}
+which defines the event horizon of a non-rotating black hole. It is also pertinent
+to define the gravitational radius, $r_G = 1/2~r_S$, which can be useful as
+a characteristic scale for any compact object of mass $M$.
 
 \begin{table}
 \centering
@@ -211,7 +219,7 @@ Clearly, there are many astrophysical situations where one or more
 of these assumptions do not hold.
 For example, the recent outburst of V404 Cyg showed wildly variable
 luminosities on short timescales 
-\citep[see, e.g.,][among many, many ATels]{kuulkers_atel2015,motta_atel2015}, 
+\citep[see, e.g.,][among many, many Astronomer's Telegrams]{kuulkers_atel2015,motta_atel2015}, 
 and in any binary
 or disc dominated system the assumption of spherical symmetry will
 break down. Nevertheless, the Eddington limit provides a good order of magnitude 
@@ -320,7 +328,7 @@ valid at any radius, given by
 where $\Sigma$ is the surface density at that radius and $v_R$ is the radial `drift' velocity
 towards the compact object. The angular momentum equation then becomes
 \begin{equation}
-\nu^\prime \Sigma = \frac{\dot{M}}{3 \pi} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]\, .
+\nu^\prime \Sigma = \frac{\dot{M}}{3 \pi} \left[1 - \left( \frac{R_*}{R} \right)^{1/2} \right]\, .
 \label{eq:viscous_angmom}
 \end{equation}
 The viscous torques throughout the disc cause a local loss of mechanical energy, allowing 
@@ -334,7 +342,7 @@ Here, $D(R)$ is proportional to the derivative of the angular velocity, $\Omega^
 By combining equations~\ref{eq:dissipation1} and \ref{eq:viscous_angmom}, we can show that the 
 viscous dissipation rate is 
 \begin{equation}
-D(R) = \frac{G M \dot{M}}{8 \pi R^3} \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right],
+D(R) = \frac{G M \dot{M}}{8 \pi R^3} \left[1 - \left( \frac{R_*}{R} \right)^{1/2} \right],
 \label{eq:dissipation2}
 \end{equation}
 where we have also set the angular velocity to the Keplerian velocity. 
@@ -357,7 +365,7 @@ effective temperature distribution can be derived by setting
 \end{equation}
 which then gives
 \begin{equation}
-T_{\mathrm{eff}} (R) = T_* \left[1 - \left( \frac{R}{R_*} \right)^{1/2} \right]^{1/4},
+T_{\mathrm{eff}} (R) = T_* \left[1 - \left( \frac{R_*}{R} \right)^{1/2} \right]^{1/4},
 \label{disk_t_profile}
 \end{equation}
 where
@@ -450,7 +458,7 @@ giving the interesting result that rapidly spinning (Kerr) BHs
 are more radiatively efficient than Schwarzschild BHs. A proper relativistic
 calculation of the binding energy at the ISCO gives accretion efficiencies of 
 $\eta_{\mathrm{ISCO}}\approx0.06$ $\eta_{\mathrm{ISCO}}\approx0.4$ for Schwarzschild
-and Kerr BHs, respectively. 
+and Kerr BHs, respectively \citep[e.g.][]{thorne1974}. 
 
 \nocite{narayan2014, thorne1974}
 \begin{figure}
@@ -562,9 +570,9 @@ also experience a degree of pressure broadening.
 [Artists impression of an LMXB and CV.]
 {
 {\sl Credit: Rob Hynes.} 
-Artists impression of a low-mass X-ray binary (top) and
+Artist's impression of a low-mass X-ray binary (top) and
 cataclysmic variable (bottom). The key components are marked,
-and the clear similarity in overal structure is apparent.
+and the clear similarity in overall structure is apparent.
 } 
 \label{fig:cv_and_xrb}
 \end{figure}
@@ -673,7 +681,7 @@ dwarf novae and nova-like variables.
 \subsubsection{Dwarf Novae and the Disc-instability Model}
 
 Dwarf novae (DNe) are CVs that are characterised 
-by repeated cycles of faint quiescence follow by a dramatic bright 
+by repeated cycles of faint quiescence followed by a dramatic bright 
 outburst. One of the 
 most famous DNe is SS Cyg, whose light curve is shown in 
 Fig.~\ref{fig:sscyg}. The repeated outbursts can be clearly seen, and
@@ -731,9 +739,27 @@ optically thick accretion disc spectrum. The flux scale is approximate.
 \label{fig:sscyg_spec}
 \end{figure}
 
+
+
 \subsubsection{Nova-like Variables}
 \label{sec:NLs}
 \nocite{dhillon1996,hessman1984}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/02-outflows/rwtri_noe.png}
+\caption
+[UV spectrum of RW Tri in and out of eclipse.]
+{
+{\sl Credit: Noebauer et al. 2010}.
+UV spectrum of RW Tri in and out of eclipse, showing strong lines in 
+\civfull\ and \la, among others.
+} 
+\label{fig:NL_spec_uv}
+\end{figure}
+
+
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth, clip=true, trim= 0 0.6in 0 0.8in]{figures/01-intro/novalikes.png}
@@ -774,23 +800,11 @@ are predicted to be double-peaked \citep{smak1981, hornemarsh1986}.
 exhibit such double-peaked lines \citep{marshhorne1990}. 
 
 \nocite{dhillon1996,hessman1984}
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figures/02-outflows/rwtri_noe.png}
-\caption
-[UV spectrum of RW Tri in and out of eclipse.]
-{
-{\sl Credit: Noebauer et al. 2010}.
-UV spectrum of RW Tri in and out of eclipse, showing strong lines in 
-\civfull\ and \la, among others.
-} 
-\label{fig:NL_spec}
-\end{figure}
 
 
-The UV spectra of NLs also show strong emission lines, and at 
+The UV spectra of NLs also show strong emission lines (see Fig.~\ref{fig:NL_spec_uv}), and at 
 low to intermediate inclinations dramatic blue-shifted absorption lines
-can be seen in some objects. The emission line equivalent widths
+can be seen in some objects (see section~\ref{sec:cv_winds}). The emission line equivalent widths
 in both the optical and the UV show clear trends with 
 inclination \citep{hessman1984,echevarria1988,noebauer}. 
 This can be seen clearly in Fig.~\ref{fig:NL_spec} and is connected to
@@ -1257,7 +1271,7 @@ more recently that the relationship extends to CVs and even YSOs
 \citep{scaringi2012,scaringi2015a}. The relationship is also not limited
 to just one type of CV but is present in both NLs and DNe \citep{vandesande2015}.
  
-The model that best reproduces this behaviour is the so-called
+One model that can successfully reproduce this behaviour is the so-called
 `fluctuating accretion disc' model \citep{lyubarskii1997,kotov2001,
 arevalo2006,hogg2015}. More generally,
 additive processes cannot reproduce this behaviour, and a multiplicative
@@ -1324,7 +1338,13 @@ matters, depending on one's outlook (see chapter 2).
 [Hardness-intensity diagrams for three types of accreting objects.]
 {
 {\sl Credit: Kording et al. 2008.} 
-Caption.
+Hardness-intensity diagrams for three types of accreting compact objects:
+the dwarf nova SS Cyg (left) and neutron star (middle) and black hole (right) 
+LMXBs. The dotted line shows the `jet line' in LMXBs and the arrows show the 
+expected temporal evolution of the system. For SS Cyg the $x$-axis shows the 
+fraction of the hard X-ray power law component in the system compared to the 
+luminosity of the combined luminosity of disc and power law. This quantity is
+analogous to the X-ray hardness in LMXBs.
 } 
 \label{fig:kording_hid}
 \end{figure}

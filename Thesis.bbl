@@ -85,6 +85,10 @@
 {Baptista} R., {Silveira} C., {Steiner} J.~E., {Horne} K., 2000,
   \mnras~  314, 713
 
+\bibitem[\protect\astroncite{{Barnard} et~al.}{2006}]{barnard2006}
+{Barnard} R., {Foulkes} S.~B., {Haswell} C.~A., {Kolb} U. et~al., 2006,
+  \mnras~  366, 287
+
 \bibitem[\protect\astroncite{{Bartlett}}{2013}]{bartlett2013}
 {Bartlett} E., 2013,
 \newblock Ph.D. thesis,
@@ -268,6 +272,11 @@
 {Chen} B., {Dai} X., {Baron} E., {Kantowski} R., 2013b,
   \apj~  769, 131
 
+\bibitem[\protect\astroncite{{Church} et~al.}{2005}]{church2005}
+{Church} M.~J., {Reed} D., {Dotani} T., {Ba{\l}uci{\'n}ska-Church} M., {Smale}
+  A.~P., 2005,
+  \mnras~  359, 1336
+
 \bibitem[\protect\astroncite{{Clavel} et~al.}{2006}]{clavel2006}
 {Clavel} J., {Schartel} N., {Tomas} L., 2006,
   \aap~  446, 439
@@ -300,6 +309,14 @@
 \bibitem[\protect\astroncite{{Cottis} et~al.}{2010}]{cottis2010}
 {Cottis} C.~E., {Goad} M.~R., {Knigge} C., {Scaringi} S., 2010,
   \mnras~  406, 2094
+
+\bibitem[\protect\astroncite{{Crenshaw} \& {Kraemer}}{2012}]{crenshaw2012}
+{Crenshaw} D.~M., {Kraemer} S.~B., 2012,
+  \apj~  753, 75
+
+\bibitem[\protect\astroncite{{Crenshaw} et~al.}{2003}]{crenshaw2003}
+{Crenshaw} D.~M., {Kraemer} S.~B., {Gabel} J.~R., {Kaastra} J.~S. et~al., 2003,
+  \apj~  594, 116
 
 \bibitem[\protect\astroncite{{Crenshaw} et~al.}{1996}]{crenshaw1996}
 {Crenshaw} D.~M., {Rodriguez-Pascual} P.~M., {Penton} S.~V., {Edelson} R.~A.
@@ -1181,7 +1198,7 @@ Gough B., 2009,
 
 \bibitem[\protect\astroncite{{Matthews} et~al.}{2016}]{M16}
 {Matthews} J.~H., {Knigge} C., {Long} K.~S., {Sim} S.~A. et~al., 2016,
-  \mnras~
+  \mnras~  458, 293
 
 \bibitem[\protect\astroncite{{Matzeu} et~al.}{2016}]{matzeu2016}
 {Matzeu} G.~A., {Reeves} J.~N., {Nardini} E., {Braito} V. et~al., 2016,
@@ -1653,6 +1670,14 @@ Gough B., 2009,
 {Shaviv} G., {Wehrse} R., 1991,
   \aap~  251, 117
 
+\bibitem[\protect\astroncite{{Shaw} et~al.}{2013}]{shaw2013}
+{Shaw} A.~W., {Charles} P.~A., {Bird} A.~J., {Cornelisse} R. et~al., 2013,
+  \mnras~  433, 740
+
+\bibitem[\protect\astroncite{{Shaw} et~al.}{2016}]{shaw2016}
+{Shaw} A.~W., {Gandhi} P., {Altamirano} D., {Uttley} P. et~al., 2016,
+  \mnras~  458, 1636
+
 \bibitem[\protect\astroncite{{Shen} \& {Ho}}{2014}]{shenho2014}
 {Shen} Y., {Ho} L.~C., 2014,
   \nat~  513, 210
@@ -1730,6 +1755,10 @@ Gough B., 2009,
 {Sobolewska} M.~A., {Siemiginowska} A., {Gierli{\'n}ski} M., 2011,
   \mnras~  413, 2259
 
+\bibitem[\protect\astroncite{{Soleri} et~al.}{2013}]{soleri2013}
+{Soleri} P., {Mu{\~n}oz-Darias} T., {Motta} S., {Belloni} T. et~al., 2013,
+  \mnras~  429, 1244
+
 \bibitem[\protect\astroncite{{Somerville} et~al.}{2001}]{somerville2001}
 {Somerville} R.~S., {Primack} J.~R., {Faber} S.~M., 2001,
   \mnras~  320, 504
@@ -1780,6 +1809,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Sutherland}}{1998}]{sutherland1998}
 {Sutherland} R.~S., 1998,
   \mnras~  300, 321
+
+\bibitem[\protect\astroncite{{Tanaka} et~al.}{2003}]{tanaka2003}
+{Tanaka} Y., {Ueda} Y., {Boller} T., 2003,
+  \mnras~  338, L1
 
 \bibitem[\protect\astroncite{{Tatum} et~al.}{2012}]{tatum2012}
 {Tatum} M.~M., {Turner} T.~J., {Sim} S.~A., {Miller} L. et~al., 2012,
@@ -1850,6 +1883,11 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Van de Sande} et~al.}{2015}]{vandesande2015}
 {Van de Sande} M., {Scaringi} S., {Knigge} C., 2015,
   \mnras~  448, 2430
+
+\bibitem[\protect\astroncite{{van der Hooft} et~al.}{1998}]{vanderhooft1998}
+{van der Hooft} F., {Heemskerk} M.~H.~M., {Alberts} F., {van Paradijs} J.,
+  1998,
+  \aap~  329, 538
 
 \bibitem[\protect\astroncite{{van Regemorter}}{1962}]{vanregemorter}
 {van Regemorter} H., 1962,

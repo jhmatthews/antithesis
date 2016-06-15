@@ -77,7 +77,7 @@ for i, m in enumerate(masses):
 
 float_legend()
 ylabel("$\log (T_{\\rm eff} / K)$", fontsize = 16)
-xlabel("$\log (R / R_{G})$", fontsize = 16)
+xlabel("$\log (R / r_{G})$", fontsize = 16)
 #xlim(0,1.4)
 #ylim(4,5)
 

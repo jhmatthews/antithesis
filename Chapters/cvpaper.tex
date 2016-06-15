@@ -183,13 +183,14 @@ $R_2$   &   -  &	 $69.0~R_{WD}$  \\
 $\dot{M}_{\mathrm{acc}}$ 	 &	 $10^{-8}~M_{\odot}\mathrm{yr}^{-1}$  &\\ 
 $\dot{M}_W$  &	$10^{-9}~M_{\odot}\mathrm{yr}^{-1}$å  & \\ 
 $r_{\mathrm{min}}$ 	&	 $4~R_{WD}$ &  \\ 
-$r_{\mathrm{min}}$ 	&	 $12~R_{WD}$  &  \\ 
+$r_{\mathrm{max}}$ 	&	 $12~R_{WD}$  &  \\ 
 $r_{\mathrm{disc}}$(max) 	&	 $34.3~R_{WD}$  &  \\ 
 $\theta_{\mathrm{min}}$	&	 $20.0^{\circ}$  &  \\ 
 $\theta_{\mathrm{max}}$ 	&	 $65.0^{\circ}$  &  \\ 
 $\gamma$ 	&	 $1$  &  \\ 
 $v_{\infty}$ 	&	 $3~v_{\mathrm{esc}}$  &  \\ 
-$R_v$ 	        &	 $100~R_{WD}$  &  $142.9~R_{WD}$  \\ 
+$R_v$ 	        &	 $7\times10^{10}~\mathrm{cm}$  &  $10^{11}~\mathrm{cm}$  \\ 
+$R_v / R_{WD}$ 	&	 $100$  &  $142.9$  \\ 
 $\alpha$ 	&	 $1.5$   &   $4$\\
 \hline 
 \end{tabular} 
@@ -225,7 +226,7 @@ of these systems. In order to set a benchmark, I therefore begin by
 investigating one of the fiducial CV wind models that was used by SV93
 and LK02 to simulate the UV spectrum of a typical high-state
 system. The specific parameters for this model (model A) are listed in
-Table~1. A key point is that the wind mass-loss rate in this model is
+table~\ref{modelb_table}. A key point is that the wind mass-loss rate in this model is
 set to 10$\%$ of the accretion rate through the disc. I follow SV93
 in setting the inner edge of the wind ($r_{\mathrm{min}}$) to $4~R_{WD}$. 
 The sensitivity to some of these parameters is briefly discussed in
@@ -326,15 +327,15 @@ the benchmark model, and these do exhibit some emission lines
 associated with H and He. There is 
 a general trend from absorption lines to emission lines 
 with increasing inclination, as we might expect from this wind
-geometry. This trend is consistent with observations, as can be seen
-in Fig.~1. However, it is clear that this particular model
+geometry. This trend is consistent with observations, as discussed in 
+section~\ref{sec:NLs}. However, it is clear that this particular model
 does not produce all of the lines seen in observations of high-state CVs.
 The higher-order Balmer series lines are too weak
 to overcome the intrinsic absorption from the disc atmosphere, and the wind 
 fails to produce any observable emission at low and intermediate inclinations.
 This contrasts with the fact that emission lines are seen 
 in the optical spectra of (for example) V3885 Sgr \citep{hartley2005}
-and IX Vel \citep[][see also Fig.~1]{beuermann1990}.
+and IX Vel \citep[][see also Fig.~\ref{fig:NL_spec}]{beuermann1990}.
 
 The emissivity of these recombination 
 features scales as density squared, meaning that they form almost entirely in the 
@@ -654,14 +655,17 @@ cannot escape to the observer. In such models, the `line photosphere'
 (the $\tau \simeq 1$ surface of the line-forming region) moves outwards, towards larger 
 vertical and cylindrical distances. This reduces the predicted line widths, since the 
 rotational velocities -- which normally provide the main line broadening mechanism at 
-high inclination -- drop off as $1/r$. This is not to say that the MC96 
-mechanism could not be at work in CV winds. For example, it would be worth investigating
+high inclination -- drop off as $1/r$ in the outflow. This $1/r$ behaviour occurs due to the wind
+conserving specific angular momentum, and is initially in Keplerian rotation 
+(see equation~\ref{eq:vrot}). The fact that the MC96 
+mechanism does not significantly affect the line profiles in this specific model 
+does not mean that it could not be at work in CV winds. For example, it would be worth investigating
 alternative prescriptions for the wind velocity field, as well as the possibility that the 
 outflows may be clumped. An inhomogeneous flow 
 (which has been predicted in CVs; see section~\ref{sec:modelb_spectra})
 might allow large radial velocity shears to exist while still 
 maintaining the high densities needed to produce the required level of emission.
-However, such an investigation is beyond the scope of the present paper.
+However, such an investigation is beyond the scope of the present study.
 
 In these models, single-peaked line profiles are produced once the line forming region 
 has been
@@ -669,8 +673,8 @@ pushed up to $\sim 10^{11}$~cm ($\sim150~R_{WD}$) above the disc plane.
 This number may seem unrealistically large, but the vertical extent of 
 the emission region is actually not well constrained observationally. 
 In fact, multiple observations of eclipsing NLs show that the H$\alpha$ 
-line is only moderately eclipsed compared to the continuum (e.g. Baptista et al. 2000;
-Groot et al. 2004; see also section~\ref{sec:rwtri}), 
+line is only moderately eclipsed compared to the continuum 
+\citep[e.g.][see also section~\ref{sec:rwtri}]{baptista2000,groot2004}, 
 implying a significant vertical extent for the line-forming 
 region. This type of model should therefore not be ruled out {\em a priori}, 
 but this specific model was not adopted as the optically optimized model
@@ -770,7 +774,7 @@ base of the wind. I have verified that the main conclusions of this study
 are fairly insensitive to the gaunt factor; for example, if I adopt
 $\bar{g}=0.2$ as suggested by, e.g., \cite{ferland2005} than the wind still
 produces a host of recombination lines. 
-If improved collision strengths were to significantly reduced the wind temperature
+If improved collision strengths were to significantly reduce the wind temperature
 a boundary layer might
 actually be required to produce the higher ionization lines such as 
 \heiiopt\ \citep[see e.g.][]{hoare1991}, arguably making the model

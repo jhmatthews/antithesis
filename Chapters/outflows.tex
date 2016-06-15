@@ -1,4 +1,4 @@
-\chapter{Accretion Disc Winds}
+ \chapter{Accretion Disc Winds}
 \label{sec:winds}
 
 \epigraph{``A view of space, with an elephant obstructing it"}
@@ -164,11 +164,16 @@ of $\sim1500$~km~s$^{-1}$ in the LMXB X2127+119.
 A series of studies also found X-ray absorption features in similar objects 
 \citep{ueda1998,kotani2000,parmar2002}. 
 These absorption features appeared to be preferentially detected
-in high-inclination, `dipping' LMXBs. This was confirmed
-by \cite{ponti2012}, who proposed an equatorial outflow 
-geometry based on this association (see Fig.~\ref{fig:ponti_cartoon}). 
-The same study demonstrated that
-the winds only appeared in the soft, 
+in `dipping' LMXBs. Dips in X-ray flux are thought to occur
+in systems with inclinations $\gtrsim70^\circ$ 
+\citep{vanderhooft1998,tanaka2003,church2005}, and possible explanations
+involve disc precession \citep{barnard2006,shaw2013}, 
+failed state transitions \citep{soleri2013,shaw2016} or low ionization material 
+partially covering the X-ray source \citep{tanaka2003}.
+\cite{ponti2012} confirmed that broad absorption in highly ionized Fe lines 
+occured only in the dipping LMXBs in their sample, and proposed an equatorial 
+outflow geometry based on this association (see Fig.~\ref{fig:ponti_cartoon}). 
+The same study also demonstrated that the winds only appeared in the soft, 
 disc dominated accretion state, on the opposite side of the HID to the
 region where jets are common (Fig.~\ref{fig:ponti_hid}). 
 This exciting result illustrates how
@@ -366,7 +371,10 @@ the changing kinematics of an accretion disc wind \citep{connolly2014}.
 There is also evidence of contemporary and associated UV and X-ray absorption 
 in NGC 5548 \citep{kaastra2014} and in mini-BALS \citep{giustini2011},
 and, as mentioned above, BALQSOs often show strong X-ray absorption. 
-This suggests the same outflow may produce observational signatures  
+A number of other AGN also show simultaneous absorption in their X-ray 
+and UV spectra \citep[e.g.][]{crenshaw2003,crenshaw2012}, 
+although can often arise from absorbers that are not directly associated.
+Overall, there is evidence that the same outflow may produce observational signatures  
 across a large range of ionization states and line energies. 
 
 Some WAs can be modelled well with single absorbers \citep{kaastra2000}, 
@@ -386,7 +394,8 @@ should really be used to model the spectrum (see e.g. chapter 3). This is
 because optically thin ionization parameter estimates will not properly capture 
 the ionization physics due to the variation of the SED shape within the medium.
 The overall body of observations points towards an outflow with a 
-stratified ionization structure ranging from $\log \xi \sim 0-2$
+stratified ionization structure ranging from 
+$\log (\xi / \mathrm{erg~s^{-1}~cm}) \sim 0-2$ 
 and densities on the order of $10^7$~cm$^{-3}$, located at around $\sim10^{16}$~cm. 
 These physical conditions or scales are not well constrained, and the connection to 
 other outflows, such as the ultra-fast outflows introduced in the next section, 
@@ -408,7 +417,8 @@ Fig.~\ref{fig:nardini}, along with a simple spherical outflow model fit
 from the line blueshifts have lead to these winds becoming known as 
 ultra-fast outflows, or UFOs. 
 
-UFOs are characterised by ionization parameters in the range $\log \xi \sim 3-4$
+UFOs are characterised by ionization parameters in the range 
+$\log (\xi / \mathrm{erg~s^{-1}~cm}) \sim 3-4$
 and column densities $N_H > 10^{22}$~cm$^{-2}$. Their high mass-loss rates
 and large energy budgets mean that they are natural candidates for
 AGN feedback (see section~\ref{sec:agn_feedback}). Measurements of
@@ -463,7 +473,7 @@ Although stellar winds are clearly not accretion disc winds,
 they provide a useful, and better understood, testing ground for much
 of the physics of radiatively-driven outflows. 
 Wolf-Rayet (WR) stars and O-stars possess strong outflows with mass-loss rates
-of up to $10^{-5}~M_\odot~$yr$^{-1}$, throught to be driven by radiation pressure
+of up to $10^{-5}~M_\odot~$yr$^{-1}$, thought to be driven by radiation pressure
 mediated by spectral lines (see section~\ref{sec:line_driving}). 
 Over the typical lifetime of a massive
 star ($\sim10^6$~yr), this can have a significant impact on the overall stellar mass,
@@ -553,13 +563,13 @@ three equations of magnetohydrodynamics (MHD):
 
 \begin{equation}
 \label{eq:energy}
-\rho \frac{D}{Dt} \left(\frac{e}{\rho}\right) = P (\nabla \cdot \vec{v}) + \rho \cal{L}.
+\rho \frac{D}{Dt} \left(\frac{u}{\rho}\right) = P (\nabla \cdot \vec{v}) + \rho \cal{L}.
 \end{equation}
 
 Here, $D$ denotes a derivative within the comoving frame of the gas parcel, $\vec{v}$ is the velocity,
 $\rho$ is the gas density, $\vec{B}$ is the local magnetic field, 
-$\vec{F}_{rad}$ is the radiation
-force per unit mass, $\cal{L}$ is the cooling rate of the gas, 
+$\vec{g}_{rad}$ is the radiation
+force per unit mass, $\cal{L}$ is the cooling rate of the gas, $u$ is the energy density 
 and $\vec{g}$ denotes the gravitational acceleration vector.
 
 Equation~\ref{eq:continuity} is the {\em continuity equation} and describes conservation of mass. 
@@ -614,7 +624,7 @@ the escape velocity tends to greatly exceed the thermal velocity.
 
 Under spherical symmetry and for opacities dominated by electron scattering, 
 one simply obtains the Eddington limit discussed
-in section~\ref{sec:eddington} when $\rho \vec{F}_{rad} = \rho \vec{g}$. 
+in section~\ref{sec:eddington} when $\rho \vec{g}_{rad} = \rho \vec{g}$. 
 Hence, sources must be fairly close to the Eddington luminosity in order 
 to drive an outflow purely from radiation 
 pressure on electrons. There are a number of accreting systems that may drive
@@ -725,8 +735,9 @@ There are two main ways in which magnetic forces can drive an
 accretion disc wind, which are best explained by writing down an 
 alternative form for the Lorentz force,
 \begin{equation}
-\vec{F_m} = \frac{1}{4\pi} \vec{B} \cdot \nabla \vec{B} - \nabla \frac{B^2}{8\pi}.
+\vec{F}_m = \frac{1}{4\pi} (\nabla \cdot \vec{B}) \vec{B}  - \nabla \frac{B^2}{8\pi},
 \end{equation}
+where $B = |\vec{B}|$.
 The first term can be thought of as a magnetic {\em tension}
 associated with the field lines and the second as an isotropic magnetic
 {\em pressure}.
@@ -871,7 +882,7 @@ purely by the viewing angle of the observer.
 
 Around the turn of the century, Daniel Proga and collaborators 
 published a series of important papers in which they conducted 
-hydrodynamic simulations of live-driven disc winds in AGN and CVs. 
+hydrodynamic simulations of line-driven disc winds in AGN and CVs. 
 In the first of these, the problem considered was that of disc
 winds in CVs \citep{proga1998}. In their model, the disc was assumed
 to radiate according to the $\alpha$-disc model, and the central WD was also included
@@ -928,7 +939,7 @@ important for other reasons.
 \citet[][hereafter H14]{H14} showed that, in this particular geometry, 
 multiple scattering actually makes shielding
 ineffective, and radiation will simply find its way around the failed wind
-to over-ionize the flow beyond.
+to over-ionize the flow beyond \citep[see also][]{sim2010_hydro}.
 Ideally, full radiative transfer and hydrodynamical simulations would be used
 to estimate the viability of line-driven winds. Our team is currently working 
 on this problem (see H14 for the first step); however, much 
@@ -1013,7 +1024,9 @@ can be controlled by a free parameter, $\lambda_m$, such that
 where $\dot{M}_W$ is the total mass loss rate in the wind. This equation is normalised so 
 that when integrated over both sides of the disc the correct $\dot{M}_W$ emerges.
 I have adopted $\lambda=0$ throughout this thesis, which corresponds to uniform
-mass loss across the disc.
+mass loss across the disc. This could have an effect on the level of shielding present 
+in the flow, and the location of the emission line regions, but should not affect the qualitative
+conclusions; this is briefly discussed in section~\ref{sec:param_sens}.
 The density at a given point can then be calculated by imposing mass conservation
 and using the velocity law. At the base of the wind, the density is 
 given by

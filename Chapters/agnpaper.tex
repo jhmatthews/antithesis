@@ -65,10 +65,14 @@ Finally, I summarise my findings in section~\ref{sec:qso_conclusions}.
 \section{A Clumpy Biconical Disk Wind Model for Quasars}
 \label{sec:clumpy_wind_model}
 Here, I once again adopt the SV93 kinematic prescription for a 
-biconical disc wind model described in section~\ref{sec:sv93_model}
+biconical disc wind model described in section~\ref{sec:sv93_model}.
 A schematic is shown in Fig.~\ref{fig:cartoon_qso},
-with key aspects marked. The general biconical
-geometry is similar to that invoked by \cite{MCGV95} and 
+with key aspects marked. As previously mentioned, the purpose of 
+this purely kinematic wind model is to provide a simple tool for 
+exploring different outflow geometries. The conclusions are therefore
+not limited to -- nor do they make specific predictions about -- the 
+potential wind-driving mechanisms discussed in chapter 2. 
+The general biconical geometry is similar to that invoked by \cite{MCGV95} and 
 \cite{elvis2000} to explain the phenomenonology
 of quasars and BALQSOs.
 
@@ -247,10 +251,14 @@ following properties of quasars and BALQSOs:
 \item UV absorption lines 
 with $BI > 0$ at $\sim20\%$ of viewing angles \cite[e.g.][]{knigge2008};
 \item Line emission emerging at low inclinations, with $\mathrm{EW}\sim40$~\AA\ in \civline\ \citep[e.g. ][]{shen2011};
-\item H recombination lines with $EW\sim50$~\AA\ in \la\ \citep[e.g. ][]{shen2011};
-\item  \mg\ and \al\ (LoBAL) absorption features with $BI > 0$ at a subset of 
+\item H recombination lines with $EW\sim50$~\AA\ in \la\ \citep[e.g.][]{shen2011};
+\item \mg\ and \al\ (LoBAL) absorption features with $BI > 0$ at a subset of 
 BAL viewing angles;
-\item Verisimilitude with quasar composite spectra.
+\item X-ray luminosities consistent with those observed in BAL and non-BAL
+quasars.
+\item Verisimilitude with quasar composite spectra; specifically, synthetic spectra showing
+the expected line widths, continuum shape, and range of ionization states observed
+in quasars.
 \end{itemize}
 Here $BI$ is the `Balnicity Index' (Weymann et al. 1991), given by
 \begin{equation}
@@ -360,14 +368,17 @@ physical properties of the quasar outflow.]
 Contour plots showing the logarithm of some important 
 physical properties of the outflow. The spatial scales are
 logarithmic and the $x$ and $z$ scales are not the same.
-Symbols are defined in the text.
+The panels show the electron
+temperature, $T_e$, electron density, $n_e$, the ionization
+parameter, $U_H$, ion fractions, $F$, for three different 
+ions and line luminosities, $L$, for two different lines.
+The line luminosities represent the luminosity of photons
+escaping the Sobolev region for each line. These photons do not
+necessarily escape to infinity.
 The solid black line marks a sphere at $1000~r_G$.
 The dotted lines show the $72^\circ$ and $78^\circ$ sightlines 
 to the centre of the system, and illustrate that different sightlines
 intersect material of different ionization states.
-The line luminosities, $L$, represent the luminosity of photons
-escaping the Sobolev region for each line. These photons do not
-necessarily escape to infinity.
 }
 \label{fig:wind}
 \end{figure*}
@@ -801,12 +812,17 @@ not be the cause of the strong line emission seen in {\em all} Type 1 quasars.
 
 The parameter search presented here is by no means exhaustive, and
 conclusions may be limited by the specific parameterisation of the outflow 
-kinematics used. Nevertheless, I suggest that the angular distribution
+kinematics used. For example, varying the mass-loss rate across the disc 
+(see equation~\ref{eq:dmda}) may allow a denser emission region to exist closer to 
+the continuum source. This could cause stronger emission lines to emerge at low inclination, 
+as that region of the flow would be strongly irradiated but potentially
+dense enough to avoid over-ionization, possibly producing emission from lines such as \civ\ and \la.
+Nevertheless, I suggest that the angular distribution
 of both the line and continuum emission is perhaps the crucial 
 aspect to understand. With this in mind, obtaining reliable orientation 
-indicators appears to be a crucial observational task if we are to
+indicators appears to be an important observational task if we are to
 further our understanding of BAL outflows and their connection, or lack thereof, to the 
-broad line region. 
+broad line region.  
 
 \subsection{Inclination Trends: FWHM and EW}
 \label{sec:ew_in_model}
@@ -904,7 +920,10 @@ this value should trace $f_{FWHM}$ from \hb\ fairly well.
 $f_{FWHM}$ as a function of inclination from the fiducial model
 for three different lines. The Yong et al. (2016) 
 predictions from two models, and the Pancoast et al. (2014) modelling results
-for five Seyfert I galaxies are also shown.
+for five Seyfert I galaxies are also shown. At inclination angles $\gtrsim 70^\circ$
+radiative transfer effects can become important as the sightline looks into the flow; here
+I show only moderate to low inclination angles where the system would be observed as a
+non-BAL quasar.
 }
 \label{fig:FWHM}
 \end{figure}
