@@ -241,7 +241,7 @@ must play a major role in determining the disc morphology
 \subsection{Accretion Discs}
 
 In many astrophysical situations -- for example, 
-in binary systems and gas clouds orbiting BHs --
+in binary systems and gas clouds orbiting black holes (BHs) --
 any accreting matter will possess some net angular momentum.
 If the medium is dense enough, collisions between particles will be
 frequent, but the total angular momentum vector of two colliding particles
@@ -261,8 +261,8 @@ Traditional molecular viscosity is insufficient in this regard
 when we consider that molecular viscosity operates over the Debye length,
 $\lambda_D$, and at the sound speed, $c_S$. At density $\rho$, this results in a 
 viscous force density ($\sim \rho \lambda_D c_s v_\phi/R^2$) that is much lower 
-than the inertial force density ($\sim \rho v_\phi^2/R$)
-In other words, the Reynolds number is much greater than 1. The consequence is that
+than the inertial force density ($\sim \rho v_\phi^2/R$) --
+in other words, the Reynolds number is much greater than 1. The consequence is that
 molecular viscosity is dynamically unimportant in accretion flows.
 
 An alternative mechanism for angular momentum transport is therefore
@@ -436,6 +436,8 @@ compact object with angular velocity $\Omega_*$. $\Omega_K$ is the Keplerian
 angular velocity. This graph
 also helps explain why there is a turnover in the temperature-radius relation,
 as $D(R)$ is proportional to the square of the {\em derivative} of this quantity.
+The boundary condition responsible for this turnover is briefly 
+discussed in the text.
 } 
 \label{fig:omega}
 \end{figure}
@@ -458,7 +460,12 @@ giving the interesting result that rapidly spinning (Kerr) BHs
 are more radiatively efficient than Schwarzschild BHs. A proper relativistic
 calculation of the binding energy at the ISCO gives accretion efficiencies of 
 $\eta_{\mathrm{ISCO}}\approx0.06$ $\eta_{\mathrm{ISCO}}\approx0.4$ for Schwarzschild
-and Kerr BHs, respectively \citep[e.g.][]{thorne1974}. 
+and Kerr BHs, respectively \citep[e.g.][]{thorne1974}. The lack of an inner surface in the
+BH case also poses a problem to the SS73 model, as it assumed that the viscous torques
+go to zero at the inner boundary of the disc. This boundary condition
+may not be appropriate for BHs as it fails to properly describe the physics at the ISCO
+\citep[e.g.][]{abramowicz}. As a result, the turnover in the temperature profile
+caused by this boundary condition may not be present for BH discs.
 
 \nocite{narayan2014, thorne1974}
 \begin{figure}
@@ -681,8 +688,9 @@ dwarf novae and nova-like variables.
 \subsubsection{Dwarf Novae and the Disc-instability Model}
 
 Dwarf novae (DNe) are CVs that are characterised 
-by repeated cycles of faint quiescence followed by a dramatic bright 
-outburst. One of the 
+by repeated cycles of quiescence -- 
+where the system is in a faint, low flux state --   
+followed by a dramatic bright outburst. One of the 
 most famous DNe is SS Cyg, whose light curve is shown in 
 Fig.~\ref{fig:sscyg}. The repeated outbursts can be clearly seen, and
 SS Cyg itself has been undergoing this behaviour over the full century 
@@ -1339,7 +1347,7 @@ matters, depending on one's outlook (see chapter 2).
 {
 {\sl Credit: Kording et al. 2008.} 
 Hardness-intensity diagrams for three types of accreting compact objects:
-the dwarf nova SS Cyg (left) and neutron star (middle) and black hole (right) 
+the dwarf nova SS Cyg (left), in addition to neutron star (middle) and black hole (right) 
 LMXBs. The dotted line shows the `jet line' in LMXBs and the arrows show the 
 expected temporal evolution of the system. For SS Cyg the $x$-axis shows the 
 fraction of the hard X-ray power law component in the system compared to the 

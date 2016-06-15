@@ -8,6 +8,10 @@
 {Abbott} D.~C., {Lucy} L.~B., 1985,
   \apj~  288, 679
 
+\bibitem[\protect\astroncite{{Abramowicz} \& {Fragile}}{2013}]{abramowicz}
+{Abramowicz} M., {Fragile} P.~C., 2013,
+  Living Reviews in Relativity~  16(1)
+
 \bibitem[\protect\astroncite{{Adams} et~al.}{2001}]{adams2001}
 {Adams} F.~C., {Graff} D.~S., {Richstone} D.~O., 2001,
   \apjl~  551, L31
@@ -983,6 +987,11 @@ Gough B., 2009,
 {Kotov} O., {Churazov} E., {Gilfanov} M., 2001,
   \mnras~  327, 799
 
+\bibitem[\protect\astroncite{{Kraemer} et~al.}{2011}]{kraemer2011}
+{Kraemer} S.~B., {Schmitt} H.~R., {Crenshaw} D.~M., {Mel{\'e}ndez} M. et~al.,
+  2011,
+  \apj~  727, 130
+
 \bibitem[\protect\astroncite{{Kraft} et~al.}{1962}]{kraft1962}
 {Kraft} R.~P., {Mathews} J., {Greenstein} J.~L., 1962,
   \apj~  136, 312
@@ -1143,6 +1152,14 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Magorrian} et~al.}{1998}]{magorrian1998}
 {Magorrian} J., {Tremaine} S., {Richstone} D., {Bender} R. et~al., 1998,
   \aj~  115, 2285
+
+\bibitem[\protect\astroncite{{Maiolino} et~al.}{2001a}]{maiolino2001b}
+{Maiolino} R., {Marconi} A., {Oliva} E., 2001a,
+  \aap~  365, 37
+
+\bibitem[\protect\astroncite{{Maiolino} et~al.}{2001b}]{maiolino2001a}
+{Maiolino} R., {Marconi} A., {Salvati} M., {Risaliti} G. et~al., 2001b,
+  \aap~  365, 28
 
 \bibitem[\protect\astroncite{{Mangham} et~al.}{2016}]{mangham}
 {Mangham} S.~W., {Knigge} C., {Matthews} J.~H., {Long} K.~S. et~al., 2016,
