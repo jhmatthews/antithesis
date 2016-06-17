@@ -476,6 +476,10 @@
 {Eracleous} M., {Halpern} J.~P., 1994,
   \apjs~  90, 1
 
+\bibitem[\protect\astroncite{{Eracleous} \& {Halpern}}{2003}]{eracleous2003}
+{Eracleous} M., {Halpern} J.~P., 2003,
+  \apj~  599, 886
+
 \bibitem[\protect\astroncite{{Evans} et~al.}{2004}]{evans2004}
 {Evans} P.~A., {Hellier} C., {Ramsay} G., {Cropper} M., 2004,
   \mnras~  349, 715
@@ -927,6 +931,10 @@ Gough B., 2009,
 {Knigge} C., 1999,
   \mnras~  309, 409
 
+\bibitem[\protect\astroncite{{Knigge}}{2006}]{knigge2006}
+{Knigge} C., 2006,
+  \mnras~  373, 484
+
 \bibitem[\protect\astroncite{{Knigge} et~al.}{2011}]{knigge2011_evo}
 {Knigge} C., {Baraffe} I., {Patterson} J., 2011,
   \apjs~  194, 28
@@ -1269,6 +1277,11 @@ Gough B., 2009,
 {Miller} L., {Turner} T.~J., {Reeves} J.~N., 2008,
   \aap~  483, 437
 
+\bibitem[\protect\astroncite{{Miller-Jones} et~al.}{2013}]{millerjones2013}
+{Miller-Jones} J.~C.~A., {Sivakoff} G.~R., {Knigge} C., {K{\"o}rding} E.~G.
+  et~al., 2013,
+  Science~  340, 950
+
 \bibitem[\protect\astroncite{{Misawa} et~al.}{2007}]{misawa2007}
 {Misawa} T., {Charlton} J.~C., {Eracleous} M., {Ganguly} R. et~al., 2007,
   \apjs~  171, 1
@@ -1284,6 +1297,10 @@ Gough B., 2009,
 \bibitem[\protect\astroncite{{Mitsuda} et~al.}{1989}]{mitsuda1989}
 {Mitsuda} K., {Inoue} H., {Nakamura} N., {Tanaka} Y., 1989,
   \pasj~  41, 97
+
+\bibitem[\protect\astroncite{{Mizusawa} et~al.}{2010}]{mizusawa2010}
+{Mizusawa} T., {Merritt} J., {Ballouz} R.-L., {Bonaro} M. et~al., 2010,
+  \pasp~  122, 299
 
 \bibitem[\protect\astroncite{{Morabito} et~al.}{2011}]{morabito2011}
 {Morabito} L.~K., {Dai} X., {Leighly} K.~M., {Sivakoff} G.~R., {Shankar} F.,
@@ -1806,6 +1823,10 @@ Gough B., 2009,
 {Strateva} I., {Ivezi{\'c}} {\v Z}., {Knapp} G.~R., {Narayanan} V.~K. et~al.,
   2001,
   \aj~  122, 1861
+
+\bibitem[\protect\astroncite{{Strateva} et~al.}{2003}]{strateva2003}
+{Strateva} I.~V., {Strauss} M.~A., {Hao} L., {Schlegel} D.~J. et~al., 2003,
+  \aj~  126, 1720
 
 \bibitem[\protect\astroncite{{Struve}}{1935}]{struve1935}
 {Struve} O., 1935,

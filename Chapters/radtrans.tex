@@ -424,7 +424,10 @@ the velocity set according to equation~\ref{eq:v_law}. The density
 is then calculated from equation~\ref{eq:rho_rz}. An initial temperature,
 $T_{\mathrm{init}}$ is set by the user. The ionization fractions throughout
 the wind are then initiated to Saha (LTE) abundances at $T_{\mathrm{init}}$, and the level 
-populations are initially set according to the Boltzmann formula.
+populations are initially set according to the Boltzmann formula. The eventual
+ionization and excitation state of a cell is insensitive to the initial assumed 
+conditions providing sufficient numbers of ionization cycles are completed -- 
+indeed, cells often converge on solutions with large departures from LTE.
 
 Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
@@ -616,7 +619,14 @@ new frequency is
 \end{equation}
 When we consider that the resonant point is chosen according to 
 equation~\ref{eq:resonance}, and that $v=\vec{v} \cdot \vec{n}_f$ in this case,
-it is clear that the above two equations are equivalent.
+it is clear that the above two equations are equivalent. The above formulae are the 
+non-relativistic case, which was used for this thesis. However, this should in general 
+be improved to use the special relativistic formula.
+This would produce more accurate Doppler shifts for the fastest regions of the 
+outflow, as the current treatment 
+introduces errors of order $5$\AA\ at the blue edges of the highest velocity
+absorption lines associated with the models described in chapters 4 and 5.
+
 
 
 \subsubsection{Choosing Packet Directions}

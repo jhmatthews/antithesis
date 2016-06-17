@@ -387,8 +387,8 @@ clear even at moderate values of EW.
 
 Fig.~\ref{fig:chi2} shows the result of a $\chi^2$ minimization fit 
 to the R11 sample. The best fit is achieved with a maximum angle of 
-$\theta_{1}=83.5^\circ(^{+0.7}_{-0.2}, 3\sigma)$ and a narrower intrinsic distribution
-than model 1 of R11. The run of $\chi^2$ with maximum angle
+$\theta_{1}=83.5^\circ(^{+1.1}_{-0.5}, 3\sigma)$ and a narrower intrinsic distribution
+than model 1 of R11. The run of $\Delta \chi^2$ with maximum angle
 is shown in Fig.~\ref{fig:chi2_curve}, where the choice for $\mu_*$
 and $\sigma_*$ is left free in each case. 
 Maximum angles below $\sim80^\circ$ are strongly disfavoured
@@ -418,12 +418,12 @@ and adopts the R11 sample criteria rather than using sample A.
 \centering
 \includegraphics[width=0.8\textwidth]{figures/ewpaper/chi2_o3.png}
 \caption
-[$\chi^2$ as a function of maximum angle.]
+[$\Delta \chi^2$ as a function of maximum angle.]
 {
-$\chi^2$ as a function of maximum angle, $\theta_1$, calculated in
+$\Delta \chi^2$ as a function of maximum angle, $\theta_1$, calculated in
 steps of $0.1^\circ$. The choice for $\mu_*$ and $\sigma_*$ is 
-left free in each case. The dotted lines mark the minimum $\chi^2$
-and the $3\sigma$ confidence interval.
+left free in each case. The dotted line marks
+the $3\sigma$ confidence interval.
 }
 \label{fig:chi2_curve}
 \end{figure}
@@ -515,6 +515,63 @@ without simultaneously obtaining a large value of $\Delta \mu_{EW}$, or similarl
 a very small value of $p_{KS}$. The simulations clearly favour a geometry in which 
 BALQSOs are viewed from similar angles to non-BAL quasars.
 
+\subsection{Alternative Shapes for the Intrinsic EW Distribution}
+
+The strength of the conclusions here are limited by the lack of knowledge about the 
+intrinsic face-on distribution of \ewo, or, equivalently,
+the orientations of the quasars themselves. 
+If either of these properties were known then the results of the
+K-S test and $\chi^2$ minimization could be used
+to place more robust constraints on BAL and non-BAL viewing angles 
+and the associated covering factor of the outflow.
+% Furthermore, the distribution of \civ\ quasar EW cannot be fit by 
+% the same model as the \ewo\ distribution.
+Given the uncertainty about the intrinsic \ewo\ distribution, 
+it is therefore important to assess how sensitive 
+the various diagnostics are to its assumed Gaussian shape. 
+To explore this I have repeated the MC experiment
+using a Gaussian in logarithmic \ewo\ space for the intrinsic distribution, i.e.
+a {\em Log-normal} distribution. The results of using this intrinsic distribution,
+as opposed to a normal Gaussian, are shown in Fig.~\ref{fig:contour2}.
+
+\begin{figure*} %fullpage
+\centering
+\includegraphics[width=1.0\textwidth]{figures/ewpaper/mesh4_ew_o3_max_sdds_logn.png}
+\caption
+[Heat map showing the results of the MC simulation described in 
+section~\ref{sec:bal_v_nonbal}, but this time conducted with a Log-normal 
+intrinsic distribution.]
+{
+Heat map showing the results of the MC simulation described in 
+section~\ref{sec:bal_v_nonbal}, but this time conducted with a Log-normal 
+intrinsic distribution. The quantities shown are the same 
+as in Fig.~\ref{fig:contour}. Note the different scale for the colour coding
+of the $\chi^2/dof$ panel (upper right).
+}
+\label{fig:contour2}
+\end{figure*} %fullpage
+
+There is no region of the model parameter space that produces as good a fit to
+the non-BAL quasar distribution as for a Gaussian intrinsic distribution. Instead, 
+the model produces $\chi^2/dof\approx3$ for virtually all model geometries. 
+Unsurprisingly, there is still a substantial difference between the LoBAL and 
+non-BAL quasar distribution whenever the outflow is equatorial. Clearly, one could vary the 
+distribution to have almost any intrinsic shape, which could significantly
+affect the fit to the non-BAL quasar distribution. In general, allowing more freedom in the 
+intrinsic distribution might permit the high EW tail to be fitted at lower inclinations.
+The more freedom in the intrinsic distribution, the more a hypothesis in which 
+the \ewo\ distribution of quasars is not driven by viewing angle is supported.
+However, importantly, the conclusions about BAL outflow geometries in the presence of
+a disc-like continuum are insensitive to the assumed intrinsic distribution, because
+the mean of the simulated LoBALQSO distribution will always tend to differ to the non-BAL case
+by a factor roughly equal to $1/\cos \theta$, where $\theta$ is a typical viewing angle to a 
+LoBALQSO.
+
+
+\subsection{Caveats and Selection Effects}
+
+It is important to be aware of selection effects that
+could potentially hide any intrinsic differences in the \ewo\ distributions. 
 One concern with the approach used here is that systematic differences between the
 non-BAL and LoBAL quasar populations in the {\em luminosity} of the \oiiifull\ line 
 and continuum could mask the expected trends in \ewo. I have verified that this is a 
@@ -524,33 +581,23 @@ The LoBALQSO sample has continuum luminosities a factor $\approx2$ higher than t
 non-BAL quasar sample on average -- this is not enough to
 permit high inclination models, although it does moderate the conclusions slightly.
 This also shows that host galaxy contamination is not significantly different in 
-the LoBALQSO sample.
+the LoBALQSO sample. 
 
-The conclusions here are limited by the lack of knowledge about the 
-intrinsic face-on distribution of \ewo, or equivalently,
-the orientations of the quasars themselves. If either of these
-quantities were known then the results of the
-K-S test and $\chi^2$ minimization could be used
-to place more robust constraints on BAL and non-BAL viewing angles 
-and the associated covering factor of the outflow.
-Furthermore, the distribution of \civ\ quasar EW cannot be fit by 
-the same model as the \ewo\ distribution.
-Another key limitation is the SDSS wavelength coverage,
+Different reddening properties in LoBALQSOs could also mask
+\ewo\ trends -- however, this actually strengthens the conclusions, as
+reddening is higher in LoBALQSOs than non-BAL quasars 
+\citep[e.g.][see also section~\ref{}]{urrutia2009}.
+This would lead to either an equally obscured \oiiifull\ emission line and continuum, 
+or an enhanced \ewo, depending on the geometry and covering factor of the reddening
+dust. A key limitation of the method in general is the SDSS wavelength coverage,
 which means that only LoBALs can be used when \ewo\ is present (sample A).
 I would suggest that future observational programs might 
 look to build up a large sample of \ewo\ measurements for HiBAL
 quasars. 
+
 % In the mean time, I will turn to the UV broad emission
 % lines to examine if the above conclusions also hold
 % when examining the properties of the HiBAL quasars in sample B.
-
-
-
-
-
-
-
-
 
 
 \section{Discussion}
@@ -591,7 +638,7 @@ optical coverage.
 Eigenvector 1 for LoBAL and non-BAL quasars. 
 FWHM of the \hb\ line plotted against the relative
 iron strength, $R_{{\rm Fe \textsc{ii}}}$. The colour coding
-corresponds to the EW of OIII. The dots mark all quasars from
+corresponds to the EW of \oiiifull. The dots mark all quasars from
 sample A, while the squares mark those with \mgii\ LoBALs. 
 A few of the \mgii\ LoBALQSOs are missing due to their lack of \fwh\ 
 measurements. The arrows show the approximate 
@@ -609,7 +656,7 @@ that the main inclination driver in this parameter space
 is \fwh, and that high inclination sources should thus cluster nearer 
 to the top of the plot. In contrast,
 R11's analysis predicts that high inclination sources should cluster
-around high EW OIII widths. As \ewo\ and \fwh\ are very weakly correlated
+around high \ewo\ widths. As \ewo\ and \fwh\ are very weakly correlated
 (Spearman's rank coefficient of 0.14), this means they should lie to
 the left of the parameter space, due to the clear correlation between \ewo\
 and $R_{{\rm Fe \textsc{ii}}}$. These expected trends are shown with arrows
@@ -756,13 +803,14 @@ in the sample used here -- this actually strengthens the conclusion, as low ioni
 BALQSOs show even higher column densities, approaching Compton-thick values 
 \citep{morabito2011}. This argument holds regardless of the outflow geometry adopted.
 I therefore suggest that the obscuration model of C11 cannot explain the \ewo\ distribution
-of LoBALQSOs, and the similarity of the observed LoBAL and non-BAL distributions
+of LoBALQSOs. The similarity of the observed LoBAL and non-BAL distributions
 would also suggest that obscuration is unlikely to drive the behaviour of \ewo\ overall.
-These conclusions are moderated if the line of sight to the X-ray source, which is used
-to measure $N_H$, experiences a different absoring column to that of the optical continuum,
-and is also dependent on the particular reddening model used by C11. It is worth noting at 
+These conclusions are moderated if the line of sight to the X-ray source, which determines 
+the measured $N_H$, experiences a different absoring column to that of the optical continuum.
+They are also dependent on the particular reddening model used by C11. Indeed, it is worth noting at 
 this point that there is a degree of scatter in the $N_H$ values measured from X-ray and optical
-observations \citep{maiolino2001a,maiolino2001b}.
+observations \citep{maiolino2001a,maiolino2001b}, as could be produced by differing 
+viewing angles.
 % so I suggest that the obscured model of C11 is ruled out on this basis.
 
 
@@ -777,8 +825,10 @@ anisotropy. Indeed, Keplerian velocity shear has been shown to modify the
 shape of disc-formed emission lines \citep{hornemarsh1986}, and an additional
 radial shear from a wind can cause double-peaked lines
 to become single-peaked \citep{MC96,MC97,flohic2012}. 
-Although there is a sub-population of AGN with double-peaked lines (REFs),
-AGN and quasars in general show broad, single-peaked lines (REFs). 
+Although there is a sub-population of AGN with double-peaked lines 
+\citep[e.g.][]{eracleous1994,eracleous2003},
+this fraction is only around $3\%$ \citep{strateva2003}, so
+AGN and quasar spectra in general show broad, single-peaked lines. 
 
 R11 suggested that the broad emission lines trace the disc
 emission in terms of their anisotropy. 
