@@ -78,7 +78,7 @@ i.e. {\em optically thin}. The \oiiifull\ narrow emission line fulfils this crit
 is a strong, forbidden line formed in the narrow-line region (NLR) of AGN. However,
 the ratio of \oiiifull\ to the infra-red [O\textsc{iv}]~$28.59~\mu$m line has been shown to
 vary between type 1 and type 2 AGN \citep{kraemer2011}, potentially implying a degree of anisotropy.
-This is discussed further in section~??.
+This is discussed further in section~\ref{sec:line_aniso}.
 If the line is isotropic, then any dispersion in the distribution of \oiiifull\ EW (\ewo) 
 must therefore be driven by some combination of
 the intrinsic luminosity \citep{borosongreen}, 
@@ -553,7 +553,8 @@ of the $\chi^2/dof$ panel (upper right).
 
 There is no region of the model parameter space that produces as good a fit to
 the non-BAL quasar distribution as for a Gaussian intrinsic distribution. Instead, 
-the model produces $\chi^2/dof\approx3$ for virtually all model geometries. 
+the fit is much less sensitive to $\theta_{\mathrm{min}}$ and $\theta_{\mathrm{max}}$, 
+resulting in $\chi^2/dof\approx3$ for virtually all model geometries. 
 Unsurprisingly, there is still a substantial difference between the LoBAL and 
 non-BAL quasar distribution whenever the outflow is equatorial. Clearly, one could vary the 
 distribution to have almost any intrinsic shape, which could significantly
@@ -586,7 +587,7 @@ the LoBALQSO sample.
 Different reddening properties in LoBALQSOs could also mask
 \ewo\ trends -- however, this actually strengthens the conclusions, as
 reddening is higher in LoBALQSOs than non-BAL quasars 
-\citep[e.g.][see also section~\ref{}]{urrutia2009}.
+\citep[e.g.][]{urrutia2009}.
 This would lead to either an equally obscured \oiiifull\ emission line and continuum, 
 or an enhanced \ewo, depending on the geometry and covering factor of the reddening
 dust. A key limitation of the method in general is the SDSS wavelength coverage,
@@ -802,14 +803,15 @@ Of course, only LoBAL quasars had \ewo\ measurements
 in the sample used here -- this actually strengthens the conclusion, as low ionization 
 BALQSOs show even higher column densities, approaching Compton-thick values 
 \citep{morabito2011}. This argument holds regardless of the outflow geometry adopted.
+
 I therefore suggest that the obscuration model of C11 cannot explain the \ewo\ distribution
 of LoBALQSOs. The similarity of the observed LoBAL and non-BAL distributions
-would also suggest that obscuration is unlikely to drive the behaviour of \ewo\ overall.
+also means that obscuration is unlikely to drive the behaviour of \ewo\ overall.
 These conclusions are moderated if the line of sight to the X-ray source, which determines 
-the measured $N_H$, experiences a different absoring column to that of the optical continuum.
+the measured $N_H$, experiences a different absorbing column to that of the optical continuum.
 They are also dependent on the particular reddening model used by C11. Indeed, it is worth noting at 
 this point that there is a degree of scatter in the $N_H$ values measured from X-ray and optical
-observations \citep{maiolino2001a,maiolino2001b}, as could be produced by differing 
+observations \citep{maiolino2001b,maiolino2001a}, as could be produced by differing 
 viewing angles.
 % so I suggest that the obscured model of C11 is ruled out on this basis.
 
@@ -819,7 +821,18 @@ viewing angles.
 
 Optically thin lines are isotropic -- the {\em local}
 escape probabilities in each direction are equal due to the 
-low optical depth. When lines are optically thick, the situation is more
+low optical depth. Anisotropy can however be introduced into optically thin 
+line emission by variation in continuum absorption. Indeed,
+\cite{kraemer2011} showed that the strength of \oiiifull\ compared
+to the infra-red [O\textsc{iv}]~$28.59~\mu$m line 
+varies between type 1 and type 2 AGN. This variation is due 
+to frequency-dependent absorption, and should not effect the distribution of \ewo.
+If a higher continuum optical depth was experienced along the line of sight
+to the NLR than to the continuum source then this could hide any EW
+trends. However, this is the opposite behaviour than that expected from type 1/type 2
+unification geometries (see section~\ref{agn_unification}).
+
+When lines are optically thick, the situation is more
 complex, as local velocity gradients then determine the line 
 anisotropy. Indeed, Keplerian velocity shear has been shown to modify the
 shape of disc-formed emission lines \citep{hornemarsh1986}, and an additional
@@ -835,8 +848,11 @@ emission in terms of their anisotropy.
 If this was the case, we would not expect a difference in the BAL and non-BAL
 quasar EW distributions. However, an emission line would only be purely 
 foreshortened if emitted by a disc with zero velocity shear. 
-If the lines came from a region subject to
-Keplerian velocity shear then the surface brightness of an optically thick 
+The single-peaked nature of most quasar lines imply that they are not
+formed in a Keplerian disc, or that radial velocity gradients modify the profile 
+shapes. We can nonetheless briefly explore the expected angular distributions
+expected if the lines came from a region subject to
+Keplerian velocity shear. In this case, the surface brightness of an optically thick 
 line is \citep{hornemarsh1986}
 \begin{equation}
 J_{\mathrm{thick}}(\theta) \approx \cos \theta~S_L~\Delta \nu~\sqrt{8 \ln \tau_0} \ ,

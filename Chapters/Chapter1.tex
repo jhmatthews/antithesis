@@ -365,16 +365,16 @@ effective temperature distribution can be derived by setting
 \end{equation}
 which then gives
 \begin{equation}
-T_{\mathrm{eff}} (R) = T_* \left[1 - \left( \frac{R_*}{R} \right)^{1/2} \right]^{1/4},
+T_{\mathrm{eff}} (R) = \left \{ \frac{3 G M \dot{M}}{8 \pi R^3 \sigma} \left[1 - \left( \frac{R_*}{R} \right)^{1/2} \right]\right \} ^{1/4}.
 \label{disk_t_profile}
+\end{equation}
+When $R>>R_*$ this simplifies to
+\begin{equation}
+T_{\mathrm{eff}} (R) = T_* (R / R_*)^{-3/4},
 \end{equation}
 where
 \begin{equation}
 T_* = \left ( \frac{3 G M \dot{M}}{8 \pi R_*^3 \sigma} \right)^{1/4}.
-\end{equation}
-When $R>>R_*$ this simplifies to
-\begin{equation}
-T_{\mathrm{eff}} (R) = T_* (R / R_*)^{-3/4}.
 \end{equation}
 Now we have not only derived the total luminosity of an accretion disc, but
 also the effective temperature profile which will govern the shape of the emergent SED.
@@ -465,7 +465,8 @@ BH case also poses a problem to the SS73 model, as it assumed that the viscous t
 go to zero at the inner boundary of the disc. This boundary condition
 may not be appropriate for BHs as it fails to properly describe the physics at the ISCO
 \citep[e.g.][]{abramowicz}. As a result, the turnover in the temperature profile
-caused by this boundary condition may not be present for BH discs.
+caused by this boundary condition (see Fig.~\ref{fig:disk_t}) 
+may not be present for BH accretion discs.
 
 \nocite{narayan2014, thorne1974}
 \begin{figure}

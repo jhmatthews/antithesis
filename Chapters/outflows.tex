@@ -171,7 +171,7 @@ involve disc precession \citep{barnard2006,shaw2013},
 failed state transitions \citep{soleri2013,shaw2016} or low ionization material 
 partially covering the X-ray source \citep{tanaka2003}.
 \cite{ponti2012} confirmed that broad absorption in highly ionized Fe lines 
-occured only in the dipping LMXBs in their sample, and proposed an equatorial 
+occurred only in the dipping LMXBs in their sample and proposed an equatorial 
 outflow geometry based on this association (see Fig.~\ref{fig:ponti_cartoon}). 
 The same study also demonstrated that the winds only appeared in the soft, 
 disc dominated accretion state, on the opposite side of the HID to the
@@ -660,22 +660,23 @@ ${\cal M}(t)$ can be approximated by \citep{abbott1982}
 \begin{equation}
 \label{eq:force_multiplier2}
 %% \cal{M}(t) = \sum_{lines} F_C \Delta \nu_D min (1/t, 1/\beta) 
-{\cal M}(t) = t^{-\alpha} 
-\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta,
+{\cal M}(t) = k~t^{-\alpha} 
+\left( \frac{n_e}{10^{11}~{\rm cm}^{-3}}\right)^\delta.
 \end{equation}
-where $t$ is the dimensionless optical depth, given by
+Here, $k$, $\alpha$ and $\delta$ are parameters
+with best-fit values of 0.28, 0.56 and 0.09, respectively, in O-star winds \citep{abbott1982},
+and $v_i$ is the component of the velocity field in the direction
+being considered. This is normally a line between the source of radiation and any
+given location in the wind.
+The dimensionless optical depth, $t$, is given by
 \begin{equation}
-t = \frac{\sigma_T \rho v_{th}}{m_p | d(v_i) / ds |}.
+t = \frac{\sigma_T \rho v_{th}}{m_p | d(v_i) / ds |},
 \end{equation}
 % and $\beta$ is the ratio of the mass scattering coefficient of the free
 % electrons, $\sigma_e$ to the line opacity, $\kappa_L$. $\Delta \nu_D$ is the Doppler
-% width. 
-Here, $k$, $\alpha$ and $\delta$ are parameters
-with best-fit 
-values of 0.28, 0.56 and 0.90, respectively, in O-star winds \citep{abbott1982},
-and $v_i$ is the component of the velocity field in the direction
-being considered. This is normally a line between the source of radiation and any
-given location in the wind. 
+% width.  
+where $v_{th}$ is the thermal speed, $\rho$ is the density, and $d(v_i) / ds$ represents
+the derivative of $v_i$ along the same direction it has been defined.
 It is possible to show \citep[CAK, ][]{owocki1988} that the maximum force multiplier,
 ${\cal M}_{\mathrm{max}}(t)$,
 is around $2000-4000$. This is already an interesting result, as it tells us
