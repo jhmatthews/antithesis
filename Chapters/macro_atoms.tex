@@ -15,7 +15,7 @@ for the study of recombination lines in YSOs (SDL05).
 has shown that it is possible to calculate the emissivity of a gas in
 statistical equilibrium without approximation for problems with large departures
 from LTE.
-His `macro-atom' scheme allows for all possible transition paths from a given level,
+His `macro-atom'\index{Macro-atoms} scheme allows for all possible transition paths from a given level,
 dispensing with the two-level approximation, and
 provides a full non-LTE solution
 for the level populations based on Monte Carlo estimators. The macro-atom
@@ -38,6 +38,7 @@ Following L02, let us consider an atomic species interacting with a radiation fi
 If the quantity $\epsilon_j$ represents the ionization plus excitation energy of 
 a level $j$ then the rates at which the level absorbs and emits radiant energy 
 are given by
+\index{Macro-atoms!Rate equations}
 \begin{equation}
  \dot{A}_{j}^{R} = R_{\ellp j} \epsilon_{j \ellp} \;\;\;\;\; {\rm and} \;\;\;
 \;\;  \dot{E}_{j}^{R} = R_{j \ellp} \epsilon_{j \ellp} \;\;\; ,
@@ -105,7 +106,8 @@ where I have defined
 D_j =  \dot{E}_{j}^{R}+\dot{E}_{j}^{C}+{\cal R}_{j\up}\epsilon_{j}+
  {\cal R}_{j \ellp}\epsilon_{\ellp} = ({\cal R}_{j\ellp} + {\cal R}_{j\up}) \epsilon_{j}.
 \end{equation}
-The corresponding jumping probabilities, which describe the probability
+The corresponding jumping probabilities\index{Macro-atoms!transition probabilities}, 
+which describe the probability
 that the macro-atom transitions to a different state while remaining active, 
 are given by
 \begin{equation}
@@ -277,6 +279,7 @@ which gives, for a time-independent code
 \begin{equation}
 J_\nu~d\nu = \frac{1}{4\pi}\frac{1}{V} \sum_{d\nu} w_i \Delta s,
 \end{equation}
+\index{mean intensity}
 where the summation is over all photons between $(\nu, \nu+d\nu)$. This allows
 the formulation of estimators in a MC sense, rather than in integral form. 
 
@@ -286,7 +289,7 @@ The estimator for the photoionization rate is
 \gamma_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
 \frac{w_i~\sigma_{j\kappa}({\nu})}{h \nu}~\Delta s
 \end{equation}
-and that for the stimulated recombination rate is
+and that for the stimulated recombination\index{stimulated recombination} rate is
 \begin{equation}
 \alpha_{\kappa j}^{st} =\left( \frac{n_j}{n_e n_\kappa} \right)^*_{T_e}
 \frac{1}{V} \sum_i^{\mathrm{photons}} 
@@ -334,7 +337,7 @@ n_e h\nu_{\kappa j} V,
 where the sum is over all the macro-atom bound-free transitions ($j\rightarrow\kappa$) 
 in the simulation, set by
 the number of photoionization cross-sections. 
-For bound-free heating, a similar expression can be derived. The rate at which
+For bound-free heating\index{bound-free heating}, a similar expression can be derived. The rate at which
 a level $j$ absorbs energy by bound-free 
 transitions is given by $\gamma^E_{j\kappa} h\nu_{\kappa j} n_\kappa n_e$,
 of which $\gamma_{j\kappa} h \nu_{\kappa j} n_l$ goes into ionization energy, leaving 
@@ -348,7 +351,7 @@ The heating and cooling rates for macro-atom bound-bound transitions are the rat
 collisional excitations and de-excitations
 - i.e. the rate at which thermal energy is converted into
 bound-bound excitation energy and vice versa.
-These heating and cooling rate estimators are:
+These heating and cooling rate estimators are:\index{bound-bound heating}\index{bound-bound cooling}
 
 \begin{equation}
 \hh_{bb} = \sum_{ju}^{\mathrm{lines}} q_{uj} n_u n_e h \nu_{uj} V,

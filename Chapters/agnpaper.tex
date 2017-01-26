@@ -93,7 +93,7 @@ the biconical quasar wind model.
 \label{sec:photon_sources}
 
 Two sources of r-packets are included in the model:
-An accretion disc and a central X-ray s ce.
+An accretion disc and a central X-ray source.
 The accretion disc is assumed to be geometrically thin, 
 but optically thick.
 Accordingly, the disc is modelled as an ensemble of blackbodies with a 
@@ -103,9 +103,10 @@ and central BH mass ($M_{BH}$).
 All photon sources in the model are opaque, meaning
 that r-packets that strike them are destroyed.
 The inner radius of the disc extends to the innermost 
-stable circular orbit (ISCO) of the BH. 
-I assume a Schwarzchild BH with an ISCO at $6~r_G$, where 
-$r_G = GM_{BH}/c^2$ is the gravitational radius.
+stable circular orbit\index{innermost 
+stable circular orbit} (ISCO) of the BH. 
+I assume a Schwarzschild BH\index{Black Hole!Schwarzschild} with an ISCO at $6~r_G$, where 
+$r_G = GM_{BH}/c^2$ is the gravitational radius\index{gravitational radius}.
 For a $10^9~M_\odot$ BH, this is equal to $8.85\times10^{14}~{\rm cm}$ 
 or $\sim10^{-4}~{\rm pc}$.  
 
@@ -115,7 +116,7 @@ which emits $r$-packets according to a power law in flux with index $\alpha_X$, 
 \begin{equation}
 F_X (\nu) = K_X \nu^{\alpha_X}.
 \end{equation}
-The normalisation, $K_X$ of this power law is such that it 
+The normalisation, $K_X$ of this power law\index{X-ray!power law} is such that it 
 produces the specified 2-10~keV luminosity, $L_X$.
 The input spectrum for the simulations is therefore a simple combination
 of a power law X-ray component and accretion disc spectrum; an example input
@@ -125,7 +126,7 @@ the angular emissivity profile of the accretion disc (see sections~\ref{sec:xray
 and \ref{sec:ew_in_model}.
 Photons, or $r$-packets, produced by the accretion disc and central X-ray source
 are reprocessed by the wind. This reprocessing is dealt with by enforcing strict
-radiative equilibrium ({\em modulo} adiabatic cooling; see section~\ref{sec:estimators})
+radiative equilibrium ({\em modulo} adiabatic cooling\index{adiabatic cooling}; see section~\ref{sec:estimators})
 via the indivisible energy packet constraint.  
 
 \begin{figure} 
@@ -155,6 +156,7 @@ AGN winds exhibit significant substructure -- the outflow is expected to be
 A clumpy outflow offers a possible solution to the so-called `over-ionization problem' in 
 quasar and AGN outflows \citep[e.g.][]{junk1983,weymann1985,hamann2013}. 
 This is the main motivation for incorporating clumping into the model.
+\index{clumping}
 
 Deciding on how to implement clumping into the existing wind models was not straightforward.
 First, and most importantly, the physical scale lengths and density contrasts in AGN outflows are not well-constrained from observations or theory.  As a result, while one could envision in principle, clouds with a variety of sizes and density contrasts varying perhaps as function of radius, there would have been very little guidance on how to set nominal values of the various parameters of such a model.
@@ -162,7 +164,8 @@ Second, there are significant computational difficulties associated with adequat
 -- or for that matter, a hydrodynamical -- code. 
 Given the lack of knowledge about the actual type of clumping, I have implemented
 a simple approximation used successfully in stellar wind modelling, known as 
-{\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}.  
+{\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}.
+\index{clumping!micro-}  
 
 The underlying assumption of microclumping is that clump sizes 
 are much smaller than the 
@@ -170,7 +173,7 @@ typical photon mean free path, and thus the clumps are
 both geometrically and optically thin. This approach 
 allows one to treat clumps only in terms of their volume filling factor, $f_V$, 
 instead of having to specify separately their size and density distributions.
-In this model, $f_V$ is independent of position.
+In this model, $f_V$ is independent of position.\index{clumping!filling factor} 
 The inter-clump medium is modeled as a vacuum,
 although the outflow is still non-porous and axisymmetric.
 This approach therefore assumes that the inter-clump medium
@@ -197,7 +200,7 @@ bound-free heating and also increasing the competing line cooling term
 (thermal line emission).
 
 The shortest length scale in a Sobolev MCRT treatment such as that used here
-is normally the Sobolev length, given by
+is normally the Sobolev length, given by\index{Sobolev approximation} 
 \begin{equation}
 l_S = \frac{v_{th}}{| dv/ds |}
 \end{equation}
@@ -425,6 +428,7 @@ to the extent that opacities in e.g., \civ\ would be entirely negligible (see H1
 
 One common way to quantify the ionization state of a plasma
 is through the ionization parameter, $U_H$, given by equation~\ref{eq:ip}.
+\index{ionization parameter} 
 Shown in Fig.~\ref{fig:wind},
 the ionization parameter is a useful measure of the global ionization state,
 as it represents the ratio of the number density of 
@@ -833,7 +837,7 @@ broad line region.
 \subsection{Inclination Trends: FWHM and EW}
 \label{sec:ew_in_model}
 
-Broad line EWs increase with inclination in the fiducial model.
+Broad line EWs increase with inclination in the fiducial model.\index{inclination}
 This trend means that even though models with
 significantly denser and more strongly irradiated winds
 can match the line EWs fairly well at low inclinations, they also
@@ -885,7 +889,7 @@ with inclination in a disc wind model.
 Although their model is fairly simple -- 
 it does not include, for example, full radiative transfer or ionization physics --
 this analysis still gives interesting insights into how emission lines
-from a disc wind might bias BH mass estimates.
+from a disc wind might bias BH mass estimates.\index{Black Hole!mass}
 
 If the BLR gas is virialised, as often assumed, then the black hole mass
 is related to the velocity dispersion, $\Delta v$, of the gas by

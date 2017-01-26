@@ -16,11 +16,15 @@
 \usepackage{pdfpages}
 \usepackage{textcmds}
 \usepackage{forloop}
+\usepackage{imakeidx}
+\makeindex[columns=2, title=Alphabetical Index, intoc]
 
 %\usepackage[hmarginratio=1:1]{geometry}
 
 \setlength\epigraphrule{0pt}
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+
+% \makeindex
 
 %% ----------------------------------------------------------------
 \begin{document}
@@ -127,7 +131,7 @@
             {James Matthews}
             }
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
-\date       {\today}
+\date       {June 2016}
 \subject    {}
 \keywords   {}
 
@@ -309,13 +313,13 @@ MNRAS, 436, 2.3
 \bigskip
 
 Signed:~~~~~~~~
-%\includegraphics[width=0.3\textwidth]{figures/signature.png}\\
+\includegraphics[width=0.3\textwidth]{figures/signature.png}\\
 \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
 
 %\bigskip
 
 Date: 
-%25/05/2016\\
+11/06/2016\\
 \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
 \clearpage  % Declaration ended, now start a new page
@@ -424,7 +428,7 @@ NEL & Narrow emission line\\
 NLR & Narrow line region\\
 NL & Nova-like variable\\
 NS & Neutron Star\\
-QSO & Quasa-stellar object / Quasar \\
+QSO & Quasi-stellar object / Quasar \\
 % OVV & Optically violent variable galaxy\\
 RL & Radio-loud\\
 RHS & Right-hand side\\
@@ -534,6 +538,8 @@ $e$ & & $=$ & $2.718\ 282\ $ \\
 % \input{Appendices/AppendixA}	% Appendix Title
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 
+\printindex 
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 
 \backmatter
 
