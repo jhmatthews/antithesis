@@ -23,10 +23,12 @@ cataclysmic variables (CVs). Accretion is a universal process;
 broadly speaking, the physics is similar regardless of 
 whether matter is falling on to a $\sim1~M_\odot$ neutron star or white dwarf,
 or a $\sim10^{10}~M_\odot$ black hole. 
+\index{quasar}\index{cataclysmic variable}\index{neutron star}\index{white dwarf}
+\index{accretion}\index{nuclear fusion}\index{AGN}\index{accretion disc}
 
 Outflows are ubiquitous in accreting systems. We see collimated radio jets in AGN 
 \citep{hazard1963,potash1980,perley1984,marscher2006} and XRBs \citep{bellonijet2010}, 
-and there is even evidence of radio emission in 
+and there is even evidence of radio emission in\index{outflows}\index{radio jet}
 CVs \citep{benz1983,kordingDNjet2008,coppejans2015}. 
 These radio jets tend to appear in specific 
 accretion states \citep{fender2001,fender2004,kordingDNjet2008},\index{accretion!state}
@@ -34,10 +36,10 @@ implying an intrinsic connection to the
 accretion process. Even more intriguing, less collimated, mass-loaded outflows\index{outflows}
 or {\em winds} are observed in XRBs in soft accretion states, 
 possibly emanating from the accretion disc \citep{ponti2012}.
-Evidence for disc winds is widespread across the mass range,\index{winds!disc} 
+Evidence for disc winds is widespread across the mass range,\index{disc wind} 
 but perhaps the most spectacular indication
 is the blue-shifted, broad absorption lines (BALs) in the rest-frame ultraviolet (UV)
-\index{broad absorption lines}
+\index{BALs}
 seen in high-state CVs \citep{heap1978,greensteinoke1982,cordova1982}\index{Cataclysmic Variables}
 and in the so-called broad absorption line quasars (BALQSOs) that make up $20\%-40\%$
 of quasars \citep{weymann1991,knigge2008,allen2011}. 
@@ -47,6 +49,7 @@ in the optical spectra of CVs \citep{patterson1996, RN98, kafka2004}.
 Broad, blue-shifted absorption is also observed in the Fe K$\alpha$ line in 
 some AGN \citep{reeves2003,poundsreeves2009,tombesi2010a} -- these are known
 as ultra-fast outflows or UFOs.
+\index{ultra-fast outflows}\index{BALQSOs}\index{BALs}
 % \footnote{It should be noted that, while X-ray spectral
 % fitting can be somewhat of a dark art, the explanations for these
 % UFOs are somewhat more believable than their sci-fi namesakes.}
@@ -67,7 +70,7 @@ and an associated outflow, just by varying the viewing angle \citep{elvis2000}.
 Similarly elegantly, it has been shown that much of the behaviour of XRBs
 is directly analogous to AGN \citep{mchardy2006}, 
 and models of outflows in CVs have been successfully `scaled-up'
-and applied to quasars and AGN \citep[e.g.][]{higginbottom2013}.\index{quasars} 
+and applied to quasars and AGN \citep[e.g.][]{higginbottom2013}.\index{quasar} 
 
 Despite their importance and ubiquity, there are still
 many unanswered questions relating to the true impact of winds and their underlying
@@ -139,7 +142,7 @@ r_S = \frac{2GM}{c^2},
 \end{equation}
 which defines the event horizon of a non-rotating black hole. It is also pertinent
 to define the gravitational radius, $r_G = 1/2~r_S$, which can be useful as
-a characteristic scale for any compact object of mass $M$.\index{Black Hole!event horizon} 
+a characteristic scale for any compact object of mass $M$.\index{event horizon} 
 
 \begin{table}
 \centering
@@ -178,7 +181,7 @@ symmetric manner.\index{accretion!spherical}
 The process of spherical accretion has come to be known as 
 Bondi-Hoyle-Lyttleton accretion \citep{hoyle1939,bondi1944}.
 In particular, \cite{bondi1952} studied spherically symmetric 
-accretion onto a point mass and derived the Bondi radius,
+accretion onto a point mass and derived the Bondi radius,\index{Bondi-Hoyle-Lyttleton accretion}
 \begin{equation}
 r_B = \frac{G M}{c_S^2},
 \label{eq:bondi}
@@ -186,7 +189,7 @@ r_B = \frac{G M}{c_S^2},
 where $c_S = c_S(r_B)$ is the sound speed as a function of radius.
 The Bondi radius represents a critical point inside which the material
 is supersonic and will accrete on the free-fall timescale, $\tau_{\mathrm{ff}}$.
-For a cloud of uniform density, $\rho_0$, this is given by 
+For a cloud of uniform density, $\rho_0$, this is given by\index{free-fall timescale}
 \begin{equation}
 \tau_{\mathrm{ff}} = \sqrt{\frac{3 \pi}{32 G \rho_0}}.
 \label{eq:frad}
@@ -237,14 +240,14 @@ whereas for much lower Eddington
 fractions, sources are expected to harbour geometrically thick, 
 advection-dominated accretion flows
 \citep[ADAFs; ][]{narayan1994,narayan1995} or, more generally, 
-radiatively inefficient accretion flows (RIAFs).
+radiatively inefficient accretion flows (RIAFs).\index{ADAF}\index{RIAF}
 It is also clear that, near the Eddington limit, radiation pressure
 must play a major role in determining the disc morphology 
 (see section~\ref{sec:rad_winds}).
 
 \subsection{Accretion Discs}
 
-\index{accretion!disc} 
+\index{accretion disc} 
 In many astrophysical situations -- for example, 
 in binary systems and gas clouds orbiting black holes (BHs) --
 any accreting matter will possess some net angular momentum.
@@ -310,7 +313,7 @@ an {\em effective viscosity}\index{viscosity}.
 \subsubsection{Steady-state Accretion Discs: the $\alpha$-prescription}
 
 \label{sec:alpha_disc}
-
+\index{accretion disc!thin disc models}
 The so-called $\alpha$-disc model developed by 
 \citet[][hereafter SS73]{shakurasunyaev1973} and \cite{lyndenbell1969} is
 a simple approximation for how energy and angular momentum
@@ -356,7 +359,7 @@ where we have also set the angular velocity to the Keplerian velocity.
 This expression is independent of viscosity -- which is fortunate, because
 we do not know what value of $\alpha$ to use in equation~\ref{eq:viscosity}.
 This result comes about because of the implicit assumption that the viscosity regulates
-the mass accretion rate so as to achieve a steady state.
+the mass accretion rate so as to achieve a steady state.\index{viscosity}
 
 We can now integrate across both sides of the whole disc to obtain the disc luminosity,
 \begin{equation}
@@ -410,7 +413,7 @@ The answer is dependent on the compact object in question.
 In an accreting WD, the rotating matter must eventually deposit itself 
 on the surface of the WD. This is illustrated in Fig.~\ref{fig:omega},
 which shows the angular velocity as a function of radius in a disc around
-a compact object rotating with angular velocity $\Omega_*$. The boundary layer (BL)
+a compact object rotating with angular velocity $\Omega_*$. The boundary layer (BL)\index{boundary layer}
 is the region to the left of the dotted line, inside the maximum of $\Omega$, the
 angular velocity. The luminosity of the boundary layer is \citep{fkrbook}
 \begin{equation}
@@ -460,7 +463,7 @@ event horizon of the BH. Instead, there is an `innermost stable circular orbit' 
 beyond which the accreting matter will simply fall 
 into the BH along nearly radial paths. The radius
 of this orbit, $R_{ISCO}$, and the horizon radius, $R_H$,
-is shown for different values of the BH spin parameter, $a_*$,\index{Black Hole!spin} 
+is shown for different values of the BH spin parameter, $a_*$,\index{black hole spin} 
 in Fig.~\ref{fig:isco}, showing how matter can orbit closer to a prograde spinning BH. 
 In estimating the luminosity of a Keplerian disc around a BH, 
 we should really set $R_*=R_{\mathrm{ISCO}}$ when calculating the BH accretion efficiency,
@@ -475,6 +478,7 @@ may not be appropriate for BHs as it fails to properly describe the physics at t
 \citep[e.g.][]{abramowicz}. As a result, the turnover in the temperature profile
 caused by this boundary condition (see Fig.~\ref{fig:disk_t}) 
 may not be present for BH accretion discs.
+\index{black hole!Kerr}\index{black hole!Schwarzschild}
 
 \nocite{narayan2014, thorne1974}
 \begin{figure}
@@ -543,21 +547,7 @@ or the current stellar atmosphere models produce accurate disc spectra.
 I shall therefore devote a little time to discussing
 the observational appearance of accretion discs and reviewing
 the different classes of accreting objects.
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=0.8\textwidth]{figures/01-intro/bb_v_sa.png}
-% \caption
-% [A comparison between a Planck curve and Kurucz (1991) stellar atmosphere model.]
-% {
-% A comparison between a Planck curve and Kurucz (1991) stellar atmosphere model
-% at $T_{eff}=50,000$K and surface gravity of $\log(g)=5$. The major photoabsorption
-% edges are marked. Flux is reprocessed into different wavelengths by bound-free opacities,
-% and line blanketing also has a big effect on the spectrum. The Hydrogen and Helium lines
-% also experience significant pressure broadening.
-% } 
-% \label{fig:bb_v_sa}
-% \end{figure}
+\index{stellar atmosphere}
 
 \begin{figure}
 \centering
@@ -597,7 +587,7 @@ Accreting compact binaries form many different classes,
 but all are characterised by matter streaming from a donor
 onto a compact object. When the compact object is more massive 
 than the donor, it is designated as the `primary', 
-and its companion as the `secondary'. 
+and its companion as the `secondary'.\index{X-ray binaries!high mass} 
 In high-mass X-ray binaries (HMXBs), the opposite is formally true.
 There are only two ways by which matter can transfer 
 from the secondary to the compact object. One is by Roche lobe-overflow (RLOF),
@@ -609,11 +599,11 @@ Although accretion from a wind or circumstellar disc is common in
 HMXBs \citep{bartlett2013}, here I will focus on 
 RLOF as it is more common in the systems that possess high-state accretion discs
 and associated outflows. Two examples of these are shown in Fig.~\ref{fig:cv_and_xrb}
-
+\index{compact binary}
 
 \subsection{Roche Lobe-Overflow}
 \label{sec:rlof}
-
+\index{Roche Lobe overflow} 
 Let us consider a binary system containing two point sources
 with masses $M_1$ and $M_2$ at positions
 $\vec{r}_1$ and $\vec{r}_2$. The Roche potential, $\Phi_R$, in this system 
@@ -642,6 +632,7 @@ and system centres of mass.
 \label{fig:roche}
 \end{figure}
 
+\index{Roche potential}
 In the context of semi-detached binary systems, the most important equipotential
 is the dumbbell-shaped region enclosing both masses. Each of these
 enclosed regions is known as the `Roche lobe' of the object. A good approximation
@@ -672,7 +663,7 @@ the 1960s \citep{kraft1962}.
 
 Cataclysmic variables (CVs) are systems in which a WD
 accretes matter from a donor star via Roche-lobe overflow 
-\citep[see the `CV bible', ][]{warnerbook}. 
+\citep[see the `CV bible', ][]{warnerbook}.\index{cataclysmic variable} 
 CVs are not always dominated by their accretion luminosity; 
 for example, novae undergo dramatic eruptions caused
 by thermonuclear runaway, and the so-called `supersoft sources' show evidence
@@ -684,7 +675,8 @@ Magnetic systems are classified as either `Polars' ($B_{WD} \gtrsim 10^7$~G)
 or `Intermediate Polars' (IPs; $10^6 \lesssim B_{WD}  \gtrsim 10^7$~G);
 in these systems the accretion flow inside the some critical radius 
 (related to the Alfven radius)
-is dominated by the WDs magnetic field. 
+is dominated by the WDs magnetic field.\index{polar CV} 
+\index{intermediate polar} 
 In polars, this radius is large enough, due to the strong magnetic field,
 that no disc forms at all \citep{liebert1985}. In IPs the accretion
 disc is truncated at the magnetospheric boundary, and accretion `curtains'
@@ -696,6 +688,7 @@ dwarf novae and nova-like variables.
 
 \subsubsection{Dwarf Novae and the Disc-instability Model}
 
+\index{dwarf nova} 
 Dwarf novae (DNe) are CVs that are characterised 
 by repeated cycles of quiescence -- 
 where the system is in a faint, low flux state --   
@@ -802,19 +795,19 @@ spectrum. I have attempted to show each spectrum over a similar dynamic range.
 \label{fig:NL_spec}
 \end{figure}
 
-Nova-like variables (NLs) are similar to DNe,
+Nova-like variables (NLs) are similar to DNe,\index{nova-like variable} 
 except that the disc is always in a relatively 
 high-accretion-rate state ($\dot{M} \sim 10^{-8}$~M$_{\odot}$~yr$^{-1}$).
 NLs are therefore one of the best `laboratories' for testing the steady-state
 accretion disc theory described in section~\ref{sec:alpha_disc}.
 In the optical, NLs generally exhibit a series of H and He emission 
 lines superposed on a blue continuum. In many
-cases, and particularly in the SW~Sex subclass of NLs
+cases, and particularly in the SW~Sex subclass of NLs\index{SW Sex} 
 \citep{HSK86,DR95}, these lines are single-peaked. This is contrary to
 theoretical expectations for lines formed in accretion discs, which
 are predicted to be double-peaked \citep{smak1981, hornemarsh1986}. 
 {\em Low-state} CVs (dwarf novae in quiescence) do, in fact,
-exhibit such double-peaked lines \citep{marshhorne1990}. 
+exhibit such double-peaked lines \citep{marshhorne1990}.\index{emission line} 
 
 \nocite{dhillon1996,hessman1984}
 
@@ -835,7 +828,7 @@ in the context of winds in chapter 2.
 
 \subsection{Low Mass X-ray Binaries}
 
-Although I do not study low-mass X-ray binaries (LMXBs) 
+Although I do not study low-mass X-ray binaries (LMXBs)\index{X-ray binary!low mass} 
 directly in this thesis, it is instructive
 to briefly discuss their observational appearance, 
 as it is relevant to the connections between accretion and outflows.
@@ -873,6 +866,7 @@ an associated outflow -- is strikingly similar to models for CVs and quasars.
 
 \section{Quasars and Active Galactic Nuclei}
 
+\index{AGN}\index{quasar}\index{Seyfert galaxy}   
 Spectra of AGN have now been studied for over 100 years, and we have known 
 that they exhibit strong, broad emission lines since the first spectrum was taken by
 \cite{fath1909}. However, it wasn't until the work of \cite{seyfert1943} that the systematic 
@@ -907,17 +901,17 @@ One of the main classification schemes for AGN is a spectroscopic one, based on
 whether an object possesses broad emission lines in its spectrum, 
 such as \civ, \hb\ and
 \la, in addition to the narrow lines that are always present. 
-If these broad lines are seen, then the AGN is classed as type 1;
+If these broad lines are seen, then the AGN is classed as type 1;\index{AGN!type 1}\index{AGN!type 2}
 if not, it is classed as type 2 (Fig.~\ref{fig:agn_templates}).
 These designations were originally applied to Seyfert galaxies \citep{seyfert1943}, 
 but can also be used to classify the more luminous quasar class, despite the apparent
 difficulty in finding the expected number of type 2 quasars \citep{zakamska2003}. 
 This classification scheme is complicated somewhat by the existence of two
-unusual types of AGN: narrow line Seyfert 1s (NLSIs), which
+unusual types of AGN: narrow line Seyfert 1s (NLSIs), which\index{narrow line Seyfert 1}
 may be explained by super-Eddington accretion \citep{done2015} 
 or perhaps simply an orientation effect \citep{baldi2016},
 and so-called `true type 2' AGN, in which the broad line region is absent 
-\citep{tran2001,shi2010} rather than obscured (see next section).
+\citep{tran2001,shi2010} rather than obscured (see next section).\index{AGN!true type 2}
 Despite this muddying of the waters, what was originally a 
 clear dichotomy in spectral type provided a 
 profound motivation for attempting to {\em unify} AGN via geometric arguments.
@@ -987,19 +981,19 @@ Obtained from \url{http://www.stsci.edu/hst/observatory/crds/cdbs_agn.html}.
 \subsection{AGN Unification and the Dusty Torus}
 \label{agn_unification}
 
-Although Seyfert had identified type 1 and 2 AGN, a physical explanation
+Although Seyfert had identified type 1 and 2 AGN, a physical explanation\index{AGN!unification}
 for this dichotomy was not forthcoming until a study by \citet[][AM85]{antonucci1985}.
 They showed unambiguously that the nearby Seyfert 2 NGC~1068 is simply an obscured
 type 1 AGN, by finding that broad emission lines appeared in the spectrum of
 {\em polarised} flux. This provided the basis for the first successful attempt
-to unify AGN behaviour, as it elegantly 
+to unify AGN behaviour, as it elegantly \index{BLR} 
 explained the apparent disconnect between the two types of 
 AGN as simply a viewing angle effect: in type 1s, an observer can look directly
 into the broad line region (BLR) near the nucleus, but, in type 2s,
 this region is hidden from view. Narrow lines are seen in both types as they
-are formed in the narrow-line region (NLR), which is on a 
+are formed in the narrow-line region (NLR), which is on a\index{NLR}  
 significantly larger scale and is thus always visible.
-The obscuring structure became known as the `torus' \citep{krolik1986}, 
+The obscuring structure became known as the `torus' \citep{krolik1986},\index{torus}  
 due to its proposed geometry, and it was soon realised that this structure
 may be made of dust, in which case it could also be responsible for the infra-red (IR)
 bump in AGN spectra \citep{neugebauer1979}.
@@ -1056,8 +1050,8 @@ The Soft-X-ray excess is also visible
 Since the seminal works by AM85 and UP95, 
 the picture has become somewhat more complicated. 
 Variable X-ray absorption has been detected in so-called `changing look'
-AGN \citep{matt2003,puccetti2007}, 
-including even NGC 1068 itself \citep{marinucci2016}.
+AGN \citep{matt2003,puccetti2007},\index{AGN!changing-look}
+including even NGC 1068 itself \citep{marinucci2016}.\index{NGC 1068}
 Changes in type have also been seen in the optical lines;
 the broad H$\beta$ component in some AGN can dramatically disappear or reappear
 \citep[e.g.][]{tohline1976,cohen1986,denney2014}. 
@@ -1093,20 +1087,21 @@ I discuss X-ray absorption in more detail in chapter 2, particularly with respec
 The hard X-ray spectra of AGN also tend to exhibit a number of reflection features. 
 Typically, these consist of a strong Fe K$\alpha$ emission line and a `Compton hump'
 at high energies. The latter is produced by Compton down-scattering 
-of high energy photons \citep{pounds1989,nandra1994}.
+of high energy photons \citep{pounds1989,nandra1994}.\index{Compton hump}\index{Compton scattering}
 It is still unclear exactly where these features originate, 
 but a common interpretation is that they are caused by 
 reflection off the inner parts of the accretion disc 
 \citep{fabian1995,iwasawa1996b,reynolds1999}.
-If this is the case, and the broadening of the iron line is relativistic,
+If this is the case, and the broadening of the iron line is relativistic,\index{iron line}
 this would allow for measurements of the BH spin 
-\citep{laor1991,iwasawa1996a,dabrowski1997}.
+\citep{laor1991,iwasawa1996a,dabrowski1997}.\index{black hole spin}
 This hypothesis is somewhat controversial, as 
 many of the relativistic features supposedly imprinted by BH spin can also be explained
 by Comptonisation or absorption \citep[e.g.][]{misra1998,miller2013}.
 In addition, an outflow can naturally produce the characteristic 
 broad red Fe K$\alpha$ wing \citep{sim2010}.
 
+\index{AGN!Compton-thick} 
 In Compton-thick AGN, the intrinsic continuum is heavily absorbed by columns of
 $N_H\gtrsim10^{24}$~cm$^{-2}$ -- this absorption is normally attributed to the 
 dusty torus, 
@@ -1123,7 +1118,7 @@ stages of Fe on $\sim0.1$~pc scales \citep{gandhi2015}.
 If one interpolates between the $\nu^{1/3}$ law from the BBB in the UV, and the power law
 in the hard X-rays, a curious excess of flux is often found
 in type 1 AGN \citep[see Fig.~\ref{fig:quasar_sed}, and][]{koratkar1999}. 
-This is known as the soft X-ray excess (SXXS), which is too 
+This is known as the soft X-ray excess (SXXS), which is too\index{soft X-ray excess} 
 hot to be explained by thermal disc emission, as a thin disc around an AGN should
 never approach the temperatures required. Many models have been proposed to
 explain this excess, including relativistically smeared 
@@ -1140,7 +1135,7 @@ accretion disc size problem discussed in
 section~\ref{sec:disc_continuum} \citep{gardnerdone2016}.
 
 \subsection{The Broad Line Region: Connection to Winds and Unification}
-
+\index{BLR}\index{AGN!unification}\index{emission line}
 In the UP95 unification model, the broad emission lines
 come from a series of virialised clouds close to the disc plane.
 As noted by \citet[][hereafter MCGV95]{MCGV95}, there are a number of problems with
@@ -1164,7 +1159,7 @@ I have illustrated this general principle with the `Occam's quasar'
 cartoon shown in Fig.~\ref{fig:occam}. This is the picture that I will
 quantitatively test in the latter, quasar-focused sections of this thesis.
 The same general principle can also be applied to cataclysmic variables 
-and other accreting objects.
+and other accreting objects.\index{Occam's razor}\index{Occam's quasar}\index{disc wind}
 
 
 \begin{figure}
@@ -1187,7 +1182,7 @@ the behaviour of quasars and other accreting compact objects?
 The SS73 model is still the most common way to fit accretion disc spectra and infer
 information about the underlying physics. However, 
 a number of issues have been raised concerning the thin-disc model and
-its applicability to accreting systems. 
+its applicability to accreting systems.\index{accretion disc} 
 
 \subsection{The Spectral Shape of CV Discs}
 
@@ -1206,9 +1201,9 @@ However, an alternative explanation, suggested by
 \cite{KLWB98} and \cite{hassall}, 
 is that recombination continuum emission from the base of the 
 disc wind might fill in the disc's Balmer absorption edge and flatten 
-the UV spectrum.
+the UV spectrum.\index{Balmer edge}\index{recombination continuum} 
 
-Alternatively, it may just be that CV disks are never really in
+Alternatively, it may just be that CV discs are never really in
 a steady state, and so we should only expect the $R^{-3/4}$
 temperature profile to hold in a limited portion of the disc.
 From eclipse mapping, it has been shown that the inferred accretion
@@ -1242,6 +1237,7 @@ varying temperatures \citep{dexteragol2011}, but this is very much
 still an active area of research. It is worth noting that the impact
 of winds on these results has not yet been properly quantified, something
 our team is currently trying to address \citep{mangham}.
+\index{accretion disc!disc-size problem} 
 
 \subsubsection{Fitting AGN Spectra and the 1000~\AA\ Break}
 
@@ -1257,6 +1253,7 @@ around $1000$~\AA\ \citep{lusso2015}, which does not scale with BH mass or lumin
 as one might expect for a break associated with an accretion disc. 
 There is also no evidence in AGN of the expected polarisation signatures from an 
 optically thick disc atmosphere \citep{stockman1979,antonucci1988,antonucci1996}. 
+\index{$1000$~\AA\ break} 
 
 Despite these problems, recent work suggests that the thin disc model 
 still has some potential. \cite{capellupo2015} were able to fit a number of
@@ -1269,7 +1266,7 @@ fitting alone. The $1000$~\AA\ break has also been explained with mass-losing di
 and \cite{lusso2015} suggested that incorrect IGM corrections 
 may be exacerbating the effect.
 So, while many problems exist, it may not be time to 
-abandon the good ship ``Shakura-Sunyaev'' just yet.
+abandon the good ship ``Shakura-Sunyaev'' just yet.\index{accretion disc}
 
 \section{The Universality of Accretion}
 
@@ -1278,7 +1275,7 @@ of magnitude in mass. But is this process the same on all scales? Does any
 behaviour manifest in all accreting systems? 
 
 \subsection{The RMS-flux relation}
-
+\index{RMS-flux relation}
 Broad-band variability is common in all types of accretion disc. It has been
 known for some time that there exists a linear relationship
 between the flux and absolute root-mean-square (rms) amplitude
@@ -1298,7 +1295,7 @@ clear-cut examples of a universal accretion phenomenon.
 It tells us that at least some of the behaviour in CV discs
 is also present in AGN and XRBs, strengthening the argument that CVs
 can be used as `accretion laboratories'. 
-
+\index{accretion disc!fluctuating}
 
 \subsection{Accretion states and disc-jet coupling}
 \label{sec:disc-jet}
@@ -1329,7 +1326,7 @@ in X-ray photon index are present in AGN and LMXBs;
 `softer when brighter' behaviour is found 
 at relatively high Eddington ratios \citep{mchardy1999,gu2009},
 while `harder when brighter' is observed in 
-low states \citep{gu2009,dimitri_llagn,connolly2016}.
+low states \citep{gu2009,dimitri_llagn,connolly2016}.\index{fundamental plane of BH activity}
 
 Despite this apparently universal behaviour, 
 the jet production mechanism in BHs is not well known. 
@@ -1347,6 +1344,7 @@ radio emission \citep{coppejans2015}. This important result suggests that our un
 of jets is incomplete, and that the links between accretion state and 
 jet production are fundamental, but unsolved. Disc winds may complicate, or simplify,
 matters, depending on one's outlook (see chapter 2).
+\index{radio jet}\index{black hole spin}\index{RIAF}
 
 \begin{figure}
 \centering

@@ -25,7 +25,7 @@ superscript denotes that the estimator pertains to simple-atoms.
 
 
 \section{Fundamentals of Radiative Transfer}
-
+\index{radiative transfer}
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{figures/03-radtrans/rays_schematic.png}
@@ -41,7 +41,7 @@ Let us consider a ray passing through a reference surface $dA$ and
 making an angle $\theta$ with the normal to this surface. The energy
 flow can then be related to the
 {\em specific intensity}, $I_\nu$, by
-\index{radiative transfer} 
+\index{radiative transfer}\index{specific intensity}
 \begin{equation}
 I_\nu = \frac{dE}{d\Omega~dt~dA~d\nu},
 \end{equation}
@@ -51,7 +51,7 @@ everything about the radiation field: its time, angular, spatial and frequency
 dependence.
 By successively multiplying by $\cos \theta$ and integrating over solid angle we 
 can obtain the first and second `moments' of the radiation field. These
-are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by
+are the flux, $F_\nu$ and momentum flux, $p_\nu$, respectively, given by\index{momentum flux}
 \begin{equation}
 F_\nu = \int I_\nu \cos \theta~d \Omega,
 \end{equation}
@@ -62,7 +62,7 @@ The {\em mean intensity}, $J_\nu$, is
 \begin{equation}
 J_\nu = \frac{1}{4 \pi} \int I_\nu~d \Omega.
 \end{equation}
-The mean intensity is particularly
+The mean intensity is particularly\index{mean  intensity}
 useful when one wants to ignore the solid angle dependence of the radiation,
 for example when considering the impact of an ionizing radiation field.
 
@@ -78,7 +78,7 @@ If we define the optical depth, $d \tau_\nu = \kappa_\nu ds$, this can be recast
 \frac{d I_\nu}{d \tau_\nu} = -I_\nu + S_\nu,
 \label{eq:formal_rte}
 \end{equation}
-where $S_\nu=j_\nu/\kappa_\nu$ is the source function. This equation
+where $S_\nu=j_\nu/\kappa_\nu$ is the source function. This equation\index{source function}
 can be solved to give the {\em formal solution to the radiative transfer equation},
 \begin{equation}
 I_\nu = I_{\nu,0}~e^{-\tau_\nu} + \int^{\tau_\nu}_0 S_\nu (\tau^\prime_\nu)~e^{\tau^\prime_\nu-\tau_\nu} d \tau^\prime_\nu.
@@ -98,6 +98,7 @@ I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
 
 \subsection{Spectral Line Formation}
 
+\index{emission line}\index{line formation}
 From the above equations, it is trivial to show how emission and absorption lines form when
 the source function is approximately constant.
 Say we have a plasma illuminated by a blackbody of temperature $T_0$, such that
@@ -115,12 +116,12 @@ see an emission line, and if $T < T_0$ we will see an absorption line.
 
 
 An important physical limit is that of local thermodynamic equilibrium (LTE).
-\index{local thermodynamic equilibrium}
+\index{LTE}
 This is a first-order way to describe the physical conditions of a plasma and assumes
 that all the properties of the plasma, such as the level populations and source function,
 are the same as those in thermodynamic equilibrium for local values of 
 temperature and density. For this to be the case, the principle of 
-{\em detailed balance} must also apply, in which every 
+{\em detailed balance} must also apply, in which every\index{detailed balance} 
 process by which electrons transition between states must be exactly 
 balanced by its inverse process. In LTE, the electron temperature, 
 $T_e$, is equal to the temperature of the radiation field, $T_R$, and
@@ -134,7 +135,7 @@ f(v) = 4 \pi \left( \frac{m_e}{2 \pi kT_e} \right)^{3/2} v^2
 \exp \left( - \frac{m_ev^2}{2kT_e} \right),
 \label{eq:maxwellian}
 \end{equation}
-where $m_e$ is the mass of an electron.
+where $m_e$ is the mass of an electron.\index{Maxwellian distribution}
 
 \smallskip
 
@@ -147,6 +148,7 @@ which states that two adjacent ions have relative populations given by
 \label{eq:saha}
 \end{equation}
 where $g_i$ is the multiplicity of ion $i$ and $\nu_0$ is the threshold frequency.
+\index{Saha equation}
 
 \smallskip
 
@@ -157,7 +159,7 @@ A level $j$ then has a population relative to ground governed by
 \label{eq:boltzmann}
 \end{equation}
 where $E_j$ is the energy difference between the two levels and 
-$g_j$ is the statistical weight of level $j$. 
+$g_j$ is the statistical weight of level $j$.\index{Boltzmann statistics}
 
 \smallskip
 
@@ -167,19 +169,19 @@ the SED is not a blackbody and is affected by absorption --
 as is the case in AGN and other accreting systems. The Maxwellian assumption 
 is probably the most reliable, but even this may break down
 when high-energy photons create suprathermal electron distributions 
-\citep{humphrey2014}. 
+\citep{humphrey2014}.\index{LTE}\index{suprathermal electron distribution}.
 
 \subsubsection{Dilute Approximation}
 \label{sec:dilute}
 A first step away from LTE is to introduce the dilute approximation. In this case,
 we relax the assumption that $T_R = T_e$ and assume that the mean intensity is given
-by a dilute blackbody, i.e.\index{dilute approximation} 
+by a dilute blackbody, i.e.\index{dilute approximation}\index{LTE}  
 \begin{equation}
 J_\nu = W B_\nu (T_R),
 \label{eq:dilute_jnu}
 \end{equation}
 where $W$ is the dilution factor. The ionization state can then be approximated 
-with a modified Saha equation \citep{AL85,ML93},
+with a modified Saha equation \citep{AL85,ML93},\index{ionization state} 
 \begin{equation}
 \frac{N_{i+1} n_e}{N_i} = W [\xi + W(1-\xi)]
 \left(\frac{T_e}{T_R}\right)^{1/2}
@@ -194,32 +196,34 @@ with a dilute Boltzmann equation \citep{AL85,lucy1999sne}
 \label{eq:dilute_boltzmann}
 \end{equation}
 
-\subsection{The Two Level Atom}
 
+\subsection{The Two Level Atom}
+\index{two level atom}
 The two level atom formalism is well described by \cite{mihalas}.
 Let us consider an atomic model consisting of two levels that are linked 
 by radiative and collisional transitions. 
 Whilst this model is clearly a simplification, it nonetheless allows
 for a first step into non-LTE line transfer and proves useful for modelling
-the resonance lines briefly touched on in chapter 2.
+the resonance lines briefly touched on in chapter 2.\index{line transfer}
 
 To construct our simple model a few assumptions are necessary. The first
-is the assumption of {\em statistical equilibrium}. This is the principle 
+is the assumption of {\em statistical equilibrium}. This is the principle \index{statistical equilibrium}
 that the total rate into a given atomic level/state is equal to the 
 total rate out of said state. This is clearly true whenever the timescale
 to establish this equilibrium is shorter than the timescale on which
 the ambient conditions change. The second is the assumption of
 {\em complete redistribution (CRD)}, which states that the emission
 and absorption line profiles are identical for a given transition. 
+\index{complete redistribution}\index{emission line}\index{line formation}
 % This 
 % assumption is somewhat analogous to the Sobolev approximation 
 % (see section~\ref{sec:sobolev}). 
 These assumptions allow us to formulate rate equations and derive the 
-Einstein relations.
+Einstein relations.\index{Einstein coefficients}
 
 \subsubsection{Einstein coefficients}
 
-Within a two level atom, the statistical equilibrium 
+Within a two level atom, the statistical equilibrium \index{Einstein coefficients}
 rate equation between two levels can be written as
 \begin{equation}
 B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
@@ -227,7 +231,7 @@ B_{lu} \bar{J}_{ul} n_l = B_{ul} \bar{J}_{ul} n_u + A_{ul} n_u,
 \end{equation}
 where $B_{lu}$, $B_{ul}$ and $A_{ul}$ are the {\em Einstein coefficients}
 for absorption, stimulated emission and spontaneous emission, respectively.
-The `mean intensity in the line', $\bar{J}_{ul}$, is given by
+The `mean intensity in the line', $\bar{J}_{ul}$, is given by\index{mean intensity}
 \begin{equation}
 \bar{J}_{ul} = \int \phi(\nu) J_\nu d\nu,
 \label{eq:jbar}
@@ -247,7 +251,7 @@ and \ref{eq:jbar2}  can be combined to give
 \frac{A_{ul}/B_{ul}}{(g_l/g_u)(B_{lu}/B_{ul}) \exp(h\nu_{ul} / kT) - 1}.
 \end{equation}
 This must be true at all values of $T$, so we can 
-simply equate coefficients to show that
+simply equate coefficients to show that\index{Einstein coefficients}
 \begin{eqnarray}
 \frac{A_{ul}}{B_{ul}} &=& 2 h \nu_{ul}^3/c^2, \\  
 \frac{B_{lu}}{B_{ul}} &=& g_u/g_l.  
@@ -258,7 +262,7 @@ no dependence on temperature. They are therefore relations between
 purely atomic properties.
 
 \subsection{The Sobolev Approximation}
-\label{sec:sobolev}
+\label{sec:sobolev}\index{Sobolev Approximation}
 The Sobolev approximation (SA) is a useful limit 
 for treating line transfer in fast-moving flows. Originally 
 the theory was mostly applied to stellar winds, although since then
@@ -286,7 +290,7 @@ It is important that the physical conditions of the plasma do not change on this
 If this is the case, then we can assume that all line interactions for a given 
 frequency will occur at a single `resonant' point. The location at which
 a given photon will interact with a line of frequency $\nu_{ul}$
-is then given, in velocity space, by
+is then given, in velocity space, by\index{resonance line}
 \begin{equation}
 v_s = c~\left(1 - \frac{\nu_{ul}}{\nu}\right),
 \label{eq:resonance}
@@ -299,7 +303,7 @@ photon direction. The Sobolev optical depth is then
 \label{eq:tau_sob}
 \end{equation}
 where $q_e$ is the electron charge, $f_{lu}$ is the oscillator strength of the transition,
-and $\lambda_{lu}$ is the line wavelength.
+and $\lambda_{lu}$ is the line wavelength.\index{absorption line}
 We can see that the physical quantities determining the line opacity are therefore 
 the level populations in the plasma, the velocity gradient and the atomic physics
 associated with the bound-bound transition. An obvious consequence of the line opacities
@@ -321,7 +325,7 @@ average, $<\tau_S>$, of the Sobolev optical depth, giving
 
 
 \subsubsection{Two-level Atom with Escape Probabilities}
-
+\index{two level atom}
 Let us now write down the rate equation linking our two-level atom,
 \begin{equation}
 B_{lu} \bar{J}_{ul} n_l + C_{lu} n_l = 
@@ -363,7 +367,7 @@ such as Monte Carlo radiative transfer (MCRT).
 MC techniques are easily implemented with modern computing approaches and 
 are intuitively parallelisable problems. I will now describe one specific 
 MCRT code, which has been used for the majority of the work in this thesis.
-
+\index{Monte Carlo radiative transfer}
 
 
 
@@ -378,7 +382,7 @@ MCRT code, which has been used for the majority of the work in this thesis.
 
 \section{{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}
 \label{sec:python}
-
+\index{Monte Carlo radiative transfer}\index{photoionization}\index{ionization state}
 \py\footnote{Named c. 1995, predating the inexorable rise of a certain widely used
 programming language.} is a Monte Carlo ionization and radiative transfer code. 
 The general philosophy of the code is to be able to produce synthetic spectra
@@ -430,12 +434,13 @@ populations are initially set according to the Boltzmann formula. The eventual
 ionization and excitation state of a cell is insensitive to the initial assumed 
 conditions providing sufficient numbers of ionization cycles are completed -- 
 indeed, cells often converge on solutions with large departures from LTE.
+\index{Saha equation}\index{LTE}
 
 Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
 This is done via an iterative process, by transporting several populations of 
 MC energy quanta (`photons' or `$r$-packets') through the outflow.
-This process is repeated until the code converges. 
+This process is repeated until the code converges.\index{$r$-packets}
 In each of these iterations (`ionization cycles'), the code records estimators that 
 characterize the radiation field in each grid cell. At the end 
 of each ionization cycle, a new electron temperature is calculated
@@ -444,7 +449,7 @@ plasma. The radiative estimators and updated electron
 temperature are then used to revise the ionization state of the wind,
 and a new ionization cycle is started. The process is repeated until
 heating and cooling are balanced throughout the wind (see sections~\ref{sec:heating_cooling}
-and \ref{sec:convergence}). 
+and \ref{sec:convergence}).\index{convergence} 
 
 This converged model provides the basis for the second set of
 iterations (`spectral cycles'; section~\ref{sec:spectral_cycles}), 
@@ -452,7 +457,7 @@ in which the code computes the synthetic spectrum based on the
 MC estimators recorded during the ionization cycles. 
 The emergent spectrum over the desired spectral range is synthesized by 
 tracking populations of energy packets through the wind and recording 
-the escaping energy packets for
+the escaping energy packets for\index{spectrum} 
 a number of user-specified viewing angles.  In the ensuing sections,
 I will describe each of the above steps in more detail, particularly
 with regards to the macro-atom mode of operation (section~\ref{sec:matoms}).
@@ -472,7 +477,7 @@ with regards to the macro-atom mode of operation (section~\ref{sec:matoms}).
 % so that the code is now capable of dealing with arbitrary
 % photo-ionizing SEDs, including non-thermal and multi-component ones. 
 \subsection{Radiation Packets}
-\label{sec:packets}
+\label{sec:packets}\index{$r$-packets} 
 Every energy packet in the simulation starts out as a radiation packet generated
 from one of $N_S$ photon sources. To ensure that the frequency distribution
 of photons is adequately sampled in important frequency regimes, 
@@ -508,12 +513,12 @@ by including the wind as an additional photon source.
 In the second mode, energy packets are indivisible and strict radiative equilibrium is
 enforced. From here on I will only be discussing this indivisible packet scheme, 
 as it is required in order to be able to use macro-atoms to accurately
-treat recombination in H and He.
+treat recombination in H and He.\index{radiative equilibrium} 
 
 \subsection{Radiative Transfer Procedure}
 
 \label{sec:rt_procedure}
-
+\index{Monte Carlo radiative transfer} 
 As a photon travels through a plasma, it has a finite probability
 of interacting with free or bound electrons and undergoing a scattering
 or absorption event. In order to deal with this in a Monte Carlo sense, a random optical 
