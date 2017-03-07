@@ -142,7 +142,7 @@ and outflows on all scales.
 \section{Suggestions for Future Work}
 
 \subsection{CVs as Accretion and Outflow Laboratories}
-
+\index{cataclysmic variable}\index{disc wind}\index{accretion}\index{accretion disc}
 CVs are the closest and best understood laboratories for
 studying accretion physics. In particular, the NL
 variables make excellent testbeds for the $\alpha$-disc model,
@@ -157,26 +157,28 @@ range can be undertaken, including detailed fits to the observed spectra.
 It will also allow the broadband SED to be fitted with confidence
 and inferences to be made about the temperature profile of the disc. 
 Our team recently submitted an HST proposal with this goal (PI: Long).
-The second is to take measurements of the depth of the Balmer jump
+\index{Hubble Space Telescope}
+The second is to take measurements of the depth of the Balmer jump\index{Balmer edge}
 in a relatively large sample of NLs, either through narrow band spectroscopy
 or two-band photometry. Together with inclination measurements the predictions
 of disc and outflow models can be tested directly by exploring how the depth
 of the Balmer absorption edge varies with viewing angle and accretion rate.
 
 \subsection{Improving the Treatment of Clumping}
-
+\index{clumping}\index{clumping!porosity}\index{clumping!micro-}
 One of the limitations of the work presented in chapter 5 is that the
 treatment of clumping is simple, and probably does not adequately capture the
-physics of dense substructures in AGN outflows. 
+physics of dense substructures in AGN outflows.\index{AGN}\index{disc wind} 
 Indeed, it is only intended as a `first step' towards
 accurately including clumpiness in \py. So, what is the next step? One fairly 
 simple way of including some degree of porosity in the treatment would 
 be to relax the assumption that the Sobolev length is larger than the
+\index{Sobolev approximation}
 clump size. The Sobolev optical depth can then be calculated either
 in or out of a clump, with probabilities proportional
 to the clump filling factor. This would mean that there is a chance 
 that photons will not interact with clumps, possibly leading to
-the non-black saturation that is observed in BAL troughs 
+the non-black saturation that is observed in BAL troughs\index{non-black saturation}
 \citep[][see also section~\ref{sec:balqso_angles}]{arav1999b,arav1999a}.
 More generally, an approach similar to macroclumping, as 
 used in stellar wind modelling \citep[e.g.][]{hamann2008,surlan2012},
@@ -184,7 +186,7 @@ would allow a more realistic inclusion of porosity.
 
 More complex approaches could also be considered, 
 such as the `two-phase' ideas used in clumpy torus models 
-\citep{stalevski2013} and suggested for the BLR 
+\citep{stalevski2013} and suggested for the BLR \index{BLR}\index{torus}
 \citep[e.g.][]{netzer1990, dekool1995, elvis2000}.
 However, the general problem here is that, while introducing more freedom into 
 the wind model would certainly allow one to fit quasar and CV spectra
@@ -198,6 +200,7 @@ could prove particularly interesting with regards to the optical P-Cygni profile
 observed in He~\textsc{i} and \ha\ in some CVs. 
 Intriguingly, similar profiles were also 
 seen during the recent outburst of V404 Cyg \citep{munozdarias2016}.
+\index{V404 Cyg}\index{P-Cygni profile}
 
 \subsection{Improving Atomic Models}
 
@@ -207,7 +210,8 @@ much can still be done to improve how \py\ deals with atomic processes.
 One of the main limitations of the code is the current treatment of
 collisions, as discussed in chapter 4. One way to improve the accuracy
 of collision strengths between dipole transitions would be to use
-experimental data \citep[e.g.][]{gaetz1983}. 
+experimental data \citep[e.g.][]{gaetz1983}.
+\index{atomic data}\index{bound-bound collision strength} 
 % This will allow for more 
 % accurate collision strengths to be calculated.
 % Although this is unlikely to change the overall temperature and ionization
@@ -224,6 +228,7 @@ line could be accurately predicted.
 Fig.~\ref{fig:carbon_matom} shows how I have recently incorporated a carbon macro-atom
 into the code and produces reasonable results for moderate
 ionization stages, although there are still some problems at high ionization parameters.
+\index{ionization state}\index{macro-atom}\index{atomic data}\index{ionization parameter}
 
 \begin{figure} 
 \centering
@@ -244,6 +249,8 @@ Carbon as a macro-atom is now in place.
 
 \subsection{Using Radiative Transfer to Make Reverberation and Microlensing Predictions}
 
+\index{radiative transfer}\index{microlensing}\index{reverberation mapping}
+\index{accretion disc!disc-size problem}
 I described in the introduction how the `accretion disc size problem' poses
 a profound challenge to the current best-bet model for the AGN continuum.
 I suggest that radiative transfer with \py\ is used to predict the 
@@ -262,7 +269,7 @@ spatially-resolved images, binned in frequency space, as a function of viewing
 angle, then these can be directly fed into the microlensing analysis. This will
 allow for an independent test of the microlensing models themselves, as well as
 making predictions for the sizes associated with line and continuum emission from
-outflows. 
+outflows.\index{BLR}
 
 \begin{figure} 
 \centering
@@ -282,6 +289,7 @@ $40^\circ$.
 
 \subsection{Placing BAL Quasars on the Eigenvector 1 Parameter Space}
 
+\index{BALQSOs}\index{Eigenvector 1}
 In chapter 6 we saw how LoBAL quasars are not specifically clustered
 in one region of parameter space in the so-called `Eigenvector 1'
 diagram. Under the interpretation of \cite{shenho2014}, this implies

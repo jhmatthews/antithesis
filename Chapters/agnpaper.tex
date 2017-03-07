@@ -45,7 +45,7 @@ I dispense with the dilute blackbody modified-Saha approach and fully solve the 
 balance using the spectral modelling approach described 
 in section~\ref{sec:simple_ionization}. Macro-atoms still have their
 ionization and excitation states calculated from MC estimators.
-\index{macro-atoms}
+\index{macro-atoms}\index{quasar}
 
 The kinematic model used once again follows the SV93
 prescription, and is described, together with the clumping 
@@ -75,7 +75,8 @@ not limited to -- nor do they make specific predictions about -- the
 potential wind-driving mechanisms discussed in chapter 2. 
 The general biconical geometry is similar to that invoked by \cite{MCGV95} and 
 \cite{elvis2000} to explain the phenomenonology
-of quasars and BALQSOs.\index{clumping}
+of quasars and BALQSOs.
+\index{clumping}\index{quasar}\index{disc wind}
 
 \begin{figure} 
 \centering
@@ -93,7 +94,8 @@ the biconical quasar wind model.
 \subsection{Photon Sources}
 \label{sec:photon_sources}
 
-Two sources of r-packets are included in the model:
+\index{$r$-packet}
+Two sources of $r$-packets are included in the model:
 An accretion disc and a central X-ray source.
 The accretion disc is assumed to be geometrically thin, 
 but optically thick.
@@ -110,6 +112,7 @@ I assume a Schwarzschild BH\index{black hole!Schwarzschild} with an ISCO at $6~r
 $r_G = GM_{BH}/c^2$ is the gravitational radius\index{gravitational radius}.
 For a $10^9~M_\odot$ BH, this is equal to $8.85\times10^{14}~{\rm cm}$ 
 or $\sim10^{-4}~{\rm pc}$. 
+\index{black hole!mass}
 
 
 The X-ray source is treated as an isotropic sphere at the ISCO,
@@ -157,7 +160,7 @@ AGN winds exhibit significant substructure -- the outflow is expected to be
 A clumpy outflow offers a possible solution to the so-called `over-ionization problem' in 
 quasar and AGN outflows \citep[e.g.][]{junk1983,weymann1985,hamann2013}. 
 This is the main motivation for incorporating clumping into the model.
-\index{clumping}
+\index{clumping}\index{clumping!micro-}
 
 Deciding on how to implement clumping into the existing wind models was not straightforward.
 First, and most importantly, the physical scale lengths and density contrasts in AGN outflows are not well-constrained from observations or theory.  As a result, while one could envision in principle, clouds with a variety of sizes and density contrasts varying perhaps as function of radius, there would have been very little guidance on how to set nominal values of the various parameters of such a model.
@@ -198,7 +201,7 @@ generally dominated by bound-free heating and line cooling. The main effect of i
 clumping in this modelling is that it moderates the ionization state due to the increased 
 density. This allows an increase in the ionizing luminosity, amplifying the amount of
 bound-free heating and also increasing the competing line cooling term
-(thermal line emission).
+(thermal line emission).\index{line emission}
 
 The shortest length scale in a Sobolev MCRT treatment such as that used here
 is normally the Sobolev length, given by\index{Sobolev approximation} 
@@ -216,11 +219,7 @@ clumps should be no larger than $\sim10^{12}$~cm.
 This size scale is not unreasonable for quasar outflows, as
 \cite{dekool1995} suggest that BAL flows may have low filling factors with
 clump sizes of $\sim10^{11}$~cm.
-% An additional concern with this approach to clumping is that the clumps
-% may rapidly cool and expand into the inter-clump medium. This is a well-known
-% issue in BLR and outflow models (REFs), and requires some kind of confining mechanism,
-% such as magnetic confinement \cite[e.g.][]{dekool1995}. Alternatively, as already discussed,
-% the LDI may cause clumpy flows as expected in stellar winds.}
+
 \begin{figure} 
 \centering
 \includegraphics[width=1.0\textwidth]{figures/06-agnpaper/size_of_clumps.png}
@@ -252,6 +251,7 @@ The grid points are shown in table~\ref{grid_table}.
 The aim here was to first fix $M_{BH}$ and $\dot{M}$ to their H13 values,
 and increase $L_X$ to $10^{45}$~erg~s$^{-1}$ (a more realistic value for a 
 quasar of $10^9~M_\odot$ and an Eddington fraction of $0.2$; see section~\ref{sec:xray}).
+\index{quasar}\index{absorption line}
 
 These models were then evaluated based on 
 how closely their synthetic spectra reproduced the 
@@ -520,14 +520,14 @@ $2000$~\AA, then an offset of 2 is applied per spectrum for clarity -- the dotte
 \noindent
 Fig.~\ref{fig:uvspec} shows the synthetic spectrum in the UV from the fiducial model. 
 To assess the ability of the synthetic spectra to match real 
-quasar spectra, I also show {\sl Sloan Digital Sky Survey} (SDSS) quasar
+quasar spectra, I also show {\sl Sloan Digital Sky Survey} (SDSS) quasar\index{SDSS}
 composites from \cite{reichard2003}, normalised to the flux at 2000~\AA\
 for low inclinations. Unfortunately, the wide variety of
 line profile shapes and internal trough structure in BALQSOs
 tends to `wash out' BAL troughs in composite spectra
 to the extent that BALQSO composites do not resemble typical BALQSOs.
-Because of this, I instead compare to a {\sl Hubble Space Telescope} 
-STIS spectrum of the high BALnicity BALQSO PG0946+301 (Arav et al. 2000),
+Because of this, I instead compare to a {\sl Hubble Space Telescope} \index{Hubble Space Telescope}
+STIS spectrum of the high BALnicity BALQSO PG0946+301 (Arav et al. 2000),\index{PG0946+301}
 and an SDSS spectrum of the LoBAL quasar SDSS J162901.63+453406.0,
 for the angles of $73^\circ$ and $76^\circ$, respectively. 
 A cartoon illustrating how geometric effects determine
@@ -557,9 +557,11 @@ whereas at higher inclinations (and for the strongest BALs)
 the trough has a sharp edge at the terminal velocity.
 This offers one potential explanation for the wide range of BALQSO absorption
 line shapes \citep[see e.g.][]{trump2006,knigge2008,filizak2014}.
+\index{absorption line}
 
 The absorption profiles seen in BALQSOs are often non-black, but saturated, 
-with flat bases to the absorption troughs \citep{arav1999b,arav1999a}.\index{non-black saturation}
+with flat bases to the absorption troughs 
+\citep{arav1999b,arav1999a}.\index{non-black saturation}\index{BALQSOs}
 This is usually explained either as  partial covering of the continuum
 source or by scattered contributions to the BAL troughs, necessarily
 from an opacity source not co-spatial with the BAL forming region.
@@ -567,7 +569,7 @@ The scattered light explanation is supported by spectropolarimetry results
 \citep{lamy2000}. The synthetic spectra do not show non-black, saturated profiles.
 Black, saturated troughs are seen at angles $i > 73^\circ$, and the BALs
 are non-saturated at lower inclinations. The reasons for this are inherent 
-in the construction of the model. 
+in the construction of the model. \index{clumping!porosity}\index{clumping!micro-}\index{BALs}
 First, the microclumping assumption does not allow for 
 porosity in the wind, meaning that it does not naturally produce
 a partial covering absorber. To allow this, an alternative approach
@@ -581,6 +583,7 @@ that an additional source of electron opacity is required, potentially
 in a polar direction above the disc. I note the scattering contribution
 from plasma in polar regions is significant in some `outflow-from-inflow'
 simulations \citep{KP09, simproga2012}.
+\index{absorption line}
 
 \subsubsection{Broad Emission Lines (`quasar-like' angles)}
 
@@ -610,7 +613,8 @@ Units are logarithms of values in erg~s$^{-1}$.
 \label{line_lums}
 \end{table}
 
-\index{emission line}
+\index{emission line}\index{collisional excitation}
+\index{recombination}
 Unlike H13, significant collisionally excited line emission now emerges
 at low inclinations in the synthetic spectra, particular in the \civ\ and \nv\
 lines. Strong \la\ and
@@ -627,6 +631,7 @@ with BH mass and Eddington fraction estimates similar to the fiducial model valu
 C~\textsc{iii}]~1909~\AA\ line seen in the quasar composite spectra, 
 but this is due to a limitation of the current treatment of C; semi-forbidden
 (intercombination) lines are not included in this modelling.
+\index{SDSS}\index{disc wind}\index{semi-forbidden line}
 
 In Fig.~\ref{fig:sed}, I show an $F_{\nu}$ spectrum with broader waveband coverage
 that includes the optical, showing that the synthetic spectra 
@@ -635,8 +640,9 @@ In this panel, I include a low inclination and
 also a very high inclination 
 spectrum, which looks underneath the wind cone. This model shows 
 strong line emission with very similar widths and line ratios to the quasar composites, and
-the Balmer lines are double peaked, due to velocity projection effects.  
+the Balmer lines are double-peaked, due to velocity projection effects.  
 Such double-peaked lines are seen in so-called `disc emitter' systems 
+\index{emission line!double-peaked}\index{equivalent width}
 \citep[e.g.][]{eracleous1994} but not the majority of AGN.     
 The line equivalent widths (EWs) increase at high inclination
 due to a weakened continuum from wind attenuation, 
@@ -648,6 +654,8 @@ but does show that a model such as this can naturally reproduce quasar emission 
 if the emissivity of the wind is increased {\em with respect to the disc continuum}.
 In addition, it neatly demonstrates how a stratified outflow can naturally
 reproduce the range of ionization states seen in quasars. 
+\index{recombination continuum}
+\index{emission line!double-peaked}
 
 Despite a number of successes, 
 there are a some properties of the synthetic spectra
@@ -655,7 +663,7 @@ that are at odds with the observations. First, the ratios of the
 EW of the \la\ and \mgline\ lines
 to the EW of \civline\ are much lower than in the composite spectra. 
 Similar problems have also been seen in simpler photoionization models for the 
-BLR \citep{netzer1990}.
+BLR \citep{netzer1990}.\index{BLR}\index{photoionization}
 It may be that a larger region of very dense ($n_e\sim10^{10}$cm$^{-3}$) 
 material is needed, which could correspond to a disc atmosphere or 
 `transition region' 
@@ -695,7 +703,7 @@ to avoid over-ionization of the wind in the presence of strong X-rays.
 Having verified that strong BALs appear in the synthetic spectra,
 it is also important to assess whether the X-ray properties of this
 fiducial model agree well with quasar and BALQSO samples for the relevant
-inclinations.
+inclinations.\index{ionization state}
 
 Fig.~\ref{fig:xray} shows the emergent
 monochromatic luminosity ($L_\nu$) at 2~keV and 
@@ -705,7 +713,7 @@ The monochromatic luminosities are calculated from the synthetic spectra and thu
 the effects of wind reprocessing and attenuation. In addition to model outputs,
 I also show the BALQSO sample of Saez et al. (2012) and luminous AGN and quasar
 samples from Steffen et al. (2006). The best fit relation from Steffen et al. (2006) 
-is also shown. For low inclination, `quasar-like' viewing angles,
+is also shown. For low inclination, `quasar-like' viewing angles,\index{quasar}
 the model properties are in excellent agreement with AGN samples. The slight gradient from $20^\circ$ to
 $60^\circ$ in the models is caused by a combination of disc foreshortening and limb-darkening 
 (resulting in a lower $L_{2500}$ for higher inclinations), and the fact that the disk 
@@ -745,7 +753,7 @@ to the ubiquitous \civ\ profile.
 \label{fig:lobal}
 \end{figure*}
 
-
+\index{ionization state}\index{BALs}\index{absorption line}
 At high inclinations, the synthetic spectra exhibit 
 blue-shifted BALs in \al\ and \mg --
 the absorption lines seen in LoBALQSOs -- 
@@ -775,6 +783,7 @@ An edge-on scenario also offers a potential explanation for the rarity of LoBAL 
 FeLoBAL quasars, due to a foreshortened and attenuated continuum, 
 although BAL fraction inferences are fraught with complex selection 
 effects \citep{goodrich1997,krolikvoit1998}.
+\index{BALQSOs}
 
 
 \section{Discussion}
@@ -821,6 +830,7 @@ the collisionally excited emission swamps the BAL profile. In addition,
 this model would lie well above the expected $L_{2kev}-L_{2500}$ 
 relation in Fig.~\ref{fig:xray}. Such a high X-ray luminosity could therefore 
 not be the cause of the strong line emission seen in {\em all} Type 1 quasars.
+\index{quasar}
 
 The parameter search presented here is by no means exhaustive, and
 conclusions may be limited by the specific parameterisation of the outflow 
@@ -839,6 +849,7 @@ broad line region.
 \subsection{Inclination Trends: FWHM and EW}
 \label{sec:ew_in_model}
 
+\index{FWHM}\index{equivalent width}
 Broad line EWs increase with inclination in the fiducial model.\index{inclination}
 This trend means that even though models with
 significantly denser and more strongly irradiated winds
@@ -909,6 +920,7 @@ M_{BH} = f_{FWHM}~\left[c~\frac{(FWHM)}{\lambda_0}\right]^2~\frac{R_{BLR}}{G},
 \end{equation}
 where $\lambda_0$ is the central wavelength of the line in question
 and the FWHM is in the same wavelength units.
+\index{reverberation mapping}\index{BLR}
 
 In our benchmark disc wind model, the BH mass is known, and determines
 the escape velocities and rotational motions of the outflow. Thus, 
@@ -959,11 +971,7 @@ the behaviour of a disc-shaped BLR. Overall, the strong inclination dependence
 of $f_{FWHM}$ strengthens the argument that viewing angle can introduce
 significant uncertainty into virial mass estimates, and that individual
 values for $f_{FWHM}$ should really be used for different objects
-\citep[e.g.][]{decarli2008,kollatschny2011,pancoast2014a,pancoast2014b,shenho2014,brotherton2015,yong2016}.
-% The reason for the significantly lower values for \mgii\ is that
-% it is actually formed well inside $R_{BLR}=10^{17}$~cm, highlighting
-% the dangers of using a single BLR radius for BH mass estimates
-% from different lines.
+\citep[e.g.][]{decarli2008,kollatschny2011,pancoast2014a,pancoast2014b,shenho2014,brotherton2015,yong2016}.\index{BLR}\index{FWHM}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

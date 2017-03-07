@@ -62,7 +62,7 @@ The {\em mean intensity}, $J_\nu$, is
 \begin{equation}
 J_\nu = \frac{1}{4 \pi} \int I_\nu~d \Omega.
 \end{equation}
-The mean intensity is particularly\index{mean  intensity}
+The mean intensity is particularly\index{mean intensity}
 useful when one wants to ignore the solid angle dependence of the radiation,
 for example when considering the impact of an ionizing radiation field.
 
@@ -98,7 +98,7 @@ I_\nu = I_{\nu,0}~e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
 
 \subsection{Spectral Line Formation}
 
-\index{emission line}\index{line formation}
+\index{emission line}\index{line formation}\index{absorption line}
 From the above equations, it is trivial to show how emission and absorption lines form when
 the source function is approximately constant.
 Say we have a plasma illuminated by a blackbody of temperature $T_0$, such that
@@ -116,7 +116,7 @@ see an emission line, and if $T < T_0$ we will see an absorption line.
 
 
 An important physical limit is that of local thermodynamic equilibrium (LTE).
-\index{LTE}
+\index{LTE}\index{blackbody}
 This is a first-order way to describe the physical conditions of a plasma and assumes
 that all the properties of the plasma, such as the level populations and source function,
 are the same as those in thermodynamic equilibrium for local values of 
@@ -188,7 +188,7 @@ with a modified Saha equation \citep{AL85,ML93},\index{ionization state}
 \left(\frac{N_{i+1}n_e}{N_i}\right)^*_{T_R}, \label{eq:ml93}
 \end{equation}
 where $\xi$ is the fraction of recombinations that go directly to
-the ground state.
+the ground state.\index{recombination}
 The excitation state can also be approximated (fairly poorly) 
 with a dilute Boltzmann equation \citep{AL85,lucy1999sne}
 \begin{equation}
@@ -215,6 +215,7 @@ the ambient conditions change. The second is the assumption of
 {\em complete redistribution (CRD)}, which states that the emission
 and absorption line profiles are identical for a given transition. 
 \index{complete redistribution}\index{emission line}\index{line formation}
+\index{absorption line}
 % This 
 % assumption is somewhat analogous to the Sobolev approximation 
 % (see section~\ref{sec:sobolev}). 
@@ -440,7 +441,7 @@ Once the basic setup process has been carried out, the ionization state,
 level populations and temperature structure are calculated.
 This is done via an iterative process, by transporting several populations of 
 MC energy quanta (`photons' or `$r$-packets') through the outflow.
-This process is repeated until the code converges.\index{$r$-packets}
+This process is repeated until the code converges.\index{$r$-packet}
 In each of these iterations (`ionization cycles'), the code records estimators that 
 characterize the radiation field in each grid cell. At the end 
 of each ionization cycle, a new electron temperature is calculated
@@ -477,7 +478,7 @@ with regards to the macro-atom mode of operation (section~\ref{sec:matoms}).
 % so that the code is now capable of dealing with arbitrary
 % photo-ionizing SEDs, including non-thermal and multi-component ones. 
 \subsection{Radiation Packets}
-\label{sec:packets}\index{$r$-packets} 
+\label{sec:packets}\index{$r$-packet} 
 Every energy packet in the simulation starts out as a radiation packet generated
 from one of $N_S$ photon sources. To ensure that the frequency distribution
 of photons is adequately sampled in important frequency regimes, 
@@ -571,7 +572,7 @@ such that
 \kappa_{bf} = \sum_{j\kappa}^{\mathrm{bfjumps}} \sigma_{j\kappa} (\nu) n_j.
 \end{equation}
 The free-free emission coefficient for an individual ion $i$ of charge $Z_i$ 
-is \citep{gayet1970}
+is \citep{gayet1970}\index{free-free emission}\index{free-free absorption}
 \begin{equation}
 j_{ff,i} (\nu) = \bar{g}_{ff}\frac{8 Z_i^2 q_e^6}{3m_e^2 c^3}
 \left( \frac{2\pi m_e}{3 k T_e} \right)^{1/2}
@@ -579,8 +580,8 @@ N_i n_e \exp(-h\nu/kT_e),
 \label{eq:jff} 
 \end{equation}
 where $\bar{g}_{ff}$ is the mean free-free Gaunt factor and formally
-depends on both frequency and temperature.
-The free-free opacity is calculated from Kirchhoff's law, 
+depends on both frequency and temperature.\index{gaunt factor!free-free}
+The free-free opacity is calculated from Kirchhoff's law,\index{Kirchhoff's law} 
 \begin{equation}
 \kappa_{ff, i}(\nu) = \frac{j_{ff,i} (\nu)}{B_\nu (T_e)}.
 \end{equation}
@@ -593,7 +594,7 @@ The free-free opacity is calculated from Kirchhoff's law,
 These opacities are all used in the heating and cooling estimators 
 introduced in section~\ref{sec:estimators}.
 For radiative transfer purposes, electron scattering is treated in the Thomson
-limit 
+limit\index{electron scattering}
 \begin{equation}
 \kappa_{es} = \sigma_T n_e.
 \end{equation}
@@ -605,10 +606,10 @@ effect on the plasma. The Compton opacity is given by
 \end{equation}
 where $\sigma_{KN} (\nu)$ is the cross-section computed 
 from the Klein-Nishina formula \citep{klein-nishina} and, unlike $\sigma_T$,
-is frequency dependent. 
+is frequency dependent.\index{Compton scattering}\index{Klein-Nishina formula}
 
 \subsubsection{Doppler Shifts}
-
+\index{Doppler shift}
 When calculating opacities, the photon frequency must be shifted from
 the rest frame of the photon into the rest frame of the plasma.
 This shift depends on the before and after directions of the photon. Let us denote
@@ -666,7 +667,7 @@ the new direction is chosen to be isotropic. However,
 when the photon is a line photon, the new direction is chosen
 according to a line trapping model, which samples a probability 
 distribution according to the Sobolev escape probability in different 
-directions. 
+directions.\index{limb darkening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -690,7 +691,7 @@ included. Including all these elements as macro-atoms is not
 currently computationally feasible in \py\ for anything but the simplest
 models. I will thus now describe a `hybrid scheme', which treats H and He
 with the macro-atom approach, but models all other atoms 
-as `simple-atoms'. 
+as `simple-atoms'. \index{simple-atom}
 
 \subsection{Line Transfer}
 
@@ -742,6 +743,7 @@ over photons which come into resonance with each line, given by
 {\cal H}_{bb}^S = \sum_i^{\mathrm{photons}} \sum^{\mathrm{lines}}_{ju} (1 - q) (1 - e^{-\tau_{S,ju}}) w_i.
 \end{equation}
 Similarly, the bound-bound cooling rate is given by 
+\index{bound-bound heating}\index{bound-bound cooling}
 \begin{equation}
 {\cal C}_{bb}^S = \sum_{ju}^{\mathrm{lines}} q \left(n_j\frac{g_u}{g_j} - n_u\right) q_{uj} n_e 
 \frac{(1 - e^{-h\nu_{ju}/kT_e})}{(e^{h\nu_{ju}/kT_e} - 1)}  h \nu_{ju}.
@@ -770,7 +772,8 @@ T_e^{-3/2} \sigma_{j \kappa} (\nu)
 \end{equation}
 
 \subsubsection{Radiation Field Estimators, Ionization and Excitation}
-\label{sec:simple_ionization}
+\label{sec:simple_ionization}\index{ionization state}
+\index{mean intensity}\index{Monte Carlo!estimator}
 For simple-atoms we do not record radiation field estimators for discrete 
 transitions, as we do for macro-atoms. Instead, we record estimators to
 give us a model of the radiation field. The estimators needed
@@ -781,16 +784,17 @@ $\bar{\nu}$, of the photons passing through a cell
 \bar{\nu} = \frac{\sum_{photons} w_i \nu_i \Delta s}{\sum_{photons} w_i \Delta s}.
 \end{equation}
 This is then used to estimate a radiation temperature by
-considering the value expected from a blackbody \citep{ML93}:
+considering the value expected from a blackbody \citep{ML93}:\index{blackbody}
 \begin{equation}
 T_r = \frac{h\bar{\nu}}{3.832~k}
 \end{equation}
-The dilution factor can be calculated by comparing the estimator for the mean intensity (equation~\ref{eq:j}) to the Stefan-Boltzmann law:
+The dilution factor can be calculated by comparing the estimator for the mean intensity (equation~\ref{eq:j}) to the Stefan-Boltzmann law:\index{dilution factor}\index{mean intensity}
 \begin{equation}
 W = \frac{\pi J}{\sigma~T_r^4}.
 \end{equation}
 This set of estimators is sufficient to describe the 
 radiation field if the dilute approximation is adopted(section~\ref{sec:dilute}).
+\index{dilute approximation}
 
 H13 improved on the dilute blackbody approximation by
 modelling the SED in the cell using a series of band-limited 
@@ -841,6 +845,7 @@ for simple-atoms,
 Recombination rate coefficients are then obtained from 
 either tabulated data (see section~\ref{sec:atomic_data})
 or, failing that, the Milne relation (equation~\ref{eq:alpha_sp}).
+\index{recombination}\index{photoionization}
 
 The rate matrix used to calculated the ionization state of simple-atoms
 can now be populated. An example rate matrix for H and He would be
@@ -872,26 +877,6 @@ can now be populated. An example rate matrix for H and He would be
 Thus the problem is very similar to solving for level populations in macro-atoms, except that
 it is bounded differently.
 
-% Prior to SDL05, the relative ionization fractions for all atomic
-% species were estimated via the modified Saha equation (Mazzali \&
-% Lucy 1993)  
-% \begin{equation}
-% \frac{n_{j+1} n_e}{n_j} = W [\xi + W(1-\xi)]
-% \left(\frac{T_e}{T_R}\right)^{1/2}
-% \left(\frac{n_{j+1}n_e}{n_j}\right)^*_{T_R}. \label{ionization}
-% \end{equation}
-% Here, the `starred' term on the right represents abundances computed with
-% the Saha equation at temperature $T_R$, but using partition functions
-% from the dilute blackbody approximation. 
-% $W$ is an effective dilution factor, $\xi$ is the
-% fraction of recombinations going directly to the ground state, and
-% $T_R$ and $T_e$ are the radiation and electron temperatures,
-% respectively. This simple ionization scheme produces reasonable
-% results when the photoionizing SED can be approximated by a dilute
-% blackbody. This is the case for high-state CVs. (As noted above, an
-% improved, but more complex treatment of ionization that is appropriate
-% for more complex SEDs is described in H13.) 
-
 The rate matrix method with a banded spectral model for the mean intensity is used
 in chapter 5 of this thesis, whereas for chapter 4 the dilute approximation is adopted
 and ion fractions are obtained from a modified Saha equation (equation~\ref{eq:ml93}).
@@ -902,19 +887,7 @@ equation (equation~\ref{eq:dilute_boltzmann}). This equation is approximate, and
 general, this approximation is not good. We therefore endeavour to treat any species in
 which the excitation state of the ions is thought to be important
 in determining either the ionizing radiation field, or emergent spectrum,
-as macro-atoms.
-
-% Finally, \py\ originally modelled all bound-bound processes as transitions
-% within a simple two-level atom \cite[e.g.][]{mihalas}. 
-% This framework was used for the treatment of line transfer and also
-% for the line heating and cooling calculations (see LK02). 
-% The approximation works reasonably well for resonance  
-% lines, such as \civfull, in which the lower level is the ground state.  
-% However, it is a poor approximation for many other
-% transitions, particularly those where the upper level
-% is primarily populated from above. Thus an improved method for
-% estimating excited level populations and simulating line transfer is
-% needed in order to model recombination lines and continua.
+as macro-atoms.\index{Saha equation}\index{dilute approximation}\index{mean intensity}
 
 \section{Heating And Cooling Balance}
 \label{sec:heating_cooling}
@@ -922,7 +895,7 @@ I have already given the estimators used to calculate
 heating and cooling rates in the plasma. These are not only used
 in the creation and elimination of $k$-packets, but also in the heating
 and cooling balance carried out in \py\ to achieve a self-consistent
-temperature structure in the wind. 
+temperature structure in the wind. \index{$k$-packet}
 
 At the end of each ionization cycle, the code has stored a new set
 of MC estimators for radiative heating of the plasma. We then
@@ -941,7 +914,7 @@ guess at the wind temperature is far from the true value.
 \subsection{Convergence}
 
 \label{sec:convergence}
-
+\index{convergence}
 \py\ always runs a fixed number of ionization cycles, rather than terminating
 when a convergence criterion is reached. As a result, it is up to the user
 to check that the simulation is converged. An individual cell is considered
@@ -984,6 +957,7 @@ in a separate cycle from the calculation of the ionization state, as we are then
 with producing detailed, high-resolution spectra in a specific wavelength regime
 that can then be compared to observations.
 
+\index{variance reduction}
 The code utilises a variance reduction technique in order to minimise the amount of 
 time spent in this portion of the code. This technique is based 
 on a similar method implemented by \cite{woods1991} and is known in the code
@@ -1010,6 +984,7 @@ less efficient. A comparison between the two methods is shown in
 figure~\ref{fig:extract_demo} for a standard CV model, showing that the spectrum 
 produced is identical in shape, but with significantly higher signal-to-noise (for
 fixed number of cycles) in the `extract' case.
+\index{variance reduction}
 
 \begin{figure}
 \centering
@@ -1059,7 +1034,7 @@ In order to ensure that radiative equilibrium
 still holds, any photon that interacts with a macro-atom or $k$-packet is immediately 
 destroyed. The photons are tracked and extracted as normal until they escape the 
 simulation; resonant scatters are dealt with by a combination of
-macro-atom photon production and destruction.
+macro-atom photon production and destruction.\index{$k$-packet}
 
 \section{Atomic Data}
 \label{sec:atomic_data}
@@ -1070,6 +1045,9 @@ or dimensionless collision strength, that is dependent purely on the atomic phys
 associated with the transition. These quantities can be measured in laboratory experiments,
 or predicted from atomic structure codes that derive the atomic physics from 
 quantum theory.
+\index{bound-bound collision strength}
+\index{atomic data}
+\index{opscillator strength}
 
 Throughout this work, I have used very similar atomic data to that described 
 by LK02 and H13. Elements included are H, He, C, N, O, Ne, Na, Mg, Al, Si, S,
@@ -1086,9 +1064,12 @@ the \textsc{Chianti} database version 7.0 \citep{dere1997,landi2012}.
 Ground state recombination rates from \cite{badnell2006} are adopted where available,
 otherwise the code defaults to calculating recombination rates from the Milne
 relation. Free-free Gaunt factors are from \cite{sutherland1998}.
+\index{recombination}\index{gaunt factor!free-free}\index{Milne relation}
+
 
 \subsection{Macro-atom Level and Line Data}
 
+\index{macro-atom}\index{level population}
 A 20-level model H atom was incorporated into \py\ by SDL05,
 and includes line oscillator strengths from \cite{menzel1935}.
 This model atom is only split according to principle quantum number $n$,
@@ -1121,6 +1102,7 @@ had no effect on the temperature structure of the wind or emergent spectrum.
 
 \subsection{Photoionization Cross-sections}
 
+\index{photoionization}\index{atomic data}
 Photoionization cross-sections are from \textsc{Topbase} \citep{cunto1993} and from 
 \cite{vfky}. Where possible, I use \top\ photoionization cross-sections. This is because
 these cross-sections are partial and represent the cross-section for a photoionization
@@ -1163,69 +1145,6 @@ the text.
 \label{fig:xs}
 \end{figure}
 
-% \section{Clumping}
-
-% \label{sec:microclumping}
-
-% \subsection{Motivation}
-
-% As described in section~??, observational evidence for inhomogeneities in 
-% outflows is widespread. Clumping a plasma can have a significant effect on its
-% ionization, emission and absorption characteristics. Clearly, the interplay between
-% these effects will be somewhat complex 
-
-% A number of different implementations of clumping have been explored in previous studies,
-% mostly in the stellar winds community. Perhaps the simplest method is 
-% when one assumes that the individual clumps are both optically and geometrically thin;
-% this is known as {\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}. 
-% This technique has been particularly successful in reconciling 
-% discrepant mass-loss estimates.
-% It was found that one would obtain different mass-loss rates depending on whether
-% they were calculated from (i) UV resonance scattering of continuum photons 
-% (which scales linearly with density; a `$\rho$-diagnostic') or (ii) recombination 
-% and free-free emission process (which scale with the square of density; 
-% `$\rho^2$-diagnostics'). A clumped outflow would have enhanced densities in 
-% certain regions, and would thus mean that $\rho^2$-diagnostics tend to 
-% overestimate the total mass-loss rates. Microclumping has helped verify this
-% hypothesis with radiative transfer modelling (REFs). These clumpy models also
-% provide better fits to the electron scattering wings of emission lines in stellar
-% winds \citep{hillier1991}.
-
-% The second-generation of stellar wind codes went on step further by addressing the issue
-% of {\em porosity}; that clumps will have a finite size, and thus gaps between the clumps
-% may affect the emergent radiation field. This approach is known as {\em macroclumping}.
-% {\bf Describe macroclumping with references.}
-
-% Implementing a treatment of clumping in accretion disc wind models is challenging, for
-% two main reasons. First, the physical scale lengths and density contrasts 
-% in disc winds are not well-constrained from observations, especially in AGN.  
-% Second, there are significant computational difficulties associated with adequately
-% resolving and realistically modelling a series of small scale, high density
-% regions with a MCRT code. Given the lack of knowledge about the actual 
-% type of clumping, we encorporated the simpler microclumping approach into our code.
-% This is partly because our primary concern was the ionization and 
-% emission characteristics of the flow, and porosity was a secondary concern.
-
-
-% \subsection{Microclumping}
-
-% To take account of clumping in our outflow we adopt a simple parameterization
-% used in stellar wind modelling. The key assumption here is that typical clump sizes
-% are much smaller than the typical photon mean free path, and thus the clumps are 
-% both geometrically and optically thin. This approach is typically 
-% known as microclumping and allows one to introduce a `filling factor', $f$, which is the 
-% fraction of the volume of the plasma filled by clumps. We can then introduce the 
-% `density enhancement', $D$, which is simply 
-
-% \begin{equation}
-% D = \frac{1}{f}
-% \end{equation}
-
-% The densities in the model are then multiplied by this factor. This has the effect 
-% of enhancing `$\rho^2$' processes such as recombination or collisional excitation,
-% and 
-
-
 \section{Code Validation}
 \label{sec:code_validation}
 
@@ -1237,6 +1156,7 @@ results.
 
 \subsection{Testing Against \cld}
 
+\index{\cld}\index{photoionization}
 \cld\ is a spectral synthesis and photoionization code used to simulate
 the emergent spectrum and ionization conditions in nebulae and other plasma
 environments. As a result, it uses many of the same techniques as \py\
@@ -1256,7 +1176,8 @@ U = \frac{4\pi}{n_H c}\int_{13.6{\rm{eV}} / h}^{\infty}\frac{{J_{\nu}d\nu}}{h\nu
 Note the difference in form to equation~\ref{eq:xi}, as $U$ is proportionaly to
 the {\em number} of ionizing photons rather than the ionizing luminosity.
 In \py, the ionization parameter in a cell 
-is calculated via a MC estimator, such that
+is calculated via a MC estimator, such that\index{ionization parameter}
+\index{Monte Carlo!estimator}\index{photoionization}\index{ionization state}
 \begin{equation}
 U_{\py} = \frac{1}{c~V~n_H} \sum_i^{\mathrm{photons}} \frac{w_i \Delta s}{h \nu}.
 \end{equation}
@@ -1273,6 +1194,7 @@ macro-atoms, and their level populations and ion fractions are solved
 using MC estimators according to the routine
 described in section~\ref{sec:matom_pops}. In both 
 cases the simple-atoms have their populations calculated using the H13 scheme.
+\index{\cld}
 
 In general, the calculated fractions are in excellent agreement, with a few 
 exceptions. The first problem is with He at low ionization parameters 
@@ -1294,6 +1216,8 @@ agrees well with \cld\ and standard mode.
 The second problem lies in Fe, where there can be quite large differences
 between \py\ and \cld. This is mainly due to Auger ionization and charge 
 exchange and is currently been improved in \py, but is not included here.  
+\index{\cld}\index{Auger ionization}\index{ionization state}\index{charge exchange}
+\index{ionization parameter}
 
 \begin{figure}
 \centering
@@ -1362,6 +1286,7 @@ As figure~\ref{fig:h_cloudy}, but for the first 11 ionization stages of Iron.
 
 \subsection{Macro-atom Testing Against \tar\ and Theory}
 
+\index{\tar}\index{Supernova}
 \tar\ is a 1D photoionization and radiative transfer code designed to
 model supernovae in a quick and easy python package; it is described in detail by
 \cite{kerzendorfsim}. Although \tar\ is simpler in terms
@@ -1371,7 +1296,7 @@ thus makes for an excellent comparison.
 Fig.~\ref{fig:caseb_tests} shows the results of two code tests. 
 In the top panel, I show a comparison of the Balmer series 
 emissivities as predicted by \py\ in the l-mixed Case~B limit against the
-analytical calculations by \cite{seaton1959}. 
+analytical calculations by \cite{seaton1959}.\index{Case~B} 
 Both calculations are calculated at $T_e=10,000$K.
 Case B is an approximation commonly used in nebular astrophysics 
 \citep[see e.g.][]{osterbrock} in which
@@ -1392,7 +1317,7 @@ Considering that the two codes use different atomic data, and that
 complete treatment of collisions between 
 radiatively forbidden transitions, the factor of 
 $<2$ agreement is encouraging. 
-
+\index{\tar}
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figures/05-cvpaper/fig_caseb_tardis.eps}
@@ -1516,6 +1441,7 @@ using the Github API and plotting capability.
 \subsection{Parallelisation} 
 \label{sec:parallel}
 
+\index{MPI}
 Including macro-atoms in a simulation can have a significant impact 
 on runtime, especially when simulating dense regions of plasma. 
 By way of example, the CV model presented by LK02 takes approximately

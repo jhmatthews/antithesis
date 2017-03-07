@@ -74,11 +74,11 @@ that, when assuming radiative equilibrium, the energy flows through
 a system depend only on the transition probabilities and atomic physics
 associated with the levels the energy flow interacts with.
 By quantising this energy flow into radiant ($r$-) and kinetic ($k$-) packets, 
-we can simulate the energy transport through
+we can simulate the energy transport through\index{$r$-packet}\index{$k$-packet}
 a plasma discretised into volume elements (``macro-atoms''),
 whose associated transition probabilities govern the interaction 
 of radiant and kinetic energy with the ionization and excitation energy associated 
-with the ions of the plasma.
+with the ions of the plasma.\index{macro-atom}
 
 Although equation~\ref{eq:matom_SE} assumes strict radiative equilibrium,\index{radiative equilibrium}
 it is trivial to adjust it to include non-radiative source and sink terms. 
@@ -96,7 +96,7 @@ included with a simple modification to the RHS of equation~\ref{eq:matom_SE}.
 Having interpreted equation~\ref{eq:matom_SE} in a {\em stochastic} way,
 we can now construct our Monte Carlo scheme, following L02.
 A macro-atom in state $j$ always has a finite probability of `deactivating'
-radiatively or collisionally:
+radiatively or collisionally:\index{macro-atom}
 \begin{equation}
 p_{j}^{R} = \dot{E}_{j}^{R} / D_j \;\;\;\;\; {\rm and} \;\;\;
 \;\; p_{j}^{C} = \dot{E}_{j}^{C} / D_j,
@@ -174,7 +174,7 @@ The corresponding de-excitation rate is then \index{Sobolev approximation}
 q_{uj} n_u n_e.
 \label{eq:ruj}
 \end{equation}
-The photoionization and collisional ionization rates
+The photoionization and collisional ionization rates\index{photoionization}
 between a lower level, $l$, and the continuum level $\kappa$ 
 (or, in the case of ions with more than one bound electron, 
 the ground state of the upper ion),
@@ -220,7 +220,7 @@ q_{uj} = \bar{g} f_{ju}\frac{8.629\times10^{-6}}{g_u T_e^{1/2}}
 \end{equation}
 where $\lambda_{uj}$ is the wavelength of the transition, $\nu_{\mathrm{Ryd}}$
 is the frequency at $13.6$~eV and $\bar{g}$ is 
-an effective gaunt factor of order unity.
+an effective gaunt factor of order unity.\index{gaunt factor!effective (collisional)} 
 The inverse rate is calculated by considering detailed balance, 
 such that
 \begin{equation}
@@ -234,7 +234,8 @@ as principal quantum number, $n$ (as done with He~\textsc{i};
 for the CV models in chapter 4). Although this approximation is, in general, 
 a poor one, the effect is second order in the physical 
 regime where recombination lines are formed in the models presented here 
-(see section~\ref{sec:coll_bl}).\index{van Regemorter approximation} 
+(see section~\ref{sec:coll_bl}).
+\index{van Regemorter approximation}
 
 The bound-free collision strengths are calculated using equation~5.79 of
 \cite{mihalas}. The collisional ionization rate coefficient is\index{collisional ionization}
@@ -245,7 +246,7 @@ q_{j\kappa} = 1.55 \times 10^{-13} n_e~\bar{g}_{i}~\sigma_{j\kappa} (\nu_{\kappa
 \label{eq:qioniz}
 \end{equation}
 where $\sigma_{j\kappa} (\nu_{\kappa j})$ is the photoionization cross-section 
-at the threshold energy.
+at the threshold energy.\index{photoionization}
 The effective gaunt factor for ion $i$, $\bar{g}_{i}$, is approximately
 equal to $0.1,0.2,0.3$ for $Z=1,2$ and $>2$, respectively,
 where $Z$ is the atomic number. Note that the use of this estimator
@@ -301,7 +302,8 @@ where $\sigma_{j\kappa} (\nu)$ is the photoionization cross-section for this tra
 We also need to define modified rate coefficients to represent
 the rates at which bound-free transitions add energy to, and remove energy from, 
 the radiation field. These are required for photoionization, 
-spontaneous recombination and stimulated recombination and are given by\index{recombination}
+spontaneous recombination and stimulated recombination and are given by
+\index{recombination}\index{photoionization}
 
 \begin{equation}
 \gamma^E_{j\kappa} = \frac{1}{V} \sum_i^{\mathrm{photons}} 
@@ -353,7 +355,8 @@ The heating and cooling rates for macro-atom bound-bound transitions are the rat
 collisional excitations and de-excitations
 - i.e. the rate at which thermal energy is converted into
 bound-bound excitation energy and vice versa.
-These heating and cooling rate estimators are:\index{bound-bound heating}\index{bound-bound cooling}
+These heating and cooling rate estimators are:
+\index{bound-bound heating}\index{bound-bound cooling}
 
 \begin{equation}
 \hh_{bb} = \sum_{ju}^{\mathrm{lines}} q_{uj} n_u n_e h \nu_{uj} V,

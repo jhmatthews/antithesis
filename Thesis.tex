@@ -167,33 +167,121 @@ Christian Knigge
 
 \vfill\vfill\vfill\vfill\vfill\vfill\null
 
+%% ----------------------------------------------------------------
+\newpage % Funny Quote page ended, start a new page
+\clearpage
+
+\Foreword{
+The following PhD thesis is the work of James Matthews, who obtained his
+PhD in Astrophysics from the University of Southampton. Most PhD theses
+in the UK are likely to be read in full by exactly three people (in
+addition to the author, hopefully): the supervisor, the internal
+examiner and the external examiner. As one of these three, I felt this
+would be a great shame and a terrible waste in this case.
+
+Dr Matthews thesis is an outstanding piece of work on all fronts: in
+terms of its astrophysical significance, in the depth and breadth of
+understanding it demonstrates, and in the quality and clarity of the
+writing it contains. Briefly, the thesis describes the application of a
+state-of-the-art Monte Carlo radiative transfer code to two distinct
+classes of accreting compact objects: accreting white dwarfs in compact
+stellar binary systems and accreting supermassive black holes in quasars
+and active galactic nuclei (AGN). These two types of systems are
+separated from each other by 9 orders of magnitude in mass and size, but
+they nevertheless share much common physics. More specifically, the
+thesis is focused on the accretion disk winds that are seen in both
+types of system, and particularly the imprint these outflows leave on
+our observations (particularly in spectroscopic data sets). In both
+settings, the results described in the thesis provide important new
+insights, while also highlighting the physical connection between the
+two classes.
+
+In the accreting white dwarf setting, the presence of disk winds has
+long been inferred from the presence of ultraviolet absorption lines.
+Here, the thesis shows that the same winds can actually also produce
+optical emission lines (as well as a recombination continuum), whose
+origin has been a long-standing problem. In the AGN context, the thesis
+constructs a simple model of disk winds in quasars that is capable of
+explaining both the absorption and emission signatures seen in these
+systems. This is a crucial result that supports a disk-wind based
+unification scenario for quasars and AGN. Finally, the thesis includes a
+combined theoretical and observational investigation into the equivalent
+width distribution of the emission lines in AGN. This reveals a major
+challenge to ​all unification scenarios: the equivalent widths of
+quasars that show broad absorption lines should be different from those
+that do not show them -- but the observed equivalent width distributions
+are actually indistinguishable. The most likely resolution to this
+problem is that the dominant emission from quasars and AGN does ​not
+arise in a standard, geometrically thin, optically thick accretion disk,
+as is commonly assumed.
+
+What makes these results particularly remarkable is the depth and
+breadth of understanding that is necessary to achieve them. The thesis
+demonstrates this understanding very well, with excellent introductory
+material on topics ranging from accretion physics and Monte Carlo
+radiative transfer to compact binaries and quasars/AGN. For example, on
+the radiative transfer side, the overall Monte Carlo algorithm is
+outlined clearly and concisely, and key techniques (such as the
+micro-clumping approximation and the macro-atom approach) are described
+carefully and in detail. The author's excellent grasp of both the
+observational and theoretical literature on both accreting white dwarfs
+and AGN is also evident throughout.
+
+In summary, this thesis is well worth reading not just for researchers
+interested in its primary results, but for anybody looking for a clear
+introduction to any of the topics it touches on. Beginning graduate
+students, in particular, should find it extremely useful, both for its
+content, and as an example of what a great thesis can look like.
+
+Professor Christian Knigge\\
+Thesis Supervisor
+}
+
+
 
 %% ----------------------------------------------------------------
 \newpage % Funny Quote page ended, start a new page
 \clearpage
 
-\setstretch{1}  % It is better to have smaller font and larger line spacing than the other way round
+\setstretch{1.5}  % It is better to have smaller font and larger line spacing than the other way round
 
 % The Abstract Page
-\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+\addtotoc{Preface}  % Add the "Abstract" page entry to the Contents
 \abstract{
 %\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-Outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass,
+The release of gravitational potential energy as mass falls towards a potential well
+is the most efficient energetic phenomenon in the universe.
+This {\em accretion} process is thought to power the radiative central engines of
+active galaxies, known as active galactic nuclei (AGN) and is also responsible for 
+the emission from compact binary systems such as X-ray binaries and cataclysmic variables (CVs).
+Perhaps remarkably, accretion invariably produces {\em outflow} of material; 
+such outflows are ubiquitous in accreting systems across 10 orders of magnitude in mass,
 and there is good evidence that mass-loaded winds are launched from the accretion discs of
-quasars and cataclysmic variables (CVs). Perhaps the most spectacular evidence for accretion disc winds is the blue-shifted, 
-broad absorption lines (BALs) in UV resonance lines, seen in CVs and the 
+quasars and CVs. 
+Perhaps the most spectacular evidence for accretion disc winds is the blue-shifted, 
+broad absorption lines (BALs) in UV resonance lines, seen in CVs and
 BAL quasars. As well as imprinting absorption features, disc winds
 may affect the line and continuum emission from accreting objects. They thus offer
-a natural way to {\em unify} much of the phenomenology of CVs and active galactic nuclei (AGN).
-% When one considers that
-% disc winds are also a possible mechanism for AGN feedback, it becomes clear 
-% that understanding the physics and true spectral imprint of these winds is of wide-ranging astrophysical significance.
+a natural way to {\em unify} much of the phenomenology of CVs and AGN.
+When one considers that disc winds are also a possible mechanism for AGN feedback, 
+it becomes clear that understanding the physics and true spectral imprint of these winds 
+is of wide-ranging astrophysical significance.
 
 In this thesis, I use a state-of-the-art Monte Carlo radiative transfer (MCRT) 
 code, \py, to conduct a series of simulations designed to test
-simple biconical disc wind models. I outline
-the MCRT techniques used, before describing a series of code validation exercises. 
-Having tested my methods thoroughly, I explore whether the winds that are 
+simple biconical disc wind models. I initially give a broad introduction to the field,
+starting with the basic physics of accretion before describing the observational
+appearance of accreting systems, from CVs to quasars. Throughout the introduction,
+I focus particularly on themes of universality and unification, which are central ideas
+to the work presented here. These themes are explored further in chapter 2, in which I 
+describe the theoretical and observational status of the current understanding of accretion 
+disc winds. Chapter 3 contains a detailed description of MCRT techniques with particular 
+focus on Leon Lucy's macro-atom scheme and its implementation in \py. This chapter is 
+in some senses the least accessible as it provides a thorough documenting of the 
+Monte Carlo estimators used in the simulations. Such rigour is important, however, and 
+thus I also go on to describe a series of code validation exercises. 
+
+Having tested my methods thoroughly, I then explore whether the winds that are 
 responsible for the UV BALs in high-state CVs could also have an 
 effect on the optical spectrum. I find that the wind produces
 strong emission in the Balmer series, \heiiopt\ and a series of He~\textsc{i} lines. 
@@ -216,11 +304,13 @@ Despite these successes, the model cannot reproduce all emission lines seen in
 quasar spectra with the correct equivalent width (EW) ratios, and I find the
 emission line EWs have a strong dependence on inclination.
 
-Informed by the quasar wind modelling, I examine the emission line EW distributions
+Informed by the quasar wind modelling, I use the Sloan Digital Sky Survey to
+examine the emission line EW distributions
 of quasars in the context of geometric unification. I find that the observed 
 distributions are not consistent with a model in which an equatorial BAL 
 outflow rises from a foreshortened accretion disc. I discuss this finding
 in the context of other observational orientation indicators.
+
 Finally, I summarise my findings and suggest avenues for future work.
 Overall, the work presented here suggests that {\em disc winds matter}. 
 They not only act as a spectral `filter' for the underlying
@@ -257,27 +347,14 @@ astronomical community.
 \Declaration{
 
 %\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+I, James Matthews, declare that this thesis titled, `Disc Winds Matter: Modelling Accretion and Outflow on All Scales' and the work presented in it are my own. 
 
-I, James Matthews, declare that this thesis titled, `Disc Winds Matter: Modelling Accretion and Outflow on All Scales' and the work presented in it are my own. I confirm that:
-
-\begin{itemize} 
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
- 
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
- 
-\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
- 
-\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
- 
-\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
- 
-\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-\end{itemize}
 The first two chapters of this thesis provide a general introduction to the field, and thus
 are based on the relevant literature. Where a figure is not produced by me, I have acknowledged 
 this clearly with a credit to the relevant publication. Chapter 3 contains a description
 of the methods used. This is partly a description of the radiative transfer code \py, which
-was originally developed by Knox Long and Christian Knigge \citep{LK02}, but also includes substantial
+was originally developed by Knox Long and Christian Knigge \citep{LK02}, 
+but also includes substantial
 detail on the `macro-atom' technique, which was proposed by Leon Lucy and incorporated into \py\
 by Stuart Sim for a study on young-stellar objects \citep{simmacro2005}. 
 Although I have put significant effort into testing, fixing and developing this scheme, 
@@ -285,8 +362,8 @@ I did not write the original code to deal with macro-atoms in \py.
 
 Chapter 4, 5 and 6 were studies I led under the guidance of my supervisor. For these
 chapters I conducted all simulations and data analysis, produced all the figures and 
-wrote the text. A publication based on chapter 6 is in preparation, and
-chapters 4 and 5 are based on the following papers:
+wrote the text. These chapters are adapted from the following three papers with permission
+from MNRAS:
 \begin{itemize}
 	\item Chapter 4: Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., 
 `The impact of accretion disc winds on the optical spectra of 
@@ -295,6 +372,7 @@ cataclysmic variables',
 	\item Chapter 5: Matthews J. H., Knigge C., Long K. S., Sim S. A., Higginbottom N., Mangham S. W., 
 `Testing quasar unification: radiative transfer in clumpy winds',
 2016, MNRAS, 458, 293.
+	\item Chapter 6: Matthews J. H., Knigge C., Long K. S., `Quasar emission lines as probes of orientation: implications for disc wind geometries and unification', MNRAS, DOI:10.1093/mnras/stx231
 \end{itemize}
 The following additional publications are not included in this thesis, although some of the work 
 presented here did contribute towards the respective results
@@ -308,19 +386,10 @@ MNRAS, 436, 2.3
 	\item Shankar F., Calderone G., Knigge C., Matthews J. H., et al., `The Optical--UV Emissivity of Quasars: Dependence on Black Hole Mass and Radio Loudness', 2016, ApJ Letters, 818, 1.
 \end{itemize} 
 
-\bigskip
-\bigskip
-\bigskip
-
-Signed:~~~~~~~~
-\includegraphics[width=0.3\textwidth]{figures/signature.png}\\
-\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
-
 %\bigskip
-
-Date: 
-11/06/2016\\
-\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+% Date: 
+% 11/06/2016\\
+% \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
 \clearpage  % Declaration ended, now start a new page
 
@@ -384,6 +453,8 @@ I acknowledge the use of the IRIDIS High Performance Computing
 Facility, and associated support services at the University of 
 Southampton, in the completion of this work. 
 Figures were produced using the {\tt matplotlib} plotting library.
+I would also like to thank Padma and Ramon from Springer for helping
+me through the publication process.
 }
 
 \clearpage

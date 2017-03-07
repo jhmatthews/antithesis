@@ -78,7 +78,7 @@ High-state CVs show a clear trend of increasing line EW with inclination
 a trend that is attributed to foreshortening and limb darkening of the disc continuum.
 
 The ideal emission line to use for this method would be one that is completely isotropic,
-i.e. {\em optically thin}. The \oiiifull\ narrow emission line fulfils this criteria -- at least in terms of its atomic physics -- since it 
+i.e. {\em optically thin}. The \oiiifull\ narrow emission line fulfils this criteria -- at least in terms of its atomic physics -- since it \index{forbidden line}\index{emission line}
 is a strong, forbidden line formed in the narrow-line region (NLR) of AGN. However,\index{NLR}
 the ratio of \oiiifull\ to the infra-red [O\textsc{iv}]~$28.59~\mu$m line has been shown to
 vary between type 1 and type 2 AGN \citep{kraemer2011}, potentially implying a degree of anisotropy.
@@ -177,6 +177,7 @@ considerations, the S11 catalog makes for a reliable set of EW
 measurements. This is especially true when making inferences from 
 multiple emission lines, as systematics inherent to individual lines 
 or spectral windows are less likely to affect the analysis as a whole.
+\index{emission line}\index{quasar}\index{SDSS}
 
 In attempting to draw broad conclusions about unification models as a whole,
 I would ideally also construct a large, homogeneous dataset of 
@@ -217,6 +218,7 @@ in which the continuum comes from a foreshortened disc, and BAL outflows are at 
 This problem is examined further in section~\ref{sec:mc_angular}. 
 First, I will examine the motivations for different forms of \ept\ 
 in AGN and quasars.
+\index{BALQSOs}\index{AGN}\index{quasar}
 
 \section{The Angular Distribution of Emission from an Accretion Disc}
 \label{sec:disc_agn}
@@ -241,7 +243,7 @@ disc is geometrically thin and optically thick.
 
 \noindent
 Any geometrically thin, optically thick disc will appear\index{accretion disc}
-\index{foreshortening}\index{limb darkening}
+\index{foreshortening}\index{limb darkening}\index{accretion disc!thin disc models}
 foreshortened and limb darkened (if temperature decreases
 with height from the central disc plane). 
 Foreshortening is a simple $\cos \theta$ geometric effect, 
@@ -286,7 +288,7 @@ depends on the bound-free and bound-bound opacities in the disc.
 In addition, it has been shown that GR light bending can `isotropize' the radiation
 field in XRBs \citep{zhang1997,munozdarias2013}, in some cases overcoming
 foreshortening effects. In order to assess the impact of GR and disc opacities
-on \ept, I use \agn\ models, which conducts a stellar atmosphere calculation
+on \ept, I use \agn\ models, which conducts a stellar atmosphere calculation\index{\agn}
 to obtain the SED from a series of annuli, before using the \kerrtrans\ code \citep{agol1997}
 to calculate the emergent SED by ray-tracing along Kerr geodesics.
 Fig.~\ref{fig:agnspec_disc} shows \ept\ as a function of 
@@ -329,7 +331,7 @@ criteria. The criteria are that the object in question lies in the redshift
 range 0.01 to 0.8, have an absolute magnitude $M_i<-22.1$, an 
 apparent magnitude $m_i<19.1$, and signal to noise per pixel of greater
 than 5. Using the updated SDSS quasar sample of S11, this defines
-a sample of 14,424 quasars.
+a sample of 14,424 quasars.\index{quasar}\index{SDSS}
 
 I carried out the following procedure to simulate
 the effect of inclination on the \ewo\ distribution, and used it to fit the
@@ -370,6 +372,7 @@ intrinsic distribution, as well as the cosine of the maximum angle.
 The distribution shown in the top panel has $\mu_*$ and $\sigma_*$ from R11 Model 1, 
 whereas the bottom panel shows a narrower distribution to illustrate the 
 earlier onset of the high EW cutoff. 
+\index{Monte Carlo}\index{equivalent width}
 
 \begin{figure}
 \centering
@@ -447,7 +450,7 @@ The geometry of the toy model used to carry out the Monte Carlo simulations.
 \end{figure}
 
 In order to compare the observed \ewo\ distributions to those expected for LoBALs and
-non-BALs I conducted a Monte Carlo simulation similar to
+non-BALs I conducted a Monte Carlo simulation similar to\index{Monte Carlo}
 that described in section~\ref{sec:fitting}, but with a few 
 key differences. I once again assumed $\epsilon(\theta) = \cos \theta$.
 The geometry of the toy model used in this simulation is shown in
@@ -522,6 +525,7 @@ BALQSOs are viewed from similar angles to non-BAL quasars.
 
 \subsection{Alternative Shapes for the Intrinsic EW Distribution}
 
+\index{equivalent width}
 The strength of the conclusions here are limited by the lack of knowledge about the 
 intrinsic face-on distribution of \ewo, or, equivalently,
 the orientations of the quasars themselves. 
@@ -623,7 +627,7 @@ on the results.
 
 \subsection{Eigenvector 1}
 
-\index{Eigenvector 1}
+\index{Eigenvector 1}\index{emission line}\index{AGN}\index{quasar}
 Eigenvector 1 (EV1) is a fundamental parameter space for AGN and quasars
 \citep{borosongreen,sulentic2000ev1,marziani2001,shenho2014}. 
 It relates the FWHM of \hb, the relative iron strength, 
@@ -715,7 +719,7 @@ $N_{\mathrm{non-BAL}}$ in the number of non-BAL quasars in the bin.
 
 \subsection{Polarisation}
 
-\index{polarization}
+\index{polarisation}\index{disc wind}\index{absorption line}
 Spectropolarimetry of BAL quasars offers some of
 the best insights into the geometries of BAL outflows and 
 tends to show a few key properties. The first is enhanced 
@@ -1053,6 +1057,7 @@ due to the high column density observed in BAL (and particularly LoBAL) quasars.
 Line anisotropy from a disc-shaped BLR cannot explain the observed similarities between the broad emission
 line distributions if the disc is Keplerian, and it also cannot affect the 
 quasar \ewo\ distributions, as \oiiifull\ is a forbidden, optically thin transition.
+\index{forbidden line}
 
 Regardless of the conclusions about BAL quasars and their outflow geometries,
 this analysis allows conclusions to be drawn about the {\em overall} 
