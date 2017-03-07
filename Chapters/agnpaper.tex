@@ -21,6 +21,7 @@ for more than just the broad absorption lines and P-Cygni profiles
 seen in quasar spectra. In particular, they offer a natural way to
 {\em unify} much of the complex phenomenology into one simple picture.
 
+\index{Monte Carlo radiative transfer}
 Here, I aim to test that picture using \py, with
 the specific aim of determining whether it is possible to 
 reproduce the key properties of AGN spectra, including those of BALQSOs, 
@@ -169,7 +170,7 @@ Second, there are significant computational difficulties associated with adequat
 Given the lack of knowledge about the actual type of clumping, I have implemented
 a simple approximation used successfully in stellar wind modelling, known as 
 {\em microclumping} \citep[e.g.][]{hamann1998,hilliermiller1999,hamann2008}.
-\index{clumping!micro-}  
+\index{clumping!micro-} \index{Monte Carlo radiative transfer} 
 
 The underlying assumption of microclumping is that clump sizes 
 are much smaller than the 
@@ -203,6 +204,7 @@ density. This allows an increase in the ionizing luminosity, amplifying the amou
 bound-free heating and also increasing the competing line cooling term
 (thermal line emission).\index{line emission}
 
+\index{Monte Carlo radiative transfer}
 The shortest length scale in a Sobolev MCRT treatment such as that used here
 is normally the Sobolev length, given by\index{Sobolev approximation} 
 \begin{equation}
