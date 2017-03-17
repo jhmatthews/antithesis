@@ -57,116 +57,116 @@
 \contentsline {section}{\numberline {2.4}A Kinematic Prescription for a Biconical Wind}{58}{section.130}
 \contentsline {section}{\numberline {2.5}The big picture: AGN Feedback}{61}{section.139}
 \contentsline {subsection}{\numberline {2.5.1}Observational evidence for feedback}{62}{subsection.143}
-\contentsline {subsection}{\numberline {2.5.2}Alternative Explanations}{65}{subsection.147}
-\contentsline {chapter}{\numberline {3}Monte Carlo Radiative Transfer and Ionization}{67}{chapter.148}
-\contentsline {section}{\numberline {3.1}Fundamentals of Radiative Transfer}{68}{section.149}
-\contentsline {subsection}{\numberline {3.1.1}Spectral Line Formation}{69}{subsection.159}
-\contentsline {subsection}{\numberline {3.1.2}Local Thermodynamic Equilibrium}{69}{subsection.160}
-\contentsline {subsubsection}{\numberline {3.1.2.1}Dilute Approximation}{70}{subsubsection.164}
-\contentsline {subsection}{\numberline {3.1.3}The Two Level Atom}{71}{subsection.168}
-\contentsline {subsubsection}{\numberline {3.1.3.1}Einstein coefficients}{71}{subsubsection.169}
-\contentsline {subsection}{\numberline {3.1.4}The Sobolev Approximation}{72}{subsection.175}
-\contentsline {subsubsection}{\numberline {3.1.4.1}Two-level Atom with Escape Probabilities}{74}{subsubsection.181}
-\contentsline {subsection}{\numberline {3.1.5}Monte Carlo Approaches}{74}{subsection.185}
-\contentsline {section}{\numberline {3.2}{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}{75}{section.186}
-\contentsline {subsection}{\numberline {3.2.1}Basics}{75}{subsection.188}
-\contentsline {subsection}{\numberline {3.2.2}Radiation Packets}{77}{subsection.192}
-\contentsline {subsection}{\numberline {3.2.3}Radiative Transfer Procedure}{78}{subsection.195}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Continuum Opacities}{78}{subsubsection.198}
-\contentsline {subsubsection}{\numberline {3.2.3.2}Doppler Shifts}{80}{subsubsection.205}
-\contentsline {subsubsection}{\numberline {3.2.3.3}Choosing Packet Directions}{80}{subsubsection.208}
-\contentsline {section}{\numberline {3.3}Macro-atoms}{81}{section.212}
-\contentsline {subsection}{\numberline {3.3.1}Transition Probabilities}{83}{subsection.217}
-\contentsline {subsection}{\numberline {3.3.2}Rate equations}{84}{subsection.222}
-\contentsline {subsubsection}{\numberline {3.3.2.1}Collision Strengths}{85}{subsubsection.229}
-\contentsline {subsection}{\numberline {3.3.3}Macro-atom estimators}{86}{subsection.234}
-\contentsline {subsubsection}{\numberline {3.3.3.1}Bound-free estimators}{86}{subsubsection.236}
-\contentsline {subsubsection}{\numberline {3.3.3.2}Bound-bound estimators}{87}{subsubsection.244}
-\contentsline {subsubsection}{\numberline {3.3.3.3}Other heating and cooling estimators}{88}{subsubsection.247}
-\contentsline {subsection}{\numberline {3.3.4}$k$-packets}{89}{subsection.255}
-\contentsline {subsection}{\numberline {3.3.5}Putting it All Together}{89}{subsection.257}
-\contentsline {subsection}{\numberline {3.3.6}Ionization Fractions and Level Populations}{91}{subsection.259}
-\contentsline {subsection}{\numberline {3.3.7}Numerical Issues and Population Inversions}{92}{subsection.263}
-\contentsline {section}{\numberline {3.4}A hybrid line transfer scheme: including simple-atoms}{93}{section.265}
-\contentsline {subsection}{\numberline {3.4.1}Line Transfer}{93}{subsection.266}
-\contentsline {subsection}{\numberline {3.4.2}Heating and Cooling Estimators}{94}{subsection.269}
-\contentsline {subsubsection}{\numberline {3.4.2.1}Radiation Field Estimators, Ionization and Excitation}{94}{subsubsection.274}
-\contentsline {section}{\numberline {3.5}Heating And Cooling Balance}{97}{section.283}
-\contentsline {subsection}{\numberline {3.5.1}Convergence}{97}{subsection.285}
-\contentsline {section}{\numberline {3.6}Spectral Cycles}{98}{section.289}
-\contentsline {subsection}{\numberline {3.6.1}Macro-atom Emissivity Calculation}{99}{subsection.292}
-\contentsline {section}{\numberline {3.7}Atomic Data}{101}{section.293}
-\contentsline {subsection}{\numberline {3.7.1}Macro-atom Level and Line Data}{101}{subsection.294}
-\contentsline {subsection}{\numberline {3.7.2}Photoionization Cross-sections}{102}{subsection.296}
-\contentsline {section}{\numberline {3.8}Code Validation}{103}{section.298}
-\contentsline {subsection}{\numberline {3.8.1}Testing Against \textsc {Cloudy}}{103}{subsection.299}
-\contentsline {subsection}{\numberline {3.8.2}Macro-atom Testing Against \textsc {Tardis}\ and Theory}{105}{subsection.308}
-\contentsline {subsection}{\numberline {3.8.3}Testing Line Transfer Modes}{109}{subsection.311}
-\contentsline {section}{\numberline {3.9}Code Maintenance and Version Control}{111}{section.313}
-\contentsline {subsection}{\numberline {3.9.1}Parallelisation}{111}{subsection.315}
-\contentsline {chapter}{\numberline {4}The Impact of Accretion Disc Winds on the Optical Spectra of Cataclysmic Variables}{115}{chapter.317}
-\contentsline {section}{\numberline {4.1}Introduction}{115}{section.318}
-\contentsline {subsection}{\numberline {4.1.1}Sources and Sinks of Radiation}{117}{subsection.319}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Accretion disc}{117}{subsubsection.321}
-\contentsline {subsubsection}{\numberline {4.1.1.2}White Dwarf}{118}{subsubsection.324}
-\contentsline {subsubsection}{\numberline {4.1.1.3}Boundary Layer}{118}{subsubsection.325}
-\contentsline {subsubsection}{\numberline {4.1.1.4}Secondary Star}{119}{subsubsection.326}
-\contentsline {section}{\numberline {4.2}A Benchmark Disc Wind Model}{119}{section.328}
-\contentsline {subsection}{\numberline {4.2.1}Physical Structure and Ionization State}{121}{subsection.329}
-\contentsline {subsection}{\numberline {4.2.2}Synthetic Spectra}{121}{subsection.332}
-\contentsline {section}{\numberline {4.3}A Revised Model Optimized for Optical Wavelengths}{125}{section.335}
-\contentsline {subsection}{\numberline {4.3.1}Synthetic Spectra}{126}{subsection.336}
-\contentsline {subsection}{\numberline {4.3.2}Continuum Shape and the Balmer Jump}{129}{subsection.338}
-\contentsline {subsection}{\numberline {4.3.3}Line Profile Shapes: Producing Single-Peaked Emission}{130}{subsection.343}
-\contentsline {subsection}{\numberline {4.3.4}Sensitivity to Model Parameters}{133}{subsection.346}
-\contentsline {subsection}{\numberline {4.3.5}Comparison to RW Tri}{134}{subsection.347}
-\contentsline {subsection}{\numberline {4.3.6}A Note on Collision Strengths}{136}{subsection.349}
-\contentsline {section}{\numberline {4.4}Conclusions}{137}{section.350}
-\contentsline {chapter}{\numberline {5}Testing Quasar Unification: Radiative Transfer In Clumpy Winds}{139}{chapter.351}
-\contentsline {section}{\numberline {5.1}Introduction}{139}{section.352}
-\contentsline {section}{\numberline {5.2}A Clumpy Biconical Disk Wind Model for Quasars}{140}{section.353}
-\contentsline {subsection}{\numberline {5.2.1}Photon Sources}{141}{subsection.355}
-\contentsline {subsection}{\numberline {5.2.2}A Simple Approximation for Clumping}{142}{subsection.358}
-\contentsline {subsection}{\numberline {5.2.3}The Simulation Grid}{144}{subsection.362}
-\contentsline {section}{\numberline {5.3}Results and Analysis from a Fiducial Model}{146}{section.365}
-\contentsline {subsection}{\numberline {5.3.1}Physical Conditions and Ionization State}{146}{subsection.367}
-\contentsline {subsection}{\numberline {5.3.2}Synthetic Spectra: Comparison to Observations}{150}{subsection.370}
-\contentsline {subsubsection}{\numberline {5.3.2.1}Broad Absorption Lines (`BALQSO-like' angles)}{150}{subsubsection.374}
-\contentsline {subsubsection}{\numberline {5.3.2.2}Broad Emission Lines (`quasar-like' angles)}{152}{subsubsection.375}
-\contentsline {subsection}{\numberline {5.3.3}X-ray Properties}{155}{subsection.377}
-\contentsline {subsection}{\numberline {5.3.4}LoBALs and Ionization Stratification}{156}{subsection.379}
-\contentsline {section}{\numberline {5.4}Discussion}{158}{section.381}
-\contentsline {subsection}{\numberline {5.4.1}Parameter Sensitivity}{158}{subsection.382}
-\contentsline {subsection}{\numberline {5.4.2}Inclination Trends: FWHM and EW}{158}{subsection.384}
-\contentsline {subsubsection}{\numberline {5.4.2.1}FWHM and Black Hole Mass Estimates}{161}{subsubsection.387}
-\contentsline {section}{\numberline {5.5}Summary And Conclusions}{163}{section.391}
-\contentsline {chapter}{\numberline {6}Quasar Emission Lines as Probes of Orientation and Unification}{165}{chapter.398}
-\contentsline {section}{\numberline {6.1}Introduction}{165}{section.399}
-\contentsline {section}{\numberline {6.2}Data Sample}{167}{section.400}
-\contentsline {section}{\numberline {6.3}The Angular Distribution of Emission from an Accretion Disc}{171}{section.404}
-\contentsline {subsection}{\numberline {6.3.1}Standard Thin Disc Models}{171}{subsection.405}
-\contentsline {subsection}{\numberline {6.3.2}Including GR and Opacity Effects}{172}{subsection.408}
-\contentsline {section}{\numberline {6.4}Predicted EW Distributions Compared to Observations}{174}{section.410}
-\contentsline {subsection}{\numberline {6.4.1}Fitting the Quasar Distribution}{174}{subsection.411}
-\contentsline {subsection}{\numberline {6.4.2}Comparing non-BAL and LoBAL Distributions: Sample A}{175}{subsection.419}
-\contentsline {subsection}{\numberline {6.4.3}Alternative Shapes for the Intrinsic EW Distribution}{180}{subsection.422}
-\contentsline {subsection}{\numberline {6.4.4}Caveats and Selection Effects}{182}{subsection.424}
-\contentsline {section}{\numberline {6.5}Discussion}{183}{section.425}
-\contentsline {subsection}{\numberline {6.5.1}Eigenvector 1}{183}{subsection.426}
-\contentsline {subsection}{\numberline {6.5.2}Polarisation}{185}{subsection.429}
-\contentsline {subsection}{\numberline {6.5.3}The Effect of Obscuration}{187}{subsection.432}
-\contentsline {subsection}{\numberline {6.5.4}Line Anisotropy}{188}{subsection.433}
-\contentsline {section}{\numberline {6.6}Conclusions}{192}{section.443}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{195}{chapter.444}
-\contentsline {section}{\numberline {7.1}Suggestions for Future Work}{198}{section.445}
-\contentsline {subsection}{\numberline {7.1.1}CVs as Accretion and Outflow Laboratories}{198}{subsection.446}
-\contentsline {subsection}{\numberline {7.1.2}Improving the Treatment of Clumping}{199}{subsection.447}
-\contentsline {subsection}{\numberline {7.1.3}Improving Atomic Models}{200}{subsection.448}
-\contentsline {subsection}{\numberline {7.1.4}Using Radiative Transfer to Make Reverberation and Microlensing Predictions}{201}{subsection.450}
-\contentsline {subsection}{\numberline {7.1.5}Placing BAL Quasars on the Eigenvector 1 Parameter Space}{201}{subsection.452}
-\contentsline {section}{\numberline {7.2}Closing Remarks}{202}{section.453}
+\contentsline {subsection}{\numberline {2.5.2}Alternative Explanations}{64}{subsection.146}
+\contentsline {chapter}{\numberline {3}Monte Carlo Radiative Transfer and Ionization}{67}{chapter.147}
+\contentsline {section}{\numberline {3.1}Fundamentals of Radiative Transfer}{68}{section.148}
+\contentsline {subsection}{\numberline {3.1.1}Spectral Line Formation}{69}{subsection.158}
+\contentsline {subsection}{\numberline {3.1.2}Local Thermodynamic Equilibrium}{69}{subsection.159}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Dilute Approximation}{70}{subsubsection.163}
+\contentsline {subsection}{\numberline {3.1.3}The Two Level Atom}{71}{subsection.167}
+\contentsline {subsubsection}{\numberline {3.1.3.1}Einstein coefficients}{71}{subsubsection.168}
+\contentsline {subsection}{\numberline {3.1.4}The Sobolev Approximation}{72}{subsection.174}
+\contentsline {subsubsection}{\numberline {3.1.4.1}Two-level Atom with Escape Probabilities}{74}{subsubsection.180}
+\contentsline {subsection}{\numberline {3.1.5}Monte Carlo Approaches}{74}{subsection.184}
+\contentsline {section}{\numberline {3.2}{\sc python}: A Monte Carlo Ionization and Radiative Transfer Code}{75}{section.185}
+\contentsline {subsection}{\numberline {3.2.1}Basics}{75}{subsection.187}
+\contentsline {subsection}{\numberline {3.2.2}Radiation Packets}{77}{subsection.191}
+\contentsline {subsection}{\numberline {3.2.3}Radiative Transfer Procedure}{78}{subsection.194}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Continuum Opacities}{78}{subsubsection.197}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Doppler Shifts}{80}{subsubsection.204}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Choosing Packet Directions}{80}{subsubsection.207}
+\contentsline {section}{\numberline {3.3}Macro-atoms}{81}{section.211}
+\contentsline {subsection}{\numberline {3.3.1}Transition Probabilities}{83}{subsection.216}
+\contentsline {subsection}{\numberline {3.3.2}Rate equations}{84}{subsection.221}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Collision Strengths}{85}{subsubsection.228}
+\contentsline {subsection}{\numberline {3.3.3}Macro-atom estimators}{86}{subsection.233}
+\contentsline {subsubsection}{\numberline {3.3.3.1}Bound-free estimators}{86}{subsubsection.235}
+\contentsline {subsubsection}{\numberline {3.3.3.2}Bound-bound estimators}{87}{subsubsection.243}
+\contentsline {subsubsection}{\numberline {3.3.3.3}Other heating and cooling estimators}{88}{subsubsection.246}
+\contentsline {subsection}{\numberline {3.3.4}$k$-packets}{89}{subsection.254}
+\contentsline {subsection}{\numberline {3.3.5}Putting it All Together}{89}{subsection.256}
+\contentsline {subsection}{\numberline {3.3.6}Ionization Fractions and Level Populations}{91}{subsection.258}
+\contentsline {subsection}{\numberline {3.3.7}Numerical Issues and Population Inversions}{92}{subsection.262}
+\contentsline {section}{\numberline {3.4}A hybrid line transfer scheme: including simple-atoms}{93}{section.264}
+\contentsline {subsection}{\numberline {3.4.1}Line Transfer}{93}{subsection.265}
+\contentsline {subsection}{\numberline {3.4.2}Heating and Cooling Estimators}{94}{subsection.268}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Radiation Field Estimators, Ionization and Excitation}{94}{subsubsection.273}
+\contentsline {section}{\numberline {3.5}Heating And Cooling Balance}{97}{section.282}
+\contentsline {subsection}{\numberline {3.5.1}Convergence}{97}{subsection.284}
+\contentsline {section}{\numberline {3.6}Spectral Cycles}{98}{section.288}
+\contentsline {subsection}{\numberline {3.6.1}Macro-atom Emissivity Calculation}{99}{subsection.291}
+\contentsline {section}{\numberline {3.7}Atomic Data}{101}{section.292}
+\contentsline {subsection}{\numberline {3.7.1}Macro-atom Level and Line Data}{101}{subsection.293}
+\contentsline {subsection}{\numberline {3.7.2}Photoionization Cross-sections}{102}{subsection.295}
+\contentsline {section}{\numberline {3.8}Code Validation}{103}{section.297}
+\contentsline {subsection}{\numberline {3.8.1}Testing Against \textsc {Cloudy}}{103}{subsection.298}
+\contentsline {subsection}{\numberline {3.8.2}Macro-atom Testing Against \textsc {Tardis}\ and Theory}{105}{subsection.307}
+\contentsline {subsection}{\numberline {3.8.3}Testing Line Transfer Modes}{109}{subsection.310}
+\contentsline {section}{\numberline {3.9}Code Maintenance and Version Control}{111}{section.312}
+\contentsline {subsection}{\numberline {3.9.1}Parallelisation}{111}{subsection.314}
+\contentsline {chapter}{\numberline {4}The Impact of Accretion Disc Winds on the Optical Spectra of Cataclysmic Variables}{115}{chapter.316}
+\contentsline {section}{\numberline {4.1}Introduction}{115}{section.317}
+\contentsline {subsection}{\numberline {4.1.1}Sources and Sinks of Radiation}{117}{subsection.318}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Accretion disc}{117}{subsubsection.320}
+\contentsline {subsubsection}{\numberline {4.1.1.2}White Dwarf}{118}{subsubsection.323}
+\contentsline {subsubsection}{\numberline {4.1.1.3}Boundary Layer}{118}{subsubsection.324}
+\contentsline {subsubsection}{\numberline {4.1.1.4}Secondary Star}{119}{subsubsection.325}
+\contentsline {section}{\numberline {4.2}A Benchmark Disc Wind Model}{119}{section.327}
+\contentsline {subsection}{\numberline {4.2.1}Physical Structure and Ionization State}{121}{subsection.328}
+\contentsline {subsection}{\numberline {4.2.2}Synthetic Spectra}{121}{subsection.331}
+\contentsline {section}{\numberline {4.3}A Revised Model Optimized for Optical Wavelengths}{125}{section.334}
+\contentsline {subsection}{\numberline {4.3.1}Synthetic Spectra}{126}{subsection.335}
+\contentsline {subsection}{\numberline {4.3.2}Continuum Shape and the Balmer Jump}{129}{subsection.337}
+\contentsline {subsection}{\numberline {4.3.3}Line Profile Shapes: Producing Single-Peaked Emission}{130}{subsection.342}
+\contentsline {subsection}{\numberline {4.3.4}Sensitivity to Model Parameters}{133}{subsection.345}
+\contentsline {subsection}{\numberline {4.3.5}Comparison to RW Tri}{134}{subsection.346}
+\contentsline {subsection}{\numberline {4.3.6}A Note on Collision Strengths}{136}{subsection.348}
+\contentsline {section}{\numberline {4.4}Conclusions}{137}{section.349}
+\contentsline {chapter}{\numberline {5}Testing Quasar Unification: Radiative Transfer In Clumpy Winds}{139}{chapter.350}
+\contentsline {section}{\numberline {5.1}Introduction}{139}{section.351}
+\contentsline {section}{\numberline {5.2}A Clumpy Biconical Disk Wind Model for Quasars}{140}{section.352}
+\contentsline {subsection}{\numberline {5.2.1}Photon Sources}{141}{subsection.354}
+\contentsline {subsection}{\numberline {5.2.2}A Simple Approximation for Clumping}{142}{subsection.357}
+\contentsline {subsection}{\numberline {5.2.3}The Simulation Grid}{144}{subsection.361}
+\contentsline {section}{\numberline {5.3}Results and Analysis from a Fiducial Model}{146}{section.364}
+\contentsline {subsection}{\numberline {5.3.1}Physical Conditions and Ionization State}{146}{subsection.366}
+\contentsline {subsection}{\numberline {5.3.2}Synthetic Spectra: Comparison to Observations}{150}{subsection.369}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Broad Absorption Lines (`BALQSO-like' angles)}{150}{subsubsection.373}
+\contentsline {subsubsection}{\numberline {5.3.2.2}Broad Emission Lines (`quasar-like' angles)}{152}{subsubsection.374}
+\contentsline {subsection}{\numberline {5.3.3}X-ray Properties}{155}{subsection.376}
+\contentsline {subsection}{\numberline {5.3.4}LoBALs and Ionization Stratification}{156}{subsection.378}
+\contentsline {section}{\numberline {5.4}Discussion}{158}{section.380}
+\contentsline {subsection}{\numberline {5.4.1}Parameter Sensitivity}{158}{subsection.381}
+\contentsline {subsection}{\numberline {5.4.2}Inclination Trends: FWHM and EW}{158}{subsection.383}
+\contentsline {subsubsection}{\numberline {5.4.2.1}FWHM and Black Hole Mass Estimates}{161}{subsubsection.386}
+\contentsline {section}{\numberline {5.5}Summary And Conclusions}{163}{section.390}
+\contentsline {chapter}{\numberline {6}Quasar Emission Lines as Probes of Orientation and Unification}{165}{chapter.397}
+\contentsline {section}{\numberline {6.1}Introduction}{165}{section.398}
+\contentsline {section}{\numberline {6.2}Data Sample}{167}{section.399}
+\contentsline {section}{\numberline {6.3}The Angular Distribution of Emission from an Accretion Disc}{171}{section.403}
+\contentsline {subsection}{\numberline {6.3.1}Standard Thin Disc Models}{171}{subsection.404}
+\contentsline {subsection}{\numberline {6.3.2}Including GR and Opacity Effects}{172}{subsection.407}
+\contentsline {section}{\numberline {6.4}Predicted EW Distributions Compared to Observations}{174}{section.409}
+\contentsline {subsection}{\numberline {6.4.1}Fitting the Quasar Distribution}{174}{subsection.410}
+\contentsline {subsection}{\numberline {6.4.2}Comparing non-BAL and LoBAL Distributions: Sample A}{175}{subsection.418}
+\contentsline {subsection}{\numberline {6.4.3}Alternative Shapes for the Intrinsic EW Distribution}{180}{subsection.421}
+\contentsline {subsection}{\numberline {6.4.4}Caveats and Selection Effects}{182}{subsection.423}
+\contentsline {section}{\numberline {6.5}Discussion}{183}{section.424}
+\contentsline {subsection}{\numberline {6.5.1}Eigenvector 1}{183}{subsection.425}
+\contentsline {subsection}{\numberline {6.5.2}Polarisation}{185}{subsection.428}
+\contentsline {subsection}{\numberline {6.5.3}The Effect of Obscuration}{187}{subsection.431}
+\contentsline {subsection}{\numberline {6.5.4}Line Anisotropy}{188}{subsection.432}
+\contentsline {section}{\numberline {6.6}Conclusions}{192}{section.442}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{195}{chapter.443}
+\contentsline {section}{\numberline {7.1}Suggestions for Future Work}{198}{section.444}
+\contentsline {subsection}{\numberline {7.1.1}CVs as Accretion and Outflow Laboratories}{198}{subsection.445}
+\contentsline {subsection}{\numberline {7.1.2}Improving the Treatment of Clumping}{199}{subsection.446}
+\contentsline {subsection}{\numberline {7.1.3}Improving Atomic Models}{200}{subsection.447}
+\contentsline {subsection}{\numberline {7.1.4}Using Radiative Transfer to Make Reverberation and Microlensing Predictions}{201}{subsection.449}
+\contentsline {subsection}{\numberline {7.1.5}Placing BAL Quasars on the Eigenvector 1 Parameter Space}{201}{subsection.451}
+\contentsline {section}{\numberline {7.2}Closing Remarks}{202}{section.452}
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{Index}{205}{section*.454}
+\contentsline {chapter}{Index}{205}{section*.453}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{209}{dummy.456}
+\contentsline {chapter}{Bibliography}{209}{dummy.455}
