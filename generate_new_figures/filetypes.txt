@@ -1,0 +1,58 @@
+
+IUE Data Types
+
+The available IUE data types are described below. Normally users
+request the merged extracted spectral files (i.e., NEWSIPS MXLO or MXHI
+files, or IUESIPS MELO or MEHI files). Additional documentation is
+available on both the NEWSIPS and the (GO-format) IUESIPS data
+products.  See http://archive.stsci.edu/iue/manual/newsips/node140.html
+for a fuller description the NEWSIPS files.  
+See http://archive.stsci.edu/iue/manual/iuesips/section8.html
+for a fuller description of the IUESIPS files.
+
+Below is a brief description of the files
+
+NEWSIPS Files
+
+   * MXLO, MXHI - The merged extracted spectral files containing the
+     absolutely-calibrated fluxes, wavelengths, data quality flags, and
+     sigmas (or noise estimates for MXHI files) in a FITS binary table 
+     extension. The high dispersion files
+     are named MXHI and the low dispersion files are MXLO. 
+
+   * SILO, SIHI - The resampled image files (SILO & SIHI) from which
+     the fluxes were extracted. These files contain the
+     photometrically-corrected and rotated image as a primary array,
+     wavelength information in a binary table extension, and an image 
+     extension containing an array of data quality flags. The SI files 
+     are useful for identifying camera artifacts such as cosmic ray hits, 
+     etc.
+     
+   * RILO, RIHI - the raw image files (a 768x768 primary array
+     image)
+
+   * LILO, LIHI - the linearized image files (a 768x768 primary array
+     file with associated data quality flags as a 768x768 array image
+     extension)
+
+IUESIPS Files
+
+   * MELOL, MELOS, MEHIL, MEHIS - The merged extracted
+     spectral files containing the absolutely-calibrated fluxes,
+     wavelengths, and data quality flags in a project-defined data
+     format based on VICAR. The portion of the name LO / HI describes
+     the dispersion.  The last letter of the extension describes the
+     aperture (i.e., l = large aperture, s = small). Note only large
+     aperture data is photometrically accurate.  
+     
+   * ELBLL, ELBLS - Low dispersion resampled line-by-line image (ELBL) 
+     files from which the fluxes were extracted (note no IUESIPS high 
+     dispersion resampled images were generated). The ELBL files contain the
+     photometrically-corrected image data, wavelength information, and
+     data qualiy flags. These files are particularly useful for
+     identifying cosmic ray hits, reseau, microphonic noise, etc. The
+     last letter identifies the aperture used. 
+   
+   * RAW - The IUESIPS RAW image data as stored in
+     the project-defined data format based on VICAR.
+
